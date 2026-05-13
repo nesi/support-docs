@@ -51,7 +51,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.93,
+                        "hourly_average": 0.92,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -3590,7 +3590,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.9,
+                        "hourly_average": 5.88,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3658,7 +3658,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 68662567.73,
+                        "hourly_average": 68426046.63,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -7388,13 +7388,13 @@
         "force_show": "False"
     },
     "GMP": {
-        "description": "GMP is a free library for arbitrary precision arithmetic, \noperating on signed integers, rational numbers, and floating point numbers.",
+        "description": "GMP is a free library for arbitrary precision arithmetic, operating on signed\n integers, rational numbers, and floating point numbers.",
         "domains": [
             "mathematics"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://gmplib.org/",
+        "homepage": "https://gmplib.org/",
         "support": "",
         "versions": [
             "6.1.2-GCCcore-7.4.0",
@@ -7402,15 +7402,16 @@
             "6.2.0",
             "6.2.0-GCCcore-9.2.0",
             "6.2.1-GCCcore-11.3.0",
-            "6.2.1-GCCcore-12.3.0"
+            "6.2.1-GCCcore-12.3.0",
+            "6.3.0-GCCcore-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.2.1-GCCcore-12.3.0",
+        "default": "6.3.0-GCCcore-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1778554881,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GMP/6.2.1-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/GMP/6.3.0-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12406,6 +12407,7 @@
             "4.0.3-GCCcore-9.2.0",
             "5.1.0-GCC-11.3.0",
             "5.1.0-GCC-12.3.0",
+            "5.1.0-GCC-15.2.0",
             "5.1.0-GCC-7.4.0",
             "5.1.0-GCCcore-9.2.0",
             "5.1.0-intel-2020a",
@@ -13080,15 +13082,16 @@
             "4.0.2-GCCcore-9.2.0",
             "4.1.0-GCC-11.3.0",
             "4.2.1-GCC-12.3.0",
-            "4.2.1-GCCcore-12.3.0"
+            "4.2.1-GCCcore-12.3.0",
+            "4.2.2-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.2.1-GCCcore-12.3.0",
+        "default": "4.2.2-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1773649973,
+        "last_updated": 1778555245,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/MPFR/4.2.1-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MPFR/4.2.2-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20824,6 +20827,7 @@
             "5.6.0-intel-2020a-METIS-5.1.0",
             "5.6.0-intel-2022a-METIS-5.1.0",
             "5.8.1-gimkl-2022a-METIS-5.1.0",
+            "7.12.2-gfbf-2026",
             "7.8.3-foss-2023a"
         ],
         "admin_list": [
@@ -20832,11 +20836,11 @@
             }
         ],
         "network_licences": [],
-        "default": "7.8.3-foss-2023a",
+        "default": "7.12.2-gfbf-2026",
         "default_type": "latest",
-        "last_updated": 1740132634,
+        "last_updated": 1778557701,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/SuiteSparse/7.8.3-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/SuiteSparse/7.12.2-gfbf-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
