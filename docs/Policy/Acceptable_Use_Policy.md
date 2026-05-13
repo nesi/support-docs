@@ -47,5 +47,5 @@ Before accepting this Policy, please note: We anticipate that they will change r
 11. If you have any questions about these Terms and Conditions, please email [REANNZ HPC Support](mailto:support@nesi.org.nz).
 
 
-!!! info "Note regarding the NeSI-REANNZ Integration"
-    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into Research and Education Advanced Network New Zealand (REANNZ) Ltd. At that time, all aspects of NeSI delivery, including this policy, became the responsibility of REANNZ. Currently, some of our online spaces (eg. `docs.nesi.org.nz`, `my.nesi.org.nz`, etc.) and email addresses (eg. `support@nesi.org.nz`) have retained a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
+!!! info "NeSI-REANNZ Integration"
+    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into Research and Education Advanced Network New Zealand (REANNZ) Ltd. At that time, all aspects of NeSI delivery, including this policy, became the responsibility of REANNZ. Currently, some of our online spaces (e.g. `docs.nesi.org.nz`, `my.nesi.org.nz`, etc.) and email addresses (e.g. `support@nesi.org.nz`) have retained a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
