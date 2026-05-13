@@ -44,4 +44,8 @@ Before accepting this Policy, please note: We anticipate that they will change r
 8. That you will acquire no intellectual property rights over the software or any information we provide.
 9. That we may make reasonable changes to the Acceptable Use Policy at any time, and, once we have posted those changes on our website, the new version will then apply to you.
 10. The use of the REANNZ HPC Services and these Terms and Conditions are governed by New Zealand Law.
-11. If you have any questions about these Terms and Conditions, please email [REANNZ HPC Support](mailto:support@nesi.org.nz). 
+11. If you have any questions about these Terms and Conditions, please email [REANNZ HPC Support](mailto:support@nesi.org.nz).
+
+
+!!! info "NeSI-REANNZ Integration"
+    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into Research and Education Advanced Network New Zealand (REANNZ) Ltd. At that time, all aspects of NeSI delivery, including this policy, became the responsibility of REANNZ. Some of our platforms (eg. `docs.nesi.org.nz`, `my.nesi.org.nz`, etc.) and emails (eg. `support@nesi.org.nz`) have retained a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
