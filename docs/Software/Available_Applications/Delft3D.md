@@ -22,9 +22,10 @@ tags:
 
 ## Available Modules
 
+{% include "partials/app/app_version.html" -%}
 {% set app = applications["Delft3D"] %}
 {% include "partials/app/app_version.html" -%}
-{% include "partials/app/app_version.html" -%}
+
 
 ## Example scripts
 
