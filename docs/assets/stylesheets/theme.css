@@ -426,3 +426,8 @@ div.quiz-feedback {
 .quiz-header-link{
   display: none;
 }
+
+.force-wrap {
+  text-wrap-mode: wrap;
+  font-size: medium;
+}
