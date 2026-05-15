@@ -25,7 +25,7 @@ You will always get the amount of memory you requested, even if running on a nod
         <td>Architecture</td>
         <td>Core</td>
         <td colspan="2">Memory</td>
-        <td>GPGPU</td>
+        <td>GPU</td>
         <td>Nodes</td>
     </tr>
     <tr>
@@ -76,7 +76,7 @@ You will always get the amount of memory you requested, even if running on a nod
     </tr>
 </table>
 
-## GPGPUs
+## GPUs
 
 REANNZ HPC has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale.
 
