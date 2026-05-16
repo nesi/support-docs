@@ -40,7 +40,7 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <h3>Data Transfer</h3>
     <p>Getting your data on and off the cluster.</p>
 </a>
-<a href="Getting_Started/Next_Steps/Submitting_your_first_job#slurm">
+<a href="Batch_Computing/Batch_Computing_Guide">
     <img alt="Job scheduler" src="assets/icons/material/tray-full.svg">
     <h3>Job Scheduler</h3>
     <p>How to use our job scheduler, Slurm.</p>
