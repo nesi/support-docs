@@ -304,13 +304,13 @@ When running a 15-minute test job, add the following settings in your slurm subm
 
 ```sl
 #SBATCH --time=00:15:00
-#SBATCH --gpu-per-node=<gpu-type>>:1
+#SBATCH --gpu-per-node=<gpu-type>:1
 #SBATCH --qos=debug
 #SBATCH --profile=task # Only for testing
 #SBATCH --acctg-freq=1 # Only for testing
 ```
 
-To record the GPU utilisation and GPU memory, see [Measuring GPU efficiency after a job has finished](./Using_GPUs.md#measuring-gpu-efficiency-after-a-job-has-finished) for more information. 
+To record the GPU utilisation and GPU memory, see [Measuring GPU efficiency after a job has finished](./Using_GPUs.md#measuring-gpu-efficiency-after-a-job-has-finished) for more information.
 
 ## Application and toolbox specific support pages
 
