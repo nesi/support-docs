@@ -177,9 +177,25 @@ li {
 .badge-domain-biology{
     background-color: #28a745;
 }
+
 .badge-domain-chemistry {
     background-color: #ff07d8;
 }
+.badge-domain-Molecular-Dynamics {
+    background-color: #ff07d8;
+}
+.badge-domain-Density-Functional-Theory {
+    background-color: #ff07d8;
+}
+.badge-domain-QMMM {
+    background-color: #ff07d8;
+    text-transform: uppercase;
+}
+.badge-domain-Computational-Chemistry {
+    background-color: #ff07d8;
+    text-transform: uppercase;
+}
+
 .badge-domain-earth_science {
     background-color: #794e00;
 }
