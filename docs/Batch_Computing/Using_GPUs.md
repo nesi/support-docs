@@ -310,7 +310,7 @@ When running a 15-minute test job, add the following settings in your slurm subm
 #SBATCH --acctg-freq=1 # Only for testing
 ```
 
-To record the GPU utilisation and GPU memory, see ![Measuring GPU efficiency after a job has finished](#measuring-gpu-efficiency-after-a-job-has-finished)
+To record the GPU utilisation and GPU memory, see ![Measuring GPU efficiency after a job has finished](./Using_GPUs.md#measuring-gpu-efficiency-after-a-job-has-finished)
 
 ## Application and toolbox specific support pages
 
