@@ -288,13 +288,7 @@ Then allow your job to run. Once your job has finished, type in to the terminal
 profile_plot <JobID>
 ```
 
-Where `<JobID>` is the job ID for the job of interest. For example:
-
-```bash
-user.name@login03:$ nn_seff 1234567
-```
-
-This will create a file called `<JobID>_profile.png`, which will look something like this:
+Where `<JobID>` is the job ID for the job of interest. This will create a file called `<JobID>_profile.png`, which will look something like this:
 
 ![5831962_profile.png](../assets/images/GPU_5831962_profile.png)
 
@@ -305,6 +299,18 @@ See [Slurm Native Profiling](../Software/Profiling_and_Debugging/Slurm_Native_Pr
 The following flow diagram explains the steps you should take to test which GPU is right for your job.
 
 ![GPU_What_GPU_is_right_for_your_job.png](../assets/images/GPU_What_GPU_is_right_for_your_job.png)
+
+When running a 15-minute test job, add the following settings in your slurm submission script:
+
+```sl
+#SBATCH --time=00:15:00
+#SBATCH --gpu-per-node=<gpu-type>>:1
+#SBATCH --qos=debug
+#SBATCH --profile=task # Only for testing
+#SBATCH --acctg-freq=1 # Only for testing
+```
+
+To record the GPU utilisation and GPU memory, see ![Measuring GPU efficiency after a job has finished](#measuring-gpu-efficiency-after-a-job-has-finished)
 
 ## Application and toolbox specific support pages
 
