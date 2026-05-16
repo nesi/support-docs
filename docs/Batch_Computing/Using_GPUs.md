@@ -231,14 +231,14 @@ It is possible to visually inspect your job's GPU usage live. To do this:
     ```bash
     user.name@login03:$ squeue --me
     JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
-    5826164       user.nam nesi99999 Example_GPU_   8     24G genoa   Apr 30 17:36  9-23:58:08 RUNNING  g09               
+    1234567       user.nam nesi99999 Example_GPU_   8     24G genoa   Apr 30 17:36    23:58:08 RUNNING  g09               
     ```
 
 2. Jump onto the node your job is running by typing `jump_into <JobId>`, where you replace `<JobId>` with your Job of interest.
 
     ```bash
-    user.name@login03:$ jump_into 5826164
-    Jumping to node: g09 (job 5826164)    
+    user.name@login03:$ jump_into 1234567
+    Jumping to node: g09 (job 1234567)    
     ```
 
 3. Type into the terminal `nvtop`. This will open an interface that will allow you to inspect how your job run on the GPU.
@@ -249,32 +249,32 @@ It is possible to visually inspect your job's GPU usage live. To do this:
 
 It is possible to measure your GPU's processing and memory efficiency in two ways:
 
-### 1. Using `nn_seff`
+### Using `seff`
 
-Once your job has finished, it is possible to use `nn_seff` to get a measure of the GPU processing and memory efficiency. To use this feature, type into the terminal
+Once your job has finished, it is possible to use `seff` to get a measure of the GPU utilisation and GPU memory efficiency. To use this feature, type into the terminal
 
 ```bash
-nn_seff <JobID>
+seff <JobID>
 ```
 
 Where `<JobID>` is the job ID for the job of interest. For example:
 
 ```bash
-user.name@login03:$ nn_seff 5831746
+user.name@login03$ seff 1234567
 Cluster: hpc
-Job ID: 5831746
-State: CANCELLED
+Job ID: 1234567
+State: TIMEOUT
 Cores: 4
 Tasks: 1
 Nodes: 1
-Job Wall-time:     0.1%  00:09:02 of 10-00:00:00 time limit
-CPU Utilisation:  98.4%  00:35:34 of 00:36:08 core-walltime
-Mem Utilisation:   1.2%  284.37 MB of 24.00 GB
-GPU Utilisation:  55  %
+Job Wall-time:   100.4%  00:15:04 of 00:15:00 time limit
+CPU Utilisation:  98.5%  00:59:20 of 01:00:16 core-walltime
+Mem Utilisation:   1.2%  284.46 MB of 24.00 GB
+GPU Utilisation:  43  %
 GPU Memory:        2.2%  510.00 MB of 23 GB
 ```
 
-### 2. Using Slurm Native Profiling
+### Using Slurm Native Profiling
 
 Before you begin your slurm job, include the following line somewhere at the start of your slurm submission file:
 
@@ -291,7 +291,7 @@ profile_plot <JobID>
 Where `<JobID>` is the job ID for the job of interest. For example:
 
 ```bash
-user.name@login03:$ nn_seff 5831962
+user.name@login03:$ nn_seff 1234567
 ```
 
 This will create a file called `<JobID>_profile.png`, which will look something like this:
@@ -300,119 +300,11 @@ This will create a file called `<JobID>_profile.png`, which will look something 
 
 See [Slurm Native Profiling](../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md) for more information on this feature. 
 
-## Look up the GPU availability and queue
+## How to determine which GPU is best for your job
 
-It is possible to check how many GPUs are available and what the GPU queue looks like using the `gpu_avail` command:
+The following flow diagram explains the steps you should take to test which GPU is right for your job.
 
-```bash
-user.weal@login03:$ gpu_avail -h
-usage: gpu_avail [-h] [-q] [-d] [-t TYPE]
-
-Show GPU availability per node (sinfo) and/or GPU queue per type (squeue).
-
-options:
-  -h, --help            show this help message and exit
-  -q, --queue           Queue-only output. With -d, show detailed queue-only output.
-  -d, --detailed        Detailed output.
-  -t TYPE, --type TYPE  Comma-separated GPU types to include (e.g., a100,l4,h100).
-```
-
-If you type into the terminal:
-
-```bash
-gpu_avail
-```
-
-This will show the total number of free GPUs at any one time
-
-```bash
-user.name@login03:$ gpu_avail
-Cluster GPU summary
-  - A100 (40GB): free 0 / total 8 (used 8, unavailable 0)
-  - A100 (80GB): free 0 / total 16 (used 16, unavailable 0)
-  - H100 (96GB): free 0 / total 8 (used 8, unavailable 0)
-  - L4 (24GB): free 0 / total 16 (used 16, unavailable 0)
-```
-
-You can see more what jobs are running and pending in the GPU queue for each GPU by typing into the terminal:
-
-```bash
-gpu_avail -q
-```
-
-This will show all jobs that have requested GPUs, and give you a better idea of the availability of GPUs
-
-```bash
-user.name@login03:$ gpu_avail -q
-GPU queue detailed report (per GPU type)
-
-A100 (40GB)
-  Running jobs: 8 (GPUs: 8)
-  Pending jobs: 2 (GPUs: 2)
-  Estimated availability for 1 A100 (40GB) GPU: 2026-04-30 18:55:36 NZST
-
-  Running jobs:
-    JOBID        USER       PART         NODE             CPU    Memory     START               LEFT         TRES                                                    
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    1234567      abcd123    genoa        g02              16     8 GB       Apr 29 08:04        13:37:14     gres/gpu:a100:1                                         
-    1234568      abcd123    genoa        g04              16     4 GB       Apr 29 20:44        2:17:13      gres/gpu:a100:1                                         
-    1234569      abcd123    genoa        g03              16     4 GB       Apr 30 09:15        14:47:41     gres/gpu:a100:1                                         
-    1234570      abcd123    genoa        g03              16     4 GB       Apr 30 09:15        14:48:11     gres/gpu:a100:1                                         
-    1234571      abcd123    genoa        g01              4      16 GB      Apr 30 16:55        27:59        gres/gpu:a100:1                                         
-    1234572      abcd123    genoa        g01              8      32 GB      Apr 30 16:56        29:15        gres/gpu:a100:1                                         
-    1234573      abcd123    genoa        g04              4      32 GB      Apr 30 17:20        9:23:01      gres/gpu:a100:1                                         
-    1234574      abcd123    genoa        g02              8      32 GB      Apr 30 17:25        58:03        gres/gpu:a100:1                                         
-  
-  Pending jobs:
-    JOBID        USER       PART         CPU    Memory     START               LIMIT        TRES                                                     REASON                
-    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
-    1234575      abcd123    genoa        1      20 GB      May 06 11:45        4:45:00      gres/gpu:a100:1                                          (Priority)            
-    1234576      abcd123    genoa        1      20 GB      May 06 16:30        4:45:00      gres/gpu:a100:1                                          (Priority)            
-
-A100 (80GB)
-...
-```
-
-Note that there might be your or other peoples jobs pending in the queue, even if there is a free GPU available. This may be because a GPU node might not have enough CPUs or memory resources available.
-
-To see the CPU and memory resources available on each of the GPU nodes, type into the terminal:
-
-```bash
-gpu_avail -n
-```
-
-This will show all the resources available for each GPU node, ordered by GPU type:
-
-```bash
-user.name@login03$ gpu_avail -d
-GPU nodes report
-
-=== A100 (40GB) ===
-
-- Node:          g01   State: mixed-
-  CPU idle/total: 6/164 (alloc 162, other 0)
-  Mem free/total: 113.0 GB / 717.2 GB
-  GPUs: A100 (40GB): free 0 / total 2 (used 2)
-
-- Node:          g02   State: allocated
-  CPU idle/total: 2/164 (alloc 166, other 0)
-  Mem free/total: 74.9 GB / 717.2 GB
-  GPUs: A100 (40GB): free 0 / total 2 (used 2)
-
-- Node:          g03   State: allocated
-  CPU idle/total: 2/164 (alloc 166, other 0)
-  Mem free/total: 385.5 GB / 717.2 GB
-  GPUs: A100 (40GB): free 0 / total 2 (used 2)
-
-- Node:          g04   State: mixed-
-  CPU idle/total: 8/164 (alloc 160, other 0)
-  Mem free/total: 112.1 GB / 717.2 GB
-  GPUs: A100 (40GB): free 0 / total 2 (used 2)
-
-=== A100 (80GB) ===
-...
-```
-
+![GPU_What_GPU_is_right_for_your_job.png](../assets/images/GPU_What_GPU_is_right_for_your_job.png)
 
 ## Application and toolbox specific support pages
 
