@@ -1,6 +1,6 @@
 ---
-created_at: 2026-18-05
-Title: Administrative updates to HPC policies
+created_at: 2026-05-18
+title: Administrative updates to HPC policies
 description: A page sharing the details of recent administrative updates to some HPC Platform policies
 status: new
 tags: [announcement]
@@ -25,6 +25,6 @@ If you’d like to read the full policies, you can find them at the links below:
 - [Access Policy](../Policy/Access_Policy.md)
 - [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md)
 - [Privacy Policy](../Policy/Privacy_Policy.md)
-- [Security Policy](Policy/Security_Policy.md)
+- [Security Policy](../Policy/Security_Policy.md)
 
-If you have questions about these policies, please [send us an email](mailto:support@nesi.org.nz).
+If you have questions about these policies, please {% include "partials/support_request.html" %}.
