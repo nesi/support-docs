@@ -2,7 +2,7 @@
 created_at: 2025-11-07
 Title: Autodelete of Scratch Filesystem
 description: A page sharing the details of changes to scratch filesystem deletion policy
-status: new
+status: 
 tags: [announcement]
 search:
   boost: 0.1
