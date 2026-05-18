@@ -27,17 +27,10 @@ To request a GPU for your [Slurm job](Tutorial:_Submitting_your_first_job.md), a
 the following option in the header of your submission script:
 
 ```sl
-#SBATCH --gpus-per-node=1
-```
-
-You can specify the type and number of GPU you need using the following
-syntax
-
-```sl
 #SBATCH --gpus-per-node=<gpu_type>:<gpu_number>
 ```
 
-It is recommended to specify the exact GPU type required; otherwise, the job may be allocated to any available GPU at the time of execution.
+where `<gpu_type>` is the type of gpu you want to use (either 'h100', 'a100', or 'l4'), and `<gpu_number>` is the number of gpus you would like to request for your job.
 
 !!! note
      Recall, memory associated with the GPUs is the VRAM, and is a separate resource from the RAM requested by Slurm. The memory values listed below are VRAM values.
