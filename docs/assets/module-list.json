@@ -2,7 +2,6 @@
     "ABAQUS": {
         "description": "Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.",
         "domains": [
-            "GPU",
             "engineering",
             "gpu",
             "mpi",
@@ -271,7 +270,7 @@
     "AdaptiveCpp": {
         "description": "AdaptiveCpp (formerly hipSYCL) is a SYCL implementation targeting CPUs and\nGPUs, with a focus on leveraging existing toolchains such as CUDA or HIP",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -373,9 +372,9 @@
     "AlphaFold": {
         "description": "AlphaFold can predict protein structures with atomic accuracy even where no similar structure is known",
         "domains": [
-            "GPU",
             "biology",
-            "chemistry"
+            "chemistry",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -467,7 +466,7 @@
     "Amber": {
         "description": "Amber (originally Assisted Model Building with Energy Refinement) is software for performing\n molecular dynamics and structure prediction.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -1422,7 +1421,7 @@
     "AutoDock-GPU": {
         "description": "OpenCL and Cuda accelerated version of AutoDock. It leverages its embarrasingly\nparallelizable LGA by processing ligand-receptor poses in parallel over\nmultiple compute units.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1845,8 +1844,8 @@
     "beagle-lib": {
         "description": "beagle-lib is a high-performance library that can perform the core\ncalculations at the heart of most Bayesian and Maximum Likelihood\nphylogenetics packages.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -1870,8 +1869,8 @@
     "BEAST": {
         "description": "Bayesian MCMC phylogenetic analysis of molecular sequences for reconstructing \n phylogenies and testing evolutionary hypotheses.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3224,7 +3223,7 @@
     "Clang": {
         "description": "C, C++, Objective-C compiler, based on LLVM.  Does not\n include C++ standard library -- use libstdc++ from GCC.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3599,7 +3598,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.83,
+                        "hourly_average": 5.8,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3667,7 +3666,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 67726160.24,
+                        "hourly_average": 67267469.54,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -3740,8 +3739,8 @@
     "CP2K": {
         "description": "CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular\n simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different\n methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and\n classical pair and many-body potentials.",
         "domains": [
-            "GPU",
             "chemistry",
+            "gpu",
             "Density Functional Theory",
             "Molecular Dynamics",
             "QMMM",
@@ -4013,7 +4012,7 @@
     "CUDA": {
         "description": "CUDA (formerly Compute Unified Device Architecture) is a parallel\n computing platform and programming model created by NVIDIA and implemented by the\n graphics processing units (GPUs) that they produce. CUDA gives developers access\n to the virtual instruction set and memory of the parallel computational elements in CUDA GPUs.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4055,7 +4054,7 @@
     "cuDNN": {
         "description": "The NVIDIA CUDA Deep Neural Network library (cuDNN) is a GPU-accelerated library of primitives for deep neural networks.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4287,8 +4286,8 @@
     "dadi": {
         "description": "Diffusion Approximation for Demographic Inference",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [
             "appdirs-1.4.4",
@@ -4470,8 +4469,8 @@
     "DeepLabCut": {
         "description": "Efficient method for 3D markerless pose estimation based on transfer learning with deep neural networks.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4516,7 +4515,7 @@
     "DeePMD-plugin": {
         "description": "Deep learning-based models of interatomic potential energy and force field, as a LAMMPS plugin.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4742,8 +4741,8 @@
     "Dorado": {
         "description": "High-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -5220,9 +5219,9 @@
     "EMAN2": {
         "description": "Greyscale scientific image processing suite with a primary focus on processing data from transmission electron microscopes",
         "domains": [
-            "GPU",
             "biology",
-            "chemistry"
+            "chemistry",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7653,7 +7652,7 @@
     "GPUMD": {
         "description": "GPUMD stands for Graphics Processing Units Molecular Dynamics.\nIt is a general-purpose molecular dynamics (MD) package fully implemented on graphics processing units.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -7754,8 +7753,8 @@
     "GROMACS": {
         "description": "GROMACS is a versatile package to perform molecular dynamics,\n i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.\n\nThis is a GPU enabled build, containing both MPI and threadMPI binaries.",
         "domains": [
-            "GPU",
             "chemistry",
+            "gpu",
             "molecular dynamics"
         ],
         "extensions": [],
@@ -8665,7 +8664,7 @@
     "impi": {
         "description": "Intel MPI Library, compatible with MPICH ABI",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9725,9 +9724,9 @@
     "LAMMPS": {
         "description": "LAMMPS is a classical molecular dynamics code, and an acronym\nfor Large-scale Atomic/Molecular Massively Parallel Simulator. LAMMPS has\npotentials for solid-state materials (metals, semiconductors) and soft matter\n(biomolecules, polymers) and coarse-grained or mesoscopic systems. It can be\nused to model atoms or, more generically, as a parallel particle simulator at\nthe atomic, meso, or continuum scale. LAMMPS runs on single processors or in\nparallel using message-passing techniques and a spatial-decomposition of the\nsimulation domain. The code is designed to be easy to modify or extend with new\nfunctionality.",
         "domains": [
-            "GPU",
             "biology",
             "chemistry",
+            "gpu",
             "molecular dynamics"
         ],
         "extensions": [],
@@ -9967,7 +9966,7 @@
     "libcuda-stub": {
         "description": "Dummy libcuda and libnvidia libraries for compiling CUDA programs on non-GPU nodes",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10314,7 +10313,7 @@
     "libgpuarray": {
         "description": "Arrays on GPU device memory, for Theano",
         "domains": [
-            "GPU",
+            "gpu",
             "mathematics"
         ],
         "extensions": [],
@@ -10989,7 +10988,7 @@
     "LISFLOOD-FP": {
         "description": "The LISFLOOD-FP is a raster-based hydrodynamic model originally developed by\nthe University of Bristol. It has undergone extensive development since\nconception and includes a collection of numerical schemes implemented to solve\na variety of mathematical approximations of the 2D shallow water equations of\ndifferent complexity.\nThe local inertia solver, known as the ACC solver, is widely used to simulate\nfloods with gradually-varying, subcritical flow over sufficiently rough\nsurfaces with Manning\u2019s coefficient of at least 0.03. It has a version with\nCPU-specific optimisations and enhanced with a subgrid channel model.\nLISFLOOD-FP also includes second-order discontinuous Galerkin (DG2) and\nfirst-order finite volume (FV1) solvers of the full shallow water equations for\nmodelling a wide range of flows, including rapidly-propagating, supercritical\nflows, shock waves, or flows over very smooth surfaces. The DG2/FV1 solvers are\nparallelised for the multi-core CPU architecture, but do not integrate with the\nsubgrid channel model nor with the CPU-specific optimisations.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11332,7 +11331,7 @@
     "magma": {
         "description": "The MAGMA project aims to develop a dense linear algebra library similar to\n LAPACK but for heterogeneous/hybrid architectures, starting with current Multicore+GPU systems.",
         "domains": [
-            "GPU",
+            "gpu",
             "mathematics"
         ],
         "extensions": [],
@@ -11585,8 +11584,8 @@
     "MATLAB": {
         "description": "A high-level language and interactive environment for numerical computing.",
         "domains": [
-            "GPU",
             "engineering",
+            "gpu",
             "mathematics",
             "visualisation",
             "ml",
@@ -12034,8 +12033,8 @@
     "medaka": {
         "description": "Medaka is a tool to create a consensus sequence from nanopore sequencing data.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -12083,8 +12082,8 @@
     "megalodon": {
         "description": "Tool to extract high accuracy modified base and sequence variant calls from raw nanopore reads \nby anchoring the information rich basecalling neural network output to a reference genome/transcriptome.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [
             "coloredlogs-15.0.1",
@@ -12465,8 +12464,8 @@
     "MiMiC": {
         "description": "MiMiC: A Framework for Multiscale Modeling in Computational Chemistry\n\nThis package includes mimicpy",
         "domains": [
-            "GPU",
-            "chemistry"
+            "chemistry",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13136,8 +13135,8 @@
     "MrBayes": {
         "description": "MrBayes is a program for the Bayesian estimation of phylogeny.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13316,9 +13315,9 @@
     "NAMD": {
         "description": "NAMD is a parallel molecular dynamics code designed for high-performance simulation of\n large biomolecular systems.",
         "domains": [
-            "GPU",
             "biology",
-            "chemistry"
+            "chemistry",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13641,7 +13640,7 @@
     "NCCL": {
         "description": "The NVIDIA Collective Communications Library (NCCL) implements multi-GPU and multi-node collective\ncommunication primitives that are performance optimized for NVIDIA GPUs.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14372,7 +14371,7 @@
     "NVHPC": {
         "description": "C, C++ and Fortran compilers included with the NVIDIA HPC SDK (previously: PGI)",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14468,8 +14467,8 @@
     "ont-guppy-gpu": {
         "description": "Data processing toolkit that contains the Oxford Nanopore Technologies' basecalling algorithms,\nand several bioinformatic post-processing features",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14678,7 +14677,7 @@
     "OpenMPI": {
         "description": "The Open MPI Project is an open source MPI-3 implementation.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17263,7 +17262,7 @@
     "PyTorch": {
         "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration.\nPyTorch is a deep learning framework that puts Python first.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [
             "skorch-0.12.1"
@@ -18358,8 +18357,8 @@
     "Racon": {
         "description": "Ultrafast consensus module for raw de novo genome assembly of long uncorrected reads.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -18695,8 +18694,8 @@
     "Relion": {
         "description": "RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) \n    is a stand-alone computer program that employs an empirical Bayesian \n    approach to refinement of (multiple) 3D reconstructions or 2D class \n    averages in electron cryo-microscopy (cryo-EM).",
         "domains": [
-            "GPU",
             "biology",
+            "gpu",
             "no_toc",
             "no_lic",
             "no_desc",
@@ -18817,9 +18816,9 @@
     "RFdiffusion": {
         "description": "Structure generation, with or without conditional information (a motif, target etc) It can perform a whole range of protein design challenges as we have outlined \nin the RFdiffusion paper.",
         "domains": [
-            "GPU",
             "biology",
-            "chemistry"
+            "chemistry",
+            "gpu"
         ],
         "extensions": [
             "antlr4-python3-runtime-4.9.3",
@@ -19664,8 +19663,8 @@
     "SeisSol": {
         "description": "SeisSol is a software package for simulating wave propagation and dynamic rupture based on the arbitrary high-order accurate derivative discontinuous Galerkin method (ADER-DG).",
         "domains": [
-            "GPU",
-            "earth_science"
+            "earth_science",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -20142,7 +20141,7 @@
     "slow5-dorado": {
         "description": "Fork of nanopore's Dorado which supports S/BLOW5.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21209,7 +21208,7 @@
     "TensorFlow": {
         "description": "An open-source software library for Machine Intelligence",
         "domains": [
-            "GPU",
+            "gpu",
             "machine_learning"
         ],
         "extensions": [
@@ -21273,7 +21272,7 @@
     "TensorRT": {
         "description": "NVIDIA TensorRT is a platform for high-performance deep learning inference",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21821,7 +21820,7 @@
     "UCC-CUDA": {
         "description": "UCC (Unified Collective Communication) is a collective\ncommunication operations API and library that is flexible, complete, and\nfeature-rich for current and emerging programming models and runtimes.\n\nThis module adds the UCC CUDA support.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21844,7 +21843,7 @@
     "UCX": {
         "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21874,7 +21873,7 @@
     "UCX-CUDA": {
         "description": "Unified Communication X\nAn open-source production grade communication framework for data centric\nand high-performance applications\n\nThis module adds the UCX CUDA support.",
         "domains": [
-            "GPU"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21923,8 +21922,8 @@
     "Unicycler": {
         "description": "Assembly pipeline for bacterial genomes. It can assemble Illumina-only read sets\n where it functions as a SPAdes-optimiser.",
         "domains": [
-            "GPU",
-            "biology"
+            "biology",
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22116,8 +22115,8 @@
     "VASP": {
         "description": "The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale\nmaterials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics,\nfrom first principles.",
         "domains": [
-            "GPU",
             "chemistry",
+            "gpu",
             "Density Functional Theory",
             "Molecular Dynamics",
             "Computational Chemistry"

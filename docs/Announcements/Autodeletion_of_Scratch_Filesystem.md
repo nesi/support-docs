@@ -2,10 +2,8 @@
 created_at: 2025-11-07
 Title: Autodelete of Scratch Filesystem
 description: A page sharing the details of changes to scratch filesystem deletion policy
-status: new
 tags: [announcement]
 search:
-  boost: 0.1
 ---
 
 We’re making some important updates to how your project’s temporary data is stored and managed on our HPC platforms. These changes will improve the availability and performance of our scratch filesystem (`/nesi/nobackup`).
