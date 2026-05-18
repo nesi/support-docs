@@ -89,6 +89,11 @@ extra:
   analytics:
     provider: google
     property: G-TVQR4R1F40
+  globus_collection_storage: Mahuika Storage
+  globus_collection_freezer: Mahuika Freezer
+  globus_collection_rdc: RDC Storage
+  globus_collection_scratch: Mahuika Scratch
+  globus_collection_project: Mahuika Persistent
 plugins:
   - mkdocs_quiz:
       disable_after_submit: false
