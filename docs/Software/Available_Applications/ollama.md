@@ -42,7 +42,7 @@ ollama serve
 Then on the login node run,
 
 ```sh
-module  load ollama
+module load ollama
 export OLLAMA_HOST=<nodename>:<port>
 ollama
 ```
