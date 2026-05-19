@@ -68,7 +68,7 @@ Then submit the following script to build the container:
 #SBATCH --time          00:30:00
 #SBATCH --mem           4GB
 #SBATCH --cpus-per-task 2
-#SBATCH --account       nesi12345
+#SBATCH --account       nesi99991
 
 unset APPTAINER_BINDPATH
 
@@ -76,7 +76,7 @@ export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cac
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
 mkdir -p ${APPTAINER_CACHEDIR}
 
-apptainer build --force --fakeroot my_container.sif my_container.def
+apptainer build my_container.sif my_container.def
 ```
 
 !!! warning
