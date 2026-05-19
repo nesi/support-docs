@@ -64,7 +64,8 @@ The job ending kills the server automatically.
 #SBATCH --mem            10G
 #SBATCH --gpus-per-node  l4:1
 
-module load ollama
+module purge
+module load ollama/{{ app.default }}
 unset CUDA_VISIBLE_DEVICES  # Slurm sets this to 0; ollama manages the GPU itself
 
 # pipe server output to `/dev/null` to avoid noise.
