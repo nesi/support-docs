@@ -19,6 +19,7 @@ This Privacy Policy may be amended from time to time by REANNZ. When this occurs
 ### Computing and data analytics services
 
 We collect and process Personal Information about our users through registration and project request forms. This may include: 
+
 - legal name along with (optionally) your preferred name
 - [ORCID identifier](https://orcid.org/)
 - employer or tertiary institution
@@ -42,6 +43,7 @@ REANNZ also collects and processes Personal Information about users of our websi
 REANNZ maintains robust information security management processes and confidentiality protocols to help ensure that information is protected against misuse, loss and unauthorised access, use, modification or disclosure as detailed in our Security Policy. 
 
 These include: 
+
 - firewalls and modern encryption standards
 - use of two-factor authentication (2FA)
 - access to the Personal Information is limited only to REANNZ staff members who have a legitimate business requirement to use it
@@ -57,6 +59,7 @@ REANNZ will promptly notify customers as we become aware of a data breach that a
 REANNZ processes (uses) Personal Information for a number of reasons. This includes providing expertise and capability in computational and data intensive research, hosting and providing access to repository data, employing our staff, use of REANNZ websites, and organising conferences. 
 
 REANNZ may use Personal Information for the following purposes: 
+
 - To provide services, including provisioning projects
 - To maintain and improve services, including user experience and capacity planning
 - To create and provide new services
@@ -88,3 +91,8 @@ REANNZ will endeavour to ensure that all Personal Information is accurate, compl
 ## 8. Deletion of Information 
 
 REANNZ will delete Personal Information on request, provided that, notwithstanding such request, this information may be retained for as long as the requestor maintains an account for REANNZ HPC Services, or as needed to provide REANNZ HPC services and manage assets, maintain integrity of records and logs, to comply with legal obligations, or resolve disputes. Requests for record deletion can be sent via email to REANNZ Support at support@nesi.org.nz.  
+
+
+!!! info "NeSI-REANNZ Integration"
+    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into Research and Education Advanced Network New Zealand (REANNZ) Ltd. At that time, all aspects of NeSI delivery, including this policy, became the responsibility of REANNZ. Currently, some of our online spaces (e.g. `docs.nesi.org.nz`, `my.nesi.org.nz`, etc.) and email addresses (e.g. `support@nesi.org.nz`) have retained a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
+
