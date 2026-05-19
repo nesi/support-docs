@@ -8,7 +8,7 @@ tags:
 hide: toc
 ---
 
-To avoid unneccicery storage use, we maintain readonly versions of popular models in `/opt/nesi/models`, if you can use this please do.
+To avoid unnecessary storage use, we maintain readonly versions of popular models in `/opt/nesi/models`, if you can use this please do.
 If you need a model that is not listed here, please {% include "partials/support_request.html" %} with the model name, source, and a brief description of your use case.
 
 ## Available models
