@@ -91,4 +91,8 @@ This policy and the supporting Controls are aligned with the rationale and objec
 2. New Zealand Privacy Act 2020
 3. REANNZ Privacy Policy
 4. New Zealand Information Security Manual NZISM
-5. National Institute of Standards and Technology Cyber Security Framework 
+5. National Institute of Standards and Technology Cyber Security Framework
+
+!!! info "NeSI-REANNZ Integration"
+    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into Research and Education Advanced Network New Zealand (REANNZ) Ltd. At that time, all aspects of NeSI delivery, including this policy, became the responsibility of REANNZ. Currently, some of our online spaces (e.g. `docs.nesi.org.nz`, `my.nesi.org.nz`, etc.) and email addresses (e.g. `support@nesi.org.nz`) have retained a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
+

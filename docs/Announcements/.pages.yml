@@ -1,5 +1,6 @@
 ---
 nav:
+  - administrative_policy_updates.md
   - Autodeletion_of_Scratch_Filesystem.md
   - Slurm_Job_email.md
   - Known_Issues_HPC3.md

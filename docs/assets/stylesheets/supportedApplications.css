@@ -186,6 +186,10 @@ li {
 .badge-domain-engineering{
     background-color: #ff7737;
 }
+.badge-domain-gpu{
+    background-color: #808080;
+    text-transform: uppercase;
+}
 .badge-domain-mathematics {
     background-color: #9935dc;
 }
