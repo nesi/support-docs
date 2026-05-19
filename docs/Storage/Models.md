@@ -26,7 +26,7 @@ If you need a model that is not listed here, please {% include "partials/support
 <tr>
 <td rowspan="2"><a href="https://ollama.com/library/llama3.1">Llama 3.1</a></td>
 <td rowspan="2"><a href="https://huggingface.co/meta-llama/Llama-3.1-8B/blob/main/LICENSE">Meta Llama 3.1</a></td>
-<td><pre><code>/opt/nesi/model/gguf/llama3.1/llama3.1-8b.gguf</code></pre></td>
+<td><pre><code>/opt/nesi/models/gguf/llama3.1/llama3.1-8b.gguf</code></pre></td>
 <td><pre><code>#SBATCH --gpus-per-node=l4:1</code></pre></td>
 </tr>
 <tr>
