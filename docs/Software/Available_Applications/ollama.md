@@ -83,5 +83,5 @@ echo "What is the capital of France" | ollama run llama3.1:8b
     ```
     Will assign a random free port number to `PORT`
 
-!!! tip Debugging
+!!! tip "Debugging"
     For verbose server logs, set `OLLAMA_DEBUG=1` before `ollama serve`.
