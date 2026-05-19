@@ -29,7 +29,8 @@ For a list of available models, see [AI Models](../../Storage/Models.md).
 
 PORT=16000 # please choose your own port number between 1024 and 49151
 
-module load ollama
+module purge
+module load ollama/{{ app.default }}
 export OLLAMA_HOST=${HOSTNAME}:${PORT}
 ssh -NfR ${PORT}:${HOSTNAME}:${PORT} ${SLURM_SUBMIT_HOST}
 
