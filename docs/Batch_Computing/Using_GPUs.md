@@ -7,14 +7,19 @@ tags:
 
 This page provides generic information about how to access GPUs through the Slurm scheduler.
 
+## When to use a GPU
+
+You should consider using a GPU for your work if:
+
+* Your job has GPU support/functionality, and
+* You job is substantially large or will run for a long time without GPU support
+* Or you are performing a task that needs a GPU (e.g. work with large language models, some machine learning methods such as neural networks)
+
 !!! warning
     Your first stop when looking into using GPUs should be the documentation
     of the application you are using.  
     Not every process can use a GPU, and how to use them effectively varies greatly!  
     There is a list of commonly used GPU supporting software at the bottom of this page.
-
-!!! note
-     Recall, memory associated with the GPUs is the VRAM, and is a separate resource from the RAM requested by Slurm. The memory values listed below are VRAM values.
 
 ## Request GPU resources using Slurm
 
@@ -22,17 +27,13 @@ To request a GPU for your [Slurm job](Tutorial:_Submitting_your_first_job.md), a
 the following option in the header of your submission script:
 
 ```sl
-#SBATCH --gpus-per-node=1
-```
-
-You can specify the type and number of GPU you need using the following
-syntax
-
-```sl
 #SBATCH --gpus-per-node=<gpu_type>:<gpu_number>
 ```
 
-It is recommended to specify the exact GPU type required; otherwise, the job may be allocated to any available GPU at the time of execution.
+where `<gpu_type>` is the type of gpu you want to use (either 'h100', 'a100', or 'l4'), and `<gpu_number>` is the number of gpus you would like to request for your job.
+
+!!! note
+     Recall, memory associated with the GPUs is the VRAM, and is a separate resource from the RAM requested by Slurm. The memory values listed below are VRAM values.
 
 <table>
     <tr>
@@ -214,17 +215,98 @@ CUDA_VISIBLE_DEVICES=0
     `CUDA_VISIBLE_DEVICES=0` indicates that this job was allocated to CUDA
      GPU index 0 on this node. It is not a count of allocated GPUs.
 
+## Live monitoring your job's GPU(s)
+
+It is possible to visually inspect your job's GPU usage live. To do this:
+
+1. Obtain the job id for your job of interest by typing `squeue --me` into the terminal.
+
+    ```bash
+    user.name@login03:$ squeue --me
+    JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
+    1234567       user.nam nesi99999 Example_GPU_   8     24G genoa   Apr 30 17:36    23:58:08 RUNNING  g09               
+    ```
+
+2. Jump onto the node your job is running by typing `jump_into <JobId>`, where you replace `<JobId>` with your Job of interest.
+
+    ```bash
+    user.name@login03:$ jump_into 1234567
+    Jumping to node: g09 (job 1234567)    
+    ```
+
+3. Type into the terminal `nvtop`. This will open an interface that will allow you to inspect how your job run on the GPU.
+
+    ![nvtop](../assets/images/GPU_nvtop.png){ width="800" }
+
+## Measuring GPU efficiency after a job has finished
+
+It is possible to measure your GPU's processing and memory efficiency in two ways:
+
+### Using `seff`
+
+Once your job has finished, it is possible to use `seff` to get a measure of the GPU utilisation and GPU memory efficiency. To use this feature, type into the terminal
+
+```bash
+seff <JobID>
+```
+
+Where `<JobID>` is the job ID for the job of interest. For example:
+
+```bash
+user.name@login03$ seff 1234567
+Cluster: hpc
+Job ID: 1234567
+State: TIMEOUT
+Cores: 4
+Tasks: 1
+Nodes: 1
+Job Wall-time:   100.4%  00:15:04 of 00:15:00 time limit
+CPU Utilisation:  98.5%  00:59:20 of 01:00:16 core-walltime
+Mem Utilisation:   1.2%  284.46 MB of 24.00 GB
+GPU Utilisation:  43  %
+GPU Memory:        2.2%  510.00 MB of 23 GB
+```
+
+### Using Slurm Native Profiling
+
+Before you begin your slurm job, include the following line somewhere at the start of your slurm submission file:
+
+```bash
+#SBATCH --profile task
+```
+
+Then allow your job to run. Once your job has finished, type in to the terminal
+
+```bash
+profile_plot <JobID>
+```
+
+Where `<JobID>` is the job ID for the job of interest. This will create a file called `<JobID>_profile.png`, which will look something like this:
+
+![5831962_profile.png](../assets/images/GPU_5831962_profile.png)
+
+See [Slurm Native Profiling](../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md) for more information on this feature. 
+
+## How to determine which GPU is best for your job
+
+The following flow diagram explains the steps you should take to test which GPU is right for your job.
+
+![GPU_What_GPU_is_right_for_your_job.png](../assets/images/GPU_What_GPU_is_right_for_your_job.png)
+
+When running a 15-minute test job, add the following settings in your slurm submission script:
+
+```sl
+#SBATCH --time=00:15:00
+#SBATCH --gpu-per-node=<gpu-type>:1
+#SBATCH --qos=debug
+#SBATCH --profile=task # Only for testing
+#SBATCH --acctg-freq=1 # Only for testing
+```
+
+To record the GPU utilisation and GPU memory, see [Measuring GPU efficiency after a job has finished](./Using_GPUs.md#measuring-gpu-efficiency-after-a-job-has-finished) for more information.
+
 ## Application and toolbox specific support pages
 
-The following pages provide additional information for supported
-applications:
-
-- [ABAQUS](../Software/Available_Applications/ABAQUS.md#examples)
-- [GROMACS](../Software/Available_Applications/GROMACS.md)
-- [Lambda Stack](../Software/Available_Applications/Lambda_Stack.md)
-- [Matlab](../Software/Available_Applications/MATLAB.md#using-gpus)
-- [TensorFlow on GPUs](../Software/Available_Applications/TensorFlow_on_GPUs.md)
-
-And programming toolkits:
+See the [Supported Applications](../Software/Available_Applications/index.md) for more information on what softwares have GPU support, as well as programming toolkits:
 
 - [NVIDIA GPU Containers](../Software/Containers/NVIDIA_GPU_Containers.md)
