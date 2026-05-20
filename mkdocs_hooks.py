@@ -5,7 +5,6 @@ As opposed to `macro_hooks.py` which injects variables into macro rendering (e.g
 If this is confusing, ask Cal to explain.
 """
 
-import proselint as pl
 import glob
 from pathlib import Path
 import json
@@ -21,6 +20,10 @@ def on_env(env, config, files, **kwargs):
 
 
 def lint(*args, **kwargs):
+    # Imported lazily: proselint pulls in google-re2 and a large rule set,
+    # and this function is not part of the mkdocs build path.
+    import proselint as pl
+
     output = {}
     print("running linter")
     for file in glob.iglob("docs/**/*.md", recursive=True):

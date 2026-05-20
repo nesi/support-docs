@@ -96,6 +96,7 @@ plugins:
   - search
   - open-in-new-tab
   - rss:
+      enabled: false
       categories:
       - tags
       - title
@@ -116,6 +117,7 @@ plugins:
       tags: false  # This will keep tags for the purpose of indexing, but not display on page.
   - git-revision-date-localized:
       enable_creation_date: false
+      enabled: !ENV [ENABLED_GIT_DATES, false]
   - macros:
       on_error_fail: true
       verbose: true 
