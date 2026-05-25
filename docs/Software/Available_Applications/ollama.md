@@ -68,6 +68,11 @@ module purge
 module load ollama/{{ app.default }}
 unset CUDA_VISIBLE_DEVICES  # Slurm sets this to 0; ollama manages the GPU itself
 
+# Will assign a random free port number to `PORT`
+PORT=$(python3 -c "import socket; s=socket.socket(); s.bind(('', 0)); print(s.getsockname()[1]); s.close()")
+
+export OLLAMA_HOST=${HOSTNAME}:${PORT}
+
 # pipe server output to `/dev/null` to avoid noise.
 ollama serve &>/dev/null & 
 
@@ -75,13 +80,6 @@ until ollama list &>/dev/null; do sleep 1; done
 
 echo "What is the capital of France" | ollama run llama3.1:8b
 ```
-
-!!! tip "Random Port"
-
-    ```
-    PORT=$(python3 -c "import socket; s=socket.socket(); s.bind(('', 0)); print(s.getsockname()[1]); s.close()")
-    ```
-    Will assign a random free port number to `PORT`
 
 !!! tip "Debugging"
     For verbose server logs, set `OLLAMA_DEBUG=1` before `ollama serve`.
