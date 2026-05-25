@@ -9,7 +9,7 @@ search:
 
 ## New and Improved
 - The default organisation for allocation requests is now automatically set to the project's organisation.
-- my.nesi.org.nz's User Interface (UI) package has been upgraded to Angular 21.
+- my.nesi.org.nz's User Interface (UI) package has been upgraded to Angular 21, improving security and ensuring continued platform support.
 - When NeSI integrated with REANNZ on 1 July 2025, responsibility for all aspects of NeSI service delivery, including HPC Platform policies, transferred to REANNZ. To better reflect that transition, we have made some minor administrative updates to our policy documents to:
     - Update the organisation name and contact details from NeSI to REANNZ
     - Change outdated hyperlinks (e.g. links to service pages, other policies, etc.)
