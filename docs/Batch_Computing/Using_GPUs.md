@@ -2,7 +2,7 @@
 created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
-- slurm
+- Slurm
 ---
 
 This page provides generic information about how to access GPUs through the Slurm scheduler.
@@ -12,7 +12,7 @@ This page provides generic information about how to access GPUs through the Slur
 You should consider using a GPU for your work if:
 
 * Your job has GPU support/functionality, and
-* You job is substantially large or will run for a long time without GPU support
+* Your job is substantially large or will run for a long time without GPU support
 * Or you are performing a task that needs a GPU (e.g. work with large language models, some machine learning methods such as neural networks)
 
 !!! warning
@@ -217,7 +217,7 @@ CUDA_VISIBLE_DEVICES=0
 
 ## Live monitoring your job's GPU(s)
 
-It is possible to visually inspect your job's GPU usage live. To do this:
+To dynamically inspect your running job's GPU usage:
 
 1. Obtain the job id for your job of interest by typing `squeue --me` into the terminal.
 
@@ -234,7 +234,7 @@ It is possible to visually inspect your job's GPU usage live. To do this:
     Jumping to node: g09 (job 1234567)    
     ```
 
-3. Type into the terminal `nvtop`. This will open an interface that will allow you to inspect how your job run on the GPU.
+3. Type into the terminal `nvtop`. This will open an interface that will enable you to inspect your job's GPU resource usage.
 
     ![nvtop](../assets/images/GPU_nvtop.png){ width="800" }
 
@@ -269,7 +269,7 @@ GPU Memory:        2.2%  510.00 MB of 23 GB
 
 ### Using Slurm Native Profiling
 
-Before you begin your slurm job, include the following line somewhere at the start of your slurm submission file:
+Before you begin your Slurm job, include the following line somewhere at the start of your Slurm submission file:
 
 ```bash
 #SBATCH --profile task
@@ -293,7 +293,7 @@ The following flow diagram explains the steps you should take to test which GPU 
 
 ![GPU_What_GPU_is_right_for_your_job.png](../assets/images/GPU_What_GPU_is_right_for_your_job.png)
 
-When running a 15-minute test job, add the following settings in your slurm submission script:
+When running a 15-minute test job, add the following settings in your Slurm submission script:
 
 ```sl
 #SBATCH --time=00:15:00
