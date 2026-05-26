@@ -3598,7 +3598,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.68,
+                        "hourly_average": 5.67,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3666,7 +3666,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 65709847.85,
+                        "hourly_average": 65493199.65,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -6641,7 +6641,7 @@
         "description": "",
         "domains": [
             "chemistry",
-            "mahuika"
+            "Density Functional Theory"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -7756,7 +7756,7 @@
         "domains": [
             "chemistry",
             "gpu",
-            "molecular dynamics"
+            "Molecular Dynamics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9728,7 +9728,7 @@
             "biology",
             "chemistry",
             "gpu",
-            "molecular dynamics"
+            "Molecular Dynamics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11589,8 +11589,7 @@
             "gpu",
             "mathematics",
             "visualisation",
-            "ml",
-            "matlab"
+            "Machine Learning"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -12940,8 +12939,7 @@
     "Molpro": {
         "description": "Molpro is a complete system of ab initio programs for molecular electronic structure calculations.",
         "domains": [
-            "chemistry",
-            "mahuika"
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14402,7 +14400,7 @@
         "domains": [
             "biology",
             "chemistry",
-            "mahuika"
+            "Density Functional Theory"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14819,7 +14817,7 @@
         "description": "ORCA is a flexible, efficient and easy-to-use general purpose tool for quantum chemistry\n with specific emphasis on spectroscopic properties of open-shell molecules.\n  It features a wide variety of standard quantum chemical methods ranging from semiempirical methods to DFT to single-\n and multireference correlated ab initio methods.\n It can also treat environmental and relativistic effects.",
         "domains": [
             "chemistry",
-            "mahuika"
+            "Density Functional Theory"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17045,7 +17043,7 @@
             "language",
             "machine_learning",
             "visualisation",
-            "ml"
+            "Machine Learning"
         ],
         "extensions": [
             "altair-6.1.0",
@@ -17184,7 +17182,7 @@
         "network_licences": [],
         "default": "3.14.4-foss-2026",
         "default_type": "latest",
-        "last_updated": 1778645364,
+        "last_updated": 1779673508,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/Python/3.14.4-foss-2026.lua",
         "force_hide": "False",
