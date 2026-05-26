@@ -3,10 +3,6 @@ created_at: 2026-03-18
 description: How to seek further help with the HPC platform
 ---
 
-## YouTube recordings
-
-Many of our workshops and Webinars are recorded and can be found on the [REANNZ YouTube channel](https://www.youtube.com/@reannz-community).
-
 ## Support request
 
 You are always welcome to {% include "partials/support_request.html" %}, with any question, big or small.
@@ -14,6 +10,10 @@ You are always welcome to {% include "partials/support_request.html" %}, with an
 ## Office Hours
 
 We offer weekly 'drop in' office hour session. See [Office Hours](./Weekly_Online_Office_Hours.md) for more information.
+
+## YouTube recordings
+
+Many of our workshops and Webinars are recorded and can be found on the [REANNZ YouTube channel](https://www.youtube.com/@reannz-community).
 
 ## Workshops
 
