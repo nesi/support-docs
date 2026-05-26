@@ -13,7 +13,7 @@ We offer weekly 'drop in' office hour session. See [Office Hours](./Weekly_Onlin
 
 ## YouTube recordings
 
-Many of our workshops and Webinars are recorded and can be found on the [REANNZ YouTube channel](https://www.youtube.com/@reannz-community).
+Many of our workshops and webinars are recorded and can be found on the [REANNZ YouTube channel](https://www.youtube.com/@reannz-community).
 
 ## Workshops
 
