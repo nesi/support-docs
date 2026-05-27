@@ -70,7 +70,7 @@ Then submit the following script to build the container:
 #SBATCH --cpus-per-task 2
 #SBATCH --account       nesi99991
 
-unset APPTAINER_BINDPATH
+unset APPTAINER_BIND
 
 export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
@@ -81,7 +81,7 @@ apptainer build my_container.sif my_container.def
 
 !!! warning
     NeSI systems bind `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error.
-    We recommend `unset APPTAINER_BINDPATH` before you build. Alternatively you can add `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
+    We recommend `unset APPTAINER_BIND` before you build. Alternatively you can add `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
 
     If you see the following error, it is likely caused by a bad upstream image on Docker Hub. Try an older version or a different base image:
 
