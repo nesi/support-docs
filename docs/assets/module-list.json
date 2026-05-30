@@ -3605,7 +3605,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.62,
+                        "hourly_average": 5.6,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3673,7 +3673,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 64851742.71,
+                        "hourly_average": 64640706.91,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -22124,26 +22124,25 @@
         "force_show": "False"
     },
     "USEARCH": {
-        "description": "USEARCH is a unique sequence analysis tool which offers search and clustering algorithms that are\n often orders of magnitude faster than BLAST.",
+        "description": "",
         "domains": [
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.drive5.com/usearch/index.html",
+        "homepage": "",
         "support": "",
         "versions": [
-            "11.0.667-i86linux32",
             "11.0.667-i86linux64",
-            "9.2.64-i86linux32"
+            "README"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "11.0.667-i86linux64",
+        "default": "README",
         "default_type": "latest",
-        "last_updated": 1779914646,
+        "last_updated": 1780027842,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/USEARCH/11.0.667-i86linux64.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/USEARCH/README",
         "force_hide": "False",
         "force_show": "False"
     },
