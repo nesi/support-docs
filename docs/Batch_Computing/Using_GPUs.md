@@ -231,7 +231,7 @@ To dynamically inspect your running job's GPU usage:
 
     ```bash
     user.name@login03:$ svisit 1234567
-    Jumping to node: g09 (job 1234567)    
+    user.name@g09:$ 
     ```
 
 3. Type into the terminal `nvtop`. This will open an interface that will enable you to inspect your job's GPU resource usage.
