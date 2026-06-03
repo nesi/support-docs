@@ -6,7 +6,8 @@
             "gpu",
             "mpi",
             "omp",
-            "fea"
+            "fea",
+            "openmp"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -628,7 +629,8 @@
             "engineering",
             "visualisation",
             "cfd",
-            "fea"
+            "fea",
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -3420,7 +3422,8 @@
             "cae",
             "multiphysics",
             "cfd",
-            "fea"
+            "fea",
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -11590,7 +11593,8 @@
             "mathematics",
             "visualisation",
             "ml",
-            "matlab"
+            "matlab",
+            "machine_learning"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -12598,7 +12602,8 @@
             "conda",
             "anaconda",
             "miniconda",
-            "mamba"
+            "mamba",
+            "software"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14595,7 +14600,8 @@
             "engineering",
             "cfd",
             "cae",
-            "fea"
+            "fea",
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17468,7 +17474,8 @@
             "machine_learning",
             "visualisation",
             "mahuika",
-            "R"
+            "R",
+            "r"
         ],
         "extensions": [
             "abind-1.4-5",
