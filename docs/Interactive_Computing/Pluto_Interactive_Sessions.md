@@ -1,10 +1,8 @@
 ---
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - Pluto
-  - Julia
-  - notebook
+  - julia
 description: How to run a Pluto interactive session on the Mahuika cluster.
 ---
 

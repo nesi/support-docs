@@ -1,10 +1,9 @@
 ---
 created_at: 2025-04-28
 description: List of features currently missing from Mahuika (HPC3).
-tags: 
-    - hpc3
-    - refresh
-    - mahuika
+tags:
+    - release_notes
+    - announcement
 ---
 
 Below is a list issues that we're actively working on. We hope to have these resolved soon. This is intended to be a temporary page.

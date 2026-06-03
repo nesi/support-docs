@@ -1,8 +1,7 @@
 ---
 created_at: '2020-11-02T03:07:06Z'
-tags: 
-    - climate
-    - modelling
+tags:
+    - earth_science
 description: Supported applications page on CESM
 hide:
     - toc

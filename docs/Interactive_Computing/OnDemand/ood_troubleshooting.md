@@ -2,8 +2,8 @@
 created_at: 2025-08-18
 description: How to fix common errors in OnDemand
 title: OnDemand Troubleshooting 
-tags: 
-    - ondemand
+tags:
+    - interactive
     - troubleshooting
 ---
 

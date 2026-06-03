@@ -1,8 +1,7 @@
 ---
 created_at: 2025-04-04
 description: "Our Freezer service allows you to store your data on tape for long term storage."
-tags: 
-  - Freezer
+tags:
   - storage
 ---
 

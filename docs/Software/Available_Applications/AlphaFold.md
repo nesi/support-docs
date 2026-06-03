@@ -1,6 +1,9 @@
 ---
 created_at: '2021-08-17T03:13:55Z'
-tags: []
+tags:
+- biology
+- machine_learning
+- gpu
 title: AlphaFold
 vote_count: 2
 vote_sum: 2

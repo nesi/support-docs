@@ -1,6 +1,8 @@
 ---
 created_at: '2019-06-14T05:35:45Z'
-tags: []
+tags:
+- machine_learning
+- python
 status: deprecated
 ---
 

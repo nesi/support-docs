@@ -1,11 +1,7 @@
 ---
 title: Apptainer - Containers on HPC
 tags:
-    - apptainer
-    - container
-    - docker
-    - portable
-    - reproducibility
+    - containers
 ---
 
 Apptainer simplifies the creation and execution of containers on compute clusters, ensuring software components are portable and reproducible.  Apptainer is an open-source fork of the Singularity project and shares much of the same functionality.  Apptainer is now the default on many HPCs worldwide.

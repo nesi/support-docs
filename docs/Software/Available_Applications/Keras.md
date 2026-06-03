@@ -1,6 +1,8 @@
 ---
 created_at: '2019-07-24T04:30:33Z'
-tags: []
+tags:
+- machine_learning
+- python
 title: Keras
 vote_count: 0
 vote_sum: 0

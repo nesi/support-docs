@@ -1,14 +1,10 @@
 ---
 created_at: '2019-02-05T03:58:21Z'
 tags:
-  - accounting
-  - Slurm
-  - Fairshare
-  - Fair Share
-  - Job priority
-  - Long queue time
-  - Queing
-  - long wait time
+  - account
+  - slurm
+  - fairshare
+  - troubleshooting
 description: How balancing your workload lets you make the most of your allocation.
 ---
 

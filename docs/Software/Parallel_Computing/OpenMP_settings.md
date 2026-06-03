@@ -1,6 +1,8 @@
 ---
 created_at: '2019-07-22T03:46:24Z'
-tags: []
+tags:
+- openmp
+- parallel
 ---
 
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application

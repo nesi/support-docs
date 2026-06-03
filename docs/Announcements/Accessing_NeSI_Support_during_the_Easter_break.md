@@ -2,8 +2,7 @@
 description: A page sharing the details of reduced support hours over Easter and ANZAC break
 created_at: '2024-03-20T01:58:22Z'
 tags:
-    - easter
-    - holidays
+    - announcement
 title: Accessing REANNZ HPC Support during the Easter and ANZAC holidays
 search:
   boost: 0.1

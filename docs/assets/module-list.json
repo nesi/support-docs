@@ -375,7 +375,8 @@
         "domains": [
             "biology",
             "chemistry",
-            "gpu"
+            "gpu",
+            "machine_learning"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6214,7 +6215,10 @@
     },
     "FlexiBLAS": {
         "description": "FlexiBLAS is a wrapper library that enables the exchange of the BLAS and LAPACK implementation\nused by a program without recompiling or relinking it.",
-        "domains": [],
+        "domains": [
+            "software",
+            "parallel"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release",
@@ -8834,7 +8838,8 @@
     "ipyrad": {
         "description": "ipyrad is an interactive toolkit for assembly and analysis of restriction-site associated genomic\n data sets (e.g., RAD, ddRAD, GBS) for population genetic and phylogenetic studies.",
         "domains": [
-            "biology"
+            "biology",
+            "python"
         ],
         "extensions": [
             "cython-3.2.4",
@@ -8999,7 +9004,8 @@
         "domains": [
             "language",
             "mahuika",
-            "general"
+            "general",
+            "software"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9215,7 +9221,8 @@
     "Julia": {
         "description": "A high-level, high-performance dynamic language for technical computing.\n\nThis version was compiled from source with USE_INTEL_JITEVENTS=1 to enable profiling with VTune.",
         "domains": [
-            "language"
+            "language",
+            "julia"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22593,7 +22600,9 @@
     },
     "VTune": {
         "description": "Intel VTune Amplifier XE is the premier performance profiler for C, C++, C#, Fortran,\n Assembly and Java.",
-        "domains": [],
+        "domains": [
+            "profiling"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://software.intel.com/en-us/vtune",

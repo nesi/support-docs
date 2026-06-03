@@ -1,11 +1,9 @@
 ---
 created_at: 2025-10-01
 description: "Freezer s3cmd configuration"
-tags: 
-  - Freezer
+tags:
   - storage
-  - config
-  - s3cmd
+  - file_transfer
 ---
 
 To use Freezer and to configure `s3cmd`, you will need a current Freezer allocation. To apply for an allocation please go to [MyNeSI](https://my.nesi.org.nz/).

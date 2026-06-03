@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-07T20:31:36Z'
 tags:
-- help
+- troubleshooting
 ---
 
 ## REANNZ system status related notifications

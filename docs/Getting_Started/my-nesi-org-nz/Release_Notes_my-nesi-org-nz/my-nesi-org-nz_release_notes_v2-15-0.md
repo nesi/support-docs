@@ -1,7 +1,7 @@
 ---
 created_at: '2023-04-19T05:05:05Z'
 tags:
-- releasenote
+- release_notes
 title: my.nesi.org.nz release notes v2.15.0
 vote_count: 0
 vote_sum: 0

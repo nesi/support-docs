@@ -3,7 +3,6 @@ created_at: '2022-06-13T04:54:38Z'
 description:  This page below outlines the available hardware.
 tags:
  - gpu
- - compute
 ---
 
 A list of the currently available hardware.

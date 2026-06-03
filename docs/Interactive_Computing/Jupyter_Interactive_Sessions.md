@@ -1,10 +1,7 @@
 ---
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - JupyterLab
-  - notebook
-  - ipython
   - python
 description: How to run an JupyterLab interactive session on the Mahuika cluster.
 ---

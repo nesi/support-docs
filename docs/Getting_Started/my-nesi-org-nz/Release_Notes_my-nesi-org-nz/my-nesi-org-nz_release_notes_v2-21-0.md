@@ -1,7 +1,7 @@
 ---
 created_at: '2024-03-20T19:53:24Z'
 tags:
-- releasenote
+- release_notes
 title: my.nesi.org.nz release notes v2.21.0
 vote_count: 0
 vote_sum: 0

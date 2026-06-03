@@ -1,8 +1,8 @@
 ---
 created_at: 2026-05-04
 description: How to run ollama on the REANNZ GPUs
-tags: 
-    - llm
+tags:
+    - machine_learning
 ---
 
 

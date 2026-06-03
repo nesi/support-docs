@@ -1,6 +1,8 @@
 ---
 created_at: '2025-01-24T13:20:00Z'
-tags: []
+tags:
+- containers
+- gpu
 title: Run an executable under Apptainer on GPU
 ---
 

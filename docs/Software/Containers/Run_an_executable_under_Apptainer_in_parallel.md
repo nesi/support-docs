@@ -1,6 +1,8 @@
 ---
 created_at: '2024-01-15T13:20:00Z'
-tags: []
+tags:
+- containers
+- parallel
 title: Run an executable under Apptainer in parallel
 ---
 

@@ -1,10 +1,10 @@
 ---
 created_at: 2025-01-24
 description: How to set up your own custom kernels for use on Mahuika JupyterHub
-tags: 
-    - JupyterHub
-    - Python
-    - R
+tags:
+    - interactive
+    - python
+    - r
 ---
 
 # Jupyter kernels - Manual management

@@ -1,11 +1,7 @@
 ---
 created_at: '2020-06-26T06:09:34Z'
 tags:
- - hydrodynamics
- - morphodynamics
- - particle modelling
- - water quality testing
- - wave modelling
+ - earth_science
 ---
 
 {% set app_name = page.title | trim %}

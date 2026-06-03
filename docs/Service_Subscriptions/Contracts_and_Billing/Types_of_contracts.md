@@ -1,6 +1,7 @@
 ---
 created_at: '2023-07-05T23:23:28Z'
-tags: []
+tags:
+- account
 title: Types of contracts
 vote_count: 0
 vote_sum: 0

@@ -2,7 +2,6 @@
 created_at: '2019-01-07T01:10:28Z'
 tags:
 - slurm
-- scheduler
 - tutorial
 description: Tutorial on how to submit your first Slurm job
 status: tutorial
