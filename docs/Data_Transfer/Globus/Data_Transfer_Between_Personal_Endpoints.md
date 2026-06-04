@@ -10,7 +10,7 @@ It is possible to copy files between two computers/servers using Globus. This ex
 
 ## Signing into your **Free** Globus Subscription
 
-First you need to sign up with a Globus Subscription. **This is free** for Mahuika users. [Click here to learn about how to sign up for a free Globus Subscription](./Signing_Up_To_Globus_Subscription.md).
+First you need to sign up with a Globus Subscription. **This is free** for Mahuika users, but not required for trasferring data to or from Mahuika. [Click here to learn about how to sign up for a free Globus Subscription](./Signing_Up_To_Globus_Subscription.md).
 
 ## Transferring files between two computers
 
