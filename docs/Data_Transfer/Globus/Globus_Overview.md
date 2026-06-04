@@ -42,8 +42,9 @@ Globus allows users to transfer large amounts of data between systems. Some adva
 ## Glossary
 
 * Endpoints: Globus refers to computers, servers, and high capacity storage systems as endpoints.
+* Collection: A Globus collection represents a location containing data plus the policies and permissions for accessing that data.
 
 ## Quick Information
 
-* Name of Mahuika endpoint: `NeSI HPC Storage` (_Note: This name was chosen for the endpoint prior NeSI's integration with REANNZ in 2025._)
+* Name of collection on Mahuika endpoint: `NeSI HPC Storage` (_Note: This name was chosen for the endpoint prior NeSI's integration with REANNZ in 2025._)
 * Name of NeSI Subscription: `New Zealand eScience Infrastructure Standard`

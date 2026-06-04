@@ -5,7 +5,7 @@ tags:
 title: Bookmarks
 ---
 
-Borkmarks are a convenient way to quicky open a `Path` of an `Endpoint` very quickly.
+Borkmarks are a convenient way to quicky open a `Path` of an `Collection` very quickly.
 
 ## Create a bookmark
 
