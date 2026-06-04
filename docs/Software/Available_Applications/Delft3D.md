@@ -23,7 +23,8 @@ tags:
 ## Available Modules
 
 {% include "partials/app/app_version.html" -%}
-{% set app = applications["Delft3D"] %}
+{% set app_name = "Delft3D" %}
+{% set app = applications[app_name] %}
 {% include "partials/app/app_version.html" -%}
 
 
