@@ -1,5 +1,6 @@
 ---
 created_at: '2020-06-26T06:09:34Z'
+description: How to run Delft3D hydrodynamic and morphodynamic modelling on NeSI.
 tags:
  - hydrodynamics
  - morphodynamics
@@ -8,9 +9,24 @@ tags:
  - wave modelling
 ---
 
-{% set app_name = page.title | trim %}
+{% set app_name = "Delft3D_FM" %}
 {% set app = applications[app_name] %}
-{% include "partials/app_header.html" %}
+
+{{ app.description }}
+{% include "partials/app/app_homepage.html" -%}
+{% include "partials/app/app_warnings.html" -%}
+
+!!! note "Module names"
+    `Delft3D_FM` contains solvers for both structured and unstructured meshes.
+    `Delft3D` contains only the structured mesh solvers and is kept for backwards compatibility.
+
+## Available Modules
+
+{% include "partials/app/app_version.html" -%}
+{% set app_name = "Delft3D" %}
+{% set app = applications[app_name] %}
+{% include "partials/app/app_version.html" -%}
+
 
 ## Example scripts
 
@@ -23,8 +39,10 @@ tags:
     #!/bin/bash -e
 
     #SBATCH --job-name      Delft3D
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --mem           512M           # Total Memory
+
     module load Delft3D/{{app.default}}
 
     d_hydro test_input.xml
@@ -33,27 +51,29 @@ tags:
 === "Shared Memory"
 
     For domain based decompositions. Use `--cpus-per-task` to allocate resources.
-    Each subdomain runs in a separate thread, inside one executable. Limited to one node.
+    Each subdomain runs in a separate thread inside one executable. Limited to one node.
 
     ```sl
     #!/bin/bash -e
-    
+
     #SBATCH --job-name      Delft3D
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00       # Walltime
     #SBATCH --cpus-per-task 4
     #SBATCH --mem           2G             # Total Memory
-    
+
     module load Delft3D/{{app.default}}
-    
+
     srun d_hydro test_input.xml
     ```
 
 === "Distributed Memory"
 
-    Domain is split automatically in stripwise partitions.
-    Can run across multiple nodes. Use `--ntasks` to allocate resources.
+    Domain is split automatically into stripwise partitions and can run across multiple nodes.
+    Use `--ntasks` to allocate resources.
 
     Cannot be used in conjunction with:
+
     - DomainDecomposition
     - Fluid mud
     - Coup online
@@ -71,13 +91,15 @@ tags:
     ```sl
     #!/bin/bash -e
 
-    #SBATCH --job-name      Delft3D_distributed
+    #SBATCH --job-name      Delft3D
+    #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00       # Walltime
-    #SBATCH --mem-per-cpu   1G             
+    #SBATCH --mem-per-cpu   1G
 
     module load Delft3D/{{app.default}}
+
     srun d_hydro test_input.xml
     ```
 
-!!! warning
-    Trying to use more tasks than there are partitions in your model will cause failure.
+    !!! warning
+        Trying to use more tasks than there are partitions in your model will cause failure.
