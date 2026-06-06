@@ -694,7 +694,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 1.0,
+                "server_uptime": 0.99,
                 "server_version": "",
                 "features": [
                     {
@@ -3612,7 +3612,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.51,
+                        "hourly_average": 5.5,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3680,7 +3680,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 63402782.69,
+                        "hourly_average": 63201057.07,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -8360,15 +8360,16 @@
         "homepage": "https://huttenhower.sph.harvard.edu/humann",
         "support": "",
         "versions": [
-            "3.0.0.alpha.3"
+            "3.0.0.alpha.3",
+            "4.0.0.alpha.1-final"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.0.0.alpha.3",
+        "default": "4.0.0.alpha.1-final",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1780631623,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Humann/3.0.0.alpha.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Humann/4.0.0.alpha.1-final.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16372,6 +16373,26 @@
         "last_updated": 1740132639,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/pixman/0.42.2-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "PlasMAAG": {
+        "description": "PlasMAAG is a tool to recover plasmids and organisms from metagenomic samples.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/RasmussenLab/PlasMAAG",
+        "support": "",
+        "versions": [
+            "1.0.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.0.1",
+        "default_type": "latest",
+        "last_updated": 1780632302,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/PlasMAAG/1.0.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
