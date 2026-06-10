@@ -64,7 +64,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.54,
+                        "hourly_average": 0.55,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -2133,6 +2133,7 @@
         "versions": [
             "3.01-GCC-11.3.0-Perl-5.34.1",
             "3.01-GCC-12.3.0-Perl-5.40.3",
+            "3.01-GCC-15.2.0-Perl-5.42.1",
             "3.01-GCC-9.2.0-Perl-5.30.1-mt"
         ],
         "admin_list": [],
@@ -3612,7 +3613,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.45,
+                        "hourly_average": 5.44,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3673,14 +3674,14 @@
                 "server": "COMSOL@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.99,
+                "server_uptime": 1.0,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 62603509.24,
+                        "hourly_average": 62406829.7,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4425,15 +4426,16 @@
         "homepage": "https://metacpan.org/pod/distribution/DBD-mysql/lib/DBD/mysql.pm",
         "support": "",
         "versions": [
-            "4.050-GCC-12.3.0"
+            "4.050-GCC-12.3.0",
+            "4.055-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.050-GCC-12.3.0",
+        "default": "4.055-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1775791046,
+        "last_updated": 1780996807,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DBD-mysql/4.050-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DBD-mysql/4.055-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8336,6 +8338,7 @@
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
             "1.22-GCC-12.3.0",
+            "1.22.2-GCC-15.2.0",
             "1.23.1-GCC-12.3.0",
             "1.8-gimkl-2018b",
             "1.9-GCC-7.4.0"
@@ -9537,6 +9540,26 @@
         "last_updated": 1778726136,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/KEALib/1.6.2-gompi-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Kent-core": {
+        "description": "Jim Kent's jkweb.a library and headers from the UCSC Genome Browser\nsource tree (kent-core, MIT-licensed minimal subset). Provides the jkweb.a static\nlibrary and inc/ headers required to build Perl Bio::BigFile and related tools.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/ucscGenomeBrowser/kent-core",
+        "support": "",
+        "versions": [
+            "492-GCC-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "492-GCC-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1780993238,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Kent-core/492-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -15575,6 +15598,7 @@
             "B::COW-0.007",
             "B::Hooks::EndOfScope-0.28",
             "B::Lint-1.20",
+            "Bio::BigFile-1.07",
             "Bio::Phylo-v2.0.2",
             "Bio::Procedural-1.7.4",
             "Bio::Seq-1.7.8",
@@ -16041,7 +16065,7 @@
         "network_licences": [],
         "default": "5.42.1-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1779756873,
+        "last_updated": 1780993456,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/Perl/5.42.1-GCC-15.2.0.lua",
         "force_hide": "False",
@@ -22488,15 +22512,16 @@
             "104.3-GCC-9.2.0-Perl-5.30.1",
             "107.0-GCC-11.3.0-Perl-5.34.1",
             "113.3-GCC-11.3.0-Perl-5.34.1",
-            "115.2-GCC-12.3.0-Perl-5.40.3"
+            "115.2-GCC-12.3.0-Perl-5.40.3",
+            "115.2-GCC-15.2.0-Perl-5.42.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "115.2-GCC-12.3.0-Perl-5.40.3",
+        "default": "115.2-GCC-15.2.0-Perl-5.42.1",
         "default_type": "latest",
-        "last_updated": 1776041429,
+        "last_updated": 1781029393,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/VEP/115.2-GCC-12.3.0-Perl-5.40.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/VEP/115.2-GCC-15.2.0-Perl-5.42.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
