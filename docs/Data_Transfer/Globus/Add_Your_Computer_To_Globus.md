@@ -9,8 +9,7 @@ To download and upload files between the Mahuika supercomputer and your personal
 you will need to install [Globus Connect Personal](https://www.globus.org/globus-connect-personal)
 onto your computer.
 
-1. To install Globus on your computer, **only follow the ``Installation`` instructions** here (**you do not need to following the ``Configuration`` instructions
-**):
+1. To install Globus on your computer, **only follow the ``Installation`` instructions** here (**you do not need to following the ``Configuration`` instructions**):
     * Windows: [docs.globus.org/globus-connect-personal/install/windows](https://docs.globus.org/globus-connect-personal/install/windows/#installation)
     * Mac: [docs.globus.org/globus-connect-personal/install/mac](https://docs.globus.org/globus-connect-personal/install/mac/#installation)
     * Linux: [docs.globus.org/globus-connect-personal/install/linux](https://docs.globus.org/globus-connect-personal/install/linux/)
