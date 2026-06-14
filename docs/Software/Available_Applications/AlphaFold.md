@@ -292,7 +292,7 @@ and are for non-commercial use only.
 ## AlphaFold module ( &gt;= 2.3.2)
 
 As of version 2.3.2 of AlphaFold, we recommend deploying AlphaFold via
-the module (previous versions were done via a Singularity container )
+the module.
 
 ### Example Slurm script for monomer
 
