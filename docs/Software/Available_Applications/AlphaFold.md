@@ -21,18 +21,80 @@ zendesk_section_id: 360000040076
      outputs, etc [can be found
      here](https://nesi.github.io/alphafold2-on-mahuika/)
 
+## Description
+
+AlphaFold is a deep-learning system, developed by Google DeepMind, that
+predicts a protein's three-dimensional structure from its amino acid
+sequence. It combines evolutionary information from a multiple sequence
+alignment (MSA) of related proteins with structural templates, and
+returns per-residue confidence estimates (pLDDT) alongside the predicted
+coordinates. AlphaFold 2 achieved breakthrough accuracy in the CASP14
+assessment (2020), in many cases approaching experimental quality; the
+later [AlphaFold 3](#alphafold-3) extends prediction beyond single
+proteins to complexes that also contain nucleic acids, ligands and ions.
+
+This package provides an implementation of the inference pipeline of
+AlphaFold.
+
+### Referencing
+
+Any publication that discloses findings arising from using this source
+code or the model parameters
+should [cite](https://github.com/deepmind/alphafold#citing-this-work) the
+[AlphaFold paper](https://doi.org/10.1038/s41586-021-03819-2).
+Please also refer to the [Supplementary
+Information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) for
+a detailed description of the method.
+
+Home page is at <https://github.com/deepmind/alphafold>
+
+
+
+## AlphaFold Databases
+
+AlphaFold databases are stored in `/opt/nesi/db/alphafold_db/`  parent
+directory. In order to make the database calling more convenient, we
+have prepared modules for each version of the database. Running
+`module spider AlphaFold2DB` will list the available versions based on
+when they were downloaded (Year-Month)
+
+``` sh
+$ module spider AlphaFold2DB
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+AlphaFold2DB: AlphaFold2DB/2022-06
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Description:
+AlphaFold2 databases
+
+ Versions:
+         AlphaFold2DB/2022-06
+         AlphaFold2DB/2023-04
+```
+
+Loading a module will set the `$AF2DB` variable which is pointing to
+the  selected version of the database. For an example. 
+
+``` sh
+$ module load AlphaFold2DB/2023-04
+
+$ echo $AF2DB 
+/opt/nesi/db/alphafold_db/2023-04
+```
+
+
 ## AlphaFold 3
 
-AlphaFold 3 is a substantial departure from AlphaFold 2: it predicts the
-joint structure of complexes that can include proteins, nucleic acids
-(DNA/RNA), ligands, ions and modified residues. It takes its input as a
-**JSON file**, and the workflow is split into a CPU-bound *data pipeline*
-(genetic and template search) and a GPU-bound *inference* stage.
+AlphaFold 3 can predict the joint structure of complexes that can
+include proteins, nucleic acids (DNA/RNA), ligands, ions and modified
+residues. It takes its input as a **JSON file**, and the workflow is
+split into a CPU-bound *data pipeline* (genetic and template search) and
+a GPU-bound *inference* stage.
 
 Home page is at <https://github.com/google-deepmind/alphafold3>.
 
 !!! warning "You must request the model parameters from Google DeepMind"
-    Unlike the AlphaFold 2 weights, the AlphaFold 3 model parameters are
+    The AlphaFold 3 model parameters are
     **not** redistributed by Mahuika. To obtain them you must agree to the
     [AlphaFold 3 Model Parameters Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md)
     and [request access from Google DeepMind](https://github.com/google-deepmind/alphafold3#obtaining-model-parameters)
@@ -49,7 +111,6 @@ The application and its databases are available as modules:
 module spider AlphaFold
 
  Versions:
-        AlphaFold/2.3.2
         AlphaFold/3.0.0
         AlphaFold/3.0.1
         AlphaFold/3.0.2
@@ -60,10 +121,10 @@ module spider AlphaFold3DB
         AlphaFold3DB/2024-12
 ```
 
-As with the AlphaFold 2 databases, loading the `AlphaFold3DB` module sets
-an environment variable (`$AF3DB`) that points at the selected database
-version, so you can pass it (and the individual files within it) to the
-`--db_dir` and `--*_database_path` options:
+Loading the `AlphaFold3DB` module sets an environment variable
+(`$AF3DB`) that points at the selected database version, so you can pass
+it (and the individual files within it) to the `--db_dir` and
+`--*_database_path` options:
 
 ``` sh
 module load AlphaFold3DB/2024-12
@@ -81,12 +142,11 @@ echo $HMMER_DIR
 
 ### Input JSON
 
-AlphaFold 3 reads a JSON description of the structure to fold. Unlike
-AlphaFold 2, there is **no** `--model_preset` for
-choosing between monomer and multimer — a single model handles both, and
-whether you fold a monomer or a complex is decided entirely by what you
-list under `sequences` in the JSON. The `run_alphafold.py` command is
-identical in either case.
+AlphaFold 3 reads a JSON description of the structure to fold. A single
+model handles both monomers and multimers — there is no model-preset
+option to set — and whether you fold a monomer or a complex is decided
+entirely by what you list under `sequences` in the JSON. The
+`run_alphafold.py` command is identical in either case.
 
 **Monomer** — a single `protein` block with one chain `id`
 (`fold_input.json`):
@@ -144,9 +204,9 @@ for the full schema.
 
 ### Example Slurm script
 
-Unlike AlphaFold 2, the Mahuika build of AlphaFold 3 does not infer the
-database files or search-tool binaries automatically: you pass the
-genetic databases via the `--*_database_path` options (all found under
+On Mahuika, AlphaFold 3 does not infer the database files or search-tool
+binaries automatically: you pass the genetic databases via the
+`--*_database_path` options (all found under
 `$AF3DB`), the HMMER binaries via the `--*_binary_path` options (under
 `$HMMER_DIR`), and your own copy of the model parameters via
 `--model_dir`. The following runs both the data pipeline and inference in
@@ -228,84 +288,11 @@ The model parameters and any output generated using them are subject to
 the [AlphaFold 3 Model Parameters Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md)
 and are for non-commercial use only.
 
-## Description
-
-This package provides an implementation of the inference pipeline of
-AlphaFold v2.0. This is a completely new model that was entered in
-CASP14 and published in Nature. For simplicity, we refer to this model
-as AlphaFold throughout the rest of this document.
-
-Any publication that discloses findings arising from using this source
-code or the model parameters
-should [cite](https://github.com/deepmind/alphafold#citing-this-work) the
-[AlphaFold paper](https://doi.org/10.1038/s41586-021-03819-2).
-Please also refer to the [Supplementary
-Information](https://static-content.springer.com/esm/art%3A10.1038%2Fs41586-021-03819-2/MediaObjects/41586_2021_3819_MOESM1_ESM.pdf) for
-a detailed description of the method.
-
-Home page is at <https://github.com/deepmind/alphafold>
-
-## License and Disclaimer
-
-This is not an officially supported Google product.
-
-Copyright 2021 DeepMind Technologies Limited.
-
-### [](https://github.com/deepmind/alphafold#alphafold-code-license)AlphaFold Code License
-
-Licensed under the Apache License, Version 2.0 (the "License"); you may
-not use this file except in compliance with the License. You may obtain
-a copy of the License at <https://www.apache.org/licenses/LICENSE-2.0>.
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
-
-### [](https://github.com/deepmind/alphafold#model-parameters-license)Model Parameters License
-
-The AlphaFold parameters are made available for non-commercial use only,
-under the terms of the Creative Commons Attribution-NonCommercial 4.0
-International (CC BY-NC 4.0) license. You can find details
-at: <https://creativecommons.org/licenses/by-nc/4.0/legalcode>
-
-## AlphaFold Databases
-
-AlphaFold databases are stored in `/opt/nesi/db/alphafold_db/`  parent
-directory. In order to make the database calling more convenient, we
-have prepared modules for each version of the database. Running
-`module spider AlphaFold2DB` will list the available versions based on
-when they were downloaded (Year-Month)
-
-``` sh
-$ module spider AlphaFold2DB
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-AlphaFold2DB: AlphaFold2DB/2022-06
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-Description:
-AlphaFold2 databases
-
- Versions:
-         AlphaFold2DB/2022-06
-         AlphaFold2DB/2023-04
-```
-
-Loading a module will set the `$AF2DB` variable which is pointing to
-the  selected version of the database. For an example. 
-
-``` sh
-$ module load AlphaFold2DB/2023-04
-
-$ echo $AF2DB 
-/opt/nesi/db/alphafold_db/2023-04
-```
 
 ## AlphaFold module ( &gt;= 2.3.2)
 
 As of version 2.3.2 of AlphaFold, we recommend deploying AlphaFold via
-the module (previous versoions were done via a Singularity container )
+the module (previous versions were done via a Singularity container )
 
 ### Example Slurm script for monomer
 
@@ -517,3 +504,28 @@ For Singularity based runs
 export SINGULARITYENV_TF_FORCE_UNIFIED_MEMORY=1 
 export SINGULARITYENV_XLA_PYTHON_CLIENT_MEM_FRACTION=4.0
 ```
+
+## License and Disclaimer
+
+This is not an officially supported Google product.
+
+Copyright 2021 DeepMind Technologies Limited.
+
+### [](https://github.com/deepmind/alphafold#alphafold-code-license)AlphaFold Code License
+
+Licensed under the Apache License, Version 2.0 (the "License"); you may
+not use this file except in compliance with the License. You may obtain
+a copy of the License at <https://www.apache.org/licenses/LICENSE-2.0>.
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+
+### [](https://github.com/deepmind/alphafold#model-parameters-license)Model Parameters License
+
+The AlphaFold parameters are made available for non-commercial use only,
+under the terms of the Creative Commons Attribution-NonCommercial 4.0
+International (CC BY-NC 4.0) license. You can find details
+at: <https://creativecommons.org/licenses/by-nc/4.0/legalcode>
