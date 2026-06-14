@@ -26,9 +26,8 @@ zendesk_section_id: 360000040076
 AlphaFold 3 is a substantial departure from AlphaFold 2: it predicts the
 joint structure of complexes that can include proteins, nucleic acids
 (DNA/RNA), ligands, ions and modified residues. It takes its input as a
-**JSON file** (not a FASTA file), and the workflow is split into a
-CPU-bound *data pipeline* (genetic and template search) and a GPU-bound
-*inference* stage.
+**JSON file**, and the workflow is split into a CPU-bound *data pipeline*
+(genetic and template search) and a GPU-bound *inference* stage.
 
 Home page is at <https://github.com/google-deepmind/alphafold3>.
 
@@ -82,8 +81,8 @@ echo $HMMER_DIR
 
 ### Input JSON
 
-AlphaFold 3 reads a JSON description of the structure to fold rather than
-a FASTA file. Unlike AlphaFold 2, there is **no** `--model_preset` for
+AlphaFold 3 reads a JSON description of the structure to fold. Unlike
+AlphaFold 2, there is **no** `--model_preset` for
 choosing between monomer and multimer — a single model handles both, and
 whether you fold a monomer or a complex is decided entirely by what you
 list under `sequences` in the JSON. The `run_alphafold.py` command is
