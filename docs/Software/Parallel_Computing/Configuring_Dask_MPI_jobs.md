@@ -78,8 +78,8 @@ dependencies:
 !!! info "See also"
      See the
      [Miniforge3](../Available_Applications/Miniforge3.md)
-     page for more information on how to create and manage Miniconda
-     environments on NeSI.
+     page for more information on how to create and manage Miniforge
+     environments on Mahuika.
 
 ## Configuring Slurm
 
@@ -96,10 +96,10 @@ then assigns different roles to the different ranks:
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
 ranks!** Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-[Hyperthreading](Hyperthreading.md)
+[Simultaneous Multithreading (SMP)](Simultaneous_Multithreading.md)
 to place these two ranks onto a single physical core. Ensure that
-activating hyperthreading does not slow down the worker ranks by running
-a short test workload with and without hyperthreading.
+activating SMP does not slow down the worker ranks by running
+a short test workload with and without SMP.
 
 In the following, two cases will be discussed:
 
@@ -260,7 +260,7 @@ where the `%runscript` section ensures that the Python script passed to
 Conda environment inside the container.
 
 !!! note Tips
-     You can build this container on NeSI,following the instructions from the [dedicated supportpage](../Available_Applications/Apptainer.md)
+     You can build this container on Mahuika, following the instructions from the [dedicated support page](../Available_Applications/Apptainer.md)
 
 ### Slurm configuration
 

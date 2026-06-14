@@ -18,11 +18,8 @@ known, and a firewall exception made for our IP addresses (see below).
 
 REANNZ's public-facing IP addresses are:
 
-``` sl
-202.36.29.252
-202.36.29.253
-103.229.249.252
-103.229.249.253
+```txt
+163.7.147.128/26
 ```
 
 ### Institutional Licences

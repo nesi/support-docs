@@ -8,7 +8,7 @@ description: Quick list of the most commonly used Slurm commands, flags, and env
 ---
 
 If you are unsure about using our job scheduler Slurm, more details can
-be found on [Submitting_your_first_job](../../Batch_Computing/Submitting_your_first_job.md).
+be found on [Batch Computing Guide](../../Batch_Computing/Batch_Computing_Guide.md) and we have a self-paced tutorial on [Submitting your first job](../../Tutorials/Introduction_To_HPC/Submitting_Your_First_Job.md).
 
 ## Slurm Commands
 
@@ -60,8 +60,8 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--nodes`           | ``#SBATCH --nodes=2``            | Will request tasks be run across 2 nodes.                                                                               |
 | `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2 [MPI](../../Software/Parallel_Computing/Parallel_Computing.md) tasks.                                           |
 | `--ntasks-per-node` | `#SBATCH --ntasks-per-node=1` | Will start 1 task per requested node.                                                                                   |
-| `--cpus-per-task`   | `#SBATCH --cpus-per-task=10`  | Will request 10 [*logical* CPUs](../../Software/Parallel_Computing/Hyperthreading.md) per task. |
-| `--mem-per-cpu`     | `#SBATCH --mem-per-cpu=512MB` | Memory Per *logical* CPU. `--mem`  Should be used if shared memory job. See [How do I request memory?](../FAQs/How_do_I_request_memory.md) |
+| `--cpus-per-task`   | `#SBATCH --cpus-per-task=10`  | Will request 10 [*logical* CPUs](../../Software/Parallel_Computing/Simultaneous_Multithreading.md) per task. |
+| `--mem-per-cpu`     | `#SBATCH --mem-per-cpu=512MB` | Memory Per *logical* CPU. `--mem`  Should be used if shared memory job. See [How do I request memory?](../FAQs/How_do_I_request_memory.md) |
 | --array | `#SBATCH --array=1-5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (1,2,3,4,5). |
 | | `#SBATCH --array=0-20:5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (0,5,10,15,20). |
 | | `#SBATCH --array=1-100%10` | Will submit 1 though to 100 jobs but no more than 10 at once. |
@@ -73,7 +73,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--qos` | `#SBATCH --qos=debug` | Adding this line gives your job a high priority. *Limited to one job at a time, max 15 minutes*. |
 | `--profile` | `#SBATCH --profile=ALL` | Allows generation of a .h5 file containing job profile information. See [Slurm Native Profiling](../../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md) |
 | `--dependency` | `#SBATCH --dependency=afterok:123456789` | Will only start after the job 123456789 has completed. |
-| `--hint` | `#SBATCH --hint=nomultithread` | Disables [hyperthreading](../../Software/Parallel_Computing/Hyperthreading.md), be aware that this will significantly change how your job is defined. |
+| `--hint` | `#SBATCH --hint=multithread` | Enables [simultaneous multithreading (SMP)](../../Software/Parallel_Computing/Simultaneous_Multithreading.md), be aware that this will significantly change how your job is defined. |
 
 !!! tip
      Many options have a short (`-`) and long (`--`) form e.g.  

@@ -16,7 +16,8 @@ Depending on the needs of your batch jobs, you may need to specify the partition
 
 ## Slurm job basics
 
-Please see [Submitting your first job](Submitting_your_first_job.md) for a detailed tutorial with instructions and examples.
+Please see [Submitting your first job](Tutorial:_Submitting_your_first_job.md) for a detailed tutorial with instructions and examples.
+We also have a [Slurm reference sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md).
 
 ### Batch scripts
 
@@ -32,8 +33,7 @@ The following is a template batch script with both the minimum requirements and 
 #SBATCH --time          00:01:00        # Walltime (HH:MM:SS)
 #SBATCH --mem           512MB           # Memory in MB
 #SBATCH --cpus-per-task 1               # CPUs
-#SBATCH --output        log/%x.%j.out   # saves the output as <job-id>.<job-name>.out
-#SBATCH --error         log/%x.%j.err   # saves the error output as <job-id>.<job-name>.err
+#SBATCH --output        log/%x.%j.out   # saves the output (and error) as <job-id>.<job-name>.out
 
 # print the contents of the batch script at the top of the output file for reference
 cat $0
@@ -122,10 +122,10 @@ You can find more details on its use on the [Slurm Documentation](https://slurm.
 
 ### Checking job efficiency
 
-After a job has completed you can get the basic usage information using `nn_seff <job-id>`.
+After a job has completed you can get the basic usage information using `seff <job-id>`.
 This will return an output as below:
 
-``` bash
+``` out
 Cluster: hpc
 Job ID: 1234567
 State: FAILED
@@ -140,7 +140,9 @@ Mem Utilisation:   0.0%  0.00 MB of 260.00 GB
 The CPU utilisation represents the average utilisation over the course of the job.
 The Mem utilisation represents the maximum memory utilisation over the course of the job.
 
-To get a better sense of how your job uses the resources allocated, you can use [Slurm Native Profiling](../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md). Add the following to your batch script before running:
+To get a better sense of how your job uses the resources allocated,
+you can use [Slurm Native Profiling](../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md).
+Add the following to your batch script before running:
 
 ``` sl
 #SBATCH --profile           task

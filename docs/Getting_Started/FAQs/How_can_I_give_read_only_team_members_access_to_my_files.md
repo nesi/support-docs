@@ -6,7 +6,7 @@ description: Instructions for giving read-only team members access to files
 
 !!! tip "See also"
      [File permissions and
-     groups](../../Storage/File_Systems_and_Quotas/File_permissions_and_groups.md)
+     groups](../../Storage/File_permissions_and_groups.md)
 
 Not all projects have read-only groups created by default. If your
 project has a read-only group created after the project itself was
@@ -21,7 +21,7 @@ read-only project code respectively.
 
 !!! warning
      If this process is interrupted part-way through, for example due to
-     your computer going to sleep and losing its connection to your NeSI
+     your computer going to sleep and losing its connection to your remote
      terminal session, your files can end up in a bad way. For this reason
      please **run all the following commands in a `screen` or `tmux`
      session.**

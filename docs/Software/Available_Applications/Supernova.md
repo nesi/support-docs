@@ -47,7 +47,7 @@ Download latest release from 10xGenomics.
 ## License
 
 The developer grants a Limited License to all users. If you intend to
-use Supernova on NeSI operated infrastructure please read the developers
+use Supernova on REANNZ operated infrastructure please read the developers
 own licensing agreement.
 
 <https://support.10xgenomics.com/de-novo-assembly/software/downloads/latest>
@@ -63,7 +63,6 @@ own licensing agreement.
 #SBATCH --mem=460G
 #SBATCH --cpus-per-task=16
 #SBATCH --time=168:00:00
-#SBATCH --hint=nomultithread
 
 module load Supernova/2.1.1
 

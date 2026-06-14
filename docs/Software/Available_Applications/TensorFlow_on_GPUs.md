@@ -20,14 +20,14 @@ running TensorFlow with GPU support.
 
 !!! tip "See also"
      -   To request GPU resources using `--gpus-per-node` option of Slurm,
-         see the [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+         see the [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
          documentation page.
      -   To run TensorFlow on CPUs instead, have a look at our article
          [TensorFlow on CPUs](TensorFlow_on_CPUs.md)
          for tips on how to configure TensorFlow and Slurm for optimal
          performance.
 
-## Use NeSI modules
+## Use Mahuika modules
 
 TensorFlow is available on Mahuika as an
 [environment module](index.md)
@@ -103,11 +103,11 @@ source <path_to_virtual_environment>/bin/activate
 
 As an alternative, you can also create *conda* environments to install a
 specific version of Python, TensorFlow and any additional packages
-required for your project. On Mahuika, use the Miniconda3 module:
+required for your project. On Mahuika, use the Miniforge3 module:
 
 ``` sh
 export PYTHONNOUSERSITE=1
-module load Miniconda3/4.9.2
+module load Miniforge3/25.3.1-0
 conda create -p my_conda_venv python=3.8
 ```
 
@@ -156,13 +156,13 @@ take into consideration the following:
     TensorFlow relies on GCC 4.8 (TensorFlow &lt; 1.15).
 
 !!! tip
-     Make sure to use `module purge` before loading Miniconda3, to ensure
+     Make sure to use `module purge` before loading Miniforge3, to ensure
      that no other Python module is loaded and could interfere with your
      conda environment.
 
     ``` sh
     module purge
-    module load Miniconda3/4.9.2
+    module load Miniforge3/25.3.1-0
     export PYTHONNOUSERSITE=1
     source $(conda info --base)/etc/profile.d/conda.sh  # if you didn't use "conda init" to set your .bashrc
     conda ...  # any conda commands (create, activate, install...)
@@ -170,7 +170,7 @@ take into consideration the following:
 
 ## Apptainer containers
 
-You can use containers to run your application on the NeSI platform. We
+You can use containers to run your application on the Mahuika platform. We
 provide support for
 [Apptainer](Apptainer.md)
 containers, that can be run by users without requiring additional

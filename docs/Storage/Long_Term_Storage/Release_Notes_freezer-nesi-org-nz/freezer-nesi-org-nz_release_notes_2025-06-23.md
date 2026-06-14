@@ -17,4 +17,4 @@ search:
 - Resilient provisioning: If one member encounters provisioning issues, the system will continue to provision other members without interruption
 - Validation before provisioning: Provisioning will now be blocked if the allocation is missing or contains incorrect values, ensuring data integrity and preventing errors
 
-If you have any questions about any of the fixes, please [contact NeSI Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+If you have any questions about any of the fixes, please [contact Mahuika Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").

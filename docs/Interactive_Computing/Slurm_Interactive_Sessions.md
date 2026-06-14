@@ -3,7 +3,7 @@ created_at: '2020-01-05T21:43:18Z'
 tags: 
   - interactive
   - scheduling
-description: How to run an interactive session on the NeSI cluster.
+description: How to run an interactive session on the REANNZ HPC cluster.
 ---
 
 A SLURM interactive session reserves resources on compute nodes allowing
@@ -160,11 +160,6 @@ time.
 
 Slurm offers an easy solution: Identify the job, and use `scontrol` to
 postpone its start time.
-
-!!! note
-     Job IDs are unique to each cluster but not across the whole of NeSI.
-     Therefore, `scontrol` must be run on a node belonging to the cluster
-     where the job is queued.
 
 The following command will delay the start of the job with numeric ID
 12345678 until (at the earliest) 9:30 a.m. the next day:

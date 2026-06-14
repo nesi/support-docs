@@ -17,8 +17,6 @@ could crash with an [Out Of Memory exception](What_does_oom_kill_mean.md).
 
 Another common issue is an error in the code. For example an application
 could (may to unexpected input and missing error handling) call a
-division by 0. Debugger can help to find the source of the issue. On the
-NeSI systems are different debuggers available.
+division by 0. Debugger can help to find the source of the issue. There are many are different debuggers available on Mahuika.
 For serial application the [Gnu debugger gdb](https://sourceware.org/gdb/download/onlinedocs/gdb/index.html) is
-available. Furthermore, the [ARM DDT debugger](https://developer.arm.com/docs/101136/latest/ddt/getting-started)
-is available, which can handle, parallel, serial, applications, written in C/C++, Fortran, and Python (limited support).
+available.

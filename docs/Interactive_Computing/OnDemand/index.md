@@ -1,4 +1,4 @@
-# Interactive computing with NeSI OnDemand
+# Interactive computing with Mahuika OnDemand
 
 ## Overview
 
@@ -17,29 +17,21 @@ For more information see the [How-to guide](how_to_guide.md).
 
 A number of interactive applications can be accessed through OnDemand, including:
 
+- [Slurm Composer](Apps/Slurm_Composer.md) - build, submit and track Slurm batch jobs from your browser
 - [JupyterLab](Apps/JupyterLab/index.md)
 - [RStudio](Apps/RStudio.md)
 - [VS Code](Apps/VSCode.md)
 - [Virtual desktop](Apps/virtual_desktop.md)
 - [MATLAB](Apps/MATLAB.md) - currently under development, let us know if this is of interest
 
-## Changes from Jupyter on NeSI
+## Changes from Jupyter on Mahuika
 
 - JupyterLab is no longer the main user interface but is just another application to be launched via the OnDemand interface
 - RStudio, MATLAB and Virtual Desktop applications are accessed directly from OnDemand instead of via JupyterLab
 
 ## Known Issues
 
-| Limitation                                |  What are the missing functions/commands associated with this|
---------------------------------------------|--------------------------------------------------------------|
-|1. OnDemand apps are not exposed to HPC3 Slurm | Commands such as `sbatch`, `sacct`, `squeue` , `scancel` will not work from OnDemand apps|
-|2. Missing user Namespaces in Kubernetes pods will interfere with some Apptainer operations| Although we can run `apptainer pull` command, `apptainer exec,run,shell` commands can not be executed due to missing user Namespaces|
-
-!!! info ""
-
-    🙋 If you to come across above limitations, please consider switching to the new HPC login node via `Cluster` > `NeSI HPC Shell access` via OnDemand home page
-
-    [OnDemand how to access login shell.](../../assets/images/OOD_howtoaccesslogin_node_shell.png)
+A list of known issues and limitations with OnDemand, can be found on [this page](../../Announcements/Known_Issues_HPC3.md/#ondemand-apps)
 
 ## Release notes
 

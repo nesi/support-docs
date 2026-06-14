@@ -70,7 +70,7 @@ reconstructPar -latestTime     #Collect
 
 OpenFOAM generates a large number of files during run-time. In addition
 to the I/O load there is also the danger of using up available
-[inodes](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md).
+[inodes](../../Storage/Filesystems_and_Quotas.md).
 
 **Filesystems in excess of their allocation will cause any job trying to
 write there to crash.**
@@ -100,9 +100,9 @@ There are a few ways to mitigate this
         use and I/O load.
 
 - **Monitor Filesystem**  
-    The command `nn_storage_quota` should be used to track filesystem
+    The command `storage_quota` should be used to track filesystem
     usage. There is a delay between making changes to a filesystem and
-    seeing it on `nn_storage_quota`.
+    seeing it on `storage_quota`.
 
     ```sh
     Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%

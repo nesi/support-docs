@@ -1,15 +1,8 @@
 ---
 created_at: '2019-02-14T23:33:05Z'
 tags:
-- mahuika
 - engineering
-title: FDS
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360000759275
-zendesk_section_id: 360000040076
 ---
-
 
 [//]: <> (APPS PAGE BOILERPLATE START)
 {% set app_name = page.title | trim %}
@@ -22,24 +15,23 @@ Standards and Technology (NIST) for large-eddy simulation (LES) of
 low-speed flows, with an emphasis on smoke and heat transport from
 fires.
 
-General documentation can be found
-[here](https://github.com/firemodels/fds/releases/download/FDS6.7.1/FDS_User_Guide.pdf).
-
 FDS can utilise both
-[MPI](../Parallel_Computing/Parallel_Computing.md#mpi)
+[MPI](../Parallel_Computing/Parallel_Computing.md)
 and
-[OpenMP](../Parallel_Computing/Parallel_Computing.md#multi-threading)
+[OpenMP](../Parallel_Computing/Parallel_Computing.md)
 
 ## Example Script
 
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --time           02:00:00       #Walltime
-#SBATCH --ntasks         4              #One task per mesh, NO MORE
-#SBATCH --cpus-per-task  2              #More than 4 cpus/task not recommended.
-#SBATCH --output         %x.out     #Name output file according to job name
-#SBATCH --hint           nomultithread  #Hyperthreading decreases efficiency.
+#SBATCH --job-name       FDS-job
+#SBATCH --job-name       nesi99991
+#SBATCH --time           02:00:00       # Walltime
+#SBATCH --ntasks         4              # One task per mesh, NO MORE
+#SBATCH --cpus-per-task  2              # More than 4 cpus/task not recommended.
+#SBATCH --output         %x.out         # Name output file according to job name
+#SBATCH --hint           nomultithread  # Hyperthreading decreases efficiency.
 
 module load FDS/6.7.1-intel-2017a
 
@@ -54,13 +46,13 @@ srun fds ${input}
     full MPI using the same number of CPUs.
 - MPI if the preferable method of scaling, if you can partition your
     mesh more you should do that before considering multi-threading
-    (OpenMP). e.g. `ntasks=2, cpus-per-task=1` is preferable
-    to `ntasks=1, cpus-per-task=2`
+    (OpenMP). e.g. `ntasks=2, cpus-per-task=1` is preferable
+    to `ntasks=1, cpus-per-task=2`
 - Each mesh should have it's own task, assigning more tasks than there
     are meshes will cause an error.
 - Multi-threading efficiency drops off significantly after 4 physical
     cores. `--cpus-per-task 4`
-- Hyper-threading is not recommended. Set `--hint nomultithread`
+- Simultaneous multithreading is not recommended. Do not set `--hint multithread`
 
 ### Scaling with MPI
 

@@ -1,11 +1,6 @@
 ---
 created_at: '2020-04-30T01:28:34Z'
 tags: []
-title: NVIDIA GPU Containers
-vote_count: 2
-vote_sum: 2
-zendesk_article_id: 360001500156
-zendesk_section_id: 360000040056
 ---
 
 NVIDIA provides access to GPU accelerated software through their
@@ -18,15 +13,14 @@ care of the plumbing, NGC enables users to focus on building lean
 models, producing optimal solutions and gathering faster insights.
 
 Many of these containers are able to run under Apptainer, which is
-supported on the NeSI platform. NVIDIA also specifies the GPU
+supported on the Mahuika platform. NVIDIA also specifies the GPU
 requirements for each container, i.e. whether it will run on our Pascal
 (sm60) GPUs.
 
 There are instructions for converting their Docker images to Apptainer
 images on the NVIDIA site but some small changes are required to these
-instructions on NeSI. As an example, here we show the steps required for
-running the NAMD image on NeSI, based on the NVIDIA instructions
-[here](https://ngc.nvidia.com/catalog/containers/hpc:namd).
+instructions on Mahuika. As an example, here we show the steps required for
+running the NAMD image on Mahuika, based on the [NVIDIA instructions](https://ngc.nvidia.com/catalog/containers/hpc:namd).
 
 1. Download the APOA1 benchmark data:
 
@@ -61,7 +55,7 @@ running the NAMD image on NeSI, based on the NVIDIA instructions
     #SBATCH --time=00:10:00
     #SBATCH --ntasks=1
     #SBATCH --cpus-per-task=8
-    #SBATCH --gpus-per-node P100:1
+    #SBATCH --gpus-per-node A100:1
     #SBATCH --mem=1G
 
     module purge

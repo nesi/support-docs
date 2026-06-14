@@ -31,9 +31,9 @@ General documentation for running Trinity can be found on their GitHub
 page
 [here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity).
 
-## Running Trinity on NeSI
+## Running Trinity on Mahuika
 
-The recommended approach for running Trinity on NeSI is to split the run
+The recommended approach for running Trinity on Mahuika is to split the run
 into two separate job submissions. The first submission will run Trinity
 Phase 1 (read clustering) and the second submission will run Trinity
 Phase 2 (assembling read clusters). We have observed faster run times
@@ -44,10 +44,10 @@ data, compared to running both phases in one multithreaded job (see the
 ### filesystem considerations
 
 You should run Trinity within your [nobackup project
-directory](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md),
+directory](../../Storage/Filesystems_and_Quotas.md),
 which has no limit on disk space usage but does have a file count quota.
 Trinity creates a large number of files, particularly in the
-"read\_partitions" directory, thus it is important that you {% include "partials/support_request.html" %} before running Trinity on NeSI, as we
+"read\_partitions" directory, thus it is important that you {% include "partials/support_request.html" %} before running Trinity on Mahuika, as we
 may need to increase your default file count quota.
 
 ### Quality Control
@@ -85,7 +85,6 @@ The following Slurm script is a template for running Trinity Phase 1
 #SBATCH --ntasks=1            # always 1
 #SBATCH --cpus-per-task=16    # number of threads to use for Trinity
 #SBATCH --mem=220G            # maximum memory available to Trinity
-#SBATCH --hint=nomultithread  # disable hyper-threading
 
 # load a Trinity module
 module load Trinity/2.14.0-gimkl-2022a
@@ -233,8 +232,8 @@ srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
 ## Benchmarks
 
 Here we provide details of a number of Trinity assemblies that have been
-carried out on NeSI, in order to give a rough idea of how Trinity can
-perform on NeSI and an indication of its resource requirements.
+carried out on Mahuika, in order to give a rough idea of how Trinity can
+perform on Mahuika and an indication of its resource requirements.
 
 Timings mentioned here should be taken as indicative only and, even if
 assembling the same sample again, would be expected to vary

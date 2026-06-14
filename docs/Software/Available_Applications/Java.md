@@ -33,7 +33,7 @@ The Java home page is at <http://www.java.com>.
 
 ## Licensing requirements
 
-All versions of Java on NeSI clusters have been made available by their
+All versions of Java on Mahuika clusters have been made available by their
 respective owners at no cost under a limited, closed-source licence. The
 full licence terms and conditions for any given version of Java can be
 found by following the directions in `${JAVA_HOME}/LICENSE`.

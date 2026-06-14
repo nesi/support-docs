@@ -1,11 +1,11 @@
 ---
 nav:
-  - Overview.md
+  - Globus_Overview.md
   - First_Time_Setup.md
-  - Signing_Up_To_Globus_Subscription.md
   - Add_Your_Computer_To_Globus.md
   - Data_Transfer_using_Globus.md
   - Data_Transfer_Between_Personal_Endpoints.md
+  - Signing_Up_To_Globus_Subscription.md
   - Bookmarks.md
   - Share_Collections.md
   - Syncing_files_with_globus_automate.md

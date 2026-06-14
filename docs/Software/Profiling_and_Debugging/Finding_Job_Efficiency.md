@@ -12,12 +12,12 @@ completion, this way you can improve your job specifications in the
 future.
 
 Once your job has finished check the relevant details using the tools:
-`nn_seff` or `sacct` For example:  
+`seff` or `sacct` For example:  
 
-### Using `nn_seff`
+### Using `seff`
 
 ```bash
-nn_seff 30479534
+seff 30479534
 ```
 
 ```txt
@@ -36,7 +36,7 @@ Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 Notice that the CPU efficiency was high but the memory efficiency was low and consideration should be given to reducing memory requests
 for similar jobs. If in doubt, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz) for guidance.
 
-_nn_seff_ is based on the same numbers as are shown by _sacct_.
+_seff_ is based on the same numbers as are shown by _sacct_.
 
 ### Using `sacct`
 

@@ -302,7 +302,7 @@ Duration    : 11h 16m 47s
 CPU hours   : 319.6
 
 ```bash
-> nn_seff <job-id>
+> seff <job-id>
 Cluster: hpc
 Job ID: 3034402
 State: ['COMPLETED']
@@ -336,7 +336,7 @@ Labeled processes (list below) could submit via slurm array requesting 12 CPUs, 
 - `QUALIMAP_RNASEQ`
 
 ```bash
-nn_seff <job-id>
+seff <job-id>
 Cluster: hpc
 Job ID: 3059728
 State: ['OUT_OF_MEMORY']

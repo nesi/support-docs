@@ -1,7 +1,7 @@
 ---
 created_at: '2025-10-12T08:00:00Z'
 tags: 
-  -  molecular dynamics
+  -  Molecular Dynamics
   -  chemistry
 description: How to run LAMMPS on the Mahuika cluster
 ---
@@ -64,7 +64,7 @@ LAMMPS is distributed as an open source code under the terms of the GPLv2. The m
     ```
 
 === "GPU"
-    For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+    For more information on using GPUs see [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
 
     ```sl
     #!/bin/bash -e

@@ -38,7 +38,7 @@ Compute allocations are expressed in terms of a number of units, to be
 consumed or reserved between a set start date and time and a set end
 date and time. For allocations of computing power, we use [Fair
 Share](../../Batch_Computing/Fair_Share.md)
-to balance work between different projects. NeSI allocations and the
+to balance work between different projects. REANNZ allocations and the
 relative "prices" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running
 the associated infrastructure and services.
@@ -64,7 +64,7 @@ components. Once the job has finished running, this composite price is
 what affects your project's Fair Share score. However, whether your
 institution will be charged based on the composite price or based on
 your job's CPU core hour consumption alone, or on some other basis, will
-depend on your contractual arrangements with NeSI.
+depend on your contractual arrangements with REANNZ.
 
 ### Online storage allocations
 

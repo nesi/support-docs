@@ -17,13 +17,13 @@ module in your kernel or use a Conda environment.
 
 To register a Jupyter kernel, you can follow the steps highlighted in
 the [Jupyter kernels - Manual management](./Jupyter_kernels_Manual_management.md)
-or use the `nesi-add-kernel` tool provided within the [Jupyter on NeSI service](https://jupyter.nesi.org.nz).
+or use the `nesi-add-kernel` tool provided within the [Jupyter on Mahuika service](https://jupyter.nesi.org.nz).
 This page details the latter option, which we recommend.
 
 ## Getting started
 
 First you need to open a terminal. It can be from a session on Jupyter
-on NeSI or from a regular ssh connection on Mahuika login node. If you
+via OnDemand or from a regular ssh connection on Mahuika login node. If you
 use the ssh option, make sure to load the JupyterLab module to have
 access to the `nesi-add-kernel` tool:
 
@@ -39,7 +39,7 @@ follows:
 nesi-add-kernel --help
 ```
 
-Here is an example to add a TensorFlow kernel, using NeSI’s module:
+Here is an example to add a TensorFlow kernel, using Mahuika’s module:
 
 ``` sh
 nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
@@ -48,7 +48,7 @@ nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
 !!! warning
     The name given to your kernel in `nesi-add-kernel KERNEL_NAME MODULE` must only include lowercase letters, underscores, and dashes. 
 
-and to share the kernel with other members of your NeSI project:
+and to share the kernel with other members of your project:
 
 ``` sh
 nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5 
@@ -117,7 +117,7 @@ nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
 
 !!! danger
 
-    This section has not been tested on NeSI OnDemand
+    This section has not been tested on Mahuika OnDemand
 
 To use a Singularity container, use the `-c` or `--container` options as
 follows:

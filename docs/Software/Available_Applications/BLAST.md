@@ -62,8 +62,8 @@ settings.  
 #SBATCH --mem           30G
 #SBATCH --cpus-per-task 2
 
-module load BLAST/2.13.0-GCC-11.3.0
-module load BLASTDB/2023-01
+module load BLAST/{{ applications.BLAST.default }}
+module load BLASTDB/{{ applications.BLASTDB.default }}
 
 # This script takes one argument, the FASTA file of query sequences.
 QUERIES=$1
@@ -99,8 +99,8 @@ allowed for in the memory requested by the job.  As of mid 2023 that is
 #SBATCH --ntasks        1
 #SBATCH --cpus-per-task 36    # half a node
 
-module load BLAST/2.13.0-GCC-11.3.0
-module load BLASTDB/2023-01
+module load BLAST/{{ applications.BLAST.default }}
+module load BLASTDB/{{ applications.BLASTDB.default }}
 
 # This script takes one argument, the FASTA file of query sequences.
 QUERIES=$1

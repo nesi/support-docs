@@ -3,7 +3,7 @@ created_at: '2022-03-31T20:51:51Z'
 tags:
 - mynesi
 - allocation
-description: How to request a NeSI allocation renewal.
+description: How to request a Mahuika allocation renewal.
 ---
 
 ## Types of Resource Requests

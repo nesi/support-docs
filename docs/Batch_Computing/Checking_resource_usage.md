@@ -3,6 +3,7 @@ created_at: '2022-02-15T01:13:51Z'
 tags:
   - slurm
   - accounting
+status: deprecated
 ---
 
 To check your project's usage of Slurm-managed resources, you can use

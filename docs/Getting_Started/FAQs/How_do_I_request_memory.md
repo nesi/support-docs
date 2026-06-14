@@ -5,7 +5,7 @@ description: Instructions for requesting memory
 ---
 
 - `--mem`: Memory per node
-- `--mem-per-cpu`: Memory per [logical CPU](../../Software/Parallel_Computing/Hyperthreading.md)
+- `--mem-per-cpu`: Memory per [logical CPU](../../Software/Parallel_Computing/Simultaneous_Multithreading.md)
 
 In most circumstances, you should request memory using `--mem`. The
 exception is if you are running an MPI job that could be placed on more

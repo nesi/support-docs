@@ -4,13 +4,13 @@ tags: []
 title: Release Notes
 ---
 
-NeSI publishes release notes for applications, 3rd party applications
-and NeSI services. This section will function as a directory to find all
+REANNZ HPC publishes release notes for applications, 3rd party applications
+and REANNZ HPC services. This section will function as a directory to find all
 published release note articles with the label 'releasenote'.
 
-## NeSI applications
+## REANNZ HPC applications
 
-You can find published release notes for NeSI applications in the
+You can find published release notes for REANNZ HPC applications in the
 context of the structure of our documentation.
 Product context &gt; release notes section &gt; versioned release note
 
@@ -20,10 +20,10 @@ be located under Storage, Long-Term Storage
 ## 3rd party applications
 
 3rd party applications listed under [Supported Applications](../../Software/Available_Applications/index.md)
-have child pages with details about the available versions on NeSI, and
+have child pages with details about the available versions on REANNZ HPC, and
 a reference to the vendor release notes or documentation.
 
-## NeSI services
+## REANNZ HPC services
 
-Jupyter on NeSI is a recent example of a service composed of multiple
-components and dependencies that NeSI maintains.
+OpenOnDemand is a recent example of a service composed of multiple
+components and dependencies that REANNZ maintains.

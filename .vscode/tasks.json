@@ -82,7 +82,7 @@
                 "reveal":"never",
                 "showReuseMessage": false
             },
-            "command": "./checks/run_test_build.py",
+            "command": "export NO_MKDOCS_2_WARNING=1 && ./checks/run_test_build.py",
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {
@@ -163,7 +163,7 @@
                 "reveal":"never",
                 "showReuseMessage": false
             },
-            "command": "mkdocs serve --dirty"
+            "command": "export NO_MKDOCS_2_WARNING=1 && mkdocs serve --dirty"
         },
     ]
 }

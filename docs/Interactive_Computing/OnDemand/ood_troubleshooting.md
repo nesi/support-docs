@@ -37,10 +37,10 @@ To resolve this issue:
     ![NeSI_OnDemand_No_Space_Left_1.png](../../assets/images/NeSI_OnDemand_No_Space_Left_2.png)
 
 2. Log in to your NeSI account through the terminal.
-3. Type into the terminal ```nn_storage_quota```. This will show the amount of space in your `home`, `project`, and `nobackup` directories. You will see that your `home` directory is full.
+3. Type into the terminal ```storage_quota```. This will show the amount of space in your `home`, `project`, and `nobackup` directories. You will see that your `home` directory is full.
 
     ```sh 
-    username@login03:~$ nn_storage_quota 
+    username@login03:~$ storage_quota 
     Quota_Location                          AvailableGiB           UsedGiB Use%
     home_username                                     20                20  100
     ```

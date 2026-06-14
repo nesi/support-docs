@@ -40,7 +40,7 @@ highlight the specifics of working with the Mahuika endpoints.
 ## Requirements
 
 You must have a REANNZ HPC account, Globus account and have linked an identity from your Globus account to the NeSI Keycloak. This can be achieved by
-navigating to the [NeSI HPC Storage](https://app.globus.org/file-manager?origin_id=763d50ee-e814-4080-878b-6a8be5cf7570) in the Globus
+navigating to the [HPC Storage](https://app.globus.org/file-manager?origin_id=763d50ee-e814-4080-878b-6a8be5cf7570) in the Globus
 web app and ensuring you can see your REANNZ HPC files.
 
 ## Endpoints
