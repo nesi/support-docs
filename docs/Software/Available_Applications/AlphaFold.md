@@ -47,7 +47,7 @@ Home page is at <https://github.com/google-deepmind/alphafold3>.
 The application and its databases are available as modules:
 
 ``` sh
-$ module spider AlphaFold
+module spider AlphaFold
 
  Versions:
         AlphaFold/2.3.2
@@ -55,7 +55,7 @@ $ module spider AlphaFold
         AlphaFold/3.0.1
         AlphaFold/3.0.2
 
-$ module spider AlphaFold3DB
+module spider AlphaFold3DB
 
  Versions:
         AlphaFold3DB/2024-12
