@@ -8,7 +8,7 @@ tags:
 Globus is useful for transferring files between Mahuika and your computer or server and can make it easy to transfer files due to its GUI web-based interface, as well as being able to resume transfers even if disrupted.
 
 !!! tip
-    The name of the Mahuika `endpoint` is `NeSI HPC Storage`
+    The name of the Mahuika `endpoint` is `{{ globus_collection_storage}}`
 
 ## Transferring data using Globus
 
@@ -21,11 +21,11 @@ To move files and folders between `endpoints` (such as between Mahuika and anoth
 2. Click on the left-hand side `Collection` field, specifically on the Search icon.
     ![Globus_Transfer_2.png](../../assets/images/Globus_Transfer_2.png)
 
-3. In the Search bar, type `NeSI HPC Storage`. Below the search bar, click on the `NeSI HPC Storage` icon.
+3. In the Search bar, type `{{ globus_collection_storage}}`. Below the search bar, click on the `{{ globus_collection_storage}}` icon.
     ![Globus_Transfer_3.png](../../assets/images/Globus_Transfer_3.png)
 
 4. This will take you back to the main page, where you will need to authenticate yourself with the
-    `NeSI HPC Storage` Globus endpoint.
+    `{{ globus_collection_storage}}` Globus endpoint.
     ![Globus_Transfer_4.png](../../assets/images/Globus_Transfer_4.png)
 
 5. You will be shown a globus page requiring you to sign in to NeSI. Click on `Use my username@iam.nesi.org.nz identity` text.
@@ -87,7 +87,7 @@ any person who has a Globus account.
 
 | Endpoint Name | Description | Recommended Use | Apply for Use | Contact |
 | ------------- | ----------- | --------------- | ------------- | ------- |
-|[NeSI HPC storage]| NeSI Globus Endpoint, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
+|[{{ globus_collection_storage}}]| NeSI Globus Endpoint, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
 | [University of Otago - HCS](https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007), [University of Otago - CHC HCS](https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9) | Endpoint for the High Capacity Research Storage Cluster, Dunedin Campus, University of Otago and Endpoint for the High Capacity Research Storage Cluster, Christchurch Campus, University of Otago | Primary endpoint for Otago Dunedin; uses local service accounts or Globus sharing. | [Access Form](https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form) | [university@otago.ac.nz](mailto:university@otago.ac.nz) |
 | University of Auckland Research Data Collection | Endpoint provides access to UoA research data. | Transferring files between UoA research drives and Mahuika | Apply by email | [researchdata@auckland.ac.nz](mailto:researchdata@auckland.ac.nz) |
 | AgResearch DTN01 | A Globus endpoint attached to AgResearch's institutional Linux storage platform | Sharing large datasets with external collaborators and moving large datasets between NeSI's facility and AgResearch's internal storage platform | Apply by email | [servicedesk@agresearch.co.nz](mailto:servicedesk@agresearch.co.nz) |

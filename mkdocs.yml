@@ -89,11 +89,10 @@ extra:
   analytics:
     provider: google
     property: G-TVQR4R1F40
-  globus_collection_storage: Mahuika Storage
-  globus_collection_freezer: Mahuika Freezer
-  globus_collection_rdc: RDC Storage
-  globus_collection_scratch: Mahuika Scratch
-  globus_collection_project: Mahuika Persistent
+  globus_collection_storage: REANNZ Mahuika
+  globus_collection_freezer: REANNZ Freezer
+  globus_collection_rdc: REANNZ Research Developer Cloud (RDC)
+  globus_collection_endpoint: REANNZ Data Transfer Node Tamaki
 plugins:
   - mkdocs_quiz:
       disable_after_submit: false
