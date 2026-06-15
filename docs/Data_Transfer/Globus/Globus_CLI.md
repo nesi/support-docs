@@ -50,7 +50,7 @@ endpoints you want to transfer data to and from.
 !!! hint
     The `Endpoint` id for Mahuika is: `763d50ee-e814-4080-878b-6a8be5cf7570`
     ```sh
-    globus endpoint search {{ globus_collection_storage}}
+    globus endpoint search "{{ globus_collection_storage }}"
     ```
 
 To get the `Endpoint` id of your computer, type into your terminal (on your local machine or Mahuika):
