@@ -32,7 +32,7 @@ You can link your Globus account to your GitHub, Google, or ORCID ID account by 
 2. Click on `Link Another Identity`.
     ![Globus\_Link\_Identities.png](../../assets/images/Globus_Link_Identities.png)
 3. In the `Look up your organization...` field, type in the institution you would like to add to
-    your Globus account, or Github, Google, or ORCID ID if you want to link these accounts to your
+    your Globus account, or GitHub, Google, or ORCID ID if you want to link these accounts to your
     Globus account.
     ![Globus\_Link\_Identities\_2.png](../../assets/images/Globus_Link_Identities_3.png)
 4. After logging into this account, you will need to login to your primary Globus account. Click continue
