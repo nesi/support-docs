@@ -13,7 +13,6 @@ Globus is a data transfer service that can be used to move a large amount of dat
 The following guide shows how to:
 
 * [How to set up Globus for the first time](./First_Time_Setup.md)
-* [How to set up a **free** Globus Subscription](./Signing_Up_To_Globus_Subscription.md)
 * [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
 * [How to transfer data to/from Mahuika](./Data_Transfer_using_Globus.md)
 * [How to transfer data between endpoints other than Mahuika](./Data_Transfer_Between_Personal_Endpoints.md)
@@ -42,6 +41,7 @@ Globus allows users to transfer large amounts of data between systems. Some adva
 ## Glossary
 
 * Endpoints: Globus refers to computers, servers, and high capacity storage systems as endpoints.
+* Collection: A Globus collection represents a location containing data plus the policies and permissions for accessing that data.
 
 ## Quick Information
 

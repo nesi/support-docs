@@ -86,10 +86,11 @@ primary terminal.
 
 ### WinSCP
 
-WinSCP has some advantages over MobaXterm (customisable, cleaner
-interface, open source), and some disadvantages (no built in
-X-server, additional authentication step). However, WinSCP setup is
-more involved than with MobaXterm, therefore we do not recommend it
+WinSCP has some advantages over MobaXterm: customisable, cleaner
+interface, open source, and some disadvantages: known file transfer 
+issues. no built in X-server, additional authentication step. 
+
+WinSCP setup is more involved than MobaXterm, therefore we **do not** recommend it
 for new users.
 
 !!! tip "What next?"
