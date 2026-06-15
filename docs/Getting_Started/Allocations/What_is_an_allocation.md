@@ -50,9 +50,9 @@ following table.
 
 |  Hardware type         |    Fair Share Price                     |
 |------------------------|-----------------------------------------|
-| Milan CPU              | 0.9 compute units per physical-CPU-hour |
+| Milan CPU              | 0.9 compute units per cpu-core-hour     |
 | Milan Memory (RAM)     | 0.13 compute units per GB-hour          |
-| Genoa CPU              | 1.4 compute units per physical-CPU-hour |
+| Genoa CPU              | 1.4 compute units per cpu-core-hour     |
 | Genoa Memory (RAM)     | 0.20 compute units per GB-hour          |
 | A100 GPU device        | 18.0 compute units per device-hour      |
 | A100-1g.5gb GPU device | 3.0 compute units per device-hour       |
