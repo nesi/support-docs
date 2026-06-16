@@ -1,5 +1,6 @@
 ---
 nav:
+  - Identity_provider_system_maintenance.md
   - administrative_policy_updates.md
   - Autodeletion_of_Scratch_Filesystem.md
   - Slurm_Job_email.md
