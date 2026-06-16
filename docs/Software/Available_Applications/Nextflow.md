@@ -281,7 +281,7 @@ trace {
 !!! warning "Nextflow plugins"
     nf-core pipelines expect to use nf-plugins in their base configuration. If you want to use these plugins, you will need to manually download them and store them in a plugin cache directory that you can specify with the `NXF_PLUGINS_DIR` environmental variable (as in the example `.sl` above)
 
-For Nextflow 26.04.0 we have also created a joint module which has the nf-core tools installed and is available via `module load nf-core/4.0.2-Nextflow-26.04.0-foss-2026`
+For Nextflow 26.04.0, we have also created a joint module which has the nf-core tools installed and is available via `module load nf-core/4.0.2-foss-2026-Nextflow-26.04.0`.
 
 <!-- ## Comparison of submission methods
 
