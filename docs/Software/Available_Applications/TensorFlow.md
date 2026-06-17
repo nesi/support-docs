@@ -91,7 +91,7 @@ TensorFlow. On Mahuika, use the [Miniforge3 module](Miniforge3.md):
 
 ``` sh
 # Load conda
-module purge && module load Miniforge3
+module purge && module load Miniforge3/25.3.1-0
 source $(conda info --base)/etc/profile.d/conda.sh
 export PYTHONNOUSERSITE=1
 
@@ -148,11 +148,11 @@ The following is a good starting point for a single-node CPU job:
 ``` sl
 #!/bin/bash -e
 
-#SBATCH --job-name=tensorflow
-#SBATCH --account=<your Mahuika project ID>
-#SBATCH --time=<overall runtime estimate>
-#SBATCH --mem=<overall memory consumption>
-#SBATCH --cpus-per-task=<number of threads>
+#SBATCH --job-name		tensorflow
+#SBATCH --account		nesi99991
+#SBATCH --time			01:00:00
+#SBATCH --mem			4G
+#SBATCH --cpus-per-task		2
 
 # Pin threads to cores for consistent performance
 export OMP_PROC_BIND=true
@@ -258,15 +258,16 @@ cuDNN libraries automatically.
 2. Save the following job submission script as `mnist.sl`:
 
     ``` sl
-    #!/bin/bash -e
-    #SBATCH --job-name=tensorflow-mnist
-    #SBATCH --account=<your Mahuika project ID>
-    #SBATCH --gpus-per-node=L4:1
-    #SBATCH --cpus-per-task=2
-    #SBATCH --mem=8G
-    #SBATCH --time=00:10:00
-    #SBATCH --output=slurm-%j.out       # standard output (%j = job ID)
-    #SBATCH --error=slurm-%j.err        # standard error
+#!/bin/bash -e
+
+#SBATCH --job-name		tensorflow-mnist
+#SBATCH --account		nesi99991
+#SBATCH --gpus-per-node		L4:1
+#SBATCH --cpus-per-task		2
+#SBATCH --mem			8G
+#SBATCH --time			00:10:00
+#SBATCH --output		slurm-%j.out
+#SBATCH --error			slurm-%j.err
 
     module purge
     module load TensorFlow/2.13.0-gimkl-2022a-Python-3.11.3
