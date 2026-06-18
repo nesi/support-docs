@@ -51,7 +51,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.91,
+                        "hourly_average": 0.9,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -65,7 +65,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.56,
+                        "hourly_average": 0.54,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -79,7 +79,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.52,
+                        "hourly_average": 0.55,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -697,7 +697,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 1.0,
+                "server_uptime": 0.98,
                 "server_version": "",
                 "features": [
                     {
@@ -709,7 +709,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "",
                         "slurm_track": true,
-                        "total": 2,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -1038,11 +1038,17 @@
     },
     "Apptainer": {
         "description": "",
-        "domains": [],
+        "domains": [
+            "apptainer",
+            "container",
+            "docker",
+            "portable",
+            "reproducibility"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Apptainer",
         "versions": [
             "1.1.8",
             "1.1.9",
@@ -1960,15 +1966,16 @@
             "0.1.1-r16-GCC-11.3.0",
             "0.1.1-r16-GCC-12.3.0",
             "0.1.1-r16-intel-2020a",
-            "0.1.1-r16-intel-2022a"
+            "0.1.1-r16-intel-2022a",
+            "0.1.1-r16-iofbf-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.1.1-r16-intel-2022a",
+        "default": "0.1.1-r16-iofbf-2026",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1779857577,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/BEEF/0.1.1-r16-intel-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/BEEF/0.1.1-r16-iofbf-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2129,6 +2136,7 @@
         "versions": [
             "3.01-GCC-11.3.0-Perl-5.34.1",
             "3.01-GCC-12.3.0-Perl-5.40.3",
+            "3.01-GCC-15.2.0-Perl-5.42.1",
             "3.01-GCC-9.2.0-Perl-5.30.1-mt"
         ],
         "admin_list": [],
@@ -2253,17 +2261,18 @@
             "2.12.0-GCC-9.2.0",
             "2.13.0-GCC-11.3.0",
             "2.16.0-GCC-12.3.0",
+            "2.17.0-GCC-15.2.0",
             "2.3.0",
             "2.6.0-gimkl-2018b",
             "2.9.0-gimkl-2018b"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.16.0-GCC-12.3.0",
+        "default": "2.17.0-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132627,
+        "last_updated": 1780455768,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/BLAST/2.16.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/BLAST/2.17.0-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3055,8 +3064,13 @@
             "biology"
         ],
         "extensions": [
-            "checkv-1.0.1",
-            "kcounter-0.1.1"
+            "archspec-0.2.6",
+            "checkv-1.1.1",
+            "kcounter-0.1.2",
+            "loguru-0.7.3",
+            "maturin-1.13.3",
+            "pyrodigal-3.7.1",
+            "pyrodigal-gv-0.3.2"
         ],
         "licence_type": "",
         "homepage": "https://jgi.doe.gov/data-and-tools/checkv/",
@@ -3064,7 +3078,8 @@
         "versions": [
             "0.6.0-gimkl-2020a-Python-3.8.2",
             "0.7.0-gimkl-2020a-Python-3.8.2",
-            "1.0.1-gimkl-2022a-Python-3.10.5"
+            "1.0.1-gimkl-2022a-Python-3.10.5",
+            "1.1.1-foss-2026-Python-3.14.4"
         ],
         "admin_list": [
             {
@@ -3072,11 +3087,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.0.1-gimkl-2022a-Python-3.10.5",
+        "default": "1.1.1-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1780457595,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CheckV/1.0.1-gimkl-2022a-Python-3.10.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CheckV/1.1.1-foss-2026-Python-3.14.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3458,7 +3473,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.97,
+                "server_uptime": 0.98,
                 "server_version": "11.16.2",
                 "features": [
                     {
@@ -3500,7 +3515,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.82,
+                        "hourly_average": 0.83,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3527,7 +3542,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.95,
+                "server_uptime": 0.97,
                 "server_version": "",
                 "features": [
                     {
@@ -3568,7 +3583,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.94,
+                        "hourly_average": 0.92,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
@@ -3602,7 +3617,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.68,
+                        "hourly_average": 5.33,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3663,14 +3678,14 @@
                 "server": "COMSOL@uc",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.99,
+                "server_uptime": 1.0,
                 "server_version": "",
                 "features": [
                     {
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 65709847.85,
+                        "hourly_average": 62087826.25,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -4415,15 +4430,16 @@
         "homepage": "https://metacpan.org/pod/distribution/DBD-mysql/lib/DBD/mysql.pm",
         "support": "",
         "versions": [
-            "4.050-GCC-12.3.0"
+            "4.050-GCC-12.3.0",
+            "4.055-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.050-GCC-12.3.0",
+        "default": "4.055-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1775791046,
+        "last_updated": 1780996807,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DBD-mysql/4.050-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DBD-mysql/4.055-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4730,15 +4746,16 @@
             "2.1.10-GCC-12.3.0",
             "2.1.14-GCC-12.3.0",
             "2.1.6-GCC-11.3.0",
-            "2.1.9-GCC-11.3.0"
+            "2.1.9-GCC-11.3.0",
+            "2.2.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.14-GCC-12.3.0",
+        "default": "2.2.1-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1758472921,
+        "last_updated": 1780456412,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DIAMOND/2.1.14-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DIAMOND/2.2.1-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5198,26 +5215,27 @@
         "force_show": "False"
     },
     "ELPA": {
-        "description": "Eigenvalue SoLvers for Petaflop-Applications .",
+        "description": "Eigenvalue SoLvers for Petaflop-Applications.",
         "domains": [
             "astronomy"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://elpa.rzg.mpg.de",
+        "homepage": "https://elpa.mpcdf.mpg.de/",
         "support": "",
         "versions": [
             "2021.05.001-intel-2020a",
             "2021.05.001-intel-2022a",
-            "2023.11.001-foss-2023a"
+            "2023.11.001-foss-2023a",
+            "2025.06.002-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2023.11.001-foss-2023a",
+        "default": "2025.06.002-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1779833123,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ELPA/2023.11.001-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ELPA/2025.06.002-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -6648,7 +6666,7 @@
         "description": "",
         "domains": [
             "chemistry",
-            "mahuika"
+            "Density Functional Theory"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -7660,6 +7678,7 @@
     "GPUMD": {
         "description": "GPUMD stands for Graphics Processing Units Molecular Dynamics.\nIt is a general-purpose molecular dynamics (MD) package fully implemented on graphics processing units.",
         "domains": [
+            "chemistry",
             "gpu"
         ],
         "extensions": [],
@@ -7763,7 +7782,7 @@
         "domains": [
             "chemistry",
             "gpu",
-            "molecular dynamics"
+            "Molecular Dynamics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8034,7 +8053,9 @@
     },
     "HAL": {
         "description": "HAL is a structure to efficiently store and index multiple genome alignments\nand ancestral reconstructions. HAL is a graph-based representation which\nprovides several advantages over matrix/block-based formats such as MAF, such as\nimproved scalability and the ability to perform queries with respect to an\narbitrary reference or subtree.\n\nThis package includes the HAL API and several analysis and conversion tools\nwhich are described below. HAL files are presently stored in either HDF5 or mmap\nformat, but we note that the tools and most of the API are format-independent,\nso other databases could be implemented in the future.",
-        "domains": [],
+        "domains": [
+            "biology"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/ComparativeGenomicsToolkit/hal",
@@ -8223,15 +8244,16 @@
             "3.3.2-GCC-11.3.0",
             "3.3.2-GCC-12.3.0",
             "3.3.2-GCC-9.2.0",
-            "3.4-GCC-12.3.0"
+            "3.4-GCC-12.3.0",
+            "3.4-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.4-GCC-12.3.0",
+        "default": "3.4-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1780456994,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HMMER/3.4-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/HMMER/3.4-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8323,6 +8345,7 @@
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
             "1.22-GCC-12.3.0",
+            "1.22.2-GCC-15.2.0",
             "1.23.1-GCC-12.3.0",
             "1.8-gimkl-2018b",
             "1.9-GCC-7.4.0"
@@ -8347,15 +8370,16 @@
         "homepage": "https://huttenhower.sph.harvard.edu/humann",
         "support": "",
         "versions": [
-            "3.0.0.alpha.3"
+            "3.0.0.alpha.3",
+            "4.0.0.alpha.1-final"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.0.0.alpha.3",
+        "default": "4.0.0.alpha.1-final",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1780631623,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Humann/3.0.0.alpha.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Humann/4.0.0.alpha.1-final.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8965,15 +8989,16 @@
         "support": "",
         "versions": [
             "4.3.0-gimkl-2020a-mt",
-            "4.3.1-gimkl-2022a-mt"
+            "4.3.1-gimkl-2022a-mt",
+            "4.3.2-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.3.1-gimkl-2022a-mt",
+        "default": "4.3.2-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1781711356,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/JAGS/4.3.1-gimkl-2022a-mt.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/JAGS/4.3.2-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9018,15 +9043,16 @@
             "15.0.2",
             "17",
             "20.0.2",
-            "21.0.5"
+            "21.0.5",
+            "25.0.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "21.0.5",
+        "default": "25.0.3",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1780605626,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Java/21.0.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Java/25.0.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9528,6 +9554,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Kent-core": {
+        "description": "Jim Kent's jkweb.a library and headers from the UCSC Genome Browser\nsource tree (kent-core, MIT-licensed minimal subset). Provides the jkweb.a static\nlibrary and inc/ headers required to build Perl Bio::BigFile and related tools.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/ucscGenomeBrowser/kent-core",
+        "support": "",
+        "versions": [
+            "492-GCC-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "492-GCC-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1780993238,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Kent-core/492-GCC-15.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Kent_tools": {
         "description": "Collection of tools used by the UCSC genome browser.",
         "domains": [
@@ -9738,7 +9784,7 @@
             "biology",
             "chemistry",
             "gpu",
-            "molecular dynamics"
+            "Molecular Dynamics"
         ],
         "extensions": [],
         "licence_type": "",
@@ -10788,21 +10834,22 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://www.tddft.org/programs/libxc",
+        "homepage": "https://libxc.gitlab.io",
         "support": "",
         "versions": [
             "5.1.5-intel-2020a",
             "5.1.5-intel-2022a",
             "6.2.2-GCC-12.3.0",
-            "6.2.2-intel-2022a"
+            "6.2.2-intel-2022a",
+            "7.0.0-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.2.2-intel-2022a",
+        "default": "7.0.0-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1779850610,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libxc/6.2.2-intel-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libxc/7.0.0-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11599,9 +11646,7 @@
             "gpu",
             "mathematics",
             "visualisation",
-            "ml",
-            "matlab",
-            "machine_learning"
+            "Machine Learning"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -11893,15 +11938,16 @@
         "homepage": "http://maven.apache.org/index.html",
         "support": "",
         "versions": [
-            "3.6.0"
+            "3.6.0",
+            "3.9.16"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.6.0",
+        "default": "3.9.16",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1780605642,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Maven/3.6.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Maven/3.9.16.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12332,7 +12378,6 @@
         "homepage": "https://huttenhower.sph.harvard.edu/metaphlan/",
         "support": "",
         "versions": [
-            "3.0.14-gimkl-2020a-Python-3.8.2",
             "4.0.4-gimkl-2022a-Python-3.10.5",
             "4.1.0-gimkl-2022a-Python-3.10.5"
         ],
@@ -12952,8 +12997,7 @@
     "Molpro": {
         "description": "Molpro is a complete system of ab initio programs for molecular electronic structure calculations.",
         "domains": [
-            "chemistry",
-            "mahuika"
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -13829,11 +13873,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "zen4",
-        "default_type": "latest",
-        "last_updated": 1771453694,
+        "default": "zen3",
+        "default_type": "static",
+        "last_updated": "0",
         "modulefile_text": "",
-        "module_path": "/opt/nesi/lmod/generic/NeSI/zen4.lua",
+        "module_path": "/opt/nesi/lmod/generic/NeSI/zen3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14058,6 +14102,127 @@
         "last_updated": 1740132632,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/NextPolish2/0.2.1-foss-2023a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "nf-core": {
+        "description": "Python package with helper tools for the nf-core community.",
+        "domains": [],
+        "extensions": [
+            "annotated-doc-0.0.4",
+            "annotated-types-0.7.0",
+            "arcp-0.2.1",
+            "attmap-0.14.0",
+            "attrs-26.1.0",
+            "cattrs-25.3.0",
+            "certifi-2026.4.22",
+            "cfgv-3.4.0",
+            "charset-normalizer-3.4.7",
+            "click-8.3.3",
+            "colorama-0.4.6",
+            "coloredlogs-15.0.1",
+            "cryptography-48.0.0",
+            "eido-0.2.5",
+            "exceptiongroup-1.3.1",
+            "filelock-3.19.1",
+            "filetype-1.2.0",
+            "flit_scm-1.7.0",
+            "future-1.0.0",
+            "gitdb-4.0.12",
+            "gitpython-3.1.50",
+            "h11-0.16.0",
+            "hatch-fancy-pypi-readme-25.1.0",
+            "httpcore-1.0.9",
+            "httpx-0.28.1",
+            "humanfriendly-10.0",
+            "identify-2.6.15",
+            "idna-3.15",
+            "importlib-metadata-8.7.1",
+            "jinja2-3.1.6",
+            "jsonschema-4.25.1",
+            "jsonschema-specifications-2025.9.1",
+            "linkify-it-py-2.0.3",
+            "logmuse-0.2.8",
+            "markdown-3.9",
+            "markdown-it-py-3.0.0",
+            "markupsafe-3.0.3",
+            "maturin-1.13.3",
+            "mdit-py-plugins-0.4.2",
+            "mdurl-0.1.2",
+            "nf-core-4.0.2",
+            "nodeenv-1.10.0",
+            "oyaml-1.0",
+            "pandas-2.3.3",
+            "pdiff-1.1.5",
+            "pdm-backend-2.4.8",
+            "pephubclient-0.5.1",
+            "peppy-0.40.8",
+            "pillow-11.3.0",
+            "piper-0.14.5",
+            "pipestat-0.12.2",
+            "platformdirs-4.4.0",
+            "pre-commit-4.3.0",
+            "prek-0.4.1",
+            "prompt-toolkit-3.0.51",
+            "psutil-7.2.2",
+            "puccinialin-0.1.11",
+            "pycparser-2.23",
+            "pydantic-2.13.4",
+            "pydantic-core-2.46.4",
+            "pyfaidx-0.9.0.4",
+            "pygithub-2.9.1",
+            "pygments-2.20.0",
+            "pyjwt-2.12.1",
+            "pynacl-1.6.2",
+            "python-dateutil-2.9.0.post0",
+            "python-discovery-1.3.1",
+            "pytz-2026.2",
+            "pyyaml-6.0.3",
+            "questionary-2.1.1",
+            "referencing-0.36.2",
+            "refgenconf-0.12.2",
+            "refgenie-0.12.1",
+            "repo2rocrate-0.1.2",
+            "requests-2.32.5",
+            "requests-cache-1.2.1",
+            "rich-click-1.9.4",
+            "rocrate-0.15.0",
+            "rpds-py-0.27.1",
+            "ruamel-yaml-0.19.1",
+            "setuptools-80.10.2",
+            "shellingham-1.5.4",
+            "six-1.17.0",
+            "smmap-5.0.3",
+            "tabulate-0.9.0",
+            "textual-8.2.4",
+            "trogon-0.6.0",
+            "typer-0.23.2",
+            "typing-extensions-4.15.0",
+            "typing-inspection-0.4.2",
+            "tzdata-2026.2",
+            "ubiquerg-0.8.2",
+            "uc-micro-py-1.0.3",
+            "url-normalize-2.2.1",
+            "urllib3-2.6.3",
+            "virtualenv-21.2.4",
+            "wcwidth-0.7.0",
+            "yacman-0.9.5",
+            "zipp-3.23.1"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/nf-core/tools",
+        "support": "",
+        "versions": [
+            "4.0.2-foss-2026",
+            "4.0.2-foss-2026-Nextflow-26.04.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "4.0.2-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1779844175,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/nf-core/4.0.2-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14412,9 +14577,8 @@
     "NWChem": {
         "description": "NWChem aims to provide its users with computational chemistry tools that are scalable both in\n their ability to treat large scientific computational chemistry problems efficiently, and in their use of available\n parallel computing resources from high-performance parallel supercomputers to conventional workstation clusters.\n NWChem software can handle: biomolecules, nanostructures, and solid-state; from quantum to classical, and all\n combinations; Gaussian basis functions or plane-waves; scaling from one to thousands of processors; properties\n and relativity.",
         "domains": [
-            "biology",
             "chemistry",
-            "mahuika"
+            "Density Functional Theory"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14832,7 +14996,7 @@
         "description": "ORCA is a flexible, efficient and easy-to-use general purpose tool for quantum chemistry\n with specific emphasis on spectroscopic properties of open-shell molecules.\n  It features a wide variety of standard quantum chemical methods ranging from semiempirical methods to DFT to single-\n and multireference correlated ab initio methods.\n It can also treat environmental and relativistic effects.",
         "domains": [
             "chemistry",
-            "mahuika"
+            "Density Functional Theory"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15448,6 +15612,7 @@
             "B::COW-0.007",
             "B::Hooks::EndOfScope-0.28",
             "B::Lint-1.20",
+            "Bio::BigFile-1.07",
             "Bio::Phylo-v2.0.2",
             "Bio::Procedural-1.7.4",
             "Bio::Seq-1.7.8",
@@ -15706,7 +15871,7 @@
             "Net::HTTP-6.23",
             "Net::SMTP::SSL-1.04",
             "Net::SNMP-v6.0.1",
-            "Net::SSLeay-1.94",
+            "Net::SSLeay-1.96",
             "Number::Compare-0.03",
             "Number::Format-1.76",
             "Object::Accessor-0.48",
@@ -15907,15 +16072,16 @@
             "5.30.1-GCC-9.2.0-mt",
             "5.34.1-GCC-11.3.0",
             "5.38.2-GCC-12.3.0",
-            "5.40.3-GCC-12.3.0"
+            "5.40.3-GCC-12.3.0",
+            "5.42.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.40.3-GCC-12.3.0",
+        "default": "5.42.1-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1772066006,
+        "last_updated": 1781162998,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Perl/5.40.3-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Perl/5.42.1-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16028,16 +16194,16 @@
         "homepage": "https://huttenhower.sph.harvard.edu/phylophlan/",
         "support": "",
         "versions": [
-            "3.0.1-gimkl-2020a-Python-3.8.2",
+            "3.0.2-gimkl-2020a-Python-3.9.9",
             "3.0.3-gimkl-2022a-Python-3.10.5"
         ],
         "admin_list": [],
         "network_licences": [],
         "default": "3.0.3-gimkl-2022a-Python-3.10.5",
         "default_type": "latest",
-        "last_updated": 1740132632,
+        "last_updated": 1780603983,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PhyloPhlAn/3.0.3-gimkl-2022a-Python-3.10.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PhyloPhlAn/3.0.3-gimkl-2022a-Python-3.10.5.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16138,7 +16304,9 @@
     },
     "PILERCR": {
         "description": "PILER-CR is a program specifically designed for the identification and analysis of CRISPR repeats.",
-        "domains": [],
+        "domains": [
+            "biology"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.drive5.com/pilercr/",
@@ -16181,7 +16349,9 @@
     },
     "PISM": {
         "description": "The Parallel Ice Sheet Model (PISM) is a computer program used in climate \nscience to simulate the past and future of glaciers and ice sheets, including the Earth\u2019s \ntwo large ice sheets in Greenland and Antarctica.",
-        "domains": [],
+        "domains": [
+            "climate_science"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.pism.io/",
@@ -16244,6 +16414,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "PlasMAAG": {
+        "description": "PlasMAAG is a tool to recover plasmids and organisms from metagenomic samples.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/RasmussenLab/PlasMAAG",
+        "support": "",
+        "versions": [
+            "1.0.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.0.1",
+        "default_type": "latest",
+        "last_updated": 1780883421,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/PlasMAAG/1.0.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "PLINK": {
         "description": "PLINK is a free, open-source whole genome association analysis toolset, \n designed to perform a range of basic, large-scale analyses in a computationally efficient manner.\n The focus of PLINK is purely on analysis of genotype/phenotype data, so there is no support for \n steps prior to this (e.g. study design and planning, generating genotype or CNV calls from raw data). \n Through integration with gPLINK and Haploview, there is some support for the subsequent visualization, \n annotation and storage of results.",
         "domains": [
@@ -16272,7 +16462,6 @@
     "PLUMED": {
         "description": "PLUMED is an open source library for free energy calculations in molecular systems which\n works together with some of the most popular molecular dynamics engines. Free energy calculations can be\n performed as a function of many order parameters with a particular  focus on biological problems, using\n state of the art methods such as metadynamics, umbrella sampling and Jarzynski-equation based steered MD.\n The software, written in C++, can be easily interfaced with both fortran and C/C++ codes.",
         "domains": [
-            "biology",
             "chemistry"
         ],
         "extensions": [],
@@ -16562,16 +16751,17 @@
         "versions": [
             "2.6.3-GCC-11.3.0",
             "2.6.3-GCC-12.3.0",
+            "2.6.3-GCC-15.2.0",
             "2.6.3-GCC-9.2.0",
             "2.6.3-GCCcore-7.4.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.6.3-GCC-11.3.0",
+        "default": "2.6.3-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1780456799,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/prodigal/2.6.3-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/prodigal/2.6.3-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -16607,15 +16797,16 @@
         "homepage": "https://github.com/apcamargo/prodigal-gv",
         "support": "",
         "versions": [
+            "2.11.0-GCC-15.2.0",
             "2.9.0-GCC-11.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.9.0-GCC-11.3.0",
+        "default": "2.11.0-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1780457158,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/prodigal-gv/2.9.0-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/prodigal-gv/2.11.0-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -17058,7 +17249,7 @@
             "language",
             "machine_learning",
             "visualisation",
-            "ml"
+            "Machine Learning"
         ],
         "extensions": [
             "altair-6.1.0",
@@ -17197,7 +17388,7 @@
         "network_licences": [],
         "default": "3.14.4-foss-2026",
         "default_type": "latest",
-        "last_updated": 1778645364,
+        "last_updated": 1779673508,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/Python/3.14.4-foss-2026.lua",
         "force_hide": "False",
@@ -17406,15 +17597,16 @@
         "support": "",
         "versions": [
             "6.8-intel-2020a",
-            "7.2-intel-2022a"
+            "7.2-intel-2022a",
+            "7.5-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "7.2-intel-2022a",
+        "default": "7.5-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1779853022,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/QuantumESPRESSO/7.2-intel-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/QuantumESPRESSO/7.5-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20071,7 +20263,9 @@
     },
     "SKA2": {
         "description": "Split k-mer analysis (version 2) uses exact matching of split k-mer sequences to align closely\n related sequences, typically small haploid genomes such as bacteria and viruses.",
-        "domains": [],
+        "domains": [
+            "biology"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://docs.rs/ska/latest/ska/",
@@ -20156,6 +20350,7 @@
     "slow5-dorado": {
         "description": "Fork of nanopore's Dorado which supports S/BLOW5.",
         "domains": [
+            "biology",
             "gpu"
         ],
         "extensions": [],
@@ -22009,25 +22204,25 @@
         "force_show": "False"
     },
     "USEARCH": {
-        "description": "USEARCH is a unique sequence analysis tool which offers search and clustering algorithms that are\n often orders of magnitude faster than BLAST.",
+        "description": "",
         "domains": [
             "biology"
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.drive5.com/usearch/index.html",
+        "homepage": "",
         "support": "",
         "versions": [
-            "11.0.667-i86linux32",
-            "9.2.64-i86linux32"
+            "11.0.667-i86linux64",
+            "README"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "11.0.667-i86linux32",
+        "default": "README",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1780027842,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/USEARCH/11.0.667-i86linux32.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/USEARCH/README",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22332,15 +22527,17 @@
             "104.3-GCC-9.2.0-Perl-5.30.1",
             "107.0-GCC-11.3.0-Perl-5.34.1",
             "113.3-GCC-11.3.0-Perl-5.34.1",
-            "115.2-GCC-12.3.0-Perl-5.40.3"
+            "115.2-GCC-12.3.0-Perl-5.40.3",
+            "115.2-GCC-15.2.0-Perl-5.42.1",
+            "116.0-GCC-15.2.0-Perl-5.42.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "115.2-GCC-12.3.0-Perl-5.40.3",
+        "default": "116.0-GCC-15.2.0-Perl-5.42.1",
         "default_type": "latest",
-        "last_updated": 1776041429,
+        "last_updated": 1781633481,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/VEP/115.2-GCC-12.3.0-Perl-5.40.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/VEP/116.0-GCC-15.2.0-Perl-5.42.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22580,7 +22777,9 @@
     },
     "vt": {
         "description": "A tool set for short variant discovery in genetic sequence data.",
-        "domains": [],
+        "domains": [
+            "biology"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://genome.sph.umich.edu/wiki/Vt",

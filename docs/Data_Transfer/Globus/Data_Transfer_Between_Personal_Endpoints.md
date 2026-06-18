@@ -5,17 +5,17 @@ tags:
 title: Data Transfer Between Two Personal Computers
 ---
 
-It is possible to copy files between two computers/servers (two `endpoints`) using Globus. This excludes copying any data to/from Mahuika.
+It is possible to copy files between two computers/servers using Globus. This excludes copying any data to/from Mahuika.
 
 ## Signing into your **Free** Globus Subscription
 
-First you need to sign up with a Globus Subscription. **This is free** for Mahuika users. [Click here to learn about how to sign up for a free Globus Subscription](./Signing_Up_To_Globus_Subscription.md).
+First you need to sign up with a Globus Subscription. **This is free** for Mahuika users, but not required for trasferring data to or from Mahuika. [Click here to learn about how to sign up for a free Globus Subscription](./Signing_Up_To_Globus_Subscription.md).
 
 ## Transferring files between two computers
 
-Once you have been accept to the NeSI Globus Subscription, [we will follow a similar guide for transferring data as
-given here](./Data_Transfer_using_Globus.md#transferring-data-using-globus), where instead of transferring data between your `endpoint`
-and mahuika, you transfer data between your two computers/servers (your two `endpoints`).
+Once you have been accept to the NeSI/REANNZ Globus Subscription, [we will follow a similar guide for transferring data as
+given here](./Data_Transfer_using_Globus.md#transferring-data-using-globus), where instead of transferring data between your `collection`
+and Mahuika, you transfer data between your two computers/servers.
 
 Here is a break down of what you need to do:
 
@@ -26,13 +26,13 @@ Here is a break down of what you need to do:
 2. Click on the left-hand side `Collection` field, specifically on the Search icon.
     ![Globus_Transfer_2.png](../../assets/images/Globus_Transfer_2.png)
 
-3. Click on the `Your Collections` tab and click on the first computer/endpoint you want to transfer data to/from.
+3. Click on the `Your Collections` tab and click on the first computer/collection you want to transfer data to/from.
     ![Globus_Transfer_Comp_3.png](../../assets/images/Globus_Transfer_Comp_3.png)
 
 4. This will take you back to the `File Manager` webpage. Repeat steps 2-3 for the right-hand side `Collection` field,
-   selecting the second computer/endpoint you want to transfer data from/to.
+   selecting the second computer/collection you want to transfer data from/to.
 
-5. Move the file/folder you want to copy between your two computers/endpoints:
+5. Move the file/folder you want to copy between your two computers:
     * In one of your panels, go to the path containing the files/folders you want to copy.
     * Click on the file/folder you want to copy. This will highlight it.
     * If you want to copy multiple files/folders, press `shift` and click on them to highlight them all.

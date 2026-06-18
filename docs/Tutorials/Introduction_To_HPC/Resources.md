@@ -253,28 +253,16 @@ squeue --me
 
 ```out
 JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
-26763045      cwal219  {{config.extra.project_code}} test           2    512M large   May 11 11:35       14:46 RUNNING  wbn144 
+26763045      cwal219  {{config.extra.project_code}} test           2    512M genoa   May 11 11:35       14:46 RUNNING  c001 
 ```
 
-Now that we know the location of the job (wbn189) we can use `ssh` to run `htop` _on that node_.
+Now that we know the location of the job (c001) we can use `svisit` to run `htop` _on that node_.
 
 ```sh
- ssh wbn189 -t htop -u $USER
+ svisit 26763045 c001 -t htop -u $USER
 ```
 
-You may get a message:
-
-```sh
-ECDSA key fingerprint is SHA256:############################################
-ECDSA key fingerprint is MD5:9d:############################################
-Are you sure you want to continue connecting (yes/no)?
-```
-
-If so, type `yes` and <kbd>Enter</kbd>
-
-You may also need to enter your cluster password.
-
-If you cannot connect, it may be that the job has finished and you have lost permission to `ssh` to that node.
+If you cannot connect, it may be that the job has finished and you have lost permission to visit that node.
 
 ### Reading Htop
 

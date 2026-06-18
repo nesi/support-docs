@@ -227,11 +227,11 @@ To dynamically inspect your running job's GPU usage:
     1234567       user.nam nesi99999 Example_GPU_   8     24G genoa   Apr 30 17:36    23:58:08 RUNNING  g09               
     ```
 
-2. Jump onto the node your job is running by typing `jump_into <JobId>`, where you replace `<JobId>` with your Job of interest.
+2. Jump onto the node your job is running by typing `svisit <JobId>`, where you replace `<JobId>` with your Job of interest.
 
     ```bash
-    user.name@login03:$ jump_into 1234567
-    Jumping to node: g09 (job 1234567)    
+    user.name@login03:$ svisit 1234567
+    user.name@g09:$ 
     ```
 
 3. Type into the terminal `nvtop`. This will open an interface that will enable you to inspect your job's GPU resource usage.

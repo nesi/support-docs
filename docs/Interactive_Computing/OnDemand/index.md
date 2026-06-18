@@ -17,6 +17,7 @@ For more information see the [How-to guide](how_to_guide.md).
 
 A number of interactive applications can be accessed through OnDemand, including:
 
+- [Slurm Composer](Apps/Slurm_Composer.md) - build, submit and track Slurm batch jobs from your browser
 - [JupyterLab](Apps/JupyterLab/index.md)
 - [RStudio](Apps/RStudio.md)
 - [VS Code](Apps/VSCode.md)

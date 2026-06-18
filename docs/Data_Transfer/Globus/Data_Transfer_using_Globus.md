@@ -7,11 +7,11 @@ tags:
 Globus is useful for transferring files between Mahuika and your computer or server and can make it easy to transfer files due to its GUI web-based interface, as well as being able to resume transfers even if disrupted.
 
 !!! tip
-    The name of the Mahuika `endpoint` is `NeSI HPC Storage`
+    The `collection` name of the Mahuika `endpoint` is `NeSI HPC Storage`
 
 ## Transferring data using Globus
 
-To move files and folders between `endpoints` (such as between Mahuika and another computer or server):
+To move files and folders between `collections` (such as between Mahuika and another computer or server):
 
 1. Go to the File Manager tab of [your Globus page](https://app.globus.org/file-manager?two_pane=true).
     Give yourself two panels by clicking the `Two Panel` button:
@@ -24,7 +24,7 @@ To move files and folders between `endpoints` (such as between Mahuika and anoth
     ![Globus_Transfer_3.png](../../assets/images/Globus_Transfer_3.png)
 
 4. This will take you back to the main page, where you will need to authenticate yourself with the
-    `NeSI HPC Storage` Globus endpoint.
+    `NeSI HPC Storage` Globus collection.
     ![Globus_Transfer_4.png](../../assets/images/Globus_Transfer_4.png)
 
 5. You will be shown a globus page requiring you to sign in to NeSI. Click on `Use my username@iam.nesi.org.nz identity` text.
@@ -44,7 +44,7 @@ To move files and folders between `endpoints` (such as between Mahuika and anoth
 
 7. Repeat steps 2 - 6 for the right-hand panel, gaining access to the device you want to move data to/from.
   
-    * For example, if I wanted to get access to my computer, I would click on the right-hand panel's `Search` field, select the `Your Collections` tab, and click on your computer's endpoint name.
+    * For example, if I wanted to get access to my computer, I would click on the right-hand panel's `Search` field, select the `Your Collections` tab, and click on your computer's collection name.
     * You can also transfer data to a high-speed Globus Data Transfer Nodes (DTNs). See [Data Transfer Nodes throughout New Zealand](#data-transfer-nodes-throughout-new-zealand) to see if your institute contains a DTN.
 
     ![Globus_Transfer_7_1.png](../../assets/images/Globus_Transfer_7_1.png)
@@ -73,10 +73,10 @@ There are a few restrictions on the amount of data that can be transfer at any o
 * 100 million files in a single transfer task
 * 5 million files in a single directory
 * 100,000 files for a directory listing / `ls` operation
-* 3 active trasfer tasks per user
+* 3 active transfer tasks per user
 * 100 pending transfer tasks per use
 
-## Data Transfer Nodes throughout New Zealand
+## Data Transfer Nodes Throughout New Zealand
 
 The National Data Transfer Platform uses Globus, a third-party service
 for transferring large amounts of data between Globus Data Transfer
@@ -84,7 +84,7 @@ Nodes (DTNs). New Zealand DTNs facilitate the transfer of data to and
 from institutional storage. This service allows data to be accessible to
 any person who has a Globus account.
 
-| Endpoint Name | Description | Recommended Use | Apply for Use | Contact |
+| Collection Name | Description | Recommended Use | Apply for Use | Contact |
 | ------------- | ----------- | --------------- | ------------- | ------- |
 |[NeSI HPC storage]| NeSI Globus Endpoint, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
 | [University of Otago - HCS](https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007), [University of Otago - CHC HCS](https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9) | Endpoint for the High Capacity Research Storage Cluster, Dunedin Campus, University of Otago and Endpoint for the High Capacity Research Storage Cluster, Christchurch Campus, University of Otago | Primary endpoint for Otago Dunedin; uses local service accounts or Globus sharing. | [Access Form](https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form) | [university@otago.ac.nz](mailto:university@otago.ac.nz) |
