@@ -22,12 +22,6 @@ pages.
 
 ## Adding a Custom Python kernel
 
-!!! note "see also"
-     See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
-     page for the **preferred** way to register kernels, which uses the
-     `nesi-add-kernel` command line tool to automate most of these manual
-     steps.
-
 You can configure custom Python kernels for running your Jupyter
 notebooks. This could be necessary and/or recommended in some
 situations, including:
@@ -37,167 +31,332 @@ situations, including:
 - If you would like to activate a virtual environment or conda
     environment before launching the kernel
 
-The following example will create a custom kernel based on the
-Miniforge3 environment module (but applies to other environment modules
-too).
+The following example will create a custom kernel based on either a conda
+environment (using the Miniforge3 environment module) or a Python virtual
+environment (using a Python environment module). The same approach applies
+to other environment modules too.
+
+!!! note "see also"
+     See the [Jupyter kernels - Tool-assisted management](./Jupyter_kernels_Tool_assisted_management.md)
+     page for the **preferred** way to register kernels, which uses the
+     `nesi-add-kernel` command line tool to automate most of these manual
+     steps.
 
 First, change directory into the path that you would like to place your
-conda environment.
+environment.
 
 - **If you would like to share this environment with other users**, change directory
 into your project folder using `cd /nesi/project/<project-code>`. Do not use the path
 that includes `00_nesi_projects` or `home` in the name as this causes issues.
 
-Second, in a terminal run the following commands to load a Miniforge environment
-module:
+Next, you will create your environment and a wrapper script for it. You can
+choose whether to use a **conda environment**, or a **Python virtual
+environment**:
 
-``` sh
-module purge
-module load Miniforge3
-```
+=== "Conda environment"
 
-Now create a conda environment named "my-conda-env" using Python 3.11.
-The *ipykernel* Python package is required but you can change the names
-of the environment, version of Python and install other Python packages
-as required.
+    Second, in a terminal run the following commands to load a Miniforge
+    environment module:
 
-``` sh
-conda create --prefix ./my-conda-env python=3.11
-source $(conda info --base)/etc/profile.d/conda.sh
-conda activate ./my-conda-env
-conda install ipykernel
-# you can pip/conda install other packages here too
-```
+    ``` sh
+    module purge
+    module load Miniforge3
+    ```
 
-Third, we will create a wrapper for your conda environment.
-Change directory into your `my-conda-env` folder:
+    Now create a conda environment named "my-conda-env" using Python 3.11.
+    The *ipykernel* Python package is required but you can change the names
+    of the environment, version of Python and install other Python packages
+    as required.
 
-```sh
-cd my-conda-env
-```
+    ``` sh
+    conda create --prefix ./my-conda-env python=3.11
+    source $(conda info --base)/etc/profile.d/conda.sh
+    conda activate ./my-conda-env
+    conda install ipykernel
+    # you can pip/conda install other packages here too
+    ```
 
-And add the following as `wrapper.sh` into your `my-conda-env` folder:
+    Third, we will create a wrapper for your conda environment.
+    Change directory into your `my-conda-env` folder:
 
-``` sh
-#!/usr/bin/env bash
+    ``` sh
+    cd my-conda-env
+    ```
 
-# load required modules here
-module purge
-module load Miniforge3
+    And add the following as `wrapper.sh` into your `my-conda-env` folder:
 
-# activate conda environment
-source $(conda info --base)/etc/profile.d/conda.sh 
-conda deactivate  # workaround for https://github.com/conda/conda/issues/9392
-conda activate my-conda-env
+    ``` sh
+    #!/usr/bin/env bash
 
-# run the kernel
-exec python $@
-```
+    # load required modules here
+    module purge
+    module load Miniforge3
 
-Make the wrapper script executable:
+    # activate conda environment
+    source $(conda info --base)/etc/profile.d/conda.sh
+    conda deactivate  # workaround for https://github.com/conda/conda/issues/9392
+    conda activate my-conda-env
 
-``` sh
-chmod +x wrapper.sh
-```
+    # run the kernel
+    exec python $@
+    ```
 
-Fourth, create a Jupyter kernel based on your new conda environment:
+    Make the wrapper script executable:
 
-``` sh
-python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
-```
+    ``` sh
+    chmod +x wrapper.sh
+    ```
 
-We must now edit the kernel to load the required environment
-modules before the kernel is launched. Change to the directory the
-kernelspec was installed to
-`~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
-`--name my-conda-env` in the above command):
+    Fourth, create a Jupyter kernel based on your new conda environment:
 
-``` sh
-cd ~/.local/share/jupyter/kernels/my-conda-env
-```
+    ``` sh
+    python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
+    ```
 
-and edit the *kernel.json* to change the first element of the argv list
-to point to the wrapper script we just created. The file should look
-like this:
+    We must now edit the kernel to load the required environment
+    modules before the kernel is launched. Change to the directory the
+    kernelspec was installed to
+    `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
+    `--name my-conda-env` in the above command):
 
-```json
-{
- "argv": [
- "<full_path_to_your_wrapper_file>/wrapper.sh",
- "-m",
- "ipykernel_launcher",
- "-f",
- "{connection_file}"
- ],
- "display_name": "My Conda Env",
- "language": "python"
-}
-```
+    ``` sh
+    mkdir -p ~/.local/share/jupyter/kernels/my-conda-env
+    cd ~/.local/share/jupyter/kernels/my-conda-env
+    ```
 
-After refreshing JupyterLab your new kernel should show up in the
-Launcher as "My Conda Env".
+    and edit the *kernel.json* to change the first element of the argv list
+    to point to the wrapper script we just created. The file should look
+    like this:
+
+    ```json
+    {
+     "argv": [
+     "<full_path_to_your_wrapper_file>/wrapper.sh",
+     "-m",
+     "ipykernel_launcher",
+     "-f",
+     "{connection_file}"
+     ],
+     "display_name": "My Conda Env",
+     "language": "python"
+    }
+    ```
+
+    After refreshing JupyterLab your new kernel should show up in the
+    Launcher as "My Conda Env".
+
+=== "Python virtual environment"
+
+    Second, in a terminal run the following commands to load a Python
+    environment module:
+
+    ``` sh
+    module purge
+    module load Python/3.14.4-foss-2026
+    ```
+
+    Now create a Python virtual environment named "my-venv".
+    The *ipykernel* Python package is required but you can change the name
+    of the environment and install other Python packages as required.
+
+    ``` sh
+    python3 -m venv ./my-venv
+    source ./my-venv/bin/activate
+    pip install --upgrade pip
+    pip install ipykernel
+    # you can pip install other packages here too
+    ```
+
+    Third, we will create a wrapper for your virtual environment.
+    Change directory into your `my-venv` folder:
+
+    ``` sh
+    cd my-venv
+    ```
+
+    And add the following as `wrapper.sh` into your `my-venv` folder:
+
+    ``` sh
+    #!/usr/bin/env bash
+
+    # load required modules here
+    module purge
+    module load Python/3.14.4-foss-2026
+
+    # activate virtual environment
+    source <full_path_to_your_venv>/my-venv/bin/activate
+
+    # run the kernel
+    exec python $@
+    ```
+
+    Make the wrapper script executable:
+
+    ``` sh
+    chmod +x wrapper.sh
+    ```
+
+    Fourth, create a Jupyter kernel based on your new virtual environment:
+
+    ``` sh
+    python -m ipykernel install --user --name my-venv --display-name="My Venv"
+    ```
+
+    We must now edit the kernel to load the required environment
+    modules before the kernel is launched. Change to the directory the
+    kernelspec was installed to
+    `~/.local/share/jupyter/kernels/my-venv`, (assuming you kept
+    `--name my-venv` in the above command):
+
+    ``` sh
+    mkdir -p ~/.local/share/jupyter/kernels/my-venv
+    cd ~/.local/share/jupyter/kernels/my-venv
+    ```
+
+    and edit the *kernel.json* to change the first element of the argv list
+    to point to the wrapper script we just created. The file should look
+    like this:
+
+    ```json
+    {
+     "argv": [
+     "<full_path_to_your_wrapper_file>/wrapper.sh",
+     "-m",
+     "ipykernel_launcher",
+     "-f",
+     "{connection_file}"
+     ],
+     "display_name": "My Venv",
+     "language": "python"
+    }
+    ```
+
+    After refreshing JupyterLab your new kernel should show up in the
+    Launcher as "My Venv".
 
 ## Sharing your custom kernal with your project team members
 
 You can also configure a shared Python kernel that others with access to
 the same project will be able to load.
 
-* To do this, you must make sure it also exists in a shared location
+- To do this, you must make sure it also exists in a shared location
 (other users cannot see your home directory).
 
 First, **you** need to perform the steps in [Adding a Custom Python kernel](#adding-a-custom-python-kernel)
 
-Second, **your team members** need to run the following commands in the terminal:
+Next, **your team members** need to set up the kernel on their side. The
+exact steps depend on the type of environment you created, so follow the
+steps in the tab that matches it:
 
-``` sh
-# change directory into the path that contains your conda environment
-cd <full_path_to_your_conda_environment>
+=== "Conda environment"
 
-# load Miniforge3
-module purge
-module load Miniforge3
+    Second, **your team members** need to run the following commands in the
+    terminal:
 
-# Activate your shared conda environment
-source $(conda info --base)/etc/profile.d/conda.sh
-conda activate ./my-conda-env
-```
+    ``` sh
+    # change directory into the path that contains your conda environment
+    cd <full_path_to_your_conda_environment>
 
-Third, get **your team members** to create a Jupyter kernel based on your python/conda environment:
+    # load Miniforge3
+    module purge
+    module load Miniforge3
 
-``` sh
-python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
-```
+    # Activate your shared conda environment
+    source $(conda info --base)/etc/profile.d/conda.sh
+    conda activate ./my-conda-env
+    ```
 
-**Your project members** must now edit the kernel in their home directories
-to load the required environment modules before the kernel is launched.
-Change to the directory the kernelspec was installed to
-`~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
-`--name my-conda-env` in the above command):
+    Third, get **your team members** to create a Jupyter kernel based on your
+    conda environment:
 
-``` sh
-cd ~/.local/share/jupyter/kernels/my-conda-env
-```
+    ``` sh
+    python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
+    ```
 
-and edit the *kernel.json* to change the first element of the argv list
-to point to the wrapper script we just created. The file should look
-like this:
+    **Your project members** must now edit the kernel in their home directories
+    to load the required environment modules before the kernel is launched.
+    Change to the directory the kernelspec was installed to
+    `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
+    `--name my-conda-env` in the above command):
 
-```json
-{
- "argv": [
- "<full_path_to_your_wrapper_file>/wrapper.sh",
- "-m",
- "ipykernel_launcher",
- "-f",
- "{connection_file}"
- ],
- "display_name": "My Conda Env",
- "language": "python"
-}
-```
+    ``` sh
+    mkdir -p ~/.local/share/jupyter/kernels/my-conda-env
+    cd ~/.local/share/jupyter/kernels/my-conda-env
+    ```
 
-After refreshing JupyterLab your new kernel should show up in the
-Launcher as "My Conda Env".
+    and edit the *kernel.json* to change the first element of the argv list
+    to point to the wrapper script we just created. The file should look
+    like this:
+
+    ```json
+    {
+     "argv": [
+     "<full_path_to_your_wrapper_file>/wrapper.sh",
+     "-m",
+     "ipykernel_launcher",
+     "-f",
+     "{connection_file}"
+     ],
+     "display_name": "My Conda Env",
+     "language": "python"
+    }
+    ```
+
+    After refreshing JupyterLab your new kernel should show up in the
+    Launcher as "My Conda Env".
+
+=== "Python virtual environment"
+
+    Second, **your team members** need to run the following commands in the
+    terminal:
+
+    ``` sh
+    # load the Python environment module
+    module purge
+    module load Python/3.14.4-foss-2026
+
+    # Activate the shared virtual environment
+    source <full_path_to_your_venv>/my-venv/bin/activate
+    ```
+
+    Third, get **your team members** to create a Jupyter kernel based on your
+    virtual environment:
+
+    ``` sh
+    python -m ipykernel install --user --name my-venv --display-name="My Venv"
+    ```
+
+    **Your project members** must now edit the kernel in their home directories
+    to load the required environment modules before the kernel is launched.
+    Change to the directory the kernelspec was installed to
+    `~/.local/share/jupyter/kernels/my-venv`, (assuming you kept
+    `--name my-venv` in the above command):
+
+    ``` sh
+    mkdir -p ~/.local/share/jupyter/kernels/my-venv
+    cd ~/.local/share/jupyter/kernels/my-venv
+    ```
+
+    and edit the *kernel.json* to change the first element of the argv list
+    to point to the wrapper script we just created. The file should look
+    like this:
+
+    ```json
+    {
+     "argv": [
+     "<full_path_to_your_wrapper_file>/wrapper.sh",
+     "-m",
+     "ipykernel_launcher",
+     "-f",
+     "{connection_file}"
+     ],
+     "display_name": "My Venv",
+     "language": "python"
+    }
+    ```
+
+    After refreshing JupyterLab your new kernel should show up in the
+    Launcher as "My Venv".
 
 ## Custom kernel in a Singularity container
 
