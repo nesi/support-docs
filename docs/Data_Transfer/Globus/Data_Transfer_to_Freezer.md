@@ -12,6 +12,9 @@ search:
 
 We are currently trialing the transfer of data to and from Freezer using Globus. We currently have a new Globus Collection to Freezer called: `NeSI Freezer`. You will need to authenticate using your Freezer (S3) credentials. Please let us know if you would like some assistance or are having any difficulties with this service.
 
+## Requirements
+You will need to have a Globus account to access Globus via Freezer. Please see the page on [first time Globus set up](First_Time_Setup.md) for information on getting a Globus account.
+
 ## Setting up Freezer Credentials
 
 1. Go to the File Manager tab of [your Globus page](https://app.globus.org/file-manager?two_pane=true) in the left hand menu bar.
@@ -29,10 +32,10 @@ We are currently trialing the transfer of data to and from Freezer using Globus.
     !!! info
         Steps 4 & 5 may not be required
 
-4. To set up your credentials, please click `Continue`
+4. To set up your credentials, please click `Continue`. You will be shown a globus page requiring you to sign in to Mahuika. 
     ![Globus_Freezer_Require_Credentials.png](../../assets/images/Globus_Freezer_Require_Credentials.png)
 
-5. Fill in your Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. We can  <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset your Freezer key</a>, but you will also need to reset your Freezer config on Mahuika.
+5. Fill in your Mahuika Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. We can  <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset your Freezer key</a>, but you will also need to reset your Freezer config on Mahuika.
 
     In the following sections, please enter:
 
@@ -54,3 +57,7 @@ We are currently trialing the transfer of data to and from Freezer using Globus.
 ![Globus_Freezer_Load_Bucket.png](../../assets/images/Globus_Freezer_Load_Bucket.png)
 
 If you initiate a transfer of offline data (only on tape - Glacier) from Freezer, the data will be automatically staged from tape before the transfer begins.
+
+## Organizing Files Using Globus
+
+We do NOT recommend oranising or moving files or directories on Freezer using the Globus interface. Please use the s3cmd tool in these instances. Please see our [Freezer Guide](../../Storage/Long_Term_Storage/Freezer_Guide.md) for more information.
