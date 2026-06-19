@@ -29,32 +29,32 @@ custom kernel; select the tab that suits you:
     The `nesi-add-kernel` tool automates most of the steps needed to register a
     kernel. **This is the recommended way to register a Jupyter kernel.**
 
-    First you need to open a terminal. It can be from a session on Jupyter
-    via OnDemand or from a regular ssh connection on the Mahuika login node.
-
-    - If you use the ssh option, make sure to load the JupyterLab module to have
-        access to the `nesi-add-kernel` tool:
-
-        ``` sh
-        module purge  # remove all previously loaded modules
-        module load JupyterLab
-        ```
-
-    Use the `nesi-add-kernel` to register a kernel:
-
-    ``` sh
-    nesi-add-kernel <KERNEL_NAME> <MODULE>
-    ```
-
-    Where:
-
-    - `<KERNEL_NAME>`: The name you want to give the kernel.
-    - `<MODULE>`: The environment module to base the kernel on.
-
     The exact arguments depend on whether you are basing the kernel on an
     environment module, a Python virtual environment, or a Conda environment:
 
     === "Environment module"
+
+        First you need to open a terminal. It can be from a session on Jupyter
+        via OnDemand or from a regular ssh connection on the Mahuika login node.
+
+        - If you use the ssh option, make sure to load the JupyterLab module to
+            have access to the `nesi-add-kernel` tool:
+
+            ``` sh
+            module purge  # remove all previously loaded modules
+            module load JupyterLab
+            ```
+
+        Use the `nesi-add-kernel` to register a kernel:
+
+        ``` sh
+        nesi-add-kernel <KERNEL_NAME> <MODULE>
+        ```
+
+        Where:
+
+        - `<KERNEL_NAME>`: The name you want to give the kernel.
+        - `<MODULE>`: The environment module to base the kernel on.
 
         Here is an example for adding a TensorFlow module to JupyterLab as a kernel:
 
@@ -64,23 +64,33 @@ custom kernel; select the tab that suits you:
 
     === "Python virtual environment"
 
-        To create a Python virtual environment-based kernel, make sure you use
-        the desired version of python available from `module avail python`. For
-        example, if we want to use Python 3.10.5, we need to invoke
-        `Python/3.10.5-gimkl-2022a`, which is what is available when we run
-        `module avail python`.
+        First, create your [python virtual environment](../../../../Software/Available_Applications/Python.md#installing-packages-in-your-home):
+
+        ``` sh
+        module purge
+        module load Python/3.14.4-foss-2026  # Change the module to the version of python you want to use
+        python3 -m venv ./my-venv
+        pip install --upgrade pip
+        # you can pip install other packages here too
+        ```
+
+        Then create a kernel based on your virtual environment:
 
         ``` sh
         module purge
         module load JupyterLab
-        nesi-add-kernel my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
+        # The module of python you give here must be the same as the version of python you use to make the virtual environment
+        nesi-add-kernel <kernel_name> --venv my-venv
         ```
+
+        Where `<kernel_name>` is the name you want to give to the kernel.
 
     === "Conda environment"
 
-        Create your [conda environment](../../../../Software/Available_Applications/Miniforge3.md#module-loading-and-conda-environments-isolation):
+        First, create your [conda environment](../../../../Software/Available_Applications/Miniforge3.md#module-loading-and-conda-environments-isolation). You will need to begin by loading conda:
 
         ``` sh
+        # Load conda
         module purge && module load Miniforge3
         source $(conda info --base)/etc/profile.d/conda.sh
         export PYTHONNOUSERSITE=1
@@ -89,14 +99,31 @@ custom kernel; select the tab that suits you:
         Then create a kernel based on your newly created conda environment:
 
         ``` sh
-        nesi-add-kernel my_conda_env -p <conda_env_path>
+        # Load JupyterLab
+        module load JupyterLab
+
+        # Create your conda environment
+        conda create --prefix <conda_env_path>/my_conda_env python=3.11
+
+        # Add your conda environment as a kernel to JupyterHub
+        nesi-add-kernel <kernel_name> -p <conda_env_path>
         ```
 
-        otherwise if created using `conda create -n <conda_env_name>`, use:
+        Where `<kernel_name>` is the name for your kernel. Alternatively, you can
+        create the environment by name:
 
         ``` sh
-        nesi-add-kernel my_conda_env -n <conda_env_name>
+        # Load JupyterLab
+        module load JupyterLab
+
+        # Create your conda environment
+        conda create -n <conda_env_name>
+
+        # Add your conda environment as a kernel to JupyterHub
+        nesi-add-kernel <kernel_name> -n <conda_env_name>
         ```
+
+        Where `<kernel_name>` is the name for your kernel.
 
     !!! tip
 
@@ -405,6 +432,8 @@ custom kernel; select the tab that suits you:
 To list all the kernels that are currently installed, run:
 
 ``` sh
+module purge
+module load JupyterLab
 jupyter-kernelspec list
 ```
 
@@ -419,11 +448,37 @@ the kernel with the tool-assisted or manual approach:
 
 === "Tool-Assisted Management"
 
-    When registering the kernel with `nesi-add-kernel`, add the `--shared` flag
-    to make it available to other members of your project. Select the tab for
-    the kind of kernel you are sharing:
+    To share a kernel, register it with `nesi-add-kernel` as you normally would,
+    but add the `--shared` flag so other members of your project can load it.
+    Select the tab for the kind of kernel you are sharing:
 
     === "Environment module"
+
+        First you need to open a terminal. It can be from a session on Jupyter
+        via OnDemand or from a regular ssh connection on the Mahuika login node.
+
+        - If you use the ssh option, make sure to load the JupyterLab module to
+            have access to the `nesi-add-kernel` tool:
+
+            ``` sh
+            module purge  # remove all previously loaded modules
+            module load JupyterLab
+            ```
+
+        Use the `nesi-add-kernel` command with the `--shared` flag to register a
+        shared kernel:
+
+        ``` sh
+        nesi-add-kernel --shared <KERNEL_NAME> <MODULE>
+        ```
+
+        Where:
+
+        - `<KERNEL_NAME>`: The name you want to give the kernel.
+        - `<MODULE>`: The environment module to base the kernel on.
+
+        Here is an example for adding a shared TensorFlow module to JupyterLab as
+        a kernel:
 
         ``` sh
         nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
@@ -431,32 +486,69 @@ the kernel with the tool-assisted or manual approach:
 
     === "Python virtual environment"
 
+        First, create your [python virtual environment](../../../../Software/Available_Applications/Python.md#installing-packages-in-your-home):
+
         ``` sh
-        nesi-add-kernel --shared my_test_kernel Python/3.10.5-gimkl-2022a --venv my_test_venv
+        module purge
+        module load Python/3.14.4-foss-2026  # Change the module to the version of python you want to use
+        python3 -m venv ./my-venv
+        pip install --upgrade pip
+        # you can pip install other packages here too
         ```
+
+        Then create a shared kernel based on your virtual environment:
+
+        ``` sh
+        module purge
+        module load JupyterLab
+        # The module of python you give here must be the same as the version of python you use to make the virtual environment
+        nesi-add-kernel --shared <kernel_name> --venv my-venv
+        ```
+
+        Where `<kernel_name>` is the name you want to give to the kernel. Note
+        the `--shared` flag in the `nesi-add-kernel` command line.
 
     === "Conda environment"
 
-        Create your [conda environment](../../../../Software/Available_Applications/Miniforge3.md#module-loading-and-conda-environments-isolation):
+        First, create your [conda environment](../../../../Software/Available_Applications/Miniforge3.md#module-loading-and-conda-environments-isolation). You will need to begin by loading conda:
 
         ``` sh
+        # Load conda
         module purge && module load Miniforge3
         source $(conda info --base)/etc/profile.d/conda.sh
         export PYTHONNOUSERSITE=1
         ```
 
-        Then create a kernel based on your newly created conda environment. 
-        Make sure you include the `--shared` flag when you run `nesi-add-kernel`:
+        Then create a shared kernel based on your newly created conda environment:
 
         ``` sh
-        nesi-add-kernel --shared my_conda_env -p <conda_env_path>
+        # Load JupyterLab
+        module load JupyterLab
+
+        # Create your conda environment
+        conda create --prefix <conda_env_path>/my_conda_env python=3.11
+
+        # Add your conda environment as a shared kernel to JupyterHub
+        nesi-add-kernel --shared <kernel_name> -p <conda_env_path>
         ```
 
-        otherwise if created using `conda create -n <conda_env_name>`, use:
+        Where `<kernel_name>` is the name you want to give to the kernel. Note
+        the `--shared` flag in the `nesi-add-kernel` command line. Alternatively,
+        you can create the environment by name:
 
         ``` sh
-        nesi-add-kernel --shared my_conda_env -n <conda_env_name>
+        # Load JupyterLab
+        module load JupyterLab
+
+        # Create your conda environment
+        conda create -n <conda_env_name>
+
+        # Add your conda environment as a shared kernel to JupyterHub
+        nesi-add-kernel --shared <kernel_name> -n <conda_env_name>
         ```
+
+        Where `<kernel_name>` is the name you want to give to the kernel. Note
+        the `--shared` flag in the `nesi-add-kernel` command line.
 
 === "Manual Management"
 
@@ -502,7 +594,6 @@ the kernel with the tool-assisted or manual approach:
         `--name my-conda-env` in the above command):
 
         ``` sh
-        mkdir -p ~/.local/share/jupyter/kernels/my-conda-env
         cd ~/.local/share/jupyter/kernels/my-conda-env
         ```
 
@@ -585,6 +676,9 @@ the kernel with the tool-assisted or manual approach:
 To delete a specific kernel, run:
 
 ``` sh
+module purge
+module load JupyterLab
+jupyter-kernelspec list
 jupyter-kernelspec remove <kernel_name>
 ```
 
