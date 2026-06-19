@@ -1,5 +1,5 @@
 ---
-title: Jupyter kernels
+title: Python and R kernels in JupyterLab
 description: How to register and manage custom Jupyter kernels on Mahuika JupyterHub
 tags:
     - JupyterHub
@@ -13,6 +13,8 @@ the Launcher. These come with many packages preinstalled, and can be extended
 further as described on the
 [Python](../../../../Software/Available_Applications/Python.md) and
 [R](../../../../Software/Available_Applications/R.md) support pages.
+
+## Adding a Kernel to JupyterLab
 
 Sometimes, though, you will want a kernel that runs in your own computing
 environment - for example, to load a specific environment module, or to use a

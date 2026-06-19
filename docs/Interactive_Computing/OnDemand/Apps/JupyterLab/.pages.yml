@@ -1,4 +1,4 @@
 ---
 nav:
-  - Jupyter kernels: Jupyter_kernels.md
+  - Python and R kernels in JupyterLab: python_and_r_kernels_in_JupyterLab.md
   - "*"
