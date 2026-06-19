@@ -11,12 +11,16 @@ approach described on the
 [Python and R kernels in JupyterLab](./python_and_r_kernels_in_JupyterLab.md)
 page.
 
+In brief, the steps below create a Python virtual environment, install
+`bash_kernel` into it, write a wrapper script that points `bash_kernel` at your
+container, and then register that wrapper as a Jupyter kernel.
+
 First, change directory into the path where you would like to place your
 virtual environment.
 
 - If you would like to share it with other members of your project, use your
-    project folder (`cd /nesi/project/<project-code>`)
-- avoid paths that include `00_nesi_projects` or `home`, as these cause issues.
+    project folder (`cd /nesi/project/<project-code>`).
+- Avoid paths that include `00_nesi_projects` or `home`, as these cause issues.
 
 Second, in a terminal run the following commands to load a Python environment
 module:
@@ -36,17 +40,17 @@ source ./my-container-venv/bin/activate
 pip install --upgrade pip
 ```
 
-Third, you will want to install `bash_kernel` in your virtual environment.
+Third, install `bash_kernel` in your virtual environment.
 
 ??? note "What is bash_kernel?"
 
-    `bash_kernel` allows you to use python as a terminal. We will use `bash_kernel` to connect python to your container, allowing your experience of using the container to feel like a normal jupyterlab session. But instead of running python, it runs your container. 
+    `bash_kernel` runs a bash shell as a Jupyter kernel. Here we point that bash shell at your container, so every cell you run in JupyterLab executes inside the container. It feels like a normal JupyterLab session, but the commands run in your container rather than on the host.
 
 ``` sh
 pip install bash_kernel
 ```
 
-Fourth, we will create a wrapper for your virtual environment. Change directory
+Fourth, create a wrapper for your virtual environment. Change directory
 into your `my-container-venv` folder:
 
 ``` sh
@@ -62,11 +66,14 @@ And add the following as `wrapper.sh` into your `my-container-venv` folder:
 module purge
 module load Python/3.14.4-foss-2026
 
+# activate the virtual environment that has bash_kernel installed
+source <full_path_to_your_venv>/my-container-venv/bin/activate
+
 # tell bash_kernel to run inside your container instead of a normal bash shell
 export BASH_KERNEL_CMD="apptainer exec --nv <full_path_to_your_container> bash"
 
-# run bash_kernel on the host (it dispatches every command into the container)
-exec python3 -m bash_kernel "$@"
+# run the kernel on the host (it dispatches every command into the container)
+exec python3 "$@"
 ```
 
 The `BASH_KERNEL_CMD` environment variable is what makes this a *container*
@@ -84,10 +91,10 @@ Make the wrapper script executable:
 chmod +x wrapper.sh
 ```
 
-Fifth, install the bash kernel based on your new virtual environment:
+Fifth, install `bash_kernel` based on your new virtual environment:
 
 ``` sh
-python -m bash_kernel.install --user
+python3 -m bash_kernel.install --user
 ```
 
 This installs a kernel into `~/.local/share/jupyter/kernels/bash`. We must now
@@ -115,6 +122,7 @@ to the wrapper script we just created. The file should look like this:
 }
 ```
 
-After refreshing JupyterLab your new kernel should show up in the Launcher as
-"My Container Venv".
+After refreshing JupyterLab your new kernel should show up in the Launcher under
+the display name you set in `kernel.json` (`Container Name` in the example
+above).
 
