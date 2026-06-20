@@ -1,8 +1,7 @@
 ---
 created_at: '2021-08-27T03:18:13Z'
-tags: 
-    - globus
-    - globus subscription
+tags:
+    - file_transfer
 title: Signing up to a Free Globus Subscription
 ---
 

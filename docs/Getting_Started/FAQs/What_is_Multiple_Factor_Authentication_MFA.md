@@ -1,8 +1,7 @@
 ---
 created_at: '2018-05-28T03:40:42Z'
 description: Explanation of Multiple Factor Authentication (MFA)
-tags: 
-    - MFA
+tags:
     - access
 ---
 

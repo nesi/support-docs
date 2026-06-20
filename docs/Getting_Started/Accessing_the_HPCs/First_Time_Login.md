@@ -1,13 +1,9 @@
 ---
 created_at: '2018-05-18T03:56:37Z'
 tags:
-- MFA
 - access
-- mfa
-- token
-- ondemand
-- login
-- mynesi
+- interactive
+- account
 ---
 
 !!! prerequisite

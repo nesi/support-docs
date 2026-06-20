@@ -1,9 +1,8 @@
 ---
 created_at: '2018-11-26T03:03:23Z'
-tags: 
-  - windows
-  - winscp
-  - putty
+tags:
+  - access
+  - file_transfer
 title: WinSCP/PuTTY Setup (Windows)
 ---
 

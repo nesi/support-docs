@@ -2,8 +2,7 @@
 title: Supported Applications
 template: supported_apps.html
 tags:
-  - lmod
-  - module
+  - software
 hide:
     - toc
 ---

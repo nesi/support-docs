@@ -2,9 +2,8 @@
 created_at: '2020-05-11T23:29:39Z'
 tags:
 - visualisation
-- image
-- x11
-- view
+- containers
+- access
 description: Instructions for viewing images generated on the cluster
 ---
 

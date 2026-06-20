@@ -1,10 +1,8 @@
 ---
 created_at: '2024-05-16T01:11:34Z'
 tags:
-- info
-- project
-- request_membership
-- mynesi
+- announcement
+- account
 description: How to add a new member to your project.
 ---
 

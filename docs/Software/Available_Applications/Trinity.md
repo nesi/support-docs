@@ -1,6 +1,7 @@
 ---
 created_at: '2019-06-03T23:23:13Z'
-tags: []
+tags:
+- biology
 title: Trinity
 vote_count: 2
 vote_sum: 2

@@ -1,8 +1,7 @@
 ---
 created_at: '2018-07-31T10:59:09Z'
-tags: 
+tags:
     - software
-    - install
 title: Software Installation Request
 ---
 

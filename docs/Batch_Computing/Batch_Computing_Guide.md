@@ -3,7 +3,7 @@ created_at: 2025-12-19
 description: Guide to batch computing
 tags:
     - slurm
-    - ondemand
+    - interactive
 ---
 
 Batch jobs can be submitted via several methods. The most basic is a [simple Slurm job](#slurm-job-basics).

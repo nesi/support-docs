@@ -2,8 +2,7 @@
 created_at: '2019-09-15T23:36:59Z'
 description: Description of our automatic deletion of old data.
 tags:
-- data storage
-- autocleaning
+- storage
 ---
 
 The automatic cleaning feature is a programme to regularly delete selected files from project directories in our scratch filesystem (`/nesi/nobackup`).
