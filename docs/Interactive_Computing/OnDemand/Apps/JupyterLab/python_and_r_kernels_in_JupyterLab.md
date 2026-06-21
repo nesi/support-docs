@@ -127,6 +127,13 @@ custom kernel; select the tab that suits you:
 
         Where `<kernel_name>` is the name for your kernel.
 
+    === "Python environment through Container"
+
+        You can also use the `nesi-add-kernel` tool to base a kernel on a
+        container. See the **Tool-Assisted Management → Python kernel** tab on the
+        [Containers as kernels in JupyterLab](./containers_as_kernels_in_JupyterLab.md)
+        page for the full instructions.
+
     !!! tip
 
         For more information about `nesi-add-kernel`, type into the terminal:
@@ -216,24 +223,15 @@ custom kernel; select the tab that suits you:
         chmod +x wrapper.sh
         ```
 
-        Fourth, create a Jupyter kernel based on your new conda environment:
+        Fourth, create a directory for your kernel:
 
         ``` sh
-        python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
-        ```
-
-        We must now edit the kernel to load the required environment
-        modules before the kernel is launched. Change to the directory the
-        kernelspec was installed to
-        `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
-        `--name my-conda-env` in the above command):
-
-        ``` sh
+        mkdir -p ~/.local/share/jupyter/kernels/my-conda-env
         cd ~/.local/share/jupyter/kernels/my-conda-env
         ```
 
-        and edit the *kernel.json* to change the first element of the argv list
-        to point to the wrapper script we just created. The file should look
+        and create a file called *kernel.json*. It points the first element of
+        the argv list at the wrapper script we just created. The file should look
         like this:
 
         ```json
@@ -249,6 +247,8 @@ custom kernel; select the tab that suits you:
          "language": "python"
         }
         ```
+
+        - Change `display_name` to what you would like to call your kernel by.
 
         After refreshing JupyterLab your new kernel should show up in the
         Launcher as "My Conda Env".
@@ -312,25 +312,15 @@ custom kernel; select the tab that suits you:
         chmod +x wrapper.sh
         ```
 
-        Fourth, create a Jupyter kernel based on your new virtual environment:
-
-        ``` sh
-        python -m ipykernel install --user --name my-venv --display-name="My Venv"
-        ```
-
-        We must now edit the kernel to load the required environment
-        modules before the kernel is launched. Change to the directory the
-        kernelspec was installed to
-        `~/.local/share/jupyter/kernels/my-venv`, (assuming you kept
-        `--name my-venv` in the above command):
+        Fourth, create a directory for your kernel:
 
         ``` sh
         mkdir -p ~/.local/share/jupyter/kernels/my-venv
         cd ~/.local/share/jupyter/kernels/my-venv
         ```
 
-        and edit the *kernel.json* to change the first element of the argv list
-        to point to the wrapper script we just created. The file should look
+        and create a file called *kernel.json*. It points the first element of
+        the argv list at the wrapper script we just created. The file should look
         like this:
 
         ```json
@@ -346,6 +336,8 @@ custom kernel; select the tab that suits you:
          "language": "python"
         }
         ```
+
+        - Change `display_name` to what you would like to call your kernel by.
 
         After refreshing JupyterLab your new kernel should show up in the
         Launcher as "My Venv".
@@ -426,8 +418,17 @@ custom kernel; select the tab that suits you:
         }
         ```
 
+        - Change `display_name` to what you would like to call your kernel by.
+
         After refreshing JupyterLab your new R kernel should show up in the
         Launcher as "R with MPFR".
+
+    === "Python environment through Container"
+
+        You can also set up a kernel by hand that uses a container's version of
+        Python. See the **Manual Management → Python kernel** tab on the
+        [Containers as kernels in JupyterLab](./containers_as_kernels_in_JupyterLab.md)
+        page for the full instructions.
 
 ## Listing your kernels
 
@@ -582,25 +583,16 @@ the kernel with the tool-assisted or manual approach:
         conda activate ./my-conda-env
         ```
 
-        Third, get **your team members** to create a Jupyter kernel based on your
-        conda environment:
+        Third, get **your team members** to create a directory for the kernel in
+        their home directories:
 
         ``` sh
-        python -m ipykernel install --user --name my-conda-env --display-name="My Conda Env"
-        ```
-
-        **Your project members** must now edit the kernel in their home directories
-        to load the required environment modules before the kernel is launched.
-        Change to the directory the kernelspec was installed to
-        `~/.local/share/jupyter/kernels/my-conda-env`, (assuming you kept
-        `--name my-conda-env` in the above command):
-
-        ``` sh
+        mkdir -p ~/.local/share/jupyter/kernels/my-conda-env
         cd ~/.local/share/jupyter/kernels/my-conda-env
         ```
 
-        and edit the *kernel.json* to change the first element of the argv list
-        to point to the wrapper script we just created. The file should look
+        and create a file called *kernel.json*. It points the first element of
+        the argv list at the wrapper script we just created. The file should look
         like this:
 
         ```json
@@ -616,6 +608,8 @@ the kernel with the tool-assisted or manual approach:
          "language": "python"
         }
         ```
+
+        - Change `display_name` to what you would like to call your kernel by.
 
         After refreshing JupyterLab your new kernel should show up in the
         Launcher as "My Conda Env".
@@ -634,26 +628,16 @@ the kernel with the tool-assisted or manual approach:
         source <full_path_to_your_venv>/my-venv/bin/activate
         ```
 
-        Third, get **your team members** to create a Jupyter kernel based on your
-        virtual environment:
-
-        ``` sh
-        python -m ipykernel install --user --name my-venv --display-name="My Venv"
-        ```
-
-        **Your project members** must now edit the kernel in their home directories
-        to load the required environment modules before the kernel is launched.
-        Change to the directory the kernelspec was installed to
-        `~/.local/share/jupyter/kernels/my-venv`, (assuming you kept
-        `--name my-venv` in the above command):
+        Third, get **your team members** to create a directory for the kernel in
+        their home directories:
 
         ``` sh
         mkdir -p ~/.local/share/jupyter/kernels/my-venv
         cd ~/.local/share/jupyter/kernels/my-venv
         ```
 
-        and edit the *kernel.json* to change the first element of the argv list
-        to point to the wrapper script we just created. The file should look
+        and create a file called *kernel.json*. It points the first element of
+        the argv list at the wrapper script we just created. The file should look
         like this:
 
         ```json
@@ -669,6 +653,8 @@ the kernel with the tool-assisted or manual approach:
          "language": "python"
         }
         ```
+
+        - Change `display_name` to what you would like to call your kernel by.
 
         After refreshing JupyterLab your new kernel should show up in the
         Launcher as "My Venv".
