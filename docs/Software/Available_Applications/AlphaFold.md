@@ -91,6 +91,11 @@ residues. It takes its input as a **JSON file**, and the workflow is
 split into a CPU-bound *data pipeline* (genetic and template search) and
 a GPU-bound *inference* stage.
 
+Note that AlphaFold 3 predicts the three-dimensional *structure* of these
+complexes (with per-residue and per-pair confidence estimates). It does
+not compute binding affinities, docking scores or other measures of
+binding strength.
+
 Home page is at <https://github.com/google-deepmind/alphafold3>.
 
 !!! warning "You must request the model parameters from Google DeepMind"
@@ -281,12 +286,16 @@ call `run_alphafold.py` once per file (for example from a
 
 ### AlphaFold 3 license
 
-The AlphaFold 3 source code is released under the
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International
-(CC BY-NC-SA 4.0) license](https://github.com/google-deepmind/alphafold3/blob/main/LICENSE).
-The model parameters and any output generated using them are subject to
-the [AlphaFold 3 Model Parameters Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md)
-and are for non-commercial use only.
+The source code and the model parameters are governed by **separate**
+terms — only the latter carries the non-commercial restriction:
+
+- **Source code** is released under the
+    [Apache License, Version 2.0](https://github.com/google-deepmind/alphafold3/blob/main/LICENSE).
+- **Model parameters and any output generated using them** are subject to
+    the [AlphaFold 3 Model Parameters Terms of Use](https://github.com/google-deepmind/alphafold3/blob/main/WEIGHTS_TERMS_OF_USE.md),
+    which permit non-commercial use only and prohibit redistributing the
+    parameters. You must obtain the parameters directly from Google
+    DeepMind (see the warning above).
 
 
 ## AlphaFold module ( &gt;= 2.3.2)
@@ -330,7 +339,7 @@ run_alphafold.py --use_gpu_relax \
 --max_template_date=2022-6-1 \
 --db_preset=full_dbs \
 --output_dir=$OUTPUT \
---fasta_paths=${INPUT}/rcsb_pdb_3GKI.fasta
+--fasta_paths=${INPUT}/rcsb_pdb_3RGK.fasta
 ```
 
 ### Example Slurm script for multimer
@@ -428,7 +437,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 --max_template_date=2022-1-1 \
 --db_preset=full_dbs \
 --output_dir=$OUTPUT \
---fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+--fasta_paths=$INPUT/rcsb_pdb_3RGK.fasta
 ```
 
 #### Multimer
@@ -469,7 +478,7 @@ singularity exec --nv /opt/nesi/containers/AlphaFold/alphafold_2.2.0.simg python
 --max_template_date=2022-1-1 \
 --db_preset=full_dbs \
 --output_dir=$OUTPUT \
---fasta_paths=$INPUT/rcsb_pdb_3GKI.fasta
+--fasta_paths=$INPUT/rcsb_pdb_3RGK.fasta
 ```
 
 #### Explanation of Slurm variables and Singularity flags
