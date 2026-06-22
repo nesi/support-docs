@@ -258,16 +258,16 @@ cuDNN libraries automatically.
 2. Save the following job submission script as `mnist.sl`:
 
     ``` sl
-#!/bin/bash -e
+    #!/bin/bash -e
 
-#SBATCH --job-name		tensorflow-mnist
-#SBATCH --account		nesi99991
-#SBATCH --gpus-per-node		L4:1
-#SBATCH --cpus-per-task		2
-#SBATCH --mem			8G
-#SBATCH --time			00:10:00
-#SBATCH --output		slurm-%j.out
-#SBATCH --error			slurm-%j.err
+    #SBATCH --job-name		tensorflow-mnist
+    #SBATCH --account		nesi12345
+    #SBATCH --gpus-per-node L4:1
+    #SBATCH --cpus-per-task 2
+    #SBATCH --mem			8G
+    #SBATCH --time			00:10:00
+    #SBATCH --output		slurm-%j.out
+    #SBATCH --error			slurm-%j.err
 
     module purge
     module load TensorFlow/2.13.0-gimkl-2022a-Python-3.11.3
