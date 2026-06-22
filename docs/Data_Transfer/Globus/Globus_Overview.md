@@ -45,5 +45,5 @@ Globus allows users to transfer large amounts of data between systems. Some adva
 
 ## Quick Information
 
-* Name of Mahuika endpoint: `{{ globus_collection_storage}}`
-* Name of NeSI Subscription: `New Zealand eScience Infrastructure Standard`
+* Name of Mahuika mapped collection: `{{ globus_collection_storage}}`
+* Name of REANNZ's Globus Subscription: `New Zealand eScience Infrastructure Standard` (Note: this name has not yet been updated following NeSI's mereger with REANNZ in July 2025)
