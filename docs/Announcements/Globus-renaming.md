@@ -5,16 +5,19 @@ tags:
     - globus
 ---
 
-On 22 June 2026, at 3:30pm, we will be renaming our Globus endpoint and mapped collections to reflect our organisational name change from NeSI to REANNZ.
+The REANNZ Globus endpoint and mapped collections names have been updated to reflect our organisational name change from NeSI to REANNZ. The new names are effective as of 3:30 pm, 22 June 2026.
 
 This is a change in name only. The endpoint and mapped collection Unique Identifiers (UIDs) will not change so there will be no impact to bookmarked links, transfers in progress, or other automated workflows that connect to these components.
 
-The new names will replace the 'NeSI' prefix with a 'REANNZ' prefix and include the name of the storage endpoint where the datasets are hosted and managed. For example:
+**What’s changed**
 
-- NeSI HPC Storage will change to be REANNZ Mahuika
-- NeSI Freezer will change to be REANNZ Freezer
-- NeSI RDC Storage will change to be REANNZ Research Developer Cloud (RDC)
+The new names replace the “NeSI” prefix with a “REANNZ” prefix and include the name of the location where the datasets are hosted and managed. For example:
 
-Further updates on this change will be shared on our [System Status page](https://status.nesi.org.nz/).
-If you'd like to receive those updates directly, you can [subscribe here](https://status.nesi.org.nz/incidents/2b3q535z0t1t).
-If you have any questions about this upcoming change, please contact support@nesi.org.nz.
+- NeSI HPC Storage mapped collection is now REANNZ Mahuika
+- NeSI Freezer mapped collection is now REANNZ Freezer
+- NeSI RDC Storage mapped collection is now REANNZ Research Developer Cloud (RDC)
+- NeSI Data Transfer Node Tamaki endpoint is now REANNZ Data Transfer Node Tamaki 
+
+If you have any questions about this change, please contact support@nesi.org.nz.
+
+For more information about using Globus to transfer data to or from the REANNZ HPC Platform, visit our [Globus documentation](https://docs.nesi.org.nz/Data_Transfer/Globus/Globus_Overview/) in the 'Data Transfer' section of this site.
