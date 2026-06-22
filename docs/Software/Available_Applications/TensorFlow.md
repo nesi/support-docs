@@ -152,7 +152,7 @@ The following is a good starting point for a single-node CPU job:
 #SBATCH --account		nesi99991
 #SBATCH --time			01:00:00
 #SBATCH --mem			4G
-#SBATCH --cpus-per-task		2
+#SBATCH --cpus-per-task 2
 
 # Pin threads to cores for consistent performance
 export OMP_PROC_BIND=true
