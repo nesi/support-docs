@@ -22,11 +22,11 @@ To move files and folders between `collections` (such as between Mahuika and ano
     ![Globus_Transfer_2.png](../../assets/images/Globus_Transfer_2.png)
 
 3. In the Search bar, type `{{ globus_collection_storage}}`. Below the search bar, click on the `{{ globus_collection_storage}}` icon.
-    ![Globus_Transfer_3.png](../../assets/images/Globus_Transfer_3.png)
+    
 
 4. This will take you back to the main page, where you will need to authenticate yourself with the
     `{{ globus_collection_storage}}` Globus endpoint.
-    ![Globus_Transfer_4.png](../../assets/images/Globus_Transfer_4.png)
+    
 
 5. You will be shown a Globus page requiring you to sign in to our REANNZ user portal. Click on `Use my username@iam.nesi.org.nz identity` text.
     ![Globus_Transfer_5.png](../../assets/images/Globus_Transfer_5.png)
@@ -41,14 +41,13 @@ To move files and folders between `collections` (such as between Mahuika and ano
     !!! warning
         You will **not** find `project` and `nobackup` in `00_nesi_projects` (Symlinks do not work in Globus). Please enter the full file path in the `Path` section (e.g. `/nesi/nobackup/<project_code>`)
 
-    ![Globus_Transfer_6.png](../../assets/images/Globus_Transfer_6.png)
+    
 
 7. Repeat steps 2 - 6 for the right-hand panel, gaining access to the device you want to move data to/from.
   
     * For example, if I wanted to get access to my computer, I would click on the right-hand panel's `Search` field, select the `Your Collections` tab, and click on your computer's collection name.
     * You can also transfer data to a high-speed Globus Data Transfer Nodes (DTNs). See [Data Transfer Nodes throughout New Zealand](#data-transfer-nodes-throughout-new-zealand) to see if your institute contains a DTN.
 
-    ![Globus_Transfer_7_1.png](../../assets/images/Globus_Transfer_7_1.png)
     ![Globus_Transfer_7_2.png](../../assets/images/Globus_Transfer_7_2.png)
 
 8. Move the file/folder you want to copy between Mahuika and your computer/server:
@@ -58,14 +57,10 @@ To move files and folders between `collections` (such as between Mahuika and ano
     * In the other device (Mahuika) panel, enter in the path you want to copy your file to.
     * Above the Mahuika (other device) panel, click on the `Start` button to begin copying your file.
 
-    ![Globus_Transfer_8.png](../../assets/images/Globus_Transfer_8.png)
 
 9. You will see a green box at the top right corner of your Globus webpage that says `Transfer request submitted sucessfully`. This indicates that Globus is in the process of transferring your data between Mahuika and your computer/server.
     * You can click on the `Transfer` tab to get more details about how your transfer is doing.
 
-    ![Globus_Transfer_9_1.png](../../assets/images/Globus_Transfer_9_1.png)
-    ![Globus_Transfer_9_2.png](../../assets/images/Globus_Transfer_9_2.png)
-    ![Globus_Transfer_9_3.png](../../assets/images/Globus_Transfer_9_3.png)
 
 ## Globus Restrictions
 
