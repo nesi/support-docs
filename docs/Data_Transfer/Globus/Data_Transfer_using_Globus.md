@@ -8,7 +8,7 @@ tags:
 Globus is useful for transferring files between Mahuika and your computer or server and can make it easy to transfer files due to its GUI web-based interface, as well as being able to resume transfers even if disrupted.
 
 !!! tip
-    The name of the Mahuika `endpoint` is `{{ globus_collection_storage}}`
+    The name of the Mahuika `mapped collection` is `{{ globus_collection_storage}}`
 
 ## Transferring data using Globus
 
@@ -28,7 +28,7 @@ To move files and folders between `collections` (such as between Mahuika and ano
     `{{ globus_collection_storage}}` Globus endpoint.
     ![Globus_Transfer_4.png](../../assets/images/Globus_Transfer_4.png)
 
-5. You will be shown a globus page requiring you to sign in to NeSI. Click on `Use my username@iam.nesi.org.nz identity` text.
+5. You will be shown a Globus page requiring you to sign in to our REANNZ user portal. Click on `Use my username@iam.nesi.org.nz identity` text.
     ![Globus_Transfer_5.png](../../assets/images/Globus_Transfer_5.png)
 
 6. Once you have logged in, you will be sent back to the Globus transfer page. By default you will be placed to your
@@ -77,7 +77,7 @@ There are a few restrictions on the amount of data that can be transfer at any o
 * 3 active transfer tasks per user
 * 100 pending transfer tasks per use
 
-## Data Transfer Nodes Throughout New Zealand
+## Data Transfer Nodes throughout New Zealand
 
 The National Data Transfer Platform uses Globus, a third-party service
 for transferring large amounts of data between Globus Data Transfer
@@ -87,7 +87,7 @@ any person who has a Globus account.
 
 | Collection Name | Description | Recommended Use | Apply for Use | Contact |
 | ------------- | ----------- | --------------- | ------------- | ------- |
-| {{ globus_collection_storage }} | NeSI Globus Endpoint, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
+| {{ globus_collection_storage }} | REANNZ Globus mapped collection, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
 | [University of Otago - HCS](https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007), [University of Otago - CHC HCS](https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9) | Endpoint for the High Capacity Research Storage Cluster, Dunedin Campus, University of Otago and Endpoint for the High Capacity Research Storage Cluster, Christchurch Campus, University of Otago | Primary endpoint for Otago Dunedin; uses local service accounts or Globus sharing. | [Access Form](https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form) | [university@otago.ac.nz](mailto:university@otago.ac.nz) |
 | University of Auckland Research Data Collection | Endpoint provides access to UoA research data. | Transferring files between UoA research drives and Mahuika | Apply by email | [researchdata@auckland.ac.nz](mailto:researchdata@auckland.ac.nz) |
 | AgResearch DTN01 | A Globus endpoint attached to AgResearch's institutional Linux storage platform | Sharing large datasets with external collaborators and moving large datasets between NeSI's facility and AgResearch's internal storage platform | Apply by email | [servicedesk@agresearch.co.nz](mailto:servicedesk@agresearch.co.nz) |
