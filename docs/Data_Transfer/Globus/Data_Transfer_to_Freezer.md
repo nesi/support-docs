@@ -10,7 +10,7 @@ search:
 !!! note
     This service is still in the testing phase
 
-We are currently trialing the transfer of data to and from Freezer using Globus. We currently have a new Globus Collection to Freezer called: `NeSI Freezer`. You will need to authenticate using your Freezer (S3) credentials. Please let us know if you would like some assistance or are having any difficulties with this service.
+We are currently trialing the transfer of data to and from Freezer using Globus. We currently have a new Globus Collection to Freezer called: {{ globus_collection_freezer}}. You will need to authenticate using your Freezer (S3) credentials. Please let us know if you would like some assistance or are having any difficulties with this service.
 
 ## Requirements
 You will need to have a Globus account to access Globus via Freezer. Please see the page on [first time Globus set up](First_Time_Setup.md) for information on getting a Globus account.
@@ -18,7 +18,7 @@ You will need to have a Globus account to access Globus via Freezer. Please see 
 ## Setting up Freezer Credentials
 
 1. Go to the File Manager tab of [your Globus page](https://app.globus.org/file-manager?two_pane=true) in the left hand menu bar.
-    Under the `Collection` field, search for and select the `NeSI Freezer` collection, then click the blue `Continue` button.
+    Under the `Collection` field, search for and select the {{ globus_collection_freezer}} collection, then click the blue `Continue` button.
     ![Globus_Freezer_Collection.png](../../assets/images/Globus_Freezer_Collection.png)
 
 
@@ -32,7 +32,7 @@ You will need to have a Globus account to access Globus via Freezer. Please see 
     !!! info
         Steps 4 & 5 may not be required
 
-4. To set up your credentials, please click `Continue`. You will be shown a globus page requiring you to sign in to Mahuika. 
+4. To set up your credentials, please click `Continue`. You will be shown a Globus page requiring you to sign in to Mahuika. 
     ![Globus_Freezer_Require_Credentials.png](../../assets/images/Globus_Freezer_Require_Credentials.png)
 
 5. Fill in your Mahuika Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. We can  <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset your Freezer key</a>, but you will also need to reset your Freezer config on Mahuika.
@@ -50,7 +50,7 @@ You will need to have a Globus account to access Globus via Freezer. Please see 
 
 ## Freezer Endpoint
 
-1. Go to the File Manager on the left hand menu and search for the collection `NeSI Freezer` .
+1. Go to the File Manager on the left hand menu and search for the collection {{ globus_collection_freezer}} .
     ![Globus_Freezer_EP.png](../../assets/images/Globus_Freezer_EP.png)
 
 2. Under 'Path', type in your Freezer bucket e.g., `nesi99991-12345` and press <kbd>Enter</kbd>. you should now see the contents of your bucket.
