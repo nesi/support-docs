@@ -1,5 +1,5 @@
 ---
-created_at: 2026-06-15
+created_at: 2026-06-22
 description: Announcement about Globus collection renaming
 tags:
     - globus
