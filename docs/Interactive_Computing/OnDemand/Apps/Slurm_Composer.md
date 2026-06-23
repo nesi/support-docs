@@ -91,13 +91,28 @@ See [Using GPUs](../../../Batch_Computing/Using_GPUs.md) for guidance on choosin
 
 When you are happy with the script, click **Submit**. The script is written to the **Script location** shown at the top of the form (default: your home directory, as **Script name** e.g. `job.sh`) and submitted to Slurm. You can then track it on the [History page](#tracking-jobs-history).
 
-## Loading an existing script
+## Loading or creating a script
 
-If you already have a Slurm script on the cluster, click **Load Script from Disk** (on the Selected Templates page, and on the New Custom Template page). A file browser opens where you can navigate your files and pick a `.sl`, `.sh` or `.sbatch` file.
+Click **Load or Create a Script from Disk** (on the Selected Templates page, and on the New Custom Template page) to open a full-page browser of your files on the cluster.
 
-![Load Script from Disk](../../../assets/images/Slurm_Composer_load_from_disk.png)
+![The Load or Create a Script browser](../../../assets/images/Slurm_Composer_load_from_disk.png)
 
-The script is loaded into the generic Slurm script editor, where you can review, edit and submit it — or save it as a custom template.
+It works much like the OnDemand **Files** app:
+
+- **Navigate** by clicking folders, the breadcrumb trail, the **Home** and **Up** buttons, or by typing a path straight into the path box. **Refresh** re-reads the current folder, and your browser's Back/Forward buttons step through the folders you have visited.
+- **Sort** by clicking the **Name**, **Size** or **Modified** headings; **Filter** the list by typing in the filter box; and tick **Show hidden** to include dot-files or **Owner & mode** to show each entry's owner and permissions.
+
+### Load an existing script
+
+Click a `.sl`, `.sh`, `.sbatch`, `.batch` or `.slurm` file to open it in the Slurm script editor, where you can review, edit and submit it — or save it as a custom template. Files that are not scripts are shown greyed-out and cannot be selected.
+
+### Create a new script
+
+Click **New Script** to start a new one. This opens a template picker listing every template — with **Job Script (Slurm)** and **GPU Job Script (Slurm)** at the top — which you can narrow with the search box.
+
+![Choosing a template for a new script](../../../assets/images/Slurm_Composer_new_script.png)
+
+Pick a template and its form opens ready to fill in, with the **Script location** already set to the folder you were browsing.
 
 ## My Custom Templates
 
