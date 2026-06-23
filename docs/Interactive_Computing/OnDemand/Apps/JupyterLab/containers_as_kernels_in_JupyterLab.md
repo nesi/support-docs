@@ -17,6 +17,15 @@ There are two ways to run a container as a kernel; select the tab that suits you
 - **Manual Management**: you set up the kernel and its wrapper script by hand.
     This can be useful when you need more control over how the kernel is launched.
 
+!!! warning
+
+    To use containers you must launch your Jupyter session with **Cluster** set
+    to **Slurm HPC** and the **JupyterLab module** set to
+    **2026.7.0-foss-2026-4.6.0**. If you do not see **Slurm HPC** in the
+    **Cluster** list, [get in touch](mailto:support@nesi.org.nz).
+
+    ![JupyterLab launch form with Cluster set to Slurm HPC and JupyterLab module set to 2026.7.0-foss-2026-4.6.0](../../../../assets/images/OOD_jupyter_form_containers.png){.center width="400"}
+
 === "Tool-Assisted Management"
 
     The `nesi-add-kernel` tool can register a container as a kernel for you.
