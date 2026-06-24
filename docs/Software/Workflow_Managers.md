@@ -32,3 +32,11 @@ On Mahuika we have several workflow managers installed:
 
 There are reasons for each workflow manager, but a first step for identifying the tool you want to use is to see if anyone in your research group or field is already using a tool and has a workflow you can adapt for your needs.
 
+
+| Workflow manager                                   | Workflow language | Script language |
+| -------------------------------------------------- | ----------------- | --------------- |
+| [Cylc](../Available_Applications/Cylc.md)          | Python            |                 |
+| [Nextflow](./Available_Applications/Nextflow.md)   | Groovy DSL        | Any             |
+| [snakemake](./Available_Applications/snakemake.md) | Python            | Any             |
+
+
