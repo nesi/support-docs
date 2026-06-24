@@ -7,7 +7,6 @@ tags:
 
 !!! tip "Webinar"
     Check out the recording of our webinar entitled [Introduction to Containers and Workflows](https://www.youtube.com/watch?v=Dn0xIdPfPQ4).
-    
 
 Workflow managers help make research more replicable and coordinate tasks that are interdependent.
 These tools can range from the simple, running the same process on a large number of inputs, to the complex, managing a series of analyses with filtering logic.
@@ -32,11 +31,8 @@ On Mahuika we have several workflow managers installed:
 
 There are reasons for each workflow manager, but a first step for identifying the tool you want to use is to see if anyone in your research group or field is already using a tool and has a workflow you can adapt for your needs.
 
-
-| Workflow manager                                   | Workflow language | Script language |
-| -------------------------------------------------- | ----------------- | --------------- |
-| [Cylc](./Available_Applications/Cylc.md)          | Python            |                 |
-| [Nextflow](./Available_Applications/Nextflow.md)   | Groovy DSL        | Any             |
-| [snakemake](./Available_Applications/snakemake.md) | Python            | Any             |
-
-
+| Workflow manager                                   | Workflow language | Script language | Slurm integration | Use GPU | Dynamic resource allocation | Failed job retry |
+| -------------------------------------------------- | ----------------- | --------------- | ----------------- | -- | -- | -- |
+| [Cylc](./Available_Applications/Cylc.md)           | Python            | bash            | Built in           |  |  |  |
+| [Nextflow](./Available_Applications/Nextflow.md)   | Groovy DSL        | Any             | Built in          | Yes | Yes | Yes |
+| [snakemake](./Available_Applications/snakemake.md) | Python            | Any             | Plugin installed             |  |  |  |
