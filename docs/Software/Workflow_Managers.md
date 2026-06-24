@@ -8,7 +8,7 @@ tags:
 !!! tip "Webinar"
     Check out the recording of our webinar entitled [Introduction to Containers and Workflows](https://www.youtube.com/watch?v=Dn0xIdPfPQ4).
 
-Workflow managers help make research more replicable and coordinate tasks that are interdependent.
+Workflow managers help make research more reproducible and coordinate tasks that are interdependent.
 These tools can range from the simple, running the same process on a large number of inputs, to the complex, managing a series of analyses with filtering logic.
 
 ## What are workflow managers?
