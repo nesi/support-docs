@@ -22,6 +22,7 @@ Instead of submitting one Slurm job, or job array, for the first task and checki
 ## What are the options?
 
 On Mahuika we have several workflow managers installed:
+
 - [Cylc](../Available_Applications/Cylc.md)
     - Cylc (pronounced silk) is a general purpose workflow engine that also manages cycling systems very efficiently. It is used in production weather, climate, and environmental forecasting on HPC, but is not specialized to those domains.
 - [Nextflow](../Available_Applications/Nextflow.md)
