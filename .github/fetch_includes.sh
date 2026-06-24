@@ -7,15 +7,17 @@ DICTIONARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/output
 SNIPPETS_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
 ICAL_URL="https://outlook.office365.com/owa/calendar/3d4e3c7b28ca4549803470b109cba86a@reannz.co.nz/0830583db389420aaa843dc231af48d810099982634588501079/calendar.ics"
 
-mkdir -p docs/assets/glossary
+mkdir -p docs/assets/glossary overrides/partials
 
-wget -q -O docs/assets/training_calendar.ics "${ICAL_URL}"
-wget -q -O docs/assets/module-list.json "${MODULES_LIST_URL}"
-wget -q -O docs/software_updates.xml "${MODULES_UPDATE_URL}"
+# The module-list.json is needed by link_apps_pages.py below, so we must
+# fetch that group first. Everything within each group runs in parallel.
+wget -q -O docs/assets/training_calendar.ics "${ICAL_URL}" &
+wget -q -O docs/assets/module-list.json     "${MODULES_LIST_URL}" &
+wget -q -O docs/software_updates.xml        "${MODULES_UPDATE_URL}" &
+wget -q -O overrides/partials/glossary.html "${GLOSSARY_URL}" &
+wget -q -O docs/assets/glossary/dictionary.txt "${DICTIONARY_URL}" &
+wget -q -O docs/assets/glossary/snippets.md "${SNIPPETS_URL}" &
+wait
 
 python3 .github/workflows/link_apps_pages.py
-
-wget -q -O overrides/partials/glossary.html "${GLOSSARY_URL}"
-wget -q -O docs/assets/glossary/dictionary.txt "${DICTIONARY_URL}"
-wget -q -O docs/assets/glossary/snippets.md "${SNIPPETS_URL}"
 
