@@ -36,3 +36,5 @@ There are reasons for each workflow manager, but a first step for identifying th
 | [Cylc](./Available_Applications/Cylc.md)           | Python            | bash            | Built in           |  |  |  |
 | [Nextflow](./Available_Applications/Nextflow.md)   | Groovy DSL        | Any             | Built in          | Yes | Yes | Yes |
 | [snakemake](./Available_Applications/snakemake.md) | Python            | Any             | Plugin installed             |  |  |  |
+
+As always, feel free to {% include "partials/support_request.html" %} with any questions or for help implementing a workflow manager in your research.
