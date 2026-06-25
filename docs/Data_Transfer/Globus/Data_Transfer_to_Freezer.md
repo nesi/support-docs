@@ -3,12 +3,7 @@ tags:
     - globus
     - freezer
     - file transfer
-search:
-  exclude: true
 ---
-
-!!! note
-    This service is still in the testing phase
 
 We are currently trialing the transfer of data to and from Freezer using Globus.
 We currently have a new Globus Collection to Freezer called: `{{ globus_collection_freezer}}`.
