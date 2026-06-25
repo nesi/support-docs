@@ -18,7 +18,7 @@ tags:
     - How do I make changes to a project without losing or breaking things?
     - Why does GitHub exist?
 
-![Source: PhD Comics. ["notFinal.doc"](https://phdcomics.com/comics/archive.php?comicid=1531)](fig/ew-versions.png){alt='A comic strip titled "final.doc" by PhD Comics. The first panel shows a student saving a document on their computer and naming the file "final.doc". The second panel shows their professor editing the document on a printed piece of paper. The third panel shows the student making the edits and naming the new document "final\_rev2.doc". The fourth to ninth panels go back and forth between the professor and the student, with increasingly complex file names. By the end the student is exasperated and hitting their head on their computer screen.'}
+![Source: PhD Comics. ["notFinal.doc"](https://phdcomics.com/comics/archive.php?comicid=1531)](../../assets/images/ew-versions.png){alt='A comic strip titled "final.doc" by PhD Comics. The first panel shows a student saving a document on their computer and naming the file "final.doc". The second panel shows their professor editing the document on a printed piece of paper. The third panel shows the student making the edits and naming the new document "final\_rev2.doc". The fourth to ninth panels go back and forth between the professor and the student, with increasingly complex file names. By the end the student is exasperated and hitting their head on their computer screen.'}
 
 !!! question "Problems with change"
     Which of this issues can you relate to?
@@ -181,14 +181,13 @@ two additional parts:
   as Dropbox), `current` is where development is done, and other
   folders within `project_name` are old versions.
   
-  > **Data is Cheap, Time is Expensive**
-  > 
-  > Copying everything like this may seem wasteful, since many files
-  > won't have changed, but consider: a terabyte hard drive costs
-  > about \\$50, which means that 50 GByte costs less than \\$5.
-  > Provided large data files are kept out of the backed-up area
-  > (discussed below), this approach costs less than the time it would
-  > take to select files by hand for copying.
+!!! tip "Data is Cheap, Time is Expensive"
+    Copying everything like this may seem wasteful, since many files
+    won't have changed, but consider: a terabyte hard drive costs
+    about $50, which means that 50 GByte costs less than $5.
+    Provided large data files are kept out of the backed-up area
+    (discussed below), this approach costs less than the time it would
+    take to select files by hand for copying.
 
 This manual procedure satisfies the requirements outlined above without
 needing any new tools. If multiple researchers are working on the same
@@ -255,7 +254,6 @@ many scientific users.
     checks to see whether doing that would overwrite anyone else's work.
     If so, they facilitate identifying conflict and merging changes.
     
-
 !!! question "Changelog in action"
     Have a look at one of the example github repositories and how they track changes:
 
@@ -269,7 +267,7 @@ many scientific users.
 
     Also, what would be the most difficult feature to replicate with manual version control?
 
-!!! solution ""
+??? solution "Solution"
     Some good things:
 
     - all log entries contain date and author
