@@ -1,7 +1,7 @@
 ---
 nav:
   - Slurm Composer: Slurm_Composer.md
-  - JupyterLab: JupyterLab
+  - JupyterLab: JupyterLab/md
   - RStudio: RStudio.md
   - VS Code: VSCode.md
   - MATLAB: MATLAB.md
