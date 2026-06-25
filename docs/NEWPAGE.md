@@ -116,7 +116,7 @@ The `.page.yml` might looks like this:
 nav: 
   - Introduction.md
   - Next_Steps.md
-  - ... 
+  - "*"
 ```
 
 `...` will be replaced by all other pages, in the default order.
@@ -133,7 +133,7 @@ nav:
 - Getting_Started
 - Māui-Mahuika (Differences) : Maui_Mahuika_Differences
 - ZA̡͊͠͝LGΌ H̸̡̪̯ͨ͊̽̅̾̎Ȩ̬̩̾͛ͪ̈́̀́͘ ̶̧̨̱̹̭̯ͧ̾ͬC̷̙̲̝͖ͭ̏ͥͮ͟Oͮ͏̮̪̝͍M̲̖͊̒ͪͩͬ̚̚͜Ȇ̴̟̟͙̞ͩ͌͝S̨̥̫͎̭ͯ̿̔̀ͅ : Using_regex_to_parse_html
-- ...
+- "*"
 
 ```
 
