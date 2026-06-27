@@ -6062,24 +6062,23 @@
         "force_show": "False"
     },
     "FileSender": {
-        "description": "Send large files quickly and securely using REANNZ FileSender.",
+        "description": "Share files quickly and securely using REANNZ FileSender.",
         "domains": [],
-        "extensions": [
-            "cryptography-43.0.1"
-        ],
+        "extensions": [],
         "licence_type": "",
         "homepage": "https://www.reannz.co.nz/products-and-services/filesender/",
         "support": "",
         "versions": [
-            "2.49.0-foss-2023a"
+            "2.49.0-foss-2023a",
+            "3.10.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.49.0-foss-2023a",
+        "default": "3.10.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1782443293,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FileSender/2.49.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FileSender/3.10.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
