@@ -14,13 +14,71 @@ title: VASP
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-## Description
-
 The Vienna Ab initio Simulation Package (VASP) is a programme for atomic scale materials modelling.
 
 VASP computes an approximate solution to the many-body Schrödinger equation of a chemical system using Density Functional Theory, Hartree-Fock, or both via hybrid functionals. Periodic boundary conditions make VASP particularly useful for studying materials bulk properties.
 
 For more information on what you can do with VASP see the [official documentation](https://www.vasp.at/info/about/).
+
+## Examples
+
+=== "VASP6"
+    VASP6 parallelises using both MPI (`--ntasks`) and OpenMP (`--cpus-per-task`). The `NCORE` flag is ignored.
+
+    ``` sl
+    #!/bin/bash -e
+
+    #SBATCH --ntasks=8
+    #SBATCH --cpus-per-task=4
+    #SBATCH --job-name=my_VASP6_job
+    #SBATCH --time=01:00:00
+    #SBATCH --mem-per-cpu=1GB
+    #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
+    #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
+    #SBATCH --mem-bind=local
+    #SBATCH --profile=task
+
+    module purge 2> /dev/null
+    module load VASP/6.4.2-foss-2023a
+
+    # update a VASP job log once the job starts running.
+    echo "Job ${SLURM_JOB_ID} was submitted on $(date) from directory $(pwd)" >> ~/VASP_job_log.txt
+
+    # Start two job steps, one that prints MPI process CPU binding and another that starts VASP.
+    srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname). \n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+    echo -e "\n====== Finished printing CPU binding information, now launching VASP ======\n"
+
+    srun vasp_std
+    ```
+
+=== "VASP5"
+    VASP5 parallelises using MPI only (`--ntasks`), so `--cpus-per-task` is left at 1. The work of individual Kohn-Sham orbitals is shared across MPI processes by setting the `NCORE` flag in the `INCAR` (for example `NCORE = 4`).
+
+    ``` sl
+    #!/bin/bash -e
+
+    #SBATCH --ntasks=32
+    #SBATCH --cpus-per-task=1
+    #SBATCH --job-name=my_VASP5_job
+    #SBATCH --time=01:00:00
+    #SBATCH --mem-per-cpu=1GB
+    #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
+    #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
+    #SBATCH --mem-bind=local
+    #SBATCH --profile=task
+
+    module purge 2> /dev/null
+    module load VASP/5.4.4-intel-2018b
+
+    # update a VASP job log once the job starts running.
+    echo "Job ${SLURM_JOB_ID} was submitted on $(date) from directory $(pwd)" >> ~/VASP_job_log.txt
+
+    # Start two job steps, one that prints MPI process CPU binding and another that starts VASP.
+    srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname). \n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+    echo -e "\n====== Finished printing CPU binding information, now launching VASP ======\n"
+
+    srun vasp_std
+    ```
 
 ## Licences
 
@@ -28,117 +86,128 @@ A VASP license is managed at the research group level. Which versions you have a
 
 If your research group has a valid licence, please {% include "partials/support_request.html" %} and CC the group leader. The Support Team will add the relevant permissions to your HPC UID which will allow you to access the VASP modules. You may be asked to provide proof of your license if you are not from a known group or if the license is new.
 
-## Example script (VASP6)
+## How to assess the efficiency of a VASP calculation
 
-Effectively parallelising your calculation is a particularly complicated aspect of VASP. VASP6 can parallelise its work using the MPI (set by `--ntasks`) and OpenMP (set by `--cpus-per-task`) protocols concurrently. VASP5 uses the MPI only.
+VASP is a very CPU hungry piece of software. Therefore, being able to assess your VASP calculation's efficiency is critical and can allow you perform more calculations for less price. In general, the [VASP manual](https://www.vasp.at/wiki/index.php/The_VASP_Manual) is the best place to go for information on how to begin using VASP.
 
-``` sl
-#!/bin/bash -e
-
-#SBATCH --ntasks=8
-#SBATCH --cpus-per-task=4
-#SBATCH --job-name=my_VASP_job
-#SBATCH --time=01:00:00
-#SBATCH --mem-per-cpu=950
-#SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
-#SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
-#SBATCH --mem-bind=local
-#SBATCH --profile=task
-
-module purge 2> /dev/null
-module load VASP/6.4.2-foss-2023a
-
-# update a VASP job log once the job starts running.
-echo "Job ${SLURM_JOB_ID} was submitted on $(date) from directory $(pwd)" >> ~/VASP_job_log.txt
-
-# Start two job steps, one that prints MPI process CPU binding and another that starts VASP.
-srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname). \n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
-echo -e "\n====== Finished printing CPU binding information, now launching VASP ======\n"
-
-srun vasp_std
-```
-
-Another, more complex `bash` script to submit a VASP job can be downloaded with the following:
-
-``` bash
-wget https://raw.githubusercontent.com/Johnryder23/job_submit_scripts/refs/heads/main/VASP/vasp_std_HPC3_submit.sh
-```
-
-This more involved script sets up a working directory and can be used to submit CPU or CPU/GPU jobs. In most cases, only the variables under "edit job allocation settings here" need to be adjusted.
-
-## Optimisation tips
-
-!!! note "A note on MPI and OpenMP nomenclature"
-    MPI has multiple terms which mean the same thing. A MPI *rank*, *task*, and *process* are synonymous. `#SBATCH --ntasks=n` spawns `n` MPI ranks for your job. Each of these ranks are an independent process that have [their own memory space](https://nesi.github.io/hpc-intro/064-parallel/index.html#distributed-memory-mpi). MPI ranks are *multithreaded* if each rank is given multiple OpenMP *threads*. The number of OpenMP threads is set by `#SBATCH --cpus-per-task`.
-
-VASP is a complex programme with a steep learning curve. The [VASP manual](https://www.vasp.at/wiki/index.php/The_VASP_Manual) is the best place to go for information on how to begin using VASP. The information here relates to running VASP the Mahuika cluster specifically.
-
-**Theory**
+Below covers the steps to take to best optimise the efficiency of your VASP calculation(s).
 
 !!! note
-    Recall the terms "wavefunction", "Kohn-Sham orbital" and "band" are equivalent in VASP as Kohn-Sham orbitals are single electron wavefunctions. The number of wavefunctions/Kohn-Sham orbitals is enumerated by `NBANDS` in the `OUTCAR`.
+    You only need to perform these steps on a representative system. You can assume all other similar systems will have the same optimisation parameters.
 
-Kohn-Sham orbitals are distributed over available MPI ranks in a round-robin fashion until all orbitals have a processor (equivalently, a PID) - or group of processors (under a single PID) if running a multithreaded calculation. In VASP5, the work of a single orbital can be parallelised over MPI ranks using the `NCORE` [flag](https://www.vasp.at/wiki/index.php/NCORE) in the `INCAR`. In VASP6, the work of a single orbital can be parallelised across OpenMP threads. In VASP6 The `NCORE` flag will be ignored.
+### Step 1: Find the best `INCAR` and `KPOINTS` settings using `vasp-parameter-benchmarking`
 
-**In summary**
+The first step to optimising your system in VASP is to test various parameters in your `INCAR` and `KPOINTS` files. Here you want to **choose your parameters such that the energy of the system convergence across your parameter space**. This means that the energy of your system does not decrease dramatically by increasing/decreasing a parameter of your `INCAR`/`KPOINTS` file. The propose of doing this is that: 
 
-VASP5
+* You do not want to under-estimate parameters such that you get the wrong energy for your system, but
+* You do not want to over-estimate parameters such that your calculation takes longer to run (and thus requires more computational resources to complete).
 
-- `NCORE` MPI processes share the work of individual Kohn-Sham orbitals.
+To figure out what the best `INCAR` (and `KPOINTS`) parameters to use, we have created the **`vasp-parameter-benchmarking` tool to help you easily choose the ideal parameters for your `INCAR` and `KPOINTS`**. This can include setting up your `ENCUT` value, determining whether to set `LREAL` to true or false, etc.
 
-VASP6
+* See the [``vasp-parameter-benchmarking`` Github page](https://github.com/geoffreyweal/vasp-parameter-benchmarking) for a guide on how to use the `vasp-parameter-benchmarking` tool to optimise your `INCAR` and `KPOINTS` files for your system. 
 
-- `--cpus-per-task` OpenMP threads share the work of individual Kohn-Sham orbitals. Any `NCORE` setting will be ignored.
+### Step 2: Optimising your `ntasks` and `cpus-per-task` settings in your slurm submission script using `vasp-core-benchmarking`
 
-It is critically important that processors sharing the work of an orbital are *near* each other on the processor die. To understand why this is a bit of theory must be understood.
+VASP 6 uses two technologies to parallelise calculations across CPUs. These are:
 
-VASP uses a plane-wave basis set to represent the wavefunction. These plane-waves are naturally defined in reciprocal space. Some terms of the Hamiltonian are computed in this reciprocal space (also known as **k**-space) and other terms are computed in real-space. Converting the plane waves between real and reciprocal space requires Fast Fourier Transforms (FFTs). In fact, the computational expense of wavefunction optimisation is dominated by these FFTs. Processors sharing the work of the FFT (i.e., processors the wavefunction is parallelised over) must communicate frequently. In other words, these FFTs require frequent *all-to-all* communication.
+* MPI (`ntasks` in your slurm script): This is the main way that tasks are parallelised over CPUs or groups or CPUs.
+* OpenMP (`cpus-per-task` in your slurm script): This is a secondary method of parallelising such that a group of CPU work together on a single task. 
 
-Not all processors have equivalent access to the RAM or local cache where the wavefunctions are stored. This processor/node design is called [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access), and is why the need for processor locality arises. Processor communication latency must be as low as possible for multithreaded VASP calculations to perform well. Under some conditions, VASP runs orders of magnitude slower if the processors are not pinned to be *near* each other. We pin processors in this way using Slurm options show in the example script above.
+VASP 6 uses MPI and OpenMP in different ways to speed up your calculation
 
-The Slurm options show in the example script above ensure a few things which are important for good multithreaded performance.
+* MPI (`ntasks`) is used to calculate each band/orbital in your chemical system.
+* OpenMP (`cpus-per-task`) is used to allow a group of CPUs to increase the speed of calculating a single band/orbital in your chemical system.
 
-- bind threads working on a particular wavefunction to cores in the same NUMA domain.
-- There is 1 L3 cache per-NUMA-domain. If possible, assign MPI processes to NUMA domains that no other jobs are using so the entire L3 cache is available for wavefunction storage, since reading from cache is faster than reading from RAM.
+By changing the ratio of MPI/OpenMP used, you can increase the speed of your calculation using the same number of CPUs. 
 
-**In summary**
+Determining the ideal ratio of MPI/OpenMP requires testing. To make it easier to perform all these tests, we have created the `vasp-core-benchmarking` tool. **The  `vasp-core-benchmarking` tool is designed to sweep across through a region of `ntasks` and `cpus-per-task` values with minimal effort on your part**. This tool then helps you determine which values of `ntasks` and `cpus-per-task` minimise the time requires to perform an electronic step. 
 
-- VASP expresses Kohn-Sham orbitals as plane waves, i.e., uses a plane-wave basis set.
-- Plane-waves are naturally defined in reciprocal space (discretised at special points, **k**).
-- Other terms of the Hamiltonian must be computed in real-space. Plane waves are transformed between real and reciprocal space using FFTs.
-- FFTs require frequent all-to-all communication. If the latency of this communication is high, VASP performance will be poor.
+* See the [`vasp-core-benchmarking` Github page](https://github.com/geoffreyweal/vasp-benchmarking) for a guide on how to use the `vasp-core-benchmarking` tool to optimise your values of `ntasks` and `cpus-per-task` in your slurm script.
 
-### Not all VASP calculations benefit from multithreading
+## The theory behind efficiency in VASP using MPI and OpenMP technologies
 
-Increasing `--cpus-per-task` (or `NCORE` for VASP5) will not speed up all calculations. Higher levels of theory and more complicated exchange correlation functionals bring with them more FFTs and more parallelisable work during the wavefunction optimisation. Therefore, if using hybrid functionals or doing high-precision electronic structure calculations, your calculation will likely benefit from multithreading.
+In this section, we will cover in detail how MPI and OpenMP are used to increase the speed of calculations in VASP. 
 
-It's best to do some performance testing with a fixed number of electronic and ionic steps. This can be done with the following `INCAR` settings:
+### Useful Nomenclature
 
-``` sl
-EDIFFG = 0   # do not stop based on total energy
-NSW = 3      # number of ionic steps
-NELMIN = 3   # minimum number of electronic self-consistency steps
-NELM = 3     # maximum number of electronic self-consistency steps
+* *MPI (Message Passing Interface)*: The technology that lets VASP spread a calculation across multiple CPUs. Crucially, *memory is not shared between CPUs* — each CPU holds its own private copy, and the CPUs coordinate by passing messages to one another.
+* *OpenMP*: A technology that lets a group of CPUs work on the same piece of a calculation simultaneously, where the *memory is shared between them*.
+* In MPI you will come across the words *rank*, *task*, and *process* — these all mean the same thing. A rank/task/process is a single, self-contained piece of work that your program is carrying out.
+* A rank can be broken down further so that parts of it are worked on at the same time. When it is, we call the rank *multithreaded*: it contains several OpenMP *threads* that work on it simultaneously.
+    * Think of a rank as building a wall. Rather than one builder laying every brick in sequence, several builders (threads) can work along the wall at once, so the job finishes sooner.
+
+* In VASP, the terms *wavefunction*, *Kohn-Sham orbital*, and *band* all refer to the same thing, since each Kohn-Sham orbital is a single-electron wavefunction. Their total number is given by `NBANDS` in the `OUTCAR`.
+
+### How Parallelisation works in VASP
+
+In Density Functional Theory (DFT), Kohn-Sham orbitals represent the orbtials that electrons can reside in. VASP uses mutliple CPUs to perform the calculations across all the Kohn-Sham orbitals in a chemical system. There are two main methods used concurrently to use CPUs to calculate Kohn-Sham orbitals
+
+1. Assign CPUs to different orbitals. This allows VASP to calculate multiple orbtials simutaneously. 
+2. Assign multiple CPUs to the same orbtial. This allows VASP to calculate a single orbtial faster than than just using 1 orbital.
+
+In the various versions of VASP:
+
+* In **VASP 5**: MPI (Message Passing Interface) is used for both 1 and 2, where `NCORE` determines the number of CPUs assigned to 1 orbital.
+* In **VASP 6**: MPI is used for 1, while OpenMP is used for 2. 
+
+### What happens when calculating an orbital in VASP
+
+VASP uses a plane-wave basis set to represent the wavefunction. These plane-waves are naturally defined in reciprocal space. Some terms of the Hamiltonian are computed in this reciprocal space (also known as k-space) and other terms are computed in real-space. Converting the plane waves between real and reciprocal space requires the [Fast Fourier Transform (FFT) algorithm](https://en.wikipedia.org/wiki/Fast_Fourier_transform).
+
+CPUs work together to convert the Hamiltonian between real and reciprocal space. Because of this, they need to be very good at passing messages (or information) between each other, as well as reading memory from the RAM. The measure of "very good" is low latency, i.e. pass messages and read memory in a short amount of time. 
+
+### How do we decrease the latency (and increase speed) of calculations?
+
+The best way to decrease the latency of a calculation is to:
+
+1. Decrease the distance between CPUs that constantly communicate with each other, and
+2. Decrease the distance between the CPU and the memory it is constantly reading from.
+
+To do this, we can assign or *pin* orbitals to CPUs that are close to each other and the memory they read from on the physical die. 
+
+On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access) domains. These NUMA domains contain a small group of CPUs as well as a small amount of very fast memory that lie near each other (this very fast memory is called L3 cache). We can make sure that our calculations run with low latency by pinning orbtials to a NUMA or several nearby NUMA domains. This is done by slurm using the following commands:
+
+```sl
+#SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
+#SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
 ```
 
-Which will perform exactly 3 ionic and 3 electronic steps. Ensure the number of physical cores is constant while varrying the ratio of MPI ranks to OpenMP threads. For example, `--ntasks=4 --cpus-per-task=4`, `--ntasks=2 --cpus-per-task=8`, and `--ntasks=8 --cpus-per-task=2`, will all have 16 physical cores.
+Here, `--distribution=*:block:*` crucially makes slurm assign CPUs to VASP that are as close as possible. We note that other jobs are likely to also be running on the die at the same time on mahuika, so slurm does this as best as possible considering the circustances.
 
-VASP may be further parallelised by additional `INCAR` options. For example, if you have many **k**-points it would be wise to experiment with the `KPAR` setting.
+### Some CPUs do not need to lie close to each other than others
 
-!!! warning
+It is critical that those CPUs that are performing FFTs together *on the same band/orbital* be close to each other. These are those CPUs involved in `--cpus-per-task`.
+
+Those CPUs that are performing calculations on different bands do not necessarily need to be close together. It's a nice to have, but not critical to performance. This is because the only information that needs to be passed between bands/orbtials is the total charge density, which only needs to be exchanged per electronic step.
+
+### My job is spread across different nodes, is this a problem
+
+By using the `cpus-per-task` tag in slurm, those CPUs that need to be in constant communication with each other will located on the same node (and using the `--extra-node-info=1:*:1` and `--distribution=*:block:*` tags will hopefully be located on the same NUMA domain). The groups of CPUs (given by `ntasks`) can (usually) be safety spread across nodes if needed. 
+
+* **You do not need to do anything**: Slurm will determine what nodes to use based on your value of `ntasks` and the availability of CPUs on Mahuika. 
+
+## Useful VASP Information
+
+* Higher levels of theory and more complicated exchange correlation functionals often require more FFTs. For this reason, you may find that these functionals benefit from increasing `cpus-per-task` (compared with increasing `ntasks`). Again, test this out using the [`vasp-core-benchmarking`](https://github.com/geoffreyweal/vasp-benchmarking) tool. 
+* If you include a number of **k**-points in your `KPOINTS` file, you could try increasing the number of kpoint calculations that are done in parallel. This is controlled by `KPAR`, where increasing `KPAR` increases the number of kpoints being performed in parallel upon the same band/orbital. 
+
+!!! note
     KPAR must divide evenly into the total number of MPI processes.
 
-For more information on other parallelisable quantities, see the following VASP documentation pages:
+* If you come across `--threads-per-core=1` or `--threads-per-core=2`, this indicates whether you want to use [hyperthreading or not](https://docs.nesi.org.nz/Software/Parallel_Computing/Simultaneous_Multithreading/). For VASP, turn hyperthreading off (i.e. set `--threads-per-core=1`. This is the default on Mahuika). 
+* For visualising structures from ASE like the `POSCAR`, `OSZICAR`, etc, use the [Atomic Simulation Environment (ASE)](https://docs.ase-lib.org/). See [ASE GUI basics](https://docs.ase-lib.org/ase/gui/basics.html) to learn more about visualising your chemical systems in ASE. 
 
-[Basic parallisation](https://www.vasp.at/wiki/index.php/Category:Parallelization)
+## VASP extensions
 
-[Optimising the parallelisation](https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization)
+If you are wondering what extensions our VASP modules have been built with, please email the [Support Team](mailto:support@nesi.org.nz). You can also check what precompilier options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.
 
-### Avoid simultaneous multithreading (SMP)
+## References
 
-We have found that VASP doesn't benefit from SMP and often runs slower when SMP is enabled. It's best to leave SMP off as is the case in the example Slurm script above (not setting `--hint=multithread`).
+* Basic parallisation: https://www.vasp.at/wiki/index.php/Category:Parallelization
+* Optimising the parallelisation: https://www.vasp.at/wiki/index.php/Optimizing_the_parallelization#Optimizing_the_parallelization
 
-### GPU versions of VASP6
+
+## GPU versions of VASP6 (to edit)
 
 VASP modules containing *\*-NVHPC-\** in the name have been built with GPU support.
 
@@ -167,32 +236,3 @@ Some additional notes specific to running VASP on GPUs:
     from the usual memory you have to request for your job via
     `#SBATCH --mem` or similar; when you are allocated a GPU you get
     access to all the GPU memory on that device)
-
-### Visualisation with Atomic Simulation Environment's GUI
-
-It is often helpful, or necessary, to visualise your `POSCAR`,
-`CONTCAR`, or other files that contain structural information. One easy
-way to do this is with the Atomic Simulation Environment's (ASE) GUI.
-ASE is a Python library that can script a wide variety of VASP tasks. In
-particular ASE's GUI can help visualise structures, set-up supercells,
-move atoms, generate `POSCAR`s, and much more. To use the GUI simply add
-our latest Python version to your environment with `module load Python`.
-Then, call the GUI with `ase-gui` (for a new structure), or
-`ase-gui <structure_file>` to open an existing structure. For more
-information on how to use ASE see their main page
-[here](https://wiki.fysik.dtu.dk/ase/index.html).
-
-## Which VASP environment module should I use?
-
-In general, unless you require otherwise for the result consistency
-with earlier work or you rely on a removed feature, we recommend the
-most recent version for which you have a license.
-
-We have previously used version suffixes such as "-BEEF" and "-VTST" to
-indicate the presence of various VASP extensions, but are now moving
-away from that as the number of such extensions has grown and we have
-not found any disadvantage in always including them.
-
-### VASP extensions
-
-If you are wondering what extensions our VASP modules have been built with, please email the [Support Team](mailto:support@nesi.org.nz). You can also check what precompilier options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.
