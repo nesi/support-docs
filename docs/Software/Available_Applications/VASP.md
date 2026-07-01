@@ -88,7 +88,7 @@ A VASP license is managed at the research group level. Which versions you have a
 
 If your research group has a valid licence, please {% include "partials/support_request.html" %} and CC the group leader. The Support Team will add the relevant permissions to your HPC UID which will allow you to access the VASP modules. You may be asked to provide proof of your license if you are not from a known group or if the license is new.
 
-## How to assess the efficiency of a VASP calculation
+## Assessing VASP Efficiency
 
 VASP is a very CPU hungry piece of software. Therefore, being able to assess your VASP calculation's efficiency is critical and can allow you perform more calculations for less price. In general, the [VASP manual](https://www.vasp.at/wiki/index.php/The_VASP_Manual) is the best place to go for information on how to begin using VASP.
 
@@ -97,22 +97,22 @@ Below covers the steps to take to best optimise the efficiency of your VASP calc
 !!! note
     You only need to perform these steps on a representative system. You can assume all other similar systems will have the same optimisation parameters.
 
-### Step 1: Find the best `INCAR` and `KPOINTS` settings using `vasp-parameter-benchmarking`
+### Step 1: INCAR & KPOINTS Benchmarking
 
-The first step to optimising your system in VASP is to test various parameters in your `INCAR` and `KPOINTS` files. Here you want to **choose your parameters such that the energy of the system convergence across your parameter space**. This means that the energy of your system does not decrease dramatically by increasing/decreasing a parameter of your `INCAR`/`KPOINTS` file. The propose of doing this is that: 
+The first step to optimising your system in VASP is to test various parameters in your `INCAR` and `KPOINTS` files. Here you want to **choose your parameters such that the energy of the system converges across your parameter space**. This means that the energy of your system does not decrease dramatically by increasing/decreasing a parameter of your `INCAR`/`KPOINTS` file. The purpose of doing this is that:
 
 * You do not want to under-estimate parameters such that you get the wrong energy for your system, but
 * You do not want to over-estimate parameters such that your calculation takes longer to run (and thus requires more computational resources to complete).
 
 To figure out what the best `INCAR` (and `KPOINTS`) parameters to use, we have created the **`vasp-parameter-benchmarking` tool to help you easily choose the ideal parameters for your `INCAR` and `KPOINTS`**. This can include setting up your `ENCUT` value, determining whether to set `LREAL` to true or false, etc.
 
-* See the [``vasp-parameter-benchmarking`` Github page](https://github.com/geoffreyweal/vasp-parameter-benchmarking) for a guide on how to use the `vasp-parameter-benchmarking` tool to optimise your `INCAR` and `KPOINTS` files for your system. 
+* See the [`vasp-parameter-benchmarking` Github page](https://github.com/geoffreyweal/vasp-parameter-benchmarking) for a guide on how to use the `vasp-parameter-benchmarking` tool to optimise your `INCAR` and `KPOINTS` files for your system. 
 
-### Step 2: Optimising your `ntasks` and `cpus-per-task` settings in your slurm submission script using `vasp-core-benchmarking`
+### Step 2: Core Benchmarking
 
 VASP 6 uses two technologies to parallelise calculations across CPUs. These are:
 
-* MPI (`ntasks` in your slurm script): This is the main way that tasks are parallelised over CPUs or groups or CPUs.
+* MPI (`ntasks` in your slurm script): This is the main way that tasks are parallelised over CPUs or groups of CPUs.
 * OpenMP (`cpus-per-task` in your slurm script): This is a secondary method of parallelising such that a group of CPU work together on a single task. 
 
 VASP 6 uses MPI and OpenMP in different ways to speed up your calculation
@@ -122,11 +122,11 @@ VASP 6 uses MPI and OpenMP in different ways to speed up your calculation
 
 By changing the ratio of MPI/OpenMP used, you can increase the speed of your calculation using the same number of CPUs. 
 
-Determining the ideal ratio of MPI/OpenMP requires testing. To make it easier to perform all these tests, we have created the `vasp-core-benchmarking` tool. **The  `vasp-core-benchmarking` tool is designed to sweep across through a region of `ntasks` and `cpus-per-task` values with minimal effort on your part**. This tool then helps you determine which values of `ntasks` and `cpus-per-task` minimise the time requires to perform an electronic step. 
+Determining the ideal ratio of MPI/OpenMP requires testing. To make it easier to perform all these tests, we have created the `vasp-core-benchmarking` tool. **The  `vasp-core-benchmarking` tool is designed to sweep across a region of `ntasks` and `cpus-per-task` values with minimal effort on your part**. This tool then helps you determine which values of `ntasks` and `cpus-per-task` minimise the time required to perform an electronic step. 
 
 * See the [`vasp-core-benchmarking` Github page](https://github.com/geoffreyweal/vasp-benchmarking) for a guide on how to use the `vasp-core-benchmarking` tool to optimise your values of `ntasks` and `cpus-per-task` in your slurm script.
 
-## The theory behind efficiency in VASP using MPI and OpenMP technologies
+## The theory behind VASP efficiency
 
 In this section, we will cover in detail how MPI and OpenMP are used to increase the speed of calculations in VASP. 
 
@@ -142,10 +142,10 @@ In this section, we will cover in detail how MPI and OpenMP are used to increase
 
 ### How Parallelisation works in VASP
 
-In Density Functional Theory (DFT), Kohn-Sham orbitals represent the orbtials that electrons can reside in. VASP uses mutliple CPUs to perform the calculations across all the Kohn-Sham orbitals in a chemical system. There are two main methods used concurrently to use CPUs to calculate Kohn-Sham orbitals
+In Density Functional Theory (DFT), Kohn-Sham orbitals represent the orbitals that electrons can reside in. VASP uses multiple CPUs to perform the calculations across all the Kohn-Sham orbitals in a chemical system. There are two main methods used concurrently to use CPUs to calculate Kohn-Sham orbitals  
 
-1. Assign CPUs to different orbitals. This allows VASP to calculate multiple orbtials simutaneously. 
-2. Assign multiple CPUs to the same orbtial. This allows VASP to calculate a single orbtial faster than than just using 1 orbital.
+1. Assign CPUs to different orbitals. This allows VASP to calculate multiple orbitals simultaneously. 
+2. Assign multiple CPUs to the same orbital. This allows VASP to calculate a single orbital faster than just using 1 orbital.  
 
 In the various versions of VASP:
 
@@ -167,7 +167,7 @@ The best way to decrease the latency of a calculation is to:
 
 To do this, we can assign or *pin* orbitals to CPUs that are close to each other and the memory they read from on the physical die. 
 
-On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access) domains. These NUMA domains contain a small group of CPUs as well as a small amount of very fast memory that lie near each other (this very fast memory is called L3 cache). We can make sure that our calculations run with low latency by pinning orbtials to a NUMA or several nearby NUMA domains. This is done by slurm using the following commands:
+On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access) domains. These NUMA domains contain a small group of CPUs as well as a small amount of very fast memory that lie near each other (this very fast memory is called L3 cache). We can make sure that our calculations run with low latency by pinning orbitals to a NUMA or several nearby NUMA domains. This is done by Slurm using the following commands:
 
 ```sl
 #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
@@ -184,7 +184,7 @@ Those CPUs that are performing calculations on different bands do not necessaril
 
 ### My job is spread across different nodes, is this a problem
 
-By using the `cpus-per-task` tag in slurm, those CPUs that need to be in constant communication with each other will located on the same node (and using the `--extra-node-info=1:*:1` and `--distribution=*:block:*` tags will hopefully be located on the same NUMA domain). The groups of CPUs (given by `ntasks`) can (usually) be safety spread across nodes if needed. 
+By using the `cpus-per-task` tag in slurm, those CPUs that need to be in constant communication with each other will located on the same node (and using the `--extra-node-info=1:*:1` and `--distribution=*:block:*` tags will hopefully be located on the same NUMA domain). The groups of CPUs (given by `ntasks`) can (usually) be safety spread across nodes if needed.
 
 * **You do not need to do anything**: Slurm will determine what nodes to use based on your value of `ntasks` and the availability of CPUs on Mahuika. 
 
