@@ -58,10 +58,11 @@ For more information on what you can do with VASP see the [official documentatio
     ``` sl
     #!/bin/bash -e
 
+    #SBATCH --job-name=my_VASP5_job
+    #SBATCH --account=nesi99991
+    #SBATCH --time=01:00:00
     #SBATCH --ntasks=32
     #SBATCH --cpus-per-task=1
-    #SBATCH --job-name=my_VASP5_job
-    #SBATCH --time=01:00:00
     #SBATCH --mem-per-cpu=1GB
     #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
     #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
