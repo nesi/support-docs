@@ -27,7 +27,8 @@ Scientific_Computing/Supported_Applications/index.md : Software/Available_Applic
 Scientific_Computing/Supported_Applications/ipyrad.md : Software/Available_Applications/ipyrad.md
 Scientific_Computing/Supported_Applications/Java.md : Software/Available_Applications/Java.md
 Scientific_Computing/Supported_Applications/Julia.md : Software/Available_Applications/Julia.md
-Scientific_Computing/Supported_Applications/Keras.md : Software/Available_Applications/Keras.md
+Scientific_Computing/Supported_Applications/Keras.md : Software/Available_Applications/TensorFlow.md
+Software/Available_Applications/Keras.md : Software/Available_Applications/TensorFlow.md
 Scientific_Computing/Supported_Applications/Lambda_Stack.md : Software/Available_Applications/Lambda_Stack.md
 Scientific_Computing/Supported_Applications/MAKER.md : Software/Available_Applications/MAKER.md
 Scientific_Computing/Supported_Applications/MATLAB.md : Software/Available_Applications/MATLAB.md
@@ -46,8 +47,10 @@ Scientific_Computing/Supported_Applications/Relion.md : Software/Available_Appli
 Scientific_Computing/Supported_Applications/snpEff.md : Software/Available_Applications/snpEff.md
 Scientific_Computing/Supported_Applications/Supernova.md : Software/Available_Applications/Supernova.md
 Scientific_Computing/Supported_Applications/Synda.md : Software/Available_Applications/Synda.md
-Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md : Software/Available_Applications/TensorFlow_on_CPUs.md
-Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md : Software/Available_Applications/TensorFlow_on_GPUs.md
+Scientific_Computing/Supported_Applications/TensorFlow_on_CPUs.md : Software/Available_Applications/TensorFlow.md
+Scientific_Computing/Supported_Applications/TensorFlow_on_GPUs.md : Software/Available_Applications/TensorFlow.md
+Software/Available_Applications/TensorFlow_on_CPUs.md : Software/Available_Applications/TensorFlow.md
+Software/Available_Applications/TensorFlow_on_GPUs.md : Software/Available_Applications/TensorFlow.md
 Scientific_Computing/Supported_Applications/Trinity.md : Software/Available_Applications/Trinity.md
 Scientific_Computing/Supported_Applications/VASP.md : Software/Available_Applications/VASP.md
 Scientific_Computing/Supported_Applications/VirSorter.md : Software/Available_Applications/VirSorter.md

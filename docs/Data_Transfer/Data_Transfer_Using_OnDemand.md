@@ -1,13 +1,12 @@
 ---
 created_at: 2026-01-05
-description: description: How to transfer data on the REANNZ HPC using RClone.
+description: How to transfer data on the REANNZ HPC using OnDemand.
 tags: 
     - OnDemand
 ---
 
-
-
-Mahuika OnDemand only a web browser to use. The instructions to use it are the same whether your are connecting from a Windows, Mac or a Linux computer.
+!!! info "Note"
+    Using OnDemand for transferring large files is not recommended. Please see the [Data Transfer Overview](Data_Transfer_Overview.md) for alternative transfer methods.
 
 * See [OnDemand how to guide](../Interactive_Computing/OnDemand/how_to_guide.md) for more information about how to use OnDemand.
 

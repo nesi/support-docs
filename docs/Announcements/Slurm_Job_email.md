@@ -1,7 +1,6 @@
 ---
 created_at: 2026-02-11
 description: Email from Slurm Jobs now available
-status: new
 tags: 
     - hpc3
     - email

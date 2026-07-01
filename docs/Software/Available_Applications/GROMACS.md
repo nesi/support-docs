@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-21T02:46:25Z'
 tags: 
-  -  molecular dynamics
+  -  Molecular Dynamics
   -  chemistry
 description: How to run GROMACS on the Mahuika cluster
 ---

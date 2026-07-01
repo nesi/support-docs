@@ -5,7 +5,7 @@ tags:
 title: Share Collections
 ---
 
-Share collections are a way to easily share data with other researchers who also has globus.
+Share collections are a way to easily share data with other researchers who also has Globus.
 
 ## How to create a share collection
 

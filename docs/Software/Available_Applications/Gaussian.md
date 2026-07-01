@@ -1,8 +1,8 @@
 ---
 created_at: '2015-07-29T23:31:02Z'
 tags:
-- mahuika
 - chemistry
+- Density Functional Theory
 description: How to run Gaussian on the Mahuika HPC
 ---
 

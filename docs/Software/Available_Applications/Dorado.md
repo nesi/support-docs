@@ -42,7 +42,11 @@ Technologies, Ltd. Public License, v. 1.0. If a copy of the License was
 not distributed with this file, You can obtain one
 at [http://nanoporetech.com](http://nanoporetech.com/)
 
-.
+## Dorado models
+
+Dorado can fetch models for basecalling from the Oxford Nanopore Content Delivery Network (CDN) using `dorado download`.
+By default, Dorado will download and look for models in the current working directory; this can be changed using the `--models-directory` option for Dorado commands.
+You can also set this via the `DORADO_MODELS_DIRECTORY` environment variable.
 
 ### Example Slurm script
 

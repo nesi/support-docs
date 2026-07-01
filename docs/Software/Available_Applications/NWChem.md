@@ -1,8 +1,8 @@
 ---
 created_at: '2015-12-13T20:47:26Z'
 tags:
-- mahuika
 - chemistry
+- Density Functional Theory
 title: NWChem
 vote_count: 0
 vote_sum: 0

@@ -29,7 +29,13 @@ There will be ***no exclusions*** to this auto-deletion process. If you need to 
 
 ![Auto cleaning cycle](../assets/images/AutocleanerProcess.png)
 
-Objects other than files, such as directories and symbolic links, are not yet deleted under this policy (we will be reviewing the directory deletion policy in the next few months), even if at deletion time they are empty, broken, or otherwise redundant. These entities typically take up no disk space apart from a small amount of metadata, but still count towards the project's inode (file count) quota.
+### Empty folders will be removed
+
+If a folder has been emptied of files from the autodeletion method, it too will be removed. **Only empty folders will be removed**. A folder that still contains files after the autocleaning process will not be removed.
+
+**Only child folders will be deleted**. Any parent folders that are empty after this process will not be deleted. 
+
+Symbolic links will not be removed, if at deletion time they are broken. These entities typically take up no disk space apart from a small amount of metadata, but still count towards the project's inode (file count) quota.
 
 ### GUFI: The Engine behind the Autocleaner
 

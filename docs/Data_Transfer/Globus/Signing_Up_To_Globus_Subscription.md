@@ -6,7 +6,7 @@ tags:
 title: Signing up to a Free Globus Subscription
 ---
 
-A Globus subscription is sometimes necessary for certain tasks, such as [moving data between two computers/personal endpoints](./Data_Transfer_Between_Personal_Endpoints.md).
+A Globus subscription is sometimes necessary for certain tasks, such as [moving data between two computers/personal endpoints](./Data_Transfer_Between_Personal_Endpoints.md). This is not required for moving data to or from Mahuika.
 
 !!! tip
     The name of the Mahuika subscription is `New Zealand eScience Infrastructure Standard`
