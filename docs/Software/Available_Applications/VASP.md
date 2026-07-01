@@ -174,9 +174,9 @@ On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikip
 #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
 ```
 
-Here, `--distribution=*:block:*` crucially makes slurm assign CPUs to VASP that are as close as possible. We note that other jobs are likely to also be running on the die at the same time on mahuika, so slurm does this as best as possible considering the circustances.
+Here, `--distribution=*:block:*` crucially makes slurm assign CPUs to VASP that are as close as possible. We note that other jobs are likely to also be running on the die at the same time on Mahuika, so Slurm does this as best as possible considering the circustances.
 
-### Some CPUs do not need to lie close to each other than others
+### Some CPUs do not need to lie as close to each other as others 
 
 It is critical that those CPUs that are performing FFTs together *on the same band/orbital* be close to each other. These are those CPUs involved in `--cpus-per-task`.
 
