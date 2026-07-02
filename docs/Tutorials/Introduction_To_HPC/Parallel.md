@@ -22,7 +22,7 @@ On one end of the scale, some software may claim to make use of multiple cores i
 
 Some software will require you to specify number of cores (e.g. `-n 8` or `-np 16`), or even type of parallelisation (e.g. `-dis` or `-mpi=intelmpi`).
 
-Occasionally your input files may require rewriting/regenerating for every new CPU combintation (e.g. domain based parallelism without automatic partitioning).
+Occasionally your input files may require rewriting/regenerating for every new CPU combination (e.g. domain based parallelism without automatic partitioning).
 
 ### Writing code
 
