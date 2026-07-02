@@ -646,7 +646,7 @@ This can be done with the **c**o**p**y command `cp`, at least two arguments are 
 We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`
 
 ```sh
-cp {{ extra.working_directory|join('/') }}/ {{extra.example_script}}  .
+cp {{ extra.working_directory|join('/') }}/{{extra.example_script}}  .
 ```
 
 We can check that it did the right thing using `ls`
