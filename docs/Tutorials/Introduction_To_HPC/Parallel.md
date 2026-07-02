@@ -20,9 +20,9 @@ Generally speaking, Parallelism is either _implicit_ where the software figures 
 The first step when looking to run particular software should always be to read the documentation.
 On one end of the scale, some software may claim to make use of multiple cores implicitly, but this should be verified as the methods used to determine available resources are not guaranteed to work.
 
-Some software will require you to specify number of cores (e.g. `-n 8` or `-np 16`), or even type of paralellisation (e.g. `-dis` or `-mpi=intelmpi`).
+Some software will require you to specify number of cores (e.g. `-n 8` or `-np 16`), or even type of parallelisation (e.g. `-dis` or `-mpi=intelmpi`).
 
-Occasionally your input files may require rewriting/regenerating for every new CPU combintation (e.g. domain based parallelism without automatic partitioning).
+Occasionally your input files may require rewriting/regenerating for every new CPU combination (e.g. domain based parallelism without automatic partitioning).
 
 ### Writing code
 
@@ -31,10 +31,10 @@ However, it's more likely to require some amount of effort on your behalf.
 
 It is important to determine this before you start requesting more resources through Slurm  
 
-If you are writing your own code, some programming languages will have functions that can make use of multiple CPUs without requiring you to changes your code.
+If you are writing your own code, some programming languages will have functions that can make use of multiple CPUs without requiring you to change your code.
 However, unless that function is where the majority of time is spent, this is unlikely to give you the performance you are looking for.
 
-*Python: [Multiproccessing](https://docs.python.org/3/library/multiprocessing.html)* (not to be confused with `threading` which is not really parallel.)
+*Python: [Multiprocessing](https://docs.python.org/3/library/multiprocessing.html)* (not to be confused with `threading` which is not really parallel.)
 
 *MATLAB: [Parpool](https://au.mathworks.com/help/parallel-computing/parpool.html)*
 

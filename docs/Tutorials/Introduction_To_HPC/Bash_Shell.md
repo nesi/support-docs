@@ -272,7 +272,7 @@ ls -la
 ```out
 drwxrws---+  4 usr001  <projectcode>   4096 Nov 15 09:00 .
 drwxrws---+ 12 root    <projectcode> 262144 Nov 15 09:23 ..
--rw-r-----+  1 cwal219 <projectcode>    460 Nov 18 17:03 {{dir[1]}} 
+-rw-r-----+  1 cwal219 <projectcode>    460 Nov 18 17:03 {{extra.example_script}} 
 drwxrws---+  2 usr123  <projectcode>   4096 Nov 15 09:01 usr123
 drwxrws---+  2 <username>  <projectcode>   4096 Nov 15 09:01 <username>
 ```
@@ -646,7 +646,7 @@ This can be done with the **c**o**p**y command `cp`, at least two arguments are 
 We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`
 
 ```sh
-cp {{ extra.working_directory|join('/') }}/ {{extra.example_script}}  .
+cp {{ extra.working_directory|join('/') }}/{{extra.example_script}}  .
 ```
 
 We can check that it did the right thing using `ls`
