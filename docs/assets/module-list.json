@@ -50,7 +50,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.9,
+                        "hourly_average": 0.89,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -78,7 +78,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.57,
+                        "hourly_average": 0.58,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -3614,7 +3614,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 5.23,
+                        "hourly_average": 5.25,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3682,7 +3682,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 61142245.53,
+                        "hourly_average": 61230590.03,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -5135,6 +5135,26 @@
         "last_updated": 1740132628,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/EDTA/2.1.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "EESSI": {
+        "description": "",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "",
+        "support": "",
+        "versions": [
+            "2025.06"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2025.06",
+        "default_type": "latest",
+        "last_updated": 1779521581,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/lmod/generic/EESSI/2025.06.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18651,19 +18671,15 @@
             "3.13-gimkl-2020a-R-4.1.0",
             "3.15-gimkl-2022a-R-4.2.1",
             "3.17-gimkl-2022a-R-4.3.1",
-            "3.22-foss-2026-R-4.6.0"
+            "3.23-foss-2026-R-4.6.0"
         ],
-        "admin_list": [
-            {
-                "3.22-foss-2026-R-4.6.0": "Warning: 3.22 was a misnamed install of 3.23, so please load R-bundle-Bioconductor/3.23-foss-2026-R-4.6.0 instead."
-            }
-        ],
+        "admin_list": [],
         "network_licences": [],
-        "default": "3.22-foss-2026-R-4.6.0",
+        "default": "3.23-foss-2026-R-4.6.0",
         "default_type": "latest",
-        "last_updated": 1782373486,
+        "last_updated": 1782711394,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/R-bundle-Bioconductor/3.22-foss-2026-R-4.6.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/R-bundle-Bioconductor/3.23-foss-2026-R-4.6.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18987,15 +19003,16 @@
         "versions": [
             "1.54.0",
             "1.57.0",
-            "1.62.2"
+            "1.62.2",
+            "1.74.3"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.62.2",
+        "default": "1.74.3",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1782774459,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/rclone/1.62.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/rclone/1.74.3.lua",
         "force_hide": "False",
         "force_show": "False"
     },
