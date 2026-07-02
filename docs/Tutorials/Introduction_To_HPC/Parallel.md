@@ -31,7 +31,7 @@ However, it's more likely to require some amount of effort on your behalf.
 
 It is important to determine this before you start requesting more resources through Slurm  
 
-If you are writing your own code, some programming languages will have functions that can make use of multiple CPUs without requiring you to changes your code.
+If you are writing your own code, some programming languages will have functions that can make use of multiple CPUs without requiring you to change your code.
 However, unless that function is where the majority of time is spent, this is unlikely to give you the performance you are looking for.
 
 *Python: [Multiproccessing](https://docs.python.org/3/library/multiprocessing.html)* (not to be confused with `threading` which is not really parallel.)
