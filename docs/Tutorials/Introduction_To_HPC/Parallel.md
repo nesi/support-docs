@@ -20,7 +20,7 @@ Generally speaking, Parallelism is either _implicit_ where the software figures 
 The first step when looking to run particular software should always be to read the documentation.
 On one end of the scale, some software may claim to make use of multiple cores implicitly, but this should be verified as the methods used to determine available resources are not guaranteed to work.
 
-Some software will require you to specify number of cores (e.g. `-n 8` or `-np 16`), or even type of paralellisation (e.g. `-dis` or `-mpi=intelmpi`).
+Some software will require you to specify number of cores (e.g. `-n 8` or `-np 16`), or even type of parallelisation (e.g. `-dis` or `-mpi=intelmpi`).
 
 Occasionally your input files may require rewriting/regenerating for every new CPU combintation (e.g. domain based parallelism without automatic partitioning).
 
