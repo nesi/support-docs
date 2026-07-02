@@ -31,18 +31,21 @@ Contrary to what is stated in [our documentation on core files](../Getting_Start
 
 ## Slurm
 
-### Requesting GPUs
-If you request a GPU without specifying which *type* of GPU, you will get a random one. So please always specify a GPU type. 
-
 ### BadConstraints
 This uninformative message can appear in the `squeue` output as the reason for a job pending. It does not always reflect a real problem though, just a side-effect of the mechanism we are using to target jobs to the right-sized node(s) together with a small bug in Slurm. If it causes your job to be put on hold (ie: its priority gets appears as zero in output from `squeue --me  -S -p  --Format=jobid:10,partition:13,reason:22,numnodes:.6,prioritylong:.6`) then please try `scontrol release <jobid>` or {% include "partials/support_request.html" %} if the issue persists.
 
 ## SSHing into compute nodes
 
-Some users may not be able to ssh from the login node into compute nodes that are running their jobs. The temporary solution for this is to use the command (once your job is running):
+You may find that you are unable to ssh from the login node into compute nodes that are running your jobs. This should still be possible but only if you have an ssh key pair set up for use within the cluster. Or an alternative to ssh is to use the Slurm command (once your job is running):
 
 ```sh
 srun --pty --overlap --jobid <jobid> bash
 ```
 
-where `<jobid>` is the jobid for the job of interest.
+or equvalently using our script as a convenient shortcut:
+
+```sh
+svisit <jobid>
+```
+
+where `<jobid>` is the job of interest.
