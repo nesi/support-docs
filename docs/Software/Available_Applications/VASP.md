@@ -86,7 +86,7 @@ For more information on what you can do with VASP see the [official documentatio
 
 A VASP licence is managed at the research group level. Which versions you have access to depends on what version your research group leader has purchased. You will have access to either VASP4, VASP5, or VASP6. Minor releases are included under the major release licence, for example VASP6.?.? is available to those who have a VASP6 licence.
 
-If your research group has a valid licence, please {% include "partials/support_request.html" %} and CC the group leader. The Support Team will add the relevant permissions to your HPC UID which will allow you to access the VASP modules. You may be asked to provide proof of your licence if you are not from a known group or if the licence is new.
+If your research group has a valid licence, please {% include "partials/support_request.html" %} and CC the group leader. The Support Team will grant you permission to using VASP on Mahuika. You may be asked to provide proof of your licence if you are not from a known group or if the licence is new.
 
 ## Assessing VASP Efficiency
 
