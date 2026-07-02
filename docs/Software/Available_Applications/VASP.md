@@ -128,7 +128,7 @@ Determining the ideal ratio of MPI/OpenMP requires testing. To make it easier to
 
 ## The theory behind VASP efficiency
 
-In this section, we will cover in detail how MPI and OpenMP are used to increase the speed of calculations in VASP. 
+In this section, we will cover in detail how MPI and OpenMP are used to increase the speed of calculations in VASP. YOU do not need to read this to measure VASP efficiency, this is reading just for interest.
 
 ### Useful Nomenclature
 
@@ -149,7 +149,7 @@ In Density Functional Theory (DFT), Kohn-Sham orbitals represent the orbitals th
 
 In the various versions of VASP:
 
-* In **VASP5**: MPI (Message Passing Interface) is used for both 1 and 2, where `NCORE` determines the number of CPUs assigned to 1 orbital.
+* In **VASP5**: MPI (Message Passing Interface) is used for both 1 and 2, where `NCORE` determines the number of CPUs assigned to an individual orbital.
 * In **VASP6**: MPI is used for 1, while OpenMP is used for 2.
 
 ### What happens when calculating an orbital in VASP
@@ -165,16 +165,18 @@ The best way to decrease the latency of a calculation is to:
 1. Decrease the distance between CPUs that constantly communicate with each other, and
 2. Decrease the distance between the CPU and the memory it is constantly reading from.
 
-To do this, we can assign or *pin* orbitals to CPUs that are close to each other and the memory they read from on the physical die. 
+To do this, we can assign or *pin* orbitals to CPUs that are close to each other and the memory they read from on the physical die.
 
-On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access) domains. These NUMA domains contain a small group of CPUs as well as a small amount of very fast memory that lies near each other (this very fast memory is called L3 cache). We can make sure that our calculations run with low latency by pinning orbitals to a NUMA domain or several nearby NUMA domains. This is done by slurm using the following commands:
+On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access) domains. These NUMA domains contain a small group of CPUs as well as a small amount of very fast memory that lies near each other (this very fast memory is called L3 cache).
+
+In slurm, we can make sure that our calculations run with low latency by pinning orbitals to a NUMA domain or several nearby NUMA domains. This is done by Slurm using the following commands:
 
 ```sl
 #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
 #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
 ```
 
-Here, `distribution=*:block:*` crucially makes slurm assign CPUs to VASP that are as close as possible. We note that other jobs are likely to also be running on the die at the same time on Mahuika, so slurm does this as best as possible considering the circumstances.
+Here, `distribution=*:block:*` crucially makes slurm assign CPUs to VASP that are as close as possible. We note that other jobs are likely to also be running on the die at the same time on Mahuika, so Slurm does this as best as possible considering the circumstances.
 
 ### Some CPUs do not need to lie as close to each other as others 
 
@@ -186,7 +188,7 @@ Those CPUs that are performing calculations on different bands do not necessaril
 
 By using the `cpus-per-task` tag in slurm, those CPUs that need to be in constant communication with each other will be located on the same node (and using the `extra-node-info=1:*:1` and `distribution=*:block:*` tags will hopefully be located on the same NUMA domain). The groups of CPUs (given by `ntasks`) can (usually) be safely spread across nodes if needed.
 
-* **You do not need to do anything**: slurm will determine what nodes to use based on your value of `ntasks` and the availability of CPUs on Mahuika.
+* **You do not need to do anything**: Slurm will determine what nodes to use based on your value of `ntasks` and the availability of CPUs on Mahuika.
 
 ## GPU versions of VASP6
 
@@ -205,7 +207,7 @@ Some additional notes specific to running VASP on GPUs:
 ## Useful VASP Information
 
 * Higher levels of theory and more complicated exchange correlation functionals often require more FFTs. For this reason, you may find that these functionals benefit from increasing `cpus-per-task` (compared with increasing `ntasks`). Again, test this out using the [`vasp-core-benchmarking`](https://github.com/geoffreyweal/vasp-core-benchmarking) tool. 
-* If you include a number of **k**-points in your `KPOINTS` file, you could try increasing the number of kpoint calculations that are done in parallel. This is controlled by `KPAR`, where increasing `KPAR` increases the number of kpoints being performed in parallel upon the same band/orbital. <!-- TODO: need to figure out / verify this KPAR description is correct. -->
+* If you include a number of k-points in your `KPOINTS` file, you could try increasing the number of these k-point calculations that are done in parallel. This is controlled by `KPAR`, where increasing `KPAR` increases the number of kpoints being performed in parallel upon the same band/orbital.
 
 !!! note
     KPAR must divide evenly into the total number of MPI processes.
