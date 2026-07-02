@@ -296,8 +296,8 @@ This can be suppressed using the flag `-X`.
 ??? question "Solution"
 
     ```sh
-    nano example_job.sh
-    cat example_job.sh
+    nano example_job.sl
+    cat example_job.sl
     ```
 
     ```sh

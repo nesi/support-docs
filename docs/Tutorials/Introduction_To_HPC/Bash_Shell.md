@@ -141,7 +141,7 @@ ls {{extra.working_directory[0]}}
 You should see a directory called `{{extra.working_directory[1]}}`, and possibly several other directories.
 For the purposes of this tutorial you will be working within `{{extra.working_directory[0]}}/{{extra.working_directory[1]}}`.
 
-!!! tip "Command History
+!!! tip "Command History"
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
@@ -234,7 +234,6 @@ ls -l {{extra.working_directory[0]}}/{{extra.working_directory[1]}}
 ```
 
 ```out
--rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 
 -rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 {{ extra.example_script }} 
 drwxr-sr-x+ 3 usr9999 <projectcode> 4096 22 Sep 08:40 birds
 drwxrws---+ 2 usr123  <projectcode> 4096 Nov 15 09:01 usr123
@@ -253,7 +252,7 @@ The **prompt** tells us that the terminal is accepting inputs, prompts can be cu
 The **command**, what are we trying to do.
 
 **Options** will modify the behavior of the command, multiple options can be specified.
-Options will either start with a single dash (`-`) or two dashes (`--`)..
+Options will either start with a single dash (`-`) or two dashes (`--`).
 Often options will have a short and long format e.g. `-a` and `--all`.
 
 **Arguments** tell the command what to operate on (usually files and directories).
@@ -496,7 +495,7 @@ Will return:
 kaka.txt  kakapo.jpeg
 ```
 
-Since the pattern `ka*` will match `kaka.txt`and `kakapo.jpeg` as these both start with "ka". While the command:
+Since the pattern `ka*` will match `kaka.txt` and `kakapo.jpeg` as these both start with "ka". While the command:
 
 ```sh
 ls *.jpeg
