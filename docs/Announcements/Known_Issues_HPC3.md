@@ -42,7 +42,7 @@ You may find that you are unable to ssh from the login node into compute nodes t
 srun --pty --overlap --jobid <jobid> bash
 ```
 
-or equvalently using our script as a convenient shortcut:
+or equivalently using our script as a convenient shortcut:
 
 ```sh
 svisit <jobid>
