@@ -218,7 +218,7 @@ ls {{extra.working_directory[0]}}
 ```
 
 ```out
-array_sum.R birds usr123 <username>
+{{extra.example_script}} birds usr123 <username>
 ```
 
 !!! note "Your Mileage May Vary"
