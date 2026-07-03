@@ -129,7 +129,7 @@ If you would like to prevent this from happening in the future, type the followi
 setup_ssh_key
 ```
 
-This will setup an ssh key in your mahuika home directory, and will automatically authenticate you when accessing mahuika through OnDemand. You will see a message like this:
+This will set up an SSH key in your Mahuika home directory, and will automatically authenticate you when accessing Mahuika through OnDemand. You will see a message like this:
 
 ```bash
 user.name@login03:~$ setup_ssh_key 
