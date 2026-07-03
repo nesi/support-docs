@@ -115,7 +115,7 @@ please use the <kbd>00_nesi_project</kbd> parent directory which contains symlin
 
 ## Additional Setup Steps
 
-You may be asked to authenticate your terminal session when you access mahuika through the terminal. For example:
+You may be asked to authenticate your terminal session when you access Mahuika through the terminal. For example:
 
 ```bash
 (user.name@login.hpc.nesi.org.nz) Authenticate at https://iam.nznesi.io?user_code=STUV-WXYZ and press ENTER.
