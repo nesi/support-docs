@@ -99,17 +99,17 @@ please use the <kbd>00_nesi_project</kbd> parent directory which contains symlin
 
 ![OOD_VSCode_fileexplorer](../../assets/images/how_to_guide_OOD_VSCode_fileexplorer.png)
 
-### Access the terminal in OnDemand
+## Access the terminal in OnDemand
 
-## OnDemand App
+### OnDemand App
 
 ![mahuika_shell_access](../../assets/images/how_to_guide_mahuika_shell_access.png)
 
-## Jupyter terminal
+### Jupyter terminal
 
 ![jupyterlab_terminal](../../assets/images/how_to_guide_jupyterlab_terminal.png)
 
-## VS Code terminal
+### VS Code terminal
 
 ![OOD_VS_Code_terminal](../../assets/images/how_to_guide_OOD_VS_Code_terminal.png)
 
