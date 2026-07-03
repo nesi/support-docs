@@ -113,7 +113,7 @@ please use the <kbd>00_nesi_project</kbd> parent directory which contains symlin
 
 ![OOD_VS_Code_terminal](../../assets/images/how_to_guide_OOD_VS_Code_terminal.png)
 
-## Addition Setup Steps
+## Additional Setup Steps
 
 You may be asked to authenticate your terminal session when you access mahuika through the terminal. For example:
 
@@ -129,4 +129,10 @@ If you would like to prevent this from happening in the future, type the followi
 setup_ssh_key
 ```
 
-This will setup an ssh key in your mahuika home directory, and will automatically authenticate you when accessing mahuika through OnDemand.
+This will setup an ssh key in your mahuika home directory, and will automatically authenticate you when accessing mahuika through OnDemand. You will see a message like this:
+
+```bash
+user.name@login03:~$ setup_ssh_key 
+Generated new ed25519 key: /home/user.name/.ssh/mahuika_ssh_key
+Added public key to /home/user.name/.ssh/authorized_keys
+```
