@@ -94,3 +94,39 @@ please use the <kbd>00_nesi_project</kbd> parent directory which contains symlin
 ### Jupyter file explorer
 
 ![File Explorer Jupyter](../../assets/images/OOD_jupyter_fileexplorer.png)
+
+## VS Code file explorer
+
+![OOD_VSCode_fileexplorer](../../assets/images/how_to_guide_OOD_VSCode_fileexplorer.png)
+
+### Access the terminal in OnDemand
+
+## OnDemand App
+
+![mahuika_shell_access](../../assets/images/how_to_guide_mahuika_shell_access.png)
+
+## Jupyter terminal
+
+![jupyterlab_terminal](../../assets/images/how_to_guide_jupyterlab_terminal.png)
+
+## VS Code terminal
+
+![OOD_VS_Code_terminal](../../assets/images/how_to_guide_OOD_VS_Code_terminal.png)
+
+## Addition Setup Steps
+
+You may be asked to authenticate your terminal session when you access mahuika through the terminal. For example:
+
+```bash
+(user.name@login.hpc.nesi.org.nz) Authenticate at https://iam.nznesi.io?user_code=STUV-WXYZ and press ENTER.
+```
+
+If you see this, enter the given webpage into a browser and proceed to authenticate yourself.
+
+If you would like to prevent this from happening in the future, type the following into the terminal once you have authenticated yourself and have access to mahuika through the terminal
+
+```bash
+setup_ssh_key
+```
+
+This will setup an ssh key in your mahuika home directory, and will automatically authenticate you when accessing mahuika through OnDemand.
