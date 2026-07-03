@@ -123,7 +123,7 @@ You may be asked to authenticate your terminal session when you access mahuika t
 
 If you see this, enter the given webpage into a browser and proceed to authenticate yourself.
 
-If you would like to prevent this from happening in the future, type the following into the terminal once you have authenticated yourself and have access to mahuika through the terminal
+If you would like to prevent this from happening in the future, type the following into the terminal once you have authenticated yourself and have access to Mahuika through the terminal:
 
 ```bash
 setup_ssh_key
