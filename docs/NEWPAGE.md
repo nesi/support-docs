@@ -119,7 +119,7 @@ nav:
   - "*"
 ```
 
-`...` will be replaced by all other pages, in the default order.
+`*` will be replaced by all other pages, in the default order.
 
 !!! warning
     If you do set page order manually, make sure you include the `...` else some pages will not be rendered.
