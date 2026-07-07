@@ -12,7 +12,7 @@ fi
 
 READY_MARKER="$CACHE_DIR/.setup-complete"
 if [ ! -f "$READY_MARKER" ]; then
-  (cd "$CACHE_DIR" && npm ci --omit=dev --no-audit --no-fund --silent && npx --yes playwright install --with-deps --only-shell chromium)
+  (cd "$CACHE_DIR" && npm ci --omit=dev --no-audit --no-fund --silent && npx --yes playwright install --only-shell chromium)
   touch "$READY_MARKER"
 fi
 
