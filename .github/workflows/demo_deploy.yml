@@ -112,8 +112,8 @@ jobs:
         with:
           urls: ${{ steps.pages.outputs.urls }}
           wcag-level: AA
-          fail-on: never
-          min-impact: minor
+          fail-on: critical
+          min-impact: serious
 
       - name: Post accessibility report on PR
         if: steps.wait.outputs.conclusion == 'success' && always()
