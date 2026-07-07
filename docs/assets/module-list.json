@@ -3539,7 +3539,7 @@
                 "server": "COMSOL@uoa_foe",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.99,
+                "server_uptime": 1.0,
                 "server_version": "",
                 "features": [
                     {
