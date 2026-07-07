@@ -40,4 +40,5 @@ env \
   INPUT_URLS="$URLS" \
   INPUT_WCAG-LEVEL="AA" \
   INPUT_FAIL-ON="never" \
+  INPUT_MIN-IMPACT="minor" \
   node "$CACHE_DIR/dist/index.js"
