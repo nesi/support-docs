@@ -24,7 +24,17 @@ fi
 python3 -m http.server "$PORT" --directory public &
 SERVER_PID=$!
 trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
-sleep 2
+python3 -c "
+import socket, time
+for _ in range(50):
+    try:
+        s = socket.socket()
+        s.connect(('127.0.0.1', $PORT))
+        s.close()
+        break
+    except Exception:
+        time.sleep(0.1)
+"
 
 env \
   INPUT_URLS="$URLS" \
