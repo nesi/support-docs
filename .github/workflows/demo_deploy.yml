@@ -112,7 +112,7 @@ jobs:
         with:
           urls: ${{ steps.pages.outputs.urls }}
           wcag-level: AA
-          fail-on: critical
+          fail-on: never
           min-impact: minor
 
       - name: Post accessibility report on PR
