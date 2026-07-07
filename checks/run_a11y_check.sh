@@ -16,6 +16,11 @@ if [ ! -f "$READY_MARKER" ]; then
   touch "$READY_MARKER"
 fi
 
+if [ ! -d "public" ]; then
+  echo "Error: 'public' directory does not exist. Run a build first!" >&2
+  exit 1
+fi
+
 python3 -m http.server "$PORT" --directory public &
 SERVER_PID=$!
 trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
