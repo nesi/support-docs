@@ -2,7 +2,7 @@
 created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
-- Slurm
+- slurm
 ---
 
 This page provides generic information about how to access GPUs through the Slurm scheduler.
@@ -307,6 +307,6 @@ To record the GPU utilisation and GPU memory, see [Measuring GPU efficiency afte
 
 ## Application and toolbox specific support pages
 
-See the [Supported Applications](../Software/Available_Applications/index.md) for more information on what softwares have GPU support, as well as programming toolkits:
-
-- [NVIDIA GPU Containers](../Software/Containers/NVIDIA_GPU_Containers.md)
+{% for p in pages_with_tag("gpu") %}
+- [{{ p.title }}]({{ p.path }})
+{% endfor %}

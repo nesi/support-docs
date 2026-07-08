@@ -1,7 +1,7 @@
 ---
 created_at: '2025-10-28T19:53:24Z'
 tags:
-- releasenote
+- release_notes
 title: my.nesi.org.nz release notes v2.43.0
 search:
   boost: 0.1

@@ -1,6 +1,6 @@
 ---
 created_at: '2022-05-18T03:38:21Z'
-tags: [intro, hpc]
+tags: [intro]
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 4830713922063

@@ -1,8 +1,7 @@
 ---
-tags: 
-    - globus
-    - freezer
-    - file transfer
+tags:
+    - file_transfer
+    - storage
 search:
   exclude: true
 ---

@@ -1,7 +1,7 @@
 ---
 created_at: '2021-09-14T03:20:56Z'
-tags: 
-- allocations
+tags:
+- account
 title: Quarterly Allocation Periods
 ---
 

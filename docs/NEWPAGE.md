@@ -30,9 +30,10 @@ This page details how to create a new article or category in the documentation.
 
     ```yml
     ---
-    created: 
+    created_at: 
     description: "Will be used to generate page preview. Should not contain keywords not in the body of article."
-    tags: [Tag1, Tag2]
+    tags:
+    - canonical_tag
     ---
     ```
 
@@ -183,7 +184,7 @@ The following sections detail the most usual entries.
 | `icon`        | Page icon.                                                    | Path |  |
 | `status`      | Will display a symbol on nav                                  | `new`, `deprecated` or `tutorial` | |
 | `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
-| `tags`        | Used for internal and external search indexing                | String[] | `tags: [ "slurm", "containers" ]` |
+| `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml) — see that file for the full list and aliases. | String[] | `tags: [ slurm, containers ]` |
 | `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
 | `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
 

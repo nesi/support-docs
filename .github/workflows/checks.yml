@@ -162,15 +162,24 @@ jobs:
         run: |
           shopt -s globstar extglob
           python3 checks/run_slurm_lint.py ${{needs.get.outputs.filelist}}
+  tagcheck:
+    name: Check tags
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - run: pip3 install pyyaml
+      - run: python3 .github/workflows/compile_tags.py
+
   testBuild:
     name: Test build
     if: ${{github.event_name != 'workflow_dispatch' || inputs.testBuild}}
     runs-on: ubuntu-24.04
-    needs: get
+    needs: [get, tagcheck]
     steps:
       - uses: actions/checkout@v6
         with:
           fetch-depth: 0
       - run: pip3 install -r requirements.txt
+      - run: python3 .github/workflows/compile_tags.py
       - run: ./checks/run_test_build.py
       - run: export NO_MKDOCS_2_WARNING="1"; python3 checks/run_aria_check.py

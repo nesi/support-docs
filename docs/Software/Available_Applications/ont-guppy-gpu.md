@@ -1,6 +1,8 @@
 ---
 created_at: '2022-03-22T07:46:51Z'
-tags: []
+tags:
+- biology
+- gpu
 title: ont-guppy-gpu
 vote_count: 5
 vote_sum: 3

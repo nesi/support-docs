@@ -1,7 +1,7 @@
 ---
 created_at: '2024-02-26T19:55:24Z'
 tags:
-- releasenote
+- release_notes
 vote_count: 0
 vote_sum: 0
 zendesk_article_id: 9108460666383

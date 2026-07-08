@@ -51,6 +51,8 @@ jobs:
         run: pip install -r requirements.txt
       - name: Fetch Remote Files
         run: bash .github/fetch_includes.sh
+      - name: Compile tag index and link app pages
+        run: python3 .github/workflows/compile_tags.py
       - name: Build documentation
         run: |
               mkdocs build --clean --quiet
