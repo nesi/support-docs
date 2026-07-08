@@ -216,6 +216,16 @@ This will allow you to fix any merge conflicts in your feature branch, before me
 <span style="color:green;">✔</span> **Do** review open pull requests!  
 <span style="color:green;">✔</span> **Do** merge pull requests you've reviewed, unless someone else is assigned.  
 
+## Redirects When Moving or Renaming Pages
+
+Renaming, moving, or deleting a page changes or removes its URL, breaking existing links. Add a redirect in [`docs/redirect_map.yml`](https://github.com/nesi/support-docs/blob/main/docs/redirect_map.yml) so old URLs keep working, one line per page (paths relative to `docs/`, keep the `.md`):
+
+```yml
+old/Path/To/Page.md: new/Path/To/Page.md
+```
+
+Move a whole directory? Add a line for each page inside it, `index.md` included. See [Renaming, Moving, or Deleting Pages](NEWPAGE.md#renaming-moving-or-deleting-pages) for detail.
+
 ## Update Remote Assets
 
 Certain files need to be fetched from other repos for up to date info.
