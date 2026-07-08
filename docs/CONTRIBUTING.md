@@ -218,7 +218,7 @@ This will allow you to fix any merge conflicts in your feature branch, before me
 
 ## Redirects When Moving or Renaming Pages
 
-Renaming, moving, or deleting a page changes or removes its URL, breaking existing links. Add a redirect in [`docs/redirect_map.yml`](https://github.com/nesi/support-docs/blob/main/docs/redirect_map.yml) so old URLs keep working, one line per page (paths relative to `docs/`, keep the `.md`):
+Renaming, moving, or deleting a page changes or removes its URL, breaking existing links. Add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working, one line per page (paths relative to `docs/`, keep the `.md`):
 
 ```yml
 old/Path/To/Page.md: new/Path/To/Page.md
