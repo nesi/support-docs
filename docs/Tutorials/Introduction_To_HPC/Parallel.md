@@ -12,6 +12,36 @@ tags:
 !!! objectives
     - Prepare a job submission script for the parallel executable.
 
+## How to utilise Multiple CPUs
+
+Requesting extra resources through Slurm only means that more resources will be available, it does not guarantee your program will be able to make use of them.
+
+Generally speaking, Parallelism is either _implicit_ where the software figures out everything behind the scenes, or _explicit_ where the software requires extra direction from the user.
+
+### Scientific software
+
+The first step when looking to run particular software should always be to read the documentation.
+On one end of the scale, some software may claim to make use of multiple cores implicitly, but this should be verified as the methods used to determine available resources are not guaranteed to work.
+
+Some software will require you to specify number of cores (e.g. `-n 8` or `-np 16`), or even type of parallelisation (e.g. `-dis` or `-mpi=intelmpi`).
+
+Occasionally your input files may require rewriting/regenerating for every new CPU combination (e.g. domain based parallelism without automatic partitioning).
+
+### Writing code
+
+Occasionally requesting more CPUs in your Slurm job is all that is required and whatever program you are running will automagically take advantage of the additional resources.
+However, it's more likely to require some amount of effort on your behalf.
+
+It is important to determine this before you start requesting more resources through Slurm  
+
+If you are writing your own code, some programming languages will have functions that can make use of multiple CPUs without requiring you to change your code.
+However, unless that function is where the majority of time is spent, this is unlikely to give you the performance you are looking for.
+
+*Python: [Multiprocessing](https://docs.python.org/3/library/multiprocessing.html)* (not to be confused with `threading` which is not really parallel.)
+
+*MATLAB: [Parpool](https://au.mathworks.com/help/parallel-computing/parpool.html)*
+
+
 ## Methods of Parallel Computing
 
 To understand the different types of Parallel Computing we first need to clarify some terms.
@@ -135,35 +165,6 @@ If this type of parallelisation is an option, it will almost certainly be the be
 A job array can be specified using `--array`
 
 If you are writing your own code, then this is something you will probably have to specify yourself.
-
-## How to utilise Multiple CPUs
-
-Requesting extra resources through Slurm only means that more resources will be available, it does not guarantee your program will be able to make use of them.
-
-Generally speaking, Parallelism is either _implicit_ where the software figures out everything behind the scenes, or _explicit_ where the software requires extra direction from the user.
-
-### Scientific software
-
-The first step when looking to run particular software should always be to read the documentation.
-On one end of the scale, some software may claim to make use of multiple cores implicitly, but this should be verified as the methods used to determine available resources are not guaranteed to work.
-
-Some software will require you to specify number of cores (e.g. `-n 8` or `-np 16`), or even type of paralellisation (e.g. `-dis` or `-mpi=intelmpi`).
-
-Occasionally your input files may require rewriting/regenerating for every new CPU combintation (e.g. domain based parallelism without automatic partitioning).
-
-### Writing code
-
-Occasionally requesting more CPUs in your Slurm job is all that is required and whatever program you are running will automagically take advantage of the additional resources.
-However, it's more likely to require some amount of effort on your behalf.
-
-It is important to determine this before you start requesting more resources through Slurm  
-
-If you are writing your own code, some programming languages will have functions that can make use of multiple CPUs without requiring you to changes your code.
-However, unless that function is where the majority of time is spent, this is unlikely to give you the performance you are looking for.
-
-*Python: [Multiproccessing](https://docs.python.org/3/library/multiprocessing.html)* (not to be confused with `threading` which is not really parallel.)
-
-*MATLAB: [Parpool](https://au.mathworks.com/help/parallel-computing/parpool.html)*
 
 ## Summary
 

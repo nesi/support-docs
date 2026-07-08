@@ -112,6 +112,17 @@ Will give three levels of output, **Errors** (serious issues that will prevent m
 
 The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. If this check fails, the PR will show an error in the 'Checks' tab and the broken ARIA reference will be indicated.
 
+You can run a WCAG audit ([AccessLint/audit](https://github.com/AccessLint/audit)) locally with the `a11y-audit` VS Code task (builds the site, serves it, and audits it).
+After the audit runs, three files will be produced containing the audit report: `accesslint-report.json`, `accesslint-report.md`, and `accesslint-report.sarif`.
+
+The audit runs a headless Chromium browser, which needs some system libraries installed once per machine:
+
+```sh
+sudo npx --yes playwright install-deps chromium
+```
+
+Without this, the first `a11y-audit` run will fail with a `libnspr4.so`-style error.
+
 ### Codespace Environment
 
 This repository has been configured to be usable with [GitHub Codespaces](https://github.com/features/codespaces).

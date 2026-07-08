@@ -74,3 +74,27 @@ Terminate the session with <kbd>Cancel</kbd> **>** <kbd>Delete</kbd> and re-open
 ![ood-quota](../../assets/images/OOD_forbidden_exceeded_quota.png)
 
 Current OnDemand implementation has a **two concurrent app sessions per account**. Above `exceeded quota` is an indication that you already have two app sessions running. ( Go to <kbd>My Interactive Sessions</kbd> to confirm this)
+
+
+### OnDemand performance issues
+
+If OnDemand appears slow or unresponsive, this may be related to recent updates to the applications:
+
+- New versions of existing applications have been deployed
+- Some applications may have been renamed
+- Deprecated applications have been removed from the OnDemand interface
+
+If you continue to experience issues, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=OnDemand%20Applications).
+
+Clearing your local OnDemand cache may also improve performance.
+
+Example: clearing the cache for JupyterLab
+
+1. In your home directory, navigate to the application specific directory `.local/share/jupyter`
+2. Locate the `runtime` directory and rename it to `runtime.old`
+3. Log back in to OnDemand and launch the JupyterLab application to check if performance has improved
+4. If everything is working as expected, you can delete the `runtime.old` directory
+
+> **Important**  
+> Do not delete any other files or directories in this location.
+

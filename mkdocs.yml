@@ -79,8 +79,8 @@ markdown_extensions:
 extra:
   slurm: slurm-25.05.6
   project_code: nesi99991
-  working_directory: ["/nesi/nobackup", "nesi99991", "introhpc2603"]
-  example_script: "example_script"
+  working_directory: ["/nesi/nobackup/nesi99991", "resbaz2607"]
+  example_script: "sum_matrix.r"
   exercise: "https://docs.google.com/spreadsheets/d/1D5PnhE6iJOB3ZKkDCiBHnk5CNZlhmj_gS-IXKGkkVoI/edit?usp=sharing"
   status: 
   - deprecated
@@ -89,6 +89,10 @@ extra:
   analytics:
     provider: google
     property: G-TVQR4R1F40
+  globus_collection_storage: REANNZ Mahuika
+  globus_collection_freezer: REANNZ Freezer
+  globus_collection_rdc: REANNZ Research Developer Cloud (RDC)
+  globus_collection_endpoint: REANNZ Data Transfer Node Tamaki
 plugins:
   - mkdocs_quiz:
       disable_after_submit: false
