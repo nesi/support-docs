@@ -107,7 +107,7 @@ If you need to rename a regular category (one without an `index.md`), this can b
 
 Renaming or moving a page changes its URL. Deleting one removes it. In every case, any existing link (bookmarks, other pages, external sites, app menus) will break and land on a generic page instead.
 
-Whenever you rename, move, or delete a page, add a redirect in [`docs/redirect_map.yml`](https://github.com/nesi/support-docs/blob/main/docs/redirect_map.yml) so old URLs keep working. One line per page, paths relative to `docs/`, keep the `.md` extension:
+Whenever you rename, move, or delete a page, add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working. One line per page, paths relative to `docs/`, keep the `.md` extension:
 
 ```yml
 old/Path/To/Page.md: new/Path/To/Page.md
