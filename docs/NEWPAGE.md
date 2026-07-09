@@ -104,6 +104,21 @@ In the case of an articles (including category-articles), this title can be over
 If you need to rename a regular category (one without an `index.md`), this can be done in the
 [`.pages.yml` file](#articlecategory-order).
 
+## Renaming, Moving, or Deleting Pages
+
+Renaming or moving a page changes its URL. Deleting one removes it. In every case, any existing link (bookmarks, other pages, external sites, app menus) will break and land on a generic page instead.
+
+Whenever you rename, move, or delete a page, add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working. One line per page, paths relative to `docs/`, keep the `.md` extension:
+
+```yml
+old/Path/To/Page.md: new/Path/To/Page.md
+```
+
+For a moved directory, add a line for each page it contained (including `index.md`). For a deleted page, point the old path at the closest surviving page.
+
+!!! tip
+    The redirect key is the *old* path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
+
 ## Article/Category Order
 
 By default articles will be ordered alphabetically.
