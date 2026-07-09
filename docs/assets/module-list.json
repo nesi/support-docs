@@ -5,8 +5,6 @@
             "engineering",
             "gpu",
             "mpi",
-            "omp",
-            "fea",
             "openmp"
         ],
         "extensions": [],
@@ -630,8 +628,6 @@
         "domains": [
             "engineering",
             "visualisation",
-            "cfd",
-            "fea",
             "earth_science"
         ],
         "extensions": [],
@@ -1040,11 +1036,7 @@
     "Apptainer": {
         "description": "",
         "domains": [
-            "apptainer",
-            "container",
-            "docker",
-            "portable",
-            "reproducibility"
+            "containers"
         ],
         "extensions": [],
         "licence_type": "",
@@ -2250,8 +2242,7 @@
     "BLAST": {
         "description": "Basic Local Alignment Search Tool, or BLAST, is an algorithm\n for comparing primary biological sequence information, such as the amino-acid\n sequences of different proteins or the nucleotides of DNA sequences.",
         "domains": [
-            "biology",
-            "mahuika"
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -3436,10 +3427,6 @@
             "chemistry",
             "engineering",
             "physics",
-            "cae",
-            "multiphysics",
-            "cfd",
-            "fea",
             "earth_science"
         ],
         "extensions": [],
@@ -3760,11 +3747,7 @@
         "description": "CP2K is a freely available (GPL) program, written in Fortran 95, to perform atomistic and molecular\n simulations of solid state, liquid, molecular and biological systems. It provides a general framework for different\n methods such as e.g. density functional theory (DFT) using a mixed Gaussian and plane waves approach (GPW), and\n classical pair and many-body potentials.",
         "domains": [
             "chemistry",
-            "gpu",
-            "Density Functional Theory",
-            "Molecular Dynamics",
-            "QMMM",
-            "Computational Chemistry"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -4585,12 +4568,7 @@
     "Delft3D": {
         "description": "Integrated simulation of sediment transport and morphology, waves, water quality and ecology.",
         "domains": [
-            "earth_science",
-            "hydrodynamics",
-            "morphodynamics",
-            "particle modelling",
-            "water quality testing",
-            "wave modelling"
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "",
@@ -6685,8 +6663,7 @@
     "Gaussian": {
         "description": "",
         "domains": [
-            "chemistry",
-            "Density Functional Theory"
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -7801,8 +7778,7 @@
         "description": "GROMACS is a versatile package to perform molecular dynamics,\n i.e. simulate the Newtonian equations of motion for systems with hundreds to millions of particles.\n\nThis is a GPU enabled build, containing both MPI and threadMPI binaries.",
         "domains": [
             "chemistry",
-            "gpu",
-            "Molecular Dynamics"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -9069,8 +9045,6 @@
         "description": "Java Platform, Standard Edition (Java SE) lets you develop and deploy\n Java applications on desktops and servers.",
         "domains": [
             "language",
-            "mahuika",
-            "general",
             "software"
         ],
         "extensions": [],
@@ -9806,8 +9780,7 @@
         "domains": [
             "biology",
             "chemistry",
-            "gpu",
-            "Molecular Dynamics"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -11670,7 +11643,7 @@
             "gpu",
             "mathematics",
             "visualisation",
-            "Machine Learning"
+            "machine_learning"
         ],
         "extensions": [],
         "licence_type": "proprietary",
@@ -12674,11 +12647,6 @@
         "description": "Community-led recipes, infrastructure and distributions for conda.",
         "domains": [
             "python",
-            "environments",
-            "conda",
-            "anaconda",
-            "miniconda",
-            "mamba",
             "software"
         ],
         "extensions": [],
@@ -14624,8 +14592,7 @@
     "NWChem": {
         "description": "NWChem aims to provide its users with computational chemistry tools that are scalable both in\n their ability to treat large scientific computational chemistry problems efficiently, and in their use of available\n parallel computing resources from high-performance parallel supercomputers to conventional workstation clusters.\n NWChem software can handle: biomolecules, nanostructures, and solid-state; from quantum to classical, and all\n combinations; Gaussian basis functions or plane-waves; scaling from one to thousands of processors; properties\n and relativity.",
         "domains": [
-            "chemistry",
-            "Density Functional Theory"
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14816,9 +14783,6 @@
         "domains": [
             "chemistry",
             "engineering",
-            "cfd",
-            "cae",
-            "fea",
             "earth_science"
         ],
         "extensions": [],
@@ -14946,9 +14910,7 @@
         "description": "OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes.",
         "domains": [
             "earth_science",
-            "engineering",
-            "geo",
-            "earthquake"
+            "engineering"
         ],
         "extensions": [],
         "licence_type": "",
@@ -15042,8 +15004,7 @@
     "ORCA": {
         "description": "ORCA is a flexible, efficient and easy-to-use general purpose tool for quantum chemistry\n with specific emphasis on spectroscopic properties of open-shell molecules.\n  It features a wide variety of standard quantum chemical methods ranging from semiempirical methods to DFT to single-\n and multireference correlated ab initio methods.\n It can also treat environmental and relativistic effects.",
         "domains": [
-            "chemistry",
-            "Density Functional Theory"
+            "chemistry"
         ],
         "extensions": [],
         "licence_type": "",
@@ -17295,8 +17256,7 @@
             "data_analytics",
             "language",
             "machine_learning",
-            "visualisation",
-            "Machine Learning"
+            "visualisation"
         ],
         "extensions": [
             "altair-6.1.0",
@@ -17719,8 +17679,6 @@
             "language",
             "machine_learning",
             "visualisation",
-            "mahuika",
-            "R",
             "r"
         ],
         "extensions": [
@@ -18944,8 +18902,7 @@
     "RAxML": {
         "description": "RAxML search algorithm for maximum likelihood based inference of phylogenetic trees.",
         "domains": [
-            "biology",
-            "mahuika"
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -19121,11 +19078,7 @@
         "description": "RELION (for REgularised LIkelihood OptimisatioN, pronounce rely-on) \n    is a stand-alone computer program that employs an empirical Bayesian \n    approach to refinement of (multiple) 3D reconstructions or 2D class \n    averages in electron cryo-microscopy (cryo-EM).",
         "domains": [
             "biology",
-            "gpu",
-            "no_toc",
-            "no_lic",
-            "no_desc",
-            "no_ver"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
@@ -21384,8 +21337,7 @@
     "Supernova": {
         "description": "Supernova is a software package for de novo assembly from Chromium Linked-Reads\n that are made from a single whole-genome library from an individual DNA source",
         "domains": [
-            "biology",
-            "mahuika"
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22135,6 +22087,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "TUFLOW": {
+        "description": "Hydraulic modelling software for flood, urban drainage, estuarine and coastal assessments.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "proprietary",
+        "homepage": "https://www.tuflow.com/",
+        "support": "",
+        "versions": [
+            "2026.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2026.0",
+        "default_type": "latest",
+        "last_updated": 1783478214,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/TUFLOW/2026.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "TuiView": {
         "description": "TuiView is a lightweight raster GIS with powerful raster attribute table manipulation\n abilities.",
         "domains": [
@@ -22545,10 +22517,7 @@
         "description": "The Vienna Ab initio Simulation Package (VASP) is a computer program for atomic scale\nmaterials modelling, e.g. electronic structure calculations and quantum-mechanical molecular dynamics,\nfrom first principles.",
         "domains": [
             "chemistry",
-            "gpu",
-            "Density Functional Theory",
-            "Molecular Dynamics",
-            "Computational Chemistry"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "proprietary",
