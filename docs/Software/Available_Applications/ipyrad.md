@@ -1,6 +1,8 @@
 ---
 created_at: '2022-09-26T08:09:35Z'
-tags: []
+tags:
+- biology
+- python
 title: ipyrad
 vote_count: 0
 vote_sum: 0

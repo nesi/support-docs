@@ -1,6 +1,8 @@
 ---
 created_at: '2019-11-07T04:11:03Z'
-tags: []
+tags:
+- storage
+- account
 description: Instructions for giving project team members read or write access to files?
 ---
 

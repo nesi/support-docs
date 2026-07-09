@@ -1,6 +1,7 @@
 ---
 created_at: '2023-07-06T05:48:34Z'
-tags: []
+tags:
+- account
 title: Billing process
 vote_count: 0
 vote_sum: 0

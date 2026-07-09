@@ -3,7 +3,6 @@ created_at: '2018-11-05T21:24:29Z'
 tags:
 - access
 - account
-- mynesi
 description: Instructions for Account is not ready error
 ---
 

@@ -2,9 +2,6 @@
 created_at: '2015-09-08T03:11:50Z'
 tags:
 - chemistry
-- Density Functional Theory
-- Molecular Dynamics
-- Computational Chemistry
 title: VASP
 ---
 

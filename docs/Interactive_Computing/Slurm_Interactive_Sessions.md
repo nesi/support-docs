@@ -1,8 +1,8 @@
 ---
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - scheduling
+  - slurm
 description: How to run an interactive session on the REANNZ HPC cluster.
 ---
 

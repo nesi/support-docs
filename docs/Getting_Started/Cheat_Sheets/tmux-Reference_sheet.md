@@ -1,9 +1,6 @@
 ---
 created_at: '2022-03-24T22:11:13Z'
-tags: 
-    - tmux
-    - screen
-    - zellij
+tags:
     - multiplexer
 title: 'tmux: Reference sheet'
 vote_count: 1

@@ -1,6 +1,7 @@
 ---
 created_at: '2019-09-23T11:11:16Z'
-tags: []
+tags:
+- julia
 title: Julia
 vote_count: 3
 vote_sum: 3

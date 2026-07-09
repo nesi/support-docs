@@ -1,9 +1,9 @@
 ---
 created_at: '2018-05-28T02:55:23Z'
 tags:
-- onboarding
-- tuakiri
-- mynesi
+- tutorial
+- access
+- account
 title: Account Requests for non-Tuakiri Members
 ---
 

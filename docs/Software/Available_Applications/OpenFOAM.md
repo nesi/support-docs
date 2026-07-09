@@ -2,9 +2,7 @@
 created_at: '2019-02-24T22:16:04Z'
 tags:
 - engineering
-- cfd
-- cae
-- fea
+- earth_science
 vote_count: 0
 vote_sum: 0
 ---

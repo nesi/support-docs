@@ -1,8 +1,7 @@
 ---
 created_at: 2025-10-01
 description: "Freezer Quick Start"
-tags: 
-  - Freezer
+tags:
   - storage
 ---
 !!! info s3cmd configuration required

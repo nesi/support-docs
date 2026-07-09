@@ -1,8 +1,7 @@
 ---
 created_at: '2019-09-22T20:20:07Z'
 tags:
- - sinfo
- - busy
+ - troubleshooting
 title: How busy is the cluster?
 ---
 

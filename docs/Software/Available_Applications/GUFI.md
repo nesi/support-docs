@@ -1,8 +1,7 @@
 ---
 created_at: '2025-10-30T17:00:00Z'
-tags: 
-  - locate
-  - find
+tags:
+- storage
 title: GUFI
 vote_count: 0
 vote_sum: 0

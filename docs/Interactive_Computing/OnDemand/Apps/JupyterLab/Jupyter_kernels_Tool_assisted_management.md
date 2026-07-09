@@ -1,10 +1,10 @@
 ---
 title: Jupyter kernels - Tool-assisted management
 description: 
-tags: 
-    - JupyterHub
-    - Python
-    - R
+tags:
+    - interactive
+    - python
+    - r
 ---
 
 ## Introduction
