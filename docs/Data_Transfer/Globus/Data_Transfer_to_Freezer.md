@@ -5,15 +5,15 @@ tags:
     - file transfer
 ---
 
-We are currently trialing the transfer of data to and from Freezer using Globus.
-We currently have a new Globus Collection to Freezer called: `{{ globus_collection_freezer}}`.
+
+The Globus Collection to Freezer is called: `{{ globus_collection_freezer}}`.
 You will need to authenticate using your Freezer (S3) credentials. Please let us know if you would like some assistance or are having any difficulties with this service.
 
 ## Requirements
 
-You will need to have a Globus account to access Globus via Freezer. Please see the page on [first time Globus set up](First_Time_Setup.md) for information on getting a Globus account.
+You will need to have a Globus account to access Freezer via Globus. Please see the page on [first time Globus set up](First_Time_Setup.md) for information on getting a Globus account.
 
-## Setting up Freezer Credentials
+## Setting up Freezer Credentials in Globus
 
 1. Go to the File Manager tab of [your Globus page](https://app.globus.org/file-manager?two_pane=true) in the left hand menu bar.
     Under the `Collection` field, search for and select the {{ globus_collection_freezer}} collection, then click the blue `Continue` button.
@@ -45,6 +45,12 @@ You will need to have a Globus account to access Globus via Freezer. Please see 
     ![Globus_Freezer_Credentials_Completed.png](../../assets/images/Globus_Freezer_Credentials_Completed.png)
 
 ## Freezer Endpoint
+
+Note that modification times are preserved only for files.
+- Files: The displayed modification date reflects the file's original modification time.
+- Folders: Folder modification times are not preserved by the Globus Freezer collection and will always appear as 1 January 1970 (Unix epoch).
+
+This is expected behaviour and does not affect the integrity or accessibility of your archived data.
 
 1. Go to the File Manager on the left hand menu and search for the collection `{{ globus_collection_freezer}}`.
     ![Globus_Freezer_EP.png](../../assets/images/Globus_Freezer_EP.png)
