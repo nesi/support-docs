@@ -17,7 +17,7 @@ tags:
 !!! note "Solvers"
     The `TUFLOW` module provides two executables:
 
-    - **TUFLOW Classic** (`tuflow`): 1D/2D hydrodynamic solver using structured grids, controlled by a `.tcf` file.
+    - **TUFLOW Classic** (`tuflow-idp`, `tuflow-isp`): 1D/2D hydrodynamic solver using structured grids, controlled by a `.tcf` file. `tuflow-idp` for double floating point precision, `tuflow-isp` for single point.
     - **TUFLOW FV** (`tuflowfv`): flexible-mesh (finite volume) 2D/3D solver, controlled by a `.fvc` file.
 
 ## Available Modules
@@ -27,7 +27,7 @@ tags:
 ## Licence Connection
 
 TUFLOW requires a background licence daemon to be manually launched before the solver.
-If you are using a cloud key, you will have to register it first.
+If you are using a network cloud licence, you will have to register it first.
 
 ```sh
 CodeMeterLin -v &
@@ -38,7 +38,20 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
 ### TUFLOW Classic
 
-=== "Serial"
+!!! note "Useful Links"
+
+    [Full list of command line flags](https://docs.tuflow.com/classic-hpc/manual/2025.1/Running-Simulations-1.html#tab:tab-TUFLOWOptions)
+
+    [Full list of `.tcf` command file arguments](https://docs.tuflow.com/classic-hpc/manual/2025.0/TCFCommands-1.html) 
+
+=== "Shared Memory"
+
+    Make sure your `.tcf` file includes;
+    
+    ```tcf
+    Solution Scheme == HPC
+    Hardware == CPU
+    ```
 
     ```sl
     #!/bin/bash -e
@@ -46,6 +59,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --job-name      TUFLOW
     #SBATCH --account       nesi99991
     #SBATCH --time          01:00:00       # Walltime
+    #SBATCH --cpus-per-task 8
     #SBATCH --mem           4G             # Total Memory
 
     module load TUFLOW/{{ app.default }}
@@ -53,13 +67,17 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     CodeMeterLin -v &
     sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
-    tuflow -b -nmb model.tcf
+    tuflow-idp  -nt $SLURM_CPUS_PER_TASK  -b -nmb my_model.tcf
     ```
 
 === "GPU"
 
-    GPU acceleration for TUFLOW Classic is enabled in the `.tcf` control file
-    (e.g. `GPU == ON`) rather than via a command-line flag.
+    Make sure your `.tcf` control file includes; 
+
+    ```tcf
+    Solution Scheme == HPC
+    Hardware == GPU
+    ```
 
     ```sl
     #!/bin/bash -e
@@ -70,17 +88,30 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --mem           4G             # Total Memory
     #SBATCH --gpus-per-node 1:a100
 
+    module load CUDA
     module load TUFLOW/{{ app.default }}
 
     CodeMeterLin -v &
     sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
-    tuflow -b -nmb model.tcf
+    tuflow-idp -b -nmb model.tcf
     ```
 
 ### TUFLOW FV
 
-=== "Serial"
+
+!!! note "Useful Links"
+
+    [FUll list of `.fvc` control File commands.](https://docs.tuflow.com/fv/wqm/manual/2025.2/TFVCommands-2.html)
+
+=== "Shared Memory"
+
+    Make sure your `.fvc` control file includes;
+
+    ```fvc
+    Solution Scheme == HPC
+    Hardware == CPU
+    ```
 
     ```sl
     #!/bin/bash -e
@@ -95,10 +126,17 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     CodeMeterLin -v &
     sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
-    tuflowfv model.fvc
+    tuflowfv my_model.fvc
     ```
 
 === "Distributed Memory"
+
+    Make sure your `.fvc` control file includes;
+
+    ```fvc
+    Solution Scheme == HPC
+    Hardware == CPU
+    ```
 
     ```sl
     #!/bin/bash -e
@@ -114,10 +152,17 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     CodeMeterLin -v &
     sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
-    srun tuflowfv model.fvc
+    srun tuflowfv my_model.fvc
     ```
 
 === "GPU"
+
+    Make sure your `.fvc` control file includes;
+
+    ```fvc
+    Solution Scheme == HPC
+    Hardware == CPU
+    ```
 
     ```sl
     #!/bin/bash -e
@@ -128,10 +173,11 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --mem           4G             # Total Memory
     #SBATCH --gpus-per-node 1:a100
 
+    module load CUDA
     module load TUFLOW/{{ app.default }}
 
     CodeMeterLin -v &
     sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
-    tuflowfv -gpu model.fvc
+    tuflowfv my_model.fvc
     ```
