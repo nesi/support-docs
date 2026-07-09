@@ -62,6 +62,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --cpus-per-task 8
     #SBATCH --mem           4G             # Total Memory
 
+    module purge
     module load TUFLOW/{{ app.default }}
 
     CodeMeterLin -v &
@@ -88,6 +89,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --mem           4G             # Total Memory
     #SBATCH --gpus-per-node 1:a100
 
+    module purge
     module load CUDA
     module load TUFLOW/{{ app.default }}
 
@@ -121,6 +123,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --time          01:00:00       # Walltime
     #SBATCH --mem           4G             # Total Memory
 
+    module purge
     module load TUFLOW/{{ app.default }}
 
     CodeMeterLin -v &
@@ -147,6 +150,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --ntasks        8
     #SBATCH --mem-per-cpu   2G
 
+    module purge
     module load TUFLOW/{{ app.default }}
 
     CodeMeterLin -v &
@@ -161,7 +165,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
     ```fvc
     Solution Scheme == HPC
-    Hardware == CPU
+    Hardware == GPU
     ```
 
     ```sl
@@ -173,6 +177,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
     #SBATCH --mem           4G             # Total Memory
     #SBATCH --gpus-per-node 1:a100
 
+    module purge
     module load CUDA
     module load TUFLOW/{{ app.default }}
 
