@@ -104,7 +104,7 @@ sleep 10 && cmu --import --file ~/my_licence_key.wbc
 
 !!! note "Useful Links"
 
-    [FUll list of `.fvc` control File commands.](https://docs.tuflow.com/fv/wqm/manual/2025.2/TFVCommands-2.html)
+    [Full list of `.fvc` control File commands.](https://docs.tuflow.com/fv/wqm/manual/2025.2/TFVCommands-2.html)
 
 === "Shared Memory"
 
