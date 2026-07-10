@@ -22089,11 +22089,15 @@
     },
     "TUFLOW": {
         "description": "Hydraulic modelling software for flood, urban drainage, estuarine and coastal assessments.",
-        "domains": [],
+        "domains": [
+            "hydrodynamics",
+            "flood modelling",
+            "hydraulics"
+        ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.tuflow.com/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/TUFLOW",
         "versions": [
             "2026.0"
         ],
