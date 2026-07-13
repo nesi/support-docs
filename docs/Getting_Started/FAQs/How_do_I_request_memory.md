@@ -1,6 +1,8 @@
 ---
 created_at: '2019-08-14T05:49:00Z'
-tags: []
+tags:
+- slurm
+- troubleshooting
 description: Instructions for requesting memory
 ---
 

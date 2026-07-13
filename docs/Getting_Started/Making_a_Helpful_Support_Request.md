@@ -1,6 +1,7 @@
 ---
 created_at: '2024-03-05T23:28:34Z'
-tags: []
+tags:
+- troubleshooting
 ---
 
 When you ask the support team for help, there are a few things we will

@@ -1,6 +1,8 @@
 ---
 created_at: '2019-07-22T03:46:24Z'
-tags: []
+tags:
+- openmp
+- parallel
 ---
 
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application
@@ -20,7 +22,7 @@ all that is necessary to get 16 OpenMP threads is:
 
 in your Slurm script - although this can sometimes be more complicated,
 e.g., with
-[TensorFlow on CPUs](../Available_Applications/TensorFlow_on_CPUs.md).
+[TensorFlow on CPUs](../Available_Applications/TensorFlow.md#tensorflow-on-cpus).
 
 In order to achieve good and consistent parallel scaling, additional
 settings may be required. This is particularly true on Mahuika where

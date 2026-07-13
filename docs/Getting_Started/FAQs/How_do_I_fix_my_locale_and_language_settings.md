@@ -1,6 +1,8 @@
 ---
 created_at: '2022-02-15T04:10:09Z'
-tags: []
+tags:
+- troubleshooting
+- access
 description: Instructions for changing locale and language settings
 ---
 

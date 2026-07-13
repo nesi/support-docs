@@ -1,6 +1,8 @@
 ---
 description: Introduction to basic terminology and principles of High Performance Computing
 status: tutorial
+tags:
+- tutorial
 ---
 
 !!! time "10 Minutes"

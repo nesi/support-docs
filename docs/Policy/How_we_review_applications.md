@@ -1,7 +1,7 @@
 ---
 created_at: '2018-05-18T02:26:58Z'
 tags:
-- tqp
+- account
 title: How we review applications
 vote_count: 2
 vote_sum: 0

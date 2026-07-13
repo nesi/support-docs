@@ -1,8 +1,8 @@
 ---
 created_at: 2026-02-04
 description: How to copy files to the REANNZ HPC using MobaXterm.
-tags: 
-    - data transfer
+tags:
+    - file_transfer
 title:  MobaXterm (Windows)
 ---
 

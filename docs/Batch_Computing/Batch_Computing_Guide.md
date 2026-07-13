@@ -3,7 +3,7 @@ created_at: 2025-12-19
 description: Guide to batch computing
 tags:
     - slurm
-    - ondemand
+    - interactive
 ---
 
 Batch jobs can be submitted via several methods. The most basic is a [simple Slurm job](#slurm-job-basics).
@@ -16,7 +16,7 @@ Depending on the needs of your batch jobs, you may need to specify the partition
 
 ## Slurm job basics
 
-Please see [Submitting your first job](Tutorial:_Submitting_your_first_job.md) for a detailed tutorial with instructions and examples.
+Please see [Submitting your first job](../Tutorials/Introduction_To_HPC/Submitting_Your_First_Job.md) for a detailed tutorial with instructions and examples.
 We also have a [Slurm reference sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md).
 
 ### Batch scripts

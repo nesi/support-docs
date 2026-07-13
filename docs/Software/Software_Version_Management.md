@@ -2,9 +2,6 @@
 created_at: '2019-07-04T20:48:57Z'
 tags:
     - software
-    - versions
-    - toolchain
-    - module
 title: Software Version Management
 ---
 

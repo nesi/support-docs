@@ -1,11 +1,8 @@
 ---
 created_at: '2020-01-14T22:10:50Z'
-tags: 
+tags:
     - checksum
-    - md5
-    - sha
-    - hash
-    - digest
+    - announcement
 ---
 
 Applying a *checksum function* to a file will return its *message digest* (also simply referred to as a _checksum_), which is akin to a digital fingerprint.

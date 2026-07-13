@@ -1,10 +1,9 @@
 ---
 created_at: 2026-02-11
 description: Email from Slurm Jobs now available
-tags: 
-    - hpc3
-    - email
-    - mahuika
+tags:
+    - release_notes
+    - slurm
 ---
 
 Sending email from Slurm jobs is now available on Mahuika.  Here is an example of the Slurm parameters required to send email:
