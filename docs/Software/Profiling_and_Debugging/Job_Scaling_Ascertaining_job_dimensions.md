@@ -1,7 +1,7 @@
 ---
 created_at: '2019-01-31T01:17:22Z'
 tags:
-     - scaling
+     - profiling
 title: Job Scaling - Ascertaining job dimensions
 description: Instructions on finding the resources needed to run a job
 ---

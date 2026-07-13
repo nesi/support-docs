@@ -2,7 +2,7 @@
 created_at: '2022-02-15T01:13:51Z'
 tags:
   - slurm
-  - accounting
+  - account
 status: deprecated
 ---
 

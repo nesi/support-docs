@@ -1,9 +1,9 @@
 ---
 description: Common questions researchers have about REANNZ's platform refresh.
 status:
-tags: 
-  - refresh
-  - hpc3
+tags:
+  - announcement
+  - release_notes
 search:
   boost: 2
 ---

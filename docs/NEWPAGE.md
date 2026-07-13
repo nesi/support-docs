@@ -30,9 +30,10 @@ This page details how to create a new article or category in the documentation.
 
     ```yml
     ---
-    created: 
+    created_at: 
     description: "Will be used to generate page preview. Should not contain keywords not in the body of article."
-    tags: [Tag1, Tag2]
+    tags:
+    - canonical_tag
     ---
     ```
 
@@ -103,6 +104,21 @@ In the case of an articles (including category-articles), this title can be over
 If you need to rename a regular category (one without an `index.md`), this can be done in the
 [`.pages.yml` file](#articlecategory-order).
 
+## Renaming, Moving, or Deleting Pages
+
+Renaming or moving a page changes its URL. Deleting one removes it. In every case, any existing link (bookmarks, other pages, external sites, app menus) will break and land on a generic page instead.
+
+Whenever you rename, move, or delete a page, add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working. One line per page, paths relative to `docs/`, keep the `.md` extension:
+
+```yml
+old/Path/To/Page.md: new/Path/To/Page.md
+```
+
+For a moved directory, add a line for each page it contained (including `index.md`). For a deleted page, point the old path at the closest surviving page.
+
+!!! tip
+    The redirect key is the *old* path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
+
 ## Article/Category Order
 
 By default articles will be ordered alphabetically.
@@ -116,10 +132,10 @@ The `.page.yml` might looks like this:
 nav: 
   - Introduction.md
   - Next_Steps.md
-  - ... 
+  - "*"
 ```
 
-`...` will be replaced by all other pages, in the default order.
+`*` will be replaced by all other pages, in the default order.
 
 !!! warning
     If you do set page order manually, make sure you include the `...` else some pages will not be rendered.
@@ -133,7 +149,7 @@ nav:
 - Getting_Started
 - Māui-Mahuika (Differences) : Maui_Mahuika_Differences
 - ZA̡͊͠͝LGΌ H̸̡̪̯ͨ͊̽̅̾̎Ȩ̬̩̾͛ͪ̈́̀́͘ ̶̧̨̱̹̭̯ͧ̾ͬC̷̙̲̝͖ͭ̏ͥͮ͟Oͮ͏̮̪̝͍M̲̖͊̒ͪͩͬ̚̚͜Ȇ̴̟̟͙̞ͩ͌͝S̨̥̫͎̭ͯ̿̔̀ͅ : Using_regex_to_parse_html
-- ...
+- "*"
 
 ```
 
@@ -183,7 +199,7 @@ The following sections detail the most usual entries.
 | `icon`        | Page icon.                                                    | Path |  |
 | `status`      | Will display a symbol on nav                                  | `new`, `deprecated` or `tutorial` | |
 | `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
-| `tags`        | Used for internal and external search indexing                | String[] | `tags: [ "slurm", "containers" ]` |
+| `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml) — see that file for the full list and aliases. | String[] | `tags: [ slurm, containers ]` |
 | `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
 | `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
 

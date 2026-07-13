@@ -1,5 +1,8 @@
 ---
 created_at: 2026-01-05
+tags:
+- file_transfer
+- access
 ---
 
 !!! prerequisite

@@ -1,8 +1,7 @@
 ---
 created_at: '2015-08-18T02:30:33Z'
 tags:
-- mahuika
-- general
+- software
 title: Java
 vote_count: 0
 vote_sum: 0

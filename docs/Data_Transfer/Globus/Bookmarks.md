@@ -1,7 +1,7 @@
 ---
 created_at: '2018-05-29T04:01:33Z'
-tags: 
-- globus
+tags:
+- file_transfer
 title: Bookmarks
 ---
 

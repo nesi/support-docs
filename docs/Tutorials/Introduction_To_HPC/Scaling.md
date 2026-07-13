@@ -2,6 +2,9 @@
 created_at: 2026-01-19
 description: Best Practice for getting your job to use multiple CPUs
 status: tutorial
+tags:
+- tutorial
+- profiling
 ---
 
 !!! time "45 Minutes"
@@ -27,7 +30,7 @@ Eventually your performance gains will plateau.
 The fraction of the task that can be run in parallel determines the point of this plateau.
 Code that has no serial components is said to be "embarrassingly parallel".
 
-It is worth noting that Amdahl's law assumes all other elements of scaling are happening with 100% efficient, in reality there are additional computational and communication overheads.
+It is worth noting that Amdahl's law assumes all other elements of scaling are happening with 100% efficiency, in reality there are additional computational and communication overheads.
 
 !!! question "Scaling Exercise"
     1. Find your name in the [spreadsheet]({{ config.extra.exercise }}) and modify your `example_job.sl` to request
@@ -40,7 +43,7 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     3. Now submit your job, we will include an extra argument `--acctg-freq 1`.
     By default SLURM records job data every 30 seconds.
     This means any job running for less than 30
-    seconds will not have it's memory use recorded.
+    seconds will not have its memory use recorded.
     Submit the job with `sbatch --acctg-freq 1 example_job.sl`.
     4. Watch the job with `squeue --me` or `watch squeue --me`.
     5. On completion of job, use `seff <job-id>`.
@@ -49,7 +52,7 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     Make sure you have entered the values in the correct format and there is a tick next to each entry.
     ![Correctly entered data in spreadsheet](../../assets/images/correct-spreadsheet-entry.png)
 
-??? question  Solution
+??? question "Solution"
     [spreadsheet]({{ config.extra.exercise }})
 
 !!! keypoints

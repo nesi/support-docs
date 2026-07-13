@@ -1,7 +1,7 @@
 ---
 created_at: '2019-08-26T00:02:24Z'
 tags:
-- disk quota exceeded
+- troubleshooting
 title: I've run out of storage space
 ---
 

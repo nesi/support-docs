@@ -2,7 +2,7 @@
 created_at: '2018-05-02T04:06:16Z'
 description: Overview of the REANNZ HPC filesystems.
 tags:
-- data storage
+- storage
 ---
 
 The HPC compute nodes, login nodes and OnDemand all share access to the same filesystems.

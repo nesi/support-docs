@@ -1,6 +1,8 @@
 ---
 created_at: '2021-03-01T21:23:33Z'
-tags: []
+tags:
+- access
+- account
 title: Logging in to my.nesi.org.nz
 vote_count: 2
 vote_sum: -2

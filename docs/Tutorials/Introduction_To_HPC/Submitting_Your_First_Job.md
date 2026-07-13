@@ -2,7 +2,6 @@
 created_at: '2019-01-07T01:10:28Z'
 tags:
 - slurm
-- scheduler
 - tutorial
 description: Tutorial on how to submit your first Slurm job
 status: tutorial
@@ -101,7 +100,7 @@ You will get the output printed to your terminal as if you had just run those co
 
 !!! info "Cancelling commands"
     You can kill a currently running task by pressing the keys `ctrl + c`.
-    If you just want your terminal back, but want the task to continue running you can ‘background’ it by pressing `ctrl + v`.
+    If you just want your terminal back, but want the task to continue running you can ‘background’ it by pressing `ctrl + z`.
     Note, a backgrounded task is still attached to your terminal session, and will be killed when you close the terminal (if you need to keep running a task after you log out, have a look at [tmux](https://github.com/tmux/tmux/wiki)).
 
 ### Scheduling your batch job
@@ -296,8 +295,8 @@ This can be suppressed using the flag `-X`.
 ??? question "Solution"
 
     ```sh
-    nano example_job.sh
-    cat example_job.sh
+    nano example_job.sl
+    cat example_job.sl
     ```
 
     ```sh

@@ -78,6 +78,7 @@
         },
         {
             "label": "test-build",
+            "type": "shell",
             "presentation": {
                 "reveal":"never",
                 "showReuseMessage": false
@@ -164,6 +165,20 @@
                 "showReuseMessage": false
             },
             "command": "export NO_MKDOCS_2_WARNING=1 && mkdocs serve --dirty"
+        },
+        {
+            "label": "a11y-audit",
+            "detail": "Run the AccessLint WCAG audit against the locally built docs site",
+            "group": "test",
+            "type": "shell",
+            "isBackground": false,
+            "presentation": {
+                "reveal": "always",
+                "panel": "dedicated",
+                "showReuseMessage": false
+            },
+            "dependsOn": "test-build",
+            "command": "bash checks/run_a11y_check.sh"
         },
     ]
 }

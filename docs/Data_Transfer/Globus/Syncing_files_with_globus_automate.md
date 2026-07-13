@@ -1,8 +1,7 @@
 ---
 created_at: '2023-01-12T20:45:15Z'
-tags: 
-    - globus
-    - file transfer
+tags:
+    - file_transfer
 title: Sync'ing with globus-automate
 ---
 
