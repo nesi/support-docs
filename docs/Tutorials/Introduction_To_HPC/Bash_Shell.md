@@ -52,7 +52,7 @@ The directories that are relevant to us are:
 <td><strong>Nobackup</strong> is a 'scratch space', for data you don't need to keep long term. Old data is periodically deleted from nobackup</td>
 <td><code>/nesi/nobackup/&lt;projectcode&gt;</code></td>
 <td>10TB</td>
-<td>Weekly</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -131,17 +131,17 @@ We will now list the contents of the directory we will be working from.
 We can use the following command to do this:
 
 ```sh
-ls /nesi/nobackup/<project>
+ls {{extra.working_directory[0]}}
 ```
 
 ```out
-introhpc
+{{extra.working_directory[1]}}
 ```
 
-You should see a directory called `introhpc`, and possibly several other directories.
-For the purposes of this tutorial you will be working within `/nesi/nobackup/<projectcode>/introhpc`.
+You should see a directory called `{{extra.working_directory[1]}}`, and possibly several other directories.
+For the purposes of this tutorial you will be working within `{{extra.working_directory[0]}}/{{extra.working_directory[1]}}`.
 
-!!! tip "Command History
+!!! tip "Command History"
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
@@ -179,7 +179,7 @@ The `cd` command is akin to double clicking a folder in a graphical interface.
 We will use the following command:
 
 ```sh
- cd /nesi/nobackup/<projectcode>/introhpc
+ cd {{extra.working_directory[0]}}/{{extra.working_directory[1]}}
 ```
 
 ```out
@@ -196,7 +196,7 @@ pwd
 ```
 
 ```out
-/nesi/nobackup/<projectcode>/introhpc
+{{extra.working_directory[0]}}/{{extra.working_directory[1]}}
 ```
 
 ## Creating directories
@@ -214,11 +214,11 @@ mkdir <username>
 You should then be able to see your new directory is there using `ls`.
 
 ```sh
-ls /nesi/nobackup/<projectcode>
+ls {{extra.working_directory[0]}}
 ```
 
 ```out
-array_sum.R birds usr123 <username>
+{{extra.example_script}} birds usr123 <username>
 ```
 
 !!! note "Your Mileage May Vary"
@@ -230,18 +230,17 @@ We are now going to use `ls` again but with a twist, this time we will also use 
 These options modify the way that the command works, for this example we will add the flag `-l` for "long listing format".
 
 ```sh
-ls -l /nesi/nobackup/<projectcode>
+ls -l {{extra.working_directory[0]}}/{{extra.working_directory[1]}}
 ```
 
 ```out
--rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 
--rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 {{ example_script.R }} 
+-rw-r-----+ 1 usr9999 <projectcode>  460 Nov 18 17:03 {{ extra.example_script }} 
 drwxr-sr-x+ 3 usr9999 <projectcode> 4096 22 Sep 08:40 birds
 drwxrws---+ 2 usr123  <projectcode> 4096 Nov 15 09:01 usr123
 drwxrws---+ 2 <username>  <projectcode> 4096 Nov 15 09:01 <username>
 ```
 
-We can see that the `-l` option has modified the command and now our output has listed all the files in alphanumeric order, which can make finding a specific file easier.
+We can see that the `-l` option has modified the command and now our output has listed all the files with details, which can make finding a specific file easier.
 It also includes information about the file size, time of its last modification, and permission and ownership information.
 
 Most Unix commands follow this basic structure.
@@ -253,7 +252,7 @@ The **prompt** tells us that the terminal is accepting inputs, prompts can be cu
 The **command**, what are we trying to do.
 
 **Options** will modify the behavior of the command, multiple options can be specified.
-Options will either start with a single dash (`-`) or two dashes (`--`)..
+Options will either start with a single dash (`-`) or two dashes (`--`).
 Often options will have a short and long format e.g. `-a` and `--all`.
 
 **Arguments** tell the command what to operate on (usually files and directories).
@@ -273,7 +272,7 @@ ls -la
 ```out
 drwxrws---+  4 usr001  <projectcode>   4096 Nov 15 09:00 .
 drwxrws---+ 12 root    <projectcode> 262144 Nov 15 09:23 ..
--rw-r-----+  1 cwal219 <projectcode>    460 Nov 18 17:03 example_script.R 
+-rw-r-----+  1 cwal219 <projectcode>    460 Nov 18 17:03 {{extra.example_script}} 
 drwxrws---+  2 usr123  <projectcode>   4096 Nov 15 09:01 usr123
 drwxrws---+  2 <username>  <projectcode>   4096 Nov 15 09:01 <username>
 ```
@@ -327,14 +326,14 @@ We will now navigate to the parent directory, the simplest way do this is to use
 cd ..
 ```
 
-We should now be back in `/nesi/nobackup`.
+We should now be back in `{{extra.working_directory[0]}}`.
 
 ```sh
 pwd
 ```
 
 ```out
-/nesi/nobackup
+{{extra.working_directory[0]}}
 ```
 
 ## Tab completion
@@ -476,7 +475,7 @@ which will then be operated on as if you had typed out all of the matches.
 Inside the `{{ config.extra.working_directory|join('/') }}` directory there is a directory called `birds`
 
 ```sh
-cd /nesi/nobackup/<projectcode>/birds
+cd {{ config.extra.working_directory|join('/') }}/birds
 ls
 ```
 
@@ -496,7 +495,7 @@ Will return:
 kaka.txt  kakapo.jpeg
 ```
 
-Since the pattern `ka*` will match `kaka.txt`and `kakapo.jpeg` as these both start with "ka". While the command:
+Since the pattern `ka*` will match `kaka.txt` and `kakapo.jpeg` as these both start with "ka". While the command:
 
 ```sh
 ls *.jpeg
@@ -526,7 +525,7 @@ As `k*a.*` will match just `kaka.txt` and `kea.txt`
 `?` is also a wildcard, but it matches exactly one character. So the command:
 
 ```sh
-ls !!!?.*
+ls ????.*
 ```
 
 Would return:
@@ -642,12 +641,12 @@ draft.txt
 ## Copying files and directories
 
 <!-- TODO: R script!!! -->
-In a future lesson, we will be running the R script ```{{ config.extra.working_directory|join('/') }}/example_script.R```, but as we can't all work on the same file at once you will need to take your own copy.
+In a future lesson, we will be running the R script ```{{ extra.working_directory|join('/') }}/{{extra.example_script}}```, but as we can't all work on the same file at once you will need to take your own copy.
 This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created.
 We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`
 
 ```sh
-cp {{ config.extra.working_directory|join('/') }}/example_script.R  .
+cp {{ extra.working_directory|join('/') }}/{{extra.example_script}}  .
 ```
 
 We can check that it did the right thing using `ls`
@@ -657,7 +656,7 @@ ls
 ```
 
 ```out
-draft.txt   example_script.R 
+draft.txt   {{extra.example_script}} 
 ```
 
 ## Other File operations
@@ -668,9 +667,9 @@ It is primarily used for printing the contents of one or more files to the stand
 `head` and `tail` will print the first or last lines (head or tail) of the specified file(s).
 By default it will print 10 lines, but a specific number of lines can be specified with the `-n`  option.
 
-`mv` to **m**o**v**e move a file, is used similarly to `cp` taking a source argument(s) and a destination argument.
+`mv` to **m**o**v**e a file, is used similarly to `cp` taking a source argument(s) and a destination argument.
 
-`rm` will **r**e**m**ove move a file and only needs one argument.
+`rm` will **r**e**m**ove a file and only needs one argument.
 
 The `mv` command is also used to rename a file, for example `mv my_fiel my_file`. This is because as far as the computer is concerned *moving and renaming a file are the same operation*.
 
@@ -714,14 +713,14 @@ For `mv` and `cp` if the destination path (final argument) is an existing direct
 !!! question "Moving vs Copying"
     When using the `cp` or `rm` commands on a directory the 'recursive' flag `-r` must be used, but `mv` *does not* require it?
 
-??? note Solution
+??? note "Solution"
     We mentioned previously that as far the computer is concerned, *renaming* is the same operation as *moving*.
     Contrary to what the commands name implies, *all moving is actually renaming*.
     The data on the hard drive stays in the same place,
     only the label applied to that block of memory is changed.
     To copy a directory, each *individual file* inside that directory must be read, and then written to the copy destination.
     To delete a directory, each *individual file* in the directory must be marked for deletion,
-    however when moving a directory the files inside are the data inside the directory is not interacted with,
+    however when moving a directory the files inside the directory are not interacted with,
     only the parent directory is "renamed" to a different place.
 
     This is also why `mv` is faster than `cp` as no reading of the files is required.
@@ -742,7 +741,7 @@ Try 'ls --help' for more information.
 
 ## Getting help
 
-Commands will often have many **options**. Most commands have a `--help` flag, as can be seen in the error above.  You can also use the manual pages (aka manpages) by using the `man` command. The manual page provides you with all the available options and their use in more detail. For example, for thr `ls` command:
+Commands will often have many **options**. Most commands have a `--help` flag, as can be seen in the error above.  You can also use the manual pages (aka manpages) by using the `man` command. The manual page provides you with all the available options and their use in more detail. For example, for the `ls` command:
 
 ```sh
 man ls
