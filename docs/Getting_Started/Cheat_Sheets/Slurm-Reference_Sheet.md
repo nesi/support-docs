@@ -1,8 +1,8 @@
 ---
 created_at: '2019-01-10T02:22:09Z'
-tags: 
- - Slurm
- - cheat sheet
+tags:
+ - slurm
+ - tutorial
 title: 'Slurm: Reference Sheet'
 description: Quick list of the most commonly used Slurm commands, flags, and environment variables.
 ---

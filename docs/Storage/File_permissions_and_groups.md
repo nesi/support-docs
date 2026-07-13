@@ -2,8 +2,8 @@
 created_at: '2018-05-21T05:14:00Z'
 description: How to manage file access on the REANNZ HPC filesystems.
 tags:
-- nobackup
-- project
+- storage
+- account
 ---
 
 

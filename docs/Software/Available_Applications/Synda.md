@@ -2,7 +2,7 @@
 created_at: '2019-10-14T21:25:00Z'
 tags:
 - software
-- geo
+- earth_science
 title: Synda
 status: deprecated
 ---

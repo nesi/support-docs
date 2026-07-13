@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-27T21:04:11Z'
-tags: 
-    - globus
+tags:
+    - file_transfer
 title: Globus First Time Setup
 ---
 
@@ -14,7 +14,7 @@ You can learn about setting up your personal Globus endpoint on your computer on
 
 ## Setting up your Globus account
 
-1. Go to [globus.org](https://www.globus.org) and click the `LOG IN` button.
+1. Go to [globus.org](https://www.globus.org), or go to [transfer.reannz.co.nz](transfer.reannz.co.nz) and click the `LOG IN` button.
     ![Globus\_main\_page.png](../../assets/images/Globus_main_page.png)
 2. Look up your institution in the drop-down box, or sign in using your GitHub, Google, or
     ORCID ID, then click continue. You will be directed to your Tuakiri login screen or

@@ -1,9 +1,8 @@
 ---
 created_at: '2018-05-01T03:39:22Z'
 tags:
-- info
-- project
-- mynesi
+- announcement
+- account
 ---
 
 !!! prerequisite

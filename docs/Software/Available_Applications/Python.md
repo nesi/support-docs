@@ -1,8 +1,7 @@
 ---
 created_at: '2015-08-18T05:16:01Z'
 tags:
-- Machine Learning
-- language
+- machine_learning
 title: Python
 ---
 

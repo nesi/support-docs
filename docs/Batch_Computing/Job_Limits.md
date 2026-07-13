@@ -1,9 +1,9 @@
 ---
 created_at: 2025-07-17
 description: What limits are there on running jobs.
-tags: 
-    - Slurm
-    - accounting
+tags:
+    - slurm
+    - account
 ---
 
 These are open for review if you find any of them unreasonable or inefficient.
