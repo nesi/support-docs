@@ -2,6 +2,8 @@
 # Runs the same WCAG audit as the AccessLint/audit@v0 GitHub Action, locally.
 set -euo pipefail
 
+MIN_IMPACT=$1
+
 CACHE_DIR="${HOME}/.cache/accesslint-audit"
 PORT="$(python3 -c 'import socket; s=socket.socket(); s.bind(("",0)); print(s.getsockname()[1]); s.close()')"
 
@@ -10,8 +12,9 @@ if [ ! -d "public" ]; then
   exit 1
 fi
 
-if [ -n "${1:-}" ]; then
-  URLS="$1"
+if [ -n "${2:-}" ]; then
+  PAGE=$2
+  URLS="http://localhost:${PORT}/${PAGE}"
 else
   # No URL given: audit every page from the built sitemap.
   URLS="$(sed -n 's#.*<loc>\(.*\)</loc>.*#\1#p' public/sitemap.xml \
@@ -47,5 +50,5 @@ env \
   INPUT_URLS="$URLS" \
   INPUT_WCAG-LEVEL="AA" \
   INPUT_FAIL-ON="never" \
-  INPUT_MIN-IMPACT="minor" \
+  INPUT_MIN-IMPACT="$MIN_IMPACT" \
   node "$CACHE_DIR/dist/index.js"
