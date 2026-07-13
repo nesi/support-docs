@@ -2,11 +2,7 @@
 created_at: '2025-01-01T00:00:00Z'
 description: How to use Apptainer containers on the NeSI HPC.
 tags:
-    - apptainer
-    - container
-    - docker
-    - portable
-    - reproducibility
+    - containers
 ---
 
 Apptainer simplifies the creation and execution of containers on compute clusters, ensuring software components are portable and reproducible. It is an open-source fork of the Singularity project and shares much of the same functionality. Apptainer is distributed under the [BSD License](https://github.com/apptainer/apptainer/blob/main/LICENSE.md).

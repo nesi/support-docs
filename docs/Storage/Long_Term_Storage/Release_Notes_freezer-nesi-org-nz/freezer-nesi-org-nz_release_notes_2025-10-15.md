@@ -1,8 +1,8 @@
 ---
 created_at: '2025-10-15T10:00:00Z'
 tags:
-- freezer
-- release notes
+- storage
+- release_notes
 title: 2025/10/15
 description: Freezer upgrade release notes
 search:

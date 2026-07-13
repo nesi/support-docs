@@ -1,8 +1,7 @@
 ---
 created_at: 2025-10-01
 description: "Common issues when using Freezer"
-tags: 
-  - Freezer
+tags:
   - storage
 ---
 

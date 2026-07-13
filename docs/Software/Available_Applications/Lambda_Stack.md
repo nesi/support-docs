@@ -1,8 +1,7 @@
 ---
 created_at: '2021-01-05T20:28:08Z'
 tags:
-- ai
-- machine learning
+- machine_learning
 - software
 description: Information about using Lambda Stack
 status: []

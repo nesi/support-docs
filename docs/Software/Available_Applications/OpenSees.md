@@ -1,8 +1,7 @@
 ---
 created_at: '2019-08-15T05:48:41Z'
 tags:
-- geo
-- earthquake
+- earth_science
 title: OpenSees
 vote_count: 0
 vote_sum: 0

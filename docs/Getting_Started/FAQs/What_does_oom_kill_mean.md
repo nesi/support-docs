@@ -1,7 +1,7 @@
 ---
 created_at: '2018-10-25T02:22:02Z'
 tags:
-- faq
+- troubleshooting
 description: Explanation of the "oom-kill" error
 ---
 

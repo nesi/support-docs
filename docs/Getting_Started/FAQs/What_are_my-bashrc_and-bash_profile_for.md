@@ -1,6 +1,7 @@
 ---
 created_at: '2019-10-03T04:08:49Z'
-tags: []
+tags:
+- access
 description: Explanation of .bashrc & .bash_profile files
 ---
 
