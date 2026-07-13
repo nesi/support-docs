@@ -4,8 +4,7 @@ tags:
 - engineering
 - gpu
 - mpi
-- omp
-- fea
+- openmp
 ---
 
 {% set app_name = page.title | trim %}

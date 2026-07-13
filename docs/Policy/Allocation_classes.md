@@ -2,6 +2,8 @@
 created_at: '2019-04-25T22:26:56Z'
 hide:
   - toc
+tags:
+- account
 ---
 
 The allocation class granted to your project is used to decide who pays for that aspect of your project's consumption of REANNZ HPC services.

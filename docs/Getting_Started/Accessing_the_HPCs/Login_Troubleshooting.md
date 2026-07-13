@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-16T01:13:47Z'
 tags:
-- login
+- access
 description: Troubleshooting instructions for logging in to the REANNZ cluster
 ---
 
@@ -71,6 +71,14 @@ to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 ### Close Window and try logging in again
 
 Either your link has expired, or it was copied incorrectly.
+
+## Trusting Device results in error
+
+![](../../assets/images/Trusted-Device-error.png)
+
+
+#### This error is caused by a naming conflict, in other words you have used the same name previously.  Choose a different device name and try again
+
 
 ## General Troubleshooting
 

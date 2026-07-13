@@ -1,6 +1,9 @@
 ---
 created_at: '2023-09-17T23:51:43Z'
-tags: []
+tags:
+- slurm
+- python
+- interactive
 description: Instructions for running a Python notebook through Slurm
 ---
 

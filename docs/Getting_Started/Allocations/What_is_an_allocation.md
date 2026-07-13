@@ -1,8 +1,7 @@
 ---
 created_at: '2020-02-25T02:35:13Z'
-tags: 
-    - Allocations
-    - Compute
+tags:
+    - account
 title: What is an Allocation?
 ---
 

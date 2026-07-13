@@ -1,6 +1,7 @@
 ---
 created_at: '2022-03-24T20:50:10Z'
-tags: []
+tags:
+- account
 description: How to manage your notification preferences.
 ---
 

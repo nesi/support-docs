@@ -1,8 +1,7 @@
 ---
 created_at: '2018-05-18T02:34:03Z'
-tags: 
-- projects
-- allocations
+tags:
+- account
 title: Allocations & Extensions
 ---
 

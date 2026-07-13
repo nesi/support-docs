@@ -1,12 +1,8 @@
 ---
 created_at: '2020-06-23T23:10:13Z'
-tags: 
+tags:
   - python
-  - environments
-  - conda
-  - anaconda
-  - miniconda
-  - mamba
+  - software
 ---
 
 {% set app_name = page.title | trim %}

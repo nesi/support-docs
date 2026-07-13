@@ -4,3 +4,4 @@ production/*
 .venv/*
 dictionary.dic
 .DS_Store
+accesslint-report.*

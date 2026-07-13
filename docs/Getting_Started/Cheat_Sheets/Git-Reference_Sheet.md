@@ -1,9 +1,7 @@
 ---
 created_at: '2020-05-07T02:51:35Z'
 tags:
-- git
-- version control
-- repository
+- version_control
 title: 'Git: Reference Sheet'
 vote_count: 13
 vote_sum: 13

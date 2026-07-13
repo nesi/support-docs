@@ -1,6 +1,9 @@
 ---
 created_at: '2018-11-27T23:55:26Z'
 description: Information on how to use SSHFS on different local systems
+tags:
+- file_transfer
+- access
 ---
 
 !!! prerequisite

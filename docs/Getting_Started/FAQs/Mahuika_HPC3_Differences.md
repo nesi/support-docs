@@ -2,9 +2,9 @@
 created_at: 2025-05-07
 description: This article presents an overview comparison of the differences between the NeSI Mahuika cluster and the new cluster.
 status:
-tags: 
-    - hpc3
-    - refresh
+tags:
+    - release_notes
+    - announcement
 status: deprecated
 ---
 

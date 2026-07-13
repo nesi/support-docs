@@ -1,6 +1,7 @@
 ---
 created_at: '2022-02-09T01:40:51Z'
-tags: []
+tags:
+- storage
 description: Instructions for finding the size of a directory?
 ---
 
