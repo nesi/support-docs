@@ -124,7 +124,7 @@ jobs:
               sleep 5
             done
           done <<< "${{ steps.pages.outputs.urls }}"
-          
+
       - name: Run AccessLint WCAG audit
         if: steps.wait.outputs.conclusion == 'success'
         id: a11y
