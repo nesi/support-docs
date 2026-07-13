@@ -1,6 +1,7 @@
 ---
 created_at: '2023-07-05T23:50:46Z'
-tags: []
+tags:
+- account
 title: Subscriber Monthly Usage Reports
 vote_count: 0
 vote_sum: 0

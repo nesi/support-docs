@@ -1,7 +1,6 @@
 ---
 created_at: '2019-01-07T20:34:07Z'
 tags:
-- MFA
 - access
 - account
 description: How to reset your authentication credendials for MFA.

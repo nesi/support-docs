@@ -1,7 +1,6 @@
 ---
 created_at: '2017-12-11T07:58:07Z'
 tags:
-- mahuika
 - biology
 title: RAxML
 vote_count: 1

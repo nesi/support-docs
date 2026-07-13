@@ -1,7 +1,6 @@
 ---
 created_at: '2015-11-09T21:20:24Z'
 tags:
-- Density Functional Theory
 - chemistry
 title: ORCA
 vote_count: 6

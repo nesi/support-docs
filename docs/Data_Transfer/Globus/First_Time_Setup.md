@@ -1,7 +1,7 @@
 ---
 created_at: '2019-02-27T21:04:11Z'
-tags: 
-    - globus
+tags:
+    - file_transfer
 title: Globus First Time Setup
 ---
 

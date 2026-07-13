@@ -1,6 +1,7 @@
 ---
 created_at: '2023-07-13T01:04:38Z'
-tags: []
+tags:
+- biology
 title: snpEff
 vote_count: 0
 vote_sum: 0
