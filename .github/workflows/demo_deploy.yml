@@ -105,6 +105,26 @@ jobs:
           echo "$urls" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
+      - name: Wait for preview URLs to be live
+        if: steps.wait.outputs.conclusion == 'success'
+        run: |
+          # GitHub Pages CDN can lag behind the deploy; a URL that 404s serves
+          # GitHub's default 404 page, whose strict CSP breaks AccessLint's
+          # script injection. Poll each URL until it returns 200 first.
+          while IFS= read -r url; do
+            [ -z "$url" ] && continue
+            echo "Waiting for $url"
+            for i in $(seq 1 30); do
+              code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
+              if [ "$code" = "200" ]; then
+                echo "  OK ($code)"
+                break
+              fi
+              echo "  Got $code, retrying (${i}/30)..."
+              sleep 5
+            done
+          done <<< "${{ steps.pages.outputs.urls }}"
+          
       - name: Run AccessLint WCAG audit
         if: steps.wait.outputs.conclusion == 'success'
         id: a11y
