@@ -38,7 +38,7 @@ Mahuika provides some default Python and R kernels that are available to all use
 of environment modules. It's also possible to create additional kernels that are visible only to
 you (they can optionally be made visible to other members of a specific project that you belong to). See:
 
-- [Python and R kernels in JupyterLab - Tool-Assisted Management](./python_and_r_kernels_in_JupyterLab.md) (recommended)
+- [Python and R kernels in JupyterLab - Tool-Assisted Management](./python_and_r_kernels_in_JupyterLab.md#) (recommended)
 - [Python and R kernels in JupyterLab - Manual Management](./python_and_r_kernels_in_JupyterLab.md)
 
 ### Jupyter terminal
