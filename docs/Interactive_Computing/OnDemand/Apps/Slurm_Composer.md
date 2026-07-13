@@ -46,7 +46,7 @@ The main fields are:
 | Field | What it sets | Slurm option |
 | ----- | ------------ | ------------ |
 | **Project** | The project code your usage is charged to. Only projects you belong to are listed. | `--account` |
-| **Partition** | The type of node to run on. Choose **any** if you have no preference. | `--partition` |
+| **Partition** | The type of node to run on. Choose **any** if you have no preference. Options are either Genoa or Milan | `--partition` |
 | **Number of CPUs** | How many CPU cores to request. | `--cpus-per-task` |
 | **Number of Nodes** | How many nodes to spread the job over (leave blank for the default). | `--nodes` |
 | **Total Memory (GB)** | Total RAM for the whole job. | `--mem` |
