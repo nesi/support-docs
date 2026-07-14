@@ -31,15 +31,6 @@
   /* --md-code-fg-color: var(--reannz-orange); */ /* main color for code text */
   /* --md-code-bg-color: var(--reannz-orange); */ /* main color for code background */
   /* --md-typeset-color: var(--reannz-orange); */ /* main text color, sub H1 headers too */
-
-  /* Accessibility: Material maps these code tokens to --md-default-fg-color--light
-     (#0000008a), which composites to 4.48:1 on the #f5f5f5 code background and fails
-     WCAG AA (needs 4.5:1). Use a slightly darker muted grey to pass. */
-  --md-code-hl-comment-color: #595959;
-  --md-code-hl-operator-color: #595959;
-  --md-code-hl-punctuation-color: #595959;
-  --md-code-hl-variable-color: #595959;
-  --md-code-hl-generic-color: #595959;
 }
 
   /* --md-accent-bg-color:                rgb(210,227,235); */
