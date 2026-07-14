@@ -46,9 +46,18 @@ for _ in range(50):
         time.sleep(0.1)
 "
 
+NODE_BIN="$(command -v node || true)"
+if [ -z "$NODE_BIN" ]; then
+  NODE_BIN="$(ls -d "$HOME"/.nvm/versions/node/*/bin/node 2>/dev/null | sort -V | tail -1)"
+fi
+if [ -z "$NODE_BIN" ]; then
+  echo "Error: 'node' not found. Install Node.js or run this from a shell with nvm loaded." >&2
+  exit 1
+fi
+
 env \
   INPUT_URLS="$URLS" \
   INPUT_WCAG-LEVEL="AA" \
   INPUT_FAIL-ON="never" \
   INPUT_MIN-IMPACT="$MIN_IMPACT" \
-  node "$CACHE_DIR/dist/index.js"
+  "$NODE_BIN" "$CACHE_DIR/dist/index.js"
