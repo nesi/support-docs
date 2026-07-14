@@ -1,9 +1,9 @@
 ---
 nav:
-  - Slurm_Composer
-  - JupyterLab
-  - RStudio
-  - VSCode
+  - slurm_composer
+  - jupyterlab
+  - rstudio
+  - vscode
   - virtual_desktop
-  - MATLAB
+  - matlab
   - "*"
