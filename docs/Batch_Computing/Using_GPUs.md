@@ -21,6 +21,9 @@ You should consider using a GPU for your work if:
     Not every process can use a GPU, and how to use them effectively varies greatly!  
     There is a list of commonly used GPU supporting software at the bottom of this page.
 
+!!! tip "Video - Using GPUs on the HPC platform"
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/P5VLrbvp2oI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Request GPU resources using Slurm
 
 To request a GPU for your [Slurm job](Tutorial:_Submitting_your_first_job.md), add
