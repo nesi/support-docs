@@ -22,7 +22,7 @@ You should consider using a GPU for your work if:
     There is a list of commonly used GPU supporting software at the bottom of this page.
 
 !!! tip "How to use GPUs effectively on Mahuika"
-    <iframe style="width: 100%; aspect-ratio: 16 / 9; height: auto;" src="https://www.youtube.com/embed/P5VLrbvp2oI" title="How to use GPUs effectively on Mahuika" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <iframe style="width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube.com/embed/P5VLrbvp2oI" title="How to use GPUs effectively on Mahuika" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Request GPU resources using Slurm
 
