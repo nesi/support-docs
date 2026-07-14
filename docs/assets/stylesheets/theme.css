@@ -61,10 +61,12 @@
 /* e.g. inactive link text */
 .md-typeset a {
   color: var(--reannz-blue--shade-negative1);
+  text-decoration: underline;
 }
 
 .md-typeset a:hover {
   color: var(--reannz-blue);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="slate"] .md-typeset a:hover {

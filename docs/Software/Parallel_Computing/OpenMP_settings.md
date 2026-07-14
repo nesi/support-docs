@@ -57,7 +57,7 @@ gimpi/2018b toolchain on Mahuika.
 |--------------------|----------------------|----------------------|---------------------|
 | 1 | 1m43s, 1m42s | 1m42s, 1m42s | 1m30s, 1m30s |
 | 2 | 1m30s, 1m31s | 1m03, 55s | 56s, 56s |
-| 4 | <span style="color:red">58s, 1m27s</span> | <span style="color:blue">45s, 41s</span> | <span style="color:green">27s, 28s</span> |
+| 4 | **58s, 1m27s** | **45s, 41s** | **27s, 28s** |
 | 8 | 24s, 27s | 18s, 17s | 16s, 16s |
 
 So by explicitly using `--threads-per-core` and setting `OMP_PROC_BIND` and `OMP_PLACES`.
