@@ -5,10 +5,6 @@ tags:
     - globus
 ---
 
-
-
-# Globus Compute
-
 !!! warning
 
     Our Globus Compute offering is in early-access mode and may change. Please let us know if you have any feedback or suggestions for improvements.
@@ -104,7 +100,7 @@ This endpoint submits work in Slurm jobs. The following configuration options ar
 ## Limitations and known problems
 
 Limitations and known problems related to our current implementation are listed here.
-If these are impacting your ability to use this service, please [let us know](mailto:support@nesi.org.nz).
+If these are impacting your ability to use this service, please {% include "partials/support_request.html" %}.
 
 - Currently limited to a single CPU
 - You must use Python 3.11 (we are exploring options to execute functions in containers, which will enable use of different Python versions)

@@ -2,7 +2,7 @@
 created_at: '2015-09-08T03:11:50Z'
 tags:
 - chemistry
-title: CP2K
+title: Cp2k
 ---
 
 [//]:CP2K.md> (APPS PAGE BOILERPLATE START)

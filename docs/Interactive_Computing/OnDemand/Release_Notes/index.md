@@ -74,6 +74,6 @@ This is our first release to a group of early access users for feedback around N
 
     We are in the early process of iterating and improving Mahuika OnDemand. If you see any issues or suggestions, please let us know.
 
-    - Please e-mail us on [support@nesi.org.nz](mailto:support@nesi.org.nz) with Mahuika OnDemand as a part of the subject line and we will get back to you ASAP
+    - Please e-mail us on {% include "partials/support_request.html" %} with Mahuika OnDemand as a part of the subject line and we will get back to you ASAP
     - Given that this is an early release, the SLA will not follow REANNZ standard SLA (9am-5pm working days), and the environment may not be as stable as the production environment. We will support you with the best effort.
 

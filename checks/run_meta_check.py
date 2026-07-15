@@ -31,6 +31,10 @@ MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 1
 RANGE_SIBLING = [4, 8]
 ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many children warnings.
+# Site-infrastructure pages (tag index, updates feed, glossary) have no topic of their
+# own to tag - forcing a tag on them would just be generic filler, which tags.yml's
+# vocabulary explicitly discourages (see its "RETIRED TAGS" section).
+NO_TAGS_REQUIRED = ["docs/tags.md", "docs/updates.md", "docs/GLOSSARY.md"]
 DOC_ROOT = "docs"
 
 # Warning level for missing parameters.
@@ -127,7 +131,7 @@ def main():
                     lineno += 1
                     in_code_block = (
                             not in_code_block
-                            if re.match(r"^\s*```\s?\w*$", line)
+                            if re.match(r"^\s*```.*$", line)
                             else in_code_block
                         )
                     for check in WALKCHECKS:
@@ -161,10 +165,14 @@ endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 's
 
 def _title_from_filename():
     """
-    I think this is the same as what mkdocs does.
+    Matches mkdocs' own Page.title fallback (mkdocs/structure/pages.py):
+    replace '-'/'_' with spaces, then capitalize only if the whole
+    filename was already lowercase - mixed-case names are left as-is.
     """
-    name = " ".join(input_path.name[0:-3].split("_"))
-    return name[0].upper() + name[1:]
+    name = input_path.name[0:-3].replace("-", " ").replace("_", " ")
+    if name.lower() == name:
+        name = name.capitalize()
+    return name
 
 
 def _title_from_h1():
@@ -207,6 +215,7 @@ def _get_nav_tree():
         if header_level == 1:
             toc = {header_name: {"lineno": lineno, "children": {}}}
             toc_parents = [header_name]
+            return
 
         while header_level < len(toc_parents) + 1:
             toc_parents.pop(-1)
@@ -322,7 +331,7 @@ def meta_unexpected_key():
 
 
 def meta_missing_description():
-    if "description" not in meta.keys() or len(meta["description"]) < 1:
+    if not meta.get("description"):
         yield {"message": "Missing 'description' from front matter."}
 
 
@@ -344,6 +353,8 @@ def title_capitalisation():
         }
 
 def minimum_tags():
+    if str(input_path) in NO_TAGS_REQUIRED or (meta.get("search") or {}).get("exclude"):
+        return
     if "tags" not in meta or not isinstance(meta["tags"], list):
         yield {"message": "'tags' property in meta is missing or malformed."}
     elif len(meta["tags"]) < MIN_TAGS:
@@ -354,6 +365,24 @@ def minimum_tags():
         }
 
 
+def h1_in_body():
+    """
+    H1 is reserved for the page title (see FORMAT.md/styleguide.md): it's set
+    via front matter or the filename, and a literal '# ...' in the body
+    silently overrides the nav title too.
+    """
+    if in_code_block:
+        return
+
+    m = re.match(r"^#\s+(.*)$", line)
+    if m:
+        yield {
+            "line": lineno,
+            "message": f"Don't use H1 ('# {m.group(1)}') in the body, it's reserved for the \
+page title and overrides the nav title. Remove it (or set 'title' in front matter instead).",
+        }
+
+
 def click_here():
     """
     Click [here](for more details)
@@ -361,7 +390,7 @@ def click_here():
     if in_code_block:
         return
 
-    m1 = re.search(r"(\[.*\s?|\[)here\s?.*\]\(.*\)", line, re.IGNORECASE)
+    m1 = re.search(r"\[[^\]]*\bhere\b[^\]]*\]\([^)]*\)", line, re.IGNORECASE)
     if m1:
         yield {
             "line": lineno,
@@ -391,7 +420,9 @@ def absolute_site_link():
             "line": lineno,
             "col": m.start() + 1,
             "endColumn": m.end() - 1,
-            "message": "Don't use an absolute URL to link to a page on this site, use a relative link instead.",
+            "message": "Don't use an absolute URL to link to a page on this site. Use a link relative to \
+this page's own location instead (e.g. './Page.md' or '../Other_Section/Page.md'), not a path relative to the \
+site root or to the linked page.",
         }
 
 
@@ -457,8 +488,6 @@ def dynamic_slurm_link():
         re.IGNORECASE,
     )
     if m1:
-        print(m1.group(1))
-        print(m1.group(2))
         yield {
             "line": lineno,
             "message": f"Link '{m1.group(0)}', does not use dynamic slurm version. Use 'https://slurm.schedmd.com/archive/{{{{ config.extra.slurm }}}}/{m1.group(2)}",
@@ -478,7 +507,7 @@ ENDCHECKS = [
 ]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link]
+WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body]
 
 if __name__ == "__main__":
     main()

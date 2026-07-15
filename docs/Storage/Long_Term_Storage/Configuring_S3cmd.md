@@ -22,7 +22,7 @@ Enter the following details when prompted in the terminal:
 
 `Access Key`: Your username
 
-`Secret Key`: This is the code from the 1-time link in your Freezer allocation email. Please let us know if you need to <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset this key</a>.
+`Secret Key`: This is the code from the 1-time link in your Freezer allocation email. Please let us know if you need to reset this key, {% include "partials/support_request.html" %}.
 
 Please copy and paste the sections in <span style="color:blue">blue</span>.
 

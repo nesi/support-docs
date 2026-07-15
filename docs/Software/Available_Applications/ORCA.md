@@ -2,11 +2,9 @@
 created_at: '2015-11-09T21:20:24Z'
 tags:
 - chemistry
-title: ORCA
+title: Orca
 vote_count: 6
 vote_sum: 4
-zendesk_article_id: 213718027
-zendesk_section_id: 360000040076
 ---
 
 

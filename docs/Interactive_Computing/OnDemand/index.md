@@ -27,7 +27,7 @@ A number of interactive applications can be accessed through OnDemand, including
 - [JupyterLab](Apps/JupyterLab/index.md)
 - [RStudio](Apps/RStudio.md)
 - [VS Code](Apps/VSCode.md)
-- [Virtual desktop](Apps/virtual_desktop.md)
+- [Virtual desktop](Apps/Virtual_Desktop.md)
 - [MATLAB](Apps/MATLAB.md) - currently under development, let us know if this is of interest
 
 ## Changes from Jupyter on Mahuika

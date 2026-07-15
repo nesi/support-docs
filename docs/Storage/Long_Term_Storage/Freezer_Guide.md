@@ -5,7 +5,7 @@ tags:
   - storage
 ---
 !!! info s3cmd configuration required
-    Please ensure you have [configured](Configuring_s3cmd.md) the s3cmd tool.
+    Please ensure you have [configured](Configuring_S3cmd.md) the s3cmd tool.
 
 ## Using s3cmd tool to interact with Freezer
 

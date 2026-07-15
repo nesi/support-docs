@@ -1,5 +1,5 @@
 ---
-title: Create a new page
+title: Create a New Page
 search:
   exclude: true
 ---

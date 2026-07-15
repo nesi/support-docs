@@ -2,7 +2,7 @@
 created_at: '2024-10-04T19:53:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.29.0
+title: my.nesi.org.nz Release Notes v2.29.0
 search:
   boost: 0.1
 ---
@@ -10,7 +10,7 @@ search:
 ## New and Improved
 
 - The project allocation request form now enables you to indicate if the request is for a new allocation with compute and storage or if the request is to update the storage of the current allocation.  
-- Previously, the allocation form only listed "Persistent project disk space" as an available storage type. It now lists all [storage types available on NeSI](https://docs.nesi.org.nz/Storage/NeSI_): 
+- Previously, the allocation form only listed "Persistent project disk space" as an available storage type.
     - Persistent project disk space  
     - Temporary project disk space   
     - Long-term storage space  

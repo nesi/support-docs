@@ -222,5 +222,5 @@ You are getting this message because GUFI, the engine behind ```nn_doomed_list``
 ## More information
 
 If you have any questions or would like to discuss our storage facilities and policies in more detail,
-come to one of our [weekly Online Office Hours](https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/)
+come to one of our [weekly Online Office Hours](../Getting_Started/Weekly_Online_Office_Hours.md)
 or {% include "partials/support_request.html" %}.

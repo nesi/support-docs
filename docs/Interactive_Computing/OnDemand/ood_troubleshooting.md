@@ -84,7 +84,7 @@ If OnDemand appears slow or unresponsive, this may be related to recent updates 
 - Some applications may have been renamed
 - Deprecated applications have been removed from the OnDemand interface
 
-If you continue to experience issues, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz?subject=OnDemand%20Applications).
+If you continue to experience issues, please {% include "partials/support_request.html" %}.
 
 Clearing your local OnDemand cache may also improve performance.
 

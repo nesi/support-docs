@@ -2,7 +2,7 @@
 created_at: '2015-09-08T03:11:50Z'
 tags:
 - chemistry
-title: VASP
+title: Vasp
 ---
 
 [//]: <> (APPS PAGE BOILERPLATE START)
@@ -214,7 +214,7 @@ Some additional notes specific to running VASP on GPUs:
 
 ## VASP extensions
 
-If you are wondering what extensions our VASP modules have been built with, please email the [Support Team](mailto:support@nesi.org.nz). You can also check what precompiler options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.
+If you are wondering what extensions our VASP modules have been built with, please email the {% include "partials/support_request.html" %}. You can also check what precompiler options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.
 
 ## References
 
