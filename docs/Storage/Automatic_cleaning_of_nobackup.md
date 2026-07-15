@@ -42,7 +42,7 @@ The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickl
 
 GUFI performs indexing every weekend. Therefore if you have already deleted a file that was in your `nn_doomed_list` list, it will still appear in `nn_doomed_list` until the next week when GUFI will re-index the files in `nobackup`.
 
-See [the GUFI manual page](../Software/Available_Applications/GUFI.md) for more information about GUFI.
+See [the GUFI manual page](../Software/Available_Applications/gufi.md) for more information about GUFI.
 
 ## How will I be notified that my data is a candidate for deletion?
 

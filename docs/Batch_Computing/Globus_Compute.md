@@ -1,3 +1,12 @@
+---
+created_at: 2026-07-15
+description: How to use globus compute
+tags: 
+    - globus
+---
+
+
+
 # Globus Compute
 
 !!! warning
@@ -91,7 +100,7 @@ This endpoint submits work in Slurm jobs. The following configuration options ar
    ```
    python test.py
    ```
-
+ c
 ## Limitations and known problems
 
 Limitations and known problems related to our current implementation are listed here.

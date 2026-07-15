@@ -3,9 +3,6 @@ created: 2026-06-12
 tags:
     - ondemand
     - slurm
-    - composer
-    - job script
-    - batch
 description: How to build, submit and manage Slurm batch jobs from your browser using the Slurm Composer app on Mahuika OnDemand.
 ---
 

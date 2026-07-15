@@ -17,7 +17,7 @@ Freezer has two types of data storage classes:
 - Glacier: data that is on tape
 - Standard: data that is in the S3 bucket
 
-Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please <a href="mailto:support@nesi.org.nz?subject=Forgot%20my%20Freezer%20bucket%20name">email us</a> and let us know which project this is for.
+Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please  {% include "partials/support_request.html" %} and let us know which project this is for.
 
 ## List contents and buckets
 
@@ -164,7 +164,7 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 Partially uploaded files will be deleted automatically.
 
 !!! warning
-    If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
+    If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#step-2a-synchronise-data) for more information. 
 
 ### Preview or dry-run
 

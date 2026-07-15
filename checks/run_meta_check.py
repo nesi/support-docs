@@ -30,6 +30,7 @@ MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 1
 RANGE_SIBLING = [4, 8]
+ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many children warnings.
 DOC_ROOT = "docs"
 
 # Warning level for missing parameters.
@@ -46,6 +47,7 @@ EXPECTED_PARAMETERS = {
     "tags": "",  # Add info here when implimented.
     "search": "",
     "hide": ["toc", "nav", "tags"],
+    "no_module": [True, False],
 }
 
 
@@ -69,7 +71,7 @@ def main():
         last_header_lineno, \
         sibling_headers
 
-    global toc, toc_parents, header
+    global toc, toc_parents, header, nav_tree_failed
 
     inputs = sys.argv[1:]
 
@@ -119,6 +121,7 @@ def main():
                 in_code_block = False
                 toc_parents = [title]
                 toc = {title: {"level": 1, "lineno": 0, "children": {}}}
+                nav_tree_failed = False
 
                 for line in contents.split("\n"):
                     lineno += 1
@@ -144,9 +147,13 @@ def _run_check(f):
 
 def _emit(f, r):
     msg_count[r.get("level", "warning")] += 1
+    # Trailing "path:line:col" is redundant with the file=/line=/col= fields above, but
+    # terminals (eg. VS Code's integrated terminal) auto-link that exact shape, letting you
+    # click straight to the location without going through the task's Problems panel.
+    location = f"{input_path}:{r.get('line', 1)}:{r.get('col', 0)}"
     print(
-        f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},\
-endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}"
+        f"::{r.get('level', 'warning')} file= {input_path},title={f},col={r.get('col', 0)},\
+endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')} ({location})"
     )
     sys.stdout.flush()
     time.sleep(0.01)
@@ -177,7 +184,7 @@ def _get_lineno(pattern):
 
 def _get_nav_tree():
     """Makes a nice dictionary of header tree"""
-    global toc, toc_parents
+    global toc, toc_parents, nav_tree_failed
 
     def _unpack(toc, a):
         if len(a) < 1:
@@ -211,14 +218,16 @@ def _get_nav_tree():
         }
         toc_parents += [header_name]
     except Exception:
-        _emit(
-            "misc.nav",
-            {
-                "level": "error",
-                "file": input_path,
-                "message": "Failed to parse Nav tree. Something is very wrong.",
-            },
-        )
+        if not nav_tree_failed:
+            nav_tree_failed = True
+            _emit(
+                "misc.nav",
+                {
+                    "level": "error",
+                    "file": input_path,
+                    "message": "Failed to parse Nav tree. Something is very wrong.",
+                },
+            )
 
 
 def _nav_check():
@@ -242,7 +251,7 @@ def _nav_check():
     items here to justify it's existence.",
                     },
                 )
-            elif num_siblings > RANGE_SIBLING[1]:
+            elif num_siblings > RANGE_SIBLING[1] and file_name not in ALLOWED_BE_BIG:
                 _emit(
                     "meta.siblings",
                     {
@@ -365,6 +374,51 @@ def click_here():
     # m2 = re.search(r"\[here\]\(.*\)", line)
 
 
+def absolute_site_link():
+    """
+    Checks for markdown links that point to this site by absolute URL
+    instead of using a relative link.
+    """
+    if in_code_block:
+        return
+
+    for m in re.finditer(
+        r"\[[^\]]*\]\((https?:\/\/)?docs\.nesi\.org\.nz(/[^)\s]*)?\)",
+        line,
+        re.IGNORECASE,
+    ):
+        yield {
+            "line": lineno,
+            "col": m.start() + 1,
+            "endColumn": m.end() - 1,
+            "message": "Don't use an absolute URL to link to a page on this site, use a relative link instead.",
+        }
+
+
+def support_mailto_link():
+    """
+    Checks for mailto links to support@nesi.org.nz, these should use the
+    'partials/support_request.html' include instead.
+    """
+    if in_code_block:
+        return
+
+    for m in re.finditer(
+        r"(\[[^\]]*\]\((mailto:)?support@nesi\.org\.nz[^)]*\)"
+        r"|<a\s[^>]*href=[\"'](mailto:)?support@nesi\.org\.nz[^>]*>"
+        r"|<(mailto:)?support@nesi\.org\.nz>)",
+        line,
+        re.IGNORECASE,
+    ):
+        yield {
+            "line": lineno,
+            "col": m.start() + 1,
+            "endColumn": m.end() - 1,
+            "message": 'Don\'t link directly to support@nesi.org.nz, use the \
+{% include "partials/support_request.html" %} macro instead.',
+        }
+
+
 def walk_toc():
     """
     Checks if toc is sensible.
@@ -424,7 +478,7 @@ ENDCHECKS = [
 ]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here, dynamic_slurm_link]
+WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link]
 
 if __name__ == "__main__":
     main()

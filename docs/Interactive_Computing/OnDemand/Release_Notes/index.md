@@ -1,4 +1,9 @@
-# Mahuika OnDemand Release Notes
+---
+created_at: 2026-07-15
+description: Release notes
+---
+
+
 
 ## 1.0.0 - Major version upgrade (20250515)
 

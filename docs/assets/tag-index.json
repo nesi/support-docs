@@ -65,6 +65,10 @@
             "path": "Getting_Started/Job_efficiency_review.md"
         },
         {
+            "title": "Slurm Composer",
+            "path": "Interactive_Computing/OnDemand/Apps/Slurm_Composer.md"
+        },
+        {
             "title": "Slurm Interactive Sessions",
             "path": "Interactive_Computing/Slurm_Interactive_Sessions.md"
         },
@@ -107,8 +111,8 @@
             "path": "Software/Available_Applications/AlphaFold.md"
         },
         {
-            "title": "TensorFlow on GPUs",
-            "path": "Software/Available_Applications/TensorFlow_on_GPUs.md"
+            "title": "TensorFlow",
+            "path": "Software/Available_Applications/TensorFlow.md"
         },
         {
             "title": "ont-guppy-gpu",
@@ -117,10 +121,6 @@
         {
             "title": "NVIDIA GPU Containers",
             "path": "Software/Containers/NVIDIA_GPU_Containers.md"
-        },
-        {
-            "title": "Run an executable under Apptainer on GPU",
-            "path": "Software/Containers/Run_an_executable_under_Apptainer_on_gpu.md"
         },
         {
             "title": "Models",
@@ -169,10 +169,6 @@
             "path": "Software/Available_Applications/AlphaFold.md"
         },
         {
-            "title": "Keras",
-            "path": "Software/Available_Applications/Keras.md"
-        },
-        {
             "title": "Lambda Stack",
             "path": "Software/Available_Applications/Lambda_Stack.md"
         },
@@ -185,11 +181,7 @@
             "path": "Software/Available_Applications/Python.md"
         },
         {
-            "title": "TensorFlow on CPUs",
-            "path": "Software/Available_Applications/TensorFlow_on_CPUs.md"
-        },
-        {
-            "title": "Ollama",
+            "title": "ollama",
             "path": "Software/Available_Applications/ollama.md"
         },
         {
@@ -211,24 +203,12 @@
             "path": "Interactive_Computing/Marimo_Interactive_Sessions.md"
         },
         {
-            "title": "Jupyter kernels Manual management",
-            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Manual_management.md"
-        },
-        {
-            "title": "Jupyter kernels - Tool-assisted management",
-            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md"
-        },
-        {
-            "title": "Keras",
-            "path": "Software/Available_Applications/Keras.md"
+            "title": "Python and R kernels in JupyterLab",
+            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
             "title": "Miniforge3",
             "path": "Software/Available_Applications/Miniforge3.md"
-        },
-        {
-            "title": "TensorFlow on CPUs",
-            "path": "Software/Available_Applications/TensorFlow_on_CPUs.md"
         },
         {
             "title": "ipyrad",
@@ -245,23 +225,23 @@
             "path": "Getting_Started/FAQs/How_can_I_view_images_generated_on_the_cluster.md"
         },
         {
-            "title": "Apptainer - Containers on HPC",
+            "title": "Apptainer",
             "path": "Software/Available_Applications/Apptainer.md"
+        },
+        {
+            "title": "Apptainer",
+            "path": "Software/Containers/Apptainer.md"
         },
         {
             "title": "NVIDIA GPU Containers",
             "path": "Software/Containers/NVIDIA_GPU_Containers.md"
-        },
-        {
-            "title": "Run an executable under Apptainer in parallel",
-            "path": "Software/Containers/Run_an_executable_under_Apptainer_in_parallel.md"
-        },
-        {
-            "title": "Run an executable under Apptainer on GPU",
-            "path": "Software/Containers/Run_an_executable_under_Apptainer_on_gpu.md"
         }
     ],
     "storage": [
+        {
+            "title": "Identity provider system maintenance",
+            "path": "Announcements/Identity_provider_system_maintenance.md"
+        },
         {
             "title": "Temporary directories",
             "path": "Batch_Computing/Temporary_directories.md"
@@ -269,6 +249,10 @@
         {
             "title": "Data Transfer to Freezer",
             "path": "Data_Transfer/Globus/Data_Transfer_to_Freezer.md"
+        },
+        {
+            "title": "Data Transfer to the Research Developer Cloud",
+            "path": "Data_Transfer/Globus/Data_Transfer_to_the_Research_Developer_Cloud.md"
         },
         {
             "title": "How can I give read only team members access to my files",
@@ -287,8 +271,8 @@
             "path": "Getting_Started/FAQs/Where_should_I_store_my_data.md"
         },
         {
-            "title": "GUFI",
-            "path": "Software/Available_Applications/GUFI.md"
+            "title": "gufi",
+            "path": "Software/Available_Applications/gufi.md"
         },
         {
             "title": "Automatic cleaning of nobackup",
@@ -381,6 +365,18 @@
     ],
     "file_transfer": [
         {
+            "title": "Globus-renaming",
+            "path": "Announcements/Globus-renaming.md"
+        },
+        {
+            "title": "Identity provider system maintenance",
+            "path": "Announcements/Identity_provider_system_maintenance.md"
+        },
+        {
+            "title": "Globus Compute",
+            "path": "Batch_Computing/Globus_Compute.md"
+        },
+        {
             "title": "Data Transfer Overview",
             "path": "Data_Transfer/Data_Transfer_Overview.md"
         },
@@ -421,11 +417,15 @@
             "path": "Data_Transfer/Globus/Data_Transfer_to_Freezer.md"
         },
         {
+            "title": "Data Transfer to the Research Developer Cloud",
+            "path": "Data_Transfer/Globus/Data_Transfer_to_the_Research_Developer_Cloud.md"
+        },
+        {
             "title": "Data Transfer using Globus",
             "path": "Data_Transfer/Globus/Data_Transfer_using_Globus.md"
         },
         {
-            "title": "First Time Setup",
+            "title": "Globus First Time Setup",
             "path": "Data_Transfer/Globus/First_Time_Setup.md"
         },
         {
@@ -441,7 +441,7 @@
             "path": "Data_Transfer/Globus/Share_Collections.md"
         },
         {
-            "title": "Signing up to a Free Globus Subscription",
+            "title": "Signing up to join a Globus Subscription",
             "path": "Data_Transfer/Globus/Signing_Up_To_Globus_Subscription.md"
         },
         {
@@ -495,24 +495,44 @@
             "path": "Interactive_Computing/Marimo_Interactive_Sessions.md"
         },
         {
-            "title": "Jupyter kernels Manual management",
-            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Manual_management.md"
+            "title": "Containers as kernels in JupyterLab",
+            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/containers_as_kernels_in_JupyterLab.md"
         },
         {
-            "title": "Jupyter kernels - Tool-assisted management",
-            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md"
+            "title": "index",
+            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/index.md"
+        },
+        {
+            "title": "Python and R kernels in JupyterLab",
+            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
             "title": "MATLAB",
             "path": "Interactive_Computing/OnDemand/Apps/MATLAB.md"
         },
         {
-            "title": "Virtual desktop",
+            "title": "RStudio",
+            "path": "Interactive_Computing/OnDemand/Apps/RStudio.md"
+        },
+        {
+            "title": "Slurm Composer",
+            "path": "Interactive_Computing/OnDemand/Apps/Slurm_Composer.md"
+        },
+        {
+            "title": "VSCode",
+            "path": "Interactive_Computing/OnDemand/Apps/VSCode.md"
+        },
+        {
+            "title": "virtual desktop",
             "path": "Interactive_Computing/OnDemand/Apps/virtual_desktop.md"
         },
         {
             "title": "NeSI OnDemand how-to guide",
             "path": "Interactive_Computing/OnDemand/how_to_guide.md"
+        },
+        {
+            "title": "index",
+            "path": "Interactive_Computing/OnDemand/index.md"
         },
         {
             "title": "OnDemand Troubleshooting",
@@ -557,7 +577,7 @@
             "path": "Software/Available_Applications/Synda.md"
         },
         {
-            "title": "FastStructure",
+            "title": "fastStructure",
             "path": "Software/Available_Applications/fastStructure.md"
         },
         {
@@ -855,7 +875,7 @@
             "path": "Software/Available_Applications/VirSorter.md"
         },
         {
-            "title": "FastStructure",
+            "title": "fastStructure",
             "path": "Software/Available_Applications/fastStructure.md"
         },
         {
@@ -931,6 +951,10 @@
             "path": "Software/Available_Applications/Synda.md"
         },
         {
+            "title": "TUFLOW",
+            "path": "Software/Available_Applications/TUFLOW.md"
+        },
+        {
             "title": "WRF",
             "path": "Software/Available_Applications/WRF.md"
         }
@@ -969,7 +993,7 @@
             "path": "Software/Available_Applications/Nextflow.md"
         },
         {
-            "title": "Snakemake",
+            "title": "snakemake",
             "path": "Software/Available_Applications/snakemake.md"
         }
     ],
@@ -981,10 +1005,6 @@
         {
             "title": "FlexiBLAS",
             "path": "Software/Available_Applications/FlexiBLAS.md"
-        },
-        {
-            "title": "Run an executable under Apptainer in parallel",
-            "path": "Software/Containers/Run_an_executable_under_Apptainer_in_parallel.md"
         },
         {
             "title": "Configuring Dask-MPI jobs",
@@ -1297,7 +1317,7 @@
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-2-0.md"
         },
         {
-            "title": "My-nesi-org-nz release notes v2-20-0",
+            "title": "my-nesi-org-nz release notes v2-20-0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-20-0.md"
         },
         {
@@ -1431,6 +1451,14 @@
         {
             "title": "my.nesi.org.nz release notes v2.51.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-51-0.md"
+        },
+        {
+            "title": "my.nesi.org.nz release notes v2.52.0",
+            "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-52-0.md"
+        },
+        {
+            "title": "my.nesi.org.nz release notes v2.53.0",
+            "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-53-0.md"
         },
         {
             "title": "my.nesi.org.nz release notes v2.6.0",
@@ -1567,12 +1595,8 @@
     ],
     "r": [
         {
-            "title": "Jupyter kernels Manual management",
-            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Manual_management.md"
-        },
-        {
-            "title": "Jupyter kernels - Tool-assisted management",
-            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md"
+            "title": "Python and R kernels in JupyterLab",
+            "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
             "title": "NeSI OnDemand how-to guide",

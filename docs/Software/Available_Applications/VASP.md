@@ -193,7 +193,7 @@ VASP modules containing *\*-NVHPC-\** in the name have been built with GPU suppo
 
 VASP can run really well on GPUs, although how much you will benefit from GPUs largely depends on the specific simulation/calculation that you are running. As usual, it could be useful to run some smaller benchmarks with different GPU and CPU-only configurations in your slurm scripts, before moving on to run larger production simulations. When considering which configuration to use for production you should take into account performance and compute unit cost.
 
-See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for further instructions, and [Hardware](../../Batch_Computing/Hardware.md#gpgpus) for full GPU specifications.
+See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for further instructions, and [Hardware](../../Batch_Computing/Hardware.md#gpus) for full GPU specifications.
 
 Some additional notes specific to running VASP on GPUs:
 
