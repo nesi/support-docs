@@ -4,6 +4,9 @@
 
 OnDemand empowers students, researchers, and industry professionals with remote and interactive web access to the HPC platforms.
 
+!!! tip "Getting started with Mahuika OnDemand"
+    <iframe style="width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube.com/embed/krBFC21cYBQ" title="Getting started with Mahuika OnDemand" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Connecting to OnDemand
 
 !!! prerequisite
@@ -22,7 +25,7 @@ A number of interactive applications can be accessed through OnDemand, including
 - [RStudio](Apps/RStudio.md)
 - [VS Code](Apps/VSCode.md)
 - [Virtual desktop](Apps/virtual_desktop.md)
-- [MATLAB](Apps/MATLAB.md) - currently under development, let us know if this is of interest
+- [MATLAB](Apps/MATLAB.md)
 
 ## Changes from Jupyter on Mahuika
 
