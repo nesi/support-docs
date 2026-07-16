@@ -11,7 +11,7 @@ search:
 During the Easter break (18-21 April 2025) and ANZAC Day (25 April 2025), 
 [REANNZ HPC platform services](https://status.nesi.org.nz/) will be online and available, but
 urgent / critical requests received during these times will be addressed on a best effort
-basis. 
+basis.
 
 Below is a quick reminder of our main support channels as well as other
 sources of self-service support:

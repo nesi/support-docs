@@ -5,16 +5,16 @@
             "path": "Announcements/Identity_Changes_for_Crown_Research_Institutes.md"
         },
         {
-            "title": "Slurm Job email",
-            "path": "Announcements/Slurm_Job_email.md"
+            "title": "Slurm Job Email",
+            "path": "Announcements/Slurm_Job_Email.md"
         },
         {
             "title": "Batch Computing Guide",
             "path": "Batch_Computing/Batch_Computing_Guide.md"
         },
         {
-            "title": "Checking resource usage",
-            "path": "Batch_Computing/Checking_resource_usage.md"
+            "title": "Checking Resource Usage",
+            "path": "Batch_Computing/Checking_Resource_Usage.md"
         },
         {
             "title": "Fair Share",
@@ -33,8 +33,8 @@
             "path": "Batch_Computing/Job_Limits.md"
         },
         {
-            "title": "Job prioritisation",
-            "path": "Batch_Computing/Job_prioritisation.md"
+            "title": "Job Prioritisation",
+            "path": "Batch_Computing/Job_Prioritisation.md"
         },
         {
             "title": "SLURM: Best Practice",
@@ -49,20 +49,20 @@
             "path": "Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md"
         },
         {
-            "title": "How do I request memory",
-            "path": "Getting_Started/FAQs/How_do_I_request_memory.md"
+            "title": "How Do I Request Memory",
+            "path": "Getting_Started/FAQs/How_Do_I_Request_Memory.md"
         },
         {
-            "title": "How do I run my Python Notebook through SLURM",
-            "path": "Getting_Started/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md"
+            "title": "How Do I Run My Python Notebook Through SLURM",
+            "path": "Getting_Started/FAQs/How_Do_I_Run_My_Python_Notebook_Through_SLURM.md"
         },
         {
-            "title": "Why is my job taking a long time to start",
-            "path": "Getting_Started/FAQs/Why_is_my_job_taking_a_long_time_to_start.md"
+            "title": "Why Is My Job Taking a Long Time to Start",
+            "path": "Getting_Started/FAQs/Why_Is_My_Job_Taking_a_Long_Time_to_Start.md"
         },
         {
-            "title": "Job efficiency review",
-            "path": "Getting_Started/Job_efficiency_review.md"
+            "title": "Job Efficiency Review",
+            "path": "Getting_Started/Job_Efficiency_Review.md"
         },
         {
             "title": "Slurm Composer",
@@ -151,8 +151,8 @@
             "path": "Software/Parallel_Computing/Multithreading_Scaling_Example.md"
         },
         {
-            "title": "OpenMP settings",
-            "path": "Software/Parallel_Computing/OpenMP_settings.md"
+            "title": "OpenMP Settings",
+            "path": "Software/Parallel_Computing/OpenMP_Settings.md"
         },
         {
             "title": "Simultaneous Multithreading",
@@ -191,11 +191,11 @@
     ],
     "python": [
         {
-            "title": "How do I run my Python Notebook through SLURM",
-            "path": "Getting_Started/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md"
+            "title": "How Do I Run My Python Notebook Through SLURM",
+            "path": "Getting_Started/FAQs/How_Do_I_Run_My_Python_Notebook_Through_SLURM.md"
         },
         {
-            "title": "Jupyter Interactive Sessions",
+            "title": "JupyterLab Interactive Sessions",
             "path": "Interactive_Computing/Jupyter_Interactive_Sessions.md"
         },
         {
@@ -203,7 +203,7 @@
             "path": "Interactive_Computing/Marimo_Interactive_Sessions.md"
         },
         {
-            "title": "Python and R kernels in JupyterLab",
+            "title": "Python and R Kernels in JupyterLab",
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
@@ -221,12 +221,16 @@
     ],
     "containers": [
         {
-            "title": "How can I view images generated on the cluster",
-            "path": "Getting_Started/FAQs/How_can_I_view_images_generated_on_the_cluster.md"
+            "title": "How Can I View Images Generated on the Cluster",
+            "path": "Getting_Started/FAQs/How_Can_I_View_Images_Generated_on_the_Cluster.md"
         },
         {
             "title": "Apptainer",
             "path": "Software/Available_Applications/Apptainer.md"
+        },
+        {
+            "title": "FreeSurfer",
+            "path": "Software/Available_Applications/FreeSurfer.md"
         },
         {
             "title": "Apptainer",
@@ -239,12 +243,12 @@
     ],
     "storage": [
         {
-            "title": "Identity provider system maintenance",
-            "path": "Announcements/Identity_provider_system_maintenance.md"
+            "title": "Identity Provider System Maintenance",
+            "path": "Announcements/Identity_Provider_System_Maintenance.md"
         },
         {
-            "title": "Temporary directories",
-            "path": "Batch_Computing/Temporary_directories.md"
+            "title": "Temporary Directories",
+            "path": "Batch_Computing/Temporary_Directories.md"
         },
         {
             "title": "Data Transfer to Freezer",
@@ -255,16 +259,16 @@
             "path": "Data_Transfer/Globus/Data_Transfer_to_the_Research_Developer_Cloud.md"
         },
         {
-            "title": "How can I give read only team members access to my files",
-            "path": "Getting_Started/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md"
+            "title": "How Can I Give Read Only Team Members Access to My Files",
+            "path": "Getting_Started/FAQs/How_Can_I_Give_Read_Only_Team_Members_Access_to_My_Files.md"
         },
         {
-            "title": "How can I let my fellow project team members read or write my files",
-            "path": "Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md"
+            "title": "How Can I Let My Fellow Project Team Members Read or Write My Files",
+            "path": "Getting_Started/FAQs/How_Can_I_Let_My_Fellow_Project_Team_Members_Read_or_Write_My_Files.md"
         },
         {
-            "title": "How do I find out the size of a directory",
-            "path": "Getting_Started/FAQs/How_do_I_find_out_the_size_of_a_directory.md"
+            "title": "How Do I Find Out the Size of a Directory",
+            "path": "Getting_Started/FAQs/How_Do_I_Find_Out_the_Size_of_a_Directory.md"
         },
         {
             "title": "Where Should I Store My Data?",
@@ -275,32 +279,32 @@
             "path": "Software/Available_Applications/gufi.md"
         },
         {
-            "title": "Automatic cleaning of nobackup",
-            "path": "Storage/Automatic_cleaning_of_nobackup.md"
+            "title": "Automatic Cleaning of Nobackup",
+            "path": "Storage/Automatic_Cleaning_of_Nobackup.md"
         },
         {
             "title": "Data Recovery",
             "path": "Storage/Data_Recovery.md"
         },
         {
-            "title": "File permissions and groups",
-            "path": "Storage/File_permissions_and_groups.md"
+            "title": "File Permissions and Groups",
+            "path": "Storage/File_Permissions_and_Groups.md"
         },
         {
             "title": "Filesystems and Quotas",
             "path": "Storage/Filesystems_and_Quotas.md"
         },
         {
-            "title": "Configuring s3cmd",
-            "path": "Storage/Long_Term_Storage/Configuring_s3cmd.md"
+            "title": "Configuring S3cmd",
+            "path": "Storage/Long_Term_Storage/Configuring_S3cmd.md"
         },
         {
             "title": "Freezer Guide",
             "path": "Storage/Long_Term_Storage/Freezer_Guide.md"
         },
         {
-            "title": "Freezer long term storage",
-            "path": "Storage/Long_Term_Storage/Freezer_long_term_storage.md"
+            "title": "Freezer Long Term Storage",
+            "path": "Storage/Long_Term_Storage/Freezer_Long_Term_Storage.md"
         },
         {
             "title": "Other Useful Commands",
@@ -365,12 +369,12 @@
     ],
     "file_transfer": [
         {
-            "title": "Globus-renaming",
-            "path": "Announcements/Globus-renaming.md"
+            "title": "Globus-Renaming",
+            "path": "Announcements/Globus-Renaming.md"
         },
         {
-            "title": "Identity provider system maintenance",
-            "path": "Announcements/Identity_provider_system_maintenance.md"
+            "title": "Identity Provider System Maintenance",
+            "path": "Announcements/Identity_Provider_System_Maintenance.md"
         },
         {
             "title": "Globus Compute",
@@ -397,11 +401,11 @@
             "path": "Data_Transfer/File_Managers.md"
         },
         {
-            "title": "Filesystem Mounts using SSHFS",
-            "path": "Data_Transfer/Filesystem_Mounts_using_SSHFS.md"
+            "title": "Filesystem Mounts Using SSHFS",
+            "path": "Data_Transfer/Filesystem_Mounts_Using_SSHFS.md"
         },
         {
-            "title": "Add your Computer to Globus",
+            "title": "Add Your Computer to Globus",
             "path": "Data_Transfer/Globus/Add_Your_Computer_To_Globus.md"
         },
         {
@@ -413,16 +417,16 @@
             "path": "Data_Transfer/Globus/Data_Transfer_Between_Personal_Endpoints.md"
         },
         {
+            "title": "Data Transfer Using Globus",
+            "path": "Data_Transfer/Globus/Data_Transfer_Using_Globus.md"
+        },
+        {
             "title": "Data Transfer to Freezer",
             "path": "Data_Transfer/Globus/Data_Transfer_to_Freezer.md"
         },
         {
             "title": "Data Transfer to the Research Developer Cloud",
             "path": "Data_Transfer/Globus/Data_Transfer_to_the_Research_Developer_Cloud.md"
-        },
-        {
-            "title": "Data Transfer using Globus",
-            "path": "Data_Transfer/Globus/Data_Transfer_using_Globus.md"
         },
         {
             "title": "Globus First Time Setup",
@@ -441,11 +445,11 @@
             "path": "Data_Transfer/Globus/Share_Collections.md"
         },
         {
-            "title": "Signing up to join a Globus Subscription",
+            "title": "Signing Up to Join a Globus Subscription",
             "path": "Data_Transfer/Globus/Signing_Up_To_Globus_Subscription.md"
         },
         {
-            "title": "Sync'ing with globus-automate",
+            "title": "Sync'ing With Globus-Automate",
             "path": "Data_Transfer/Globus/Syncing_files_with_globus_automate.md"
         },
         {
@@ -465,8 +469,8 @@
             "path": "Getting_Started/Accessing_the_HPCs/WinSCP-PuTTY_Setup_Windows.md"
         },
         {
-            "title": "Configuring s3cmd",
-            "path": "Storage/Long_Term_Storage/Configuring_s3cmd.md"
+            "title": "Configuring S3cmd",
+            "path": "Storage/Long_Term_Storage/Configuring_S3cmd.md"
         }
     ],
     "interactive": [
@@ -483,11 +487,11 @@
             "path": "Getting_Started/Accessing_the_HPCs/First_Time_Login.md"
         },
         {
-            "title": "How do I run my Python Notebook through SLURM",
-            "path": "Getting_Started/FAQs/How_do_I_run_my_Python_Notebook_through_SLURM.md"
+            "title": "How Do I Run My Python Notebook Through SLURM",
+            "path": "Getting_Started/FAQs/How_Do_I_Run_My_Python_Notebook_Through_SLURM.md"
         },
         {
-            "title": "Jupyter Interactive Sessions",
+            "title": "JupyterLab Interactive Sessions",
             "path": "Interactive_Computing/Jupyter_Interactive_Sessions.md"
         },
         {
@@ -495,7 +499,7 @@
             "path": "Interactive_Computing/Marimo_Interactive_Sessions.md"
         },
         {
-            "title": "Containers as kernels in JupyterLab",
+            "title": "Containers as Kernels in JupyterLab",
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/containers_as_kernels_in_JupyterLab.md"
         },
         {
@@ -503,11 +507,11 @@
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/index.md"
         },
         {
-            "title": "Python and R kernels in JupyterLab",
+            "title": "Python and R Kernels in JupyterLab",
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
-            "title": "MATLAB",
+            "title": "MATLAB via OnDemand",
             "path": "Interactive_Computing/OnDemand/Apps/MATLAB.md"
         },
         {
@@ -523,11 +527,11 @@
             "path": "Interactive_Computing/OnDemand/Apps/VSCode.md"
         },
         {
-            "title": "virtual desktop",
-            "path": "Interactive_Computing/OnDemand/Apps/virtual_desktop.md"
+            "title": "Virtual Desktop via OnDemand",
+            "path": "Interactive_Computing/OnDemand/Apps/Virtual_Desktop.md"
         },
         {
-            "title": "NeSI OnDemand how-to guide",
+            "title": "NeSI OnDemand How-to Guide",
             "path": "Interactive_Computing/OnDemand/how_to_guide.md"
         },
         {
@@ -539,7 +543,7 @@
             "path": "Interactive_Computing/OnDemand/ood_troubleshooting.md"
         },
         {
-            "title": "Pluto Interactive Sessions",
+            "title": "Pluto.jl Interactive Sessions",
             "path": "Interactive_Computing/Pluto_Interactive_Sessions.md"
         },
         {
@@ -633,8 +637,8 @@
             "path": "Data_Transfer/File_Managers.md"
         },
         {
-            "title": "Filesystem Mounts using SSHFS",
-            "path": "Data_Transfer/Filesystem_Mounts_using_SSHFS.md"
+            "title": "Filesystem Mounts Using SSHFS",
+            "path": "Data_Transfer/Filesystem_Mounts_Using_SSHFS.md"
         },
         {
             "title": "SCP (Secure Copy)",
@@ -689,40 +693,40 @@
             "path": "Getting_Started/Cheat_Sheets/Bash-Reference_Sheet.md"
         },
         {
-            "title": "Can I change my time zone to New Zealand time",
-            "path": "Getting_Started/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md"
+            "title": "Can I Change My Time Zone to New Zealand Time",
+            "path": "Getting_Started/FAQs/Can_I_Change_My_Time_Zone_to_New_Zealand_Time.md"
         },
         {
-            "title": "Converting from Windows style to UNIX style line endings",
-            "path": "Getting_Started/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md"
+            "title": "Converting From Windows Style to UNIX Style Line Endings",
+            "path": "Getting_Started/FAQs/Converting_From_Windows_Style_to_UNIX_Style_Line_Endings.md"
         },
         {
-            "title": "How can I view images generated on the cluster",
-            "path": "Getting_Started/FAQs/How_can_I_view_images_generated_on_the_cluster.md"
+            "title": "How Can I View Images Generated on the Cluster",
+            "path": "Getting_Started/FAQs/How_Can_I_View_Images_Generated_on_the_Cluster.md"
         },
         {
-            "title": "How do I fix my locale and language settings",
-            "path": "Getting_Started/FAQs/How_do_I_fix_my_locale_and_language_settings.md"
+            "title": "How Do I Fix My Locale and Language Settings",
+            "path": "Getting_Started/FAQs/How_Do_I_Fix_My_Locale_and_Language_Settings.md"
         },
         {
-            "title": "How do I replace my Additional Authentication Credentials",
-            "path": "Getting_Started/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md"
+            "title": "How Do I Replace My Additional Authentication Credentials",
+            "path": "Getting_Started/FAQs/How_Do_I_Replace_My_Additional_Authentication_Credentials.md"
         },
         {
-            "title": "What Is A Trusted Device",
-            "path": "Getting_Started/FAQs/What_Is_A_Trusted_Device.md"
+            "title": "What Are My-Bashrc and-Bash Profile For",
+            "path": "Getting_Started/FAQs/What_Are_My-Bashrc_and-Bash_Profile_For.md"
         },
         {
-            "title": "What are my-bashrc and-bash profile for",
-            "path": "Getting_Started/FAQs/What_are_my-bashrc_and-bash_profile_for.md"
+            "title": "What Is Multiple Factor Authentication MFA",
+            "path": "Getting_Started/FAQs/What_Is_Multiple_Factor_Authentication_MFA.md"
         },
         {
-            "title": "What is Multiple Factor Authentication MFA",
-            "path": "Getting_Started/FAQs/What_is_Multiple_Factor_Authentication_MFA.md"
+            "title": "What Is a Trusted Device",
+            "path": "Getting_Started/FAQs/What_Is_a_Trusted_Device.md"
         },
         {
-            "title": "Why am I seeing Account is not ready",
-            "path": "Getting_Started/FAQs/Why_am_I_seeing_Account_is_not_ready.md"
+            "title": "Why Am I Seeing Account Is Not Ready",
+            "path": "Getting_Started/FAQs/Why_Am_I_Seeing_Account_Is_Not_Ready.md"
         },
         {
             "title": "Logging in to my.nesi.org.nz",
@@ -737,7 +741,7 @@
             "path": "Policy/Access_Policy.md"
         },
         {
-            "title": "Account Requests for non-Tuakiri Members",
+            "title": "Account Requests for Non-Tuakiri Members",
             "path": "Policy/Account_Requests_for_non_Tuakiri_Members.md"
         },
         {
@@ -751,8 +755,8 @@
     ],
     "profiling": [
         {
-            "title": "Job efficiency review",
-            "path": "Getting_Started/Job_efficiency_review.md"
+            "title": "Job Efficiency Review",
+            "path": "Getting_Started/Job_Efficiency_Review.md"
         },
         {
             "title": "VTune",
@@ -771,7 +775,7 @@
             "path": "Software/Profiling_and_Debugging/Debugging.md"
         },
         {
-            "title": "Job Scaling - Ascertaining job dimensions",
+            "title": "Job Scaling - Ascertaining Job Dimensions",
             "path": "Software/Profiling_and_Debugging/Job_Scaling_Ascertaining_job_dimensions.md"
         },
         {
@@ -845,6 +849,10 @@
         {
             "title": "Dorado",
             "path": "Software/Available_Applications/Dorado.md"
+        },
+        {
+            "title": "FreeSurfer",
+            "path": "Software/Available_Applications/FreeSurfer.md"
         },
         {
             "title": "GATK",
@@ -961,7 +969,7 @@
     ],
     "mathematics": [
         {
-            "title": "MATLAB",
+            "title": "MATLAB via OnDemand",
             "path": "Interactive_Computing/OnDemand/Apps/MATLAB.md"
         },
         {
@@ -975,8 +983,8 @@
             "path": "Getting_Started/Accessing_the_HPCs/X11.md"
         },
         {
-            "title": "How can I view images generated on the cluster",
-            "path": "Getting_Started/FAQs/How_can_I_view_images_generated_on_the_cluster.md"
+            "title": "How Can I View Images Generated on the Cluster",
+            "path": "Getting_Started/FAQs/How_Can_I_View_Images_Generated_on_the_Cluster.md"
         },
         {
             "title": "ParaView",
@@ -1007,7 +1015,7 @@
             "path": "Software/Available_Applications/FlexiBLAS.md"
         },
         {
-            "title": "Configuring Dask-MPI jobs",
+            "title": "Configuring Dask-Mpi Jobs",
             "path": "Software/Parallel_Computing/Configuring_Dask_MPI_jobs.md"
         },
         {
@@ -1023,8 +1031,8 @@
             "path": "Software/Parallel_Computing/Multithreading_Scaling_Example.md"
         },
         {
-            "title": "OpenMP settings",
-            "path": "Software/Parallel_Computing/OpenMP_settings.md"
+            "title": "OpenMP Settings",
+            "path": "Software/Parallel_Computing/OpenMP_Settings.md"
         },
         {
             "title": "Parallel Computing",
@@ -1041,8 +1049,8 @@
     ],
     "account": [
         {
-            "title": "Checking resource usage",
-            "path": "Batch_Computing/Checking_resource_usage.md"
+            "title": "Checking Resource Usage",
+            "path": "Batch_Computing/Checking_Resource_Usage.md"
         },
         {
             "title": "Fair Share",
@@ -1053,8 +1061,8 @@
             "path": "Batch_Computing/Job_Limits.md"
         },
         {
-            "title": "Job prioritisation",
-            "path": "Batch_Computing/Job_prioritisation.md"
+            "title": "Job Prioritisation",
+            "path": "Batch_Computing/Job_Prioritisation.md"
         },
         {
             "title": "First Time Login",
@@ -1069,7 +1077,7 @@
             "path": "Getting_Started/Allocations/Quarterly_allocation_periods.md"
         },
         {
-            "title": "What is an Allocation?",
+            "title": "What Is an Allocation?",
             "path": "Getting_Started/Allocations/What_is_an_allocation.md"
         },
         {
@@ -1077,28 +1085,28 @@
             "path": "Getting_Started/Creating_an_Account.md"
         },
         {
-            "title": "How can I give read only team members access to my files",
-            "path": "Getting_Started/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md"
+            "title": "How Can I Give Read Only Team Members Access to My Files",
+            "path": "Getting_Started/FAQs/How_Can_I_Give_Read_Only_Team_Members_Access_to_My_Files.md"
         },
         {
-            "title": "How can I let my fellow project team members read or write my files",
-            "path": "Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md"
+            "title": "How Can I Let My Fellow Project Team Members Read or Write My Files",
+            "path": "Getting_Started/FAQs/How_Can_I_Let_My_Fellow_Project_Team_Members_Read_or_Write_My_Files.md"
         },
         {
-            "title": "How do I replace my Additional Authentication Credentials",
-            "path": "Getting_Started/FAQs/How_do_I_replace_my_Additional_Authentication_Credentials.md"
+            "title": "How Do I Replace My Additional Authentication Credentials",
+            "path": "Getting_Started/FAQs/How_Do_I_Replace_My_Additional_Authentication_Credentials.md"
         },
         {
-            "title": "Why am I seeing Account is not ready",
-            "path": "Getting_Started/FAQs/Why_am_I_seeing_Account_is_not_ready.md"
+            "title": "Why Am I Seeing Account Is Not Ready",
+            "path": "Getting_Started/FAQs/Why_Am_I_Seeing_Account_Is_Not_Ready.md"
         },
         {
-            "title": "Job efficiency review",
-            "path": "Getting_Started/Job_efficiency_review.md"
+            "title": "Job Efficiency Review",
+            "path": "Getting_Started/Job_Efficiency_Review.md"
         },
         {
-            "title": "Adding Members to your Project",
-            "path": "Getting_Started/Projects/Adding_Members_to_your_Project.md"
+            "title": "Adding Members to Your Project",
+            "path": "Getting_Started/Projects/Adding_Members_to_Your_Project.md"
         },
         {
             "title": "Applying for a New Project",
@@ -1113,11 +1121,11 @@
             "path": "Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md"
         },
         {
-            "title": "Managing notification preferences",
-            "path": "Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md"
+            "title": "Managing Notification Preferences",
+            "path": "Getting_Started/my-nesi-org-nz/Managing_Notification_Preferences.md"
         },
         {
-            "title": "Navigating the my.nesi.org.nz web interface",
+            "title": "Navigating the my.nesi.org.nz Web Interface",
             "path": "Getting_Started/my-nesi-org-nz/Navigating_the_my-nesi-org-nz_web_interface.md"
         },
         {
@@ -1141,7 +1149,7 @@
             "path": "Policy/Access_Policy.md"
         },
         {
-            "title": "Account Requests for non-Tuakiri Members",
+            "title": "Account Requests for Non-Tuakiri Members",
             "path": "Policy/Account_Requests_for_non_Tuakiri_Members.md"
         },
         {
@@ -1149,11 +1157,11 @@
             "path": "Policy/Acknowledgement-Citation_and_Publication.md"
         },
         {
-            "title": "Allocation classes",
-            "path": "Policy/Allocation_classes.md"
+            "title": "Allocation Classes",
+            "path": "Policy/Allocation_Classes.md"
         },
         {
-            "title": "How we review applications",
+            "title": "How We Review Applications",
             "path": "Policy/How_we_review_applications.md"
         },
         {
@@ -1161,11 +1169,11 @@
             "path": "Policy/Privacy_Policy.md"
         },
         {
-            "title": "Billing process",
+            "title": "Billing Process",
             "path": "Service_Subscriptions/Contracts_and_Billing/Billing_process.md"
         },
         {
-            "title": "Types of contracts",
+            "title": "Types of Contracts",
             "path": "Service_Subscriptions/Contracts_and_Billing/Types_of_contracts.md"
         },
         {
@@ -1173,11 +1181,11 @@
             "path": "Service_Subscriptions/Pricing.md"
         },
         {
-            "title": "Allocation approvals",
+            "title": "Allocation Approvals",
             "path": "Service_Subscriptions/Service_Governance/Allocation_approvals.md"
         },
         {
-            "title": "Service Governance contact",
+            "title": "Service Governance Contact",
             "path": "Service_Subscriptions/Service_Governance/Service_Governance_contact.md"
         },
         {
@@ -1185,17 +1193,17 @@
             "path": "Service_Subscriptions/Service_Governance/Subscriber_Monthly_Usage_Reports.md"
         },
         {
-            "title": "What is a Subscription?",
+            "title": "What Is a Subscription?",
             "path": "Service_Subscriptions/What_is_a_Subscription.md"
         },
         {
-            "title": "File permissions and groups",
-            "path": "Storage/File_permissions_and_groups.md"
+            "title": "File Permissions and Groups",
+            "path": "Storage/File_Permissions_and_Groups.md"
         }
     ],
     "announcement": [
         {
-            "title": "Accessing REANNZ HPC Support during the Easter and ANZAC holidays",
+            "title": "Accessing REANNZ HPC Support During the Easter and ANZAC Holidays",
             "path": "Announcements/Accessing_NeSI_Support_during_the_Easter_break.md"
         },
         {
@@ -1203,15 +1211,15 @@
             "path": "Announcements/Autodeletion_of_Scratch_Filesystem.md"
         },
         {
-            "title": "December holiday support restrictions",
-            "path": "Announcements/December_holiday_support_restrictions.md"
+            "title": "December Holiday Support Restrictions",
+            "path": "Announcements/December_Holiday_Support_Restrictions.md"
         },
         {
             "title": "Known Issues HPC3",
             "path": "Announcements/Known_Issues_HPC3.md"
         },
         {
-            "title": "Administrative updates to HPC policies",
+            "title": "Administrative Updates to HPC Policies",
             "path": "Announcements/administrative_policy_updates.md"
         },
         {
@@ -1219,16 +1227,12 @@
             "path": "Data_Transfer/Checksums.md"
         },
         {
-            "title": "Common questions about the platform refresh",
-            "path": "Getting_Started/FAQs/Common_questions_about_the_platform_refresh.md"
-        },
-        {
             "title": "Mahuika HPC3 Differences",
             "path": "Getting_Started/FAQs/Mahuika_HPC3_Differences.md"
         },
         {
-            "title": "Adding Members to your Project",
-            "path": "Getting_Started/Projects/Adding_Members_to_your_Project.md"
+            "title": "Adding Members to Your Project",
+            "path": "Getting_Started/Projects/Adding_Members_to_Your_Project.md"
         },
         {
             "title": "Applying for a New Project",
@@ -1249,71 +1253,67 @@
             "path": "Announcements/Release_Notes/index.md"
         },
         {
-            "title": "Slurm Job email",
-            "path": "Announcements/Slurm_Job_email.md"
-        },
-        {
-            "title": "Common questions about the platform refresh",
-            "path": "Getting_Started/FAQs/Common_questions_about_the_platform_refresh.md"
+            "title": "Slurm Job Email",
+            "path": "Announcements/Slurm_Job_Email.md"
         },
         {
             "title": "Mahuika HPC3 Differences",
             "path": "Getting_Started/FAQs/Mahuika_HPC3_Differences.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.0.1",
+            "title": "my.nesi.org.nz Release Notes v2.0.1",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-1.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.0.3",
+            "title": "my.nesi.org.nz Release Notes v2.0.3",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-0-3.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.1.0",
+            "title": "my.nesi.org.nz Release Notes v2.1.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-1-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.10.0",
+            "title": "my.nesi.org.nz Release Notes v2.10.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-10-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.11.0",
+            "title": "my.nesi.org.nz Release Notes v2.11.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-11-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.12.0",
+            "title": "my.nesi.org.nz Release Notes v2.12.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-12-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.13.0",
+            "title": "my.nesi.org.nz Release Notes v2.13.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-13-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.14.0",
+            "title": "my.nesi.org.nz Release Notes v2.14.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-14-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.15.0",
+            "title": "my.nesi.org.nz Release Notes v2.15.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-15-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.16.0",
+            "title": "my.nesi.org.nz Release Notes v2.16.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-16-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.17.0",
+            "title": "my.nesi.org.nz Release Notes v2.17.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-17-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.18.0",
+            "title": "my.nesi.org.nz Release Notes v2.18.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-18-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.19.0",
+            "title": "my.nesi.org.nz Release Notes v2.19.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-19-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.2.0",
+            "title": "my.nesi.org.nz Release Notes v2.2.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-2-0.md"
         },
         {
@@ -1321,159 +1321,159 @@
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-20-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.21.0",
+            "title": "my.nesi.org.nz Release Notes v2.21.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-21-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.22.0",
+            "title": "my.nesi.org.nz Release Notes v2.22.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-22-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.23.0",
+            "title": "my.nesi.org.nz Release Notes v2.23.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-23-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.24.0",
+            "title": "my.nesi.org.nz Release Notes v2.24.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-24-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.25.0",
+            "title": "my.nesi.org.nz Release Notes v2.25.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-25-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.26.0",
+            "title": "my.nesi.org.nz Release Notes v2.26.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-26-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.27.0",
+            "title": "my.nesi.org.nz Release Notes v2.27.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-27-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.28.0",
+            "title": "my.nesi.org.nz Release Notes v2.28.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-28-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.29.0",
+            "title": "my.nesi.org.nz Release Notes v2.29.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-29-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.3.0",
+            "title": "my.nesi.org.nz Release Notes v2.3.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-3-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.30.0",
+            "title": "my.nesi.org.nz Release Notes v2.30.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-30-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.31.0",
+            "title": "my.nesi.org.nz Release Notes v2.31.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-31-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.33.0",
+            "title": "my.nesi.org.nz Release Notes v2.33.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-33-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.34.0",
+            "title": "my.nesi.org.nz Release Notes v2.34.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-34-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.35.0",
+            "title": "my.nesi.org.nz Release Notes v2.35.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-35-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.36.0",
+            "title": "my.nesi.org.nz Release Notes v2.36.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-36-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.37.0",
+            "title": "my.nesi.org.nz Release Notes v2.37.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-37-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.38.0",
+            "title": "my.nesi.org.nz Release Notes v2.38.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-38-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.39.0",
+            "title": "my.nesi.org.nz Release Notes v2.39.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-39-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.4.0",
+            "title": "my.nesi.org.nz Release Notes v2.4.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-4-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.40.0",
+            "title": "my.nesi.org.nz Release Notes v2.40.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-40-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.41.0",
+            "title": "my.nesi.org.nz Release Notes v2.41.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-41-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.42.0",
+            "title": "my.nesi.org.nz Release Notes v2.42.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-42-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.43.0",
+            "title": "my.nesi.org.nz Release Notes v2.43.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-43-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.44.0",
+            "title": "my.nesi.org.nz Release Notes v2.44.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-44-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.45.0",
+            "title": "my.nesi.org.nz Release Notes v2.45.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-45-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.46.0",
+            "title": "my.nesi.org.nz Release Notes v2.46.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-46-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.47.0",
+            "title": "my.nesi.org.nz Release Notes v2.47.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-47-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.48.0",
+            "title": "my.nesi.org.nz Release Notes v2.48.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-48-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.49.0",
+            "title": "my.nesi.org.nz Release Notes v2.49.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-49-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.5.0",
+            "title": "my.nesi.org.nz Release Notes v2.5.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-5-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.50.0",
+            "title": "my.nesi.org.nz Release Notes v2.50.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-50-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.51.0",
+            "title": "my.nesi.org.nz Release Notes v2.51.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-51-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.52.0",
+            "title": "my.nesi.org.nz Release Notes v2.52.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-52-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.53.0",
+            "title": "my.nesi.org.nz Release Notes v2.53.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-53-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.6.0",
+            "title": "my.nesi.org.nz Release Notes v2.6.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-6-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.7.0",
+            "title": "my.nesi.org.nz Release Notes v2.7.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-7-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.8.0",
+            "title": "my.nesi.org.nz Release Notes v2.8.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-8-0.md"
         },
         {
-            "title": "my.nesi.org.nz release notes v2.9.0",
+            "title": "my.nesi.org.nz Release Notes v2.9.0",
             "path": "Getting_Started/my-nesi-org-nz/Release_Notes_my-nesi-org-nz/my-nesi-org-nz_release_notes_v2-9-0.md"
         },
         {
@@ -1527,40 +1527,40 @@
             "path": "Batch_Computing/Fair_Share.md"
         },
         {
-            "title": "Can I change my time zone to New Zealand time",
-            "path": "Getting_Started/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md"
+            "title": "Can I Change My Time Zone to New Zealand Time",
+            "path": "Getting_Started/FAQs/Can_I_Change_My_Time_Zone_to_New_Zealand_Time.md"
         },
         {
-            "title": "Converting from Windows style to UNIX style line endings",
-            "path": "Getting_Started/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md"
+            "title": "Converting From Windows Style to UNIX Style Line Endings",
+            "path": "Getting_Started/FAQs/Converting_From_Windows_Style_to_UNIX_Style_Line_Endings.md"
         },
         {
-            "title": "How busy is the cluster?",
+            "title": "How Do I Fix My Locale and Language Settings",
+            "path": "Getting_Started/FAQs/How_Do_I_Fix_My_Locale_and_Language_Settings.md"
+        },
+        {
+            "title": "How Do I Request Memory",
+            "path": "Getting_Started/FAQs/How_Do_I_Request_Memory.md"
+        },
+        {
+            "title": "How Busy Is the Cluster?",
             "path": "Getting_Started/FAQs/How_busy_is_the_cluster.md"
         },
         {
-            "title": "How do I fix my locale and language settings",
-            "path": "Getting_Started/FAQs/How_do_I_fix_my_locale_and_language_settings.md"
-        },
-        {
-            "title": "How do I request memory",
-            "path": "Getting_Started/FAQs/How_do_I_request_memory.md"
-        },
-        {
-            "title": "I've run out of storage space",
+            "title": "I've Run Out of Storage Space",
             "path": "Getting_Started/FAQs/Ive_run_out_of_storage_space.md"
         },
         {
-            "title": "What does oom kill mean",
-            "path": "Getting_Started/FAQs/What_does_oom_kill_mean.md"
+            "title": "What Does Oom Kill Mean",
+            "path": "Getting_Started/FAQs/What_Does_Oom_Kill_Mean.md"
         },
         {
-            "title": "What is a core file",
-            "path": "Getting_Started/FAQs/What_is_a_core_file.md"
+            "title": "What Is a Core File",
+            "path": "Getting_Started/FAQs/What_Is_a_Core_File.md"
         },
         {
-            "title": "Why does my program crash",
-            "path": "Getting_Started/FAQs/Why_does_my_program_crash.md"
+            "title": "Why Does My Program Crash",
+            "path": "Getting_Started/FAQs/Why_Does_My_Program_Crash.md"
         },
         {
             "title": "Getting Help",
@@ -1571,8 +1571,8 @@
             "path": "Getting_Started/Making_a_Helpful_Support_Request.md"
         },
         {
-            "title": "System status",
-            "path": "Getting_Started/System_status.md"
+            "title": "System Status",
+            "path": "Getting_Started/System_Status.md"
         },
         {
             "title": "OnDemand Troubleshooting",
@@ -1595,11 +1595,11 @@
     ],
     "r": [
         {
-            "title": "Python and R kernels in JupyterLab",
+            "title": "Python and R Kernels in JupyterLab",
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
-            "title": "NeSI OnDemand how-to guide",
+            "title": "NeSI OnDemand How-to Guide",
             "path": "Interactive_Computing/OnDemand/how_to_guide.md"
         },
         {
@@ -1609,7 +1609,7 @@
     ],
     "julia": [
         {
-            "title": "Pluto Interactive Sessions",
+            "title": "Pluto.jl Interactive Sessions",
             "path": "Interactive_Computing/Pluto_Interactive_Sessions.md"
         },
         {
@@ -1651,7 +1651,7 @@
             "path": "Getting_Started/Weekly_Online_Office_Hours.md"
         },
         {
-            "title": "Account Requests for non-Tuakiri Members",
+            "title": "Account Requests for Non-Tuakiri Members",
             "path": "Policy/Account_Requests_for_non_Tuakiri_Members.md"
         },
         {
@@ -1675,8 +1675,8 @@
             "path": "Tutorials/Introduction_To_HPC/Submitting_Your_First_Job.md"
         },
         {
-            "title": "What is an HPC",
-            "path": "Tutorials/Introduction_To_HPC/What_is_an_HPC.md"
+            "title": "What Is an HPC",
+            "path": "Tutorials/Introduction_To_HPC/What_Is_an_HPC.md"
         }
     ],
     "multiplexer": [
@@ -1685,7 +1685,7 @@
             "path": "Getting_Started/Accessing_the_HPCs/X11.md"
         },
         {
-            "title": "tmux: Reference sheet",
+            "title": "Tmux: Reference Sheet",
             "path": "Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md"
         }
     ],

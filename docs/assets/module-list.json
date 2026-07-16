@@ -6458,7 +6458,8 @@
     "FreeSurfer": {
         "description": "FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.\nFreeSurfer contains a fully automatic structural imaging stream for processing cross sectional and longitudinal data.",
         "domains": [
-            "biology"
+            "biology",
+            "containers"
         ],
         "extensions": [],
         "licence_type": "",
@@ -22096,9 +22097,6 @@
     "TUFLOW": {
         "description": "Hydraulic modelling software for flood, urban drainage, estuarine and coastal assessments.",
         "domains": [
-            "hydrodynamics",
-            "flood modelling",
-            "hydraulics",
             "earth_science"
         ],
         "extensions": [],

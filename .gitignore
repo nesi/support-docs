@@ -5,3 +5,4 @@ production/*
 dictionary.dic
 .DS_Store
 accesslint-report.*
+spellcheck.results

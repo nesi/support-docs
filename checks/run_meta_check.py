@@ -20,6 +20,7 @@ EXCLUDED_FROM_CHECKS = [
     r".*/index\.html",
     r".*/index\.md",
     r".*\.pages\.yml",
+    r".*\.yml"
 ]
 
 msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
@@ -282,6 +283,10 @@ def _nav_check():
 
 
 def title_redundant():
+    # A page's title doubles as the applications[] lookup key (see app_header.html);
+    # keep it explicit so a future filename change can't silently break that lookup.
+    if "Available_Applications" in input_path.parts:
+        return
     lineno = _get_lineno(r"^title:.*$")
     if "title" in meta.keys() and title_from_filename == meta["title"]:
         yield {
@@ -344,6 +349,11 @@ Try to keep it under {MAX_TITLE_LENGTH} characters to avoid word wrapping in the
         }
 
 def title_capitalisation():
+    # Software names are often acronyms/proper nouns (BLAST, VASP, ont-guppy-gpu) that
+    # titlecase() mangles, and the mangled title breaks the applications[app_name]
+    # macro lookup on Available_Applications pages (a KeyError, not just a cosmetic typo).
+    if "Available_Applications" in input_path.parts:
+        return
     correct_title = titlecase(title)
     if title != correct_title:
         yield {
@@ -428,7 +438,8 @@ site root or to the linked page.",
 
 def support_mailto_link():
     """
-    Checks for mailto links to support@nesi.org.nz, these should use the
+    Checks for any mention of support@nesi.org.nz - as a markdown/HTML link,
+    an autolink, or just raw text - these should use the
     'partials/support_request.html' include instead.
     """
     if in_code_block:
@@ -437,7 +448,8 @@ def support_mailto_link():
     for m in re.finditer(
         r"(\[[^\]]*\]\((mailto:)?support@nesi\.org\.nz[^)]*\)"
         r"|<a\s[^>]*href=[\"'](mailto:)?support@nesi\.org\.nz[^>]*>"
-        r"|<(mailto:)?support@nesi\.org\.nz>)",
+        r"|<(mailto:)?support@nesi\.org\.nz>"
+        r"|(mailto:)?support@nesi\.org\.nz)",
         line,
         re.IGNORECASE,
     ):
@@ -445,7 +457,7 @@ def support_mailto_link():
             "line": lineno,
             "col": m.start() + 1,
             "endColumn": m.end() - 1,
-            "message": 'Don\'t link directly to support@nesi.org.nz, use the \
+            "message": 'Don\'t reference support@nesi.org.nz directly, use the \
 {% include "partials/support_request.html" %} macro instead.',
         }
 

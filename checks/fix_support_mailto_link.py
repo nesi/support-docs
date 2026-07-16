@@ -40,10 +40,17 @@ HAS_QUERY_RE = re.compile(r'support@nesi\.org\.nz\?', re.IGNORECASE)
 
 
 def fix_file(path, needs_review):
-    content = path.read_text()
-    lines = content.split("\n")
+    original = path.read_text()
+    lines = original.split("\n")
     in_code_block = False
-    changed = False
+
+    def repl(lineno):
+        def do_replace(m):
+            if HAS_QUERY_RE.search(m.group(0)):
+                needs_review.append((path, lineno, m.group(0)))
+                return m.group(0)
+            return INCLUDE_TAG
+        return do_replace
 
     for i, line in enumerate(lines):
         if FENCE_RE.match(line):
@@ -51,23 +58,15 @@ def fix_file(path, needs_review):
             continue
         if in_code_block:
             continue
-
-        new_line = line
         for pattern in LINK_RES:
-            def repl(m):
-                nonlocal changed
-                if HAS_QUERY_RE.search(m.group(0)):
-                    needs_review.append((path, i + 1, m.group(0)))
-                    return m.group(0)
-                changed = True
-                return INCLUDE_TAG
+            line = pattern.sub(repl(i + 1), line)
+        lines[i] = line
 
-            new_line = pattern.sub(repl, new_line)
-        lines[i] = new_line
-
-    if changed:
-        path.write_text("\n".join(lines))
-    return changed
+    new_content = "\n".join(lines)
+    if new_content == original:
+        return False
+    path.write_text(new_content)
+    return True
 
 
 def main():

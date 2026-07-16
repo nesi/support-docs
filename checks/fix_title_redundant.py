@@ -8,6 +8,10 @@ the filename anyway, the explicit 'title:' line is just removed.
 
 Cases where the redundancy is against the H1 instead are left alone - they're
 rare (the check's H1 detection barely ever fires) and worth a human glance.
+
+Available_Applications/ pages are also left alone: their title doubles as the
+lookup key into applications[] (see app_header.html), and a page rename would
+silently break that lookup with no explicit title left to notice or restore.
 """
 
 import re
@@ -19,6 +23,7 @@ DOC_ROOT = "docs"
 EXCLUDED_FROM_CHECKS = [
     r"docs/assets/.*",
     r".*/index\.md",
+    r"docs/Software/Available_Applications/.*",
 ]
 
 TITLE_LINE_RE = re.compile(r"^title:.*\n", re.MULTILINE)
@@ -26,7 +31,7 @@ TITLE_LINE_RE = re.compile(r"^title:.*\n", re.MULTILINE)
 
 def title_from_filename(path):
     """Matches mkdocs' own Page.title fallback - see run_meta_check.py's _title_from_filename."""
-    name = path.name[:-3].replace("-", " ").replace("_", " ")
+    name = path.stem.replace("-", " ").replace("_", " ")
     if name.lower() == name:
         name = name.capitalize()
     return name

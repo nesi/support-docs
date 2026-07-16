@@ -28,8 +28,15 @@ EXCLUDED_FROM_CHECKS = [
     r"docs/assets/.*",
 ]
 
-ALWAYS_STRIP = {"zendesk_article_id", "zendesk_section_id"}
-STRIP_IF_DEFAULT = {"vote_sum": 0, "vote_count": 0, "position": 0, "hidden": False}
+ANY_VALUE = object()  # sentinel: strip regardless of value
+STRIP_KEYS = {
+    "zendesk_article_id": ANY_VALUE,
+    "zendesk_section_id": ANY_VALUE,
+    "vote_sum": 0,
+    "vote_count": 0,
+    "position": 0,
+    "hidden": False,
+}
 
 
 def fix_file(path):
@@ -44,20 +51,15 @@ def fix_file(path):
     kept_unique = []
     new_frontmatter = frontmatter
 
-    for key in ALWAYS_STRIP:
-        if key in meta:
-            new_frontmatter, n = re.subn(rf"^{key}:.*\n", "", new_frontmatter, count=1, flags=re.MULTILINE)
-            if n:
-                removed.append(key)
-
-    for key, default in STRIP_IF_DEFAULT.items():
-        if key in meta:
-            if meta[key] == default:
-                new_frontmatter, n = re.subn(rf"^{key}:.*\n", "", new_frontmatter, count=1, flags=re.MULTILINE)
-                if n:
-                    removed.append(key)
-            else:
-                kept_unique.append((key, meta[key]))
+    for key, default in STRIP_KEYS.items():
+        if key not in meta:
+            continue
+        if default is not ANY_VALUE and meta[key] != default:
+            kept_unique.append((key, meta[key]))
+            continue
+        new_frontmatter, n = re.subn(rf"^{key}:.*\n", "", new_frontmatter, count=1, flags=re.MULTILINE)
+        if n:
+            removed.append(key)
 
     if not removed:
         return None

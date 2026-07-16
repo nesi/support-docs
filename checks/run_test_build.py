@@ -7,7 +7,6 @@ import logging
 import sys
 import re
 import time
-import mkdocs_awesome_nav.nav as nav
 
 
 """ 
@@ -71,9 +70,6 @@ if __name__ == '__main__':
     config.plugins.on_startup(command='build', dirty=True)
     try:
         build.build(config, dirty=True)
-    except nav.NavEntryNotFound as e:
-        match = re.match(r"(.*) \[(.*)\]", str(e))
-        print(f"::ERROR file={match.group(2)},title=nav_entry_not_found,col=0,endColumn=0,line=0::{match.group(1)}")
     except Exception as e:
         print(f"::ERROR file={__file__},title=build_failed,col=0,endColumn=0,line=0::{e}")
         sys.exit(1)
