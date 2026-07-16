@@ -1,5 +1,4 @@
 ---
-title: Marimo interactive sessions
 created_at: '2020-01-05T21:43:18Z'
 tags:
   - interactive

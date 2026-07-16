@@ -1,8 +1,8 @@
 ---
+title: GATK
 created_at: '2023-02-21T21:21:50Z'
 tags:
 - biology
-title: Gatk
 ---
 
 

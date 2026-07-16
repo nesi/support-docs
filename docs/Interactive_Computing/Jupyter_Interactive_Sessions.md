@@ -1,5 +1,5 @@
 ---
-title: JupyterLab interactive sessions
+title: JupyterLab Interactive Sessions
 created_at: '2020-01-05T21:43:18Z'
 tags:
   - interactive

@@ -123,7 +123,6 @@ Getting_Started/Next_Steps/Job_Scaling_Ascertaining_job_dimensions.md : Software
 Software/OpenMP_settings.md : Software/Parallel_Computing/OpenMP_Settings.md
 Software/Configuring_Dask_MPI_jobs.md : Software/Parallel_Computing/Configuring_Dask_MPI_jobs.md
 General/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md : Getting_Started/FAQs/Can_I_Change_My_Time_Zone_to_New_Zealand_Time.md
-General/FAQs/Common_questions_about_the_platform_refresh.md : Getting_Started/FAQs/Common_Questions_About_the_Platform_Refresh.md
 General/FAQs/Converting_from_Windows_style_to_UNIX_style_line_endings.md : Getting_Started/FAQs/Converting_From_Windows_Style_to_UNIX_Style_Line_Endings.md
 General/FAQs/How_busy_is_the_cluster.md : Getting_Started/FAQs/How_busy_is_the_cluster.md
 General/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md : Getting_Started/FAQs/How_Can_I_Give_Read_Only_Team_Members_Access_to_My_Files.md
@@ -179,10 +178,10 @@ Getting_Started/Policy/Application_Support_Model.md : Policy/Application_Support
 Getting_Started/Policy/How_we_review_applications.md : Policy/How_we_review_applications.md
 Getting_Started/Policy/Licence_Policy.md : Policy/Licence_Policy.md
 Getting_Started/Policy/Privacy_Policy.md : Policy/Privacy_Policy.md
-Getting_Started/Policy/Proposal_Development_allocations.md : Policy/Allocation_classes.md#proposal-development
-Getting_Started/Policy/Postgraduate_allocations.md : Policy/Allocation_classes.md#postgraduate
-Getting_Started/Policy/Merit_allocations.md : Policy/Allocation_classes.md#merit
-Getting_Started/Policy/Institutional_allocations.md : Policy/Allocation_classes.md#institutional
+Getting_Started/Policy/Proposal_Development_allocations.md : Policy/Allocation_Classes.md#proposal-development
+Getting_Started/Policy/Postgraduate_allocations.md : Policy/Allocation_Classes.md#postgraduate
+Getting_Started/Policy/Merit_allocations.md : Policy/Allocation_Classes.md#merit
+Getting_Started/Policy/Institutional_allocations.md : Policy/Allocation_Classes.md#institutional
 Software/Parallel_Computing/Hyperthreading.md : Software/Parallel_Computing/Simultaneous_Multithreading.md
 Storage/Data_Recovery/File_Recovery.md : Storage/Data_Recovery.md
 Storage/File_Systems_and_Quotas/File_permissions_and_groups.md : Storage/File_Permissions_and_Groups.md
@@ -192,11 +191,10 @@ Software/Available_Applications/VASP copy.md : Software/Available_Applications/C
 Getting_Started/Getting_Help/Consultancy.md : Getting_Started/Consultancy.md
 Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md : Getting_Started/Weekly_Online_Office_Hours.md
 Getting_Started/Getting_Help/System_status.md : Getting_Started/System_Status.md
-Getting_Started/Getting_Help/Job_efficiency_review.md : Getting_Started/Job_efficiency_review.md
+Getting_Started/Getting_Help/Job_efficiency_review.md : Getting_Started/Job_Efficiency_Review.md
 Getting_Started/Getting_Help/Making_a_Helpful_Support_Request.md : Getting_Started/Making_a_Helpful_Support_Request.md
 Getting_Started/FAQs/Where_should_I_store_my_data_on_NeSI_systems.md : Getting_Started/FAQs/Where_should_I_store_my_data.md
 Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md : Getting_Started/my-nesi-org-nz/Project_Request_Form.md
-
 Announcements/December_holiday_support_restrictions.md: Announcements/December_Holiday_Support_Restrictions.md
 Announcements/Globus-renaming.md: Announcements/Globus-Renaming.md
 Announcements/Identity_provider_system_maintenance.md: Announcements/Identity_Provider_System_Maintenance.md
@@ -235,3 +233,6 @@ Storage/File_permissions_and_groups.md: Storage/File_Permissions_and_Groups.md
 Storage/Long_Term_Storage/Configuring_s3cmd.md: Storage/Long_Term_Storage/Configuring_S3cmd.md
 Storage/Long_Term_Storage/Freezer_long_term_storage.md: Storage/Long_Term_Storage/Freezer_Long_Term_Storage.md
 Tutorials/Introduction_To_HPC/What_is_an_HPC.md: Tutorials/Introduction_To_HPC/What_Is_an_HPC.md
+Data_Transfer/Filesystem_Mounts_using_SSHFS.md: Data_Transfer/Filesystem_Mounts_Using_SSHFS.md
+Getting_Started/Job_efficiency_review.md: Getting_Started/Job_Efficiency_Review.md
+Software/Available_Applications/GUFI.md: Software/Available_Applications/gufi.md

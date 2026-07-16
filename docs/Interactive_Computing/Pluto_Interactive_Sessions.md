@@ -1,5 +1,5 @@
 ---
-title: Pluto.jl interactive sessions
+title: Pluto.jl Interactive Sessions
 created_at: '2020-01-05T21:43:18Z'
 tags:
   - interactive
