@@ -37,7 +37,7 @@ table, including how you can tell what sort of job you're submitting.
 </thead>
 <tbody>
 <tr>
-<td>Serial</td>
+<th scope="row">Serial</th>
 <td>1 (or unspecified)</td>
 <td>1 (or unspecified)</td>
 <td>(Irrelevant, but should not be specified)<a href="#fn1" id="ref1" aria-describedby="footnote-label"><sup>1</sup></a></td>
@@ -46,7 +46,7 @@ table, including how you can tell what sort of job you're submitting.
 <td>Peak memory<a href="#fn3" id="ref3" aria-describedby="footnote-label"><sup>3</sup></a> needed by the program</td>
 </tr>
 <tr>
-<td>Multithreaded (e.g. OpenMP), but not MPI</td>
+<th scope="row">Multithreaded (e.g. OpenMP), but not MPI</th>
 <td>1 (or unspecified)</td>
 <td>&gt; 1</td>
 <td>(Irrelevant, but should not be specified)<a href="#fn1" id="ref1" aria-describedby="footnote-label"><sup>1</sup></a></td>
@@ -55,7 +55,7 @@ table, including how you can tell what sort of job you're submitting.
 <td>Peak memory<a href="#fn3" id="ref3" aria-describedby="footnote-label"><sup>3</sup></a> needed by the program</td>
 </tr>
 <tr>
-<td>MPI, evenly split between nodes (recommended method)</td>
+<th scope="row">MPI, evenly split between nodes (recommended method)</th>
 <td>Unspecified<a href="#fn4" id="ref4" aria-describedby="footnote-label"><sup>4</sup></a></td>
 <td>≥ 1 (or unspecified)</td>
 <td>≥ 1<a href="#fn5" id="ref5" aria-describedby="footnote-label"><sup>5</sup></a></td>
@@ -64,7 +64,7 @@ table, including how you can tell what sort of job you're submitting.
 <td>(Peak memory<a href="#fn3" id="ref3" aria-describedby="footnote-label"><sup>3</sup></a> needed per MPI task)&nbsp;× (number of tasks per node)</td>
 </tr>
 <tr>
-<td>MPI, evenly split between nodes (discouraged method)</td>
+<th scope="row">MPI, evenly split between nodes (discouraged method)</th>
 <td>&gt; 1</td>
 <td>≥ 1 (or unspecified)</td>
 <td>Either 1 or the number of tasks<a href="#fn6" id="ref6" aria-describedby="footnote-label"><sup>6</sup></a></td>
@@ -73,7 +73,7 @@ table, including how you can tell what sort of job you're submitting.
 <td>(Peak memory<a href="#fn3" id="ref3" aria-describedby="footnote-label"><sup>3</sup></a> needed per MPI task)&nbsp;× (number of tasks per node)&nbsp;</td>
 </tr>
 <tr>
-<td>MPI, randomly placed</td>
+<th scope="row">MPI, randomly placed</th>
 <td>&gt; 1</td>
 <td>≥ 1 (or unspecified)</td>
 <td>&gt; 1; &lt; number of tasks<a href="#fn6" id="ref6" aria-describedby="footnote-label"><sup>6</sup></a> (or unspecified)</td>
