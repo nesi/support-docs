@@ -184,7 +184,7 @@ After a few minutes, a preview of the source branch will be deployed, a bot will
 
 Assign a reviewer if you wish.
 
-Adding the tag <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline"> will cause the request to be merged at midnight, if all checks passed.
+Adding the tag <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline"> will cause the request to be merged at midnight, if all checks passed.</a>
 
 ### Reviewing A Merge Request
 

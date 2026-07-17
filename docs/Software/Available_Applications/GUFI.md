@@ -11,8 +11,9 @@ vote_sum: 0
 __GUFI__ (Grand Unified File Index) is designed for large-scale data centers to enable fast, secure and comprehensive searches of files and directories. It works by creating a hierarchical index, allowing users to quickly find and characterize data across multiple filesystems.
 
 GUFI uses a database that is indexed on the weekend. It may not find or measure the size of files that were created or moved around after the index was updated.
-<span style="color: orange;">
-Note: </span> Currently, GUFI only works on `login03`. Check that you are connected to `login03` by running: `hostname`.  If you are not on `login03` you can connect by running: `ssh login03`.
+
+!!! note ""
+    Currently, GUFI only works on `login03`. Check that you are connected to `login03` by running: `hostname`.  If you are not on `login03` you can connect by running: `ssh login03`.
 
 There are two commands that GUFI provides:
 

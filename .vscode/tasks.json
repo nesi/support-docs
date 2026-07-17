@@ -178,7 +178,21 @@
                 "showReuseMessage": false
             },
             "dependsOn": "test-build",
-            "command": "bash checks/run_a11y_check.sh"
+            "command": "bash checks/run_a11y_check.sh ${input:a11y_min_level} ${input:a11y_url}"
         },
+    ],
+    "inputs": [
+        {
+            "id": "a11y_min_level",
+            "description": "minimum violation level to report from run_a11y_check.sh",
+            "default": "minor",
+            "type": "promptString"
+        },
+        {
+            "id": "a11y_url",
+            "description": "url to run a11y audit on",
+            "default": "",
+            "type": "promptString"
+        }
     ]
 }

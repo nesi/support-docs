@@ -99,7 +99,7 @@ complexes (with per-residue and per-pair confidence estimates). It does
 not compute binding affinities, docking scores or other measures of
 binding strength.
 
-Home page is at <https://github.com/google-deepmind/alphafold3>.
+Home page is at <https://github.com/google-deepmind/alphafold3).
 
 !!! warning "You must request the model parameters from Google DeepMind"
     The AlphaFold 3 model parameters are
@@ -402,7 +402,7 @@ Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
 modifications. Image (.*simg*) and the corresponding definition file
 (*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
-### [](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script)Example Slurm scripts for Singularity container based AF2 deployment
+### [Example Slurm scripts for Singularity container based AF2 deployment](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script)
 
 #### Monomer
 
@@ -523,7 +523,7 @@ This is not an officially supported Google product.
 
 Copyright 2021 DeepMind Technologies Limited.
 
-### [](https://github.com/deepmind/alphafold#alphafold-code-license)AlphaFold Code License
+### [AlphaFold Code License](https://github.com/deepmind/alphafold#alphafold-code-license)
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may
 not use this file except in compliance with the License. You may obtain
@@ -535,7 +535,7 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 
-### [](https://github.com/deepmind/alphafold#model-parameters-license)Model Parameters License
+### [Model Parameters License](https://github.com/deepmind/alphafold#model-parameters-license)
 
 The AlphaFold parameters are made available for non-commercial use only,
 under the terms of the Creative Commons Attribution-NonCommercial 4.0
