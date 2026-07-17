@@ -92,6 +92,48 @@ function format8601(str){
 
 showOfficeBanner();
 
+// Material's skip-link div (data-md-component="skip") sits directly under
+// <body>, before any landmark, so its "Skip to content" link is unreachable
+// via landmark navigation. Wrap it in a <nav> landmark without touching the
+// theme's own template.
+const skipLink = document.querySelector('[data-md-component="skip"]');
+if (skipLink) {
+    const nav = document.createElement("nav");
+    nav.setAttribute("aria-label", "Skip links");
+    skipLink.replaceWith(nav);
+    nav.appendChild(skipLink);
+}
+
+// Several of Material's checkbox-toggle widgets (nested nav sections in
+// overrides/partials/nav-item.html, search overlay/icon in
+// overrides/partials/search.html) have more than one clickable opener for
+// the same checkbox. Only one opener per checkbox may be a real <label for>
+// (otherwise the field has multiple labels), so the rest carry a
+// data-md-toggle-checkbox="<id>" attribute and are wired up here instead.
+function toggleCheckboxTarget(target) {
+    const checkbox = document.getElementById(target.getAttribute("data-md-toggle-checkbox"));
+    if (checkbox) {
+        checkbox.checked = !checkbox.checked;
+        checkbox.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+}
+document.addEventListener("click", (event) => {
+    const target = event.target.closest("[data-md-toggle-checkbox]");
+    if (target) {
+        toggleCheckboxTarget(target);
+    }
+});
+document.addEventListener("keydown", (event) => {
+    if (event.key !== "Enter" && event.key !== " ") {
+        return;
+    }
+    const target = event.target.closest("[data-md-toggle-checkbox]");
+    if (target) {
+        event.preventDefault();
+        toggleCheckboxTarget(target);
+    }
+});
+
 // The status.nesi.org.nz (Statuspage) embed leaves its iframe both
 // aria-hidden and tabindex="0" while collapsed, so keyboard users can
 // tab into a widget screen readers can't see. Keep it out of the tab
