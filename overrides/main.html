@@ -30,21 +30,31 @@
         </div>
     {% endif %}
 {% endblock %}
-{% block content %}
-{% if page.meta and page.meta.status %}
-    {% if page.meta.status == "deprecated" %}
-        {% include "partials/status_deprecated_header.html" %}
-    {% elif page.meta.status == "tutorial" %}
-        {% include "partials/status_tutorial_header.html" %}
+{% block container %}
+<div class="md-content" data-md-component="content">
+    {% if "navigation.path" in features %}
+        {% include "partials/path.html" %}
     {% endif %}
-{% endif %}
-{{ super() }}
+    <article class="md-content__inner md-typeset">
+        {% block content %}
+        {% if page.meta and page.meta.status %}
+            {% if page.meta.status == "deprecated" %}
+                {% include "partials/status_deprecated_header.html" %}
+            {% elif page.meta.status == "tutorial" %}
+                {% include "partials/status_tutorial_header.html" %}
+            {% endif %}
+        {% endif %}
+        {{ super() }}
 
-{% if git_page_authors %}
-<div class="md-source-date">
-    <small>
-        Authors: {{ git_page_authors | default('enable mkdocs-git-authors-plugin') }}
-    </small>
+        {% if git_page_authors %}
+        <div class="md-source-date">
+            <small>
+                Authors: {{ git_page_authors | default('enable mkdocs-git-authors-plugin') }}
+            </small>
+        </div>
+        {% endif %}
+        {% endblock %}
+    </article>
+    {% include "partials/source-file.html" %}
 </div>
-{% endif %}
 {% endblock %}
