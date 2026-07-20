@@ -3,13 +3,8 @@ created: 2026-06-12
 tags:
     - ondemand
     - slurm
-    - composer
-    - job script
-    - batch
 description: How to build, submit and manage Slurm batch jobs from your browser using the Slurm Composer app on Mahuika OnDemand.
 ---
-
-# Slurm Composer
 
 ## Introduction
 
@@ -46,7 +41,7 @@ The main fields are:
 | Field | What it sets | Slurm option |
 | ----- | ------------ | ------------ |
 | **Project** | The project code your usage is charged to. Only projects you belong to are listed. | `--account` |
-| **Partition** | The type of node to run on. Choose **any** if you have no preference. Options are either `genoa` or `milan`. [See here for more information about the nodes that make up these partitions](../../../Batch_Computing/Hardware.md#compute-nodes). | `--partition` |
+| **Partition** | The type of node to run on. Choose **any** if you have no preference. Options are either `genoa` or `milan`. [More information about the nodes that make up these partitions](../../../Batch_Computing/Hardware.md#compute-nodes). | `--partition` |
 | **Number of CPUs** | How many CPU cores to request. | `--cpus-per-task` |
 | **Number of Nodes** | How many nodes to spread the job over (leave blank for the default). | `--nodes` |
 | **Total Memory (GB)** | Total RAM for the whole job. | `--mem` |

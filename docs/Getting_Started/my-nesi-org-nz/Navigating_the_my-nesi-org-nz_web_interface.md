@@ -2,11 +2,7 @@
 created_at: '2021-03-03T21:29:16Z'
 tags:
 - account
-title: Navigating the my.nesi.org.nz web interface
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360003592875
-zendesk_section_id: 360001059296
+title: Navigating the my.nesi.org.nz Web Interface
 ---
 
 ![mceclip0.png](../../assets/images/Navigating_the_my-nesi-org-nz_web_interface2025.png)

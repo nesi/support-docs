@@ -106,7 +106,7 @@ configurations.
     If you have trusted your device, you have to enter a name for this device.
     This name can be anything you want, but it must be unique (e.g. you cannot have two devices with the same name).
 
-    See [What is a trusted device?](https://docs.nesi.org.nz/Getting_Started/FAQs/What_Is_A_Trusted_Device/) for more information.
+    See [What is a trusted device?](../FAQs/What_Is_a_Trusted_Device.md) for more information.
 
 9. Scan the QR code with your authenticator app. Then enter the 6-digit code provided.
 

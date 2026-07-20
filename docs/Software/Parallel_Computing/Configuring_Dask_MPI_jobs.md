@@ -2,7 +2,7 @@
 created_at: '2020-02-24T20:26:39Z'
 tags: 
   - parallel 
-title: Configuring Dask-MPI jobs
+title: Configuring Dask-Mpi Jobs
 status: deprecated
 ---
 

@@ -3,6 +3,7 @@ created_at: '2020-11-02T03:07:06Z'
 tags:
     - earth_science
 description: Supported applications page on CESM
+no_module: true
 hide:
     - toc
 ---
@@ -85,8 +86,7 @@ fi
 ### Mahuika and Māui
 
 Git Large File Storage seems to be required to download some of the CESM
-components. Download the Git-LFS archive from
-[here](https://git-lfs.github.com/) and install it into your home directory.
+components. Download [the Git-LFS archive](https://git-lfs.github.com/) and install it into your home directory.
 Finally, add that directory to *PATH* in your ~/.bashrc file.
 The following commands will achieve this:
 
@@ -282,9 +282,9 @@ The above link lists some of the common configurations, such as fully
 sequential or fully sequential except the ocean running concurrently.
 
 One approach to load balancing (i.e. optimising processor layout) is
-documented on the above page in the section "One approach to load
-balancing"
-[here](https://esmci.github.io/cime/versions/maint-5.6/html/users_guide/pes-threads.html).
+documented on the above page, in the
+["One approach to load balancing"](https://esmci.github.io/cime/versions/maint-5.6/html/users_guide/pes-threads.html)
+section.
 It involves performing a number of short model runs to determine which
 components are most expensive and how the individual components scale.
 That information can then be used to determine an optimal load balance.

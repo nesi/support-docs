@@ -44,8 +44,7 @@ def parse_frontmatter(path):
 
 
 def title_from_path(md_file):
-    name = md_file.stem.replace("_", " ")
-    return name[0].upper() + name[1:]
+    return md_file.stem.replace("_", " ")
 
 
 vocab, alias_map = load_vocabulary(TAGS_VOCAB_PATH)
@@ -54,12 +53,14 @@ module_list = json.load(open(MODULE_LIST_PATH))
 tag_index = {canonical: [] for canonical in vocab}
 warnings = 0
 
-for md_file in sorted(Path(DOC_ROOT).rglob("*.md")):
+for md_file in sorted(Path(DOC_ROOT).rglob("*/*.md")):
     rel = str(md_file.relative_to(DOC_ROOT))
+    if rel.startswith("assets/"):
+        continue
     meta = parse_frontmatter(md_file)
 
     if meta is None:
-        print(f"::warning file={md_file},title=meta.parse::Meta block missing or malformed.")
+        print(f"::warning file= {md_file},title=meta.parse::Meta block missing or malformed.")
         warnings += 1
         continue
 
@@ -70,7 +71,7 @@ for md_file in sorted(Path(DOC_ROOT).rglob("*.md")):
     for tag in raw_tags:
         canonical = alias_map.get(str(tag).lower())
         if canonical is None:
-            print(f"::warning file={md_file},title=tag.unknown::Unknown tag '{tag}' on '{title}'. Add to {TAGS_VOCAB_PATH} or use an existing alias.")
+            print(f"::warning file= {md_file},title=tag.unknown::Unknown tag '{tag}' on '{title}'. Add to {TAGS_VOCAB_PATH} or use an existing alias.")
             warnings += 1
         else:
             entry = {"title": title, "path": rel}
@@ -91,8 +92,8 @@ for md_file in sorted(Path(DOC_ROOT).rglob("*.md")):
             for canonical in canonical_tags:
                 if canonical not in module_list[app]["domains"]:
                     module_list[app]["domains"].append(canonical)
-        else:
-            print(f"::warning file={md_file},title=missing.module::'{md_file.name}' has no corresponding module in {MODULE_LIST_PATH}.")
+        elif not meta.get("no_module"):
+            print(f"::warning file= {md_file},title=missing.module::'{md_file.name}' has no corresponding module in {MODULE_LIST_PATH}.")
             warnings += 1
 
 tag_index = {k: v for k, v in tag_index.items() if v}
@@ -105,5 +106,3 @@ with open(MODULE_LIST_PATH, "w") as f:
 
 print(f"tag-index.json: {len(tag_index)} tags, {sum(len(v) for v in tag_index.values())} entries.")
 print(f"module-list.json: updated support URLs and domains for app pages.")
-if warnings:
-    print(f"::warning::{warnings} warning(s) issued. Review and address before merging.")

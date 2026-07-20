@@ -8,7 +8,7 @@ tags:
 !!! prerequisite
     [Setting up VScode](../Getting_Started/Accessing_the_HPCs/VSCode.md).
 
-It is possible to use VSCode to navigate Mahuika, as well as to upload/download file to/from Mahuika.  Please **do not** use this method for transferring large files.  Please see our [Data Transfer Overview](https://docs.nesi.org.nz/Data_Transfer/Data_Transfer_Overview/) page for options.
+It is possible to use VSCode to navigate Mahuika, as well as to upload/download file to/from Mahuika.  Please **do not** use this method for transferring large files.  Please see our [Data Transfer Overview](./Data_Transfer_Overview.md) page for options.
 
 ## Navigating through Mahuika on VSCode
 

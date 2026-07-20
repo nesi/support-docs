@@ -2,6 +2,7 @@
 created_at: '2022-08-03T21:35:50Z'
 tags: 
   - workflow
+no_module: true
 ---
 
 !!! note "Alternatives"
@@ -25,8 +26,7 @@ less resources that the complete problem, it is thus easier for each
 task to slip into the queue and start running.
 
 In this article, we show how you can create a simple workflow and run it
-on Mahuika's platform. Consult the [Cylc
-documentation](https://cylc.github.io/documentation/) for more elaborate
+on Mahuika's platform. Consult the [Cylc documentation](https://cylc.github.io/documentation/) for more elaborate
 examples, including some with a cycling (repeated) graph pattern. One of
 the strengths of Cylc is that simple workflows can be executed simply
 while allowing for very complex workflows, with thousands of tasks,

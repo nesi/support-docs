@@ -5791,12 +5791,13 @@
     "fastStructure": {
         "description": "fastStructure is an algorithm for inferring population structure from large SNP genotype data. It is based on a variational Bayesian framework for posterior inference and is written in Python2.x.",
         "domains": [
-            "biology"
+            "biology",
+            "software"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://rajanil.github.io/fastStructure/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/fastStructure",
         "versions": [
             "1.0-gimkl-2020a-Python-2.7.18"
         ],
@@ -6457,7 +6458,8 @@
     "FreeSurfer": {
         "description": "FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.\nFreeSurfer contains a fully automatic structural imaging stream for processing cross sectional and longitudinal data.",
         "domains": [
-            "biology"
+            "biology",
+            "containers"
         ],
         "extensions": [],
         "licence_type": "",
@@ -14639,11 +14641,13 @@
     },
     "ollama": {
         "description": "Get up and running with large language models.",
-        "domains": [],
+        "domains": [
+            "machine_learning"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://ollama.com/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ollama",
         "versions": [
             "0.21.1"
         ],
@@ -20613,7 +20617,8 @@
     "snakemake": {
         "description": "The Snakemake workflow management system is a tool to create reproducible and scalable data analyses.",
         "domains": [
-            "workflow_management"
+            "workflow_management",
+            "workflow"
         ],
         "extensions": [
             "appdirs-1.4.3",
@@ -20642,7 +20647,7 @@
         ],
         "licence_type": "",
         "homepage": "https://snakemake.readthedocs.io",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/snakemake",
         "versions": [
             "5.19.3-gimkl-2020a-Python-3.8.2",
             "7.32.3-foss-2023a-Python-3.11.6",
@@ -22092,9 +22097,7 @@
     "TUFLOW": {
         "description": "Hydraulic modelling software for flood, urban drainage, estuarine and coastal assessments.",
         "domains": [
-            "hydrodynamics",
-            "flood modelling",
-            "hydraulics"
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "proprietary",

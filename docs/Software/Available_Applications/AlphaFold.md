@@ -4,11 +4,8 @@ tags:
 - biology
 - machine_learning
 - gpu
-title: AlphaFold
 vote_count: 2
 vote_sum: 2
-zendesk_article_id: 4405170961039
-zendesk_section_id: 360000040076
 ---
 
 

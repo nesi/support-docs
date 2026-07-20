@@ -3,7 +3,9 @@ title: Contributing
 search:
   exclude: true
 description: Documentation of how to contribute to the documentation
-tags: []
+tags:
+- tutorial
+- version_control
 ---
 
 **[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs/CONTRIBUTING)**{ .hidden }

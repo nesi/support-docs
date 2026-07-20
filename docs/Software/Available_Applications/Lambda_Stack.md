@@ -4,7 +4,7 @@ tags:
 - machine_learning
 - software
 description: Information about using Lambda Stack
-status: []
+no_module: true
 ---
 
 ## Introduction
