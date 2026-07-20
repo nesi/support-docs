@@ -438,3 +438,24 @@ img.center {
   margin-left: auto;
   margin-right: auto;
 }
+
+/* overrides/partials/search.html swapped this icon's <label for="__search">
+   for a <div data-md-toggle-checkbox="__search"> to fix an a11y "multiple
+   labels" warning. The theme's own CSS positions the icon off the [for]
+   attribute, so it needs the same rules re-targeted at the new attribute. */
+[dir=ltr] .md-search__icon[data-md-toggle-checkbox=__search] { left: .5rem; }
+[dir=rtl] .md-search__icon[data-md-toggle-checkbox=__search] { right: .5rem; }
+.md-search__icon[data-md-toggle-checkbox=__search] { position: absolute; top: .3rem; z-index: 2; }
+[dir=rtl] .md-search__icon[data-md-toggle-checkbox=__search] svg { transform: scaleX(-1); }
+
+@media screen and (max-width: 59.984375em) {
+  [dir=ltr] .md-search__icon[data-md-toggle-checkbox=__search] { left: .8rem; }
+  [dir=rtl] .md-search__icon[data-md-toggle-checkbox=__search] { right: .8rem; }
+  .md-search__icon[data-md-toggle-checkbox=__search] { top: .6rem; }
+  .md-search__icon[data-md-toggle-checkbox=__search] svg:first-child { display: none; }
+}
+
+@media screen and (min-width: 60em) {
+  .md-search__icon[data-md-toggle-checkbox=__search] { pointer-events: none; }
+  .md-search__icon[data-md-toggle-checkbox=__search] svg:last-child { display: none; }
+}
