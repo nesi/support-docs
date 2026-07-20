@@ -24,7 +24,7 @@ There are two ways to run a container as a kernel; select the tab that suits you
     **2026.7.0-foss-2026-4.6.0**. If you do not see **Slurm HPC** in the
     **Cluster** list, [get in touch](mailto:support@nesi.org.nz).
 
-    <p align="center"><img alt="JupyterLab launch form with Cluster set to Slurm HPC and JupyterLab module set to 2026.7.0-foss-2026-4.6.0" src="../../../../assets/images/OOD_jupyter_form_containers.png" width="400"></p>
+    <p align="center"><img alt="JupyterLab launch form with Cluster set to Slurm HPC and JupyterLab module set to 2026.7.0-foss-2026-4.6.0" src="../../../../../assets/images/OOD_jupyter_form_containers.png" width="400"></p>
 
 === "Tool-Assisted Management"
 
