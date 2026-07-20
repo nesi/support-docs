@@ -77,7 +77,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.59,
+                        "hourly_average": 0.6,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -3449,7 +3449,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.98,
+                "server_uptime": 0.99,
                 "server_version": "11.16.2",
                 "features": [
                     {
