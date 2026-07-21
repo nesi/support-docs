@@ -1,5 +1,5 @@
 ---
-title: Python and R kernels in JupyterLab
+title: Python and R Kernels in JupyterLab
 description: How to register and manage custom Jupyter kernels on Mahuika JupyterHub
 tags:
     - JupyterHub

@@ -2,7 +2,6 @@
 created_at: '2019-07-04T20:48:57Z'
 tags:
     - software
-title: Software Version Management
 ---
 
 ## Software Versions
@@ -69,7 +68,7 @@ compatibility or conflict error will arise. So if you ever see a notification of
 module versions, check the module toolchain versions.  
 
 If you need help with this or require a software built with a specific toolchain reach out to 
-<support@nesi.org.nz>
+{% include "partials/support_request.html" %}
 
 ### System Toolchain
 

@@ -6,8 +6,6 @@ tags:
 title: 'Bash: Reference Sheet'
 vote_count: 2
 vote_sum: 2
-zendesk_article_id: 360001393596
-zendesk_section_id: 360000278975
 ---
 
 Regardless of the operating system on your personal computer you will

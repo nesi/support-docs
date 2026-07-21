@@ -2,11 +2,8 @@
 created_at: '2023-03-21T09:33:04Z'
 tags:
 - biology
-title: Dorado
 vote_count: 5
 vote_sum: 3
-zendesk_article_id: 6623692647951
-zendesk_section_id: 360000040076
 ---
 
 

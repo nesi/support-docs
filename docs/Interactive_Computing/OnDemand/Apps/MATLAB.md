@@ -1,11 +1,10 @@
 ---
+title: MATLAB via OnDemand
 created_at: 2025-08-05
 description: The MATLAB app is currently being developed.
 tags:
 - interactive
 - mathematics
 ---
-
-# MATLAB via OnDemand
 
 {{description}}

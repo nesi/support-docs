@@ -24,7 +24,7 @@ and cached between updates.
 | -------------- | ------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
 | Disk Quota     | 20 GB                                                                                 | 100 GB                                                                                                          | 10 TB                                                                                                                                                                                                     | -                                                                                  |
 | Usage          | User-specific files such as configuration files, environment setup, source code, etc. | Persistent project-related data, software, etc.                                                                 | Data created or used by compute jobs that is intended to be temporary                                                                                                                                     | Medium- to long-term storage of research data, (past, present or planned projects) |
-| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See [Automatic cleaning of nobackup filesystem](./Automatic_cleaning_of_nobackup.md ) for more information. | 180 days after the end of the project's Freezer storage allocation                 |
+| Data retention | 180 days after the user ceases to be a member of any active project                   | 90 days after the end of the project's last HPC compute allocation. See also Transparent File Data Compression. | Untouched for 90 days, or 90 days after the end of the project's last HPC Compute allocation. See [Automatic cleaning of nobackup filesystem](./Automatic_Cleaning_of_Nobackup.md ) for more information. | 180 days after the end of the project's Freezer storage allocation                 |
 | Snapshots      | Daily<br>7 days                                                                       | Daily<br>7 days                                                                                                 | Weekly (every Friday at 6am)<br>3 weeks                                                                                                                                                                                                         | -                                                                                  |
 | Speed          | Fast                                                                                  | Fast                                                                                                            | Fast                                                                                                                                                                                                      | Slow                                                                               |
 | Interfaces     | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul>                             | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li><ul>                                                                      | <ul><li>Native Mounts</li><li>SCP</li><li>Globus</li>                                                                                                                                                     | <ul><li>s3cmd commands</li></ul>                                                   |
@@ -50,7 +50,7 @@ cleaning policy is applied.
 
 It provides storage space for datasets, shared code or configuration
 scripts that need to be accessed by users within a project, and
-[potentially by other projects](./File_permissions_and_groups.md).
+[potentially by other projects](./File_Permissions_and_Groups.md).
 Read and write performance increases using larger files, therefore you should
 consider archiving small files with an archiving package such as `tar` .
 
@@ -79,7 +79,7 @@ or {% include "partials/support_request.html" %} at any time.
 
 We also have a regular
 cleaning policy as described in
-[Automatic cleaning of nobackup filesystem](./Automatic_cleaning_of_nobackup.md).
+[Automatic cleaning of nobackup filesystem](./Automatic_Cleaning_of_Nobackup.md).
 
 Do not use the `touch` command or an equivalent to prevent the cleaning
 policy from removing unused files, because this behaviour would deprive
@@ -93,7 +93,7 @@ analyse datasets up to 1 PB in size.
 Freezer is a tape storage system that employs the S3 protocol and is designed to hold large amounts of data that are accessed infrequently.
 Freezer is a great solution to prevent data being lost by our fortnightly auto-deletion policy or to run those quarterly, semi-annual or annual workflows.
 
-See [Freezer long term storage](Long_Term_Storage/Freezer_long_term_storage.md) for more information.
+See [Freezer long term storage](Long_Term_Storage/Freezer_Long_Term_Storage.md) for more information.
 
 The Freezer filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
@@ -103,7 +103,7 @@ temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
 See more information about the long term storage see our
-[documentation about the Freezer storage service](Long_Term_Storage/Freezer_long_term_storage.md).
+[documentation about the Freezer storage service](Long_Term_Storage/Freezer_Long_Term_Storage.md).
 
 ## Snapshots
 
@@ -119,7 +119,7 @@ This page will guide you through best practices for storing your data on Mahuika
 
 Some programs create files that are not needed after the process has finished. If these are not automatically cleaned up by the program they can take up a large amount of space or just become very numerous, which can be problematic as many of the services running behind the scenes in Mahuika are affected by the number of files on our systems.
 
-Within batch jobs it is best to place any temporary files into a [temporary directory](../Batch_Computing/Temporary_directories.md), which can be in memory or in fast storage local to the compute node. These directories are automatically removed at the end of the job.
+Within batch jobs it is best to place any temporary files into a [temporary directory](../Batch_Computing/Temporary_Directories.md), which can be in memory or in fast storage local to the compute node. These directories are automatically removed at the end of the job.
 
 On login nodes there is a fast `/tmp` filesystem for very transient files, and if you need something larger then `nobackup` (scratch) is the best choice. In either case, please **delete all temporary files** as soon as is practical.
 
@@ -140,6 +140,6 @@ It is best practice to perform your calculations/simulations in the following or
 1. Perform your calculations/simulations in `nobackup` (scratch) and/or per-job temporary directories.
 2. After analysis, any data you want to keep for further analysis and that you will access regularly should be kept in `project`.
 3. If you have gigabytes or terabytes of data that you need to keep on Mahuika but don't have enough space on `project` and do not access regularly, you should consider moving this data onto Freezer. Freezer is designed to keep mass amounts of data on that you will only need to access every few months.
-See [Freezer long term storage](Long_Term_Storage/Freezer_long_term_storage.md) for more information.
+See [Freezer long term storage](Long_Term_Storage/Freezer_Long_Term_Storage.md) for more information.
 4. `project` is limited in space, so any data you can move off Mahuika should be when you are either done with the data, or you can do analysis of the data on your own computer. See
 [I would like to move data off Mahuika. What are my options?](Offsite_Storage_Options.md).

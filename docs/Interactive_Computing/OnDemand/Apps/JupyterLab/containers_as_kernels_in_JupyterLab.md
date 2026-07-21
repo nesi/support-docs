@@ -1,5 +1,5 @@
 ---
-title: Containers as kernels in JupyterLab
+title: Containers as Kernels in JupyterLab
 description: How to use containers as kernels in JupyterLab on Mahuika
 tags:
     - JupyterHub
@@ -22,7 +22,7 @@ There are two ways to run a container as a kernel; select the tab that suits you
     To use containers you must launch your Jupyter session with **Cluster** set
     to **Slurm HPC** and the **JupyterLab module** set to
     **2026.7.0-foss-2026-4.6.0**. If you do not see **Slurm HPC** in the
-    **Cluster** list, [get in touch](mailto:support@nesi.org.nz).
+    **Cluster** list, {% include "partials/support_request.html" %}.
 
     <p align="center"><img alt="JupyterLab launch form with Cluster set to Slurm HPC and JupyterLab module set to 2026.7.0-foss-2026-4.6.0" src="../../../../../assets/images/OOD_jupyter_form_containers.png" width="400"></p>
 

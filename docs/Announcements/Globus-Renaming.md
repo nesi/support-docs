@@ -20,4 +20,4 @@ The new names replace the “NeSI” prefix with a “REANNZ” prefix and inclu
 
 If you have any questions about this change, please contact support@nesi.org.nz.
 
-For more information about using Globus to transfer data to or from the REANNZ HPC Platform, visit our [Globus documentation](https://docs.nesi.org.nz/Data_Transfer/Globus/Globus_Overview/) in the 'Data Transfer' section of this site.
+For more information about using Globus to transfer data to or from the REANNZ HPC Platform, visit our [Globus documentation](../Data_Transfer/Globus/Globus_Overview.md) in the 'Data Transfer' section of this site.

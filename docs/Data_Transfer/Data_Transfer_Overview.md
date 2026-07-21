@@ -98,7 +98,7 @@ To compress one or more large files:
 !!! tip
     To prevent running out of space on your `project` directory, create your tarballs in your `nobackup` directory.
 
-    If you are running out of space in your `project` and `nobackup` directories, feel free to [get in touch with us](mailto:support@nesi.org.nz) and we can work with you to help transfer your files.
+    If you are running out of space in your `project` and `nobackup` directories, feel free to {% include "partials/support_request.html" %} and we can work with you to help transfer your files.
 
 ### Use either `cp`, `mv`, `RClone`, or `Rsync` to transfer files within Mahuika
 

@@ -82,7 +82,7 @@ input is required on your part. You should be willing to:
 - Attend regular meetings (usually via video conference)
 - Invest time to answer questions, provide code and data as necessary
     and make changes to your workflow if needed
-- [Acknowledge](../Policy/Acknowledgement-Citation_and_Publication/)
+- [Acknowledge](../Policy/Acknowledgement-Citation_and_Publication.md)
     us in article and code publications that we have contributed to,
     which could include co-authorship if our contribution is deemed
     worthy
