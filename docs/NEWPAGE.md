@@ -204,7 +204,6 @@ The following sections detail the most usual entries.
 | `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
 | `no_module: true` | Will disable linter warnings if corresponding module data is not found (applications pages only) | Bool | `True` `False` |
 
-
 ### Zendesk Imported
 
 The following fields were imported from Zendesk Page:
@@ -287,11 +286,11 @@ A 'prerequisites' admonition, to point to the previous lesson.
 
 ```md
 !!! prerequisites
-    - [Link to Previous Page](../previous_page.md)
+    - [Link to Previous Page](CONTRIBUTING.md)
 ```
 
 !!! prerequisites
-    - [Link to Previous Page](../previous_page.md)
+    - [Link to Previous Page](FORMAT.md)
 
 ### Quiz
 

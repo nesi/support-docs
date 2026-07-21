@@ -4,5 +4,6 @@ production/*
 .venv/*
 dictionary.dic
 .Updates
+.DS_Store
 accesslint-report.*
 spellcheck.results
