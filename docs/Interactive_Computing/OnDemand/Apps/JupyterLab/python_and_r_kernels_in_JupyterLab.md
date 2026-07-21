@@ -53,6 +53,12 @@ custom kernel; select the tab that suits you:
         nesi-add-kernel <KERNEL_NAME> <MODULE>
         ```
 
+        or if you want to share the environment module with others in your project: 
+
+        ``` sh
+        nesi-add-kernel --shared <KERNEL_NAME> <MODULE>
+        ```
+
         Where:
 
         - `<KERNEL_NAME>`: The name you want to give the kernel.
@@ -62,6 +68,12 @@ custom kernel; select the tab that suits you:
 
         ``` sh
         nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
+        ```
+
+        or if you want to share the kernel:
+
+        ``` sh
+        nesi-add-kernel --shared tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
         ```
 
     === "Python virtual environment"
@@ -86,6 +98,17 @@ custom kernel; select the tab that suits you:
         ```
 
         Where `<kernel_name>` is the name you want to give to the kernel.
+
+        !!! note 
+        
+            If you would like to share your kernel with others in your project you will want to include the ``--shared`` flag in your ``nesi-add-kernel`` command line.
+
+            ``` sh
+            module purge
+            module load JupyterLab
+            # The module of python you give here must be the same as the version of python you use to make the virtual environment
+            nesi-add-kernel --shared <kernel_name> --venv my-venv
+            ```
 
     === "Conda environment"
 
@@ -126,6 +149,34 @@ custom kernel; select the tab that suits you:
         ```
 
         Where `<kernel_name>` is the name for your kernel.
+
+        !!! note
+        
+            If you would like to share your kernel with others in your project you will want to include the ``--shared`` flag in your ``nesi-add-kernel`` command line.
+
+            ``` sh
+            # Load JupyterLab
+            module load JupyterLab
+
+            # Create your conda environment
+            conda create --prefix <conda_env_path>/my_conda_env python=3.11
+
+            # Add your conda environment as a kernel to JupyterHub
+            nesi-add-kernel --shared <kernel_name> -p <conda_env_path>
+            ```
+
+            or
+
+            ``` sh
+            # Load JupyterLab
+            module load JupyterLab
+
+            # Create your conda environment
+            conda create -n <conda_env_name>
+
+            # Add your conda environment as a kernel to JupyterHub
+            nesi-add-kernel --shared <kernel_name> -n <conda_env_name>
+            ```
 
     === "Python environment through Container"
 
@@ -344,50 +395,23 @@ custom kernel; select the tab that suits you:
 
     === "R kernel"
 
-        You can configure custom R kernels for running your Jupyter notebooks.
-        The following example will create a custom kernel based on the
-        R/3.6.2-gimkl-2020a environment module and will additionally load an
-        MPFR environment module (e.g. if you wanted to load the Rmpfr package).
+        First, change directory into the path where you would like to place your
+        custom R environment kernel.
 
-        In a terminal run the following commands to load the required
-        environment modules:
+        - If you would like to share it with other members of your project, use
+            your project folder (`cd /nesi/project/<project-code>`)
+        - avoid paths that include `00_nesi_projects` or `home`, as these cause
+            issues.
 
-        ``` sh
-        module purge
-        module load IRkernel/1.1.1-gimkl-2020a-R-3.6.2
-        module load Python/3.8.2-gimkl-2020a
-        ```
-
-        The IRkernel module loads the R module as a dependency and provides the
-        R kernel for Jupyter. Python is required to install the kernel (since
-        Jupyter is written in Python).
-
-        Now create an R Jupyter kernel:
-
-        ``` sh
-        R -e "IRkernel::installspec(name='myrwithmpfr', displayname = 'R with MPFR', user = TRUE)"
-        ```
-
-        We must now edit the kernel to load the required environment
-        modules when the kernel is launched. Change to the directory the
-        kernelspec was installed to
-        (~/.local/share/jupyter/kernels/myrwithmpfr, assuming you kept `--name
-        myrwithmpfr` in the above command):
-
-        ``` sh
-        cd ~/.local/share/jupyter/kernels/myrwithmpfr
-        ```
-
-        Now create a wrapper script in that directory, called *wrapper.sh*, with
-        the following contents:
+        Second, write the following as `wrapper.sh` in your selected directory:
 
         ``` sh
         #!/usr/bin/env bash
 
         # load required modules here
         module purge
-        module load MPFR/4.0.2-GCCcore-9.2.0
         module load IRkernel/1.1.1-gimkl-2020a-R-3.6.2
+        # Add other modules you would like to load here as well, e.g.: module load MPFR/4.0.2-GCCcore-9.2.0
 
         # run the kernel
         exec R $@
@@ -399,29 +423,35 @@ custom kernel; select the tab that suits you:
         chmod +x wrapper.sh
         ```
 
-        and edit the *kernel.json* to change the first element of the argv list
-        to point to the wrapper script we just created. The file should look
+        Third, create a directory for your kernel:
+
+        ``` sh
+        mkdir -p ~/.local/share/jupyter/kernels/my-r-environment
+        cd ~/.local/share/jupyter/kernels/my-r-environment
+        ```
+
+        and create a file called *kernel.json*. It points the first element of
+        the argv list at the wrapper script we just created. The file should look
         like this:
 
         ```json
         {
          "argv": [
-         "/home/<username>/.local/share/jupyter/kernels/myrwithmpfr/wrapper.sh",
+         "<full_path_to_your_wrapper_file>/wrapper.sh",
          "--slave",
          "-e",
          "IRkernel::main()",
          "--args",
          "{connection_file}"
          ],
-         "display_name": "R with MPFR",
+         "display_name": "R with XYZ",
          "language": "R"
         }
-        ```
 
         - Change `display_name` to what you would like to call your kernel by.
 
-        After refreshing JupyterLab your new R kernel should show up in the
-        Launcher as "R with MPFR".
+        After refreshing JupyterLab your new kernel should show up in the
+        Launcher as "R with XYZ".
 
     === "Python environment through Container"
 
@@ -453,105 +483,9 @@ the kernel with the tool-assisted or manual approach:
 
     To share a kernel, register it with `nesi-add-kernel` as you normally would,
     but add the `--shared` flag so other members of your project can load it.
-    Select the tab for the kind of kernel you are sharing:
-
-    === "Environment module"
-
-        First you need to open a terminal. It can be from a session on Jupyter
-        via OnDemand or from a regular ssh connection on the Mahuika login node.
-
-        - If you use the ssh option, make sure to load the JupyterLab module to
-            have access to the `nesi-add-kernel` tool:
-
-            ``` sh
-            module purge  # remove all previously loaded modules
-            module load JupyterLab
-            ```
-
-        Use the `nesi-add-kernel` command with the `--shared` flag to register a
-        shared kernel:
-
-        ``` sh
-        nesi-add-kernel --shared <KERNEL_NAME> <MODULE>
-        ```
-
-        Where:
-
-        - `<KERNEL_NAME>`: The name you want to give the kernel.
-        - `<MODULE>`: The environment module to base the kernel on.
-
-        Here is an example for adding a shared TensorFlow module to JupyterLab as
-        a kernel:
-
-        ``` sh
-        nesi-add-kernel --shared tf_kernel_shared TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
-        ```
-
-    === "Python virtual environment"
-
-        First, create your [python virtual environment](../../../../Software/Available_Applications/Python.md#installing-packages-in-your-home):
-
-        ``` sh
-        module purge
-        module load Python/3.14.4-foss-2026  # Change the module to the version of python you want to use
-        python3 -m venv ./my-venv
-        pip install --upgrade pip
-        # you can pip install other packages here too
-        ```
-
-        Then create a shared kernel based on your virtual environment:
-
-        ``` sh
-        module purge
-        module load JupyterLab
-        # The module of python you give here must be the same as the version of python you use to make the virtual environment
-        nesi-add-kernel --shared <kernel_name> --venv my-venv
-        ```
-
-        Where `<kernel_name>` is the name you want to give to the kernel. Note
-        the `--shared` flag in the `nesi-add-kernel` command line.
-
-    === "Conda environment"
-
-        First, create your [conda environment](../../../../Software/Available_Applications/Miniforge3.md#module-loading-and-conda-environments-isolation). You will need to begin by loading conda:
-
-        ``` sh
-        # Load conda
-        module purge && module load Miniforge3
-        source $(conda info --base)/etc/profile.d/conda.sh
-        export PYTHONNOUSERSITE=1
-        ```
-
-        Then create a shared kernel based on your newly created conda environment:
-
-        ``` sh
-        # Load JupyterLab
-        module load JupyterLab
-
-        # Create your conda environment
-        conda create --prefix <conda_env_path>/my_conda_env python=3.11
-
-        # Add your conda environment as a shared kernel to JupyterHub
-        nesi-add-kernel --shared <kernel_name> -p <conda_env_path>
-        ```
-
-        Where `<kernel_name>` is the name you want to give to the kernel. Note
-        the `--shared` flag in the `nesi-add-kernel` command line. Alternatively,
-        you can create the environment by name:
-
-        ``` sh
-        # Load JupyterLab
-        module load JupyterLab
-
-        # Create your conda environment
-        conda create -n <conda_env_name>
-
-        # Add your conda environment as a shared kernel to JupyterHub
-        nesi-add-kernel --shared <kernel_name> -n <conda_env_name>
-        ```
-
-        Where `<kernel_name>` is the name you want to give to the kernel. Note
-        the `--shared` flag in the `nesi-add-kernel` command line.
+    See the end notes in [Adding a Kernel to JupyterLab](./python_and_r_kernels_in_JupyterLab#Adding-a-Kernel-to-JupyterLab) 
+    to learn about how to create shared kernels using the tool-assisted management
+    program.
 
 === "Manual Management"
 
