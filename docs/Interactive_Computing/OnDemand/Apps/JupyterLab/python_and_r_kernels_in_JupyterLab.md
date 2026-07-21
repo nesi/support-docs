@@ -152,7 +152,7 @@ custom kernel; select the tab that suits you:
 
         !!! note
         
-            If you would like to share your kernel with others in your project you will want to include the ``--shared`` flag in your ``nesi-add-kernel`` command line.
+            If you would like to share your kernel with others in your project you will want to include the `--shared` flag in your `nesi-add-kernel` command line.
 
             ``` sh
             # Load JupyterLab
