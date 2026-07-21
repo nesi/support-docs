@@ -64,17 +64,19 @@ custom kernel; select the tab that suits you:
         - `<KERNEL_NAME>`: The name you want to give the kernel.
         - `<MODULE>`: The environment module to base the kernel on.
 
-        Here is an example for adding a TensorFlow module to JupyterLab as a kernel:
+        !!! example
 
-        ``` sh
-        nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
-        ```
+            Here is an example for adding a TensorFlow module to JupyterLab as a kernel:
 
-        or if you want to share the kernel:
+            ``` sh
+            nesi-add-kernel tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
+            ```
 
-        ``` sh
-        nesi-add-kernel --shared tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
-        ```
+            or if you want to share the kernel:
+
+            ``` sh
+            nesi-add-kernel --shared tf_kernel TensorFlow/2.8.2-gimkl-2022a-Python-3.10.5
+            ```
 
     === "Python virtual environment"
 
@@ -447,6 +449,7 @@ custom kernel; select the tab that suits you:
          "display_name": "R with XYZ",
          "language": "R"
         }
+        ```
 
         - Change `display_name` to what you would like to call your kernel by.
 
@@ -483,7 +486,7 @@ the kernel with the tool-assisted or manual approach:
 
     To share a kernel, register it with `nesi-add-kernel` as you normally would,
     but add the `--shared` flag so other members of your project can load it.
-    See the end notes in [Adding a Kernel to JupyterLab](./python_and_r_kernels_in_JupyterLab#Adding-a-Kernel-to-JupyterLab) 
+    See the end notes in [Adding a Kernel to JupyterLab](#adding-a-kernel-to-jupyterlab)
     to learn about how to create shared kernels using the tool-assisted management
     program.
 
