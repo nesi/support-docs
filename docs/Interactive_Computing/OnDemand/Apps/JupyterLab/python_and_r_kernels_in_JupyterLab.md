@@ -400,7 +400,7 @@ custom kernel; select the tab that suits you:
 
         - If you would like to share it with other members of your project, use
             your project folder (`cd /nesi/project/<project-code>`)
-        - avoid paths that include `00_nesi_projects` or `home`, as these cause
+        - Avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
         Second, write the following as `wrapper.sh` in your selected directory:
