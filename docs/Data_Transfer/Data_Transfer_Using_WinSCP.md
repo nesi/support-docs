@@ -1,11 +1,8 @@
 ---
 created_at: 2026-02-04
 description: How to copy files to the REANNZ HPC using WinSCP.
-tags: 
-    - data transfer
-    - ftp
-    - sftp
-    - scp
+tags:
+    - file_transfer
 title:  WinSCP (Windows)
 ---
 

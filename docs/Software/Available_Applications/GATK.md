@@ -1,11 +1,8 @@
 ---
-created_at: '2023-02-21T21:21:50Z'
-tags: []
 title: GATK
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6443618773519
-zendesk_section_id: 360000040076
+created_at: '2023-02-21T21:21:50Z'
+tags:
+- biology
 ---
 
 
@@ -21,8 +18,8 @@ tools focusing primarily on variant discovery and genotyping. It is
 regarded as the industry standard for identifying SNPS and indels in
 germline DNA and RNAseq data.
 
-General documentation for running GATK can be found at their website
-[here.](https://gatk.broadinstitute.org/hc/en-us)
+[General documentation for running GATK](https://gatk.broadinstitute.org/hc/en-us)
+can be found at their website.
 
 ## Running GATK
 

@@ -1,8 +1,7 @@
 ---
 created_at: '2022-03-31T20:51:51Z'
 tags:
-- mynesi
-- allocation
+- account
 description: How to request a Mahuika allocation renewal.
 ---
 

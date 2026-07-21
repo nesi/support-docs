@@ -1,7 +1,13 @@
-[//]: <> (APPS PAGE BOILERPLATE START)
-{% set app_name = page.title | trim %}
-[//]: <> (APPS PAGE BOILERPLATE END)
+---
+created_at: 2026-07-15
+tags:
+- biology
+- containers
+---
 
+{% set app_name = page.title | trim %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
 
 ## Prerequisites
 

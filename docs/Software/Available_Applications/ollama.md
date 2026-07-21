@@ -1,14 +1,14 @@
 ---
 created_at: 2026-05-04
 description: How to run ollama on the REANNZ GPUs
-tags: 
-    - llm
+tags:
+    - machine_learning
 ---
 
 
-{% set app = applications["ollama"] %}
-
-{{ app.description }}
+{% set app_name = "ollama" %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
 
 For a list of available models, see [AI Models](../../Storage/Models.md).
 

@@ -3,7 +3,7 @@ created_at: '2015-10-14T22:58:53Z'
 tags:
 - mathematics
 - engineering
-- Machine Learning
+- machine_learning
 description: Examples and tips on how to use MATLAB on the Mahuika platform.
 ---
 

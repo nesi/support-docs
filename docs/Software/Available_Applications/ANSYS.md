@@ -2,8 +2,7 @@
 created_at: '2015-10-15T02:15:46Z'
 tags:
 - engineering
-- cfd
-- fea
+- earth_science
 description: How to best use ANSYS products on the Mahuika cluster.
 ---
 

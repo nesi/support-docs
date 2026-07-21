@@ -1,12 +1,11 @@
 ---
 created_at: 2025-10-01
 description: "Freezer Quick Start"
-tags: 
-  - Freezer
+tags:
   - storage
 ---
 !!! info s3cmd configuration required
-    Please ensure you have [configured](Configuring_s3cmd.md) the s3cmd tool.
+    Please ensure you have [configured](Configuring_S3cmd.md) the s3cmd tool.
 
 ## Using s3cmd tool to interact with Freezer
 
@@ -18,7 +17,7 @@ Freezer has two types of data storage classes:
 - Glacier: data that is on tape
 - Standard: data that is in the S3 bucket
 
-Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please <a href="mailto:support@nesi.org.nz?subject=Forgot%20my%20Freezer%20bucket%20name">email us</a> and let us know which project this is for.
+Please note that your bucket has the same name as your Freezer allocation. If you have forgotten the name of your bucket, please  {% include "partials/support_request.html" %} and let us know which project this is for.
 
 ## List contents and buckets
 
@@ -165,7 +164,7 @@ Once the upload is successful, as signalled by the 'done' your files/folders sto
 Partially uploaded files will be deleted automatically.
 
 !!! warning
-    If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#synchronise-data) for more information. 
+    If `put` was interrupted before it could finish, use `s3cmd sync --skip-existing --verbose` to resume from the stage that you were originally copying from. See [Synchronise data](#step-2a-synchronise-data) for more information. 
 
 ### Preview or dry-run
 
@@ -237,16 +236,17 @@ s3cmd restore --recursive s3://<freezer-bucket>/your_directory/data_folder/ --re
 
 Example to get or download the directory `data_folder` and all contained objects/files/folders:
 
-    1. Create the `data_folder` you want to retrieve in file, and change directory into `data_folder`.
-        ```sh
-        mkdir -p data_folder
-        cd data_folder
-        ```
+1. Create the `data_folder` you want to retrieve in file, and change directory into `data_folder`.
 
-    2. Retrieve the data from Freezer
-        ```sh
-        s3cmd get --recursive s3://<freezer-bucket>/your_directory/data_folder/
-        ```
+    ```sh
+    mkdir -p data_folder
+    cd data_folder
+    ```
+
+2. Retrieve the data from Freezer
+    ```sh
+    s3cmd get --recursive s3://<freezer-bucket>/your_directory/data_folder/
+    ```
 
 This will place the all files and subdirectories in the above `data_folder` into your current directory.
 
@@ -256,6 +256,7 @@ After retrieving your tarball, you can extract its contents with the following c
 
 ```sh
 tar -xzvf <name of tarball>.tar.gz
+```
 
 ## s3cmd reference
 

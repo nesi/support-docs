@@ -34,7 +34,7 @@ Mem Efficiency: 10.84% 111.00 MB of 1.00 GB
 ```
 
 Notice that the CPU efficiency was high but the memory efficiency was low and consideration should be given to reducing memory requests
-for similar jobs. If in doubt, please contact [support@nesi.org.nz](mailto:support@nesi.org.nz) for guidance.
+for similar jobs. If in doubt, please contact {% include "partials/support_request.html" %} for guidance.
 
 _seff_ is based on the same numbers as are shown by _sacct_.
 

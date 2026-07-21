@@ -8,7 +8,7 @@ status: tutorial
 ---
 
 
-!!! time "Time: 20 Minutes"
+!!! time "20 Minutes"
 
 !!! objectives
     - Load and use a software package.
@@ -130,10 +130,10 @@ The following modules were not unloaded:
 Note that `module purge` is informative.
 It lets us know that all but a minimal default set of packages have been unloaded (and how to actually unload these if we truly so desired).
 
-We are able to unload individual modules, unfortunately within the Mahuika system it does not always unload it's dependencies, therefore we recommend `module purge` to bring you back to a state where only those modules needed to perform your normal work on the cluster.
+We are able to unload individual modules, unfortunately within the Mahuika system it does not always unload its dependencies, therefore we recommend `module purge` to bring you back to a state where only those modules needed to perform your normal work on the cluster.
 
 `module purge` is a useful tool for ensuring repeatable research by guaranteeing that the environment that you build your software stack from is always the same.
-This is important since some modules have the potential to silently effect your results if they are loaded (or not loaded).
+This is important since some modules have the potential to silently affect your results if they are loaded (or not loaded).
 
 !!! warning "Think before you copy/paste code"
     Just because you see a command, you don't have to run it.
@@ -315,7 +315,7 @@ Currently Loaded Modules:
 ```
 
 Notice that our initial list of modules has increased by 30.
-When we loaded R, it also loaded all of it's dependencies along with all the dependencies of those modules.
+When we loaded R, it also loaded all of its dependencies along with all the dependencies of those modules.
 
 Before moving onto the next session let's use `module purge` again to return to the minimal environment.
 
@@ -427,7 +427,7 @@ python3 --version
 Python 3.9.5
 ```
 
-We are now left with only those modules required to do our work for this project.
+Let's take a look at what is now loaded:
 
 ```sh
 module list
@@ -448,5 +448,5 @@ Currently Loaded Modules:
 
 !!! keypoints
     - Load software with `module load softwareName`.
-    - Unload software with `module unload`
+    - Unload software with `module unload softwareName`
     - The module system handles software versioning and package conflicts for you automatically.

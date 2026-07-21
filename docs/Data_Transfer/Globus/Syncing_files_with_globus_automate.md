@@ -1,9 +1,8 @@
 ---
 created_at: '2023-01-12T20:45:15Z'
-tags: 
-    - globus
-    - file transfer
-title: Sync'ing with globus-automate
+tags:
+    - file_transfer
+title: Sync'ing With Globus-Automate
 ---
 
 It is common to generate large amounts of simulation data on Mahuika and
@@ -23,7 +22,7 @@ We'll assume that you have a NeSI account, you have registered at
 [https://globus.org](https://globus.org), and have created a guest collections on NeSI
 and a private mapped collection on the destination computer (follow the
 instructions at
-[Data transfer](Data_Transfer_using_Globus.md)).
+[Data transfer](Data_Transfer_Using_Globus.md)).
 A guest collection is directory whose content is shared via Globus.
 
 ## Step 1: Write a JSON file describing the transfer

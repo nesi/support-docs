@@ -1,11 +1,8 @@
 ---
 created_at: '2023-07-06T05:48:34Z'
-tags: []
-title: Billing process
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7352114813455
-zendesk_section_id: 7348936006031
+tags:
+- account
+title: Billing Process
 ---
 
 Charges for Subscription usage are typically invoiced on a monthly

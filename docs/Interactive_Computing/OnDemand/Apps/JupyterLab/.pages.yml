@@ -1,5 +1,5 @@
 ---
 nav:
-  - Jupyter_kernels_Tool_assisted_management.md
-  - Jupyter_kernels_Manual_management.md
+  - Python and R kernels in JupyterLab: python_and_r_kernels_in_JupyterLab.md
+  - Containers as kernels in JupyterLab: containers_as_kernels_in_JupyterLab.md
   - "*"

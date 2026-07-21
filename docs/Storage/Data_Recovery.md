@@ -2,7 +2,7 @@
 created_at: '2018-05-22T01:49:31Z'
 description: How to retreive lost data from the REANNZ HPC filesystem.
 tags:
-- data storage
+- storage
 ---
 
 Snapshots are read only copies of the filesystems at a point in time.

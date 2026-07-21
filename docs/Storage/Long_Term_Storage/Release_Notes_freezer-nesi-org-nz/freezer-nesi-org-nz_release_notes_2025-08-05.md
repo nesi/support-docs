@@ -1,8 +1,8 @@
 ---
 created_at: '2025-08-05T03:42:47Z'
 tags:
-- freezer
-- release notes
+- storage
+- release_notes
 title: 2025/08/05
 description: Freezer upgrade release notes
 search:
@@ -13,4 +13,4 @@ search:
 
 - Various bug fixes and performance optimizations
 
-If you have any questions about any of the fixes, please [contact Mahuika Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+If you have any questions about any of the fixes, please {% include "partials/support_request.html" %}.

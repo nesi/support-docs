@@ -1,11 +1,9 @@
 ---
 created_at: '2019-09-23T11:11:16Z'
-tags: []
-title: Julia
+tags:
+- julia
 vote_count: 3
 vote_sum: 3
-zendesk_article_id: 360001175895
-zendesk_section_id: 360000040076
 ---
 
 

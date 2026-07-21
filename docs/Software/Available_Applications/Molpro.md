@@ -2,10 +2,6 @@
 created_at: '2016-02-04T03:09:05Z'
 tags:
 - chemistry
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 216296818
-zendesk_section_id: 360000040076
 ---
 
 

@@ -1,16 +1,13 @@
 ---
+title: Pluto.jl Interactive Sessions
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - Pluto
-  - Julia
-  - notebook
+  - julia
 description: How to run a Pluto interactive session on the Mahuika cluster.
 ---
 
-# Pluto.jl interactive sessions
-
-For new users we recommend running Pluto from our [OnDemand Service](https://docs.nesi.org.nz/Interactive_Computing/OnDemand/).  However,
+For new users we recommend running Pluto from our [OnDemand Service](./OnDemand/index.md).  However,
 many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
 >If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm

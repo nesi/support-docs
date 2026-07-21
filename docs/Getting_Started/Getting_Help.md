@@ -1,6 +1,8 @@
 ---
 created_at: 2026-03-18
 description: How to seek further help with the HPC platform
+tags:
+- troubleshooting
 ---
 
 ## Support request

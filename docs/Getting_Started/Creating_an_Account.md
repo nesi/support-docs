@@ -1,8 +1,8 @@
 ---
 created_at: '2018-04-18T23:56:10Z'
 tags:
-- onboarding
-- mynesi
+- tutorial
+- account
 description: How to create a REANNZ HPC account.
 ---
 

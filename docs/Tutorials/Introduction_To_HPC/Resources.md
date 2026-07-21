@@ -1,6 +1,9 @@
 ---
 created_at: 2026-01-16
 status: tutorial
+tags:
+- tutorial
+- slurm
 ---
 
 !!! time "30 Minutes"
@@ -60,9 +63,8 @@ And then submit using `sbatch` as we did before.
 Submitted batch job 23137702
 ```
 
-!!! tip Watch
-    We can prepend any command with `watch` in order to periodically (default 2 seconds) run a command. e.g. `watch
-    squeue --me` will give us up to date information on our running jobs.
+!!! tip "Watch"
+    We can prepend any command with `watch` in order to periodically (default 2 seconds) run a command. e.g. `watch squeue --me` will give us up to date information on our running jobs.
     Care should be used when using `watch` as repeatedly running a command can have adverse effects.
     Exit `watch` with <kbd>ctrl</kbd> + <kbd>c</kbd>.
 
@@ -137,7 +139,7 @@ JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS
 
 With this information, we may determine a couple of things.
 
-Memory efficiency can be determined by comparing _ReqMem_ (requested memory) with _MaxRSS_ (maximum used memory), MaxRSS is  given in KB, so a unit conversion is usually required.
+Memory efficiency can be determined by comparing _ReqMem_ (requested memory) with _MaxRSS_ (maximum used memory), MaxRSS is given in KB, so a unit conversion is usually required.
 
 $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
 
@@ -317,10 +319,10 @@ Some best practices for test jobs:
     Often a good first test to run, is to execute your job _serially_ e.g. using only 1 CPU.
     This not only saves you time by being fast to start, but serial jobs can often be easier to debug.
     If you confirm your job works in its most simple state you can identify problems caused by
-    paralellisation much more easily.
+    parallelisation much more easily.
 
 You generally should ask for 20% to 30% more time and memory than you think the job will use.
-Testing allows you to become more more precise with your resource requests.
+Testing allows you to become more precise with your resource requests.
 We will cover a bit more on running tests in the last lesson.
 
 !!! tip "Example inputs"
@@ -336,7 +338,7 @@ Be aware that your job is not fully scanned for correctness when you submit the 
 While you may get an immediate error if your `#SBATCH` directives are malformed, it is not until the job starts to run that the interpreter starts to process the batch script.
 Mahuika has an easy way for you to test your job submission.
 One can employ the debug QOS to get a short, high priority test job.
-Debug jobs have to run within 15 minutes and cannot use more that 2 nodes.
+Debug jobs have to run within 15 minutes and cannot use more than 2 nodes.
 To use debug QOS, add or change the following in your batch submit script:
 
 ```sh

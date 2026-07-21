@@ -1,6 +1,7 @@
 ---
 created_at: '2021-01-13T00:20:08Z'
-tags: []
+tags:
+- account
 ---
 
 ## Usage
@@ -44,7 +45,7 @@ Before accepting this Policy, please note: We anticipate that they will change r
 8. That you will acquire no intellectual property rights over the software or any information we provide.
 9. That we may make reasonable changes to the Acceptable Use Policy at any time, and, once we have posted those changes on our website, the new version will then apply to you.
 10. The use of the REANNZ HPC Services and these Terms and Conditions are governed by New Zealand Law.
-11. If you have any questions about these Terms and Conditions, please email [REANNZ HPC Support](mailto:support@nesi.org.nz).
+11. If you have any questions about these Terms and Conditions, please email {% include "partials/support_request.html" %}.
 
 
 !!! info "NeSI-REANNZ Integration"

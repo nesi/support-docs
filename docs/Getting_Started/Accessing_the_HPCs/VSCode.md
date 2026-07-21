@@ -1,9 +1,8 @@
 ---
 created_at: 2024-08-05
 description: How to set up Visual Studio Code to access the Mahuika cluster
-tags: 
+tags:
     - ide
-    - vscode
     - access
 ---
 

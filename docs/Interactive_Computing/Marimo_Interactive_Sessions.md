@@ -1,14 +1,10 @@
 ---
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - Marimo
   - python
-  - notebook
 description: How to run a Marimo interactive session on the Mahuika cluster.
 ---
-
-# Marimo interactive sessions
 
 >If you are using a windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
 

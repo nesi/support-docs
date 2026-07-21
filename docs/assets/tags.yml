@@ -1,0 +1,167 @@
+# Canonical tag vocabulary.
+# Each key is the canonical tag name (used in tag-index.json and MkDocs).
+# 'display' is the human-readable label shown in the UI.
+# 'aliases' are alternative spellings found in frontmatter that map to this tag.
+
+slurm:
+  display: Slurm
+  aliases: [Slurm, scheduler, scheduling, array, Array, Queing, email]
+  # 'Queing' is a typo found in the wild; 'array' = job arrays; 'email' = Slurm job notifications
+
+gpu:
+  display: GPU
+  aliases: [GPU, gpgpu]
+
+mpi:
+  display: MPI
+  aliases: [MPI]
+
+openmp:
+  display: OpenMP
+  aliases: [omp, SMT, multithreading, hyper-threading, hyperthreading, simultaneous]
+
+machine_learning:
+  display: Machine Learning
+  aliases: [ml, ai, Machine Learning, machine learning, AI, llm]
+
+python:
+  display: Python
+  aliases: [Python, conda, anaconda, mamba, miniconda, ipython]
+
+containers:
+  display: Containers
+  aliases: [container, apptainer, docker, image, portable, reproducibility]
+
+storage:
+  display: Storage
+  aliases: [data storage, nobackup, localscratch, tmp, tmpdir, temp, freezer, Freezer, autocleaning]
+
+file_transfer:
+  display: File Transfer
+  aliases: [file transfer, data transfer, globus, globus subscription, winscp, filesender, s3cmd, sharing, share, secure]
+
+interactive:
+  display: Interactive Computing
+  aliases: [interactive, jupyter, JupyterHub, JupyterLab, notebook, lab, ipython, rstudio, ondemand, OnDemand, ood, Marimo, Pluto]
+
+software:
+  display: Software
+  aliases: [software, module, lmod, versions, environments, toolchain, install]
+
+version_control:
+  display: Version Control
+  aliases: [version control, git, github, gitlab, gitbash, gitea, bitbucket, repository]
+
+access:
+  display: Access
+  aliases: [access, ssh, login, mfa, MFA, identity, tuakiri, token, windows, wsl, putty, mobaxterm, terminal, x11, bash]
+
+profiling:
+  display: Profiling
+  aliases: [profiling, scaling, perf]
+
+chemistry:
+  display: Chemistry
+  aliases: [chemistry, Computational Chemistry, Density Functional Theory, QMMM, molecular dynamics, Molecular Dynamics]
+
+biology:
+  display: Biology
+  aliases: [biology, bio]
+
+engineering:
+  display: Engineering
+  aliases: [engineering, fea, cae, multiphysics]
+
+earth_science:
+  display: Earth Science
+  aliases: [earth_science, geo, climate, earthquake, climate_science, hydrodynamics, morphodynamics, wave modelling, water quality testing, cfd, particle modelling, modelling]
+
+mathematics:
+  display: Mathematics
+  aliases: [mathematics, math]
+
+visualisation:
+  display: Visualisation
+  aliases: [visualisation, visualization]
+
+workflow:
+  display: Workflow
+  aliases: [workflow, workflow_management]
+
+parallel:
+  display: Parallel Computing
+  aliases: [parallel]
+
+account:
+  display: Account & Allocations
+  aliases: [account, accounting, allocations, allocation, Allocations, project, projects, mynesi, request_membership]
+
+announcement:
+  display: Announcement
+  aliases: [announcement, info, digest, holidays, easter, refresh]
+
+release_notes:
+  display: Release Notes
+  aliases: [release notes, releasenote, hpc3]
+
+troubleshooting:
+  display: Troubleshooting
+  aliases: [troubleshooting, faq, help, corefile, busy, disk quota exceeded, long wait time, Long queue time]
+
+ide:
+  display: IDE
+  aliases: [ide, vscode, VSCode]
+
+r:
+  display: R
+  aliases: [R, rstudio]
+
+julia:
+  display: Julia
+  aliases: [Julia]
+
+checksum:
+  display: Checksum
+  aliases: [checksum, hash, md5, sha]
+
+fairshare:
+  display: Fair Share
+  aliases: [Fair Share, Fairshare, fairshare, Job priority]
+
+tutorial:
+  display: Tutorial
+  aliases: [tutorial, howto, intro, onboarding, cheat sheet]
+
+multiplexer:
+  display: Terminal Multiplexer
+  aliases: [multiplexer, tmux, screen, zellij]
+
+consultancy:
+  display: Consultancy
+  aliases: [consultancy]
+
+database:
+  display: Database
+  aliases: [database]
+
+cloud:
+  display: Cloud
+  aliases: [cloud, rdc, VM]
+  # Research Developer Cloud and virtual machine content.
+
+# -----------------------------------------------------------------------------
+# RETIRED TAGS — not added to vocabulary; produce a warning if used.
+# Remove these from page frontmatter or replace with a canonical tag above.
+# -----------------------------------------------------------------------------
+# compute / Compute   — too generic; use slurm or parallel
+# general             — too generic; remove from pages
+# language            — too generic; remove from pages
+# tips                — too generic; remove from pages
+# sinfo               — too specific (one command); remove from pages
+# view                — too generic; remove from pages
+# hpc                 — too generic; remove from pages
+# tqp                 — internal NeSI term; remove from pages
+# locate / find       — too specific; remove from pages
+# config              — too generic; remove from pages
+# no_toc / no_lic / no_desc / no_ver — internal template flags, NOT tags.
+#   Move these to a separate 'flags' frontmatter key or MkDocs 'hide' config.

@@ -3,7 +3,7 @@ created_at: '2026-05-13'
 description: "Centrally maintained large language models available on Mahuika at /opt/nesi/models."
 tags:
     - gpu
-    - machine learning
+    - machine_learning
     - storage
 hide: toc
 ---

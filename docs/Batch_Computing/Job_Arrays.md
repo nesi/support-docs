@@ -1,10 +1,9 @@
 ---
 created_at: 2025-12-09
 description: How to utilise job arrays. 
-tags: 
+tags:
     - slurm
     - parallel
-    - array
 ---
 
 

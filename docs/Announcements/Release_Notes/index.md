@@ -1,6 +1,7 @@
 ---
 created_at: '2021-02-23T19:52:34Z'
-tags: []
+tags:
+- release_notes
 title: Release Notes
 ---
 

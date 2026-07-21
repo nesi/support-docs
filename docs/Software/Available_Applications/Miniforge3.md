@@ -1,12 +1,8 @@
 ---
 created_at: '2020-06-23T23:10:13Z'
-tags: 
+tags:
   - python
-  - environments
-  - conda
-  - anaconda
-  - miniconda
-  - mamba
+  - software
 ---
 
 {% set app_name = page.title | trim %}
@@ -92,7 +88,7 @@ where `<project_code>` should be replace with your project code. This
 setting is saved in your `~/.condarc` configuration file.
 !!! prerequisite Note
      Your package cache will be subject to the nobackup autodelete process
-     (details available in the [Nobackup autodelete](../../Storage/Automatic_cleaning_of_nobackup.md)
+     (details available in the [Nobackup autodelete](../../Storage/Automatic_Cleaning_of_Nobackup.md)
      support page). The package cache folder is for temporary storage so it
      is safe if files within the cache folder are removed.
 

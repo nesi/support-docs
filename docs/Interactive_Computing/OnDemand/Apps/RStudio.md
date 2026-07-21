@@ -1,5 +1,9 @@
-# RStudio via OnDemand
-
+---
+created_at: 2026-07-15
+description: How to use RStudio via OnDemand
+tags: 
+    - OnDemand
+---
 
 ## Logging in
 ![UPDATE WITH PROJECT](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png){width=35%} ![](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png){fig.align="right" width=62%}

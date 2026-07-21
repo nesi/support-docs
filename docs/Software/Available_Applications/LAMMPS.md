@@ -1,8 +1,7 @@
 ---
 created_at: '2025-10-12T08:00:00Z'
-tags: 
-  -  Molecular Dynamics
-  -  chemistry
+tags:
+  - chemistry
 description: How to run LAMMPS on the Mahuika cluster
 ---
 

@@ -2,11 +2,7 @@
 created_at: '2020-06-26T06:09:34Z'
 description: How to run Delft3D hydrodynamic and morphodynamic modelling on NeSI.
 tags:
- - hydrodynamics
- - morphodynamics
- - particle modelling
- - water quality testing
- - wave modelling
+ - earth_science
 ---
 
 {% set app_name = "Delft3D_FM" %}
