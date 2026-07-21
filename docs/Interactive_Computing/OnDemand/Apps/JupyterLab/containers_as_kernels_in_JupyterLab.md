@@ -425,7 +425,9 @@ tool-assisted or manual approach:
 
 ## Removing a kernel
 
-To delete a specific kernel, run:
+<h3 id="remove-a-user-specific-kernel">Remove a user-specific kernel</h3>
+
+To delete a user-specific kernel, run:
 
 ``` sh
 module purge
@@ -436,3 +438,15 @@ jupyter-kernelspec remove <kernel_name>
 
 where `<kernel_name>` is the name of the kernel to delete, as shown by
 `jupyter-kernelspec list`.
+
+<h3 id="remove-a-shared-kernel">Remove a shared kernel</h3>
+
+If the kernel was shared with your project, it instead lives in the project
+folder. Delete the kernel's directory:
+
+``` sh
+rm -r /nesi/project/<ACCOUNT_ID>/.jupyter/share/jupyter/kernels/<KERNEL_NAME>
+```
+
+where `<ACCOUNT_ID>` is your project's account code and `<KERNEL_NAME>` is the name of
+the kernel to delete.
