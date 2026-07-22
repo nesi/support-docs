@@ -2,11 +2,7 @@
 created_at: '2022-04-12T05:07:17Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.8.0
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4657696117647
-zendesk_section_id: 360001091155
+title: my.nesi.org.nz Release Notes v2.8.0
 search:
   boost: 0.1
 ---
@@ -16,7 +12,7 @@ search:
 ## New and Improved
 
 -   Improved [NeSI Notification
-    Preferences](../../../Getting_Started/my-nesi-org-nz/Managing_notification_preferences.md)
+    Preferences](../../../Getting_Started/my-nesi-org-nz/Managing_Notification_Preferences.md)
     to be project-specific
 
 -   Improved [allocation renewal

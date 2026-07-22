@@ -1,4 +1,9 @@
-# VS Code via OnDemand
+---
+created_at: 2026-07-15
+description: Using VScode via OnDemand
+tags: 
+    - OnDemand
+---
 
 ## Introduction
 

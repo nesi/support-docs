@@ -19,7 +19,7 @@ For differences between the new platforms and Mahuika, see the more permanent [d
 * Missing user Namespaces in Kubernetes pods will interfere with most Apptainer operations.  One can run `apptainer pull` command, `apptainer exec,run,shell` commands can not be executed.
 
 ## Core dump files
-Contrary to what is stated in [our documentation on core files](../Getting_Started/FAQs/What_is_a_core_file.md), these are not currently available, even if `ulimit -c unlimited` is set.
+Contrary to what is stated in [our documentation on core files](../Getting_Started/FAQs/What_Is_a_Core_File.md), these are not currently available, even if `ulimit -c unlimited` is set.
 
 ## Software
 * FileSender - If you modify the `default_transfer_days_valid` parameter in your `~/.filesender/filesender.py.ini` to > 20 it will cause the transfer to fail with a 500 error code.  Please do not modify this parameter.

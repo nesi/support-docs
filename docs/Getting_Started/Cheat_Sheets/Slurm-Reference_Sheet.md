@@ -61,7 +61,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--ntasks`          | ``#SBATCH --ntasks=2 ``          | Will start 2 [MPI](../../Software/Parallel_Computing/Parallel_Computing.md) tasks.                                           |
 | `--ntasks-per-node` | `#SBATCH --ntasks-per-node=1` | Will start 1 task per requested node.                                                                                   |
 | `--cpus-per-task`   | `#SBATCH --cpus-per-task=10`  | Will request 10 [*logical* CPUs](../../Software/Parallel_Computing/Simultaneous_Multithreading.md) per task. |
-| `--mem-per-cpu`     | `#SBATCH --mem-per-cpu=512MB` | Memory Per *logical* CPU. `--mem`  Should be used if shared memory job. See [How do I request memory?](../FAQs/How_do_I_request_memory.md) |
+| `--mem-per-cpu`     | `#SBATCH --mem-per-cpu=512MB` | Memory Per *logical* CPU. `--mem`  Should be used if shared memory job. See [How do I request memory?](../FAQs/How_Do_I_Request_Memory.md) |
 | --array | `#SBATCH --array=1-5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (1,2,3,4,5). |
 | | `#SBATCH --array=0-20:5` | Will submit job 5 times each with a different `$SLURM_ARRAY_TASK_ID` (0,5,10,15,20). |
 | | `#SBATCH --array=1-100%10` | Will submit 1 though to 100 jobs but no more than 10 at once. |

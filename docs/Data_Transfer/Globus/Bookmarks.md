@@ -2,7 +2,6 @@
 created_at: '2018-05-29T04:01:33Z'
 tags:
 - file_transfer
-title: Bookmarks
 ---
 
 Borkmarks are a convenient way to quicky open a `Path` of an `Collection` very quickly.

@@ -2,11 +2,9 @@
 created_at: '2022-03-24T22:11:13Z'
 tags:
     - multiplexer
-title: 'tmux: Reference sheet'
+title: 'Tmux: Reference Sheet'
 vote_count: 1
 vote_sum: 1
-zendesk_article_id: 4563511601679
-zendesk_section_id: 360000278975
 ---
 
 ## tmux

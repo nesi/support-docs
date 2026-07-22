@@ -1,5 +1,5 @@
 ---
-title: Containers as kernels in JupyterLab
+title: Containers as Kernels in JupyterLab
 description: How to use containers as kernels in JupyterLab on Mahuika
 tags:
     - JupyterHub
@@ -22,9 +22,9 @@ There are two ways to run a container as a kernel; select the tab that suits you
     To use containers you must launch your Jupyter session with **Cluster** set
     to **Slurm HPC** and the **JupyterLab module** set to
     **2026.7.0-foss-2026-4.6.0**. If you do not see **Slurm HPC** in the
-    **Cluster** list, [get in touch](mailto:support@nesi.org.nz).
+    **Cluster** list, {% include "partials/support_request.html" %}.
 
-    <p align="center"><img alt="JupyterLab launch form with Cluster set to Slurm HPC and JupyterLab module set to 2026.7.0-foss-2026-4.6.0" src="../../../../assets/images/OOD_jupyter_form_containers.png" width="400"></p>
+    <p align="center"><img alt="JupyterLab launch form with Cluster set to Slurm HPC and JupyterLab module set to 2026.7.0-foss-2026-4.6.0" src="../../../../../assets/images/OOD_jupyter_form_containers.png" width="400"></p>
 
 === "Tool-Assisted Management"
 
@@ -425,7 +425,9 @@ tool-assisted or manual approach:
 
 ## Removing a kernel
 
-To delete a specific kernel, run:
+<h3 id="remove-a-user-specific-kernel">Remove a user-specific kernel</h3>
+
+To delete a user-specific kernel, run:
 
 ``` sh
 module purge
@@ -436,3 +438,15 @@ jupyter-kernelspec remove <kernel_name>
 
 where `<kernel_name>` is the name of the kernel to delete, as shown by
 `jupyter-kernelspec list`.
+
+<h3 id="remove-a-shared-kernel">Remove a shared kernel</h3>
+
+If the kernel was shared with your project, it instead lives in the project
+folder. Delete the kernel's directory:
+
+``` sh
+rm -r /nesi/project/<ACCOUNT_ID>/.jupyter/share/jupyter/kernels/<KERNEL_NAME>
+```
+
+where `<ACCOUNT_ID>` is your project's account code and `<KERNEL_NAME>` is the name of
+the kernel to delete.

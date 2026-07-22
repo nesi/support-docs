@@ -2,11 +2,7 @@
 created_at: '2023-06-13T04:45:48Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.16.0
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7187453852815
-zendesk_section_id: 360001091155
+title: my.nesi.org.nz Release Notes v2.16.0
 search:
   boost: 0.1
 ---
