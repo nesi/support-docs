@@ -503,7 +503,7 @@
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/containers_as_kernels_in_JupyterLab.md"
         },
         {
-            "title": "index",
+            "title": "JupyterLab",
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/index.md"
         },
         {
@@ -511,7 +511,7 @@
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
-            "title": "MATLAB via OnDemand",
+            "title": "MATLAB",
             "path": "Interactive_Computing/OnDemand/Apps/MATLAB.md"
         },
         {
@@ -527,7 +527,7 @@
             "path": "Interactive_Computing/OnDemand/Apps/VSCode.md"
         },
         {
-            "title": "Virtual Desktop via OnDemand",
+            "title": "Virtual Desktop",
             "path": "Interactive_Computing/OnDemand/Apps/Virtual_Desktop.md"
         },
         {
@@ -969,7 +969,7 @@
     ],
     "mathematics": [
         {
-            "title": "MATLAB via OnDemand",
+            "title": "MATLAB",
             "path": "Interactive_Computing/OnDemand/Apps/MATLAB.md"
         },
         {
