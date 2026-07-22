@@ -5,6 +5,8 @@ tags:
     - OnDemand
 ---
 
+# JupyterLab
+
 ## Introduction
 
 Mahuika supports the use of [Jupyter](https://jupyter.org/) for interactive computing.
