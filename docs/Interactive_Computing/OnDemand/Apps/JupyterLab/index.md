@@ -1,11 +1,10 @@
 ---
+title: JupyterLab
 created_at: 2026-07-15
 description: How to use jupyterhub through OnDemand.
 tags: 
     - OnDemand
 ---
-
-# JupyterLab
 
 ## Introduction
 
