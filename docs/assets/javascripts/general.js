@@ -1,23 +1,24 @@
-const MEETING_LINK = "https://reannz.zoom.us/j/84237671321?pwd=rLLqWtE2bwmKaD1yjJ1bp3CPhlfaw8.1";
+const BACKUP_MEETING_LINK = "https://reannz.zoom.us/j/84237671321?pwd=rLLqWtE2bwmKaD1yjJ1bp3CPhlfaw8.1";
 
 function changeVersion(app, version, warn = false) {
     // Sets the module load example to use the selected version
-    document.getElementById("mod_" + app.toLowerCase() + "_code").innerHTML = `module load ${app}/${version}`
-    document.querySelectorAll(".md-tags-ver-" + app.toLowerCase() + ">.md-tag-ver-shown").forEach((e) => e.classList.remove("md-tag-ver-shown"))
-    document.getElementById("mod_" + app.toLowerCase() + "_" + version).classList.add("md-tag-ver-shown")
+    const appLower = app.toLowerCase();
+    const versionEl = document.getElementById(`mod_${appLower}_${version}`);
+    const warnEl = document.getElementById(`mod_${appLower}_warn`);
+
+    document.getElementById(`mod_${appLower}_code`).innerHTML = `module load ${app}/${version}`
+    document.querySelectorAll(`.md-tags-ver-${appLower}>.md-tag-ver-shown`).forEach((e) => e.classList.remove("md-tag-ver-shown"))
+    versionEl.classList.add("md-tag-ver-shown")
     if (warn) {
-        document.getElementById("mod_" + app.toLowerCase() + "_warn").style.display = "block";
-        document.getElementById("mod_" + app.toLowerCase() + "_warn").querySelector("p.warning-text").innerHTML = document.getElementById("mod_" + app.toLowerCase() + "_" + version).title;
+        warnEl.style.display = "block";
+        warnEl.querySelector("p.warning-text").innerHTML = versionEl.title;
     } else {
-        document.getElementById("mod_" + app.toLowerCase() + "_warn").style.display = "none";
+        warnEl.style.display = "none";
     }
-    // ew. so gross
 }
 
 function toggle(id) {
     var item = document.getElementById(id);
-    console.log(id);
-    console.log(item);
     if (item) {
         if (item.classList.contains("hidden")) {
             item.classList.remove("hidden")
@@ -25,40 +26,52 @@ function toggle(id) {
         else {
             item.classList.add("hidden")
         }
-    } else {
-        console.log(item)
+    }
+}
+
+// Shared by showOfficeBanner (this file) and displayOfficeHoursCalendar
+// (officeHours.js) so both pull the same calendar data the same way.
+// Returns the parsed vevent list, or null if the fetch/parse failed.
+async function fetchCalendarEvents() {
+    const text = await fetch("/assets/training_calendar.ics")
+        .then(r => r.ok ? r.text() : "");
+    if (!text) {
+        console.warn("failed to load calendar");
+        return null;
+    }
+    try {
+        const jcal = ICAL.parse(text);
+        const comp = new ICAL.Component(jcal);
+        return comp.getAllSubcomponents('vevent');
+    } catch (error) {
+        console.warn("ICAL parsing failed", error);
+        return null;
     }
 }
 
 async function showOfficeBanner() {
-    const text = await fetch("/assets/training_calendar.ics")
-        .then(r => r.ok ? r.text() : "");
-    if (!text) { console.warn("failed to load calendar ") };
+    if (document.getElementById("calendar-banner")) return;
+
+    const vevents = await fetchCalendarEvents();
+    if (!vevents) return;
 
     const now = new Date();
-    try {
-        const jcal = ICAL.parse(text);
-        const comp = new ICAL.Component(jcal);
-        const vevents = comp.getAllSubcomponents('vevent');
-        for (const vevent of vevents) {
-            const dtstart = vevent.getFirstPropertyValue('dtstart');
-            const date = dtstart.toJSDate();
-            // if today
-            if (now.toDateString() == date.toDateString()) {
-                // if not finished.
-                if (now.getTime() < date.getTime() + 3600000) {
-                    // if not started
-                    if (now < date) {
-                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`, "calendar-banner");
-                    } else {
-                        addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`, "calendar-banner");
-                    }
+    for (const vevent of vevents) {
+        const dtstart = vevent.getFirstPropertyValue('dtstart');
+        const date = dtstart.toJSDate();
+        // if today
+        if (now.toDateString() == date.toDateString()) {
+            // if not finished.
+            if (now.getTime() < date.getTime() + 3600000) {
+                // if not started
+                if (now < date) {
+                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on today, starting ${date.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}. Drop in for any queries.`, "calendar-banner");
+                } else {
+                    addBanner(`<p><a href="https://docs.nesi.org.nz/Getting_Started/Getting_Help/Weekly_Online_Office_Hours/">Weekly Online Office Hour</a> on now.     <a href="${BACKUP_MEETING_LINK}">Join Zoom Meeting Now</a> for any queries.</p>`, "calendar-banner");
                 }
-                break;
             }
+            break;
         }
-    } catch (error) {
-        console.warn("ICAL parsing failed", error);
     }
 }
 
@@ -66,8 +79,7 @@ async function showOfficeBanner() {
 function addBanner(msg, id) {
     const banner = document.createElement("div");
     banner.id = id;
-    banner.classList += "md-typeset ";
-    banner.classList += "md-event-banner "
+    banner.classList.add("md-typeset", "md-event-banner");
     banner.innerHTML = msg;
 
     const btn = document.createElement("button");
@@ -78,19 +90,11 @@ function addBanner(msg, id) {
     document.body.prepend(banner);
 }
 
-// Formats ISO standard date string into Date object.
-function format8601(str){
-    const dateStringFormatted = 
-        str.substring(0, 4) + '-' +
-        str.substring(4, 6) + '-' +
-        str.substring(6, 8) + 'T' +
-        str.substring(9, 11) + ':' + 
-        str.substring(11, 13) + ':' +
-        str.substring(13, 15);
-    return new Date(dateStringFormatted);
-}
-
+// Support both full page load and Material's instant (SPA-style) navigation.
 showOfficeBanner();
+if (typeof document$ !== 'undefined') {
+    document$.subscribe(showOfficeBanner);
+}
 
 // The status.nesi.org.nz (Statuspage) embed leaves its iframe both
 // aria-hidden and tabindex="0" while collapsed, so keyboard users can
@@ -123,11 +127,4 @@ new MutationObserver((mutations) => {
     childList: true,
     subtree: true,
 });
-
-// Remove me later
-// showOfficeBanner().then(() => {
-//     if (!document.getElementById("calendar-banner")){
-//         addBanner(`<p>Registrations now open for <a href=https://www.eventbrite.co.nz/e/introduction-to-high-performance-computing-hpc-carpentry-tickets-1984247473608>Introduction to HPC Carpentry Workshop</a> on 24th March from 10am to 3pm.</p>`, 'workshop-banner');
-//     }
-// });
 
