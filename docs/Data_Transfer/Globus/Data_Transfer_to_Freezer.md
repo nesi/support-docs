@@ -44,18 +44,25 @@ You will need to have a Globus account to access Freezer via Globus. Please see 
 
     ![Globus_Freezer_Credentials_Completed.png](../../assets/images/Globus_Freezer_Credentials_Completed.png)
 
+!!! warning "Freezer Secret Key reset"
+    If you have reset your Freezer Secret you will need to update it by searching for the collection and clicking the three dots on the far right to open the collection settings.
+    Then move to the 'Credentials' tab and edit your AWS access key with the new Freezer Secret Key.
+    ![Globus_Freezer_Secret_Reset](../../assets/images/Globus_Freezer_Secret_Reset.png)
+    
+
 ## Freezer Endpoint
 
 Note that modification times are preserved only for files.
-- Files: The displayed modification date reflects the file's original modification time.
-- Folders: Folder modification times are not preserved by the Globus Freezer collection and will always appear as 1 January 1970 (Unix epoch).
+
+-   Files: The displayed modification date reflects the file's original modification time.
+-   Folders: Folder modification times are not preserved by the Globus Freezer collection and will always appear as 1 January 1970 (Unix epoch).
 
 This is expected behaviour and does not affect the integrity or accessibility of your archived data.
 
 1. Go to the File Manager on the left hand menu and search for the collection `{{ globus_collection_freezer}}`.
     ![Globus_Freezer_EP.png](../../assets/images/Globus_Freezer_EP.png)
 
-2. Under 'Path', type in your Freezer bucket e.g., `nesi99991-12345` and press <kbd>Enter</kbd>. you should now see the contents of your bucket.
+2. Under 'Path', type in your Freezer bucket e.g., `/nearline-9776/` and press <kbd>Enter</kbd>. You should now see the contents of your bucket.
 ![Globus_Freezer_Load_Bucket.png](../../assets/images/Globus_Freezer_Load_Bucket.png)
 
 If you initiate a transfer of offline data (only on tape - Glacier) from Freezer, the data will be automatically staged from tape before the transfer begins.
