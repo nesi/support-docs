@@ -3,13 +3,8 @@ created: 2026-06-12
 tags:
     - ondemand
     - slurm
-    - composer
-    - job script
-    - batch
 description: How to build, submit and manage Slurm batch jobs from your browser using the Slurm Composer app on Mahuika OnDemand.
 ---
-
-# Slurm Composer
 
 ## Introduction
 
@@ -23,7 +18,7 @@ It is well suited to people who are new to the command line, and to anyone who w
 ## Opening Slurm Composer
 
 1. Log in to [Mahuika OnDemand](https://ondemand.nesi.org.nz/).
-2. From the top menu choose **Interactive Apps → Slurm Composer** (or open the Slurm Composer tile).
+2. From the top menu choose **Jobs → Slurm Composer** (or open the Slurm Composer tile).
 
 The home page is the **Selected Templates** page:
 
@@ -46,7 +41,7 @@ The main fields are:
 | Field | What it sets | Slurm option |
 | ----- | ------------ | ------------ |
 | **Project** | The project code your usage is charged to. Only projects you belong to are listed. | `--account` |
-| **Partition** | The type of node to run on. Choose **any** if you have no preference. Options are either `genoa` or `milan`. [See here for more information about the nodes that make up these partitions](../../../Batch_Computing/Hardware.md#compute-nodes). | `--partition` |
+| **Partition** | The type of node to run on. Choose **any** if you have no preference. Options are either `genoa` or `milan`. [More information about the nodes that make up these partitions](../../../Batch_Computing/Hardware.md#compute-nodes). | `--partition` |
 | **Number of CPUs** | How many CPU cores to request. | `--cpus-per-task` |
 | **Number of Nodes** | How many nodes to spread the job over (leave blank for the default). | `--nodes` |
 | **Total Memory (GB)** | Total RAM for the whole job. | `--mem` |
@@ -99,7 +94,7 @@ Click **Load or Create a Script from Disk** (on the Selected Templates page, and
 
 It works much like the OnDemand **Files** app:
 
-- **Navigate** by clicking folders, the breadcrumb trail, the **Home** and **Up** buttons, or by typing a path straight into the path box. **Refresh** re-reads the current folder, and your browser's Back/Forward buttons step through the folders you have visited.
+- **Navigate** by clicking folders, the **Home** and **Up** buttons, or by typing a path straight into the path box. **Refresh** re-reads the current folder, and your browser's Back/Forward buttons step through the folders you have visited.
 - **Sort** by clicking the **Name**, **Size** or **Modified** headings; **Filter** the list by typing in the filter box; and tick **Show hidden** to include dot-files or **Owner & mode** to show each entry's owner and permissions.
 
 ### Load an existing script
@@ -108,7 +103,7 @@ Click a `.sl`, `.sh`, `.sbatch`, `.batch` or `.slurm` file to open it in the Slu
 
 ### Create a new script
 
-Click **New Script** to start a new one. This opens a template picker listing every template — with **Job Script (Slurm)** and **GPU Job Script (Slurm)** at the top — which you can narrow with the search box.
+Click **New Script** to start a new one. This opens a template picker listing every template — with **Job Script (Slurm)** and **GPU Job Script (Slurm)** at the top — which you can narrow with the search box at the top right of the screen.
 
 ![Choosing a template for a new script](../../../assets/images/Slurm_Composer_new_script.png)
 
@@ -162,7 +157,7 @@ Each row shows a percentage followed by *used* **of** *requested*:
 - **GPU Utilisation** / **GPU Memory** — shown for GPU jobs, indicating how hard the GPU and its memory were worked.
 
 !!! tip "Right-size your next job"
-    Use these numbers to adjust your next submission. If **Memory** sits well below 100%, lower **Total Memory (GB)**; if **CPU** efficiency is low, request fewer CPUs; and if **Wall Time** is a small fraction of your limit, shorten the time request. Asking for closer to what you actually use means your jobs start sooner and leave resources free for others.
+    Use these numbers to adjust your next submission. If **Memory** sits well below 100%, lower **Total Memory (GB)**; if **CPU** efficiency is low, request fewer CPUs; and if **Wall Time** is a small fraction of your limit, shorten the time request. Asking for closer to what you actually use means your jobs start sooner and leave resources free for others. If you are unsure about how to improve these numbers, [contact Mahuika Support](https://www.nesi.org.nz/support/getting-help) and we will be happy to help.
 
 ## Checking node availability (Nodes)
 

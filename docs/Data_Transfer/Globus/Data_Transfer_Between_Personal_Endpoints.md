@@ -9,12 +9,12 @@ It is possible to copy files between two computers/servers using Globus. This ex
 
 ## Signing into your **Free** Globus Subscription
 
-First you need to sign up with a Globus Subscription. **This is free** for Mahuika users, but not required for trasferring data to or from Mahuika. [Click here to learn about how to sign up for a free Globus Subscription](./Signing_Up_To_Globus_Subscription.md).
+First you need to sign up with a Globus Subscription. **This is free** for Mahuika users, but not required for trasferring data to or from Mahuika. [Learn how to sign up for a free Globus Subscription](./Signing_Up_To_Globus_Subscription.md).
 
 ## Transferring files between two computers
 
 Once you have been accept to the NeSI/REANNZ Globus Subscription, [we will follow a similar guide for transferring data as
-given here](./Data_Transfer_using_Globus.md#transferring-data-using-globus), where instead of transferring data between your `collection`
+given here](./Data_Transfer_Using_Globus.md#transferring-data-using-globus), where instead of transferring data between your `collection`
 and Mahuika, you transfer data between your two computers/servers.
 
 Here is a break down of what you need to do:

@@ -1,8 +1,8 @@
 ---
+title: VASP
 created_at: '2015-09-08T03:11:50Z'
 tags:
 - chemistry
-title: VASP
 ---
 
 [//]: <> (APPS PAGE BOILERPLATE START)
@@ -193,7 +193,7 @@ VASP modules containing *\*-NVHPC-\** in the name have been built with GPU suppo
 
 VASP can run really well on GPUs, although how much you will benefit from GPUs largely depends on the specific simulation/calculation that you are running. As usual, it could be useful to run some smaller benchmarks with different GPU and CPU-only configurations in your slurm scripts, before moving on to run larger production simulations. When considering which configuration to use for production you should take into account performance and compute unit cost.
 
-See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for further instructions, and [Hardware](../../Batch_Computing/Hardware.md#gpgpus) for full GPU specifications.
+See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for further instructions, and [Hardware](../../Batch_Computing/Hardware.md#gpus) for full GPU specifications.
 
 Some additional notes specific to running VASP on GPUs:
 
@@ -214,7 +214,7 @@ Some additional notes specific to running VASP on GPUs:
 
 ## VASP extensions
 
-If you are wondering what extensions our VASP modules have been built with, please email the [Support Team](mailto:support@nesi.org.nz). You can also check what precompiler options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.
+If you are wondering what extensions our VASP modules have been built with, please email the {% include "partials/support_request.html" %}. You can also check what precompiler options (used to activate/deactivate certain code features at the time of compilation) were included when the module was built by loading a module and running `vasp_std --cpp-options`.
 
 ## References
 

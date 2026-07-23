@@ -4,6 +4,6 @@ nav:
   - JupyterLab
   - RStudio.md
   - VSCode.md
-  - virtual_desktop.md
   - MATLAB.md
+  - Virtual_Desktop.md
   - "*"

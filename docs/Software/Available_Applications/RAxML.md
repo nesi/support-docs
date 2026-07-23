@@ -2,11 +2,8 @@
 created_at: '2017-12-11T07:58:07Z'
 tags:
 - biology
-title: RAxML
 vote_count: 1
 vote_sum: 1
-zendesk_article_id: 115001854444
-zendesk_section_id: 360000040076
 ---
 
 
@@ -27,7 +24,7 @@ phylogenetic trees. The RAxML home page is at
 RAxML is licensed under the terms of the GNU General Public License
 ("the GPL"), version 2 or (at your option) any later version. A copy of
 version 3 of the GPL as included with the RAxML software is available
-[here](https://github.com/stamatak/standard-RAxML/blob/master/gpl-3.0.txt).
+[in the RAxML repository](https://github.com/stamatak/standard-RAxML/blob/master/gpl-3.0.txt).
 
 ## Example scripts
 

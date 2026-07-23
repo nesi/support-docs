@@ -2,11 +2,7 @@
 created_at: '2024-03-20T19:53:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.21.0
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 9329030038543
-zendesk_section_id: 360001091155
+title: my.nesi.org.nz Release Notes v2.21.0
 search:
   boost: 0.1
 ---
@@ -20,7 +16,7 @@ search:
     items under Accounts.
 - On the Project page and New Allocation Request page, tool tip text
     referring to
-    [nn\_corehour\_usage](../../../Batch_Computing/Checking_resource_usage.md)
+    [nn\_corehour\_usage](../../../Batch_Computing/Checking_Resource_Usage.md)
     will appear when you hover over the Mahuika Compute Units
     information.
 

@@ -43,7 +43,7 @@ existing accounts** then scan the QR code provided on the old device.
 
 ## How do I get new authentication credentials?
 
-See article [How to replace my authentication credentials](./How_do_I_replace_my_Additional_Authentication_Credentials.md).
+See article [How to replace my authentication credentials](./How_Do_I_Replace_My_Additional_Authentication_Credentials.md).
 
 ## Can I use the same 6-digit code again?
 

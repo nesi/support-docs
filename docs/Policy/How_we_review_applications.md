@@ -2,11 +2,8 @@
 created_at: '2018-05-18T02:26:58Z'
 tags:
 - account
-title: How we review applications
+title: How We Review Applications
 vote_count: 2
-vote_sum: 0
-zendesk_article_id: 360000202136
-zendesk_section_id: 360000224835
 ---
 
 When you submit your application through our web site, it will go to our
@@ -44,7 +41,7 @@ new projects is as follows:
 5. **Decision and notification:** If we approve an initial allocation
     for your project, we will typically award the project an
     [allocation of compute units and also an online storage allocation](../Getting_Started/Allocations/What_is_an_allocation.md),
-    from one of [our allocation classes](Allocation_classes.md).
+    from one of [our allocation classes](Allocation_Classes.md).
     In an case, we will send you an email telling you about our decision.
 
 Our review process for requests for new allocations on existing projects
@@ -53,10 +50,10 @@ is simpler:
 1. **Eligibility check:** We look at the information you have given us
     (and may ask you more questions) to find out which of our regular
     allocation classes
-    ([Merit](Allocation_classes.md#merit),
-    [Postgraduate](Allocation_classes.md#postgraduate)
+    ([Merit](Allocation_Classes.md#merit),
+    [Postgraduate](Allocation_Classes.md#postgraduate)
     or
-    [Institutional](Allocation_classes.md#institutional))
+    [Institutional](Allocation_Classes.md#institutional))
     this research programme is eligible to receive. Your research
     programme may be eligible for more than one allocation class.
 2. **Amount and duration:** We will calculate the approximate amount of
@@ -69,7 +66,7 @@ is simpler:
 3. **Choice of Class and Contention:** We will choose from which class
     to award your allocation, based on your research programme's
     eligibility for the different classes and whether your proposed
-    allocation would exceed [any class-based allocation limits](Allocation_classes.md).
+    allocation would exceed [any class-based allocation limits](Allocation_Classes.md).
     We may change this choice depending on which classes, if any, are
     under contention.
 4. **Approval:** If we decide that your project should be considered for an Institutional allocation, the request may need to be approved

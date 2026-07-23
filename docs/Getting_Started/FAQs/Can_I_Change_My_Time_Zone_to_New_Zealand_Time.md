@@ -29,7 +29,7 @@ latter but not the former:
 test -r ~/.bashrc && . ~/.bashrc
 ```
 
-Please see the article, [.bashrc or.bash profile?](What_are_my-bashrc_and-bash_profile_for.md)
+Please see the article, [.bashrc or.bash profile?](What_Are_My-Bashrc_and-Bash_Profile_For.md)
 for more information.
 
 ## What about cron jobs?

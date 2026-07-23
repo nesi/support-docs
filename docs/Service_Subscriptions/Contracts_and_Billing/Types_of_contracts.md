@@ -2,11 +2,7 @@
 created_at: '2023-07-05T23:23:28Z'
 tags:
 - account
-title: Types of contracts
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7348950467343
-zendesk_section_id: 7348936006031
+title: Types of Contracts
 ---
 
 Typically our Subscription contracts are based on one-year terms and
@@ -37,4 +33,4 @@ We are also happy to discuss other custom options for things like our
 [Training service](https://www.reannz.co.nz/products-and-services/training).
 
 If you have any questions or would like to discuss our subscription
-terms or invoicing schedule in more detail, [get in touch](mailto:support@nesi.org.nz).
+terms or invoicing schedule in more detail, {% include "partials/support_request.html" %}.

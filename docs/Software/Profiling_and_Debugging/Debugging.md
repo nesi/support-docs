@@ -4,8 +4,6 @@ tags:
 - profiling
 vote_count: 1
 vote_sum: 1
-zendesk_article_id: 360001008136
-zendesk_section_id: 360000278935
 ---
 
 !!! warning
@@ -90,7 +88,7 @@ statements without touching the code.
 
 ![DDT-offline-example.PNG](../../assets/images/Debugging.PNG)
 
-[See full example page here.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
+[See the full example page.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
 
 For more detailed information see [DDT manual](https://developer.arm.com/docs/101136/latest/ddt/offline-debugging).
 

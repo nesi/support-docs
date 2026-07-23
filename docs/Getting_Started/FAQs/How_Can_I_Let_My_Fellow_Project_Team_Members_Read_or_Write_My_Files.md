@@ -8,7 +8,7 @@ description: Instructions for giving project team members read or write access t
 
 !!! tip "See also"
      [File permissions and
-     groups](../../Storage/File_permissions_and_groups.md)
+     groups](../../Storage/File_Permissions_and_Groups.md)
 
 If you move or copy a file or directory from one project directory to
 another, or from somewhere within your home directory to somewhere
