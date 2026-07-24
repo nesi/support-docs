@@ -122,9 +122,38 @@ plugins:
       enable_creation_date: false
   - macros:
       on_error_fail: true
-      verbose: true 
+      verbose: true
       module_name: macro_hooks
       include_dir: overrides
+  - llmstxt:
+      markdown_description: >-
+        NeSI Mahuika HPC support documentation: getting access, running batch jobs
+        with Slurm, available software and modules, storage and data transfer,
+        interactive computing (Jupyter, OnDemand), and platform policies.
+      sections:
+        Announcements:
+          - Announcements/*.md
+        Getting Started:
+          - Getting_Started/**/*.md
+        Software:
+          - Software/**/*.md
+        Batch Computing:
+          - Batch_Computing/**/*.md
+        Interactive Computing:
+          - Interactive_Computing/**/*.md
+        Storage:
+          - Storage/**/*.md
+        Data Transfer:
+          - Data_Transfer/**/*.md
+        Policy:
+          - Policy/**/*.md
+        Service Subscriptions:
+          - Service_Subscriptions/**/*.md
+        Tutorials:
+          - Tutorials/**/*.md
+        Reference:
+          - GLOSSARY.md
+          - index.md
 extra_css:
   - assets/stylesheets/theme.css
 extra_javascript:
