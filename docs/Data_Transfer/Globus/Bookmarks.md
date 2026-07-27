@@ -12,11 +12,11 @@ To create a new bookmark:
 
 1. In the `File Manager` tab, open the collection you are interested in and find your way to the
 `Path` you are interested in bookmarking. Then click the bookmark icon.
-    ![Globus_Bookmarking_1.png](../../assets/images/Globus_Bookmarking_1.png)
+    ![Clicking the bookmark icon in the Globus File Manager](../../assets/images/Globus_Bookmarking_1.png)
 2. Give a name to your bookmark and click `Create Bookmark`.
-    ![Globus_Bookmarking_2.png](../../assets/images/Globus_Bookmarking_2.png)
+    ![Entering a name for the bookmark and clicking Create Bookmark](../../assets/images/Globus_Bookmarking_2.png)
 3. This will create a bookmark, and make the bookmark icon go gold.
-    ![Globus_Bookmarking_3.png](../../assets/images/Globus_Bookmarking_3.png)
+    ![The bookmark icon turning gold after successful creation](../../assets/images/Globus_Bookmarking_3.png)
 
 ## Select a bookmark
 
