@@ -1,6 +1,9 @@
 ---
 created_at: 2026-01-16
 status: tutorial
+tags:
+- tutorial
+- slurm
 ---
 
 !!! time "30 Minutes"

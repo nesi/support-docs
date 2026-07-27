@@ -1,9 +1,8 @@
 ---
 created_at: '2018-11-26T03:03:23Z'
-tags: 
-  - windows
-  - winscp
-  - putty
+tags:
+  - access
+  - file_transfer
 title: WinSCP/PuTTY Setup (Windows)
 ---
 
@@ -65,7 +64,7 @@ password and pass it to PuTTY*
 ## Setup for Xming (Optional)
 
 Xming is an X server for Windows allowing graphical interface with the
-HPC. [Xming can be downloaded here](https://sourceforge.net/projects/xming/).
+HPC. [Xming can be downloaded from SourceForge](https://sourceforge.net/projects/xming/).
 
 1\. Install Xming following the prompts. (Make sure 'Normal PuTTY Link
 SSH Client' is selected).

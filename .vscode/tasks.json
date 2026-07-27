@@ -8,25 +8,29 @@
                 "${file}"
             ],
             "presentation": {
-                "reveal":"never",
+                "reveal": "never",
                 "showReuseMessage": false
             },
             "command": "./checks/run_meta_check.py",
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {
-                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),col=([0-9]*),endColumn=([0-9]*),line=([0-9]*)::(.*)$",
+                    "regexp": "^::(notice|warning|error) file= ?(.*?),title=(.*?),col=([0-9]*),endColumn=([0-9]*),line=([0-9]*)::(.*)$",
                     "severity": 1,
                     "file": 2,
                     "code": 3,
                     "column": 4,
                     "endColumn": 5,
                     "line": 6,
-                    "message": 7,
+                    "message": 7
                 },
                 "owner": "meta-check",
-                "fileLocation": "autoDetect",
+                "fileLocation": "autoDetect"
             },
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }
         },
         {
             "label": "proselint-checks",
@@ -34,7 +38,7 @@
                 "${file}"
             ],
             "presentation": {
-                "reveal":"never",
+                "reveal": "never",
                 "showReuseMessage": false
             },
             "command": "./checks/run_proselint.py",
@@ -46,11 +50,11 @@
                     "line": 3,
                     "column": 4,
                     "endLine": 5,
-                    "message": 7,
+                    "message": 7
                 },
                 "owner": "proselint",
-                "fileLocation": "autoDetect",
-            },
+                "fileLocation": "autoDetect"
+            }
         },
         {
             "label": "spelling-checks",
@@ -58,7 +62,7 @@
                 "${file}"
             ],
             "presentation": {
-                "reveal":"never",
+                "reveal": "never",
                 "showReuseMessage": false
             },
             "command": "./checks/run_spell_check.py",
@@ -70,17 +74,17 @@
                     "line": 3,
                     "column": 4,
                     "endColumn": 5,
-                    "message": 7,
+                    "message": 7
                 },
                 "owner": "spelling",
-                "fileLocation": "autoDetect",
-            },
+                "fileLocation": "autoDetect"
+            }
         },
         {
             "label": "test-build",
             "type": "shell",
             "presentation": {
-                "reveal":"never",
+                "reveal": "never",
                 "showReuseMessage": false
             },
             "command": "export NO_MKDOCS_2_WARNING=1 && ./checks/run_test_build.py",
@@ -100,8 +104,8 @@
                 "fileLocation": [
                     "relative",
                     "${workspaceFolder}/docs"
-                ],
-            },
+                ]
+            }
         },
         {
             "label": "slurm-lint",
@@ -109,7 +113,7 @@
                 "${file}"
             ],
             "presentation": {
-                "reveal":"never",
+                "reveal": "never",
                 "showReuseMessage": false
             },
             "command": "./checks/run_slurm_lint.py",
@@ -123,11 +127,37 @@
                     "column": 4,
                     "endColumn": 5,
                     "line": 6,
-                    "message": 7,
+                    "message": 7
                 },
                 "owner": "slurm-lint",
-                "fileLocation": "autoDetect",
+                "fileLocation": "autoDetect"
+            }
+        },
+        {
+            "label": "wcag-check",
+            "args": [
+                "${file}"
+            ],
+            "presentation": {
+                "reveal": "never",
+                "showReuseMessage": false
             },
+            "command": "./checks/run_aria_check.py",
+            "problemMatcher": {
+                "severity": "info",
+                "pattern": {
+                    "regexp": "^::(notice|warning|error) file=(.*?),title=(.*?),col=([0-9]*),endColumn=([0-9]*),line=([0-9]*)::(.*)$",
+                    "severity": 1,
+                    "file": 2,
+                    "code": 3,
+                    "column": 4,
+                    "endColumn": 5,
+                    "line": 6,
+                    "message": 7
+                },
+                "owner": "wcag-check",
+                "fileLocation": "autoDetect"
+            }
         },
         {
             "label": "fetch",
@@ -135,7 +165,7 @@
             "type": "shell",
             "isBackground": false,
             "presentation": {
-                "reveal":"never",
+                "reveal": "never",
                 "showReuseMessage": false
             },
             "runOptions": {
@@ -152,8 +182,8 @@
                     "message": 4
                 },
                 "owner": "fetch",
-                "fileLocation": "autoDetect",
-            },
+                "fileLocation": "autoDetect"
+            }
         },
         {
             "label": "serve",
@@ -161,7 +191,7 @@
             "type": "shell",
             "isBackground": true,
             "presentation": {
-                "reveal":"never",
+                "reveal": "never",
                 "showReuseMessage": false
             },
             "command": "export NO_MKDOCS_2_WARNING=1 && mkdocs serve --dirty"
@@ -179,6 +209,6 @@
             },
             "dependsOn": "test-build",
             "command": "bash checks/run_a11y_check.sh"
-        },
+        }
     ]
 }

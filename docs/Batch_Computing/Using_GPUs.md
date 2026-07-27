@@ -2,7 +2,7 @@
 created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
-- Slurm
+- slurm
 ---
 
 This page provides generic information about how to access GPUs through the Slurm scheduler.
@@ -20,6 +20,9 @@ You should consider using a GPU for your work if:
     of the application you are using.  
     Not every process can use a GPU, and how to use them effectively varies greatly!  
     There is a list of commonly used GPU supporting software at the bottom of this page.
+
+!!! tip "How to use GPUs effectively on Mahuika"
+    <iframe style="width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube.com/embed/P5VLrbvp2oI" title="How to use GPUs effectively on Mahuika" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ## Request GPU resources using Slurm
 
@@ -307,6 +310,6 @@ To record the GPU utilisation and GPU memory, see [Measuring GPU efficiency afte
 
 ## Application and toolbox specific support pages
 
-See the [Supported Applications](../Software/Available_Applications/index.md) for more information on what softwares have GPU support, as well as programming toolkits:
-
-- [NVIDIA GPU Containers](../Software/Containers/NVIDIA_GPU_Containers.md)
+{% for p in pages_with_tag("gpu") %}
+- [{{ p.title }}]({{ p.path }})
+{% endfor %}

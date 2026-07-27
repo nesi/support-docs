@@ -117,11 +117,11 @@ plugins:
       filename: .pages.yml
  # - git-authors
   - tags:
-      tags: false  # This will keep tags for the purpose of indexing, but not display on page.
+      tags: true  # This will keep tags for the purpose of indexing, but not display on page.
   - git-revision-date-localized:
       enable_creation_date: false
   - macros:
-      on_error_fail: true
+      on_error_fail: false
       verbose: true
       module_name: macro_hooks
       include_dir: overrides

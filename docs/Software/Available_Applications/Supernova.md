@@ -1,7 +1,6 @@
 ---
 created_at: '2019-01-27T23:11:01Z'
 tags:
-- mahuika
 - biology
 description: Documentation of Supernova module
 ---

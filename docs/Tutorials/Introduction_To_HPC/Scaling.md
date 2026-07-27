@@ -2,6 +2,9 @@
 created_at: 2026-01-19
 description: Best Practice for getting your job to use multiple CPUs
 status: tutorial
+tags:
+- tutorial
+- profiling
 ---
 
 !!! time "45 Minutes"

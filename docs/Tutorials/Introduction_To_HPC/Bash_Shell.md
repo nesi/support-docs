@@ -2,6 +2,9 @@
 created_at: 2026-01-15
 description: Using the bash shell for file operations on Mahuika
 status: tutorial
+tags:
+- tutorial
+- access
 ---
 
 

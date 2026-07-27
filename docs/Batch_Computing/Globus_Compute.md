@@ -1,4 +1,9 @@
-# Globus Compute
+---
+created_at: 2026-07-15
+description: How to use globus compute
+tags: 
+    - globus
+---
 
 !!! warning
 
@@ -91,11 +96,11 @@ This endpoint submits work in Slurm jobs. The following configuration options ar
    ```
    python test.py
    ```
-
+ c
 ## Limitations and known problems
 
 Limitations and known problems related to our current implementation are listed here.
-If these are impacting your ability to use this service, please [let us know](mailto:support@nesi.org.nz).
+If these are impacting your ability to use this service, please {% include "partials/support_request.html" %}.
 
 - Currently limited to a single CPU
 - You must use Python 3.11 (we are exploring options to execute functions in containers, which will enable use of different Python versions)

@@ -1,9 +1,8 @@
 ---
 created_at: '2019-09-22T20:20:07Z'
 tags:
- - sinfo
- - busy
-title: How busy is the cluster?
+ - troubleshooting
+title: How Busy Is the Cluster?
 ---
 
 You can get information about all nodes on Mahuika using the command `sinfo`. Type the following into Mahuika

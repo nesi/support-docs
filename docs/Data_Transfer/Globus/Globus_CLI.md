@@ -1,9 +1,7 @@
 ---
 created_at: '2025-12-23T07:00:00Z'
-tags: 
-    - globus
-    - file transfer
-title: Globus CLI
+tags:
+    - file_transfer
 ---
 
 This page will describe the various step to how to use the Globus Command Line Interface (CLI).

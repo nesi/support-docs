@@ -1,12 +1,9 @@
 ---
 tags:
-    - jupyter
-    - lab
-    - notebook
-    - ondemand
-    - rstudio
+    - interactive
+    - r
 description: Getting Started With NeSI onDemand
-title: NeSI OnDemand how-to guide
+title: NeSI OnDemand How-to Guide
 ---
 
 ## How to log in

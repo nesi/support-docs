@@ -1,6 +1,7 @@
 ---
 created_at: '2019-08-07T03:50:45Z'
-tags: []
+tags:
+- software
 ---
 
 With very few exceptions, we do not hold software licences of our own. If you wish to use any of the proprietary software installed on Mahuika, you, or more likely your institution or department, will need to have an appropriate licence.

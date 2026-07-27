@@ -1,8 +1,7 @@
 ---
 created_at: '2018-11-30T00:32:25Z'
-tags: 
-    - ssh
-    - windows
+tags:
+    - access
 title: MobaXterm Setup (Windows)
 description: How to set up cluster access using MobaXterm
 ---

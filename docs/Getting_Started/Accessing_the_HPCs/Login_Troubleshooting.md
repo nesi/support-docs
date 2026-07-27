@@ -1,7 +1,7 @@
 ---
 created_at: '2018-11-16T01:13:47Z'
 tags:
-- login
+- access
 description: Troubleshooting instructions for logging in to the REANNZ cluster
 ---
 

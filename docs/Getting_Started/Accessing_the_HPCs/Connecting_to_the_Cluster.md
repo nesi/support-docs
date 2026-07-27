@@ -1,10 +1,8 @@
 ---
 created_at: '2019-06-25T22:40:46Z'
 tags:
-- terminal
-- mobaxterm
-- gitbash
-- login
+- access
+- version_control
 ---
 
 !!! prerequisite
