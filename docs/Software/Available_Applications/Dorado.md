@@ -18,7 +18,7 @@ vote_sum: 3
 Dorado is a high-performance, easy-to-use, open source basecaller for
 Oxford Nanopore reads.
 
-### [](https://github.com/nanoporetech/dorado#features)Features
+### [Features](https://github.com/nanoporetech/dorado#features)
 
 - One executable with sensible defaults, automatic hardware detection
     and configuration.
