@@ -149,4 +149,4 @@ Add the following to your batch script before running:
 #SBATCH --acctg-freq        30    # sampling frequency in seconds
 ```
 
-After the job finishes running you can get plots of the resource utilisation by running `profile_plot <jobid>`.
+After the job finishes running you can get plots of the resource utilisation by running `profile_plot <jobid>`, or the raw profile data by running `profile_data <jobid>`.  Both programs have formatting options shown by their `--help` option.
