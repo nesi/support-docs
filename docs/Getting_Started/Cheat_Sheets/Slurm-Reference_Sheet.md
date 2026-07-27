@@ -48,9 +48,8 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--mem`        | `#SBATCH --mem=512MB`                   | Memory required per node.                                                                                       |
 | `--partition`  | `#SBATCH --partition=milan`              | Specified job partition. |
 | `--output`     | `#SBATCH --output=%j_output.out`        | Path and name of standard output file.                                                                          |
-| `--mail-user`  | `#SBATCH --mail-user=user123@gmail.com` | Address to send mail notifications.                                                                             |
-| `--mail-type`  | `#SBATCH --mail-type=ALL`               | Will send a mail notification at `BEGIN END FAIL`.                                                            |
-|                  | `#SBATCH --mail-type=TIME_LIMIT_80`     | Will send message at *80%* walltime.                                                                           |
+| `--mail-type`  | `#SBATCH --mail-type=ALL`               | Will send a mail notification at job `BEGIN`, `END`, or `FAIL`.                                                 |
+|                | `#SBATCH --mail-type=TIME_LIMIT_80`     | Will send message at *80%* walltime.                                                                            |
 | `--no-requeue` | `#SBATCH --no-requeue`                  | Will stop job being requeued in the case of node failure.                                                       |
 
 ### Parallel options
