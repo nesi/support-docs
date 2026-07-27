@@ -30,7 +30,7 @@ If you can relate to an instance where you had to wait for a while in a queue to
 
 ![A cartoon representing the queue manager as the host of a restaurant. The restaurant has four tables. One table has six empty chairs and is labeled as an idle compute node with six cores. The second table has four empty chairs and a reserved sign on it and is labeled as a reserved compute node with four cores. The third table has five chairs with users sitting in them and is labeled as a busy compute node with five cores. The final table has four chairs, two with users sitting in them, one empty, and one with a user going to sit in it. This table is labeled as a compute node with four cores.](../../assets/images/restaurant_queue_manager.svg)
 
-The scheduler used in this lesson is [Slurm](https://slurm.schedmd.com/).
+The scheduler used in this lesson is [Slurm](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/).
 Although Slurm is not used everywhere, running jobs is quite similar regardless of what software is being used.
 The exact syntax might change, but the concepts remain the same.
 
@@ -130,7 +130,7 @@ Each of these parameters must be preceded by the special token `#SBATCH` and pla
 
 These parameters tell Slurm things around how the script should be run, like memory, cores and time required.
 
-All the parameters available can be found by checking `man sbatch` or on the online [Slurm documentation](https://slurm.schedmd.com/).
+All the parameters available can be found by checking `man sbatch` or on the online [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html).
 
 | Parameter | Example | Description |
 |-------------- | -------------- | -------------- |
@@ -139,7 +139,7 @@ All the parameters available can be found by checking `man sbatch` or on the onl
 | Time | `#SBATCH --time=DD-HH:MM:SS` | Job max walltime |
 | Memory | `#SBATCH --mem=1500M` | Memory required per node |
 | Output | `#SBATCH --output=%j_output.out` | Path and name of the standard output file |
-| Number of tasks | `#SBATCH --ntasks=2` | Will start 2 [MPI tasks](https://docs.nesi.org.nz/Software/Parallel_Computing/Parallel_Computing/#shared-memory-parallelisation) |
+| Number of tasks | `#SBATCH --ntasks=2` | Will start 2 [MPI tasks](../../Software/Parallel_Computing/Parallel_Computing.md#shared-memory-parallelisation) |
 | CPUs per task | `#SBATCH --cpus-per-task` | Will request 10 CPUs per task |
 
 !!! question "Comments"
@@ -284,7 +284,7 @@ This can be suppressed using the flag `-X`.
     There are two additional good sources for quick references on using Slurm:
 
     - our [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
-    - the official [Slurm documentation](https://slurm.schedmd.com/) and [cheatsheet](https://slurm.schedmd.com/pdfs/summary.pdf)
+    - the official [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/) and [cheatsheet](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/pdfs/summary.pdf)
 
 !!! question "Job environment variables"
     When Slurm runs a job, it sets a number of environment variables for the job.

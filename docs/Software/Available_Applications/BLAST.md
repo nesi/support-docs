@@ -1,12 +1,10 @@
 ---
+title: BLAST
 created_at: '2015-08-27T04:44:00Z'
 tags:
 - biology
-title: BLAST
 vote_count: 1
 vote_sum: -1
-zendesk_article_id: 208619807
-zendesk_section_id: 360000040076
 ---
 
 

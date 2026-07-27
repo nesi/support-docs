@@ -4,10 +4,6 @@ tags:
 - openmp
 - parallel
 - profiling
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001173895
-zendesk_section_id: 360000189716
 ---
 
 In the example below we will use R scripts to demonstrate how you might

@@ -2,11 +2,6 @@
 created_at: '2023-07-05T23:50:46Z'
 tags:
 - account
-title: Subscriber Monthly Usage Reports
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7349136678543
-zendesk_section_id: 7348925662223
 ---
 
 As part of our Subscriber service agreements, we share

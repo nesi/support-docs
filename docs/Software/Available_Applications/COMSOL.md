@@ -6,8 +6,6 @@ tags:
 description: Running COMSOL multiphysics on the Mahuika cluster.
 vote_count: 1
 vote_sum: 1
-zendesk_article_id: 360000871556
-zendesk_section_id: 360000040076
 ---
 
 {% set app_name = page.title | trim %}

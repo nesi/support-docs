@@ -86,7 +86,7 @@ project group.
      directory will inherit neither the group nor the setgid bit.
      You probably don't want this to happen. For instructions on how to
      prevent it, please see our article:
-     [How can I let my fellow project team members read or write my files?](../Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
+     [How can I let my fellow project team members read or write my files?](../Getting_Started/FAQs/How_Can_I_Let_My_Fellow_Project_Team_Members_Read_or_Write_My_Files.md)
 
 By default, the world, i.e. people not in the project team, have no
 privileges in respect of a project directory, with certain exceptions.
@@ -141,6 +141,6 @@ If we agree to set up a special-purpose directory for you, we will discuss and a
 suitable permissions model.
 
 !!! prerequisite "See also"
-     -   [How can I let my fellow project team members read or write my files?](../Getting_Started/FAQs/How_can_I_let_my_fellow_project_team_members_read_or_write_my_files.md)
-     -   [How can I give read-only team members access to my files?](../Getting_Started/FAQs/How_can_I_give_read_only_team_members_access_to_my_files.md)
+     -   [How can I let my fellow project team members read or write my files?](../Getting_Started/FAQs/How_Can_I_Let_My_Fellow_Project_Team_Members_Read_or_Write_My_Files.md)
+     -   [How can I give read-only team members access to my files?](../Getting_Started/FAQs/How_Can_I_Give_Read_Only_Team_Members_Access_to_My_Files.md)
      -   [filesystems and quotas](./Filesystems_and_Quotas.md)

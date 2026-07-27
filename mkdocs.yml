@@ -121,8 +121,12 @@ plugins:
   - git-revision-date-localized:
       enable_creation_date: false
   - macros:
-      on_error_fail: true
-      verbose: true 
+      # false (the plugin default) logs the Jinja error as a warning and renders it
+      # inline on the offending page instead of calling exit() - one bad macro
+      # reference (eg. a mistyped applications[] key) no longer takes down the
+      # whole site build; every other page still builds and gets checked.
+      on_error_fail: false
+      verbose: true
       module_name: macro_hooks
       include_dir: overrides
 extra_css:

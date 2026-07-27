@@ -2,7 +2,7 @@
 created_at: '2019-08-26T00:02:24Z'
 tags:
 - troubleshooting
-title: I've run out of storage space
+title: I've Run Out of Storage Space
 ---
 
 There are two tracked resources in the Mahuika filesystem, *disk space* and

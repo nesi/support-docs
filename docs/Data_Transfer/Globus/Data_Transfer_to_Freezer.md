@@ -31,7 +31,7 @@ You will need to have a Globus account to access Freezer via Globus. Please see 
 4. To set up your credentials, please click `Continue`. You will be shown a Globus page requiring you to sign in to Mahuika. 
     ![Globus_Freezer_Require_Credentials.png](../../assets/images/Globus_Freezer_Require_Credentials.png)
 
-5. Fill in your Mahuika Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. We can <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key"> reset your Freezer key</a>, but you will also need to reset your Freezer config on Mahuika.
+5. Fill in your Mahuika Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. We can {% include "partials/support_request.html" %} to reset your Freezer key, but you will also need to reset your Freezer config on Mahuika.
 
     In the following sections, please enter:
 

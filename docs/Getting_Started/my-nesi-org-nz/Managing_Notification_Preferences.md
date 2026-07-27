@@ -14,4 +14,4 @@ Use the 'Manage' and 'Subscribe' buttons to open externally hosted preferences f
 ![2022-04-12\_16-46-56.png](../../assets/images/Managing_notification_preferences.png)
 
 !! note "See also"
-    Our support article on [System status.](../System_status.md)
+    Our support article on [System status.](../System_Status.md)

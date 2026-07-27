@@ -5,15 +5,13 @@ tags:
 title: 'Git: Reference Sheet'
 vote_count: 13
 vote_sum: 13
-zendesk_article_id: 360001508515
-zendesk_section_id: 360000278975
 ---
 
 Git is the most universally adopted version control software and is
 often used alongside remote repositories like GitHub, GitLab, Bitbucket or Gitea for
 developing, managing and distributing code.
 
-Full Git documentation can be found [here](https://git-scm.com/docs/git), or using `man git`.
+The [full Git documentation](https://git-scm.com/docs/git) can be found online, or using `man git`.
 
 ![Git\_Diagram.svg](../../assets/images/Git-Reference_Sheet.svg)
 

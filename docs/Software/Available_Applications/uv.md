@@ -1,7 +1,6 @@
 ---
 created_at: 2025-12-22
 description: Documentation for uv on Mahuika
-title: uv
 tags:
     - python
     - software

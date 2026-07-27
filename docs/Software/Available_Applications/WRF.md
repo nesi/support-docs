@@ -1,6 +1,7 @@
 ---
 created_at: '2020-11-02T23:31:38Z'
 description: How to compile and run WRF on the REANNZ cluster
+no_module: true
 tags:
 - earth_science
 ---

@@ -21,6 +21,9 @@ You should consider using a GPU for your work if:
     Not every process can use a GPU, and how to use them effectively varies greatly!  
     There is a list of commonly used GPU supporting software at the bottom of this page.
 
+!!! tip "How to use GPUs effectively on Mahuika"
+    <iframe style="width: 100%; aspect-ratio: 16 / 9; height: auto; border: 0;" src="https://www.youtube.com/embed/P5VLrbvp2oI" title="How to use GPUs effectively on Mahuika" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
 ## Request GPU resources using Slurm
 
 To request a GPU for your [Slurm job](Tutorial:_Submitting_your_first_job.md), add

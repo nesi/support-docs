@@ -163,7 +163,7 @@ jobs:
           shopt -s globstar extglob
           python3 checks/run_slurm_lint.py ${{needs.get.outputs.filelist}}
   tagcheck:
-    name: Check tags
+    name: Compile tags
     runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v6

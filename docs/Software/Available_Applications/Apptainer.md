@@ -1,6 +1,7 @@
 ---
 created_at: '2025-01-01T00:00:00Z'
 description: How to use Apptainer containers on the NeSI HPC.
+no_module: true
 tags:
     - containers
 ---

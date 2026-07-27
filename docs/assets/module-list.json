@@ -49,7 +49,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.89,
+                        "hourly_average": 0.87,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -63,7 +63,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.51,
+                        "hourly_average": 0.48,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -77,7 +77,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.59,
+                        "hourly_average": 0.6,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -635,14 +635,8 @@
         "homepage": "https://www.ansys.com",
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ANSYS",
         "versions": [
-            "19.1",
             "19.2",
-            "2019R3",
-            "2020R1",
-            "2020R2",
             "2021R2",
-            "2022R1",
-            "2022R2",
             "2023R1",
             "2023R2",
             "2024R2",
@@ -650,13 +644,13 @@
         ],
         "admin_list": [
             {
-                "19.1": "ANSYS/19.1 is deprecated and will be removed Jan 2023.Please change your scripts to use ANSYS/19.2 for long term support."
+                "2022R1": "ANSYS/2023R1 is deprecated and will be removed Jan 2026.Please change your scripts to use ANSYS/2024R2 for long term support."
             },
             {
-                "2020R1": "ANSYS/2020R1 is deprecated and will be removed Jan 2023.Please change your scripts to use ANSYS/2020R2 for long term support."
+                "2021R1": "ANSYS/2021R1 is deprecated and will be removed Jan 2025.Please change your scripts to use ANSYS/2024R2 for long term support."
             },
             {
-                "2022R1": "ANSYS/2022R1 is deprecated and will be removed Jan 2025.Please change your scripts to use ANSYS/2022R2 for longer term support."
+                "2022R2": "ANSYS/2022R2 is deprecated and will be removed Jan 2025.Please change your scripts to use ANSYS/2024R2 for longer term support."
             }
         ],
         "network_licences": [
@@ -3455,7 +3449,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.98,
+                "server_uptime": 0.99,
                 "server_version": "11.16.2",
                 "features": [
                     {
@@ -3667,7 +3661,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.53,
+                        "hourly_average": 0.52,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -5797,12 +5791,13 @@
     "fastStructure": {
         "description": "fastStructure is an algorithm for inferring population structure from large SNP genotype data. It is based on a variational Bayesian framework for posterior inference and is written in Python2.x.",
         "domains": [
-            "biology"
+            "biology",
+            "software"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://rajanil.github.io/fastStructure/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/fastStructure",
         "versions": [
             "1.0-gimkl-2020a-Python-2.7.18"
         ],
@@ -6463,7 +6458,8 @@
     "FreeSurfer": {
         "description": "FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.\nFreeSurfer contains a fully automatic structural imaging stream for processing cross sectional and longitudinal data.",
         "domains": [
-            "biology"
+            "biology",
+            "containers"
         ],
         "extensions": [],
         "licence_type": "",
@@ -8818,7 +8814,23 @@
             "5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
             "5.66-98.0-gimkl-2022aPerl-5.34.1-Python-3.11.3"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "5.51-85.0-gimkl-2020a-Perl-5.30.1-Python-3.8.2": "Warning: InterProScan/5.51-85.0-gimkl-2020a-Perl-5.30.1-Python-3.8.2 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.61-93.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.61-93.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.62-94.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.62-94.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.63-95.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.63-95.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            }
+        ],
         "network_licences": [],
         "default": "5.66-98.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
         "default_type": "latest",
@@ -11644,7 +11656,6 @@
         "homepage": "http://www.mathworks.com/products/matlab",
         "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/MATLAB",
         "versions": [
-            "2017b",
             "2018b",
             "2019b",
             "2020b",
@@ -11834,7 +11845,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 1.0,
+                "server_uptime": 0.99,
                 "server_version": "",
                 "features": []
             },
@@ -12004,7 +12015,6 @@
         "homepage": "http://www.mathworks.com/products/compiler/mcr.html",
         "support": "",
         "versions": [
-            "2016b",
             "2020b",
             "2021a",
             "2021b",
@@ -14631,11 +14641,13 @@
     },
     "ollama": {
         "description": "Get up and running with large language models.",
-        "domains": [],
+        "domains": [
+            "machine_learning"
+        ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://ollama.com/",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ollama",
         "versions": [
             "0.21.1"
         ],
@@ -20605,7 +20617,8 @@
     "snakemake": {
         "description": "The Snakemake workflow management system is a tool to create reproducible and scalable data analyses.",
         "domains": [
-            "workflow_management"
+            "workflow_management",
+            "workflow"
         ],
         "extensions": [
             "appdirs-1.4.3",
@@ -20634,7 +20647,7 @@
         ],
         "licence_type": "",
         "homepage": "https://snakemake.readthedocs.io",
-        "support": "",
+        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/snakemake",
         "versions": [
             "5.19.3-gimkl-2020a-Python-3.8.2",
             "7.32.3-foss-2023a-Python-3.11.6",
@@ -22084,9 +22097,7 @@
     "TUFLOW": {
         "description": "Hydraulic modelling software for flood, urban drainage, estuarine and coastal assessments.",
         "domains": [
-            "hydrodynamics",
-            "flood modelling",
-            "hydraulics"
+            "earth_science"
         ],
         "extensions": [],
         "licence_type": "proprietary",

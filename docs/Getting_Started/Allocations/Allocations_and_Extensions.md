@@ -30,7 +30,7 @@ qualify for an extension:
     resources from the HPC platform. For example, the grant funding the research
     programme has come to an end and the host institution does not wish
     to purchase computing resources from REANNZ (or allocate computing
-    resources from its [Subscription](https://docs.nesi.org.nz/Service_Subscriptions/What_is_a_Subscription/) or Collaborator share if it has
+    resources from its [Subscription](../../Service_Subscriptions/What_is_a_Subscription.md) or Collaborator share if it has
     one).
 - If the project's host institution has changed (or is about to
     change).
@@ -101,6 +101,6 @@ project extension. Please note that we are unlikely to let a project
 continue without a compute allocation for more than six months at a
 time. If you expect that your project will be suspended for more than
 six months, we encourage you to enquire about our [Long-Term Storage
-Service](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md) or
+Service](../../Storage/Long_Term_Storage/Freezer_Long_Term_Storage.md) or
 to move your research data off our facility and make arrangements with
 your project's host institution for long-term data storage.

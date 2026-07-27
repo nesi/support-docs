@@ -2,11 +2,8 @@
 created_at: '2019-06-03T23:23:13Z'
 tags:
 - biology
-title: Trinity
 vote_count: 2
 vote_sum: 2
-zendesk_article_id: 360000980375
-zendesk_section_id: 360000040076
 ---
 
 
@@ -28,9 +25,8 @@ and then processes each graph independently to extract full-length
 splicing isoforms and to tease apart transcripts derived from paralogous
 genes.
 
-General documentation for running Trinity can be found on their GitHub
-page
-[here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity).
+[General documentation for running Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity)
+can be found on their GitHub page.
 
 ## Running Trinity on Mahuika
 
@@ -111,9 +107,8 @@ The extra Trinity arguments are:
 
 ### Running Trinity Phase 2
 
-Upstream documentation for running Trinity Phase 2 in parallel can be
-found
-[here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity#optional-adapting-trinity-to-a-computing-grid-for-massively-parallel-processing-of-embarrassingly-parallel-steps).
+[Upstream documentation for running Trinity Phase 2 in parallel](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity#optional-adapting-trinity-to-a-computing-grid-for-massively-parallel-processing-of-embarrassingly-parallel-steps)
+is available on their wiki.
 
 Trinity Phase 2 performs all the mini-assemblies in parallel. This phase
 consists of a large number (e.g. tens or hundreds of thousands) of

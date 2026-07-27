@@ -1,4 +1,4 @@
-const MEETING_LINK = "https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09";
+const MEETING_LINK = "https://reannz.zoom.us/j/84237671321?pwd=rLLqWtE2bwmKaD1yjJ1bp3CPhlfaw8.1";
 
 function changeVersion(app, version, warn = false) {
     // Sets the module load example to use the selected version

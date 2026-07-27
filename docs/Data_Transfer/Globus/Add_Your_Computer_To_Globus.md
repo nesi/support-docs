@@ -2,7 +2,7 @@
 created_at: '2018-05-29T04:01:33Z'
 tags:
 - file_transfer
-title: Add your Computer to Globus
+title: Add Your Computer to Globus
 ---
 
 To download and upload files between the Mahuika supercomputer and your personal computer,

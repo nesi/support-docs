@@ -2,6 +2,7 @@ matrix:
 - name: Markdown
   aspell:
     lang: en
+    ignore-case: true
   dictionary:
     wordlists:
     - docs/assets/glossary/dictionary.txt
@@ -27,6 +28,10 @@ matrix:
       #  `content`
       - open: '(?P<open>`+)'
         close: '(?P=open)'
+      # Ignore image markdown entirely (alt text is often just a filename)
+      #  ![alt text](../link/to/image.png)
+      - open: '(!\[)'
+        close: '(\]\([^)]*\))'
       # Ignore content in page links
       #  [some page](../link/to/some/page.md)
       - open: '(\]\()'

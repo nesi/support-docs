@@ -40,7 +40,7 @@ More information can be found on the web, here are some good references:
 ## Incorrect Secret Key
 `Test failed: 403 (SignatureDoesNotMatch)`
 
-An incorrect secret has been entered. Please let us know if you need to <a href="mailto:support@nesi.org.nz?subject=Reset%20Freezer%20Secret%20Key">reset this key</a>.
+An incorrect secret has been entered. Please let us know if you need to reset this key, {% include "partials/support_request.html" %}.
 
 <pre><code>Test access with supplied credentials? [Y/n] <span style="color:blue"><b>Y</b></span>
 Please wait, attempting to list all buckets...
