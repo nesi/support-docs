@@ -1,4 +1,4 @@
-const MEETING_LINK = "https://nesi.zoom.us/j/83987449505?pwd=TzlYTk9pdGJXZFZVSUxhUFUyeFYrUT09";
+const MEETING_LINK = "https://reannz.zoom.us/j/84237671321?pwd=rLLqWtE2bwmKaD1yjJ1bp3CPhlfaw8.1";
 
 function changeVersion(app, version, warn = false) {
     // Sets the module load example to use the selected version
@@ -91,6 +91,38 @@ function format8601(str){
 }
 
 showOfficeBanner();
+
+// The status.nesi.org.nz (Statuspage) embed leaves its iframe both
+// aria-hidden and tabindex="0" while collapsed, so keyboard users can
+// tab into a widget screen readers can't see. Keep it out of the tab
+// order whenever it's hidden; leave it alone once the widget opens
+// (aria-hidden gets removed) and sets its own tabindex.
+function fixStatuspageIframeFocus(iframe) {
+    if (iframe.getAttribute("aria-hidden") === "true" && iframe.getAttribute("tabindex") !== "-1") {
+        iframe.setAttribute("tabindex", "-1");
+    }
+}
+
+// Fix whatever's already there (the embed script runs before this file).
+document.querySelectorAll("iframe").forEach(fixStatuspageIframeFocus);
+
+new MutationObserver((mutations) => {
+    for (const mutation of mutations) {
+        if (mutation.target.tagName === "IFRAME") {
+            fixStatuspageIframeFocus(mutation.target);
+        } else {
+            mutation.addedNodes.forEach((node) => {
+                if (node.tagName === "IFRAME") {
+                    fixStatuspageIframeFocus(node);
+                }
+            });
+        }
+    }
+}).observe(document.body, {
+    attributeFilter: ["aria-hidden", "tabindex"],
+    childList: true,
+    subtree: true,
+});
 
 // Remove me later
 // showOfficeBanner().then(() => {

@@ -177,8 +177,31 @@ li {
 .badge-domain-biology{
     background-color: #28a745;
 }
+
+.badge-domain-astronomy {
+    background-color: #black;
+}
 .badge-domain-chemistry {
     background-color: #ff07d8;
+}
+.badge-domain-Molecular-Dynamics {
+    background-color: #ff07d8;
+}
+.badge-domain-Density-Functional-Theory {
+    background-color: #ff07d8;
+}
+.badge-domain-QMMM {
+    background-color: #ff07d8;
+    text-transform: uppercase;
+}
+.badge-domain-Computational-Chemistry {
+    background-color: #ff07d8;
+    text-transform: uppercase;
+}
+
+
+.badge-domain-climate_science {
+    background-color: #add8e6;
 }
 .badge-domain-earth_science {
     background-color: #794e00;
@@ -218,6 +241,95 @@ li {
     box-shadow: 0px 0px 0px 1px #495057 inset;
     background-color: #fea;
 }
+
+.badge-domain-mpi {
+    background-color: black;
+}
+.badge-domain-omp {
+    background-color: black;
+}
+.badge-domain-fea {
+    background-color: black;
+}
+.badge-domain-cfd {
+    background-color: black;
+}
+.badge-domain-multiphysics {
+    background-color: black;
+}
+.badge-domain-cae {
+    background-color: black;
+}
+.badge-domain-workflow_management {
+    background-color: black;
+}
+.badge-domain-workflow {
+    background-color: black;
+}
+.badge-domain-hydrodynamics {
+    background-color: black;
+}
+.badge-domain-morphodynamics {
+    background-color: black;
+}
+.badge-domain-particle-modelling {
+    background-color: black;
+}
+.badge-domain-water-quality-testing {
+    background-color: black;
+}
+.badge-domain-wave-modelling {
+    background-color: black;
+}
+.badge-domain-general {
+    background-color: black;
+}
+.badge-domain-geo {
+    background-color: black;
+}
+.badge-domain-earthquake {
+    background-color: black;
+}
+
+.badge-domain-r {
+    background-color: black;
+}
+.badge-domain-software {
+    background-color: black;
+}
+.badge-domain-python {
+    background-color: black;
+}
+.badge-domain-environments {
+    background-color: black;
+}
+.badge-domain-conda {
+    background-color: black;
+}
+.badge-domain-anaconda {
+    background-color: black;
+}
+.badge-domain-miniconda {
+    background-color: black;
+}
+.badge-domain-mamba {
+    background-color: black;
+}
+
+.badge-domain-no_toc {
+    background-color: black;
+}
+.badge-domain-no_lic {
+    background-color: black;
+}
+.badge-domain-no_desc {
+    background-color: black;
+}
+.badge-domain-no_ver {
+    background-color: black;
+}
+
+
 .badge-domain-language {
     box-shadow: 0px 0px 0px 1px #495057 inset;
     background-color: #eceff1;

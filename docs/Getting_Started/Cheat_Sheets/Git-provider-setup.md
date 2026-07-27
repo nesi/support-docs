@@ -1,12 +1,7 @@
 ---
 created_at: '2026-02-12'
 tags:
-- gitlab
-- github
-- bitbucket
-- gitea
-- version control
-- repository
+- version_control
 title: 'Git Hosting Platform Setup'
 ---
 

@@ -1,11 +1,10 @@
 ---
 created_at: '2021-01-05T20:28:08Z'
 tags:
-- ai
-- machine learning
+- machine_learning
 - software
 description: Information about using Lambda Stack
-status: []
+no_module: true
 ---
 
 ## Introduction
@@ -70,7 +69,7 @@ ${CONTAINER} echo "Hello World"
 
 The following steps will create a custom Lambda Stack kernel that can be
 accessed via Mahuika's Jupyter service (based on the instructions at
-[Jupyter_on_Mahuika](../../Interactive_Computing/OnDemand/Apps/JupyterLab/Jupyter_kernels_Tool_assisted_management.md)).
+[Jupyter_on_Mahuika](../../Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md)).
 
 First, we need to create a kernel definition and wrapper that will
 launch the container image. Run the following commands on the Mahuika

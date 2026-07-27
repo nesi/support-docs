@@ -79,8 +79,8 @@ markdown_extensions:
 extra:
   slurm: slurm-25.05.6
   project_code: nesi99991
-  working_directory: ["/nesi/nobackup", "nesi99991", "introhpc2603"]
-  example_script: "example_script"
+  working_directory: ["/nesi/nobackup/nesi99991", "resbaz2607"]
+  example_script: "sum_matrix.r"
   exercise: "https://docs.google.com/spreadsheets/d/1D5PnhE6iJOB3ZKkDCiBHnk5CNZlhmj_gS-IXKGkkVoI/edit?usp=sharing"
   status: 
   - deprecated
@@ -89,6 +89,10 @@ extra:
   analytics:
     provider: google
     property: G-TVQR4R1F40
+  globus_collection_storage: REANNZ Mahuika
+  globus_collection_freezer: REANNZ Freezer
+  globus_collection_rdc: REANNZ Research Developer Cloud (RDC)
+  globus_collection_endpoint: REANNZ Data Transfer Node Tamaki
 plugins:
   - mkdocs_quiz:
       disable_after_submit: false
@@ -114,13 +118,17 @@ plugins:
       filename: .pages.yml
  # - git-authors
   - tags:
-      tags: false  # This will keep tags for the purpose of indexing, but not display on page.
+      tags: true  # This will keep tags for the purpose of indexing, but not display on page.
   - git-revision-date-localized:
       enable_creation_date: false
       enabled: !ENV [ENABLED_GIT_DATES, false]
   - macros:
-      on_error_fail: true
-      verbose: true 
+      # false (the plugin default) logs the Jinja error as a warning and renders it
+      # inline on the offending page instead of calling exit() - one bad macro
+      # reference (eg. a mistyped applications[] key) no longer takes down the
+      # whole site build; every other page still builds and gets checked.
+      on_error_fail: false
+      verbose: true
       module_name: macro_hooks
       include_dir: overrides
 extra_css:

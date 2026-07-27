@@ -2,9 +2,9 @@
 created_at: 2025-05-07
 description: This article presents an overview comparison of the differences between the NeSI Mahuika cluster and the new cluster.
 status:
-tags: 
-    - hpc3
-    - refresh
+tags:
+    - release_notes
+    - announcement
 status: deprecated
 ---
 
@@ -44,7 +44,7 @@ There are snapshots for short-term recovery of deleted files, in `/home/.snapsho
 
 ### Tape
 
-[Freezer](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md) replaces Nearline.
+[Freezer](../../Storage/Long_Term_Storage/Freezer_Long_Term_Storage.md) replaces Nearline.
 
 ## Access via Web browser
 

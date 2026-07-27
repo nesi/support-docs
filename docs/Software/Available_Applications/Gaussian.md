@@ -1,7 +1,6 @@
 ---
 created_at: '2015-07-29T23:31:02Z'
 tags:
-- mahuika
 - chemistry
 description: How to run Gaussian on the Mahuika HPC
 ---

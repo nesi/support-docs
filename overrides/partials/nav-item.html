@@ -119,7 +119,7 @@
             {% endif %}
           </div>
         {% endif %}
-        <nav class="md-nav" data-md-level="{{ level }}" aria-labelledby="{{ path }}_label" aria-expanded="{{ nav_item.active | tojson }}">
+        <nav class="md-nav" data-md-level="{{ level }}" aria-labelledby="{{ path }}_label">
           <label class="md-nav__title" for="{{ path }}" {% if index and nav_item.children | length <= 1 %}id="{{ path }}_label"{% endif %}>
             <span class="md-nav__icon md-icon"></span>
             {{ render_title(nav_item) }}

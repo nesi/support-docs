@@ -1,17 +1,13 @@
 ---
+title: JupyterLab Interactive Sessions
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - JupyterLab
-  - notebook
-  - ipython
   - python
 description: How to run an JupyterLab interactive session on the Mahuika cluster.
 ---
 
-# JupyterLab interactive sessions
-
-For new users we recommend running Jupyterlab from our [OnDemand Service](https://docs.nesi.org.nz/Interactive_Computing/OnDemand/).  However,
+For new users we recommend running Jupyterlab from our [OnDemand Service](./OnDemand/index.md).  However,
 many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
 >If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm

@@ -1,12 +1,9 @@
 ---
 created_at: '2018-05-18T02:26:58Z'
 tags:
-- tqp
-title: How we review applications
+- account
+title: How We Review Applications
 vote_count: 2
-vote_sum: 0
-zendesk_article_id: 360000202136
-zendesk_section_id: 360000224835
 ---
 
 When you submit your application through our web site, it will go to our
@@ -23,7 +20,7 @@ new projects is as follows:
 2. **Software check:** One of our technical experts looks at the
     software you say you want to use and determines whether it can run
     on any of our systems and whether you are likely to be legally
-    allowed to run the software on NeSI. This check is intended to cover
+    allowed to run the software on the HPC platform. This check is intended to cover
     both compatibility and licensing matters, as well as whether you are
     able and willing to compile or install the software yourself if
     necessary.
@@ -37,14 +34,14 @@ new projects is as follows:
     consultancy service.
 4. **Disk space check:** We decide how much disk space your project is
     likely to need in the persistent storage (project directory) and
-    scratch storage (nobackup directory) and Tape storage (Freezer). We may unfortunately have to
+    scratch storage (nobackup directory) and long-term storage (Freezer). We may unfortunately have to
     reject (or negotiate for less storage) if your disk space needs
     would interfere with our ability to provide good service to other
     research teams.
 5. **Decision and notification:** If we approve an initial allocation
     for your project, we will typically award the project an
     [allocation of compute units and also an online storage allocation](../Getting_Started/Allocations/What_is_an_allocation.md),
-    from one of [our allocation classes](Allocation_classes.md).
+    from one of [our allocation classes](Allocation_Classes.md).
     In an case, we will send you an email telling you about our decision.
 
 Our review process for requests for new allocations on existing projects
@@ -53,10 +50,10 @@ is simpler:
 1. **Eligibility check:** We look at the information you have given us
     (and may ask you more questions) to find out which of our regular
     allocation classes
-    ([Merit](Allocation_classes.md#merit),
-    [Postgraduate](Allocation_classes.md#postgraduate)
+    ([Merit](Allocation_Classes.md#merit),
+    [Postgraduate](Allocation_Classes.md#postgraduate)
     or
-    [Institutional](Allocation_classes.md#institutional))
+    [Institutional](Allocation_Classes.md#institutional))
     this research programme is eligible to receive. Your research
     programme may be eligible for more than one allocation class.
 2. **Amount and duration:** We will calculate the approximate amount of
@@ -69,11 +66,10 @@ is simpler:
 3. **Choice of Class and Contention:** We will choose from which class
     to award your allocation, based on your research programme's
     eligibility for the different classes and whether your proposed
-    allocation would exceed [any class-based allocation limits](Allocation_classes.md).
+    allocation would exceed [any class-based allocation limits](Allocation_Classes.md).
     We may change this choice depending on which classes, if any, are
     under contention.
-4. **Approval:** If we decide that your project should be considered
-    for an Institutional allocation, the request may need to be approved
+4. **Approval:** If we decide that your project should be considered for an Institutional allocation, the request may need to be approved
     by a representative of the project's host institution, which is the
     institution where the project owner works or studies.
 5. **Decision and notification:** We will send you an email telling you

@@ -3,7 +3,9 @@ title: Contributing
 search:
   exclude: true
 description: Documentation of how to contribute to the documentation
-tags: []
+tags:
+- tutorial
+- version_control
 ---
 
 **[CLICK TO VIEW THIS PAGE RENDERED IN MKDOCS](https://nesi.github.io/support-docs/CONTRIBUTING)**{ .hidden }
@@ -112,6 +114,17 @@ Will give three levels of output, **Errors** (serious issues that will prevent m
 
 The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. If this check fails, the PR will show an error in the 'Checks' tab and the broken ARIA reference will be indicated.
 
+You can run a WCAG audit ([AccessLint/audit](https://github.com/AccessLint/audit)) locally with the `a11y-audit` VS Code task (builds the site, serves it, and audits it).
+After the audit runs, three files will be produced containing the audit report: `accesslint-report.json`, `accesslint-report.md`, and `accesslint-report.sarif`.
+
+The audit runs a headless Chromium browser, which needs some system libraries installed once per machine:
+
+```sh
+sudo npx --yes playwright install-deps chromium
+```
+
+Without this, the first `a11y-audit` run will fail with a `libnspr4.so`-style error.
+
 ### Codespace Environment
 
 This repository has been configured to be usable with [GitHub Codespaces](https://github.com/features/codespaces).
@@ -173,7 +186,7 @@ After a few minutes, a preview of the source branch will be deployed, a bot will
 
 Assign a reviewer if you wish.
 
-Adding the tag <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline"> will cause the request to be merged at midnight, if all checks passed.
+Adding the tag <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline"> will cause the request to be merged at midnight, if all checks passed.</a>
 
 ### Reviewing A Merge Request
 
@@ -204,6 +217,16 @@ This will allow you to fix any merge conflicts in your feature branch, before me
   
 <span style="color:green;">✔</span> **Do** review open pull requests!  
 <span style="color:green;">✔</span> **Do** merge pull requests you've reviewed, unless someone else is assigned.  
+
+## Redirects When Moving or Renaming Pages
+
+Renaming, moving, or deleting a page changes or removes its URL, breaking existing links. Add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working, one line per page (paths relative to `docs/`, keep the `.md`):
+
+```yml
+old/Path/To/Page.md: new/Path/To/Page.md
+```
+
+Move a whole directory? Add a line for each page inside it, `index.md` included. See [Renaming, Moving, or Deleting Pages](NEWPAGE.md#renaming-moving-or-deleting-pages) for detail.
 
 ## Update Remote Assets
 

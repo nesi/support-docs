@@ -1,11 +1,9 @@
 ---
 created_at: '2023-03-21T09:33:04Z'
-tags: []
-title: Dorado
+tags:
+- biology
 vote_count: 5
 vote_sum: 3
-zendesk_article_id: 6623692647951
-zendesk_section_id: 360000040076
 ---
 
 
@@ -20,7 +18,7 @@ zendesk_section_id: 360000040076
 Dorado is a high-performance, easy-to-use, open source basecaller for
 Oxford Nanopore reads.
 
-### [](https://github.com/nanoporetech/dorado#features)Features
+### [Features](https://github.com/nanoporetech/dorado#features)
 
 - One executable with sensible defaults, automatic hardware detection
     and configuration.
@@ -42,7 +40,11 @@ Technologies, Ltd. Public License, v. 1.0. If a copy of the License was
 not distributed with this file, You can obtain one
 at [http://nanoporetech.com](http://nanoporetech.com/)
 
-.
+## Dorado models
+
+Dorado can fetch models for basecalling from the Oxford Nanopore Content Delivery Network (CDN) using `dorado download`.
+By default, Dorado will download and look for models in the current working directory; this can be changed using the `--models-directory` option for Dorado commands.
+You can also set this via the `DORADO_MODELS_DIRECTORY` environment variable.
 
 ### Example Slurm script
 

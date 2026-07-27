@@ -61,6 +61,7 @@ There are also some versioned databases which are accessible through environment
 - AlphaFold2DB: `module avail AlphaFold2DB`
 - AlphaFold3DB: `module avail AlphaFold3DB`
 - BLASTDB: `module avail BLASTDB` (see [BLAST page](../Software/Available_Applications/BLAST.md) for more information)
+- VEP: `module avail VEP`
 
 !!! note "Requesting new or updated databases"
     If there is a database you think may be useful to many Mahuika users, or if you would like an updated version of one of the maintained databases, please {% include "partials/support_request.html" %} with details about the source and version of the database of interest.

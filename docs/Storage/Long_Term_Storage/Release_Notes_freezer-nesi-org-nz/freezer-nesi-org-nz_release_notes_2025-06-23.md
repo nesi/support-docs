@@ -1,8 +1,8 @@
 ---
 created_at: '2025-06-23T03:42:47Z'
 tags:
-- freezer
-- release notes
+- storage
+- release_notes
 title: 2025/06/23
 description: Freezer upgrade release notes
 search:
@@ -17,4 +17,4 @@ search:
 - Resilient provisioning: If one member encounters provisioning issues, the system will continue to provision other members without interruption
 - Validation before provisioning: Provisioning will now be blocked if the allocation is missing or contains incorrect values, ensuring data integrity and preventing errors
 
-If you have any questions about any of the fixes, please [contact Mahuika Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+If you have any questions about any of the fixes, please {% include "partials/support_request.html" %}.

@@ -1,9 +1,8 @@
 ---
 created_at: '2020-02-25T02:35:13Z'
-tags: 
-    - Allocations
-    - Compute
-title: What is an Allocation?
+tags:
+    - account
+title: What Is an Allocation?
 ---
 
 Because the HPC platform resources are limited, we manage access to our resources
@@ -15,7 +14,7 @@ different allocation criteria.
 An allocation will come from one of our allocation classes. We will
 decide what class of allocation is most suitable for you and your
 research programme, however you're welcome to review
-[our article on allocation classes](../../Policy/Allocation_classes.md)
+[our article on allocation classes](../../Policy/Allocation_Classes.md)
 to find out what class you're likely eligible for.
 
 ## An important note on CPU hour allocations
@@ -50,9 +49,9 @@ following table.
 
 |  Hardware type         |    Fair Share Price                     |
 |------------------------|-----------------------------------------|
-| Milan CPU              | 0.9 compute units per physical-CPU-hour |
+| Milan CPU              | 0.9 compute units per CPU-core-hour     |
 | Milan Memory (RAM)     | 0.13 compute units per GB-hour          |
-| Genoa CPU              | 1.4 compute units per physical-CPU-hour |
+| Genoa CPU              | 1.4 compute units per CPU-core-hour     |
 | Genoa Memory (RAM)     | 0.20 compute units per GB-hour          |
 | A100 GPU device        | 18.0 compute units per device-hour      |
 | A100-1g.5gb GPU device | 3.0 compute units per device-hour       |

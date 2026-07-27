@@ -1,10 +1,9 @@
 ---
 created_at: '2019-09-22T21:07:48Z'
-tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001173895
-zendesk_section_id: 360000189716
+tags:
+- openmp
+- parallel
+- profiling
 ---
 
 In the example below we will use R scripts to demonstrate how you might

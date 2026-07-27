@@ -1,11 +1,13 @@
 ---
 created_at: '2021-01-13T00:17:34Z'
-tags: []
+tags:
+- access
+- account
 ---
 
 REANNZ provides access to New Zealand’s national services for High Performance Computing (HPC) Compute and Analytics, Consultancy, and Training, supported by research data sharing and transfer services.  This policy applies to HPC Compute and Analytics, and Consultancy services. 
 
-HPC Compute and Analytics provides access to [HPC platforms](https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics) that host a broad range of high performance [software applications and libraries](https://docs.nesi.org.nz/Software/Available_Applications/), supported by an Advisor assigned to each research project. 
+HPC Compute and Analytics provides access to [HPC platforms](https://www.reannz.co.nz/products-and-services/high-performance-computing-and-data-analytics) that host a broad range of high performance [software applications and libraries](../Software/Available_Applications/index.md), supported by an Advisor assigned to each research project. 
 
 The Consultancy and Training services provide access to [expert scientific software programmers](https://www.reannz.co.nz/products-and-services/training-and-consultancy/consultancy) and [training workshops](https://www.reannz.co.nz/products-and-services/training-and-consultancy/training) respectively, while high throughput [data transfer services](https://www.reannz.co.nz/products-and-services/data-services) enable the rapid movement of data on and off the HPC platforms and between institutions.  
 
@@ -73,4 +75,9 @@ The author(s) wish to acknowledge use of the eResearch Infrastructure Platform h
 
 - Users must notify REANNZ by email (engagement@reannz.co.nz) of any publications in which an acknowledgment is made.
 - REANNZ may publicly publish project summaries.
-- All resources are allocated according to this policy, including requirements for ageing and expiration of allocations over time. 
+- All resources are allocated according to this policy, including requirements for ageing and expiration of allocations over time.
+
+  
+
+!!! info "NeSI-REANNZ Integration"
+    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into Research and Education Advanced Network New Zealand (REANNZ) Ltd. At that time, all aspects of NeSI delivery, including this policy, became the responsibility of REANNZ. Currently, some of our online spaces (e.g. `docs.nesi.org.nz`, `my.nesi.org.nz`, etc.) and email addresses (e.g. `support@nesi.org.nz`) have retained a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.

@@ -1,11 +1,9 @@
 ---
 created_at: '2021-02-23T02:54:11Z'
-tags: []
-title: VirSorter
+tags:
+- biology
 vote_count: 1
 vote_sum: -1
-zendesk_article_id: 360003472036
-zendesk_section_id: 360000040076
 ---
 
 

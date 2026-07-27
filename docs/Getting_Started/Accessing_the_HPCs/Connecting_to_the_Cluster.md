@@ -1,10 +1,8 @@
 ---
 created_at: '2019-06-25T22:40:46Z'
 tags:
-- terminal
-- mobaxterm
-- gitbash
-- login
+- access
+- version_control
 ---
 
 !!! prerequisite
@@ -70,6 +68,7 @@ VSCode can be used with WSL but WSL is not a requirement.
  _highly_ recommend using the installer edition if you have
  administrator privileges on your workstation or if your
  institution's IT team supports MobaXTerm.
+
 !!! tip "What next?"
     -  Configuring
        [MobaXterm](MobaXterm_Setup_Windows.md)
@@ -86,10 +85,11 @@ primary terminal.
 
 ### WinSCP
 
-WinSCP has some advantages over MobaXterm (customisable, cleaner
-interface, open source), and some disadvantages (no built in
-X-server, additional authentication step). However, WinSCP setup is
-more involved than with MobaXterm, therefore we do not recommend it
+WinSCP has some advantages over MobaXterm: customisable, cleaner
+interface, open source, and some disadvantages: known file transfer 
+issues. no built in X-server, additional authentication step. 
+
+WinSCP setup is more involved than MobaXterm, therefore we **do not** recommend it
 for new users.
 
 !!! tip "What next?"

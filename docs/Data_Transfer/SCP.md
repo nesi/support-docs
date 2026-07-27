@@ -2,6 +2,9 @@
 created_at: 2026-01-05
 title: SCP (Secure Copy)
 description: How to transfer data on the REANNZ HPC using SCP.
+tags:
+- file_transfer
+- access
 ---
 
 !!! prerequisite

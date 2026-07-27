@@ -1,8 +1,7 @@
 ---
 created_at: '2021-08-27T03:18:13Z'
-tags: 
-    - globus
-    - file transfer
+tags:
+    - file_transfer
 ---
 
 !!! note
@@ -13,9 +12,8 @@ Globus is a data transfer service that can be used to move a large amount of dat
 The following guide shows how to:
 
 * [How to set up Globus for the first time](./First_Time_Setup.md)
-* [How to set up a **free** Globus Subscription](./Signing_Up_To_Globus_Subscription.md)
 * [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
-* [How to transfer data to/from Mahuika](./Data_Transfer_using_Globus.md)
+* [How to transfer data to/from Mahuika](./Data_Transfer_Using_Globus.md)
 * [How to transfer data between endpoints other than Mahuika](./Data_Transfer_Between_Personal_Endpoints.md)
 
 This page also contains other useful information on how to use Globus, including:
@@ -42,8 +40,9 @@ Globus allows users to transfer large amounts of data between systems. Some adva
 ## Glossary
 
 * Endpoints: Globus refers to computers, servers, and high capacity storage systems as endpoints.
+* Collection: A Globus collection represents a location containing data plus the policies and permissions for accessing that data.
 
 ## Quick Information
 
-* Name of Mahuika endpoint: `NeSI HPC Storage` (_Note: This name was chosen for the endpoint prior NeSI's integration with REANNZ in 2025._)
-* Name of NeSI Subscription: `New Zealand eScience Infrastructure Standard`
+* Name of Mahuika mapped collection: `{{ globus_collection_storage}}`
+* Name of REANNZ's Globus Subscription: `New Zealand eScience Infrastructure Standard` (Note: Our subscription name has not yet been updated following NeSI's merger with REANNZ in July 2025)
