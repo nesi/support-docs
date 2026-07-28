@@ -45,4 +45,4 @@ Billable services available via the Research Developer Cloud include:
 - Graphical Processing Units (GPUs)
 - Storage
 
-For more information, check [the Research Developer Cloud pricing](Service_Subscriptions/Pricing.md#research-developer-cloud).
+For more information, check [the Research Developer Cloud pricing](../Pricing.md#research-developer-cloud).

@@ -139,7 +139,7 @@ All the parameters available can be found by checking `man sbatch` or on the onl
 | Time | `#SBATCH --time=DD-HH:MM:SS` | Job max walltime |
 | Memory | `#SBATCH --mem=1500M` | Memory required per node |
 | Output | `#SBATCH --output=%j_output.out` | Path and name of the standard output file |
-| Number of tasks | `#SBATCH --ntasks=2` | Will start 2 [MPI tasks](../../Software/Parallel_Computing/Parallel_Computing.md#shared-memory-parallelisation) |
+| Number of tasks | `#SBATCH --ntasks=2` | Will start 2 [MPI tasks](../../Software/Parallel_Computing/Parallel_Computing.md#shared-memory) |
 | CPUs per task | `#SBATCH --cpus-per-task` | Will request 10 CPUs per task |
 
 !!! question "Comments"
