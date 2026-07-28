@@ -13,9 +13,9 @@ wget -q -O docs/assets/training_calendar.ics "${ICAL_URL}"
 wget -q -O docs/assets/module-list.json "${MODULES_LIST_URL}"
 wget -q -O docs/software_updates.xml "${MODULES_UPDATE_URL}"
 
-python3 .github/workflows/compile_tags.py
 
 wget -q -O overrides/partials/glossary.html "${GLOSSARY_URL}"
 wget -q -O docs/assets/glossary/dictionary.txt "${DICTIONARY_URL}"
 wget -q -O docs/assets/glossary/snippets.md "${SNIPPETS_URL}"
 
+python3 .github/workflows/compile_tags.py

@@ -1,0 +1,138 @@
+.nesi-chat-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--md-primary-fg-color);
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+  color: #fff;
+  font-size: 22px;
+}
+
+.nesi-chat-window {
+  position: fixed;
+  right: 24px;
+  bottom: 92px;
+  width: 340px;
+  height: 460px;
+  max-height: calc(100vh - 120px);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 1001;
+  background: var(--md-default-bg-color);
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+.nesi-chat-window.nesi-chat-open { display: flex; }
+
+.nesi-chat-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  font-weight: 600;
+  font-size: 14px;
+}
+.nesi-chat-header span { flex: 1; }
+.nesi-chat-header input {
+  width: 90px;
+  font-size: 11px;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 6px;
+  color: var(--md-default-fg-color);
+}
+
+.nesi-chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 13.5px;
+  line-height: 1.5;
+}
+
+.nesi-chat-msg { max-width: 90%; padding: 8px 12px; border-radius: 10px; }
+.nesi-chat-msg p:first-child { margin-top: 0; }
+.nesi-chat-msg p:last-child { margin-bottom: 0; }
+.nesi-chat-msg-user {
+  align-self: flex-end;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  border-bottom-right-radius: 3px;
+}
+.nesi-chat-msg-bot {
+  align-self: flex-start;
+  background: var(--md-code-bg-color);
+  border-bottom-left-radius: 3px;
+}
+.nesi-chat-msg-bot pre {
+  overflow-x: auto;
+  padding: 8px 10px;
+  border-radius: 6px;
+  background: var(--md-default-bg-color);
+  font-size: 12px;
+}
+.nesi-chat-msg-bot code { font-size: 12px; }
+.nesi-chat-cite { color: var(--md-accent-fg-color); font-weight: 700; cursor: pointer; }
+.nesi-chat-error { color: #c0392b; }
+.nesi-chat-thinking { color: var(--md-default-fg-color--light); font-style: italic; }
+
+.nesi-chat-sources {
+  margin-top: 6px;
+  font-size: 11.5px;
+}
+.nesi-chat-sources summary { cursor: pointer; color: var(--md-default-fg-color--light); }
+.nesi-chat-sources a {
+  display: block;
+  padding: 5px 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  background: var(--md-default-bg-color);
+  color: var(--md-accent-fg-color);
+  text-decoration: none;
+}
+
+.nesi-chat-input-row {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+  border-top: 1px solid var(--md-default-fg-color--lightest);
+}
+.nesi-chat-input-row textarea {
+  flex: 1;
+  resize: none;
+  max-height: 100px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--md-default-fg-color--lightest);
+  background: var(--md-default-bg-color);
+  color: var(--md-default-fg-color);
+  font: inherit;
+  font-size: 13px;
+}
+.nesi-chat-input-row textarea:focus { outline: 2px solid var(--md-primary-fg-color); border-color: transparent; }
+.nesi-chat-input-row button {
+  border: none;
+  border-radius: 8px;
+  background: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+  padding: 0 14px;
+  cursor: pointer;
+  font-size: 16px;
+}
+.nesi-chat-input-row button:disabled { opacity: .5; cursor: default; }

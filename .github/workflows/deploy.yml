@@ -73,3 +73,34 @@ jobs:
           key: mkdocs-${{ hashfiles('.cache/**') }}
           path: .cache
 
+  rag-ingest:
+    name: Refresh RAG index
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Checkout support-docs
+        uses: actions/checkout@v6
+        with:
+          sparse-checkout: |
+            docs
+            overrides
+            .github
+      - name: Checkout nesi-docs-rag
+        # Lives on GitLab (gitlab.com/nesi1/nesi-rst/nesi-docs-rag), not GitHub,
+        # so actions/checkout can't reach it directly -- clone over SSH with a
+        # read-only deploy key instead.
+        run: |
+          mkdir -p ~/.ssh
+          ssh-keyscan gitlab.com >> ~/.ssh/known_hosts
+          eval "$(ssh-agent -s)"
+          ssh-add - <<< "$RAG_DEPLOY_KEY"
+          git clone --depth 1 git@gitlab.com:nesi1/nesi-rst/nesi-docs-rag.git nesi-docs-rag
+        env:
+          RAG_DEPLOY_KEY: ${{ secrets.NESI_DOCS_RAG_DEPLOY_KEY }}
+      - name: Fetch Remote Files
+        run: bash .github/fetch_includes.sh
+      - name: Run ingest
+        working-directory: nesi-docs-rag
+        env:
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+        run: bash scripts/ingest_local.sh ../docs
