@@ -62,10 +62,12 @@ async function displayOfficeHoursCalendar() {
         calendarP.innerHTML = '<div class="admonition bug"><p class="admonition-title">Error loading Calendar.</p></div>';
     }
 }
-// Support both full page load and MkDocs AJAX navigation
-window.addEventListener("load", displayOfficeHoursCalendar);
-// For Material for MkDocs: listen for AJAX navigation events
+// Support both full page load and Material's instant (SPA-style) navigation.
+// document$ already emits for the initial page load, so also listening for
+// "load" would run this twice on first load and append the table/buttons twice.
 if (typeof document$ !== 'undefined') {
     document$.subscribe(displayOfficeHoursCalendar);
+} else {
+    window.addEventListener("load", displayOfficeHoursCalendar);
 }
 
