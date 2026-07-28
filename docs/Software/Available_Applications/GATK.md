@@ -1,11 +1,8 @@
 ---
-created_at: '2023-02-21T21:21:50Z'
-tags: []
 title: GATK
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6443618773519
-zendesk_section_id: 360000040076
+created_at: '2023-02-21T21:21:50Z'
+tags:
+- biology
 ---
 
 
@@ -21,8 +18,8 @@ tools focusing primarily on variant discovery and genotyping. It is
 regarded as the industry standard for identifying SNPS and indels in
 germline DNA and RNAseq data.
 
-General documentation for running GATK can be found at their website
-[here.](https://gatk.broadinstitute.org/hc/en-us)
+[General documentation for running GATK](https://gatk.broadinstitute.org/hc/en-us)
+can be found at their website.
 
 ## Running GATK
 
@@ -40,7 +37,7 @@ need to load a Java module separately.
 #SBATCH --job-name=MarkDuplicates
 #SBATCH --output=%x_%j.out     # log file
 #SBATCH --error=%x_%j.err      # error log file
-#SBATCH --account=nesi12345    # your NeSI project code
+#SBATCH --account=nesi12345    # your project code
 #SBATCH --time=2:00:00         # maximum run time hh:mm:ss
 #SBATCH --mem=30G              # maximum memory available to GATK
 

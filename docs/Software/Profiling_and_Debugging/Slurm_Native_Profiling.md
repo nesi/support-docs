@@ -6,31 +6,25 @@ tags:
 ---
 
 Job resource usage can be determined on job completion by checking the
-following sacct columns;
+following `sacct` columns;
 
 - MaxRSS - Peak memory usage.
-- TotalCPU - Check *Elapsed* x *Alloc*≈*TotalCPU*
+- TotalCPU - Check: *Elapsed* x *Alloc*≈*TotalCPU*
 
 However if you want to examine resource usage over the run-time of your
 job,  
 the line `#SBATCH --profile task` can be added to your script.
 
 That will cause profile data to be recorded every 30 seconds throughout
-the job. For jobs which take much less/more than a day to run we
-recommend increasing/decreasing that sampling frequency, so for example
+the job. For jobs which take much less than a day to run we
+recommend increasing that sampling frequency, so for example
 when profiling a job of less than 1 hour it would be OK to sample every
-second by adding `#SBATCH --acctg-freq=1`, and for a week long job the
-rate should be reduced to once every 5
-minutes: `#SBATCH --acctg-freq=300`.  
+second by adding `#SBATCH --acctg-freq=1`.
 
 The `profile_plot` command can then be used to generate an image with the results.
+`profile_plot <jobid>` will produce `<jobid>_profile.png`.  
+See `profile_plot --help` for its options.
 
-See `profile_plot --help` for more info.
+We keep the profile data for at least 30 days. Profiles older than that may 
+be deleted or incomplete.
 
-Alternatively you could use one of the following scripts.
-
-- [Python](https://github.com/nesi/nesi-tools/blob/main/.nn_profile_plot.py)
-- [MATLAB](https://github.com/CallumWalley/slurm_native_h5_plotter)
-
-Any GPU usage will also be recorded in the profile, so long as the
-process was executed via *srun*.

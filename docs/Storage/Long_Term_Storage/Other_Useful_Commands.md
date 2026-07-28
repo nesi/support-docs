@@ -1,8 +1,7 @@
 ---
 created_at: 2025-10-01
 description: "Other Freezer commands"
-tags: 
-  - Freezer
+tags:
   - storage
 ---
 

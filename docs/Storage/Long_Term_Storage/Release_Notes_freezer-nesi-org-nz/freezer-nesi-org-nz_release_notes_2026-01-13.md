@@ -1,0 +1,16 @@
+---
+created_at: '2026-01-13T10:00:00Z'
+tags:
+- storage
+- release_notes
+title: 2026/01/13
+description: Freezer upgrade release notes
+search:
+  boost: 0.1
+---
+
+## New and Improved
+
+- Various bug fixes and performance optimizations
+
+If you have any questions about any of the fixes, please {% include "partials/support_request.html" %}.

@@ -51,7 +51,7 @@ Downloading the code can be done in various ways.
 
 ### Load Dependencies
 
-You will probably want to build your application against some of the existing NeSI software stack.
+You will probably want to build your application against some of the existing Mahuika software stack.
 Almost certainly, this will include a toolchain.
 
 ```sh

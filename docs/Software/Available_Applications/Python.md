@@ -1,9 +1,7 @@
 ---
 created_at: '2015-08-18T05:16:01Z'
 tags:
-- ml
-- language
-title: Python
+- machine_learning
 ---
 
 
@@ -13,7 +11,7 @@ title: Python
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-All versions of Python available on NeSI platforms are owned and
+All versions of Python available on Mahuika platforms are owned and
 licensed by the Python Software Foundation. Each version is released
 under a specific open-source licence. The licences are available on
 [the Python documentation server](https://docs.python.org).
@@ -26,7 +24,7 @@ modules instead.  They include optimised builds of the most popular
 Python packages for computational work such as *numpy*, *scipy*,
 *matplotlib*, and many more.
 
-### NeSI Customisations
+### Mahuika Customisations
 
 Our most recent Python environment modules have:
 
@@ -315,7 +313,7 @@ python MyPythonScript.py
 
 By default, Python virtual environments are fully isolated from the
 system installation. It means that you will not be able to access
-packages already prepared by NeSI in the corresponding Python
+packages already prepared by Mahuika in the corresponding Python
 environment module.
 
 To avoid this, use the option `--system-site-packages` when creating the
@@ -351,7 +349,7 @@ python MyPythonScript.py
 ### iPython
 
 iPython (*i*nteractive *Python*) is an enhanced tool for accessing a
-Python command line. It is available in many NeSI Python modules.
+Python command line. It is available in many Mahuika Python modules.
 
 #### Starting iPython
 

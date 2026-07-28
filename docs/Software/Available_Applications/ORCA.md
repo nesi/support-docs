@@ -1,13 +1,10 @@
 ---
+title: ORCA
 created_at: '2015-11-09T21:20:24Z'
 tags:
-- mahuika
 - chemistry
-title: ORCA
 vote_count: 6
 vote_sum: 4
-zendesk_article_id: 213718027
-zendesk_section_id: 360000040076
 ---
 
 
@@ -70,7 +67,10 @@ line to the input file like the following:
 where `<np>` represents the total number of processors (cores) you have
 requested from the scheduler.
 
-### Checkpointing and restarting
+### Checkpointing
+
+!!! warning "Checkpointing"
+     We strongly the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
 
 ORCA provides for saving of checkpoint data, especially molecular
 orbital information, in a file with extension ".gbw" (short for

@@ -1,9 +1,8 @@
 ---
 created_at: '2019-02-21T02:46:25Z'
-tags: 
-  -  molecular dynamics
-  -  chemistry
-description: How to run GROMACS on the NeSI cluster
+tags:
+  - chemistry
+description: How to run GROMACS on the Mahuika cluster
 ---
 
 
@@ -34,7 +33,7 @@ obtained with the Software.
 
 === "Serial"
     For when only one CPU is required, generally as part of
-    a [job array](../Parallel_Computing/Parallel_Execution.md#job-arrays)
+    a [job array](../Parallel_Computing/Parallel_Computing.md#job-arrays)
 
     ```sl
     #!/bin/bash -e
@@ -83,7 +82,7 @@ obtained with the Software.
     srun gmx_mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
     ```
 === "GPU"
-    For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+    For more information on using GPUs see [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
     ```sl
     #!/bin/bash -e
 
@@ -130,6 +129,9 @@ be the number of CPUs per task. You can make sure the value is correct
 by using `-ntomp ${SLURM_CPUS_PER_TASK}`. 
 
 ## Checkpointing
+
+!!! warning "Checkpointing"
+     We strongly the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
 
 The `-cpt 30` option instructs Gromacs to
 write a full checkpoint file every 30 minutes.

@@ -66,6 +66,6 @@ Most will run on the [fail_checks](fail_checks.md) page
 Tags are used to help search indexing, but can also be used to search by topic.
 
 We don't want a large number of similar/duplicate tag topics, as this is visually messy and reduces the utility of being able to sort by one.
-There is a list of 'approved' tags [.approved_tags.yml](./.approved_tags.yml), feel free to add to it.
+There is a canonical vocabulary of tags (with aliases) in [tags.yml](../docs/assets/tags.yml), feel free to add to it.
 
 Tags are checked in [run_meta_check.py](run_meta_check.py).

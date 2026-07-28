@@ -2,9 +2,8 @@
 created_at: '2019-05-03T04:15:24Z'
 description: How to set up cluster access using 'git bash'
 tags:
-   - git
-   - bash
-   - ssh
+   - version_control
+   - access
 title: Git Bash (Windows)
 ---
 
@@ -40,7 +39,7 @@ credentials every time you open a new terminal or try to move a file.*
 scp <path/filename> nesi:~/
 ```
 
-For more info visit [data transfer](../../File_Transfer/Moving_files_to_and_from_the_cluster.md).
+For more info visit [data transfer](../../Data_Transfer/Data_Transfer_Overview.md).
 
 !!! prerequisite "What Next?"
    - [Standard Terminal Setup](Standard_Terminal_Setup.md)

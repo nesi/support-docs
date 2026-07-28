@@ -11,20 +11,26 @@ Currently retrieves:
 - Software module list from [modules-list](https://github.com/nesi/modules-list).
 - Glossary, spellcheck dictionary and snippets from [nesi-wordlist](https://github.com/nesi/nesi-wordlist)
 
-It then runs [link_apps_pages.py](#link_apps_pagespy).
+It then runs [compile_tags.py](#compile_tagspy).
 
 All modified files are added to a new branch called `new-assets` and merged into main.
 
 In theory, all this could be done at deployment, but I wanted to make sure that changes to these remote files didn't break anything.
 
-## [link_apps_pages.py](link_apps_pages.py)
+## [compile_tags.py](compile_tags.py)
 
-A Python script used to add a link to the appropriate documentation to [modules-list.json](../../docs/assets/module-list.json).
+Replaces the old `link_apps_pages.py`.
 
-The script checks all titles of input files, and sets the `support` key to be equal to the pages url.
-It also adds whatever tags are on that page to the `domains` key.
+Validates page tags against the canonical vocabulary in [`docs/assets/tags.yml`](../../docs/assets/tags.yml), writes two compiled indexes, and links app pages to the module list:
 
-_One day I would like to simplify this whole thing._
+- **`docs/assets/tag-index.json`** — maps each canonical tag to the list of pages that carry it. Used by the `pages_with_tag()` macro at render time.
+- **`docs/assets/module-list.json`** — updated with support-page URLs and canonical domain tags for each application.
+
+Any tag not present in `tags.yml` (as a key or alias) produces a CI warning. Unknown tags are silently dropped from the index.
+
+### Tag vocabulary
+
+Tags are defined in [`docs/assets/tags.yml`](../../docs/assets/tags.yml). Each entry has a canonical key (snake\_case), a display label, and optional aliases. Pages should always use canonical keys; aliases are accepted for backwards compatibility but are normalised at compile time.
 
 ## [checks.yml](checks.yml)
 

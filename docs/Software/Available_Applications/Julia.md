@@ -1,11 +1,9 @@
 ---
 created_at: '2019-09-23T11:11:16Z'
-tags: []
-title: Julia
+tags:
+- julia
 vote_count: 3
 vote_sum: 3
-zendesk_article_id: 360001175895
-zendesk_section_id: 360000040076
 ---
 
 
@@ -42,7 +40,7 @@ Julia extensions, i.e. pieces of code that add functionality, are called
 grouped into *packages*. Each package thus consists of one or more
 modules.
 
-NeSI provides a range of packages with our centrally managed Julia
+Mahuika provides a range of packages with our centrally managed Julia
 installations, however you may wish to install additional packages,
 either in your home directory or, more likely, in a project directory so
 your research team members can be sure of using the same version of
@@ -146,7 +144,7 @@ where newly obtained packages are to be installed. The directories where
 existing packages are searched for are stored in a different variable,
 `LOAD_PATH`.
 
-On NeSI, the default contents of `LOAD_PATH` are as follows:
+On Mahuika, the default contents of `LOAD_PATH` are as follows:
 
 ``` julia
 LOAD_PATH

@@ -2,10 +2,8 @@
 created_at: '2015-10-15T02:15:46Z'
 tags:
 - engineering
-- cfd
-- fea
-status: deprecated
-description: How to best use ANSYS products on the NeSI cluster.
+- earth_science
+description: How to best use ANSYS products on the Mahuika cluster.
 ---
 
 {% set app_name = page.title | trim %}
@@ -19,14 +17,14 @@ description: How to best use ANSYS products on the NeSI cluster.
 ## Available Modules
 
 {% include "partials/app/app_version.html" -%}
-<!-- 
+
 ## Licences
 
-The following network licence servers can be accessed from the NeSI cluster.
+The following network licence servers can be accessed from the Mahuika cluster.
 
 {% include "partials/app/app_network_licence.html" -%}
 
-If you do not have access, or want a server connected {% include "partials/support_request.html" %}. -->
+If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
 
 ### License Types
 
@@ -88,12 +86,12 @@ Below is an example of this from a fluent script.
 #SBATCH --time          01:00:00          # Wall time
 #SBATCH --mem           512MB             # Memory per node
 #SBATCH --array         1-100 
-#SBATCH --hint          nomultithread     # No hyperthreading
 
+module purge
 module load ANSYS/{{app.default}} 
 
 JOURNAL_FILE=fluent_${SLURM_JOB_ID}.in
-cat  ${JOURNAL_FILE}
+cat << EOF > ${JOURNAL_FILE}
 /file/read-case-data testCase${SLURM_ARRAY_TASK_ID}.cas
 /solve/dual-time-iterate 10
 /file/write-case-data testOut${SLURM_ARRAY_TASK_ID}.cas
@@ -156,7 +154,7 @@ Must have one of these flags.
 | `3ddp` | 3D solver, double point precision. |
 
 === "Serial Job"
-    Single process with a single thread (2 threads if hyperthreading enabled).
+    Single process with a single thread (2 threads if simultaneous multithreading (SMP) enabled).
 
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
@@ -166,9 +164,8 @@ Must have one of these flags.
     #SBATCH --job-name      Fluent-Serial
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
-    #SBATCH --cpus-per-task 1                 # Double if hyperthreading enabled
+    #SBATCH --cpus-per-task 1                 #
     #SBATCH --mem           512MB             # Total memory (per node)
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
 
@@ -195,9 +192,8 @@ Must have one of these flags.
     #SBATCH --time              00:05:00          # Walltime
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            8                 # Number processes
-    #SBATCH --cpus-per-task     1                 # Double if hyperthreading enabled
+    #SBATCH --cpus-per-task     1                 #
     #SBATCH --mem-per-cpu       1500              # Fine for small jobs; increase if needed
-    #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
     JOURNAL_FILE=/share/test/ansys/fluent/wing.in
@@ -261,6 +257,9 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 
 ### Checkpointing
 
+!!! warning "Checkpointing"
+    We recommend [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
+
 It is best practice when running long jobs to enable autosaves.
 
 ```fluent
@@ -268,8 +267,6 @@ It is best practice when running long jobs to enable autosaves.
 ```
 
 Where `500` is the number of iterations to run before creating a save.
-
-In order to save disk space you may also want to include the line
 
 ### Interrupting
 
@@ -371,7 +368,7 @@ solution specify as relative path, or unload compiled lib before saving
 `cfx5solve -help` for a list of commands.
 
 === "Serial"
-    Single *process* with a single *thread* (2 threads if hyperthreading enabled).
+    Single *process* with a single *thread* (2 threads if simultaneous multithreading (SMP) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -381,7 +378,6 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           512MB             # total mem
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
 
@@ -404,11 +400,12 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            36                # Number processes
     #SBATCH --mem-per-cpu       512MB             # Standard for large partition
-    #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
+    module purge
     module load ANSYS/{{ applications.ANSYS.default }}
     input="/share/test/ansys/mechanical/structural.dat" 
-    cfx5solve -batch -def "${input} -part ${SLURM_NTASKS}
+
+    cfx5solve -batch -def "${input}" -part ${SLURM_NTASKS}
     ```
 
     !!! tip
@@ -435,7 +432,7 @@ xvfb-run cfx5post input.cse
 
 === "Serial"
 
-    Single *process* with a single *thread (2 threads if hyperthreading enabled).
+    Single *process* with a single *thread (2 threads if simultaneous multithreading (SMP) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -445,12 +442,12 @@ xvfb-run cfx5post input.cse
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           1500M             # total mem
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
+    module purge
     module load ANSYS/{{ applications.ANSYS.default }}
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
-    mapdl -b -i "${input}
+    mapdl -b -i "${input}"
     ```
 
 === "Shared Memory"
@@ -459,7 +456,7 @@ xvfb-run cfx5post input.cse
     All threads must be on the same node, limiting scalability.
 
     Number of threads is set by `-np` and should be equal to`--cpus-per-task`.
-    Not recommended if using more than 8 cores (16 CPUs if hyperthreading enabled).
+    Not recommended if using more than 8 cores (16 CPUs if simultaneous multithreading (SMP) enabled).
 
     ```sl
     #!/bin/bash -e
@@ -467,9 +464,8 @@ xvfb-run cfx5post input.cse
     #SBATCH --job-name      ANSYS-Shared
     #SBATCH --account       nesi99991
     #SBATCH --time          00:05:00          # Walltime
-    #SBATCH --cpus-per-task 8                 # Double if hyperthreading enabled
+    #SBATCH --cpus-per-task 8                 #
     #SBATCH --mem           12G               # 8 threads at 1500 MB per thread
-    #SBATCH --hint          nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
@@ -494,7 +490,6 @@ xvfb-run cfx5post input.cse
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            16                # Number processes
     #SBATCH --mem-per-cpu       1500
-    #SBATCH --hint              nomultithread     # Hyperthreading disabled
 
     module load ANSYS/{{ applications.ANSYS.default }}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
@@ -523,7 +518,21 @@ xvfb-run cfx5post input.cse
 
 ## LS-DYNA
 
-### Fluid-Structure Example
+LS-DYNA specialises in highly non-linear, transient dynamic finite element analysis.
+
+### Command line options
+
+| Flag      | Purpose                                    | Example                       |
+| --------- | ------------------------------------------ | ----------------------------- |
+| `-i`      | The input file argument                    | `-i "MyInput.k"`              |
+| `-dp`     | Enable double precision                    | `-dp`                         |
+| `NCPUS`   | SMP ranks                                  | `NCPUS=-$SLURM_CPUS_PER_TASK` |
+| `MEMORY`  | How much memory to assign to the head node | `MEMORY=2G`                   |
+| `MEMORY2` | How much memory to subsequent nodes        | `MEMORY2=2G`                  |
+
+Input files are typically LS-DYNA keyword decks such as `.k` files.
+
+### Shared Memory Example
 
 ``` sl
 #!/bin/bash -e
@@ -531,15 +540,20 @@ xvfb-run cfx5post input.cse
 #SBATCH --job-name      LS-DYNA
 #SBATCH --account       nesi99991         # Project Account
 #SBATCH --time          01:00:00          # Walltime
-#SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
-#SBATCH --ntasks        16                # Number of CPUs to use
-#SBATCH --mem-per-cpu   512MB             # Memory per cpu
-#SBATCH --hint          nomultithread     # No hyperthreading
+#SBATCH --cpus-per-task 16                # Number of CPUs to use
+#SBATCH --mem-per-cpu   1G                # Memory per cpu
 
+module purge
 module load ANSYS/{{ applications.ANSYS.default }}
-input=3cars_shell2_150ms.k
-lsdyna -dis -np $SLURM_NTASKS i="$input" memory=$(($SLURM_MEM_PER_CPU/8))M
+lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
 ```
+
+!!! tip
+    - Keep large transient LS-DYNA output in larger
+    storage such as `nobackup`, not your home directory.
+    - Use restart/[checkpointing](../../Batch_Computing/Job_Checkpointing.md) workflows for long runs so work can continue across multiple scheduled jobs.
+    - Avoid writing frequent output unless needed, as excessive I/O can reduce performance at scale.
+    - Adding a `-` in front of your requested number of CPUs, e.g. `ncpu=-64` will force tasks to execute in a deterministic way, decreasing performance but ensuring repeatability.
 
 ## FENSAP-ICE
 
@@ -576,7 +590,6 @@ number of (physical) CPUs.
     --mem-per-cpu memory
     --time time
     --licenses 
-    --hint nomultithread
     ```
 
     Note: All these parameters will be applied to each individual
@@ -621,7 +634,7 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a slurm script or by 
+ANSYS-EM jobs can be submitted through a slurm script or by
 [interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).
 
 ### RSM
@@ -629,7 +642,7 @@ ANSYS-EM jobs can be submitted through a slurm script or by
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
 manager) running on all nodes. The command `startRSM` has been written
 to facilitate this and needs to be run *after* starting the slurm job
-but *before* running edt. Please contact NeSI support if the command is
+but *before* running edt. Please contact REANNZ support if the command is
 not working for you.
 
 ### Example Slurm Script
@@ -705,7 +718,6 @@ ansysedt -machinelist file=".machinefile" -batchoptions "HFSS/HPCLicenseType=Poo
 #SBATCH --nodes             1             # (OPTIONAL) Limit to n nodes
 #SBATCH --ntasks        16                # Number of CPUs to use
 #SBATCH --mem-per-cpu   2GB               # Memory per CPU
-#SBATCH --hint          nomultithread     # No hyperthreading
 
 module load ANSYS/{{ applications.ANSYS.default }}
 
@@ -806,9 +818,7 @@ As with any job, you may have to wait a while before the resource is
 granted and you can begin, so you might want to use the
 --mail-type=BEGIN and --mail-user=<email address> options.
 
-### Hyperthreading
+### Simultaneous Multithreading
 
-Utilising hyperthreading (i.e.: removing the "--hint=nomultithread" sbatch
-directive and doubling the number of tasks) will give a small speedup on
-most jobs with less than 8 cores, but also doubles the number of
+Utilising [simultaneous multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (i.e.: adding the `--hint=multithread` sbatch directive and doubling the number of tasks) will give a small speedup on most jobs with less than 8 cores, but also doubles the number of
 `aa_r_hpc` license tokens required.

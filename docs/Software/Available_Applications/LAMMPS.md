@@ -1,8 +1,7 @@
 ---
 created_at: '2025-10-12T08:00:00Z'
-tags: 
-  -  molecular dynamics
-  -  chemistry
+tags:
+  - chemistry
 description: How to run LAMMPS on the Mahuika cluster
 ---
 
@@ -25,7 +24,7 @@ LAMMPS is distributed as an open source code under the terms of the GPLv2. The m
 
 === "Serial"
     For when only one CPU is required, generally as part of
-    a [job array](../Parallel_Computing/Parallel_Execution.md#job-arrays)
+    a [job array](../Parallel_Computing/Parallel_Computing.md#job-arrays)
 
     ```sl
     #!/bin/bash -e
@@ -64,7 +63,7 @@ LAMMPS is distributed as an open source code under the terms of the GPLv2. The m
     ```
 
 === "GPU"
-    For more information on using GPUs see [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+    For more information on using GPUs see [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
 
     ```sl
     #!/bin/bash -e

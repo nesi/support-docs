@@ -1,15 +1,18 @@
 ---
 created_at: '2019-06-16T21:30:28Z'
-tags: []
+tags:
+- profiling
 vote_count: 1
 vote_sum: 1
-zendesk_article_id: 360001008136
-zendesk_section_id: 360000278935
 ---
+
+!!! warning
+    REANNZ no longer has access to an ARM DDT parallel debugger. Discussions are under way to determine user interest in purchasing 
+    DDT or a similar debugger. Please send an email to `support@reannz.co.nz` if you would like REANNZ to buy DDT (or another tool). 
 
 There are many reasons why a program might crash. Some Slurm job states
 such as `TIMEOUT` or `OUT_OF_MEMORY` can indicate a clear reason, but when
-the job state is simply FAILED and the error message in the job's log
+the job state is simply `FAILED` and the error message in the job's log
 file simply states "Segmentation Fault" or "Illegal instruction",
 investigations become more complicated. In the following, a selection of
 tools is presented which might assist. Most of the following approaches
@@ -85,7 +88,7 @@ statements without touching the code.
 
 ![DDT-offline-example.PNG](../../assets/images/Debugging.PNG)
 
-[See full example page here.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
+[See the full example page.](https://mand35.github.io/NeSI_docu_ext/ddt_sample.html)
 
 For more detailed information see [DDT manual](https://developer.arm.com/docs/101136/latest/ddt/offline-debugging).
 
@@ -116,7 +119,7 @@ slurm session, we do need to specify the workload manager settings in
 the "Submit to queue" section. For your first time, you net to open the
 Configure menu and select in the "Job submission" tab the
 `nesi_slurm.ptf` template file. You can add necessary Slurm parameters
-there, e.g. hyperthreading options, accounts and QoS. In the Environment
+there, e.g. simultaneous multithreading (SMP) options, accounts and QoS. In the Environment
 Variables section you can load necessary modules.
 
 After submitting the task, DDT launches the application (wait for the

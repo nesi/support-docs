@@ -1,11 +1,7 @@
 ---
 created_at: '2023-07-05T23:56:56Z'
-tags: []
-title: Pricing
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7349177261455
-zendesk_section_id: 7348891753487
+tags:
+- account
 ---
 
 
@@ -20,7 +16,7 @@ We have two categories of pricing for Subscription services:
 - Public sector & not-for-profit
 - Commercial
 
-Prices are reviewed annually and subject to change.
+Prices exclude GST, are reviewed annually, and are subject to change.
 
 ## HPC Platform
 
@@ -28,14 +24,13 @@ The following pricing table covers our core HPC Platform service offerings.
 
 *(Last updated June 2025. Prices subject to change.)*
 
-| Service      | Public sector & not-for-profit | Commercial     |
+| Service      | Public sector & not-for-profit pricing _(excludes GST)_ | Commercial pricing _(excludes GST)_ |
 | :---        |    :---   |          :--- |
 | ***Research Software Expertise***      |        |    |
 | Computational science and data science Consultancy (per hour)   | $160.00        | $320.00      |
 | ***High Performance Computing (HPC) and Data Analytics***   |         |       |
 | Mahuika Milan HPC core hours (per CPU core hour)   | $0.08        | $0.09      |
 | Mahuika Genoa HPC core hours (per CPU core hour)   | $0.08        | $0.09      |
-| P100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.35        | $0.40      |
 | A100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
 | H100 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
 | L4 Graphical Processing Unit (GPU) hours (per GPU hour)   | $0.90        | $1.00      |
@@ -49,7 +44,7 @@ The following pricing table covers our core HPC Platform service offerings.
 
 Billable services in the Research Developer Cloud include Virtual Machines (VMs), General Purpose Graphical Processing Units (GPUs), and Storage.
 
-Pricing listed is for Public section & not-for-profit organisations. To discuss commercial pricing, [please get in touch](mailto:support@nesi.org.nz).
+Pricing listed is for Public section & not-for-profit organisations. To discuss commercial pricing, {% include "partials/support_request.html" %}.
 
 
 *(Last updated September 2024. Prices are subject to change.)*
@@ -60,7 +55,7 @@ Pricing listed is for Public section & not-for-profit organisations. To discuss 
 - They are named balanced1.1cpu2ram and increment up to balanced1.32cpu64ram.
 - The price scales linearly with the number of cores in the VMs.
 
-| Flavours      | Price per hour ($) | Price per month ($ in approximation)     |
+| Flavours      | Price ($) per hour _(excludes GST)_ | Approximate price ($) per month _(excludes GST)_    |
 | :---        |    :---   |          :--- |
 | balanced1.1cpu2ram   | 0.039        | 28.50      |
 | balanced1.2cpu4ram   | 0.078        | 56.99      |
@@ -76,9 +71,9 @@ The Research Developer Cloud also offers high memory flavours (memory1) and flav
 - high memory flavours having 1 to 4 ratio of CPU per GB of RAM
 - development focused flavours with 1 to 1 ratio
 
-[Please contact us](mailto:support@nesi.org.nz) if you would like to access these specialised compute flavours.
+{% include "partials/support_request.html" %} if you would like to access these specialised compute flavours.
 
-| Flavours      | Price per hour ($) | Price per month ($ in approximation)     |
+| Flavours      | Price ($) per hour _(excludes GST)_ | Approximate price ($) per month _(excludes GST)_     |
 | :---        |    :---   |          :--- |
 | memory1.1cpu4ram   | 0.062        | 45.59      |
 | memory1.2cpu8ram   | 0.125        | 91.18      |
@@ -91,16 +86,16 @@ The Research Developer Cloud also offers high memory flavours (memory1) and flav
 | devtest1.4cpu4ram   | 0.112        | 81.42      |
 
 ## General Purpose GPUs
-General Purpose GPUs are currently accessible as a whole node or half a node of A40 GPUs. The GPU flavour won’t be visible by default on your project. We will be working on making vGPU access available in smaller portions instead of the whole node. [Please contact us](mailto:support@nesi.org.nz) if you would like to access them.
+General Purpose GPUs are currently accessible as a whole node or half a node of A40 GPUs. The GPU flavour won’t be visible by default on your project. We will be working on making vGPU access available in smaller portions instead of the whole node. {% include "partials/support_request.html" %} if you would like to access them.
 
-| Flavours      | Price per hour ($) | Price per month ($ in approximation)     |
+| Flavours      | Price ($) per hour _(excludes GST)_ | Approximate price ($) per month _(excludes GST)_     |
 | :---        |    :---   |          :--- |
 | gpu1.44cpu240ram.a40.1g.48gb   | 3.672        | 2,680.43      |
 | gpu1.88cpu480ram.a40x2.1g.48gb   | 7.344        | 5,360.85      |
 
 ## Storage
 
-| Flavours      | Price per hour ($) per GB | Price per month ($ in approximation) per GB     |
+| Flavours      | Price ($) per hour per GB _(excludes GST)_ | Approximate price ($) per month per GB _(excludes GST)_    |
 | :---        |    :---   |          :--- |
 | Flash   | 0.0005        | 0.37      |
 | Spinning disk   | 0.0002        | 0.12      |

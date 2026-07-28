@@ -1,0 +1,48 @@
+---
+created_at: '2021-08-27T03:18:13Z'
+tags:
+    - file_transfer
+---
+
+!!! note
+    For other data transfer methods, see [Data_Transfer_Overiew](../Data_Transfer_Overview.md)
+
+Globus is a data transfer service that can be used to move a large amount of data between Mahuika and another system such as your computer, a server, or your institute's high capacity storage system.
+
+The following guide shows how to:
+
+* [How to set up Globus for the first time](./First_Time_Setup.md)
+* [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
+* [How to transfer data to/from Mahuika](./Data_Transfer_Using_Globus.md)
+* [How to transfer data between endpoints other than Mahuika](./Data_Transfer_Between_Personal_Endpoints.md)
+
+This page also contains other useful information on how to use Globus, including:
+
+* [Adding Bookmarks](./Bookmarks.md)
+* [Sharing Data with colleagues using Globus](./Share_Collections.md)
+* [Automating Globus](./Syncing_files_with_globus_automate.md)
+* [Using the Globus Command Line Interface (CLI) to transfer data](./Globus_CLI.md)
+
+## When should I use Globus?
+
+Globus has been set up for transferring large amounts of data to/from Mahuika to the outside world. 
+
+* Do not use Globus if you are wanting to move data _within_ Mahuika (i.e. between or within your `home`, `project`, and `nobackup` directories). If you want to move data within Mahuika, consider using copy (`cp`), move (`mv`), [RClone](../RClone.md), or [Rsync](../Rsync.md). 
+
+## Advantages of Globus
+
+Globus allows users to transfer large amounts of data between systems. Some advantages of using Globus are that:
+
+* It uses a web-based graphical user interface to help users navigate through file systems and transfer data.
+* Globus will perform data transfers in the background, allowing you to shutdown your computer while the transfer continues (as long as you are not transferring data to your computer)
+* If there are any disruptions to your transfer, Globus can resume from where it left off.
+
+## Glossary
+
+* Endpoints: Globus refers to computers, servers, and high capacity storage systems as endpoints.
+* Collection: A Globus collection represents a location containing data plus the policies and permissions for accessing that data.
+
+## Quick Information
+
+* Name of Mahuika mapped collection: `{{ globus_collection_storage}}`
+* Name of REANNZ's Globus Subscription: `New Zealand eScience Infrastructure Standard` (Note: Our subscription name has not yet been updated following NeSI's merger with REANNZ in July 2025)

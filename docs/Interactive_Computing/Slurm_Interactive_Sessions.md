@@ -1,67 +1,60 @@
 ---
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - scheduling
-description: How to run an interactive session on the NeSI cluster.
+  - slurm
+description: How to run an interactive session on the REANNZ HPC cluster.
 ---
 
 A SLURM interactive session reserves resources on compute nodes allowing
 you to use them interactively as you would the login node.
 
 There are two main commands that can be used to make a session, `srun`
-and `salloc`, both of which use most of the same options available to
-`sbatch` (see
-[our Slurm Reference Sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)).
+and `salloc`.  Both `srun` and `salloc` share most of the same options as `sbatch` (see [our Slurm Reference Sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)).
 
-!!! warning
-     An interactive session will, once it starts, use the entire requested
-     block of CPU time and other resources unless earlier exited, even
-     if unused. To avoid unnecessary charges to your project, don't forget
-     to exit an interactive session once finished.
+## Getting Started
 
-## Using `srun --pty bash`
+### Using `srun`
 
 `srun` will add your resource request to the queue. When the allocation
-starts, a new bash session will start up on **one of the granted
-nodes.**
+starts, a new bash session will start up on one of the compute nodes.
 
 For example;
 
-```sh
-srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00 --pty bash
+```bash
+srun --account nesi12345 --pty bash
 ```
 
-You will receive a message.
+This is the minimum required to start an interactive job.  The `--pty` requests a terminal session be created, omitting this will simply run bash in the background and will not be interactive.  Be aware that the above command requests minimal resources, which may not be sufficient for your needs.  Request the proper amount of CPU, memory and time for your job.  Once you have typed the above command, you will receive a message similar to this:
 
 ```out
 srun: job 10256812 queued and waiting for resources
 ```
 
-And when the job starts:
+Depending on the resources requested and the load on the cluster, it may take some time for the job to start, when it does start you will receive a new prompt similar to: 
 
 ```out
 srun: job 10256812 has been allocated resources
-[wbn079 ~ SUCCESS ]$
+[c004 ~ ]$
 ```
 
-Note the host name in the prompt has changed to the compute node
-`wbn079`.
+You can see from the prompt you are running on a different host as it is showing:
+`c004` instead of a login node.
 
-For a full description of `srun` and its options, see the
-[schedmd documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/srun.html).
+For a full description of `srun` and its options, see the
+[documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/srun.html).
 
-## Using `salloc`
+### Using `salloc`
 
-`salloc` functions similarly `srun --pty bash` in that it will add your
+`salloc` functions similarly `srun --pty bash` in that it will add your
 resource request to the queue. However the allocation starts, a new bash
 session will start up on **the login node.** This is useful for running
 a GUI on the login node, but your processes on the compute nodes.
 
 For example:
 
-```sh
-salloc --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 8 --mem-per-cpu 1500 --time 24:00:00
+```bash
+salloc --account nesi12345 --cpus-per-task 8 --mem-per-cpu 15M --time 2:00:00
 ```
 
 You will receive a message.
@@ -76,14 +69,44 @@ And when the job starts;
 ```out
 salloc: job 10256925 has been allocated resources
 salloc: Granted job allocation 10256925 
-[mahuika01~ SUCCESS ]$
+salloc: Nodes c038 are ready for job
+
+[login03 ~ ]$
 ```
 
-Note the that you are still on the login node `mahuika01`, however you
-will now have permission to `ssh` to any node you have a session on .
+Note the that you are still on the login node `login03`, however you
+will now have permission to `ssh` to the nodes mendtioned in the output or from `squeue --me`, in the above case, the node is `c038`, and now we can:
+
+```bash
+ssh c038
+```
 
 For a full description of `salloc` and its options, see
-[here](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
+[documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/salloc.html).
+
+### Running a GUI application
+
+It is possible to run GUI applications interactively on the cluster.  Along with the `--pty` flag, one should also include the `--x11` flag and have a properly configured X server.  More information can be found here:  [https://docs.nesi.org.nz/Getting_Started/Accessing_the_HPCs/X11/](../Getting_Started/Accessing_the_HPCs/X11.md)
+
+Depending on the GUI application and resource requirements, it may be beneficial to run a Virtual Desktop from our OnDemand service instead of using X forwarding: [https://ondemand.nesi.org.nz/pun/sys/dashboard](https://ondemand.nesi.org.nz/pun/sys/dashboard)
+
+### Setting up a detachable terminal
+
+It's quite common to have to wait for some time before your interactive
+session starts. For an interactive session, or any other long-running process, 
+it is recommended you use a terminal multiplexor such as `tmux`.  This
+allows your session to be detached from the running terminal so you can re-connect if your
+laptop goes to sleep, the network drops or any other event that could sever the connection.
+You can even re-attach from a different computer.
+
+We have a [reference page for `tmux`](../Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md)
+
+!!! warning
+     Once an interactive session starts, it will run for the entire requested
+     block of time, unless exited earlier. To avoid unnecessary billing to your allocation, 
+     don't forget to exit an interactive session once finished.
+
+## Advanced Topics
 
 ### Requesting a postponed start
 
@@ -93,11 +116,6 @@ not available. You can request a start time using the `--begin` flag.
 
 The `--begin` flag takes either absolute or relative times as values.
 
-!!! warning
-     If you specify absolute dates and/or times, Slurm will interpret those
-     according to your environment's current time zone. Ensure that you
-     know what time zone your environment is using, for example by running
-     `date` in the same terminal session.
 
 - `--begin=16:00` means start the job no earlier than 4 p.m. today.
     (Seconds are optional, but the time must be given in 24-hour
@@ -116,204 +134,13 @@ The `--begin` flag takes either absolute or relative times as values.
 If no `--begin` argument is given, the default behaviour is to start as
 soon as possible.
 
-### While you wait
-
-It's quite common to have to wait for some time before your interactive
-session starts, even if you specified, expressly or by implication, that
-the job is to start as soon as possible.
-
-While you're waiting, you will not have use of that shell prompt. **Do
-not use `Ctrl`-`C` to get the prompt back, as doing so will cancel the
-job.** If you need a shell prompt, detach your `tmux` or `screen`
-session, or switch to (or open) another terminal session to the same
-cluster's login node.
-
-In the same way, before logging out (for example, if you choose to shut
-down your workstation at the end of the working day), be sure to detach
-the `tmux` or `screen` session. In fact, we recommend detaching whenever
-you leave your workstation unattended for a while, in case your computer
-turns off or goes to sleep or its connection to the internet is
-disrupted while you're away.
-
-## Running Python+JupyterLab in Interactive Mode
-
-!!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
-     tested it yet in Putty or Mobaxterm
-
-To run Python+JupyterLab in interactive mode, first we need to load 
-your interactive session:
-
-```sh
-srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
-```
-
-Then, we need to start up Python, install JupyterLab if you dont have it 
-yet, and obtain the hostname and the port:
-
-```sh
-# Load Python
-module load Python
-
-# Install and activate a python virtual environment (or activate your
-# current virtual environment). 
-python3 -m venv venv
-source venv/bin/activate
-
-# Install JupyterLab
-pip3 install JupyterLab
-
-# Select a random port
-PORT=$(shuf -i8000-9999 -n1)
-
-# Check the hostname and port - we will need this later, you can also 
-# see it at the start of your prompt
-hostname | cut -d'.' -f1 # <-- This is the hostname
-echo $PORT               # <-- This is the port
-```
-
-Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Then, we need to start up JupyterLab:
-
-```sh
-# Start Jupyter. This might take a minute
-jupyter lab --no-browser --ip=0.0.0.0 --port=$PORT
-```
-
-Make a note of the second URL given by JupyterLab once it launches. 
-For instance: 
-
-```sh
-[C 2025-11-03 14:34:31.797 ServerApp] 
-    
-    To access the server, open this file in a browser:
-        file:///home/john.doe/.local/share/jupyter/runtime/jpserver-2965439-open.html
-    Or copy and paste one of these URLs:
-        http://c003.hpc.nesi.org.nz:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
-        http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
-```
-
-The `http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117`
-address in this case will be our url that we will use to launch JupyterLabs
-
-In a second terminal on your local machine (or a second screen in tmux or screen),
-type the following:
-
-```sh
-ssh -L PORT:HOSTNAME:PORT mahuika
-
-#For example:
-#ssh -L 9339:c003:9339 mahuika
-```
-
-Then, in your browser, type in the URL from before
-
-```sh
-http://127.0.0.1:PORT/lab?token=TOKEN
-
-# For example:
-# http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
-```
-
-You will now be able to see and work wih Python+JupyterLab in your web browser. 
+If you specify absolute dates and/or times, Slurm will interpret those
+according to your environment's current time zone. Ensure that you
+know what time zone your environment is using, for example by running
+`date` in the same terminal session.
 
 
-## Running Julia+Pluto.ji in Interactive Mode
-
-!!! warning
-     If you are using a windows computer, this method has currently 
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not 
-     tested it yet in Putty or Mobaxterm
-
-To run Julia+Pluto.ji in interactive mode, first we need to load 
-your interactive session:
-
-```sh
-srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
-```
-
-Then, we need to start up Julia and obtain the hostname and the port:
-
-```sh
-# Load Julia
-module load Julia 
-
-# Select a random port
-PORT=$(shuf -i8000-9999 -n1)
-
-# Check the hostname and port - we will need this later, you can also 
-# see it at the start of your prompt
-hostname | cut -d'.' -f1 # <-- This is the hostname
-echo $PORT               # <-- This is the port
-
-# Export port to a variable name
-export pluto_port=${PORT}
-```
-
-Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
-and `echo $PORT` commands. Then, we need to start up Julia, install and 
-run Pluto.ji:
-
-```sh
-#Start Julia
-julia
-
-# Install Pluto.ji. This might take a minute
-import Pkg; Pkg.add("Pluto")
-
-# Start Pluto. This might take a minute
-using Pluto
-Pluto.run(host="0.0.0.0",port=parse(Int, ENV["pluto_port"]),launch_browser=false)
-```
-
-Take a note of the information given for the URL
-
-```sh
-[ Info: Loading...
-┌ Info: 
-│ Go to http://0.0.0.0:9627/?secret=mXmq6659 in your browser to start writing ~ have fun!
-└ 
-```
-
-Here, we will be using `http://0.0.0.0:9627/?secret=mXmq6659` to access 
-Pluto. 
-
-Next, open up a second terminal on your local machine (or a second screen 
-in tmux or screen), and type the following:
-
-```sh
-ssh -L PORT:HOSTNAME:PORT mahuika
-
-#For example:
-#ssh -L 9627:mc081:9627 mahuika
-```
-
-Then, in your browser, type in the URL from before
-
-```sh
-http://0.0.0.0:PORT/?secret=SECRET
-
-# For example:
-# http://0.0.0.0:9627/?secret=mXmq6659
-```
-
-You will now be able to see and work wih Julia+Pluto in your web browser. 
-
-
-## Setting up a detachable terminal
-
-!!! warning
-     If you don't request your interactive session from within a detachable
-     terminal, any interruption to the controlling terminal, for example by
-     your computer going to sleep or losing its connection to the internet,
-     will permanently cancel that interactive session and remove it from
-     the queue, whether it has started or not.
-
-1. Connect to a login node.
-2. Start up `tmux` or `screen`.
-
-## Modifying an existing interactive session
+### Modifying an existing interactive session
 
 Whether your interactive session is already running or is still waiting
 in the queue, you can make a range of changes to it using the `scontrol`
@@ -321,7 +148,7 @@ command. Some changes are off limits for ordinary users, such as
 increasing the maximum permitted wall time, or unsafe, like decreasing
 the memory request. But many other changes are allowed.
 
-### Postponing the start of an interactive job
+#### Postponing the start of an interactive job
 
 Suppose you submitted an interactive job just after lunch, and it's
 already 4 p.m. and you're leaving in an hour. You decide that even if
@@ -333,11 +160,6 @@ time.
 
 Slurm offers an easy solution: Identify the job, and use `scontrol` to
 postpone its start time.
-
-!!! note
-     Job IDs are unique to each cluster but not across the whole of NeSI.
-     Therefore, `scontrol` must be run on a node belonging to the cluster
-     where the job is queued.
 
 The following command will delay the start of the job with numeric ID
 12345678 until (at the earliest) 9:30 a.m. the next day:
@@ -358,7 +180,7 @@ scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
      you like the idea of your interactive session starting at midnight or
      in the wee hours of the morning.
 
-### Bringing forward the start of an interactive job
+#### Bringing forward the start of an interactive job
 
 In the same way, you can use scontrol to set a job's start time to
 earlier than its current value. A likely application is to allow a job
@@ -368,13 +190,13 @@ to start immediately even though it stood postponed to a later time:
 scontrol update jobid=12345678 StartTime=now
 ```
 
-### Other changes using `scontrol`
+#### Other changes using `scontrol`
 
 There are many other changes you can make by means of `scontrol`. For
-further information, please see 
+further information, please see
 [the `scontrol` documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scontrol.html).
 
-## Modifying multiple interactive sessions at once
+### Modifying multiple interactive sessions at once
 
 In the same way, if you have several interactive sessions waiting to
 start on the same cluster, you might want to postpone them all using a
@@ -429,7 +251,7 @@ following:
     have two cron jobs, one that runs on Mondays to Thursdays, and a
     different cron job running on Fridays. -->
 
-## Cancelling an interactive session
+### Cancelling an interactive session
 
 You can cancel a pending interactive session by attaching the relevant
 session, putting the job in the foreground (if necessary) and pressing

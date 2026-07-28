@@ -1,10 +1,10 @@
 ---
 created_at: '2015-10-14T22:58:53Z'
 tags:
+- mathematics
 - engineering
-- ml
-- matlab
-description: Examples and tips on how to use MATLAB on the NeSI platform.
+- machine_learning
+description: Examples and tips on how to use MATLAB on the Mahuika platform.
 ---
 
 {% set app_name = page.title | trim %}
@@ -80,7 +80,7 @@ utilise more than a 4-8 CPUs this way.
 
 !!! tip
      If your code is explicitly parallel at a high level it is preferable to use
-     [SLURM job arrays](../Parallel_Computing/Parallel_Execution.md)
+     [SLURM job arrays](../Parallel_Computing/Parallel_Computing.md)
      as there is less computational overhead and the multiple smaller jobs
      will queue faster and therefore improve your throughput.
 
@@ -176,7 +176,7 @@ CUDA modules and select the appropriate one. For example, for MATLAB
 R2021a, use `module load CUDA/11.0.2` before launching MATLAB.
 
 If you want to know more about how to access the different type of
-available GPUs on NeSI, check the [GPU use on NeSI](../../Batch_Computing/Using_GPUs.md)
+available GPUs on Mahuika, check the [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
 support page.
 
 !!! tip "Support for A100 GPUs"
@@ -320,7 +320,7 @@ MATLAB supports the following compilers.
 | C       | up to GCC 6.3.x          |
 | FORTRAN | up to GNU gfortran 6.3.x |
 
-The most up to date compilers supported by MATLAB can be loaded on NeSI
+The most up to date compilers supported by MATLAB can be loaded on Mahuika
 using `module load gimkl/2017a`
 
 If no GCC module is loaded, the default system version of these
@@ -342,19 +342,20 @@ For example, adding OpenMP flags for a fortran compile:
      Using an 'unsupported' compiler with versions of MATLAB 2020b onward
      will result in an Error (previously was a 'Warning').
 
-## Known Bugs
+## Checkpointing
 
-When using versions of MATLAB more recent than 2021a you may notice the
-following warning.
+!!! warning "Checkpointing"
+     We strongly the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
 
-```matlab
-ldd: missing file arguments
-Try `ldd --help' for more information.
-glibc_shim: Didn't find correct code to patch
+``` m
+% If checkpoint file, load from there.
+checkpoint='checkpoint_2020-03-09T0916.mat';
+if exist(checkpoint,'file')==2, load(checkpoint);startindex=i;else startindex=1;end
+
+for i = startindex:100
+    % Long running process
+
+    % Save workspace at end of each loop.
+    save(['checkpoint_', datestr(now, 'yyyy-mm-ddTHHMM')])
+end
 ```
-
-This is due to our operating system being too old.
-
-With the exception of a few commands that directly make requests of the OS, your code should run fine.
-
-If you believe this bug is causing problems, running on our newer hardware (e.g.  `--partition milan`) will fix it.

@@ -1,5 +1,9 @@
-# RStudio via OnDemand
-
+---
+created_at: 2026-07-15
+description: How to use RStudio via OnDemand
+tags: 
+    - OnDemand
+---
 
 ## Logging in
 ![UPDATE WITH PROJECT](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png){width=35%} ![](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png){fig.align="right" width=62%}
@@ -10,7 +14,7 @@ Recommendation to set *Save Workspace to Never* to avoid saving large files to t
 ## Bugs
 
 ### Plots not showing
-The current R modules on NeSI OnDemand do not support the default graphics device due to a missing depedency, `cairo`. There is a one off fix for this by changing the backend graphics device from `Default` to `AGG` (Anti-Grain Geometry) in the RStudio settings. 
+The current R modules on Mahuika OnDemand do not support the default graphics device due to a missing dependency, cairo. There is a one off fix for this by changing the backend graphics device from Default to AGG (Anti-Grain Geometry) in the RStudio settings. 
 
 This can be done by going to `Tools` -> `Global Options` -> `Graphics` and switch `Default` to `AGG`. This will allow the plots to be displayed in the RStudio interface. You do not need to restart the RStudio session for this to take effect.
 

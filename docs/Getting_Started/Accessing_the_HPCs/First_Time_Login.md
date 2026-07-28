@@ -1,13 +1,9 @@
 ---
 created_at: '2018-05-18T03:56:37Z'
 tags:
-- MFA
 - access
-- mfa
-- token
-- ondemand
-- login
-- mynesi
+- interactive
+- account
 ---
 
 !!! prerequisite
@@ -46,6 +42,8 @@ tags:
     ![alt text](../../assets/images/ondemand_login_4.png).
 
     If you have trusted your device, you have to enter a name for this device. This name must be unique. E.g. you cannot trust two devices the same day with the same name.
+
+    See [What is a trusted device?](../FAQs/What_Is_a_Trusted_Device.md) for more information.
 
 8. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'Yes' if you want to proceed with access. Click 'No' if you did not initiate this authentication process.
 

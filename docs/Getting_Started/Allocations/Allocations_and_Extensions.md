@@ -1,12 +1,11 @@
 ---
 created_at: '2018-05-18T02:34:03Z'
-tags: 
-- projects
-- allocations
+tags:
+- account
 title: Allocations & Extensions
 ---
 
-NeSI recognises that research programmes often continue over several
+We recognise that research programmes often continue over several
 years before coming to an end. To reduce administrative overhead, we
 allow most project teams to extend their projects rather than applying
 for a new project to carry on the same work.
@@ -28,10 +27,10 @@ qualify for an extension:
     the project work, such that we decide a new technical assessment is
     warranted.
 - If the project team is no longer eligible to receive computing
-    resources from NeSI. For example, the grant funding the research
+    resources from the HPC platform. For example, the grant funding the research
     programme has come to an end and the host institution does not wish
-    to purchase computing resources from NeSI (or allocate computing
-    resources from its subscription or collaborator share if it has
+    to purchase computing resources from REANNZ (or allocate computing
+    resources from its [Subscription](../../Service_Subscriptions/What_is_a_Subscription.md) or Collaborator share if it has
     one).
 - If the project's host institution has changed (or is about to
     change).
@@ -40,8 +39,8 @@ qualify for an extension:
     institution who has agreed to take over project ownership
     responsibilities.
 - If the project's owner (or supervisor if the project has one) is not
-    authorised to access NeSI facilities due to a refusal to accept or
-    failure to abide by the NeSI Acceptable Use Policy.
+    authorised to access Mahuika due to a refusal to accept or
+    failure to abide by our Acceptable Use Policy.
 
 ## Who may request a project extension?
 
@@ -64,7 +63,7 @@ a new allocation (or, alternatively, clean up your project data) in the
 following circumstances:
 
 - In the lead-up to the end of the [call
-    window](https://www.nesi.org.nz/news/2018/04/new-application-process-merit-postgraduate-allocations)
+    window](https://docs.nesi.org.nz/Getting_Started/Allocations/Quarterly_allocation_periods/)
     immediately before your currently active allocation is scheduled to
     end.
 - In the lead-up to the end of your allocation.
@@ -82,7 +81,7 @@ differ from our forecast.
 
 Please be aware that:
 
-- First and subsequent allocations are subject to the NeSI allocation
+- First and subsequent allocations are subject to the allocation
     size and duration limits in force at the time they are considered by
     our reviewers.
 - An allocation from an institution's entitlement is subject to
@@ -102,6 +101,6 @@ project extension. Please note that we are unlikely to let a project
 continue without a compute allocation for more than six months at a
 time. If you expect that your project will be suspended for more than
 six months, we encourage you to enquire about our [Long-Term Storage
-Service](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md) or
+Service](../../Storage/Long_Term_Storage/Freezer_Long_Term_Storage.md) or
 to move your research data off our facility and make arrangements with
 your project's host institution for long-term data storage.

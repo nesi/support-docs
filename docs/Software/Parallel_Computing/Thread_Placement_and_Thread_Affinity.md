@@ -1,13 +1,13 @@
 ---
 created_at: '2019-06-13T04:08:43Z'
-tags: []
-title: Thread Placement and Thread Affinity
+tags:
+- openmp
+- parallel
 ---
 
 Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
-article on [Parallel
-Execution](Parallel_Execution.md) for
+article on [Parallel Execution](Parallel_Computing.md) for
 an introduction). Care needs to be taken when running multiple threads
 on the HPC to achieve best performance - getting it wrong can easily
 increase compute times by tens of percents, sometimes even more. This is
@@ -33,7 +33,7 @@ performance, as a socket connects the processor to its RAM and other
 processors. A processor in each socket consists of multiple physical
 cores, and each physical core is split into two logical cores using a
 technology called
-[Hyperthreading](Hyperthreading.md)).
+[Simultaneous Multithreading](Simultaneous_Multithreading.md).
 
 A processor also includes caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory
@@ -176,14 +176,14 @@ Hello World from Thread 2!
 The runtime library tells us that:
 
 - Slurm provided 3 physical cores with only 1 logical core ("thread")
-    per physical core - no hyperthreading
+    per physical core - no simultaneous multithreading.
 - We got the cores with IDs 0, 6, 8 in this particular example - these
     happen to be on the same socket, but that is not guaranteed!
 - All our threads are "bound" to all 3 cores at once - this means that
     no affinity setup has been made, and the threads are free to move
     from one core to another
 
-Setting "--hint=multithread" instead to activate hyperthreading should
+Setting "--hint=multithread" instead to activate simultaneous multithreading should
 result in output similar to this:
 
 ```out
@@ -345,7 +345,7 @@ held up by other jobs or system processes. It is therefore worth trying
 out different affinity setups to see which one works best for your
 program.
 
-It is usually a good idea to start without hyperthreading, and to activate
+It is usually a good idea to start without simultaneous multithreading, and to activate
 thread affinity by choosing:
 
 ``` sl

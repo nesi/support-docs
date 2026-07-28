@@ -1,10 +1,10 @@
 ---
 created_at: '2019-09-22T21:07:28Z'
-tags: []
+tags:
+- mpi
+- parallel
+- profiling
 vote_count: 2
-vote_sum: 0
-zendesk_article_id: 360001173875
-zendesk_section_id: 360000189716
 ---
 
 <!-- TODO review the scripts, it looks like there is a missing word after $ -->
@@ -174,7 +174,7 @@ Let's run our Slurm script with sbatch and look at our output from
 Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
 will always receive 2 logical CPUs which is equal to 1 physical CPUs.
 For a more in depth explanation about logical and physical CPU cores see
-our [Hyperthreading article](Hyperthreading.md))
+our [Simultaneous Multithreading article](Simultaneous_Multithreading.md))
 and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
 18 minutes and 51 seconds.
 

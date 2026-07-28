@@ -1,10 +1,10 @@
-# NeSI support documentation
+# Mahuika support documentation
 
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/nesi/support-docs?quickstart=1)
 
 [![Deploy to gh-pages](https://github.com/nesi/support-docs/actions/workflows/deploy.yml/badge.svg?branch=main&event=deployment_status)](https://github.com/nesi/support-docs/actions/workflows/deploy.yml)
 
-This repository contains the sources files for the NeSI support documentation.
+This repository contains the sources files for the Mahuika support documentation.
 
 Rendered pages are visible at [https://docs.nesi.org.nz](http://docs.nesi.org.nz).
 
@@ -64,6 +64,6 @@ mkdocs serve -c
 
 ## Migration
 
-Migration of the Zendesk documentation is done using our [migration pipeline (NeSI internal GitLab](https://git.hpcf.nesi.org.nz/cwal219/migratedocs).
+Migration of the Zendesk documentation is done using our [migration pipeline (NeSI internal GitLab)](https://git.hpcf.nesi.org.nz/cwal219/migratedocs).
 
 Any one off filters (e.g. don't need to be checked every time, just when converting from ZD) should go there.

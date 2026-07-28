@@ -5,5 +5,7 @@ nav:
     - Batch_Computing
     - Interactive_Computing
     - Storage
-    - File_Transfer
+    - Data_Transfer
+    - Policy
     - Service_Subscriptions
+    - Tutorials
