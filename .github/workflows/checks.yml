@@ -36,6 +36,11 @@ on:
         description: Test Build
         default: true
         type: boolean
+
+defaults:
+  run:
+    shell: bash --noprofile --norc -eo pipefail -O extglob -O globstar {0}
+
 jobs:
   get:
     name: Determine what files to check
@@ -57,111 +62,71 @@ jobs:
       filelist: ${{steps.diff.outputs.filelist || inputs.fileList}}
   spellcheck:
     name: Check Spelling
-    if: ${{ github.event_name != 'workflow_dispatch' || inputs.checkSpelling }}
+    if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkSpelling) }}
     runs-on: ubuntu-24.04
     needs: get
     steps:
-      - if: ${{! needs.get.outputs.filelist}}
-        name: No files to spellcheck
-        run: exit 0
-      - if: ${{needs.get.outputs.filelist}}
-        name: Check out repo.
+      - name: Check out repo.
         uses: actions/checkout@v6
-      - if: ${{needs.get.outputs.filelist}}
-        name: Install dependencies
+      - name: Install dependencies
         run: |
           sudo apt install -y aspell
           pip3 install $(grep ^pyspelling requirements.txt)
           pip3 install $(grep ^flashtext requirements.txt)
-      - if: ${{needs.get.outputs.filelist}}
-        name: Run pyspelling
-        run: |
-          shopt -s globstar extglob
-          python3 checks/run_spell_check.py ${{needs.get.outputs.filelist}}
+      - name: Run pyspelling
+        run: python3 checks/run_spell_check.py ${{needs.get.outputs.filelist}}
   proselint:
     name: Check Prose
-    if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkProse}}
+    if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkProse) }}
     runs-on: ubuntu-24.04
     needs: get
     steps:
-      - if: ${{! needs.get.outputs.filelist}}
-        name: No files to proselint
-        run: exit 0
-      - if: ${{needs.get.outputs.filelist}}
-        name: Check out repo.
+      - name: Check out repo.
         uses: actions/checkout@v6
-      - if: ${{needs.get.outputs.filelist}}
-        name: Install dependencies
+      - name: Install dependencies
         run: pip3 install $(grep ^proselint requirements.txt)
-      - if: ${{needs.get.outputs.filelist}}
-        name: Run proselint
-        run: |
-          shopt -s globstar extglob
-          python3 checks/run_proselint.py ${{needs.get.outputs.filelist}}
+      - name: Run proselint
+        run: python3 checks/run_proselint.py ${{needs.get.outputs.filelist}}
   mdlint:
     name: Check Markdown
-    if: ${{github.event_name != 'workflow_dispatch' || inputs.checkMarkdown}}
+    if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkMarkdown) }}
     runs-on: ubuntu-24.04
     needs: get
     steps:
-      - if: ${{! needs.get.outputs.filelist}}
-        name: No files to check Markdown
-        run: exit 0
-      - if: ${{needs.get.outputs.filelist}}
-        name: Check out repo.
+      - name: Check out repo.
         uses: actions/checkout@v6
-      - if: ${{needs.get.outputs.filelist}}
-        name: Install dependencies
+      - name: Install dependencies
         run: npm install -g markdownlint-cli
-      - if: ${{needs.get.outputs.filelist}}
-        name: Run markdownlint
-        run: |
-          shopt -s globstar extglob
-          markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | python3 checks/parse_markdownlint.py
+      - name: Run markdownlint
+        run: markdownlint --config .markdownlint.json --json ${{needs.get.outputs.filelist}} 2>&1 | python3 checks/parse_markdownlint.py
 
   metacheck:
     name: Check page meta
-    if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkMeta}}
+    if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkMeta) }}
     runs-on: ubuntu-24.04
     needs: get
     steps:
-      - if: ${{ ! needs.get.outputs.filelist}}
-        name: No files to check meta on.
-        run: exit 0
-      - if: ${{needs.get.outputs.filelist}}
-        name: Check out repo.
+      - name: Check out repo.
         uses: actions/checkout@v6
-      - if: ${{needs.get.outputs.filelist}}
-        name: Install dependencies
+      - name: Install dependencies
         run: pip3 install titlecase
-      - if: ${{needs.get.outputs.filelist}}
-        name: Check markdown meta.
-        run: |
-          shopt -s globstar extglob
-          python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
-      - if: ${{needs.get.outputs.filelist}}
-        name: Run ARIA reference check (meta checks)
+      - name: Check markdown meta.
+        run: python3 checks/run_meta_check.py ${{needs.get.outputs.filelist}}
+      - name: Run ARIA reference check (meta checks)
         run: |
           pip3 install -r requirements.txt
           mkdocs build
           python3 checks/run_aria_check.py
   slurmcheck:
     name: Check slurm scripts
-    if: ${{github.event_name != 'workflow_dispatch'|| inputs.checkSlurm}}
+    if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkSlurm) }}
     runs-on: ubuntu-24.04
     needs: get
     steps:
-      - if: ${{ ! needs.get.outputs.filelist}}
-        name: No files to check meta on.
-        run: exit 0
-      - if: ${{needs.get.outputs.filelist}}
-        name: Check out repo.
+      - name: Check out repo.
         uses: actions/checkout@v6
-      - if: ${{needs.get.outputs.filelist}}
-        name: Check markdown meta.
-        run: |
-          shopt -s globstar extglob
-          python3 checks/run_slurm_lint.py ${{needs.get.outputs.filelist}}
+      - name: Check slurm scripts.
+        run: python3 checks/run_slurm_lint.py ${{needs.get.outputs.filelist}}
   tagcheck:
     name: Compile tags
     runs-on: ubuntu-24.04
