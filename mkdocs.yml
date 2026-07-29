@@ -132,27 +132,31 @@ plugins:
         NeSI Mahuika HPC support documentation: getting access, running batch jobs
         with Slurm, available software and modules, storage and data transfer,
         interactive computing (Jupyter, OnDemand), and platform policies.
+      # These are fnmatch patterns, not pathlib globs - `*` already crosses `/`, so
+      # `Section/*.md` matches every page at any depth. Do NOT "fix" these to `**`:
+      # `Section/**/*.md` requires a literal extra `/`, which silently drops every page
+      # sitting directly in the section directory (it emptied Batch Computing and Policy).
       sections:
         Announcements:
           - Announcements/*.md
         Getting Started:
-          - Getting_Started/**/*.md
+          - Getting_Started/*.md
         Software:
-          - Software/**/*.md
+          - Software/*.md
         Batch Computing:
-          - Batch_Computing/**/*.md
+          - Batch_Computing/*.md
         Interactive Computing:
-          - Interactive_Computing/**/*.md
+          - Interactive_Computing/*.md
         Storage:
-          - Storage/**/*.md
+          - Storage/*.md
         Data Transfer:
-          - Data_Transfer/**/*.md
+          - Data_Transfer/*.md
         Policy:
-          - Policy/**/*.md
+          - Policy/*.md
         Service Subscriptions:
-          - Service_Subscriptions/**/*.md
+          - Service_Subscriptions/*.md
         Tutorials:
-          - Tutorials/**/*.md
+          - Tutorials/*.md
         Reference:
           - GLOSSARY.md
           - index.md
