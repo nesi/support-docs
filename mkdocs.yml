@@ -123,14 +123,39 @@ plugins:
       enable_creation_date: false
       enabled: !ENV [ENABLED_GIT_DATES, false]
   - macros:
-      # false (the plugin default) logs the Jinja error as a warning and renders it
-      # inline on the offending page instead of calling exit() - one bad macro
-      # reference (eg. a mistyped applications[] key) no longer takes down the
-      # whole site build; every other page still builds and gets checked.
       on_error_fail: false
       verbose: true
       module_name: macro_hooks
       include_dir: overrides
+  - llmstxt:
+      markdown_description: >-
+        NeSI Mahuika HPC support documentation: getting access, running batch jobs
+        with Slurm, available software and modules, storage and data transfer,
+        interactive computing (Jupyter, OnDemand), and platform policies.
+      sections:
+        Announcements:
+          - Announcements/*.md
+        Getting Started:
+          - Getting_Started/**/*.md
+        Software:
+          - Software/**/*.md
+        Batch Computing:
+          - Batch_Computing/**/*.md
+        Interactive Computing:
+          - Interactive_Computing/**/*.md
+        Storage:
+          - Storage/**/*.md
+        Data Transfer:
+          - Data_Transfer/**/*.md
+        Policy:
+          - Policy/**/*.md
+        Service Subscriptions:
+          - Service_Subscriptions/**/*.md
+        Tutorials:
+          - Tutorials/**/*.md
+        Reference:
+          - GLOSSARY.md
+          - index.md
 extra_css:
   - assets/stylesheets/theme.css
 extra_javascript:
