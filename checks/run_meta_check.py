@@ -30,6 +30,10 @@ msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
 MIN_TAGS = 1
+# Below this, descriptions stop distinguishing pages ("Release notes", "Freezer Quick
+# Start", eleven Freezer pages all sharing "Freezer upgrade release notes"). Descriptions
+# in the low 30s are still doing real work, so don't raise this without checking.
+MIN_DESCRIPTION_LENGTH = 30
 RANGE_SIBLING = [4, 8]
 ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many children warnings.
 # Site-infrastructure pages (tag index, updates feed, glossary) have no topic of their
@@ -340,6 +344,41 @@ def meta_missing_description():
         yield {"message": "Missing 'description' from front matter."}
 
 
+def meta_thin_description():
+    """
+    A description that just restates the title carries no information. These descriptions
+    are what each llms.txt link is annotated with (see mkdocs_hooks.on_config), so a reader
+    picking between pages has only this line to go on - 'Guide to batch computing' on
+    Batch_Computing_Guide.md tells them nothing the title didn't.
+    """
+    description = meta.get("description")
+    if not isinstance(description, str):
+        return
+    description = " ".join(description.split())
+    if not description:
+        return
+    lineno = _get_lineno(r"^description:.*$")
+    if len(description) < MIN_DESCRIPTION_LENGTH:
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": f"Description '{description}' is too short to tell pages apart. \
+Aim for at least {MIN_DESCRIPTION_LENGTH} characters saying what the page answers.",
+        }
+    elif title and _squash(description) == _squash(title):
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": f"Description '{description}' just restates the title. \
+Say what the page answers instead.",
+        }
+
+
+def _squash(text):
+    """Lowercase and strip everything but letters and digits, for comparing phrasings."""
+    return re.sub(r"[^a-z0-9]", "", text.lower())
+
+
 def title_length():
     if len(title) > MAX_TITLE_LENGTH:
         yield {
@@ -513,6 +552,7 @@ ENDCHECKS = [
     title_length,
     title_capitalisation,
     meta_missing_description,
+    meta_thin_description,
     meta_unexpected_key,
     minimum_tags,
     walk_toc,
