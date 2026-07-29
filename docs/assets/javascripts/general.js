@@ -91,9 +91,14 @@ function addBanner(msg, id) {
 }
 
 // Support both full page load and Material's instant (SPA-style) navigation.
-showOfficeBanner();
+// document$ already emits for the initial page load, so calling showOfficeBanner()
+// directly as well as subscribing it would run it twice on first load, appending
+// two banners (its "already exists" guard runs before the async fetch resolves,
+// so both calls pass it before either has appended anything).
 if (typeof document$ !== 'undefined') {
     document$.subscribe(showOfficeBanner);
+} else {
+    showOfficeBanner();
 }
 
 // The status.nesi.org.nz (Statuspage) embed leaves its iframe both
