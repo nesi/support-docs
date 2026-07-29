@@ -48,9 +48,20 @@ jobs:
       - name: Push Changed files to output
         if: inputs.fileList == ''
         id: diff
+        env:
+          # `github.base_ref` is only populated on pull_request events. This
+          # workflow triggers on push, where it is empty - the revision became
+          # the literal `origin/...HEAD`, the diff failed, and the file list came
+          # back empty, so every check below skipped with a green "no files to
+          # check". Fall back to the default branch.
+          BASE: ${{ github.base_ref || github.event.repository.default_branch }}
         run: |
-          changed_files="$(git diff --name-only origin/${{ github.base_ref }}...HEAD | grep -E '^docs/.*\.md$' | tr '\n' ' ')"
-          echo "::info::Workflow triggered by PR"
+          if ! git rev-parse --verify --quiet "origin/${BASE}" > /dev/null; then
+            echo "::error title=Cannot determine changed files::origin/${BASE} does not exist"
+            exit 1
+          fi
+          echo "Comparing against origin/${BASE}"
+          changed_files="$(git diff --name-only "origin/${BASE}...HEAD" | grep -E '^docs/.*\.md$' | tr '\n' ' ' || true)"
           echo "Changed files: '${changed_files}'"
           echo "filelist=${changed_files}" >> $GITHUB_OUTPUT
     outputs:
