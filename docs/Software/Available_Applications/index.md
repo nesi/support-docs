@@ -4,6 +4,7 @@ template: supported_apps.html
 tags:
   - software
 hide:
+    - tags
     - toc
 ---
 

@@ -1,9 +1,4 @@
 {% extends "base.html" -%}
-{% block libs %}
-    {{ super() }}
-    <script src="{{ base_url }}/assets/javascripts/supportedApplications.js"></script>
-    <!-- Would be good if we could remove dependency on jq -->
-{% endblock -%}
 {% block styles %}
 {{ super() }}
 <link rel="stylesheet" href="{{ base_url }}/assets/stylesheets/supportedApplications.css">
@@ -15,7 +10,7 @@
         <div class="md-search-aux">
             <div class="md-search-aux__inner" role="search">
                 <form class="md-search-aux__form md-search__form"  onsubmit="return false;">
-                    <input id="__search-aux" name="search" onkeyup="onSearchInput(event)" type="text"
+                    <input id="__search-aux" name="search" type="text"
                         class="md-search__input md-search-aux__input" aria-label="Search for Applications"
                         placeholder="Search for Applications">
                     <label class="md-search-aux__icon md-search__icon md-icon" for="__search-aux">
@@ -24,12 +19,12 @@
                     </label>
                     <nav class="md-search__options" id="srchbar-badge-party">
                         <span id="srchbar-badge-party-domains"></span>
-                    </div>
+                    </nav>
                 </form>
             </div>
             <div class="layoutrow">
                 <div class="article-div">
-                    <div id="mainList" class="label_data data-labelsection">
+                    <div id="mainList" class="label_data data-labelsection" data-domain-whitelist="{{ domain_whitelist | join(',') }}">
                         {% if applications|length > 1 %}
                         {% for app_name in applications %}
                         {% set app = applications[app_name] %}
@@ -44,6 +39,6 @@
             <br>
         </div>
         <em>You can help contribute to this list by tagging software <a
-                href="https://github.com/nesi/modlist/blob/master/tags_domains.json">here</a>.</em>
+                href="{{ config.repo_url }}/blob/main/docs/assets/tags.yml">here</a>.</em>
     </div>
 {% endblock %}

@@ -15,8 +15,15 @@ module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 
 def on_env(env, config, files, **kwargs):
     # add entire module list to keyword 'applications
-    env.globals["applications"] = json.load(open(module_list_path))
-    # env.globals["domains"]=json.load(open('../tags/domains.json')).keys() # Needs list of cannon domains to make into
+    applications = json.load(open(module_list_path))
+    env.globals["applications"] = applications
+    # Domains actually in use, for the supported-apps filter UI - derived from
+    # the data so it can't drift out of sync the way a hardcoded list would.
+    env.globals["domain_whitelist"] = sorted({
+        domain
+        for app in applications.values()
+        for domain in app.get("domains", [])
+    })
 
 
 def lint(*args, **kwargs):
