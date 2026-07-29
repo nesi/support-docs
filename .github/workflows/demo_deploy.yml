@@ -76,8 +76,17 @@ jobs:
               if [ -n "${changed_pages}" ]; then
                   msg="${msg}<br><br>Seems the following pages differ;<br><ul>"
                   for f in ${changed_pages};do
-                      g=${f#*/}; h=${g%.*}
-                      msg="${msg}<li><a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}\" target=_blank>${h##*/}</a></li>"
+                      g=${f#*/}; h=${g%.md}
+                      # `a/b/index.md` is published at `a/b/` - see the URL
+                      # mapping step below. Without this the link 404s and is
+                      # labelled "index".
+                      case "$h" in
+                        index) h="" ;;
+                        */index) h="${h%/index}" ;;
+                      esac
+                      label="${h##*/}"
+                      if [ -z "${label}" ]; then label="Home"; fi
+                      msg="${msg}<li><a href=\"${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}\" target=_blank>${label}</a></li>"
                   done
                   msg="${msg}</ul>"
                   echo "::info title=Deploy Succeeded::${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}" 
