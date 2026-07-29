@@ -3,6 +3,7 @@ created_at: '2019-07-22T03:46:24Z'
 tags:
 - openmp
 - parallel
+description: The environment settings that control how many threads OpenMP code runs
 ---
 
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application

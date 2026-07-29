@@ -2,6 +2,7 @@
 created_at: '2021-01-13T00:20:08Z'
 tags:
 - account
+description: The terms you accept at registration governing acceptable use of the platform
 ---
 
 ## Usage

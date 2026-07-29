@@ -3,6 +3,7 @@ created_at: 2026-01-05
 tags:
 - file_transfer
 - access
+description: Browsing cluster files from your desktop file manager by mounting them over SFTP
 ---
 
 !!! prerequisite

@@ -3,6 +3,7 @@ created_at: '2022-09-26T08:09:35Z'
 tags:
 - biology
 - python
+description: Assembly and analysis of RAD-seq and related datasets with ipyrad
 ---
 
 

@@ -5,6 +5,7 @@ tags:
   - software
 hide:
     - toc
+description: The applications already installed on the cluster and how to load their modules
 ---
 
 <!-- This page uses a custom page template 'overrides/supported_apps.html'. If you are looking to contribute to this list, please see https://github.com/nesi/support-docs/blob/main/docs/CONTRIBUTING.md#the-supported-apps-page for details -->

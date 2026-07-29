@@ -4,6 +4,7 @@ tags:
   - slurm
   - account
 status: deprecated
+description: 'Checking a project''s Slurm core-hour usage with the nn_corehour_usage command'
 ---
 
 To check your project's usage of Slurm-managed resources, you can use

@@ -3,6 +3,7 @@ created_at: '2023-07-05T23:47:26Z'
 tags:
 - account
 title: Service Governance Contact
+description: What a Service Governance Contact does and why your institution names one
 ---
 
 As part of our service agreements, we request you name a Service

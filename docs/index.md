@@ -1,6 +1,7 @@
 ---
 template: home.html
 hide: toc
+description: Technical documentation for the REANNZ high performance computing platforms
 ---
 
 
