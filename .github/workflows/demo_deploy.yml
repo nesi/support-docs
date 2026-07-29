@@ -96,21 +96,35 @@ jobs:
         run: |
           changed_pages=$(gh api repos/${GITHUB_REPOSITORY}/compare/${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} \
             --jq '.files[] | select(.filename | endswith(".md")) | .filename')
-          urls="${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/"$'\n'
+          prefix="${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}"
+          urls="${prefix}/"$'\n'
           for f in ${changed_pages}; do
-            g=${f#*/}; h=${g%.*}
-            urls="${urls}${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}/"$'\n'
+            g=${f#*/}; h=${g%.md}
+            # use_directory_urls publishes `a/b.md` at `a/b/` and `a/b/index.md`
+            # at `a/b/`. Keeping the `index` segment points at a page that does
+            # not exist, and a 404 breaks the audit below - see that step.
+            # Matched as a whole path segment so `reindex.md` survives intact.
+            case "$h" in
+              index) h="" ;;
+              */index) h="${h%/index}" ;;
+            esac
+            urls="${urls}${prefix}${h:+/$h}/"$'\n'
           done
+          # docs/index.md maps onto the site root, which is already the first entry.
+          urls=$(printf '%s' "${urls}" | awk 'NF && !seen[$0]++')
           echo "urls<<EOF" >> $GITHUB_OUTPUT
           echo "$urls" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
 
       - name: Wait for preview URLs to be live
         if: steps.wait.outputs.conclusion == 'success'
+        env:
+          URLS: ${{ steps.pages.outputs.urls }}
         run: |
           # GitHub Pages CDN can lag behind the deploy; a URL that 404s serves
           # GitHub's default 404 page, whose strict CSP breaks AccessLint's
           # script injection. Poll each URL until it returns 200 first.
+          failed=""
           while IFS= read -r url; do
             [ -z "$url" ] && continue
             echo "Waiting for $url"
@@ -123,7 +137,14 @@ jobs:
               echo "  Got $code, retrying (${i}/30)..."
               sleep 5
             done
-          done <<< "${{ steps.pages.outputs.urls }}"
+            # Falling through with a non-200 used to be silent, and the audit
+            # then died on that URL with an unrelated-looking CSP error.
+            if [ "$code" != "200" ]; then
+              echo "::error title=Preview URL never became live::${url} last returned ${code}"
+              failed="${failed} ${url}"
+            fi
+          done <<< "${URLS}"
+          [ -z "${failed}" ]
 
       - name: Run AccessLint WCAG audit
         if: steps.wait.outputs.conclusion == 'success'
