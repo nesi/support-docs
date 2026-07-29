@@ -136,6 +136,8 @@ plugins:
       # `Section/*.md` matches every page at any depth. Do NOT "fix" these to `**`:
       # `Section/**/*.md` requires a literal extra `/`, which silently drops every page
       # sitting directly in the section directory (it emptied Batch Computing and Policy).
+      # mkdocs_hooks.on_config rewrites these globs into explicit per-page entries so each
+      # link carries its front matter `description`.
       sections:
         Announcements:
           - Announcements/*.md
