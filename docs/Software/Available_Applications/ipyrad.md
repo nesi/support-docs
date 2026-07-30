@@ -1,5 +1,6 @@
 ---
 created_at: '2022-09-26T08:09:35Z'
+title: ipyrad
 tags:
 - biology
 - python

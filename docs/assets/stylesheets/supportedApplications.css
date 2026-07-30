@@ -1,9 +1,3 @@
-.docLink-homepage:before {
-    content: " \f15b ";
-    /* font-family: "FontAwesome"; */
-  	margin-right: 0.2em;
-}
-
 /* Custom admonation for software list */
 
 .md-typeset .admonition.software,
@@ -12,9 +6,6 @@
   border-radius: 0;
   border: 1px solid var(--md-default-fg-color);
   /* Nesting here to increase prio */
-  &.hide_cluster {
-    display: none;
-    }
   &.hide_search {
         display: none;
     }
@@ -28,11 +19,6 @@
     display: none;
 }
 
-.docLink-nesidoc:before {
-    content: " \f15c ";
-    font-family: "Material Icons";
-  	margin-right: 0.2em;
-}
 .grid.flex-card-parent {
     display: flex;
     flex-direction: row;
@@ -51,41 +37,17 @@
 .app-list-header {
       display: inline;
       }
-.docLink {
-    display: block;
-}
 .cardbody {
     display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
     transition: all .5s ease-in-out;
 }
-.version-table{
-    width: max-content;
-    flex-grow: 0.9;
-}
-tr.version-table-row>th {
-    padding-left: 0;
-    width: auto;
-}
-.list-group-item.tier1 {
-          border-style: solid;
-}
-.list-group-item.tier2 {
-          border-style: dashed;
-          color: gray;
-}
 .list-group-item-application:hover {
     background-color: #f8f9fa00;
 }
 .article__body ul {
     padding-left: inherit;
-}
-.card-app-extra{
-    flex: 1 1 auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 }
 .cardbody-description{
     margin-bottom: 0;
@@ -101,9 +63,6 @@ tr.version-table-row>th {
 
 table > tr{
     padding: 4px 2px 4px 2px;
-}
-div#tier2 {
-    margin-top: 0.5rem;
 }
 li {
     list-style: none;
@@ -143,27 +102,9 @@ li {
     background-color: #28a745;
 }
 
-.badge-domain-astronomy {
-    background-color: black;
-}
 .badge-domain-chemistry {
     background-color: #ff07d8;
 }
-.badge-domain-Molecular-Dynamics {
-    background-color: #ff07d8;
-}
-.badge-domain-Density-Functional-Theory {
-    background-color: #ff07d8;
-}
-.badge-domain-QMMM {
-    background-color: #ff07d8;
-    text-transform: uppercase;
-}
-.badge-domain-Computational-Chemistry {
-    background-color: #ff07d8;
-    text-transform: uppercase;
-}
-
 
 .badge-domain-climate_science {
     background-color: #add8e6;
@@ -183,16 +124,12 @@ li {
     background-color: #9935dc;
 }
 
-.badge-domain-medical_science {
-    background-color: #d10000;
-}
-
 .badge-domain-physics {
     background-color: #6495ed;
 }
 
 .badge-domain-social_science {
-    background-color: #a11d3e;
+    background-color: #1797ad;
 }
 
 .badge-domain-machine_learning {
@@ -205,103 +142,27 @@ li {
     color: dimgrey;
 }
 
-.badge-domain-social_science {
-    background-color: #1797ad;
-}
-
 .badge-domain-visualisation {
     display:none;
     box-shadow: 0px 0px 0px 1px #495057 inset;
     background-color: #fea;
 }
 
-.badge-domain-mpi {
-    background-color: black;
-}
-.badge-domain-omp {
-    background-color: black;
-}
-.badge-domain-fea {
-    background-color: black;
-}
-.badge-domain-cfd {
-    background-color: black;
-}
-.badge-domain-multiphysics {
-    background-color: black;
-}
-.badge-domain-cae {
-    background-color: black;
-}
-.badge-domain-workflow_management {
-    background-color: black;
-}
-.badge-domain-workflow {
-    background-color: black;
-}
-.badge-domain-hydrodynamics {
-    background-color: black;
-}
-.badge-domain-morphodynamics {
-    background-color: black;
-}
-.badge-domain-particle-modelling {
-    background-color: black;
-}
-.badge-domain-water-quality-testing {
-    background-color: black;
-}
-.badge-domain-wave-modelling {
-    background-color: black;
-}
-.badge-domain-general {
-    background-color: black;
-}
-.badge-domain-geo {
-    background-color: black;
-}
-.badge-domain-earthquake {
-    background-color: black;
-}
-
-.badge-domain-r {
-    background-color: black;
-}
-.badge-domain-software {
-    background-color: black;
-}
+/* Domains without a dedicated colour yet share this default. */
+.badge-domain-astronomy,
+.badge-domain-mpi,
+.badge-domain-openmp,
+.badge-domain-workflow,
+.badge-domain-workflow_management,
+.badge-domain-containers,
+.badge-domain-julia,
+.badge-domain-parallel,
+.badge-domain-profiling,
+.badge-domain-r,
+.badge-domain-software,
 .badge-domain-python {
     background-color: black;
 }
-.badge-domain-environments {
-    background-color: black;
-}
-.badge-domain-conda {
-    background-color: black;
-}
-.badge-domain-anaconda {
-    background-color: black;
-}
-.badge-domain-miniconda {
-    background-color: black;
-}
-.badge-domain-mamba {
-    background-color: black;
-}
-
-.badge-domain-no_toc {
-    background-color: black;
-}
-.badge-domain-no_lic {
-    background-color: black;
-}
-.badge-domain-no_desc {
-    background-color: black;
-}
-.badge-domain-no_ver {
-    background-color: black;
-}
-
 
 .badge-domain-language {
     box-shadow: 0px 0px 0px 1px #495057 inset;
@@ -332,21 +193,11 @@ li {
     }
 }
 
-div#updated {
-    display: flex;
-    font-style: italic;
-    color: gray;
-    margin: 0 0 5px 0;
-}
-
 #srchbar-badge-party {
     border: 1px solid #eceff1;
     border-left: none;
     padding-top: 0.2rem;
-}    
-/* #srchbar{
-    border-right:0;
-} */
+}
 .md-search-aux{
     display:inline-block;
     width: 100%;
@@ -358,6 +209,13 @@ div#updated {
 }
 
 .md-search__icon.md-search-aux__icon{
+    color: var(--md-default-fg-color--light);
+}
+
+/* Material's own placeholder colour assumes the input sits in the dark
+   primary-coloured header pill; ours sits on the default page background,
+   so it needs overriding or it renders near-invisible (white-on-white). */
+.md-search-aux__input::placeholder {
     color: var(--md-default-fg-color--light);
 }
 

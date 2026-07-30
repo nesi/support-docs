@@ -7,8 +7,6 @@
         <h4 class="app-list-header">{{ app_name }}</h4>
         {% if app.licence_type -%}
         <span class="twemoji warning badge badge-licence badge-licence-{{ app.licence_type }}" title="{{ app.licence_type | capitalize }} software. Restrictions may apply."><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 14H11V9H13M13 18H11V16H13M1 21H23L12 2L1 21Z"></path></svg></span>
-        <!-- <span class="warning badge badge-licence badge-licence-{{ app.licence_type }}"  data-toggle="tooltip">  -->
-        <!-- </span> -->
         {% endif -%}
         {% for domain in app.domains -%} 
             <span class="badge-largeinator" data-domain="{{ domain }}">

@@ -63,6 +63,16 @@ function render() {
  * Filtering
  * ========================================================================== */
 
+// Baisc fuzzy matching
+function fuzzyMatch(text, query) {
+  const words = text.split(" ");
+  return query.split(" ").every(q => words.some(word => {
+    let i = 0;
+    for (const ch of word) if (ch === q[i]) i++;
+    return i === q.length;
+  }));
+}
+
 function filterSearch() {
   const items = document.querySelectorAll(".list-group-item-application");
 
@@ -79,7 +89,7 @@ function filterSearch() {
     }
 
     if (state.search) {
-      visible &&= text.includes(state.search.toLowerCase());
+      visible &&= fuzzyMatch(text, state.search.toLowerCase());
     }
 
     item.classList.toggle("hide_search", !visible);
