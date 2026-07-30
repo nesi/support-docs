@@ -1,114 +1,194 @@
-// Copied from module list repo.
-CLUSTER_WHITELIST=["mahuika", "maui", "maui_ancil"]
-DOMAIN_WHITELIST=["astronomy","biology","chemistry", "data_analytics", "earth_science", "engineering", "language", "machine_learning", 
-"mathematics","medical_science","physics","social_science","visualisation","climate_science","workflow_management"]
+// Populated (below, on document$) from #mainList's data-domain-whitelist,
+// which the supported_apps.html template derives from module-list.json -
+// this way it can never drift out of sync with the domains apps actually have.
+let DOMAIN_WHITELIST = [];
 
-$(document).ready(function() {
 
-    params = new URL(document.location).searchParams;
-    search_string = params.get("search");
-    cluster_tags = (params.get("cluster") ?? "").split(",").filter(Boolean);
-    domain_tags = (params.get("domain") ?? "").split(",").filter(Boolean);  
+const state = {
+  search: "",
+  domain: null // string | null
+};
 
-    cluster_tags.forEach((tag)=>addBadge(tag, "cluster"));
-    domain_tags.forEach((tag)=>addBadge(tag, "domain"));
+function syncURL() {
+  const params = new URLSearchParams();
 
-    if (search_string){
-        $('#__search-aux')[0].value = search_string;
-    }
-    filterSearch(); 
-})
+  if (state.search) {
+    params.set("search", state.search);
+  }
 
-function addBadge(tag, filter_type){ 
-    $(`#srchbar-badge-party-${filter_type}s`).append(() => {
-    return `<span class="badge badge-closeable badge-${filter_type} badge-${filter_type}-${tag}">${tag.charAt(0).toUpperCase() + tag.replace('_', ' ').slice(1)}<button type="button" onclick="${filter_type}ToggleFilter(\'${tag}\')" data-dismiss="alert" aria-label="Close"></button></span>`;
-})
+  if (state.domain) {
+    params.set("domain", state.domain);
+  }
+
+  history.pushState(null, "", `?${params.toString()}`);
 }
 
-function removeBadge(tag, filter_type){
-    $(`#srchbar-badge-party-${filter_type}s > .badge-${filter_type}-${tag}`).remove(); // Remove tag class from DOM
-}
+function renderDomainBadge() {
+  const container = document.getElementById("srchbar-badge-party-domains");
+  if (!container) return;
 
-function addTag(tag, filter_type){
-    addBadge(tag, filter_type);
-    params.set(filter_type, (params.get(filter_type) ?? "").split(",").filter(Boolean).concat(tag).join());
-    history.pushState(null, '', window.location.pathname + '?' + params.toString());
-}
+  container.innerHTML = "";
 
-function removeTag(tag, filter_type){
-    removeBadge(tag, filter_type);
-    params.set(filter_type, (params.get(filter_type) ?? "").split(",").filter(Boolean).filter(e => e !== tag).join()); // Remove tag class from search string
-    history.pushState(null, '', window.location.pathname + '?' + params.toString()); // push to search history for live update.
-}
+  if (!state.domain) return;
 
-function domainToggleFilter(domain) {
-    if (DOMAIN_WHITELIST.includes(domain)){
-        if ($(`#srchbar-badge-party-domains > .badge-domain-${domain}`).length < 1) {
-            addTag(domain, "domain");
-        } else {
-            removeTag(domain, "domain");
-        }
-        filterSearch();
-    }
-}
+  const badge = document.createElement("span");
 
-function clusterToggleFilter(cluster) {
-    if (CLUSTER_WHITELIST.includes(cluster)){
-        if ($(`#srchbar-badge-party-clusters > .badge-cluster-${cluster}`).length < 1) {
-            addTag(cluster, "cluster");
-        } else {
-            removeTag(cluster, "cluster");
-        }
-        filterSearch(); 
-    }
-}
+  badge.className = `badge badge-closeable badge-domain badge-domain-${state.domain}`;
+  badge.dataset.domain = state.domain;
 
+  badge.textContent = state.domain.replace(/_/g, " ").replace(/^./, c => c.toUpperCase());
 
-function srchFunc(event) {
-    // Function called whenever search field edited.
-    // Consider replacing with Fuse, if fuzzy or faster search needed.
-    // Check if search string matches canon domain.
-    search_string = $('#__search-aux')[0].value;
-    params.set("search", search_string);
-    // Rather that add to url, edit history.
-    history.pushState(null, '', window.location.pathname + '?' + params.toString());
-    filterSearch()
-}
-
-//Goes through each app and shows/hides accordingly.
-function filterSearch() {
-    function matchClasses(element, inarray) {
-        // Only doing this as extreme DRY
-        if (inarray.length < 1) {
-            return true
-        }
-        for (i = 0; i < inarray.length; i++) {
-            if (element.hasClass(`list-group-item-application-${inarray[i]}`)) {
-                return true
-            }
-        }
-        return false
-    }
-
-    function matchSearch(comptxt){
-        if (search_string){
-            return (comptxt.indexOf(search_string) > -1)
-        }
-        return true
-    }
-
-    $('.list-group-item-application').each(function() { // Get list members.
-        element = $(this)
-        comptxt = (element.text() ?? "").toLowerCase(); // Flatten content
-        $(element).removeClass('hide_search'); //Show all element    
-        // If element matches all contitions, leave visible and skip to next element
-        if (matchClasses(element, domain_tags) && matchClasses(element, cluster_tags) && matchSearch(comptxt)) {
-            return true
-        }
-        element.addClass('hide_search'); //Hides element
-    });
-}
-//Stop propigation of clicks to their parent elements.
-$(".badge-largeinator").click(function(event) {
+  const close = document.createElement("button");
+  close.type = "button";
+  close.className = "badge-close";
+  close.setAttribute("aria-label", "Clear domain filter");
+  close.textContent = "✖";
+  close.addEventListener("click", event => {
     event.stopPropagation();
-})
+    state.domain = null;
+    syncURL();
+    render();
+  });
+
+  badge.appendChild(close);
+  container.appendChild(badge);
+}
+
+function render() {
+  renderDomainBadge();
+  filterSearch();
+}
+
+/* ============================================================================
+ * Filtering
+ * ========================================================================== */
+
+// Baisc fuzzy matching
+function fuzzyMatch(text, query) {
+  const words = text.split(" ");
+  return query.split(" ").every(q => words.some(word => {
+    let i = 0;
+    for (const ch of word) if (ch === q[i]) i++;
+    return i === q.length;
+  }));
+}
+
+function filterSearch() {
+  const items = document.querySelectorAll(".list-group-item-application");
+
+  items.forEach(item => {
+    let visible = true;
+
+    const text = item.dataset.searchText ?? "";
+
+    const itemDomains =
+      item.dataset.domains?.split(",") ?? [];
+
+    if (state.domain) {
+      visible &&= itemDomains.includes(state.domain);
+    }
+
+    if (state.search) {
+      visible &&= fuzzyMatch(text, state.search.toLowerCase());
+    }
+
+    item.classList.toggle("hide_search", !visible);
+  });
+}
+
+/* ============================================================================
+ * Lazy card bodies
+ *
+ * Each card's body (versions, links, licence info) ships as an inert
+ * <template>, not live markup - with ~860 apps, rendering all of that
+ * upfront made the page ~27k DOM nodes and multiple seconds to load, even
+ * though almost all of it stays collapsed and invisible. The template's
+ * content is cloned in only the first time a card is actually expanded.
+ * ========================================================================== */
+
+function initLazyCardBody(details) {
+  details.addEventListener("toggle", () => {
+    if (!details.open) return;
+
+    const tpl = details.querySelector(".card-body-template");
+    if (!tpl) return; // Already expanded once, or none present.
+
+    details.appendChild(tpl.content.cloneNode(true));
+    tpl.remove();
+  });
+}
+
+function toggleDomain(domain) {
+  if (!DOMAIN_WHITELIST.includes(domain)) return;
+
+  // Clicking the active domain clears it
+  // Clicking a different domain replaces it
+  state.domain = state.domain === domain ? null : domain;
+
+  syncURL();
+  render();
+}
+
+
+// Debounce input
+let searchDebounceTimer = null;
+
+function onSearchInput(event) {
+  clearTimeout(searchDebounceTimer);
+
+  searchDebounceTimer = setTimeout(() => {
+    state.search = event.target.value ?? "";
+    syncURL();
+    filterSearch();
+  }, 150);
+}
+
+// document$ (not DOMContentLoaded) so this re-initializes on Material's
+// instant/SPA-style navigation too - not just a full page load. Without this,
+// arriving via a link from elsewhere on the site never runs setup, and every
+// card stays hidden behind its default 'hide_search' class.
+document$.subscribe(() => {
+  const mainList = document.getElementById("mainList");
+  if (!mainList) return; // Not on the applications page.
+
+  DOMAIN_WHITELIST = (mainList.dataset.domainWhitelist || "").split(",").filter(Boolean);
+
+  const params = new URLSearchParams(window.location.search);
+
+  state.search = params.get("search") ?? "";
+  state.domain = params.get("domain");
+
+  // Validate domain from URL
+  if (!DOMAIN_WHITELIST.includes(state.domain)) {
+    state.domain = null;
+  }
+
+  const searchInput = document.getElementById("__search-aux");
+  searchInput.value = state.search;
+  searchInput.addEventListener("input", onSearchInput);
+
+  // Prevent bubbling from badge container
+  document.querySelectorAll(".badge-largeinator").forEach(el => {
+    el.addEventListener("click", event => {
+      const badge = event.target.closest(".badge-largeinator");
+      if (!badge) return;
+      toggleDomain(badge.dataset.domain);
+    });
+    el.addEventListener("toggle", event => {
+      event.stopPropagation();
+      event.preventDefault();
+    })
+  });
+
+  document.querySelectorAll(".list-group-item-application").forEach(initLazyCardBody);
+
+  render();
+});
+
+/* ============================================================================
+ * Public API (for existing onclick hooks)
+ * ========================================================================== */
+
+window.domainToggleFilter = toggleDomain;
+window.onSearchInput = onSearchInput;
+
