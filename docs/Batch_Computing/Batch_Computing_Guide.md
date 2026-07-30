@@ -1,6 +1,6 @@
 ---
 created_at: 2025-12-19
-description: Guide to batch computing
+description: Guide to batch computing on REANNZ HPC
 tags:
     - slurm
     - interactive
@@ -27,6 +27,7 @@ The following is a template batch script with both the minimum requirements and 
 
 ```sl
 #!/bin/bash -e
+
 #SBATCH --account       <projectcode>   # needed if you are in multiple projects
 #SBATCH --job-name      BatchJob        # shows up in the queue
 #SBATCH --time          00:01:00        # Walltime limit (minutes or HH:MM:SS)
@@ -142,3 +143,4 @@ Add the following to your batch script before running:
 ```
 
 After the job finishes running you can get plots of the resource utilisation by running `profile_plot <jobid>`, or the raw profile data by running `profile_data <jobid>`.  Both programs have formatting options shown by their `--help` option.
+
