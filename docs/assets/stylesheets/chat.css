@@ -2,30 +2,30 @@
   position: fixed;
   right: 24px;
   bottom: 24px;
-  width: 56px;
-  height: 56px;
+  width: 78px;
+  height: 78px;
   border-radius: 50%;
-  background: var(--md-primary-fg-color);
+  background: var(--chat-accent-color);
   border: none;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .25);
+  box-shadow: var(--md-shadow-z2);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   z-index: 1000;
-  color: #fff;
-  font-size: 22px;
+  color: var(--chat-accent-contrast-color);
+  font-size: 30px;
 }
 
 .chat-window {
   position: fixed;
   right: 24px;
-  bottom: 92px;
+  bottom: 120px;
   width: 340px;
   height: 460px;
   max-height: calc(100vh - 120px);
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+  box-shadow: var(--md-shadow-z3);
   display: none;
   flex-direction: column;
   overflow: hidden;
@@ -71,8 +71,8 @@
 .chat-msg p:last-child { margin-bottom: 0; }
 .chat-msg-user {
   align-self: flex-end;
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
+  background: var(--chat-accent-color);
+  color: var(--chat-accent-contrast-color);
   border-bottom-right-radius: 3px;
 }
 .chat-msg-bot {
@@ -89,7 +89,7 @@
 }
 .chat-msg-bot code { font-size: 12px; }
 .chat-cite { color: var(--md-accent-fg-color); font-weight: 700; cursor: pointer; }
-.chat-error { color: #c0392b; }
+.chat-error { color: var(--chat-error-color); }
 .chat-thinking { color: var(--md-default-fg-color--light); font-style: italic; }
 
 .chat-sources {
@@ -129,10 +129,16 @@
 .chat-input-row button {
   border: none;
   border-radius: 8px;
-  background: var(--md-primary-fg-color);
-  color: var(--md-primary-bg-color);
+  background: var(--chat-accent-color);
+  color: var(--chat-accent-contrast-color);
   padding: 0 14px;
   cursor: pointer;
   font-size: 16px;
 }
 .chat-input-row button:disabled { opacity: .5; cursor: default; }
+
+/* Extra glow so the fab still pops against the slate background even
+   though it now shares the same accent color as the rest of the page. */
+[data-md-color-scheme="slate"] .chat-fab {
+  box-shadow: var(--md-shadow-z2), 0 2px 12px rgba(0, 185, 228, .35);
+}

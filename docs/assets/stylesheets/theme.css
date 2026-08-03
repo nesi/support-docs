@@ -31,6 +31,9 @@
   /* --md-code-fg-color: rgb(53,69,77); */ /* main color for code text */
   --md-code-bg-color: var(--md-code-bg-color--light); /* main color for code background */
   /* --md-typeset-color: var(--reannz-orange); */ /* main text color, sub H1 headers too */
+  --chat-accent-color: var(--md-primary-fg-color); /* chat fab/bubble background */
+  --chat-accent-contrast-color: var(--md-primary-bg-color); /* chat fab/bubble text */
+  --chat-error-color: #c0392b;
 }
 
   /* --md-accent-bg-color:                rgb(210,227,235); */
@@ -47,6 +50,9 @@
   /* --md-code-bg-color: var(--reannz-orange); */ /* main color for code background */
   /* --md-typeset-color: var(--reannz-orange); */ /* main text color, sub H1 headers too */
   --md-typeset-a-color: rgb(0, 206, 255); /* sidebar active link color */
+  --chat-accent-color: var(--reannz-blue); /* chat fab/bubble background; the branded navy primary color is too close to the slate background to read as a floating bubble */
+  --chat-accent-contrast-color: var(--reannz-blue--dark); /* chat fab/bubble text */
+  --chat-error-color: #ff6b6b;
 
   .nt-card-image>img {
     filter: brightness(0) invert(1);
@@ -172,7 +178,6 @@ span.md-status.md-status--deprecated {
   cursor: default;
 }
 
-
 /* Make cards look right */
 .md-typeset .grid.cards {
   display: grid;
@@ -233,7 +238,6 @@ span.md-status.md-status--deprecated {
 [data-md-color-scheme="slate"] .grid.cards>a>p {
   color: var(--md-typeset-color);
 }
-
 
 /* Tutorial header */
 .tutorial-banner {

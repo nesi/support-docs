@@ -20,6 +20,19 @@
   const safeUrl = (u) =>
     /^https?:\/\//i.test(u || "") ? u : "#";
 
+  const escapedUrl = (u) => escapeHtml(safeUrl(u));
+
+  const CODE_BLOCK_RE = /```(\w*)\n([\s\S]*?)```/g;
+  const INLINE_CODE_RE = /`([^`]+)`/g;
+  const BOLD_RE = /\*\*([^*]+)\*\*/g;
+  const CITATION_RE = /\[(\d+)\]/g;
+  const LIST_ITEM_RE = /^[-*] (.+)$/gm;
+  const LIST_WRAP_RE = /(<li>[\s\S]*?<\/li>)(?!\s*<li>)/g;
+  const PARAGRAPH_SPLIT_RE = /\n{2,}/;
+  const BLOCK_TAG_RE = /^<(ul|pre)/;
+  const NEWLINE_RE = /\n/g;
+  const CODE_PLACEHOLDER_RE = /\0(\d+)\0/g;
+
   const fab = document.createElement("button");
   fab.id = "chat-fab";
   fab.className = "chat-fab";
@@ -59,7 +72,7 @@
     const blocks = [];
 
     html = html.replace(
-      /```(\w*)\n([\s\S]*?)```/g,
+      CODE_BLOCK_RE,
       (_, lang, code) => {
         blocks.push(code);
         return `\0${blocks.length - 1}\0`;
@@ -67,31 +80,28 @@
     );
 
     html = html
-      .replace(/`([^`]+)`/g, "<code>$1</code>")
-      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
-      .replace(/\[(\d+)\]/g, (_, n) => {
+      .replace(INLINE_CODE_RE, "<code>$1</code>")
+      .replace(BOLD_RE, "<strong>$1</strong>")
+      .replace(CITATION_RE, (_, n) => {
         const src = sources?.[n - 1];
         if (!src) return `[${n}]`;
 
-        return `<sup class="chat-cite" data-url="${escapeHtml(safeUrl(src.url))}" title="${escapeHtml(src.title || "")}">[${n}]</sup>`;
+        return `<sup class="chat-cite" data-url="${escapedUrl(src.url)}" title="${escapeHtml(src.title || "")}">[${n}]</sup>`;
       })
-      .replace(/^[-*] (.+)$/gm, "<li>$1</li>")
-      .replace(
-        /(<li>[\s\S]*?<\/li>)(?!\s*<li>)/g,
-        "<ul>$1</ul>"
-      );
+      .replace(LIST_ITEM_RE, "<li>$1</li>")
+      .replace(LIST_WRAP_RE, "<ul>$1</ul>");
 
     html = html
-      .split(/\n{2,}/)
+      .split(PARAGRAPH_SPLIT_RE)
       .map(p =>
-        /^<(ul|pre)/.test(p.trim())
+        BLOCK_TAG_RE.test(p.trim())
           ? p
-          : `<p>${p.replace(/\n/g, "<br>")}</p>`
+          : `<p>${p.replace(NEWLINE_RE, "<br>")}</p>`
       )
       .join("");
 
     html = html.replace(
-      /\0(\d+)\0/g,
+      CODE_PLACEHOLDER_RE,
       (_, i) => `<pre><code>${blocks[i]}</code></pre>`
     );
 
@@ -107,7 +117,7 @@
       sources
         .map(
           (s, i) =>
-            `<a href="${escapeHtml(safeUrl(s.url))}" target="_blank" rel="noopener">[${i + 1}] ${escapeHtml(s.title)} — ${escapeHtml(s.heading)}</a>`
+            `<a href="${escapedUrl(s.url)}" target="_blank" rel="noopener">[${i + 1}] ${escapeHtml(s.title)} — ${escapeHtml(s.heading)}</a>`
         )
         .join("");
 
@@ -269,10 +279,12 @@
     }
   });
 
-  // navigation.instant (SPA mode) swaps document.body on every page change
-  // without re-running this script, so re-append on every document$ tick
-  // rather than once on DOMContentLoaded — same pattern as mathjax.js.
   document$.subscribe(() => {
-    if (!document.body.contains(fab)) document.body.append(win, fab);
+    if (getToken()) {
+      if (!document.body.contains(fab)) document.body.append(win, fab);
+    } else if (document.body.contains(fab)) {
+      win.remove();
+      fab.remove();
+    }
   });
 })();

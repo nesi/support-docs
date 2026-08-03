@@ -339,7 +339,7 @@ and answer the 'questions' posed in the objectives.
 Finally a `next` admonition pointing to the next page.
 
 !!! next
-    [Next Page](next_page.md)
+    [Next Page](NEWPAGE.md)
 
 ### Rule of Three
 
