@@ -1,9 +1,7 @@
 ---
 created_at: '2026-07-30'
 tags:
-  - cron
-  - scrontab
-  - scron
+  - slurm
 description: How to use scron (Slurm cron) to schedule jobs
 ---
 
@@ -19,7 +17,8 @@ For more detailed information about using *scron*, type `man scrontab` to view t
 
 ### Example
 
-The following `scrontab` entry will run the `hostname` command, once an hour at the top of the hour, e.g. 09:00, 10:00, 11:00, etc.  It will do this until you remove the entry:
+The following `scrontab` entry will run the `hostname` command, once an hour at the top of the hour, e.g. 09:00, 10:00, 11:00, etc.
+It will do this until you remove the entry:
 
 ```scrontab
 $ scrontab -e
@@ -109,7 +108,7 @@ JOBID    PARTITION     NAME     USER    ST       TIME  NODES NODE
 
 ## Disable *scron* job
 
-To disable a job in your scrontab, you can remove the line or add a `#` (comment character) before the line.  Any line beginning with `#SCRON` can be disabled in the same way, eg.
+To disable a job in your scrontab, you can remove the line or add a `#` (comment character) before the line.  Any line beginning with `#SCRON` can be disabled in the same way, e.g.
 
 ```scrontab
 ##SCRON --job-name=update-model --time=1:00:00 --partition=genoa
