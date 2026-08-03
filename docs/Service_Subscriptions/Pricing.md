@@ -2,11 +2,6 @@
 created_at: '2023-07-05T23:56:56Z'
 tags:
 - account
-title: Pricing
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7349177261455
-zendesk_section_id: 7348891753487
 ---
 
 
@@ -49,7 +44,7 @@ The following pricing table covers our core HPC Platform service offerings.
 
 Billable services in the Research Developer Cloud include Virtual Machines (VMs), General Purpose Graphical Processing Units (GPUs), and Storage.
 
-Pricing listed is for Public section & not-for-profit organisations. To discuss commercial pricing, [please get in touch](mailto:support@nesi.org.nz).
+Pricing listed is for Public section & not-for-profit organisations. To discuss commercial pricing, {% include "partials/support_request.html" %}.
 
 
 *(Last updated September 2024. Prices are subject to change.)*
@@ -76,7 +71,7 @@ The Research Developer Cloud also offers high memory flavours (memory1) and flav
 - high memory flavours having 1 to 4 ratio of CPU per GB of RAM
 - development focused flavours with 1 to 1 ratio
 
-[Please contact us](mailto:support@nesi.org.nz) if you would like to access these specialised compute flavours.
+{% include "partials/support_request.html" %} if you would like to access these specialised compute flavours.
 
 | Flavours      | Price ($) per hour _(excludes GST)_ | Approximate price ($) per month _(excludes GST)_     |
 | :---        |    :---   |          :--- |
@@ -91,7 +86,7 @@ The Research Developer Cloud also offers high memory flavours (memory1) and flav
 | devtest1.4cpu4ram   | 0.112        | 81.42      |
 
 ## General Purpose GPUs
-General Purpose GPUs are currently accessible as a whole node or half a node of A40 GPUs. The GPU flavour won’t be visible by default on your project. We will be working on making vGPU access available in smaller portions instead of the whole node. [Please contact us](mailto:support@nesi.org.nz) if you would like to access them.
+General Purpose GPUs are currently accessible as a whole node or half a node of A40 GPUs. The GPU flavour won’t be visible by default on your project. We will be working on making vGPU access available in smaller portions instead of the whole node. {% include "partials/support_request.html" %} if you would like to access them.
 
 | Flavours      | Price ($) per hour _(excludes GST)_ | Approximate price ($) per month _(excludes GST)_     |
 | :---        |    :---   |          :--- |

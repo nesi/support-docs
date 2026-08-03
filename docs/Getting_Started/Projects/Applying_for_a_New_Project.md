@@ -17,7 +17,7 @@ tags:
     - Become familiar with foundational HPC skills, for example by
          watching our introductory webinar, [watching the recorded introductory webinars](../Getting_Help.md#youtube-recordings),
          or having one or more of your project team members do so.
-    - Review our [allocation classes](../../Policy/Allocation_classes.md). If
+    - Review our [allocation classes](../../Policy/Allocation_Classes.md). If
          you don't think you currently qualify for any class other than
          Proposal Development, please {% include "partials/support_request.html" %} as soon as
          possible to discuss your options. Your institution may be in a
@@ -48,7 +48,7 @@ information:
     research programme's current or expected funding)
 - Details of how your project is funded (this will help determine
     whether you are eligible for an allocation from our
-    [Merit](../../Policy/Allocation_classes.md#merit) class)
+    [Merit](../../Policy/Allocation_Classes.md#merit) class)
 - Your previous HPC experience
 - Whether you would like expert scientific programming support on your
     project

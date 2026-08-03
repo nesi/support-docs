@@ -2,7 +2,7 @@
 created_at: '2021-08-27T03:18:13Z'
 tags:
     - file_transfer
-title: Signing up to join a Globus Subscription
+title: Signing Up to Join a Globus Subscription
 ---
 
 A Globus subscription is sometimes necessary for certain tasks, such as [moving data between two computers/personal endpoints](./Data_Transfer_Between_Personal_Endpoints.md). This is not required for moving data to or from Mahuika.

@@ -2,7 +2,6 @@
 created_at: '2021-08-27T03:18:13Z'
 tags:
     - file_transfer
-title: Share Collections
 ---
 
 Share collections are a way to easily share data with other researchers who also has Globus.

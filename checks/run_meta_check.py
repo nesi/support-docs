@@ -13,6 +13,7 @@ import os
 import time
 from titlecase import titlecase
 from pathlib import Path
+from difflib import SequenceMatcher
 
 # Ignore files if they match this regex
 EXCLUDED_FROM_CHECKS = [
@@ -20,6 +21,7 @@ EXCLUDED_FROM_CHECKS = [
     r".*/index\.html",
     r".*/index\.md",
     r".*\.pages\.yml",
+    r".*\.yml"
 ]
 
 msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
@@ -28,9 +30,30 @@ msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
-MIN_TAGS = 1
+RANGE_TAGS = [1, 5]
+# Below this, descriptions stop distinguishing pages ("Release notes", "Freezer Quick
+# Start", eleven Freezer pages all sharing "Freezer upgrade release notes"). Descriptions
+# in the low 30s are still doing real work, so don't raise this without checking.
+MIN_DESCRIPTION_LENGTH = 30
 RANGE_SIBLING = [4, 8]
+ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many children warnings.
+# Site-infrastructure pages (tag index, updates feed, glossary) have no topic of their
+# own to tag - forcing a tag on them would just be generic filler, which tags.yml's
+# vocabulary explicitly discourages (see its "RETIRED TAGS" section).
+NO_TAGS_REQUIRED = ["docs/tags.md", "docs/updates.md", "docs/GLOSSARY.md"]
 DOC_ROOT = "docs"
+TAGS_VOCAB_PATH = "docs/assets/tags.yml"
+
+
+def _load_approved_tags(path):
+    """Canonical tag names plus their aliases, as accepted by compile_tags.py."""
+    vocab = yaml.safe_load(open(path, "r"))
+    approved = set()
+    for canonical, entry in vocab.items():
+        approved.add(canonical)
+        approved.update(entry.get("aliases") or [])
+    return approved
+
 
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
@@ -43,9 +66,10 @@ EXPECTED_PARAMETERS = {
     "postreq": "",
     "suggested": "",  # Add info here when implimented.
     "created_at": "",
-    "tags": "",  # Add info here when implimented.
+    "tags": _load_approved_tags(TAGS_VOCAB_PATH),
     "search": "",
     "hide": ["toc", "nav", "tags"],
+    "no_module": [True, False],
 }
 
 
@@ -69,7 +93,7 @@ def main():
         last_header_lineno, \
         sibling_headers
 
-    global toc, toc_parents, header
+    global toc, toc_parents, header, nav_tree_failed
 
     inputs = sys.argv[1:]
 
@@ -119,12 +143,13 @@ def main():
                 in_code_block = False
                 toc_parents = [title]
                 toc = {title: {"level": 1, "lineno": 0, "children": {}}}
+                nav_tree_failed = False
 
                 for line in contents.split("\n"):
                     lineno += 1
                     in_code_block = (
                             not in_code_block
-                            if re.match(r"^\s*```\s?\w*$", line)
+                            if re.match(r"^\s*```.*$", line)
                             else in_code_block
                         )
                     for check in WALKCHECKS:
@@ -144,9 +169,13 @@ def _run_check(f):
 
 def _emit(f, r):
     msg_count[r.get("level", "warning")] += 1
+    # Trailing "path:line:col" is redundant with the file=/line=/col= fields above, but
+    # terminals (eg. VS Code's integrated terminal) auto-link that exact shape, letting you
+    # click straight to the location without going through the task's Problems panel.
+    location = f"{input_path}:{r.get('line', 1)}:{r.get('col', 0)}"
     print(
-        f"::{r.get('level', 'warning')} file={input_path},title={f},col={r.get('col', 0)},\
-endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')}"
+        f"::{r.get('level', 'warning')} file= {input_path},title={f},col={r.get('col', 0)},\
+endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 'something wrong')} ({location})"
     )
     sys.stdout.flush()
     time.sleep(0.01)
@@ -154,10 +183,14 @@ endColumn={r.get('endColumn', 99)},line={r.get('line', 1)}::{r.get('message', 's
 
 def _title_from_filename():
     """
-    I think this is the same as what mkdocs does.
+    Matches mkdocs' own Page.title fallback (mkdocs/structure/pages.py):
+    replace '-'/'_' with spaces, then capitalize only if the whole
+    filename was already lowercase - mixed-case names are left as-is.
     """
-    name = " ".join(input_path.name[0:-3].split("_"))
-    return name[0].upper() + name[1:]
+    name = input_path.name[0:-3].replace("-", " ").replace("_", " ")
+    if name.lower() == name:
+        name = name.capitalize()
+    return name
 
 
 def _title_from_h1():
@@ -177,7 +210,7 @@ def _get_lineno(pattern):
 
 def _get_nav_tree():
     """Makes a nice dictionary of header tree"""
-    global toc, toc_parents
+    global toc, toc_parents, nav_tree_failed
 
     def _unpack(toc, a):
         if len(a) < 1:
@@ -200,6 +233,7 @@ def _get_nav_tree():
         if header_level == 1:
             toc = {header_name: {"lineno": lineno, "children": {}}}
             toc_parents = [header_name]
+            return
 
         while header_level < len(toc_parents) + 1:
             toc_parents.pop(-1)
@@ -211,14 +245,16 @@ def _get_nav_tree():
         }
         toc_parents += [header_name]
     except Exception:
-        _emit(
-            "misc.nav",
-            {
-                "level": "error",
-                "file": input_path,
-                "message": "Failed to parse Nav tree. Something is very wrong.",
-            },
-        )
+        if not nav_tree_failed:
+            nav_tree_failed = True
+            _emit(
+                "misc.nav",
+                {
+                    "level": "error",
+                    "file": input_path,
+                    "message": "Failed to parse Nav tree. Something is very wrong.",
+                },
+            )
 
 
 def _nav_check():
@@ -242,7 +278,7 @@ def _nav_check():
     items here to justify it's existence.",
                     },
                 )
-            elif num_siblings > RANGE_SIBLING[1]:
+            elif num_siblings > RANGE_SIBLING[1] and file_name not in ALLOWED_BE_BIG:
                 _emit(
                     "meta.siblings",
                     {
@@ -263,7 +299,30 @@ def _nav_check():
         )
 
 
+def _jaccard_index(s1, s2):
+    set1 = set(s1.lower()) # Split into words
+    set2 = set(s2.lower())
+    intersection = len(set1.intersection(set2))
+    union = len(set1.union(set2))
+    return intersection / union
+
+def _sim_index(str1, str2):
+    return SequenceMatcher(None, str1, str2).ratio()
+
+def _most_similar(s1, op):
+    bestval = 0
+    bestword = ""
+    for o in op:
+        ji = _jaccard_index(s1, o)
+        if ji > bestval:
+            bestval = ji
+            bestword = o
+    return bestword, bestval
 def title_redundant():
+    # A page's title doubles as the applications[] lookup key (see app_header.html);
+    # keep it explicit so a future filename change can't silently break that lookup.
+    if "Available_Applications" in input_path.parts:
+        return
     lineno = _get_lineno(r"^title:.*$")
     if "title" in meta.keys() and title_from_filename == meta["title"]:
         yield {
@@ -300,9 +359,10 @@ def meta_unexpected_key():
 
     for key, value in meta.items():
         if key not in EXPECTED_PARAMETERS.keys():
+            similar, ji = _most_similar(key, EXPECTED_PARAMETERS.keys())
             yield {
                 "line": _get_lineno(r"^" + key + r":.*$"),
-                "message": f"Unexpected parameter in front-matter '{key}'",
+                "message": f"Unexpected parameter in front-matter '{key}'{', did you mean \'' + similar + "\'?" if ji > 0.4 else ""} .",
             }
         elif EXPECTED_PARAMETERS[key]:
             if isinstance(value, list):
@@ -313,8 +373,43 @@ def meta_unexpected_key():
 
 
 def meta_missing_description():
-    if "description" not in meta.keys() or len(meta["description"]) < 1:
+    if not meta.get("description"):
         yield {"message": "Missing 'description' from front matter."}
+
+
+def meta_thin_description():
+    """
+    A description that just restates the title carries no information. These descriptions
+    are what each llms.txt link is annotated with (see mkdocs_hooks.on_config), so a reader
+    picking between pages has only this line to go on - 'Guide to batch computing' on
+    Batch_Computing_Guide.md tells them nothing the title didn't.
+    """
+    description = meta.get("description")
+    if not isinstance(description, str):
+        return
+    description = " ".join(description.split())
+    if not description:
+        return
+    lineno = _get_lineno(r"^description:.*$")
+    if len(description) < MIN_DESCRIPTION_LENGTH:
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": f"Description '{description}' is too short to tell pages apart. \
+Aim for at least {MIN_DESCRIPTION_LENGTH} characters saying what the page answers.",
+        }
+    elif title and _squash(description) == _squash(title):
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": f"Description '{description}' just restates the title. \
+Say what the page answers instead.",
+        }
+
+
+def _squash(text):
+    """Lowercase and strip everything but letters and digits, for comparing phrasings."""
+    return re.sub(r"[^a-z0-9]", "", text.lower())
 
 
 def title_length():
@@ -326,6 +421,11 @@ Try to keep it under {MAX_TITLE_LENGTH} characters to avoid word wrapping in the
         }
 
 def title_capitalisation():
+    # Software names are often acronyms/proper nouns (BLAST, VASP, ont-guppy-gpu) that
+    # titlecase() mangles, and the mangled title breaks the applications[app_name]
+    # macro lookup on Available_Applications pages (a KeyError, not just a cosmetic typo).
+    if "Available_Applications" in input_path.parts:
+        return
     correct_title = titlecase(title)
     if title != correct_title:
         yield {
@@ -334,14 +434,49 @@ def title_capitalisation():
 '{correct_title}' is preferred",
         }
 
-def minimum_tags():
+def number_tags():
+    if str(input_path) in NO_TAGS_REQUIRED or (meta.get("search") or {}).get("exclude"):
+        return
     if "tags" not in meta or not isinstance(meta["tags"], list):
         yield {"message": "'tags' property in meta is missing or malformed."}
-    elif len(meta["tags"]) < MIN_TAGS:
+    elif len(meta["tags"]) < RANGE_TAGS[0]:
         yield {
             "line": _get_lineno(r"^tags:.*$"),
-            "message": "Try to include at least 2 'tags'\
+            "message": f"Try to include at least {RANGE_TAGS[0]} 'tags'\
 (helps with search optimisation).",
+        }
+    elif len(meta["tags"]) > RANGE_TAGS[1]:
+        yield {
+            "line": _get_lineno(r"^tags:.*$"),
+            "message": f"{RANGE_TAGS[1]} is a lot of 'tags', are you sure they are all useful?",
+        }
+
+def approved_tags():
+    if "tags" not in meta or not isinstance(meta["tags"], list):
+        return
+    for tag in meta["tags"]:
+        if tag not in EXPECTED_PARAMETERS["tags"]:
+            similar, ji = _most_similar(tag, EXPECTED_PARAMETERS["tags"])
+            yield {
+                "line": _get_lineno(rf".*{tag}.*"),
+                "message": f"Tag '{tag}' is not an approved tag, {'did you mean \'' + similar + "\'?" if ji > 0.4 else 'See \'' + TAGS_VOCAB_PATH + '\'.'}",
+            }
+
+def h1_in_body():
+    """
+    H1 is reserved for the page title (see FORMAT.md/styleguide.md): it's set
+    via front matter or the filename, and a literal '# ...' in the body
+    silently overrides the nav title too.
+    """
+    if in_code_block:
+        return
+
+    m = re.match(r"^#\s+(.*)$", line)
+    if m:
+        yield {
+            "line": lineno,
+            "message": f"Don't use H1 ('# {m.group(1)}') in the body, it's reserved for the \
+page title and overrides the nav title. Remove it (or set 'title' in front matter instead).",
         }
 
 
@@ -352,7 +487,7 @@ def click_here():
     if in_code_block:
         return
 
-    m1 = re.search(r"(\[.*\s?|\[)here\s?.*\]\(.*\)", line, re.IGNORECASE)
+    m1 = re.search(r"\[[^\]]*\bhere\b[^\]]*\]\([^)]*\)", line, re.IGNORECASE)
     if m1:
         yield {
             "line": lineno,
@@ -363,6 +498,55 @@ def click_here():
 
     # Impliment check for html links when I can be fd.
     # m2 = re.search(r"\[here\]\(.*\)", line)
+
+
+def absolute_site_link():
+    """
+    Checks for markdown links that point to this site by absolute URL
+    instead of using a relative link.
+    """
+    if in_code_block:
+        return
+
+    for m in re.finditer(
+        r"\[[^\]]*\]\((https?:\/\/)?docs\.nesi\.org\.nz(/[^)\s]*)?\)",
+        line,
+        re.IGNORECASE,
+    ):
+        yield {
+            "line": lineno,
+            "col": m.start() + 1,
+            "endColumn": m.end() - 1,
+            "message": "Don't use an absolute URL to link to a page on this site. Use a link relative to \
+this page's own location instead (e.g. './Page.md' or '../Other_Section/Page.md'), not a path relative to the \
+site root or to the linked page.",
+        }
+
+
+def support_mailto_link():
+    """
+    Checks for any mention of support@nesi.org.nz - as a markdown/HTML link,
+    an autolink, or just raw text - these should use the
+    'partials/support_request.html' include instead.
+    """
+    if in_code_block:
+        return
+
+    for m in re.finditer(
+        r"(\[[^\]]*\]\((mailto:)?support@nesi\.org\.nz[^)]*\)"
+        r"|<a\s[^>]*href=[\"'](mailto:)?support@nesi\.org\.nz[^>]*>"
+        r"|<(mailto:)?support@nesi\.org\.nz>"
+        r"|(mailto:)?support@nesi\.org\.nz)",
+        line,
+        re.IGNORECASE,
+    ):
+        yield {
+            "line": lineno,
+            "col": m.start() + 1,
+            "endColumn": m.end() - 1,
+            "message": 'Don\'t reference support@nesi.org.nz directly, use the \
+{% include "partials/support_request.html" %} macro instead.',
+        }
 
 
 def walk_toc():
@@ -403,8 +587,6 @@ def dynamic_slurm_link():
         re.IGNORECASE,
     )
     if m1:
-        print(m1.group(1))
-        print(m1.group(2))
         yield {
             "line": lineno,
             "message": f"Link '{m1.group(0)}', does not use dynamic slurm version. Use 'https://slurm.schedmd.com/archive/{{{{ config.extra.slurm }}}}/{m1.group(2)}",
@@ -418,13 +600,15 @@ ENDCHECKS = [
     title_length,
     title_capitalisation,
     meta_missing_description,
+    meta_thin_description,
     meta_unexpected_key,
-    minimum_tags,
+    number_tags,
+    approved_tags,
     walk_toc,
 ]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here, dynamic_slurm_link]
+WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body]
 
 if __name__ == "__main__":
     main()

@@ -6,8 +6,6 @@ tags:
 description: How to run a Marimo interactive session on the Mahuika cluster.
 ---
 
-# Marimo interactive sessions
-
 >If you are using a windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
 
 To run Marimo in interactive mode, first we need to load

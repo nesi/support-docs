@@ -4,10 +4,6 @@ tags:
 - slurm
 - profiling
 - account
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360002327275
-zendesk_section_id: 360000164635
 ---
 
 ## Introduction

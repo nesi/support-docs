@@ -4,8 +4,6 @@ tags:
 - r
 vote_count: 7
 vote_sum: 3
-zendesk_article_id: 209338087
-zendesk_section_id: 360000040076
 ---
 
 ## Description

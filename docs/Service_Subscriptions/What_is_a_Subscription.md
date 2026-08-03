@@ -2,7 +2,7 @@
 created_at: '2023-07-05T23:18:57Z'
 tags:
 - account
-title: What is a Subscription?
+title: What Is a Subscription?
 ---
 
 We have a range of options for research institutions and independent

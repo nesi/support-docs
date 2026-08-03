@@ -2,9 +2,7 @@
 created_at: '2026-07-08'
 description: How to run TUFLOW Classic and TUFLOW FV hydrodynamic modelling on NeSI.
 tags:
-- hydrodynamics
-- flood modelling
-- hydraulics
+- earth_science
 ---
 
 {% set app_name = "TUFLOW" %}
@@ -24,7 +22,7 @@ tags:
 
 {% include "partials/app/app_version.html" -%}
 
-## Licence Connection
+## Licences
 
 TUFLOW requires a background licence daemon to be manually launched before the solver.
 If you are using a network cloud licence, you will have to register it first.

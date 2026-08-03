@@ -2,11 +2,6 @@
 created_at: '2023-07-13T01:04:38Z'
 tags:
 - biology
-title: snpEff
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 7403361932431
-zendesk_section_id: 360000040076
 ---
 
 

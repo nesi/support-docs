@@ -6,8 +6,6 @@ tags:
 title: ont-guppy-gpu
 vote_count: 5
 vote_sum: 3
-zendesk_article_id: 4546820344079
-zendesk_section_id: 360000040076
 ---
 
 

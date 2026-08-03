@@ -1,10 +1,10 @@
 ---
 nav:
-  - Globus-renaming.md
-  - Identity_provider_system_maintenance.md
+  - Globus-Renaming.md
+  - Identity_Provider_System_Maintenance.md
   - administrative_policy_updates.md
   - Autodeletion_of_Scratch_Filesystem.md
-  - Slurm_Job_email.md
+  - Slurm_Job_Email.md
   - Known_Issues_HPC3.md
   - Identity_Changes_for_Crown_Research_Institutes.md
   - Release_Notes

@@ -4,7 +4,7 @@ tags:
 - tutorial
 - access
 - account
-title: Account Requests for non-Tuakiri Members
+title: Account Requests for Non-Tuakiri Members
 ---
 
 Most New Zealand universities and Public Research Organisations are members
@@ -39,6 +39,6 @@ You will need to activate your account before you can log in to
      If you still can't find the email, {% include "partials/support_request.html" %}.
 
 !!! note "What next?"
-     -   [Project Eligibility](Allocation_classes.md)
+     -   [Project Eligibility](Allocation_Classes.md)
      -   [Applying for a new project.](../Getting_Started/Projects/Applying_for_a_New_Project.md)
      -   [Applying to join an existing project](../Getting_Started/Projects/Applying_to_Join_a_Project.md).

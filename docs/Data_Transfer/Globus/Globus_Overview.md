@@ -13,7 +13,7 @@ The following guide shows how to:
 
 * [How to set up Globus for the first time](./First_Time_Setup.md)
 * [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
-* [How to transfer data to/from Mahuika](./Data_Transfer_using_Globus.md)
+* [How to transfer data to/from Mahuika](./Data_Transfer_Using_Globus.md)
 * [How to transfer data between endpoints other than Mahuika](./Data_Transfer_Between_Personal_Endpoints.md)
 
 This page also contains other useful information on how to use Globus, including:

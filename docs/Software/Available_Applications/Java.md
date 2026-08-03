@@ -2,11 +2,6 @@
 created_at: '2015-08-18T02:30:33Z'
 tags:
 - software
-title: Java
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 207765367
-zendesk_section_id: 360000040076
 ---
 
 

@@ -21,7 +21,7 @@ To move files and folders between `collections` (such as between Mahuika and ano
     ![Globus_Transfer_2.png](../../assets/images/Globus_Transfer_2.png)
 
 3. In the Search bar, type `{{ globus_collection_storage}}`. Below the search bar, click on the `{{ globus_collection_storage}}` icon.
-    
+    ![Globus_Transfer_3.png](../../assets/images/Globus_Transfer_3.png)
 
 4. This will take you back to the main page, where you will need to authenticate yourself with the
     `{{ globus_collection_storage}}` Globus endpoint.
@@ -32,7 +32,7 @@ To move files and folders between `collections` (such as between Mahuika and ano
 
 6. Once you have logged in, you will be sent back to the Globus transfer page. By default you will be placed to your
     `home` directory. Enter the directory you would like to access in `Path`:
-
+    ![Globus_Transfer_6.png](../../assets/images/Globus_Transfer_6.png)
     * `home`: `/home/<username>`
     * `project`: `/nesi/project/<project_code>`
     * `nobackup`: `/nesi/nobackup/<project_code>`
@@ -43,7 +43,7 @@ To move files and folders between `collections` (such as between Mahuika and ano
     
 
 7. Repeat steps 2 - 6 for the right-hand panel, gaining access to the device you want to move data to/from.
-  
+    ![Globus_Transfer_7_1.png](../../assets/images/Globus_Transfer_7_1.png)
     * For example, if I wanted to get access to my computer, I would click on the right-hand panel's `Search` field, select the `Your Collections` tab, and click on your computer's collection name.
     * You can also transfer data to a high-speed Globus Data Transfer Nodes (DTNs). See [Data Transfer Nodes throughout New Zealand](#data-transfer-nodes-throughout-new-zealand) to see if your institute contains a DTN.
 
