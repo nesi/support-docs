@@ -57,6 +57,7 @@
       <textarea
         id="chat-input"
         rows="1"
+        aria-label="Ask a question"
         placeholder="Ask about our HPC Mahuika"></textarea>
       <button id="chat-send" aria-label="Send">&#10148;</button>
     </div>
