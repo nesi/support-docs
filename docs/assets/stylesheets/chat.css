@@ -14,8 +14,8 @@
   cursor: pointer;
   z-index: 1000;
   color: var(--chat-accent-contrast-color);
-  font-size: 30px;
 }
+.chat-fab-icon svg { width: 32px; height: 32px; }
 
 .chat-window {
   position: fixed;
@@ -45,7 +45,20 @@
   font-weight: 600;
   font-size: 14px;
 }
-.chat-header span { flex: 1; }
+.chat-header-icon svg { display: block; width: 18px; height: 18px; }
+.chat-header-title { flex: 1; }
+
+.chat-disclaimer {
+  padding: 8px 12px;
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--md-default-fg-color--light);
+  background: var(--md-code-bg-color);
+  border-bottom: 1px solid var(--md-default-fg-color--lightest);
+}
+.chat-disclaimer a { color: var(--md-accent-fg-color); }
+.chat-disclaimer p { margin: 0; }
+
 .chat-header input {
   width: 90px;
   font-size: 11px;

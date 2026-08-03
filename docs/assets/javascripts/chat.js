@@ -22,6 +22,12 @@
 
   const escapedUrl = (u) => escapeHtml(safeUrl(u));
 
+  // Material Symbols "smart_toy" glyph — signals AI, not a human agent.
+  const ROBOT_ICON =
+    '<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
+    '<path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm242.5-97.5Q420-475 420-500t-17.5-42.5Q385-560 360-560t-42.5 17.5Q300-525 300-500t17.5 42.5Q335-440 360-440t42.5-17.5Zm240 0Q660-475 660-500t-17.5-42.5Q625-560 600-560t-42.5 17.5Q540-525 540-500t17.5 42.5Q575-440 600-440t42.5-17.5ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/>' +
+    '</svg>';
+
   const CODE_BLOCK_RE = /```(\w*)\n([\s\S]*?)```/g;
   const INLINE_CODE_RE = /`([^`]+)`/g;
   const BOLD_RE = /\*\*([^*]+)\*\*/g;
@@ -36,18 +42,23 @@
   const fab = document.createElement("button");
   fab.id = "chat-fab";
   fab.className = "chat-fab";
-  fab.setAttribute("aria-label", "Ask the docs assistant");
+  fab.setAttribute("aria-label", "Ask Dini, our docs AI assistant");
   fab.setAttribute("aria-expanded", "false");
-  fab.innerHTML = '<span class="chat-fab-icon">&#128172;</span>';
+  fab.innerHTML = `<span class="chat-fab-icon">${ROBOT_ICON}</span>`;
 
   const win = document.createElement("div");
   win.id = "chat-window";
   win.className = "chat-window";
   win.setAttribute("role", "dialog");
-  win.setAttribute("aria-label", "Ask Dini");
+  win.setAttribute("aria-label", "Ask Dini, our docs AI assistant");
   win.innerHTML = `
     <div class="chat-header">
-      <span>Ask Dini</span>
+      <span class="chat-header-title">DinAI</span>
+    </div>
+    <div class="chat-disclaimer">
+      <p>This chat uses a RAG model, double-check output.</p>
+      <p><a href="mailto:support@nesi.org.nz?subject=SupportRequest" target="_blank">Contact Support</a>
+      if you have feedback.</p>
     </div>
     <div id="chat-messages"
          class="chat-messages"
