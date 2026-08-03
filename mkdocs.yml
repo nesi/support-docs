@@ -100,6 +100,7 @@ plugins:
   - search
   - open-in-new-tab
   - rss:
+      enabled: false
       categories:
       - tags
       - title
@@ -120,15 +121,47 @@ plugins:
       tags: true  # This will keep tags for the purpose of indexing, but not display on page.
   - git-revision-date-localized:
       enable_creation_date: false
+      enabled: !ENV [ENABLED_GIT_DATES, false]
   - macros:
-      # false (the plugin default) logs the Jinja error as a warning and renders it
-      # inline on the offending page instead of calling exit() - one bad macro
-      # reference (eg. a mistyped applications[] key) no longer takes down the
-      # whole site build; every other page still builds and gets checked.
       on_error_fail: false
       verbose: true
       module_name: macro_hooks
       include_dir: overrides
+  - llmstxt:
+      markdown_description: >-
+        NeSI Mahuika HPC support documentation: getting access, running batch jobs
+        with Slurm, available software and modules, storage and data transfer,
+        interactive computing (Jupyter, OnDemand), and platform policies.
+      # These are fnmatch patterns, not pathlib globs - `*` already crosses `/`, so
+      # `Section/*.md` matches every page at any depth. Do NOT "fix" these to `**`:
+      # `Section/**/*.md` requires a literal extra `/`, which silently drops every page
+      # sitting directly in the section directory (it emptied Batch Computing and Policy).
+      # mkdocs_hooks.on_config rewrites these globs into explicit per-page entries so each
+      # link carries its front matter `description`.
+      sections:
+        Announcements:
+          - Announcements/*.md
+        Getting Started:
+          - Getting_Started/*.md
+        Software:
+          - Software/*.md
+        Batch Computing:
+          - Batch_Computing/*.md
+        Interactive Computing:
+          - Interactive_Computing/*.md
+        Storage:
+          - Storage/*.md
+        Data Transfer:
+          - Data_Transfer/*.md
+        Policy:
+          - Policy/*.md
+        Service Subscriptions:
+          - Service_Subscriptions/*.md
+        Tutorials:
+          - Tutorials/*.md
+        Reference:
+          - GLOSSARY.md
+          - index.md
 extra_css:
   - assets/stylesheets/theme.css
   - assets/stylesheets/chat.css
@@ -139,4 +172,5 @@ extra_javascript:
     - https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js
     - assets/javascripts/general.js
     - assets/javascripts/chat.js
+    - assets/javascripts/supportedApplications.js
 
