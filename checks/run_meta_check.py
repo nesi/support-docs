@@ -13,6 +13,7 @@ import os
 import time
 from titlecase import titlecase
 from pathlib import Path
+from difflib import SequenceMatcher
 
 # Ignore files if they match this regex
 EXCLUDED_FROM_CHECKS = [
@@ -29,7 +30,8 @@ msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
-MIN_TAGS = 1
+RANGE_SECTION_CHARS = [ 400, 3200 ] # Mirrors nesi-docs-rag's scripts/chunker.mjs MIN_CHARS/MAX_CHARS   
+RANGE_TAGS = [1, 5]
 # Below this, descriptions stop distinguishing pages ("Release notes", "Freezer Quick
 # Start", eleven Freezer pages all sharing "Freezer upgrade release notes"). Descriptions
 # in the low 30s are still doing real work, so don't raise this without checking.
@@ -41,6 +43,18 @@ ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many
 # vocabulary explicitly discourages (see its "RETIRED TAGS" section).
 NO_TAGS_REQUIRED = ["docs/tags.md", "docs/updates.md", "docs/GLOSSARY.md"]
 DOC_ROOT = "docs"
+TAGS_VOCAB_PATH = "docs/assets/tags.yml"
+
+
+def _load_approved_tags(path):
+    """Canonical tag names plus their aliases, as accepted by compile_tags.py."""
+    vocab = yaml.safe_load(open(path, "r"))
+    approved = set()
+    for canonical, entry in vocab.items():
+        approved.add(canonical)
+        approved.update(entry.get("aliases") or [])
+    return approved
+
 
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
@@ -53,7 +67,7 @@ EXPECTED_PARAMETERS = {
     "postreq": "",
     "suggested": "",  # Add info here when implimented.
     "created_at": "",
-    "tags": "",  # Add info here when implimented.
+    "tags": _load_approved_tags(TAGS_VOCAB_PATH),
     "search": "",
     "hide": ["toc", "nav", "tags"],
     "no_module": [True, False],
@@ -286,6 +300,25 @@ def _nav_check():
         )
 
 
+def _jaccard_index(s1, s2):
+    set1 = set(s1.lower()) # Split into words
+    set2 = set(s2.lower())
+    intersection = len(set1.intersection(set2))
+    union = len(set1.union(set2))
+    return intersection / union
+
+def _sim_index(str1, str2):
+    return SequenceMatcher(None, str1, str2).ratio()
+
+def _most_similar(s1, op):
+    bestval = 0
+    bestword = ""
+    for o in op:
+        ji = _jaccard_index(s1, o)
+        if ji > bestval:
+            bestval = ji
+            bestword = o
+    return bestword, bestval
 def title_redundant():
     # A page's title doubles as the applications[] lookup key (see app_header.html);
     # keep it explicit so a future filename change can't silently break that lookup.
@@ -327,9 +360,10 @@ def meta_unexpected_key():
 
     for key, value in meta.items():
         if key not in EXPECTED_PARAMETERS.keys():
+            similar, ji = _most_similar(key, EXPECTED_PARAMETERS.keys())
             yield {
                 "line": _get_lineno(r"^" + key + r":.*$"),
-                "message": f"Unexpected parameter in front-matter '{key}'",
+                "message": f"Unexpected parameter in front-matter '{key}'{', did you mean \'' + similar + "\'?" if ji > 0.4 else ""} .",
             }
         elif EXPECTED_PARAMETERS[key]:
             if isinstance(value, list):
@@ -401,18 +435,33 @@ def title_capitalisation():
 '{correct_title}' is preferred",
         }
 
-def minimum_tags():
+def number_tags():
     if str(input_path) in NO_TAGS_REQUIRED or (meta.get("search") or {}).get("exclude"):
         return
     if "tags" not in meta or not isinstance(meta["tags"], list):
         yield {"message": "'tags' property in meta is missing or malformed."}
-    elif len(meta["tags"]) < MIN_TAGS:
+    elif len(meta["tags"]) < RANGE_TAGS[0]:
         yield {
             "line": _get_lineno(r"^tags:.*$"),
-            "message": "Try to include at least 2 'tags'\
+            "message": f"Try to include at least {RANGE_TAGS[0]} 'tags'\
 (helps with search optimisation).",
         }
+    elif len(meta["tags"]) > RANGE_TAGS[1]:
+        yield {
+            "line": _get_lineno(r"^tags:.*$"),
+            "message": f"{RANGE_TAGS[1]} is a lot of 'tags', are you sure they are all useful?",
+        }
 
+def approved_tags():
+    if "tags" not in meta or not isinstance(meta["tags"], list):
+        return
+    for tag in meta["tags"]:
+        if tag not in EXPECTED_PARAMETERS["tags"]:
+            similar, ji = _most_similar(tag, EXPECTED_PARAMETERS["tags"])
+            yield {
+                "line": _get_lineno(rf".*{tag}.*"),
+                "message": f"Tag '{tag}' is not an approved tag, {'did you mean \'' + similar + "\'?" if ji > 0.4 else 'See \'' + TAGS_VOCAB_PATH + '\'.'}",
+            }
 
 def h1_in_body():
     """
@@ -529,6 +578,42 @@ def walk_toc():
             yield y
 
 
+def section_length():
+    """
+    Flags h2/h3 sections outside the band the RAG chunker merges/splits at.
+    """
+    lines = contents.split("\n")
+    headers = []  # (lineno, name)
+    in_code = False
+    for i, l in enumerate(lines, start=1):
+        if re.match(r"^\s*```", l):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        m = re.match(r"^#{2,3}\s+(.*)$", l)
+        if m:
+            headers.append((i, m.group(1)))
+
+    for idx, (start, name) in enumerate(headers):
+        end = headers[idx + 1][0] - 1 if idx + 1 < len(headers) else len(lines)
+        length = len("\n".join(lines[start:end]))
+        if length < RANGE_SECTION_CHARS[0]:
+            yield {
+                "level": "notice",
+                "line": start,
+                "message": f"Section '{name}' is only ~{length} chars.\
+                Sections under {RANGE_SECTION_CHARS[0]} are will be lumped into the next section when parsed by the RAG.",
+            }
+        elif length > RANGE_SECTION_CHARS[1]:
+            yield {
+                "line": start,
+                "message": f"Section '{name}' is ~{length} chars.\
+Sections over {RANGE_SECTION_CHARS[1]} are too long to be meaningfully parsed by the RAG. \
+Consider breaking this into sub-headers.",
+            }
+
+
 def dynamic_slurm_link():
     """
     Checks if slurm links point to right version of docs.
@@ -554,8 +639,10 @@ ENDCHECKS = [
     meta_missing_description,
     meta_thin_description,
     meta_unexpected_key,
-    minimum_tags,
+    number_tags,
+    approved_tags,
     walk_toc,
+    section_length,
 ]
 
 # Checks to be run on each line
