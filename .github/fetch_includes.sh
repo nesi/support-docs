@@ -19,5 +19,4 @@ wget -q -O docs/assets/glossary/dictionary.txt "${DICTIONARY_URL}" &
 wget -q -O docs/assets/glossary/snippets.md "${SNIPPETS_URL}" &
 wait
 
-python3 .github/workflows/compile_tags.py
 

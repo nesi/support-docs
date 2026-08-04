@@ -43,6 +43,10 @@ h2 and h3 elements will be used to generate a table of contents (toc).
 Try to keep headers short enough that they do not 'wrap' (become more than one line) in the toc,
 this usually happens around 32-ish characters however this will vary depending on the letters being used.
 
+Header boundaries are also how the docs chat assistant splits pages into retrievable chunks, aiming for
+roughly 400-3200 characters of body text per section. A section outside that band gets silently merged
+into a neighbour or force-split on a paragraph boundary before being embedded.
+
 ## Line breaks
 
 Put 2 spaces at the end of a line to force a line break.  
@@ -55,7 +59,7 @@ If you simply hit enter and don't use 2 spaces it will be considered one line.
 
 Most markdown structures (lists, Admonitions, headers, code blocks, etc) should be surrounded by an empty line.
 i.e. A newline before and after.
-It is good practice to add a new line after every sentance, or when the line becomes too long.
+It is good practice to add a new line after every sentence, or when the line becomes too long.
 This won't change how the text is rendered, but helps make the source markdown more readable.
 
 ## Text Emphasis
@@ -104,6 +108,8 @@ Admonitions should be surrounded by blank lines.
 
 Adding titles helps users find key information, however if you can't be bothered thinking of a good title,
 refrain from using something unnecessary or non descriptive (e.g. `!!! info "More Information"`), better to leave titleless.
+A good title also helps the docs chat assistant, which shows the admonition kind/title as a label
+(e.g. `**Warning:**`) when it surfaces this section as a source.
 
 Don't use a title if another Admonition already exists for that purpose (e.g. `!!! info "Watch out!"`).
 
@@ -306,6 +312,9 @@ but your script examples should do the bare minimum needed to provide a safe exa
     In markdown where you pasted the image, and upload `image.png`, into the same directory.
 
     Make sure you rename the `image.png` to something more descriptive, move it into the 'assets/images' folder, and update then markdown accordingly.
+
+    Write a real alt text too, not just the filename. The docs chat assistant has no way to see the
+    image itself - the alt text is the only information it gets. The alt text should be written as if no image is visible at all.
 
 !!! tip "Drag and Drop"
     You can easily get the path to a image file by dragging it from the left hand Explorer panel over your document, then pressing <kbd>shift</kbd> (you will be prompted) and dropping the image in the desired position. Copy pasting an image from Explorer into markdown also works.
