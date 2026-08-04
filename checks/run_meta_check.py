@@ -30,6 +30,7 @@ msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
 MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
+RANGE_SECTION_CHARS = [ 400, 3200 ] # Mirrors nesi-docs-rag's scripts/chunker.mjs MIN_CHARS/MAX_CHARS   
 RANGE_TAGS = [1, 5]
 # Below this, descriptions stop distinguishing pages ("Release notes", "Freezer Quick
 # Start", eleven Freezer pages all sharing "Freezer upgrade release notes"). Descriptions
@@ -577,6 +578,42 @@ def walk_toc():
             yield y
 
 
+def section_length():
+    """
+    Flags h2/h3 sections outside the band the RAG chunker merges/splits at.
+    """
+    lines = contents.split("\n")
+    headers = []  # (lineno, name)
+    in_code = False
+    for i, l in enumerate(lines, start=1):
+        if re.match(r"^\s*```", l):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        m = re.match(r"^#{2,3}\s+(.*)$", l)
+        if m:
+            headers.append((i, m.group(1)))
+
+    for idx, (start, name) in enumerate(headers):
+        end = headers[idx + 1][0] - 1 if idx + 1 < len(headers) else len(lines)
+        length = len("\n".join(lines[start:end]))
+        if length < RANGE_SECTION_CHARS[0]:
+            yield {
+                "level": "notice",
+                "line": start,
+                "message": f"Section '{name}' is only ~{length} chars.\
+                Sections under {RANGE_SECTION_CHARS[0]} are will be lumped into the next section when parsed by the RAG.",
+            }
+        elif length > RANGE_SECTION_CHARS[1]:
+            yield {
+                "line": start,
+                "message": f"Section '{name}' is ~{length} chars.\
+Sections over {RANGE_SECTION_CHARS[1]} are too long to be meaningfully parsed by the RAG. \
+Consider breaking this into sub-headers.",
+            }
+
+
 def dynamic_slurm_link():
     """
     Checks if slurm links point to right version of docs.
@@ -605,6 +642,7 @@ ENDCHECKS = [
     number_tags,
     approved_tags,
     walk_toc,
+    section_length,
 ]
 
 # Checks to be run on each line
