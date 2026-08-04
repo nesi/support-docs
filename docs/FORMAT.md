@@ -266,9 +266,9 @@ paste them, so we also want them to be working scripts that wont cause easily av
 If possible stick to the following principles.
 
 - Make sure the code block has the `sl` language tag. This will inform syntax highlight an CI checks.
-- Use `!#/bin/bash -e` as your shebang.
+- Use `#!/bin/bash -e` as your shebang.
 - One blank line between shebang and Slurm Header.
-- Use <kbd>tab</kbd> for your Slurm header delimiter.
+- Use whitespace for your Slurm header delimiter (preferably aligned in a tidy way).
 - Use the long for Slurm keywords, e.g. `--job-name` rather than `-j`.
 - Make sure to include `--job-name`, `--account` (`nesi99991`) and `--time`.
 - One blank line after Slurm header.
