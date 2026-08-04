@@ -1,10 +1,13 @@
 (() => {
   const API_BASE = "https://nesi-docs-rag.nesi-cloudflare.workers.dev";
   const TOKEN_KEY = "chatApiKey";
+  const FAB_SEEN_KEY = "chatFabSeen";
+  const HISTORY_KEY = "chatHistory";
   const getToken = () => localStorage.getItem(TOKEN_KEY) || "";
 
   const history = [];
   let sending = false;
+  let codeBlockSeq = 0;
 
   const ESCAPE_MAP = {
     "&": "&amp;",
@@ -22,7 +25,6 @@
 
   const escapedUrl = (u) => escapeHtml(safeUrl(u));
 
-  // Material Symbols "smart_toy" glyph — signals AI, not a human agent.
   const ROBOT_ICON =
     '<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
     '<path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm242.5-97.5Q420-475 420-500t-17.5-42.5Q385-560 360-560t-42.5 17.5Q300-525 300-500t17.5 42.5Q335-440 360-440t42.5-17.5Zm240 0Q660-475 660-500t-17.5-42.5Q625-560 600-560t-42.5 17.5Q540-525 540-500t17.5 42.5Q575-440 600-440t42.5-17.5ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/>' +
@@ -36,7 +38,6 @@
     '<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
     '<path d="m136-80-56-56 264-264H160v-80h320v320h-80v-184L136-80Zm344-400v-320h80v184l264-264 56 56-264 264h184v80H480Z"/>' +
     '</svg>';
-
   const CODE_BLOCK_RE = /```(\w*)\n([\s\S]*?)```/g;
   const INLINE_CODE_RE = /`([^`]+)`/g;
   const BOLD_RE = /\*\*([^*]+)\*\*/g;
@@ -89,6 +90,19 @@
   const messages = win.querySelector("#chat-messages");
   const expandBtn = win.querySelector("#chat-expand");
 
+  try {
+    for (const m of JSON.parse(localStorage.getItem(HISTORY_KEY) || "[]")) {
+      history.push(m);
+      messages.insertAdjacentHTML(
+        "beforeend",
+        m.role === "user"
+          ? `<div class="chat-msg chat-msg-user">${escapeHtml(m.content)}</div>`
+          : `<div class="chat-msg chat-msg-bot">${render(m.content)}</div>`
+      );
+    }
+    messages.scrollTop = messages.scrollHeight;
+  } catch {}
+
   function render(md, sources) {
     let html = escapeHtml(md);
 
@@ -125,7 +139,11 @@
 
     html = html.replace(
       CODE_PLACEHOLDER_RE,
-      (_, i) => `<pre><code>${blocks[i]}</code></pre>`
+      (_, i) => {
+        const id = `chat-code-${codeBlockSeq++}`;
+        return `<div class="chat-code-block"><pre><code id="${id}">${blocks[i]}</code></pre>` +
+          `<button class="chat-copy-btn" data-copy-target="${id}" aria-label="Copy code" title="Copy code"></button></div>`;
+      }
     );
 
     return html;
@@ -209,6 +227,8 @@
       return;
     }
 
+    if (typeof gtag === "function") gtag("event", "chat_question", { question: question });
+
     sending = true;
     sendBtn.disabled = true;
 
@@ -247,6 +267,7 @@
       );
 
       history.splice(0, Math.max(0, history.length - 12));
+      localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
 
     } catch (err) {
       botMsg.innerHTML = `<p class="chat-error">Error: ${escapeHtml(err.message)}</p>`;
@@ -279,6 +300,18 @@
     const cite = e.target.closest(".chat-cite");
     if (cite) {
       window.open(cite.dataset.url, "_blank", "noopener");
+      return;
+    }
+
+    const copyBtn = e.target.closest(".chat-copy-btn");
+    if (copyBtn && navigator.clipboard) {
+      const code = document.getElementById(copyBtn.dataset.copyTarget);
+      if (!code) return;
+
+      navigator.clipboard.writeText(code.textContent).then(() => {
+        copyBtn.classList.add("chat-copy-btn--done");
+        setTimeout(() => copyBtn.classList.remove("chat-copy-btn--done"), 1200);
+      });
     }
   });
 
@@ -301,6 +334,7 @@
   });
 
   fab.addEventListener("click", () => {
+    fab.classList.remove("chat-fab--pulse");
     setOpen(!win.classList.contains("chat-open"));
   });
 
@@ -315,7 +349,14 @@
 
   document$.subscribe(() => {
     if (getToken()) {
-      if (!document.body.contains(fab)) document.body.append(win, fab);
+      if (!document.body.contains(fab)) {
+        document.body.append(win, fab);
+
+        if (!localStorage.getItem(FAB_SEEN_KEY)) {
+          fab.classList.add("chat-fab--pulse");
+          localStorage.setItem(FAB_SEEN_KEY, "1");
+        }
+      }
     } else if (document.body.contains(fab)) {
       win.remove();
       fab.remove();
