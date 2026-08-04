@@ -221,9 +221,6 @@
     if (!question || sending) return;
 
     if (!getToken()) {
-      alert(
-        `No API token found.\n\nRun:\nlocalStorage.setItem('${TOKEN_KEY}', '<token>')`
-      );
       return;
     }
 
