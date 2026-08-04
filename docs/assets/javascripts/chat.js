@@ -28,6 +28,15 @@
     '<path d="M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm242.5-97.5Q420-475 420-500t-17.5-42.5Q385-560 360-560t-42.5 17.5Q300-525 300-500t17.5 42.5Q335-440 360-440t42.5-17.5Zm240 0Q660-475 660-500t-17.5-42.5Q625-560 600-560t-42.5 17.5Q540-525 540-500t17.5 42.5Q575-440 600-440t42.5-17.5ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z"/>' +
     '</svg>';
 
+  const MAXIMIZE_ICON =
+    '<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
+    '<path d="M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z"/>' +
+    '</svg>';
+  const MINIMIZE_ICON =
+    '<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true">' +
+    '<path d="m136-80-56-56 264-264H160v-80h320v320h-80v-184L136-80Zm344-400v-320h80v184l264-264 56 56-264 264h184v80H480Z"/>' +
+    '</svg>';
+
   const CODE_BLOCK_RE = /```(\w*)\n([\s\S]*?)```/g;
   const INLINE_CODE_RE = /`([^`]+)`/g;
   const BOLD_RE = /\*\*([^*]+)\*\*/g;
@@ -54,10 +63,11 @@
   win.innerHTML = `
     <div class="chat-header">
       <span class="chat-header-title">DinAI</span>
+      <button id="chat-expand" class="chat-header-btn" aria-label="Maximise chat" aria-pressed="false">${MAXIMIZE_ICON}</button>
     </div>
     <div class="chat-disclaimer">
-      <p>This chat uses a RAG model, double-check output.</p>
-      <p><a href="mailto:support@nesi.org.nz?subject=SupportRequest" target="_blank">Contact Support</a>
+      <p>This chat uses a RAG model, double-check output.<br class="chat-disclaimer-break">
+      <a href="mailto:support@nesi.org.nz?subject=SupportRequest" target="_blank">Contact Support</a>
       if you have feedback.</p>
     </div>
     <div id="chat-messages"
@@ -77,6 +87,7 @@
   const input = win.querySelector("#chat-input");
   const sendBtn = win.querySelector("#chat-send");
   const messages = win.querySelector("#chat-messages");
+  const expandBtn = win.querySelector("#chat-expand");
 
   function render(md, sources) {
     let html = escapeHtml(md);
@@ -212,7 +223,7 @@
     const botMsg = document.createElement("div");
     botMsg.className = "chat-msg chat-msg-bot";
     botMsg.innerHTML =
-      '<span class="chat-thinking">Searching the docs…</span>';
+      '<span class="chat-thinking">Reading the docs…</span>';
 
     messages.append(botMsg);
     messages.scrollTop = messages.scrollHeight;
@@ -246,6 +257,13 @@
       messages.scrollTop = messages.scrollHeight;
     }
   }
+  function setExpanded(expanded) {
+    win.classList.toggle("chat-window--expanded", expanded);
+    expandBtn.innerHTML = expanded ? MINIMIZE_ICON : MAXIMIZE_ICON;
+    expandBtn.setAttribute("aria-label", expanded ? "Minimise chat" : "Maximise chat");
+    expandBtn.setAttribute("aria-pressed", String(expanded));
+  }
+
   function setOpen(open) {
     win.classList.toggle("chat-open", open);
     fab.setAttribute("aria-expanded", String(open));
@@ -265,6 +283,10 @@
   });
 
   sendBtn.addEventListener("click", send);
+
+  expandBtn.addEventListener("click", () => {
+    setExpanded(!win.classList.contains("chat-window--expanded"));
+  });
 
   input.addEventListener("keydown", (e) => {
     if (e.key === "Enter" && !e.shiftKey) {
