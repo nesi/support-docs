@@ -45,6 +45,10 @@
             "path": "Batch_Computing/Using_GPUs.md"
         },
         {
+            "title": "scron",
+            "path": "Batch_Computing/scron.md"
+        },
+        {
             "title": "Slurm: Reference Sheet",
             "path": "Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md"
         },
