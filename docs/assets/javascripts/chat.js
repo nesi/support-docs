@@ -224,7 +224,7 @@
       return;
     }
 
-    if (typeof gtag === "function") gtag("event", "chat_question", { question: question });
+    gtag("event", "chat_question", { question: question });
 
     sending = true;
     sendBtn.disabled = true;
