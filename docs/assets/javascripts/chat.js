@@ -260,11 +260,8 @@
         { role: "user", content: question },
         { role: "assistant", content: answer }
       );
-
+      if (window.dataLayer) window.dataLayer.push(["event", "rag_chat", { question: question, answer: answer }]);
       history.splice(0, Math.max(0, history.length - 12));
-      localStorage.setItem(HISTORY_KEY, JSON.stringify(history));
-
-      gtag("event", "rag_chat", { question: question, answer: answer });
 
     } catch (err) {
       botMsg.innerHTML = `<p class="chat-error">Error: ${escapeHtml(err.message)}</p>`;
