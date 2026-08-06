@@ -73,6 +73,16 @@ You will always get the amount of memory you requested, even if running on a nod
         <td>4 x NVIDIA L4</td>
         <td>4</td>
     </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td>Intel Xeon Gold</br>└ 2 x Scokets<br>&nbsp;&nbsp;&nbsp;&nbsp;└ 88 x Cores</td>
+        <td>176</td>
+        <td>9TB</td>
+        <td><em>(51GB / Core)</em></td>
+        <td>-</td>
+        <td>3</td>
+    </tr>
 </table>
 
 ## GPUs
@@ -120,14 +130,6 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
         <td>24GB</td>
         <td>4</td>
         <td><a href="#gpu-genoa-l4">Genoa</a></td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>NVIDIA A40</td>
-        <td>Teaching / training</td>
-        <td>48GB</td>
-        <td><a href="https://docs.nesi.org.nz/Scientific_Computing/Research_Developer_Cloud/User_Guides">RDC</a></td>
-        <td></td>
         <td>4</td>
     </tr>
 </table>
