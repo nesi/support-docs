@@ -4,6 +4,7 @@ status: tutorial
 tags:
 - tutorial
 - parallel
+description: How programs use more than one CPU, and the difference between SMP and MPI
 ---
 
 

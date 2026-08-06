@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.21.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.21.0 - notification preferences moved to their own menu
 ---
 
 ## New and Improved

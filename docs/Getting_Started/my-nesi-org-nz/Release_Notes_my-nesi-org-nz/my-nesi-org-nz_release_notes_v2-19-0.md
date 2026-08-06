@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.19.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.19.0 - text updates across the About and Login pages
 ---
 
 

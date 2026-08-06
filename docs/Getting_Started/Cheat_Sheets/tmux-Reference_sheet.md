@@ -5,6 +5,7 @@ tags:
 title: 'Tmux: Reference Sheet'
 vote_count: 1
 vote_sum: 1
+description: Keeping terminal sessions running after you disconnect by using tmux
 ---
 
 ## tmux

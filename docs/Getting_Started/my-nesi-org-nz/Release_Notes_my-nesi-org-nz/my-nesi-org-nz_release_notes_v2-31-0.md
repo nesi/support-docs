@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.31.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.31.0 - updated holiday banner and rounded compute defaults
 ---
 
 ## New and Improved

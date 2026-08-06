@@ -6,6 +6,7 @@ tags:
 - gpu
 vote_count: 2
 vote_sum: 2
+description: Predicting protein structures from amino acid sequences with AlphaFold
 ---
 
 

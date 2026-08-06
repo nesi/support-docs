@@ -3,6 +3,7 @@ title: MAKER
 created_at: '2020-03-13T03:23:18Z'
 tags:
 - biology
+description: Running MAKER genome annotation, including its local patches and MPI limits
 ---
 
 

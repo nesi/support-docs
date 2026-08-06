@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.33.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.33.0 - corrected long-term storage unit in the request form
 ---
 
 ## Fixed

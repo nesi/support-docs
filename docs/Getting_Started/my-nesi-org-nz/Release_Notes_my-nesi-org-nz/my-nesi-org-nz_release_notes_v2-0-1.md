@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.0.1
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.0.1 - new web application and improved project applications
 ---
 
 ## Release Update - 28. April 2021

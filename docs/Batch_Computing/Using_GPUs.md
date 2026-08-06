@@ -3,6 +3,7 @@ created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
 - slurm
+description: Requesting GPUs through Slurm, loading CUDA, and measuring how well a job used them
 ---
 
 This page provides generic information about how to access GPUs through the Slurm scheduler.

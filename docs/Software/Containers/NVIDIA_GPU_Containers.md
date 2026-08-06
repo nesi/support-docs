@@ -3,6 +3,7 @@ created_at: '2020-04-30T01:28:34Z'
 tags:
 - containers
 - gpu
+description: Running GPU accelerated software from the NVIDIA NGC container registry
 ---
 
 NVIDIA provides access to GPU accelerated software through their
