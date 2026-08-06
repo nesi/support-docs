@@ -76,14 +76,26 @@ You will always get the amount of memory you requested, even if running on a nod
     <tr>
     </tr>
     <tr>
-        <td>Intel Xeon Gold</br>└ 2 x Scokets<br>&nbsp;&nbsp;&nbsp;&nbsp;└ 88 x Cores</td>
-        <td>176</td>
-        <td>9TB</td>
-        <td><em>(51GB / Core)</em></td>
+        <td rowspan=2>Intel Xeon Gold</td>
+        <td>80</td>
+        <td>1.5TB</td>
+        <td><em>(18GB / Core)</em></td>
         <td>-</td>
-        <td>3</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>176</td>
+        <td>6TB</td>
+        <td><em>(346GB / Core)</em></td>
+        <td>-</td>
+        <td>1</td>
     </tr>
 </table>
+         
+!!! warning hugemem
+   Jobs will not automatically land on the Intel 'hugemem' nodes. You must specifically request `--partition hugemem`.
+   The CPU architecture is different enough from the milan and genoa nodes, you will probably have to recompile your software.
+
 
 ## GPUs
 
