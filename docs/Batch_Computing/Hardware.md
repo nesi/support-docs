@@ -92,9 +92,9 @@ You will always get the amount of memory you requested, even if running on a nod
     </tr>
 </table>
          
-!!! warning hugemem
-   Jobs will not automatically land on the Intel 'hugemem' nodes. You must specifically request `--partition hugemem`.
-   The CPU architecture is different enough from the milan and genoa nodes, you will probably have to recompile your software.
+!!! warning "hugemem"
+    Jobs will not automatically land on the Intel 'hugemem' nodes. You must specifically request `--partition hugemem`.
+    The CPU architecture is different enough from the milan and genoa nodes, you will probably have to recompile your software.
 
 
 ## GPUs
