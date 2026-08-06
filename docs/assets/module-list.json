@@ -3,14 +3,12 @@
         "description": "Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.",
         "domains": [
             "engineering",
-            "gpu",
-            "mpi",
-            "openmp"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.simulia.com/products/abaqus_fea.html",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ABAQUS",
+        "support": "",
         "versions": [
             "2017",
             "2018",
@@ -374,13 +372,12 @@
         "domains": [
             "biology",
             "chemistry",
-            "gpu",
-            "machine_learning"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/deepmind/alphafold",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/AlphaFold",
+        "support": "",
         "versions": [
             "2.3.2",
             "3.0.0",
@@ -627,13 +624,12 @@
         "description": "A bundle of computer-aided engineering software including Fluent and CFX.",
         "domains": [
             "engineering",
-            "visualisation",
-            "earth_science"
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.ansys.com",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ANSYS",
+        "support": "",
         "versions": [
             "19.2",
             "2021R2",
@@ -1029,13 +1025,11 @@
     },
     "Apptainer": {
         "description": "",
-        "domains": [
-            "containers"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Apptainer",
+        "support": "",
         "versions": [
             "1.1.8",
             "1.1.9",
@@ -2241,7 +2235,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://blast.ncbi.nlm.nih.gov/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/BLAST",
+        "support": "",
         "versions": [
             "2.10.0-GCC-9.2.0",
             "2.12.0-GCC-9.2.0",
@@ -2500,7 +2494,7 @@
         ],
         "licence_type": "",
         "homepage": "https://github.com/Gaius-Augustus/BRAKER",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/BRAKER",
+        "support": "",
         "versions": [
             "2.1.6-gimkl-2022a-Perl-5.34.1",
             "3.0.2-gimkl-2022a-Perl-5.34.1",
@@ -3202,7 +3196,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/HKU-BAL/Clair3",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Clair3",
+        "support": "",
         "versions": [
             "0.1.12-Miniconda3",
             "1.0.0-Miniconda3",
@@ -3414,13 +3408,12 @@
         "domains": [
             "chemistry",
             "engineering",
-            "physics",
-            "earth_science"
+            "physics"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.comsol.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/COMSOL",
+        "support": "",
         "versions": [
             "5.3",
             "5.4",
@@ -3740,7 +3733,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.cp2k.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/CP2K",
+        "support": "",
         "versions": [
             "2023.1-foss-2023a",
             "2025.2-foss-2023a",
@@ -4562,7 +4555,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://oss.deltares.nl/web/delft3d",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Delft3D",
+        "support": "",
         "versions": [
             "141732-intel-2022a",
             "64418-intel-2022a",
@@ -4736,7 +4729,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nanoporetech.com/products/minit",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Dorado",
+        "support": "",
         "versions": [
             "0.3.2",
             "0.3.4",
@@ -5792,13 +5785,12 @@
     "fastStructure": {
         "description": "fastStructure is an algorithm for inferring population structure from large SNP genotype data. It is based on a variational Bayesian framework for posterior inference and is written in Python2.x.",
         "domains": [
-            "biology",
-            "software"
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://rajanil.github.io/fastStructure/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/fastStructure",
+        "support": "",
         "versions": [
             "1.0-gimkl-2020a-Python-2.7.18"
         ],
@@ -5893,7 +5885,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://pages.nist.gov/fds-smv/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FDS",
+        "support": "",
         "versions": [
             "6.7.9-intel-2022a"
         ],
@@ -6221,14 +6213,11 @@
     },
     "FlexiBLAS": {
         "description": "FlexiBLAS is a wrapper library that enables the exchange of the BLAS and LAPACK implementation\nused by a program without recompiling or relinking it.",
-        "domains": [
-            "software",
-            "parallel"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FlexiBLAS",
+        "support": "",
         "versions": [
             "3.1.3-GCC-11.3.0",
             "3.3.1-GCC-12.3.0",
@@ -6459,13 +6448,12 @@
     "FreeSurfer": {
         "description": "FreeSurfer is a set of tools for analysis and visualization of structural and functional brain imaging data.\nFreeSurfer contains a fully automatic structural imaging stream for processing cross sectional and longitudinal data.",
         "domains": [
-            "biology",
-            "containers"
+            "biology"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://surfer.nmr.mgh.harvard.edu/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FreeSurfer",
+        "support": "",
         "versions": [
             "7.2.0-centos7_x86_64"
         ],
@@ -6625,7 +6613,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.broadinstitute.org/gatk/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/GATK",
+        "support": "",
         "versions": [
             "3.5-Java-1.8.0_144",
             "3.5-Java-15.0.2",
@@ -6659,7 +6647,7 @@
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Gaussian",
+        "support": "",
         "versions": [
             "09-D.01"
         ],
@@ -7774,7 +7762,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.gromacs.org",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/GROMACS",
+        "support": "",
         "versions": [
             "2020.4-gimkl-2020a-cuda-11.3.1-hybrid-PLUMED-2.6.2",
             "2020.5-intel-2020a-cuda-11.0.2-hybrid",
@@ -8886,8 +8874,7 @@
     "ipyrad": {
         "description": "ipyrad is an interactive toolkit for assembly and analysis of restriction-site associated genomic\n data sets (e.g., RAD, ddRAD, GBS) for population genetic and phylogenetic studies.",
         "domains": [
-            "biology",
-            "python"
+            "biology"
         ],
         "extensions": [
             "cython-3.2.4",
@@ -8910,7 +8897,7 @@
         ],
         "licence_type": "",
         "homepage": "https://ipyrad.readthedocs.io",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ipyrad",
+        "support": "",
         "versions": [
             "0.9.102-gimkl-2022a-Python-3.10.5",
             "0.9.85-gimkl-2022a-Python-3.10.5"
@@ -9051,13 +9038,12 @@
     "Java": {
         "description": "Java Platform, Standard Edition (Java SE) lets you develop and deploy\n Java applications on desktops and servers.",
         "domains": [
-            "language",
-            "software"
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://java.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Java",
+        "support": "",
         "versions": [
             "1.7.0_51",
             "1.8.0_144",
@@ -9249,13 +9235,12 @@
     "Julia": {
         "description": "A high-level, high-performance dynamic language for technical computing.\n\nThis version was compiled from source with USE_INTEL_JITEVENTS=1 to enable profiling with VTune.",
         "domains": [
-            "language",
-            "julia"
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://julialang.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Julia",
+        "support": "",
         "versions": [
             "1.11.3-GCC-12.3.0-VTune",
             "1.2.0-gimkl-2018b-VTune",
@@ -9792,7 +9777,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://lammps.sandia.gov/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/LAMMPS",
+        "support": "",
         "versions": [
             "22Jul2025-foss-2023a-kokkos",
             "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
@@ -11421,7 +11406,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.yandell-lab.org/software/maker.html",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/MAKER",
+        "support": "",
         "versions": [
             "2.31.9-gimkl-2018b",
             "2.31.9-gimkl-2020a"
@@ -11649,13 +11634,12 @@
             "engineering",
             "gpu",
             "mathematics",
-            "visualisation",
-            "machine_learning"
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.mathworks.com/products/matlab",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/MATLAB",
+        "support": "",
         "versions": [
             "2018b",
             "2019b",
@@ -12650,14 +12634,11 @@
     },
     "Miniforge3": {
         "description": "Community-led recipes, infrastructure and distributions for conda.",
-        "domains": [
-            "python",
-            "software"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://conda-forge.org",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Miniforge3",
+        "support": "",
         "versions": [
             "24.3.0-0",
             "25.3.0-3",
@@ -13019,7 +13000,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://molpro.net",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Molpro",
+        "support": "",
         "versions": [
             "mpp-2019.2.2.linux_x86_64_openmp"
         ],
@@ -14066,13 +14047,12 @@
     "Nextflow": {
         "description": "Nextflow is a reactive workflow framework and a programming DSL\n that eases writing computational pipelines with complex data",
         "domains": [
-            "workflow_management",
-            "workflow"
+            "workflow_management"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.nextflow.io/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Nextflow",
+        "support": "",
         "versions": [
             "19.04.0",
             "21.04.3",
@@ -14602,7 +14582,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nwchemgit.github.io/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/NWChem",
+        "support": "",
         "versions": [
             "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16"
         ],
@@ -14642,13 +14622,11 @@
     },
     "ollama": {
         "description": "Get up and running with large language models.",
-        "domains": [
-            "machine_learning"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://ollama.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ollama",
+        "support": "",
         "versions": [
             "0.21.1"
         ],
@@ -14671,7 +14649,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nanoporetech.com/products/minit",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ont-guppy-gpu",
+        "support": "",
         "versions": [
             "6.0.1",
             "6.2.1",
@@ -14789,13 +14767,12 @@
         "description": "OpenFOAM is a free, open source CFD software package.\n OpenFOAM has an extensive range of features to solve anything from complex fluid flows\n involving chemical reactions, turbulence and heat transfer,\n to solid dynamics and electromagnetics.",
         "domains": [
             "chemistry",
-            "engineering",
-            "earth_science"
+            "engineering"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.openfoam.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/OpenFOAM",
+        "support": "",
         "versions": [
             "10-gimkl-2022a",
             "2.4.0-gimkl-2018b",
@@ -14922,7 +14899,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://opensees.berkeley.edu",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/OpenSees",
+        "support": "",
         "versions": [
             "20220411-gimkl-2020a",
             "3.2.0-gimkl-2020a",
@@ -15016,7 +14993,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://orcaforum.kofo.mpg.de",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ORCA",
+        "support": "",
         "versions": [
             "5.0.3-OpenMPI-4.1.1",
             "5.0.4-OpenMPI-4.1.5",
@@ -15414,7 +15391,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.paraview.org",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ParaView",
+        "support": "",
         "versions": [
             "5.4.1-gimkl-2018b-Python-2.7.16",
             "5.4.1-gimpi-2018b",
@@ -17384,7 +17361,7 @@
         ],
         "licence_type": "",
         "homepage": "http://python.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Python",
+        "support": "",
         "versions": [
             "2.7.16-gimkl-2018b",
             "2.7.18-gimkl-2020a",
@@ -17685,8 +17662,7 @@
             "data_analytics",
             "language",
             "machine_learning",
-            "visualisation",
-            "r"
+            "visualisation"
         ],
         "extensions": [
             "abind-1.4-8",
@@ -18220,7 +18196,7 @@
         ],
         "licence_type": "",
         "homepage": "http://www.r-project.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/R",
+        "support": "",
         "versions": [
             "3.5.3-gimkl-2018b",
             "3.6.1-gimkl-2018b",
@@ -18914,7 +18890,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/stamatak/standard-RAxML",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/RAxML",
+        "support": "",
         "versions": [
             "8.2.12-gimkl-2020a",
             "8.2.12-gimkl-2022a"
@@ -19090,7 +19066,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Relion",
+        "support": "",
         "versions": [
             "4.0.1-gimkl-2020a"
         ],
@@ -20618,8 +20594,7 @@
     "snakemake": {
         "description": "The Snakemake workflow management system is a tool to create reproducible and scalable data analyses.",
         "domains": [
-            "workflow_management",
-            "workflow"
+            "workflow_management"
         ],
         "extensions": [
             "appdirs-1.4.3",
@@ -20648,7 +20623,7 @@
         ],
         "licence_type": "",
         "homepage": "https://snakemake.readthedocs.io",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/snakemake",
+        "support": "",
         "versions": [
             "5.19.3-gimkl-2020a-Python-3.8.2",
             "7.32.3-foss-2023a-Python-3.11.6",
@@ -20767,7 +20742,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://pcingola.github.io/SnpEff/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/snpEff",
+        "support": "",
         "versions": [
             "4.2",
             "5.0-Java-11.0.4",
@@ -21350,7 +21325,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://support.10xgenomics.com/de-novo-assembly/software/overview/latest/welcome",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Supernova",
+        "support": "",
         "versions": [
             "2.1.1"
         ],
@@ -21627,7 +21602,7 @@
         ],
         "licence_type": "",
         "homepage": "https://www.tensorflow.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/TensorFlow",
+        "support": "",
         "versions": [
             "2.0.1-gimkl-2018b-Python-3.8.1",
             "2.13.0-gimkl-2022a-Python-3.11.3",
@@ -21969,7 +21944,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://trinityrnaseq.github.io",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Trinity",
+        "support": "",
         "versions": [
             "2.11.0-gimkl-2020a",
             "2.13.2-gimkl-2020a",
@@ -22097,13 +22072,11 @@
     },
     "TUFLOW": {
         "description": "Hydraulic modelling software for flood, urban drainage, estuarine and coastal assessments.",
-        "domains": [
-            "earth_science"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.tuflow.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/TUFLOW",
+        "support": "",
         "versions": [
             "2026.0"
         ],
@@ -22452,14 +22425,11 @@
     },
     "uv": {
         "description": "An extremely fast Python package installer and resolver, written in Rust.",
-        "domains": [
-            "python",
-            "software"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/astral-sh/uv",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/uv",
+        "support": "",
         "versions": [
             "0.10.3-GCC-12.3.0",
             "0.9.17-GCC-12.3.0"
@@ -22532,7 +22502,7 @@
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.vasp.at",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VASP",
+        "support": "",
         "versions": [
             "4.6-gimkl-2020a",
             "5.4.4-gimkl-2022a",
@@ -22890,7 +22860,7 @@
         ],
         "licence_type": "",
         "homepage": "https://github.com/jiarong/VirSorter2",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VirSorter",
+        "support": "",
         "versions": [
             "1.0.6-gimkl-2020a-Perl-5.30.1",
             "2.1-gimkl-2020a-Python-3.8.2",
@@ -22997,13 +22967,11 @@
     },
     "VTune": {
         "description": "Intel VTune Amplifier XE is the premier performance profiler for C, C++, C#, Fortran,\n Assembly and Java.",
-        "domains": [
-            "profiling"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://software.intel.com/en-us/vtune",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VTune",
+        "support": "",
         "versions": [
             "2019_update8",
             "2023.1.0",

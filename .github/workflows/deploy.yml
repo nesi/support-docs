@@ -74,6 +74,7 @@ jobs:
           key: mkdocs-${{ hashfiles('.cache/**') }}
           path: .cache
   rag-ingest:
+    if: false
     name: Trigger RAG index refresh
     runs-on: ubuntu-24.04
     steps:
