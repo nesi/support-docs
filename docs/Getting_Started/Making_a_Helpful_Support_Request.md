@@ -2,6 +2,7 @@
 created_at: '2024-03-05T23:28:34Z'
 tags:
 - troubleshooting
+description: What to include in a support request so we can help you without a round trip
 ---
 
 When you ask the support team for help, there are a few things we will

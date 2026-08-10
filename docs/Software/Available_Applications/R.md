@@ -4,6 +4,7 @@ tags:
 - r
 vote_count: 7
 vote_sum: 3
+description: Using R for statistical computing and graphics on the cluster
 ---
 
 ## Description

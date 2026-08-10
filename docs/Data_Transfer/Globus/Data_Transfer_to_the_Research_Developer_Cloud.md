@@ -3,6 +3,7 @@ tags:
     - globus
     - freezer
     - file transfer
+description: Moving data to a Research Developer Cloud object store bucket through Globus
 ---
 
 The Globus Collection to the Research Developer Cloud (RDC) is called: `{{ globus_collection_rdc}}`.

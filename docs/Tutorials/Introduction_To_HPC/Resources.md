@@ -4,6 +4,7 @@ status: tutorial
 tags:
 - tutorial
 - slurm
+description: Choosing how many CPUs a job needs, and measuring what it actually used
 ---
 
 !!! time "30 Minutes"

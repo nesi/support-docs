@@ -6,6 +6,7 @@ tags:
 title: ont-guppy-gpu
 vote_count: 5
 vote_sum: 3
+description: Basecalling and demultiplexing Oxford Nanopore reads with Guppy on GPUs
 ---
 
 

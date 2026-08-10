@@ -4,6 +4,7 @@ hide:
   - toc
 tags:
 - account
+description: The allocation classes, and who pays for each kind of project consumption
 ---
 
 The allocation class granted to your project is used to decide who pays for that aspect of your project's consumption of REANNZ HPC services.

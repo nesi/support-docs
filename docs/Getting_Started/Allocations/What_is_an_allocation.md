@@ -3,6 +3,7 @@ created_at: '2020-02-25T02:35:13Z'
 tags:
     - account
 title: What Is an Allocation?
+description: What compute, online storage and Freezer allocations are and how they are granted
 ---
 
 Because the HPC platform resources are limited, we manage access to our resources

@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.53.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.53.0 - default storage from the last active allocation
 ---
 
 ## New and Improved

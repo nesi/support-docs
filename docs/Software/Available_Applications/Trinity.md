@@ -4,6 +4,7 @@ tags:
 - biology
 vote_count: 2
 vote_sum: 2
+description: De novo reconstruction of transcriptomes from RNA-seq data with Trinity
 ---
 
 

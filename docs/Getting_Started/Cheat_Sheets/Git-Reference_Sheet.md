@@ -5,6 +5,7 @@ tags:
 title: 'Git: Reference Sheet'
 vote_count: 13
 vote_sum: 13
+description: Common Git commands for working with repositories, remotes and branches
 ---
 
 Git is the most universally adopted version control software and is

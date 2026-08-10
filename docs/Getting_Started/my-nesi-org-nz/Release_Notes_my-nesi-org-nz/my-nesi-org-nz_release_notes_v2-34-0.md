@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.34.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.34.0 - holiday banner updated for the Easter and ANZAC breaks
 ---
 
 ## New and Improved

@@ -3,6 +3,7 @@ title: GATK
 created_at: '2023-02-21T21:21:50Z'
 tags:
 - biology
+description: Variant discovery and genotyping in germline DNA and RNAseq data with GATK
 ---
 
 

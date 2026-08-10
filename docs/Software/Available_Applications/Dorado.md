@@ -4,6 +4,7 @@ tags:
 - biology
 vote_count: 5
 vote_sum: 3
+description: Basecalling Oxford Nanopore reads with Dorado, including on multiple GPUs
 ---
 
 

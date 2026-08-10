@@ -3,6 +3,7 @@ created_at: '2021-03-03T21:29:16Z'
 tags:
 - account
 title: Navigating the my.nesi.org.nz Web Interface
+description: Finding your way around the my.nesi.org.nz web interface
 ---
 
 ![mceclip0.png](../../assets/images/Navigating_the_my-nesi-org-nz_web_interface2025.png)

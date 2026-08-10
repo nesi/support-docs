@@ -4,6 +4,7 @@ title: ipyrad
 tags:
 - biology
 - python
+description: Assembly and analysis of RAD-seq and related datasets with ipyrad
 ---
 
 
