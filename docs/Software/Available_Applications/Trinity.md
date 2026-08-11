@@ -151,14 +151,13 @@ gridtype=SLURM
 # template for a grid submission
 # make sure:
 #     --partition is chosen appropriately for the resource requirements 
-#       (here we choose either large or bigmem, whichever is available first)
 #     --ntasks and --cpus-per-task should always be 1
 #     --mem may need to be adjusted
 #     --time may need to adjusted
 #       (must be enough time for a batch of commands to finish)
 #     --account should be your NeSI project code
 #     add other sbatch options as required
-cmd=sbatch --partition=large,bigmem --mem=5G --ntasks=1 --cpus-per-task=1 --time=01:00:00 --account=nesi12345
+cmd=sbatch --partition=hugemem --mem=5G --ntasks=1 --cpus-per-task=1 --time=01:00:00 --account=nesi12345
 
 # note -e error.file -o out.file are set internally, so dont set them in the above cmd.
 
@@ -182,9 +181,6 @@ cmds_per_node=50
   one core)
 - name this file `SLURM.conf` in the directory you will submit the job
   from
-- memory usage may be low enough that the sub-jobs can be run on
-  either the large or bigmem partitions, which should improve
-  throughput compared to bigmem alone
 
 A template Slurm submission script for Trinity Phase 2 is shown below:
 
@@ -196,7 +192,7 @@ A template Slurm submission script for Trinity Phase 2 is shown below:
 #SBATCH --ntasks=1           # always 1 - this is the master process
 #SBATCH --cpus-per-task=1    # always 1
 #SBATCH --mem=20G            # memory requirements for master process
-#SBATCH --partition=bigmem   # submit to an appropriate partition
+#SBATCH --partition=hugemem   # submit to an appropriate partition
 #SBATCH --hint=nomultithread
 
 # load Trinity and HPC GridRunner
@@ -273,13 +269,13 @@ geographical locations, of approximately 286 million paired reads. The
 assembly was performed using the two-phase Trinity workflow discussed
 above, using those submission scripts as templates.
 
-Phase 1 ran on 18 threads with 220 GB memory on the bigmem partition and
+Phase 1 ran on 18 threads with 220 GB memory on the bigmem partition (now hugemem) and
 took approximately 15 hours to complete.
 
 For Phase 2, the master process ran on a single core with 20 GB memory
-on the bigmem partition. HPC GridRunner was configured with both
+on the bigmem partition (now hugemem). HPC GridRunner was configured with both
 `cmds_per_node` and `max_nodes` set to 100, with the sub-jobs running on
-either large or bigmem partitions and requesting 5 GB memory and 1 hour
+either large or bigmem partitions (now only hugemem) and requesting 5 GB memory and 1 hour
 wall time each. The number of commands (mini-assemblies) that needed to
 be run during this phase was 2,020,460. Phase 2 took approximately 19
 hours to complete (elapsed time) and cost around 1,800 core hours.
@@ -292,9 +288,9 @@ was performed using the two-phase Trinity workflow discussed above,
 using those submission scripts as templates.
 
 There were 4,136,295 mini-assemblies to run in Phase 2. The master
-process requested 30 GB memory on the bigmem partition and HPC
+process requested 30 GB memory on the bigmem partition (now hugemem) and HPC
 GridRunner was configured with both `cmds_per_node` and `max_nodes` set
-to 100. The sub-jobs ran on either the large or bigmem partitions and
+to 100. The sub-jobs ran on either the large or bigmem partitions (now only hugemem) and
 required 1 hour wall time and 5 GB memory each. Phase 2 took
 approximately 32 hours to complete (elapsed time) and cost around 3,100
 core hours.
