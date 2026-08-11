@@ -176,7 +176,7 @@ cmds_per_node=50
  The important details are:
 
 - `cmds_per_node` is the size of each batch of commands, i.e. here
-  each Slurm sub-job runs 100 commands and then exits
+  each Slurm sub-job runs 50 commands and then exits
 - `max_nodes` is the number of sub-jobs that can be in the queue at
   any given time (each sub-job is single threaded, i.e. it uses just
   one core)
