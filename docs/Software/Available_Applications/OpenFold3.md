@@ -78,10 +78,12 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 
 		If you get an error message relating to Biotite CCD, get in touch with support.
 
-3. Add the following line to your `.bashrc` and source it:
+3. Add the following line to your `.bashrc` and source it. **Make sure you change `OPENFOLD_CACHE` to what you gave in step 2**:
 
 	```bash
-	printf '\n# Path to your OpenFold3 Cache\nexport OPENFOLD_CACHE=/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3\n' >> ~/.bashrc
+	# Change the OPENFOLD_CACHE to what you used in step 2.
+	OPENFOLD_CACHE=/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3
+	printf '\n# Path to your OpenFold3 Cache\nexport OPENFOLD_CACHE='${OPENFOLD_CACHE}'\n' >> ~/.bashrc
 	source ~/.bashrc
 	```
 
@@ -91,7 +93,7 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 	echo $OPENFOLD_CACHE
 	```
 
-	If this doesn't look right, you will need to change your `~/.bashrc` file by using `nano` or `vim`
+	If this doesn't look right, you will need to change your `~/.bashrc` file by using `nano` or `vim`. 
 
 4. Test that your setup was successful. In the terminal, copy the following json file from [openfold3](from https://github.com/aqlaboratory/openfold-3/blob/main/examples/example_inference_inputs/query_ubiquitin.json): 
 
