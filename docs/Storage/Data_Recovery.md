@@ -5,9 +5,11 @@ tags:
 - storage
 ---
 
+Deleted files may be retrieved from a snapshot.
+
 Snapshots are read only copies of the filesystems at a point in time.
 They are taken daily (or weekly for `/nesi/nobackup`) and retained for
-at least seven days.  
+at least seven days.
   
 Files from your home directory can be found
 in `/home/.snapshots/` followed by a snapshot timestamp and
