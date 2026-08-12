@@ -53,10 +53,10 @@ You will always get the amount of memory you requested, even if running on a nod
         <td>-</td>
         <td>44</td>
     </tr>
-    <tr id="gpu-genoa-a100">
+    <tr id="gpu-genoa-rtx6000">
         <td>716GB</td>
         <td><em>(2GB / Core)</em></td>
-        <td>2 x NVIDIA A100</td>
+        <td>2 x NVIDIA RTX 6000</td>
         <td>4</td>
     </tr>
     <tr>
@@ -93,17 +93,17 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
         <td colspan="2">Nodes</td>
     </tr>
     <tr>
-        <td rowspan="2">NVIDIA A100</td>
-        <td rowspan="2"></td>
+        <td>NVIDIA A100</td>
+        <td></td>
         <td>80GB</td>
         <td>4</td>
         <td><a href="#gpu-milan-a100">Milan</a></td>
         <td>4</td>
     </tr>
     <tr>
-        <td>40GB</td>
+        <td>96GB</td>
         <td>2</td>
-        <td><a href="#gpu-genoa-a100">Genoa</a></td>
+        <td><a href="#gpu-rtx6000">Genoa</a></td>
         <td>4</td>
     </tr>
     <tr>
