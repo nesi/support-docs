@@ -74,7 +74,6 @@ if __name__ == '__main__':
     log.setLevel(logging.INFO)
     sh = logging.StreamHandler(sys.stdout)
     sh.addFilter(parse_macro)
-    sh.addFilter(count_msg)
     sh.setFormatter(logging.Formatter(
         '::%(levelname)s file=%(filename)s,title=%(name)s,col=0,endColumn=0,line=%(lineno)s::%(message)s'))
     log.addHandler(sh)
