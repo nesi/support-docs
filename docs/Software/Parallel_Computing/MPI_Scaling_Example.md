@@ -5,6 +5,7 @@ tags:
 - parallel
 - profiling
 vote_count: 2
+description: A worked MPI scaling test showing how to size a distributed memory job
 ---
 
 <!-- TODO review the scripts, it looks like there is a missing word after $ -->

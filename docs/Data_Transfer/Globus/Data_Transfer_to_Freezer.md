@@ -3,6 +3,7 @@ tags:
     - globus
     - freezer
     - file transfer
+description: Moving data to Freezer long-term storage through Globus using your S3 credentials
 ---
 
 

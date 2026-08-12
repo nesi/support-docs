@@ -9,6 +9,9 @@
   let sending = false;
   let codeBlockSeq = 0;
 
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { window.dataLayer.push(arguments); }
+
   const ESCAPE_MAP = {
     "&": "&amp;",
     "<": "&lt;",
@@ -260,8 +263,9 @@
         { role: "user", content: question },
         { role: "assistant", content: answer }
       );
-      if (window.dataLayer) window.dataLayer.push(["event", "rag_chat", { question: question, answer: answer }]);
       history.splice(0, Math.max(0, history.length - 12));
+
+      gtag("event", "rag_chat", { question: question, answer: answer });
 
     } catch (err) {
       botMsg.innerHTML = `<p class="chat-error">Error: ${escapeHtml(err.message)}</p>`;

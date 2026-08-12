@@ -3,6 +3,7 @@ created_at: '2021-04-30T03:29:54Z'
 tags:
 - access
 - account
+description: Checking your identity provider sends the attributes Tuakiri services need
 ---
 
 ## Tuakiri Attribute Validator

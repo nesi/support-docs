@@ -2,6 +2,7 @@
 created_at: '2023-07-05T23:56:56Z'
 tags:
 - account
+description: Prices for the HPC platform, Research Developer Cloud, GPUs and storage
 ---
 
 

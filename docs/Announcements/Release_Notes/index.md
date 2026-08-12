@@ -3,6 +3,7 @@ created_at: '2021-02-23T19:52:34Z'
 tags:
 - release_notes
 title: Release Notes
+description: Where to find published release notes for applications and platform services
 ---
 
 REANNZ HPC publishes release notes for applications, 3rd party applications

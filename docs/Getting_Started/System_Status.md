@@ -2,6 +2,7 @@
 created_at: '2019-02-07T20:31:36Z'
 tags:
 - troubleshooting
+description: Where to see platform status and how to manage your notification subscriptions
 ---
 
 ## REANNZ system status related notifications

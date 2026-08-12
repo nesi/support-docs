@@ -2,6 +2,7 @@
 created_at: '2018-05-29T04:01:33Z'
 tags:
 - file_transfer
+description: Bookmarking a collection path in Globus so you can reopen it quickly
 ---
 
 Borkmarks are a convenient way to quicky open a `Path` of an `Collection` very quickly.

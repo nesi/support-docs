@@ -47,7 +47,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.87,
+                        "hourly_average": 0.86,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -61,7 +61,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.48,
+                        "hourly_average": 0.46,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -75,7 +75,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.6,
+                        "hourly_average": 0.59,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -684,7 +684,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.98,
+                "server_uptime": 0.97,
                 "server_version": "",
                 "features": [
                     {
@@ -1470,6 +1470,33 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "awscli": {
+        "description": "Universal Command Line Environment for AWS",
+        "domains": [],
+        "extensions": [
+            "awscli-2.36.14",
+            "awscrt-0.36.0",
+            "colorama-0.4.6",
+            "distro-1.8.0",
+            "ruamel.yaml-0.19.1",
+            "ruamel.yaml.clib-0.2.15"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/aws/aws-cli/",
+        "support": "",
+        "versions": [
+            "2.36.14-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.36.14-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786052902,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/awscli/2.36.14-GCCcore-15.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "azul-zulu": {
         "description": "Java Development Kit (JDK), and a compliant implementation of the Java Standard Edition (SE) specification.",
         "domains": [],
@@ -2227,6 +2254,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "bitsandbytes": {
+        "description": "bitsandbytes enables accessible large language models via k-bit quantization for PyTorch.\n\nThis build ships both the CUDA and the CPU native library, so the module works on GPU nodes\nand on nodes without a usable GPU. Note that it still depends on a CUDA-enabled PyTorch; if\nyou need a genuinely CUDA-free stack, build a separate easyconfig with COMPUTE_BACKEND=cpu,\nno CUDA dependency and no versionsuffix.",
+        "domains": [],
+        "extensions": [
+            "bitsandbytes-0.50.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://huggingface.co/docs/bitsandbytes/main/en/index",
+        "support": "",
+        "versions": [
+            "0.50.0-foss-2026-CUDA-13.2.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.50.0-foss-2026-CUDA-13.2.1",
+        "default_type": "latest",
+        "last_updated": 1786047845,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/bitsandbytes/0.50.0-foss-2026-CUDA-13.2.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "BLAST": {
         "description": "Basic Local Alignment Search Tool, or BLAST, is an algorithm\n for comparing primary biological sequence information, such as the amino-acid\n sequences of different proteins or the nucleotides of DNA sequences.",
         "domains": [
@@ -2268,7 +2317,8 @@
         "versions": [
             "2025-08",
             "2026-01",
-            "2026-04"
+            "2026-04",
+            "2026-08"
         ],
         "admin_list": [
             {
@@ -2276,11 +2326,11 @@
             }
         ],
         "network_licences": [],
-        "default": "2026-01",
+        "default": "2026-08",
         "default_type": "latest",
-        "last_updated": 1768561678,
+        "last_updated": 1785801827,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/lmod/generic/BLASTDB/2026-01.lua",
+        "module_path": "/opt/nesi/lmod/generic/BLASTDB/2026-08.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2399,6 +2449,51 @@
         "last_updated": 1778725568,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/Boost/1.91.0-GCC-15.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Boost.Python-NumPy": {
+        "description": "Boost.Python is a C++ library which enables seamless interoperability between C++\n and the Python programming language.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://boostorg.github.io/python",
+        "support": "",
+        "versions": [
+            "1.91.0-gfbf-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.91.0-gfbf-2026",
+        "default_type": "latest",
+        "last_updated": 1786049870,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Boost.Python-NumPy/1.91.0-gfbf-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "boto3": {
+        "description": "Boto3 is the Amazon Web Services (AWS) Software Development Kit\n(SDK) for Python, which allows Python developers to write software that makes\nuse of services like Amazon S3 and Amazon EC2.",
+        "domains": [],
+        "extensions": [
+            "boto3-1.43.62",
+            "botocore-1.43.62",
+            "jmespath-1.1.0",
+            "s3transfer-0.19.2"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/boto/boto3",
+        "support": "",
+        "versions": [
+            "1.43.62-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.43.62-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786052394,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/boto3/1.43.62-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2748,6 +2843,26 @@
         "last_updated": 1740132628,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CapnProto/1.0.2-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Catch2": {
+        "description": "A modern, C++-native, header-only,\n test framework for unit-tests, TDD and BDD\n - using C++11, C++14, C++17 and later",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/catchorg/Catch2",
+        "support": "",
+        "versions": [
+            "3.15.3-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.15.3-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786048389,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Catch2/3.15.3-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3442,7 +3557,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.99,
+                "server_uptime": 1.0,
                 "server_version": "11.16.2",
                 "features": [
                     {
@@ -3484,7 +3599,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.84,
+                        "hourly_average": 0.83,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3552,7 +3667,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.91,
+                        "hourly_average": 0.9,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
@@ -3586,7 +3701,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.68,
+                        "hourly_average": 0.7,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3654,12 +3769,12 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.52,
+                        "hourly_average": 0.55,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 5,
+                        "total": 10,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.3",
                         "visible_on_docs": true
@@ -3699,6 +3814,26 @@
         "last_updated": 1740132628,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CONCOCT/1.1.0-gimkl-2020a-Python-3.8.2.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "CoordgenLibs": {
+        "description": "Schrodinger-developed 2D Coordinate Generation",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/schrodinger/coordgenlibs",
+        "support": "",
+        "versions": [
+            "3.0.2-gompi-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.0.2-gompi-2026",
+        "default_type": "latest",
+        "last_updated": 1786048548,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/CoordgenLibs/3.0.2-gompi-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4058,6 +4193,7 @@
             "8.8.0.121-CUDA-12.0.0",
             "8.9.7.29-CUDA-12.2.2",
             "8.9.7.29-CUDA-12.3.0",
+            "9.24.0.43-CUDA-13.2.1",
             "9.3.0.75-CUDA-12.5.0",
             "9.5.1.17-CUDA-12.6.3"
         ],
@@ -5116,7 +5252,7 @@
         "network_licences": [],
         "default": "2025.06",
         "default_type": "latest",
-        "last_updated": 1779521581,
+        "last_updated": 1785446377,
         "modulefile_text": "",
         "module_path": "/opt/nesi/lmod/generic/EESSI/2025.06.lua",
         "force_hide": "False",
@@ -8424,6 +8560,38 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Hydra": {
+        "description": "Hydra is an open-source Python framework that simplifies the development of\nresearch and other complex applications. The key feature is the ability to\ndynamically create a hierarchical configuration by composition and override it\nthrough config files and the command line. The name Hydra comes from its\nability to run multiple similar jobs - much like a Hydra with multiple heads.",
+        "domains": [],
+        "extensions": [
+            "alembic-1.18.5",
+            "antlr4-python3-runtime-4.9.3",
+            "cmaes-0.13.0",
+            "colorlog-6.12.0",
+            "hydra-core-1.3.4",
+            "hydra-optuna-sweeper-1.4.0.dev7",
+            "hydra-submitit-launcher-1.2.0",
+            "omegaconf-2.3.1",
+            "optuna-4.9.0",
+            "read_version-0.3.2",
+            "submitit-1.5.4"
+        ],
+        "licence_type": "",
+        "homepage": "https://hydra.cc/",
+        "support": "",
+        "versions": [
+            "1.3.4-foss-2026-with-plugins"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.3.4-foss-2026-with-plugins",
+        "default_type": "latest",
+        "last_updated": 1786048146,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Hydra/1.3.4-foss-2026-with-plugins.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Hypre": {
         "description": "Hypre is a library for solving large, sparse linear systems of equations on massively\n parallel computers. The problems of interest arise in the simulation codes being developed at LLNL\n and elsewhere to study physical phenomena in the defense, environmental, energy, and biological sciences.",
         "domains": [],
@@ -9448,6 +9616,26 @@
         "last_updated": 1740132630,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Kaiju/1.8.2-gimkl-2020a-Python-3.9.9-Perl-5.30.1-mt.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Kalign": {
+        "description": "Kalign is a fast multiple sequence alignment program for biological sequences.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/TimoLassmann/kalign",
+        "support": "",
+        "versions": [
+            "3.5.1-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.5.1-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786048604,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Kalign/3.5.1-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11328,6 +11516,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "maeparser": {
+        "description": "maeparser is a parser for Schrodinger Maestro files.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/schrodinger/maeparser",
+        "support": "",
+        "versions": [
+            "1.3.3-gompi-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.3.3-gompi-2026",
+        "default_type": "latest",
+        "last_updated": 1786048457,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/maeparser/1.3.3-gompi-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "maf_stream": {
         "description": "Collection of utilities to manipulate multiple alignments in the Multiple Alignment Format",
         "domains": [
@@ -11386,15 +11594,16 @@
         "homepage": "https://icl.cs.utk.edu/magma/",
         "support": "",
         "versions": [
+            "2.10.0-foss-2026-CUDA-13.2.1",
             "2.7.1-gimkl-2022a-CUDA-11.6.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.7.1-gimkl-2022a-CUDA-11.6.2",
+        "default": "2.10.0-foss-2026-CUDA-13.2.1",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1785799084,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/magma/2.7.1-gimkl-2022a-CUDA-11.6.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/magma/2.10.0-foss-2026-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14804,6 +15013,47 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "OpenFold3": {
+        "description": "A fully open source biomolecular structure prediction model based on AlphaFold3",
+        "domains": [],
+        "extensions": [
+            "absl-py-2.5.0",
+            "biotite-1.7.1",
+            "biotraj-1.2.2",
+            "deepspeed-0.19.3",
+            "einops-0.8.2",
+            "func-timeout-4.3.5",
+            "gemmi-0.7.5",
+            "hjson-3.1.0",
+            "ijson-3.5.1",
+            "kalign-python-3.6.0",
+            "lmdb-2.3.0",
+            "memory-profiler-0.61.0",
+            "ml-collections-1.1.0",
+            "nanobind-2.13.0",
+            "OpenFold3-0.4.4",
+            "patch-ng-1.19.1",
+            "pdbeccdutils-1.0.4",
+            "py-cpuinfo-9.0.0",
+            "sentry-sdk-2.66.1",
+            "wandb-0.28.1"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/aqlaboratory/openfold-3",
+        "support": "",
+        "versions": [
+            "0.4.4-foss-2026-CUDA-13.2.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.4.4-foss-2026-CUDA-13.2.1",
+        "default_type": "latest",
+        "last_updated": 1786054315,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/OpenFold3/0.4.4-foss-2026-CUDA-13.2.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "OpenJPEG": {
         "description": "An open-source JPEG 2000 codec written in C",
         "domains": [],
@@ -15004,7 +15254,7 @@
         "network_licences": [],
         "default": "6.1.0-f.0-OpenMPI-4.1.5",
         "default_type": "latest",
-        "last_updated": 1753225313,
+        "last_updated": 1786486043,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/ORCA/6.1.0-f.0-OpenMPI-4.1.5.lua",
         "force_hide": "False",
@@ -17461,21 +17711,48 @@
             "gpu"
         ],
         "extensions": [
-            "skorch-0.12.1"
+            "skorch-1.4.0",
+            "triton-3.7.1"
         ],
         "licence_type": "",
         "homepage": "https://pytorch.org/",
         "support": "",
         "versions": [
-            "1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2"
+            "1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2",
+            "2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2",
+        "default": "2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1785965820,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PyTorch/1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PyTorch/2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "PyTorch-Lightning": {
+        "description": "PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers.",
+        "domains": [],
+        "extensions": [
+            "jsonargparse-4.50.0",
+            "lightning-utilities-0.15.3",
+            "pytorch-lightning-2.6.5",
+            "torchmetrics-1.9.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://pytorchlightning.ai",
+        "support": "",
+        "versions": [
+            "2.6.5-foss-2026-Python-3.14.4-CUDA-13.2.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.6.5-foss-2026-Python-3.14.4-CUDA-13.2.1",
+        "default_type": "latest",
+        "last_updated": 1786048305,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/PyTorch-Lightning/2.6.5-foss-2026-Python-3.14.4-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -18969,6 +19246,26 @@
         "last_updated": 1740132633,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Rcorrector/1.0.4-gimkl-2020a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "RDKit": {
+        "description": "RDKit is a collection of cheminformatics and machine-learning software written in C++ and Python.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.rdkit.org",
+        "support": "",
+        "versions": [
+            "2025.09.6-foss-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2025.09.6-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1786051845,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/RDKit/2025.09.6-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21569,6 +21866,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "tensorboardX": {
+        "description": "Tensorboard for PyTorch.",
+        "domains": [],
+        "extensions": [
+            "tensorboardx-2.6.5"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/lanpa/tensorboardX",
+        "support": "",
+        "versions": [
+            "2.6.5-foss-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.6.5-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1786047890,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/tensorboardX/2.6.5-foss-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "TensorFlow": {
         "description": "An open-source software library for Machine Intelligence",
         "domains": [
@@ -22697,15 +23016,16 @@
             "113.3-GCC-11.3.0-Perl-5.34.1",
             "115.2-GCC-12.3.0-Perl-5.40.3",
             "115.2-GCC-15.2.0-Perl-5.42.1",
-            "116.0-GCC-15.2.0-Perl-5.42.1"
+            "116.0-GCC-15.2.0-Perl-5.42.1",
+            "116.1-GCC-15.2.0-Perl-5.42.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "116.0-GCC-15.2.0-Perl-5.42.1",
+        "default": "116.1-GCC-15.2.0-Perl-5.42.1",
         "default_type": "latest",
-        "last_updated": 1781633481,
+        "last_updated": 1785895197,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/VEP/116.0-GCC-15.2.0-Perl-5.42.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/VEP/116.1-GCC-15.2.0-Perl-5.42.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22743,15 +23063,16 @@
         "homepage": "https://github.com/vgteam/vg",
         "support": "",
         "versions": [
-            "1.46.0"
+            "1.46.0",
+            "1.76.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.46.0",
+        "default": "1.76.1",
         "default_type": "latest",
-        "last_updated": 1740132640,
+        "last_updated": 1785711610,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/vg/1.46.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/vg/1.76.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },

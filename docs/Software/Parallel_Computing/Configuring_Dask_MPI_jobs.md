@@ -4,6 +4,7 @@ tags:
   - parallel 
 title: Configuring Dask-Mpi Jobs
 status: deprecated
+description: Configuring Dask-MPI jobs and matching Slurm resources to your workers
 ---
 
 !!! warning "Start simple"

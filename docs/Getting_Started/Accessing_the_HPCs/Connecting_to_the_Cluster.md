@@ -3,6 +3,7 @@ created_at: '2019-06-25T22:40:46Z'
 tags:
 - access
 - version_control
+description: The ways to reach the cluster, from a web browser through to a terminal over SSH
 ---
 
 !!! prerequisite

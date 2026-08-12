@@ -2,6 +2,7 @@
 created_at: '2015-12-13T20:47:26Z'
 tags:
 - chemistry
+description: Scalable computational chemistry from quantum to classical scales with NWChem
 ---
 
 {% set app_name = page.title | trim %}

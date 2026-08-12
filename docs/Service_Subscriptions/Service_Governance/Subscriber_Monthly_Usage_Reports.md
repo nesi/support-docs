@@ -2,6 +2,7 @@
 created_at: '2023-07-05T23:50:46Z'
 tags:
 - account
+description: How to read the monthly usage report sent to subscribers
 ---
 
 As part of our Subscriber service agreements, we share

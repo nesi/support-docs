@@ -2,6 +2,7 @@
 created_at: '2015-08-18T05:16:01Z'
 tags:
 - machine_learning
+description: Using Python on the cluster and choosing between system Python and modules
 ---
 
 
