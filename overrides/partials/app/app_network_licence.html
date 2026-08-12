@@ -39,7 +39,7 @@
         {% if vis | length > 1 -%}
             <tr class="hidden" id="{{ servernicename }}_details">
                 <td colspan={{ colspan }}>
-                    {% include "partials/app/app_network_licence_feature.html" -%}
+                    {{ safe_include("partials/app/app_network_licence_feature.html", vis=vis, lic=lic) -}}
                 </td>
             </tr>
         {% endif -%}

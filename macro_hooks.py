@@ -5,31 +5,27 @@ As opposed to `mkdocs_hooks.py` which works only in template step, (e.g. `overri
 If this is confusing, ask Cal to explain.
 """
 
-import importlib.util
 import os
 import json
+
+from jinja2 import pass_context
 
 module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 tag_index_path = os.getenv("TAG_INDEX_PATH", "docs/assets/tag-index.json")
 
 
-def _load_mkdocs_hooks():
-    """Load mkdocs_hooks.py by file path rather than `import mkdocs_hooks`.
-
-    mkdocs and mkdocs-macros load their own hook module through different
-    mechanisms (mkdocs briefly patches sys.path and restores it; mkdocs-macros
-    execs this file directly by path), so a plain cross-file import can't
-    reliably resolve `mkdocs_hooks` regardless of how *this* file was loaded.
-    Resolving relative to our own (always-correct) __file__ sidesteps that.
-    """
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mkdocs_hooks.py")
-    spec = importlib.util.spec_from_file_location("mkdocs_hooks", path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
-configure_safe_includes = _load_mkdocs_hooks().configure_safe_includes
+# Copied from mkdocs_hooks.py, not imported: mkdocs and mkdocs-macros load their
+# hook module through different mechanisms, and a cross-file import can't
+# reliably resolve `mkdocs_hooks` under both.
+@pass_context
+def safe_include(context, name, **kwargs):
+    """Like `{% include %}`, but renders as "" instead of raising."""
+    try:
+        template = context.environment.get_template(name)
+        return template.render({**context.get_all(), **kwargs})
+    except Exception as e:
+        print(f"::WARNING file={name},title=safe_include_failed,col=0,endColumn=0,line=0::{e}")
+        return ""
 
 
 class CaseInsensitiveDict(dict):
@@ -67,6 +63,7 @@ def define_env(env):
 
     env.variables.applications = CaseInsensitiveDict(json.load(open(module_list_path)))
     tag_index = json.load(open(tag_index_path))
+    env.macro(safe_include, "safe_include")
 
     @env.macro
     def pages_with_tag(tag):
@@ -79,10 +76,3 @@ def define_env(env):
             {"title": e["title"], "path": os.path.relpath(e["path"], current_dir)}
             for e in entries
         ]
-
-
-def on_pre_page_macros(env):
-    # env.env (the actual Jinja Environment) doesn't exist yet at define_env()
-    # time - on_config() creates it afterwards - so patch it here instead.
-    # configure_safe_includes() is idempotent, so re-running per page is cheap.
-    configure_safe_includes(env.env)

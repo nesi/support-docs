@@ -20,7 +20,7 @@
             <div class="grid flex-card-parent">
                 <div class="flex-card">
                     <h5>Available Modules</h5>
-                    {% include "partials/app/app_version.html" -%}
+                    {{ safe_include("partials/app/app_version.html") -}}
                 </div>
                 <div class="flex-card">
                     <h5>Links</h5>
@@ -46,7 +46,7 @@
                 <p>{{ app_name }} is {{ app.licence_type }} software.</p>
                 {% if app.network_licences %}
                     <p>Access to a valid licence token is required to run {{ app_name }}.
-                    {% include "partials/app/app_network_licence.html" -%}
+                    {{ safe_include("partials/app/app_network_licence.html") -}}
                 {% endif %}
                 </div>
             {% endif %}

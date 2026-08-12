@@ -13,8 +13,8 @@ description: Running ABAQUS finite element analyses on the cluster and choosing 
 
 {{ app.description }}
 
-{% include "partials/app/app_homepage.html" -%}
-{% include "partials/app/app_warnings.html" -%}
+{{ safe_include("partials/app/app_homepage.html") -}}
+{{ safe_include("partials/app/app_warnings.html") -}}
 
 !!! tip
     For a list of ABAQUS commands type:
@@ -25,13 +25,13 @@ description: Running ABAQUS finite element analyses on the cluster and choosing 
 
 ## Available Modules
 
-{% include "partials/app/app_version.html" -%}
+{{ safe_include("partials/app/app_version.html") -}}
 
 ## Licences
 
 The following network licence servers can be accessed from the Mahuika cluster.
 
-{% include "partials/app/app_network_licence.html" -%}
+{{ safe_include("partials/app/app_network_licence.html") -}}
 
 If you do not have access, or want a server connected {% include "partials/support_request.html" %}.
 

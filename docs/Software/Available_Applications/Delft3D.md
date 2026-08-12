@@ -9,8 +9,8 @@ tags:
 {% set app = applications[app_name] %}
 
 {{ app.description }}
-{% include "partials/app/app_homepage.html" -%}
-{% include "partials/app/app_warnings.html" -%}
+{{ safe_include("partials/app/app_homepage.html") -}}
+{{ safe_include("partials/app/app_warnings.html") -}}
 
 !!! note "Module names"
     `Delft3D_FM` contains solvers for both structured and unstructured meshes.
@@ -18,10 +18,10 @@ tags:
 
 ## Available Modules
 
-{% include "partials/app/app_version.html" -%}
+{{ safe_include("partials/app/app_version.html") -}}
 {% set app_name = "Delft3D" %}
 {% set app = applications[app_name] %}
-{% include "partials/app/app_version.html" -%}
+{{ safe_include("partials/app/app_version.html") -}}
 
 
 ## Example scripts

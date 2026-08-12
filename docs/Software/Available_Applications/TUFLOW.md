@@ -9,8 +9,8 @@ tags:
 {% set app = applications[app_name] %}
 
 {{ app.description }}
-{% include "partials/app/app_homepage.html" -%}
-{% include "partials/app/app_warnings.html" -%}
+{{ safe_include("partials/app/app_homepage.html") -}}
+{{ safe_include("partials/app/app_warnings.html") -}}
 
 !!! note "Solvers"
     The `TUFLOW` module provides two executables:
@@ -20,7 +20,7 @@ tags:
 
 ## Available Modules
 
-{% include "partials/app/app_version.html" -%}
+{{ safe_include("partials/app/app_version.html") -}}
 
 ## Licences
 

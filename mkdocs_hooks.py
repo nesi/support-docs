@@ -13,78 +13,25 @@ import os
 import re
 
 import yaml
-from jinja2.compiler import CodeGenerator
-from jinja2.exceptions import TemplateNotFound
+from jinja2 import pass_context
 
 module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 
 
-class SafeIncludeCodeGenerator(CodeGenerator):
-    """Makes every `{% include %}` in this environment render as nothing
-    instead of raising, if the included template errors while rendering.
+@pass_context
+def safe_include(context, name, **kwargs):
+    """Like `{% include %}`, but renders as "" instead of raising.
 
-    Partials driven by module-list.json data (versions, network licences,
-    ...) can fail on one app's unexpected/missing data. Without this, that
-    error propagates and takes out the *whole* page (mkdocs-macros' error
-    block) or the *whole* build (the supported-apps index renders every app
-    inline via the theme's own Jinja env, outside mkdocs-macros' handling).
-
-    `{% extends %}` and `{% import %}` are untouched (separate visit_*
-    methods) - only `{% include %}` gets this treatment.
-
-    Set as `environment.code_generator_class` (an official Jinja extension
-    point - see Environment.code_generator_class), it replaces the include's
-    normal streaming codegen with a call to `environment.safe_include()`,
-    which renders the target as one buffered string (so a mid-render failure
-    can't leak partial output) and swallows/logs any exception.
+    Used in the app_header.html partial chain (module-list.json-driven, so one
+    app's bad data shouldn't blank the whole page/build). Registered in both
+    Jinja environments - see on_env() below and macro_hooks.define_env().
     """
-
-    def visit_Include(self, node, frame):
-        self.writeline("yield environment.safe_include(", node)
-        self.visit(node.template, frame)
-        if node.with_context:
-            self.write(f", {{**context.get_all(), **{self.dump_local_context(frame)}}}")
-        else:
-            self.write(", {}")
-        self.write(f", {node.ignore_missing!r})")
-
-
-def make_safe_include(jinja_env):
-    """Build the `environment.safe_include()` called by the codegen above.
-
-    A closure (not a method) bound to one specific environment via
-    `env.safe_include = make_safe_include(env)`, since generated template
-    code looks it up as a plain attribute (`environment.safe_include(...)`)
-    rather than through the descriptor protocol.
-    """
-    def safe_include(name, context_dict, ignore_missing=False):
-        try:
-            template = (jinja_env.select_template(name)
-                        if isinstance(name, (list, tuple))
-                        else jinja_env.get_template(name))
-        except TemplateNotFound:
-            if ignore_missing:
-                return ""
-            raise
-        try:
-            return template.render(context_dict)
-        except Exception as e:
-            print(f"::WARNING file={name},title=include_failed,col=0,endColumn=0,line=0::{e}")
-            return ""
-    return safe_include
-
-
-def configure_safe_includes(jinja_env):
-    """Make every `{% include %}` rendered by `jinja_env` fail soft.
-
-    Idempotent - safe to call more than once on the same environment (e.g.
-    macro_hooks.py's on_pre_page_macros(), which fires per page).
-    """
-    if getattr(jinja_env, "_safe_includes_configured", False):
-        return
-    jinja_env.code_generator_class = SafeIncludeCodeGenerator
-    jinja_env.safe_include = make_safe_include(jinja_env)
-    jinja_env._safe_includes_configured = True
+    try:
+        template = context.environment.get_template(name)
+        return template.render({**context.get_all(), **kwargs})
+    except Exception as e:
+        print(f"::WARNING file={name},title=safe_include_failed,col=0,endColumn=0,line=0::{e}")
+        return ""
 
 
 _FRONT_MATTER = re.compile(r"\A---\s*\n(.*?)\n---\s*\n", re.DOTALL)
@@ -161,7 +108,7 @@ def on_env(env, config, files, **kwargs):
         for app in applications.values()
         for domain in app.get("domains", [])
     })
-    configure_safe_includes(env)
+    env.globals["safe_include"] = safe_include
 
 
 def lint(*args, **kwargs):
