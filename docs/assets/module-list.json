@@ -58,7 +58,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.46,
+                        "hourly_average": 0.45,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -1877,17 +1877,18 @@
         "versions": [
             "0.1.1-r16-GCC-11.3.0",
             "0.1.1-r16-GCC-12.3.0",
+            "0.1.1-r16-foss-2026",
             "0.1.1-r16-intel-2020a",
             "0.1.1-r16-intel-2022a",
             "0.1.1-r16-iofbf-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.1.1-r16-iofbf-2026",
+        "default": "0.1.1-r16-foss-2026",
         "default_type": "latest",
-        "last_updated": 1779857577,
+        "last_updated": 1786513331,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/BEEF/0.1.1-r16-iofbf-2026.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/BEEF/0.1.1-r16-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3517,7 +3518,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.7,
+                        "hourly_average": 0.71,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -4567,15 +4568,16 @@
         "versions": [
             "3.5.0-foss-2023a",
             "3.5.0-intel-2022a",
-            "3.7.0-foss-2023a"
+            "3.7.0-foss-2023a",
+            "3.7.0-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.7.0-foss-2023a",
+        "default": "3.7.0-foss-2026",
         "default_type": "latest",
-        "last_updated": 1753325240,
+        "last_updated": 1786513449,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DFT-D4/3.7.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DFT-D4/3.7.0-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8880,15 +8882,16 @@
         "homepage": "https://github.com/jacobwilliams/json-fortran",
         "support": "",
         "versions": [
-            "9.0.2-GCC-12.3.0"
+            "9.0.2-GCC-12.3.0",
+            "9.3.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "9.0.2-GCC-12.3.0",
+        "default": "9.3.1-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1753397850,
+        "last_updated": 1786513542,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.0.2-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.3.1-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9126,6 +9129,26 @@
         "force_show": "False"
     },
     "Kalign": {
+        "description": "Kalign is a fast multiple sequence alignment program for biological sequences.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/TimoLassmann/kalign",
+        "support": "",
+        "versions": [
+            "3.5.1-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.5.1-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786048604,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Kalign/3.5.1-GCCcore-15.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "kalign2": {
         "description": "Kalign is a fast multiple sequence alignment program for biological sequences.",
         "domains": [],
         "extensions": [],
@@ -11645,15 +11668,16 @@
         "homepage": "https://grimme-lab.github.io/mctc-lib",
         "support": "",
         "versions": [
-            "0.3.1-GCC-12.3.0"
+            "0.3.1-GCC-12.3.0",
+            "0.5.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.3.1-GCC-12.3.0",
+        "default": "0.5.1-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1753397876,
+        "last_updated": 1786573586,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.3.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.5.1-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14479,7 +14503,7 @@
         "network_licences": [],
         "default": "6.1.0-f.0-OpenMPI-4.1.5",
         "default_type": "latest",
-        "last_updated": 1753225313,
+        "last_updated": 1786486043,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/ORCA/6.1.0-f.0-OpenMPI-4.1.5.lua",
         "force_hide": "False",
@@ -18840,15 +18864,16 @@
         "support": "",
         "versions": [
             "2024.04.2-764",
-            "2024.12.1-563"
+            "2024.12.1-563",
+            "2026.07.1-147"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2024.12.1-563",
+        "default": "2026.07.1-147",
         "default_type": "latest",
-        "last_updated": 1741245527,
+        "last_updated": 1786492387,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/RStudio-Server/2024.12.1-563.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/RStudio-Server/2026.07.1-147.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21698,7 +21723,8 @@
             "6.4.1-intel-2022a",
             "6.4.2-foss-2023a",
             "6.4.2-intel-2022a",
-            "6.4.3-foss-2023a"
+            "6.4.3-foss-2023a",
+            "6.5.1-foss-2026"
         ],
         "admin_list": [
             {
@@ -21711,7 +21737,7 @@
         "network_licences": [],
         "default": "6.4.2-intel-2022a",
         "default_type": "static",
-        "last_updated": 1755137199,
+        "last_updated": 1786576250,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VASP/6.4.2-intel-2022a.lua",
         "force_hide": "False",
@@ -22187,15 +22213,16 @@
         "homepage": "https://wannier.org/",
         "support": "",
         "versions": [
-            "3.1.0-foss-2023a"
+            "3.1.0-foss-2023a",
+            "3.1.0-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.1.0-foss-2023a",
+        "default": "3.1.0-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132640,
+        "last_updated": 1786574194,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/wannier90/3.1.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/wannier90/3.1.0-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },

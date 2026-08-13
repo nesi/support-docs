@@ -73,7 +73,29 @@ You will always get the amount of memory you requested, even if running on a nod
         <td>4 x NVIDIA L4</td>
         <td>4</td>
     </tr>
+    <tr>
+    </tr>
+    <tr>
+        <td rowspan=2>Intel Xeon Gold</td>
+        <td>80</td>
+        <td>1.5TB</td>
+        <td><em>(18GB / Core)</em></td>
+        <td>-</td>
+        <td>2</td>
+    </tr>
+    <tr>
+        <td>176</td>
+        <td>6TB</td>
+        <td><em>(346GB / Core)</em></td>
+        <td>-</td>
+        <td>1</td>
+    </tr>
 </table>
+         
+!!! warning "hugemem"
+    Jobs will not automatically land on the Intel 'hugemem' nodes. You must specifically request `--partition hugemem`.
+    The CPU architecture is different enough from the milan and genoa nodes, you will probably have to recompile your software.
+
 
 ## GPUs
 
@@ -120,14 +142,6 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
         <td>24GB</td>
         <td>4</td>
         <td><a href="#gpu-genoa-l4">Genoa</a></td>
-        <td>4</td>
-    </tr>
-    <tr>
-        <td>NVIDIA A40</td>
-        <td>Teaching / training</td>
-        <td>48GB</td>
-        <td><a href="https://docs.nesi.org.nz/Scientific_Computing/Research_Developer_Cloud/User_Guides">RDC</a></td>
-        <td></td>
         <td>4</td>
     </tr>
 </table>
