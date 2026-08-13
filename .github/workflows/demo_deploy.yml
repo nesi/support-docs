@@ -1,5 +1,5 @@
 name: Deploy PR branches
-on: 
+on:
   pull_request:
     branches-ignore: ["assets-update"]
 env:
