@@ -62,7 +62,7 @@ jobs:
               finish "timed_out"
               exit 0
             fi
-            run_id=$(gh api "repos/${TARGET_OWNER}/${TARGET_REPO}/actions/workflows/${WORKFLOW_ID}/runs" \
+            run_id=$(gh api -X GET "repos/${TARGET_OWNER}/${TARGET_REPO}/actions/workflows/${WORKFLOW_ID}/runs" \
               -f "created=>${{ steps.trigger.outputs.dispatch_time }}" \
               --jq '.workflow_runs[-1].id // empty')
             [ -z "$run_id" ] && sleep 10
