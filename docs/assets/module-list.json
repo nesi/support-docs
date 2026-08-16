@@ -7507,15 +7507,16 @@
         "homepage": "https://www.gnu.org/software/glpk/",
         "support": "",
         "versions": [
-            "5.0-GCCcore-12.3.0"
+            "5.0-GCCcore-12.3.0",
+            "5.0-GCCcore-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.0-GCCcore-12.3.0",
+        "default": "5.0-GCCcore-15.2.0",
         "default_type": "latest",
-        "last_updated": 1777582257,
+        "last_updated": 1786685495,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/GLPK/5.0-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/GLPK/5.0-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11044,6 +11045,7 @@
         "support": "",
         "versions": [
             "2.11.4-GCCcore-12.3.0",
+            "2.11.4-GCCcore-15.2.0",
             "2.9.10-GCCcore-11.3.0",
             "2.9.10-GCCcore-9.2.0",
             "2.9.4-gimkl-2018b",
@@ -11051,11 +11053,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.11.4-GCCcore-12.3.0",
+        "default": "2.11.4-GCCcore-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1786685254,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libxml2/2.11.4-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libxml2/2.11.4-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
