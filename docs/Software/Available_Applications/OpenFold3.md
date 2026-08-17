@@ -943,3 +943,397 @@ record exactly what was run.
 * **Predictions without MSAs are noticeably worse.** This is expected. If you
   want a fast, low-accuracy run, that trade-off is available via
   `"use_msas": false` on a chain, but do not use it for production results.
+
+## Running a training session with OpenFold3
+
+OpenFold3 is fully trainable — you can train it from scratch
+or fine-tune the released checkpoints on your own structures. As with inference,
+everything is driven by a YAML config file, and all the data comes from disk
+rather than from any network service.
+
+!!! warning "Training is a serious undertaking"
+
+    The released OpenFold3 parameters were produced with 155,000 training
+    steps on a large multi-node GPU cluster. Reproducing that on Mahuika is
+    not realistic within a normal allocation. Fine-tuning from a released
+    checkpoint on a focused dataset is far more achievable, and is what most
+    users actually want. Talk to us before requesting a large GPU allocation
+    for training.
+
+### Step 1: Get the training data
+
+*References: [Download the Dataset](https://openfold-3.readthedocs.io/en/latest/training.html#download-the-dataset)
+and [OpenFold3 Training Data Pipeline](https://openfold-3.readthedocs.io/en/latest/data_pipeline_reference.html)*
+
+The preprocessed PDB training set — structures, MSAs, templates and the dataset
+caches that tie them together — is hosted on S3. Check the size before you start
+so you can be sure of your `/nesi/nobackup` quota:
+
+``` bash
+module load OpenFold3
+
+aws s3 ls --no-sign-request --summarize --human-readable --recursive s3://openfold3-data/pdb_training_set/ | tail -3
+```
+
+Then sync it to a directory that every node in your job can read:
+
+``` bash
+mkdir -p /nesi/nobackup/nesi12345/openfold3/pdb_training_set/
+aws s3 sync --no-sign-request s3://openfold3-data/pdb_training_set/ /nesi/nobackup/nesi12345/openfold3/pdb_training_set/
+```
+
+!!! tip "Test the setup on a small subset first"
+
+    OpenFold3 provides `setup-pdb-subset` (which runs `generate-pdb-subset`
+    then `download-pdb-subset`) to build a miniature training set complete
+    with MSAs, template files and dataset caches. Use it to confirm your
+    config and paths work before committing to a long job:
+
+    ``` bash
+    setup-pdb-subset
+    pytest --pyargs openfold3.tests.test_training_full
+    ```
+
+### Step 2: Write the training config
+
+*References: [Prepare the Training Config](https://openfold-3.readthedocs.io/en/latest/training.html#prepare-the-training-config)
+and [OpenFold3 Configuration Reference](https://openfold-3.readthedocs.io/en/latest/configuration_reference.html)*
+
+The training config is the same `runner.yml` used for inference, with
+`mode: train` and additional sections describing the datasets. A minimal
+single-GPU config looks like this:
+
+``` yaml title="training.yml"
+experiment_settings:
+  mode: train
+  output_dir: /nesi/nobackup/nesi12345/openfold3/train_output
+  restart_checkpoint_path: last
+
+data_module_args:
+  batch_size: 1
+  num_workers: 4
+  epoch_len: 500          # steps between checkpoints (effective batch size x steps)
+
+logging_config:
+  log_lr: false
+  wandb_config: null
+
+pl_trainer_args:
+  devices: 1
+  num_nodes: 1
+  precision: bf16-mixed
+  max_epochs: -1
+  log_every_n_steps: 50
+
+checkpoint_config:
+  every_n_epochs: 1
+  auto_insert_metric_name: false
+  save_last: true
+  save_top_k: -1
+
+model_update:
+  presets:
+    - train
+  custom:
+    architecture:
+      shared:
+        use_confidence_emb_prob: 0.8
+        diffusion:
+          use_conditioning_prob: 0.8
+
+dataset_configs:
+  train:
+    weighted-pdb:
+      dataset_class: WeightedPDBDataset
+      weight: 1.0
+      config:
+        template:
+          n_templates: 4
+          take_top_k: false
+        crop:
+          token_crop:
+            enabled: true
+            token_budget: 384
+            crop_weights:
+              contiguous: 0.2
+              spatial: 0.4
+              spatial_interface: 0.4
+          chain_crop:
+            enabled: true
+
+  validation:
+    val-weighted-pdb:
+      dataset_class: ValidationPDBDataset
+      config:
+        msa:
+          subsample_main: false
+        template:
+          n_templates: 4
+          take_top_k: true
+        crop:
+          token_crop:
+            enabled: false
+
+dataset_paths:
+  weighted-pdb:
+    alignments_directory: none
+    alignment_db_directory: none
+    alignment_array_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/alignment_arrays
+    dataset_cache_file: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/dataset_caches/training_cache_with_templates.json
+    target_structures_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/preprocessed_pdb_data/standard/structure_files
+    target_structure_file_format: npz
+    reference_molecule_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/preprocessed_pdb_data/standard/reference_mols
+    template_cache_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/templates/train_template_cache
+    template_structure_array_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/templates/template_structure_arrays
+    template_structures_directory: none
+    template_file_format: npz
+    ccd_file: null
+
+  val-weighted-pdb:
+    alignments_directory: none
+    alignment_db_directory: none
+    alignment_array_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/alignment_arrays
+    dataset_cache_file: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/dataset_caches/validation_cache_with_templates.json
+    target_structures_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/preprocessed_pdb_data/standard/structure_files
+    target_structure_file_format: npz
+    reference_molecule_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/preprocessed_pdb_data/standard/reference_mols
+    template_cache_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/templates/val_template_cache
+    template_structure_array_directory: /nesi/nobackup/nesi12345/openfold3/pdb_training_set/templates/template_structure_arrays
+    template_structures_directory: none
+    template_file_format: npz
+    ccd_file: null
+```
+
+The parts you are most likely to change:
+
+| Setting | Effect |
+| --------- | -------- |
+| `dataset_paths` | **Must** point at your copy of the data. Every path here is checked at startup. |
+| `epoch_len` | How many steps make an "epoch", and therefore how often checkpoints are written |
+| `token_budget` | Size of the training crop. Lower it if you run out of GPU memory. |
+| `precision` | `bf16-mixed` is recommended on A100; `32-true` is the default and much slower |
+| `devices` / `num_nodes` | GPUs per node and number of nodes |
+| `num_workers` | Data loading processes. Keep this at or below `--cpus-per-task`. |
+
+The upstream repository ships complete configs for every stage of the published
+training schedule under
+[`examples/training_yamls/`](https://github.com/aqlaboratory/openfold-3/tree/main/examples/training_yamls) —
+[`initial_training.yml`](https://github.com/aqlaboratory/openfold-3/blob/main/examples/training_yamls/initial_training.yml),
+[`finetune_1.yml`](https://github.com/aqlaboratory/openfold-3/blob/main/examples/training_yamls/finetune_1.yml),
+[`finetune_2.yml`](https://github.com/aqlaboratory/openfold-3/blob/main/examples/training_yamls/finetune_2.yml)
+and
+[`finetune_3.yml`](https://github.com/aqlaboratory/openfold-3/blob/main/examples/training_yamls/finetune_3.yml).
+Start from the one that matches what you are doing rather than building a
+config from scratch.
+
+The sections below cover the parts of that file where you have a decision to
+make.
+
+#### Dataset paths
+
+Every path under `dataset_paths` must point at your copy of the data from
+Step 1. The two blocks are the training and
+validation sets; they differ only in which `dataset_cache_file` and
+`template_cache_directory` they use.
+
+#### Logging to Weights & Biases
+
+The config above has `wandb_config: null`, so training metrics go only to the
+Slurm output file. To log to Weights & Biases instead, replace the
+`logging_config` block with:
+
+``` yaml title="training.yml"
+logging_config:
+  log_lr: true
+  wandb_config:
+    project: openfold3-training
+    entity: your-wandb-entity
+    experiment_name: my-training-run
+    group: null
+    id: null
+```
+
+* `project` — groups related runs together in W&B.
+* `entity` — your W&B user or team. **This one you must change**; the run will
+    not log anywhere useful until you do.
+* `experiment_name` — the name this run appears under. Worth setting to
+    something you will recognise weeks later.
+* `group` and `id` — optional. `group` collects several runs under one banner,
+    `id` resumes logging into an existing run rather than starting a new one.
+    Leave both `null` unless you need them.
+* `log_lr: true` — also records the learning rate alongside the loss curves,
+    which is what you want when chaining resumed jobs.
+
+See [Step 4](#step-4-monitor-the-run) for how the logs get out of the job.
+
+#### Checkpointing and resuming
+
+*Reference: [Checkpointing and Resuming](https://openfold-3.readthedocs.io/en/latest/training.html#checkpointing-and-resuming)*
+
+Checkpoints are written to `{output_dir}/checkpoints/`, controlled by
+`checkpoint_config`:
+
+``` yaml title="training.yml"
+checkpoint_config:
+  every_n_epochs: 1              # save every N epochs
+  auto_insert_metric_name: false # don't put the metric in the filename
+  save_last: true                # always keep last.ckpt
+  save_top_k: -1                 # keep all checkpoints; set to K to keep only the best K
+```
+
+`save_top_k: -1` keeps every checkpoint, and each one is over 2 GB. Set a
+finite value unless you have the quota for it.
+
+`epoch_len` in `data_module_args` decides how many steps make an "epoch", and
+therefore how often `every_n_epochs` actually fires.
+
+Because Mahuika jobs have a wall-time limit, a long training run has to be
+chained — submit, let it checkpoint, resume. Setting the restart path to `last`
+makes the same script safe to resubmit as many times as it takes:
+
+``` yaml title="training.yml"
+experiment_settings:
+  restart_checkpoint_path: last                     # resume from last.ckpt
+  # restart_checkpoint_path: /path/to/specific.ckpt # or a named checkpoint
+```
+
+#### Fine-tuning from a released checkpoint
+
+Fine-tuning uses the same mechanism, pointed at a downloaded checkpoint instead
+of one of your own. This is the realistic way to use OpenFold3 training on
+Mahuika:
+
+``` yaml title="training.yml"
+experiment_settings:
+  mode: train
+  output_dir: /nesi/nobackup/nesi12345/openfold3/finetune_output
+  seed: 42
+  restart_checkpoint_path: /nesi/project/nesi12345/user.name/openfold3/of3-p2-155k.pt
+```
+
+### Step 3: Launch the training job
+
+*Reference: [Launch Training](https://openfold-3.readthedocs.io/en/latest/training.html#launch-training)*
+
+For a single GPU, which is the right way to debug a config before scaling up:
+
+``` sl
+#!/bin/bash -e
+
+#SBATCH --account       nesi12345
+#SBATCH --job-name      of3-train
+#SBATCH --cpus-per-task 8
+#SBATCH --mem           64G
+#SBATCH --gpus-per-node A100:1
+#SBATCH --time          08:00:00
+#SBATCH --output        %j.out
+
+module purge
+module load OpenFold3
+
+# Keep Weights & Biases logging on disk; sync it from the login node afterwards
+export WANDB_MODE=offline
+
+run_openfold train --runner-yaml /nesi/nobackup/nesi12345/openfold3/training.yml --seed 42
+```
+
+For several GPUs on one node, request them in the job and set `devices` to
+match. Mahuika GPU nodes carry two A100s each, so change the job header to:
+
+``` sh
+#SBATCH --cpus-per-task 16
+#SBATCH --mem           128G
+#SBATCH --gpus-per-node A100:2
+```
+
+and the `runner.yaml` config to:
+
+``` yaml
+pl_trainer_args:
+  devices: 2       # GPUs per node
+  num_nodes: 1
+```
+
+For multiple nodes, set `num_nodes` to match and launch one task per GPU with
+`srun` so PyTorch Lightning can set up its process group:
+
+``` sl
+#!/bin/bash -e
+
+#SBATCH --account           nesi12345
+#SBATCH --job-name          of3-train-multinode
+#SBATCH --nodes             4
+#SBATCH --ntasks-per-node   2
+#SBATCH --gpus-per-node     A100:2
+#SBATCH --cpus-per-task     8
+#SBATCH --mem               128G
+#SBATCH --time              24:00:00
+#SBATCH --output            %j.out
+
+module purge
+module load OpenFold3
+
+export WANDB_MODE=offline
+
+srun run_openfold train --runner-yaml /nesi/nobackup/nesi12345/openfold3/training.yml --seed 42
+```
+
+with the matching `runner.yaml` config:
+
+``` yaml
+pl_trainer_args:
+  devices: 2       # GPUs per node
+  num_nodes: 4     # total nodes
+  distributed_timeout: PT30M
+```
+
+!!! warning "Multi-node jobs need shared storage"
+
+    Every rank must be able to read the dataset and write to `output_dir`.
+    Use `/nesi/nobackup` or `/nesi/project`, never `$TMPDIR`, which is
+    node-local (and in RAM).
+
+### Step 4: Monitor the run
+
+*Reference: [Monitoring Training](https://openfold-3.readthedocs.io/en/latest/training.html#monitoring-training)*
+
+Training metrics always go to the Slurm output file, so `tail -f` on it is
+enough to see a run progressing.
+
+If you enabled Weights & Biases in
+[Step 2](#logging-to-weights-biases), there is one more step. The job scripts
+in Step 3 set `WANDB_MODE=offline`, so the run writes its metrics to disk under
+`{output_dir}/wandb/`. To view the progress through wandb, run the following from
+the login node: 
+
+``` bash
+wandb sync /nesi/nobackup/nesi12345/openfold3/train_output/wandb/offline-run-*
+```
+
+### Step 5: Run inference with your trained checkpoint
+
+*Reference: [Inferencing on fine-tuning checkpoints](https://openfold-3.readthedocs.io/en/latest/training.html#inferencing-on-fine-tuning-checkpoints)*
+
+Training checkpoints are not directly loadable by `run_openfold predict` — they
+contain optimiser state and other training data, and attempting to load one
+raises:
+
+``` bash
+_pickle.UnpicklingError: Weights only load failed.
+```
+
+Convert the checkpoint to an inference-ready, EMA-only file first:
+
+``` bash
+convert_ckpt_to_ema_only.py train_output/checkpoints/epoch=10-step=5000.ckpt inference.ckpt
+```
+
+The result can be passed straight to prediction:
+
+``` bash
+run_openfold predict \
+    --query-json query.json \
+    --use-msa-server=False \
+    --output-dir results/ \
+    --inference-ckpt-path inference.ckpt
+```
