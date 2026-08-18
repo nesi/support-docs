@@ -86,7 +86,7 @@ For a full description of `salloc` and its options, see
 
 ### Running a GUI application
 
-It is possible to run GUI applications interactively on the cluster.  Along with the `--pty` flag, one should also include the `--x11` flag and have a properly configured X server.  More information can be found here:  [https://docs.nesi.org.nz/Getting_Started/Accessing_the_HPCs/X11/](https://docs.nesi.org.nz/Getting_Started/Accessing_the_HPCs/X11/)
+It is possible to run GUI applications interactively on the cluster.  Along with the `--pty` flag, one should also include the `--x11` flag and have a properly configured X server.  More information can be found here:  [https://docs.nesi.org.nz/Getting_Started/Accessing_the_HPCs/X11/](../Getting_Started/Accessing_the_HPCs/X11.md)
 
 Depending on the GUI application and resource requirements, it may be beneficial to run a Virtual Desktop from our OnDemand service instead of using X forwarding: [https://ondemand.nesi.org.nz/pun/sys/dashboard](https://ondemand.nesi.org.nz/pun/sys/dashboard)
 
@@ -99,7 +99,7 @@ allows your session to be detached from the running terminal so you can re-conne
 laptop goes to sleep, the network drops or any other event that could sever the connection.
 You can even re-attach from a different computer.
 
-We have a reference page for `tmux`, [here](https://docs.nesi.org.nz/Getting_Started/Cheat_Sheets/tmux-Reference_sheet/)
+We have a [reference page for `tmux`](../Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md)
 
 !!! warning
      Once an interactive session starts, it will run for the entire requested

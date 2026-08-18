@@ -2,10 +2,7 @@
 created_at: '2023-03-06T19:04:56Z'
 tags:
 - biology
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6529511928207
-zendesk_section_id: 360000040076
+description: Automated gene structure annotation of genomes with BRAKER
 ---
 
 {% set app_name = page.title | trim %}

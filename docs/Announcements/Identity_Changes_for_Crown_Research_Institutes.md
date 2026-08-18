@@ -6,6 +6,7 @@ search:
 tags:
     - access
     - slurm
+description: What the merger of Crown Research Institutes into Public Research Organisations means for your account
 ---
 
 ## What is happening

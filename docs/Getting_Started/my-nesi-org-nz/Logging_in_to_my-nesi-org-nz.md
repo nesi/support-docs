@@ -6,8 +6,7 @@ tags:
 title: Logging in to my.nesi.org.nz
 vote_count: 2
 vote_sum: -2
-zendesk_article_id: 360003584515
-zendesk_section_id: 360001059296
+description: Logging in to my.nesi.org.nz through Tuakiri and fixing common login problems
 ---
 
 ## Login credentials

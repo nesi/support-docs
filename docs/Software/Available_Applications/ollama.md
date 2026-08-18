@@ -6,9 +6,9 @@ tags:
 ---
 
 
-{% set app = applications["ollama"] %}
-
-{{ app.description }}
+{% set app_name = "ollama" %}
+{% set app = applications[app_name] %}
+{% include "partials/app_header.html" %}
 
 For a list of available models, see [AI Models](../../Storage/Models.md).
 

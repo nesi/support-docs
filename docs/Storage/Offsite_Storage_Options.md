@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-27
-description: 
+description: A list of storage options offered by NZ universities, plus cloud storage providers, for storing data outside of Mahuika.
 tags:
 - storage
 ---

@@ -5,9 +5,7 @@ tags:
 - parallel
 - profiling
 vote_count: 2
-vote_sum: 0
-zendesk_article_id: 360001173875
-zendesk_section_id: 360000189716
+description: A worked MPI scaling test showing how to size a distributed memory job
 ---
 
 <!-- TODO review the scripts, it looks like there is a missing word after $ -->

@@ -2,9 +2,10 @@
 created_at: '2024-11-11T19:53:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.30.0
+title: my.nesi.org.nz Release Notes v2.30.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.30.0 - OnDemand and Freezer resources shown on projects
 ---
 
 ## New and Improved

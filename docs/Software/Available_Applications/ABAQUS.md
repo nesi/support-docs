@@ -5,6 +5,7 @@ tags:
 - gpu
 - mpi
 - openmp
+description: Running ABAQUS finite element analyses on the cluster and choosing a licence server
 ---
 
 {% set app_name = page.title | trim %}

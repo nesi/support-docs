@@ -2,6 +2,7 @@
 created_at: '2021-08-27T03:18:13Z'
 tags:
     - file_transfer
+description: What Globus is, when to reach for it, and the terms used across these pages
 ---
 
 !!! note
@@ -13,7 +14,7 @@ The following guide shows how to:
 
 * [How to set up Globus for the first time](./First_Time_Setup.md)
 * [How to add your computer to Globus (if you would like to transfer data to your computer)](./Add_Your_Computer_To_Globus.md)
-* [How to transfer data to/from Mahuika](./Data_Transfer_using_Globus.md)
+* [How to transfer data to/from Mahuika](./Data_Transfer_Using_Globus.md)
 * [How to transfer data between endpoints other than Mahuika](./Data_Transfer_Between_Personal_Endpoints.md)
 
 This page also contains other useful information on how to use Globus, including:

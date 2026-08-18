@@ -2,9 +2,10 @@
 created_at: '2026-03-25T09:00:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.50.0
+title: my.nesi.org.nz Release Notes v2.50.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.50.0 - allocation end dates aligned to the renewal cycle
 ---
 
 ## New and Improved

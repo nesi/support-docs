@@ -2,13 +2,10 @@
 created_at: '2022-06-14T04:34:29Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.10.0
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4970675865359
-zendesk_section_id: 360001091155
+title: my.nesi.org.nz Release Notes v2.10.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.10.0 - release notes in the UI and grant details on projects
 ---
 
 ## Release Update - 14. Jun 2022

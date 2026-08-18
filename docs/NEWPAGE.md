@@ -1,5 +1,5 @@
 ---
-title: Create a new page
+title: Create a New Page
 search:
   exclude: true
 ---
@@ -202,6 +202,9 @@ The following sections detail the most usual entries.
 | `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml) — see that file for the full list and aliases. | String[] | `tags: [ slurm, containers ]` |
 | `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
 | `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
+| `no_module: true` | Will disable linter warnings if corresponding module data is not found (applications pages only) | Bool | `True` `False` |
+
+A good description/tags improve RAG retrieval for the whole page.
 
 ### Zendesk Imported
 
@@ -285,11 +288,11 @@ A 'prerequisites' admonition, to point to the previous lesson.
 
 ```md
 !!! prerequisites
-    - [Link to Previous Page](../previous_page.md)
+    - [Link to Previous Page](CONTRIBUTING.md)
 ```
 
 !!! prerequisites
-    - [Link to Previous Page](../previous_page.md)
+    - [Link to Previous Page](FORMAT.md)
 
 ### Quiz
 
@@ -338,7 +341,7 @@ and answer the 'questions' posed in the objectives.
 Finally a `next` admonition pointing to the next page.
 
 !!! next
-    [Next Page](next_page.md)
+    [Next Page](NEWPAGE.md)
 
 ### Rule of Three
 

@@ -2,11 +2,7 @@
 created_at: '2015-12-13T20:47:26Z'
 tags:
 - chemistry
-title: NWChem
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 215680177
-zendesk_section_id: 360000040076
+description: Scalable computational chemistry from quantum to classical scales with NWChem
 ---
 
 {% set app_name = page.title | trim %}

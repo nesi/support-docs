@@ -2,13 +2,10 @@
 created_at: '2021-12-14T04:36:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.6.0
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 4411644471823
-zendesk_section_id: 360001091155
+title: my.nesi.org.nz Release Notes v2.6.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.6.0 - notification preferences introduced
 ---
 
 ## Release Update - 14. December 2021

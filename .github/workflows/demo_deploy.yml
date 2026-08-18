@@ -1,5 +1,5 @@
 name: Deploy PR branches
-on: 
+on:
   pull_request:
     branches-ignore: ["assets-update"]
 env:
@@ -11,16 +11,23 @@ env:
   HEAD: ${{ github.event.pull_request.head.ref }}
   GH_REPO: ${{ github.repository }}
   NO_MKDOCS_2_WARNING: "1"
-permissions: write-all
+permissions:
+  contents: read
+  pull-requests: write
+concurrency:
+  group: demo-deploy-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 jobs:
   demo-deploy:
     name: Trigger test deployments
     runs-on: ubuntu-24.04
     steps:
       - name: Trigger Workflow in Another Repository
+        id: trigger
         run: |
           set -x
-          curl -L \
+          echo "dispatch_time=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> "$GITHUB_OUTPUT"
+          curl -fsSL \
             -X POST \
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: Bearer ${{ secrets.PAT }}" \
@@ -31,34 +38,53 @@ jobs:
         id: comment
         run: |
           msg="Deployment in progress...<br><br>\
-          <img src='https://upload.wikimedia.org/wikipedia/commons/7/7a/Ajax_loader_metal_512.gif' width=20% \
-          alt='a cool spinny thing'><br><br>Waiting for test environment to finish building, please be patient ☺️"
+          <img src='https://c.tenor.com/tYyW3H6uO8oAAAAC/tenor.gif' width=20% \
+          alt='kakapo'><br><br>Waiting for test environment to finish building, please be patient ☺️"
           gh pr comment "${HEAD}" --edit-last --create-if-none --body "${msg}"
       - name: Wait for target workflow to complete
-        continue-on-error: true
         id: wait
+        env:
+          GH_TOKEN: ${{ secrets.PAT }}
+          TIMEOUT_SECONDS: 600
         run: |
-          echo "Polling for workflow completion..."
+          finish() {
+            echo "conclusion=$1" >> "$GITHUB_OUTPUT"
+            echo "completed_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> "$GITHUB_OUTPUT"
+          }
+
+          # Only consider runs created after we dispatched, so a stale
+          # already-completed run isn't mistaken for the one we just triggered.
+          echo "Looking for a run created after ${{ steps.trigger.outputs.dispatch_time }}..."
+          run_id=""
+          while [ -z "$run_id" ]; do
+            if [ "$SECONDS" -ge "$TIMEOUT_SECONDS" ]; then
+              echo "Timed out waiting for the run to appear."
+              finish "timed_out"
+              exit 0
+            fi
+            run_id=$(gh api -X GET "repos/${TARGET_OWNER}/${TARGET_REPO}/actions/workflows/${WORKFLOW_ID}/runs" \
+              -f "created=>${{ steps.trigger.outputs.dispatch_time }}" \
+              --jq '.workflow_runs[-1].id // empty')
+            [ -z "$run_id" ] && sleep 10
+          done
+          echo "Tracking run $run_id"
 
           while true; do
-            run_json=$(gh api \
-              repos/${TARGET_OWNER}/${TARGET_REPO}/actions/workflows/${WORKFLOW_ID}/runs \
-              --jq '.workflow_runs[0]')
-      
+            if [ "$SECONDS" -ge "$TIMEOUT_SECONDS" ]; then
+              echo "Timed out waiting for the run to complete."
+              finish "timed_out"
+              exit 0
+            fi
+            run_json=$(gh api "repos/${TARGET_OWNER}/${TARGET_REPO}/actions/runs/${run_id}")
             status=$(echo "$run_json" | jq -r '.status')
-            conclusion=$(echo "$run_json" | jq -r '.conclusion')
-      
             echo "Status: $status"
-      
             if [ "$status" = "completed" ]; then
-              echo "conclusion=$conclusion" >> $GITHUB_OUTPUT
-              echo "completed_at=$(date -u +"%Y-%m-%dT%H:%M:%SZ")" >> $GITHUB_OUTPUT
+              finish "$(echo "$run_json" | jq -r '.conclusion')"
               break
             fi
-      
             sleep 10
           done
-        
+
       - name: Post messages open requests
         run: |
             set -x
@@ -82,7 +108,7 @@ jobs:
                   msg="${msg}</ul>"
                   echo "::info title=Deploy Succeeded::${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}" 
               fi
-              msg="${msg}<br><br><em><a href="${DEPLOY_URL}">See all deployed demo sites</a></em>"
+              msg="${msg}<br><br><em><a href=\"${DEPLOY_URL}\">See all deployed demo sites</a></em>"
             else
               msg="Deployment failed (${conclusion})"
               echo "::error title=Deploy failed::${conclusion}" 

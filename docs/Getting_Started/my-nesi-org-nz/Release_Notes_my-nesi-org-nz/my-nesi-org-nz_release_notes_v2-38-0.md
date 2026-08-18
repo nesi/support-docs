@@ -2,9 +2,10 @@
 created_at: '2025-06-26T19:53:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.38.0
+title: my.nesi.org.nz Release Notes v2.38.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.38.0 - project pages show usage from the 2025 platforms
 ---
 
 ## New and Improved

@@ -2,9 +2,10 @@
 created_at: '2025-10-30T19:53:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.44.0
+title: my.nesi.org.nz Release Notes v2.44.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.44.0 - core system package updates for security
 ---
 
 ## New and Improved

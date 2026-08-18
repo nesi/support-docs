@@ -2,7 +2,7 @@
 created_at: '2025-12-23T07:00:00Z'
 tags:
     - file_transfer
-title: Globus CLI
+description: Transferring files with the Globus command line interface instead of the web app
 ---
 
 This page will describe the various step to how to use the Globus Command Line Interface (CLI).

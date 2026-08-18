@@ -2,14 +2,15 @@
 created_at: '2024-05-28T19:53:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.24.0
+title: my.nesi.org.nz Release Notes v2.24.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.24.0 - change to the new support desk platform
 ---
 
 ## New and Improved
 
-- Change to the new support desk platform. For more details, [visit this announcement page](https://docs.nesi.org.nz/General/Announcements/NeSI_Support_is_changing_tools/).  
+- Change to the new support desk platform.
 
 If you have any questions about any of the updates or fixes, please
 {% include "partials/support_request.html" %}.

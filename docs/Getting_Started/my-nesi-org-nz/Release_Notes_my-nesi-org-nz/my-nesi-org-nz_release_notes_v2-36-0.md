@@ -2,9 +2,10 @@
 created_at: '2025-05-09T19:53:24Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.36.0
+title: my.nesi.org.nz Release Notes v2.36.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.36.0 - Freezer allocations shown in project details
 ---
 
 ## New and Improved

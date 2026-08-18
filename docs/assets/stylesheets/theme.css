@@ -19,7 +19,7 @@
   --reannz-orange: rgb(241, 128, 0);
   --reannz-purple: rgb(132, 121, 183);
 
-[data-md-color-scheme="default"] {
+[data-md-color-scheme="default"] { /* original definitions of these colors here: https://github.com/squidfunk/mkdocs-material/blob/master/src/templates/assets/stylesheets/main/_colors.scss */
   --md-primary-fg-color: var(--reannz-blue--dark); /* head bar background color */
   --md-accent-fg-color: var(--reannz-blue); /* hover color for sidebar links */
   /* --md-accent-bg-color: var(--reannz-orange); */ /* cannot figure what this one does */
@@ -28,9 +28,12 @@
   /* --md-accent-fg-color--light: var(--reannz-orange); */ /* cannot figure what this one does */
   /* --md-default-fg-color: var(--reannz-orange); */ /* main text color, sub H1 headers too */
   /* --md-default-bg-color: var(--reannz-orange); */ /* main background color */
-  /* --md-code-fg-color: var(--reannz-orange); */ /* main color for code text */
-  /* --md-code-bg-color: var(--reannz-orange); */ /* main color for code background */
+  /* --md-code-fg-color: rgb(53,69,77); */ /* main color for code text */
+  --md-code-bg-color: #eef1f3; /* Material's default is a ~70%-opacity #f5f5f5, which barely reads against a white page; bump contrast a touch */
   /* --md-typeset-color: var(--reannz-orange); */ /* main text color, sub H1 headers too */
+  --chat-accent-color: var(--md-primary-fg-color); /* chat fab/bubble background */
+  --chat-accent-contrast-color: var(--md-primary-bg-color); /* chat fab/bubble text */
+  --chat-error-color: #c0392b;
 }
 
   /* --md-accent-bg-color:                rgb(210,227,235); */
@@ -47,6 +50,9 @@
   /* --md-code-bg-color: var(--reannz-orange); */ /* main color for code background */
   /* --md-typeset-color: var(--reannz-orange); */ /* main text color, sub H1 headers too */
   --md-typeset-a-color: rgb(0, 206, 255); /* sidebar active link color */
+  --chat-accent-color: var(--reannz-blue); /* chat fab/bubble background; the branded navy primary color is too close to the slate background to read as a floating bubble */
+  --chat-accent-contrast-color: var(--reannz-blue--dark); /* chat fab/bubble text */
+  --chat-error-color: #ff6b6b;
 
   .nt-card-image>img {
     filter: brightness(0) invert(1);
@@ -58,13 +64,21 @@
   --md-admonition-icon--time: url('data:image/svg+xml;charset=utf-8,<svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">  <path d="M 8.4571429,2.2857143 V 0 H 15.314286 V 2.2857143 Z M 10.742857,14.857143 h 2.285714 V 8 H 10.742857 Z M 11.885714,24 Q 9.7714286,24 7.9,23.185714 6.0285714,22.371429 4.6285714,20.971429 3.2285714,19.571429 2.4142857,17.7 1.6,15.828571 1.6,13.714286 1.6,11.6 2.4142857,9.7285714 3.2285714,7.8571429 4.6285714,6.4571429 q 1.4,-1.4 3.2714286,-2.2142858 1.8714286,-0.8142857 3.985714,-0.8142857 1.771429,0 3.4,0.5714286 1.628572,0.5714286 3.057143,1.6571429 l 1.6,-1.6 1.6,1.6 -1.6,1.6 Q 21.028571,8.6857143 21.6,10.314286 q 0.571429,1.628571 0.571429,3.4 0,2.114285 -0.814286,3.985714 -0.814286,1.871429 -2.214286,3.271429 -1.4,1.4 -3.271428,2.214285 Q 14,24 11.885714,24 Z m 0,-2.285714 q 3.314286,0 5.657143,-2.342857 2.342857,-2.342858 2.342857,-5.657143 0,-3.314286 -2.342857,-5.6571431 Q 15.2,5.7142857 11.885714,5.7142857 q -3.3142854,0 -5.6571426,2.3428572 Q 3.8857143,10.4 3.8857143,13.714286 q 0,3.314285 2.3428571,5.657143 2.3428572,2.342857 5.6571426,2.342857 z m 0,-8 z" style="stroke-width:0.0285714"/></svg>');
 }
 
+/* Give code blocks a visible edge so they read as distinct blocks
+   instead of blending into the page background (esp. in light mode) */
+.md-typeset pre>code {
+  border: 1px solid var(--md-default-fg-color--lightest);
+}
+
 /* e.g. inactive link text */
 .md-typeset a {
   color: var(--reannz-blue--shade-negative1);
+  text-decoration: underline;
 }
 
 .md-typeset a:hover {
   color: var(--reannz-blue);
+  text-decoration: underline;
 }
 
 [data-md-color-scheme="slate"] .md-typeset a:hover {
@@ -170,7 +184,6 @@ span.md-status.md-status--deprecated {
   cursor: default;
 }
 
-
 /* Make cards look right */
 .md-typeset .grid.cards {
   display: grid;
@@ -231,7 +244,6 @@ span.md-status.md-status--deprecated {
 [data-md-color-scheme="slate"] .grid.cards>a>p {
   color: var(--md-typeset-color);
 }
-
 
 /* Tutorial header */
 .tutorial-banner {
@@ -430,4 +442,11 @@ div.quiz-feedback {
 .force-wrap {
   text-wrap-mode: wrap;
   font-size: medium;
+}
+
+/* Centre images marked with {.center} */
+img.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

@@ -2,13 +2,10 @@
 created_at: '2022-12-13T21:40:10Z'
 tags:
 - release_notes
-title: my.nesi.org.nz release notes v2.14.0
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6042955367439
-zendesk_section_id: 360001091155
+title: my.nesi.org.nz Release Notes v2.14.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.14.0 - option to stop copying project members on requests
 ---
 
 ## Release Update - 17. January 2023

@@ -2,12 +2,9 @@
 created_at: '2024-02-26T19:55:24Z'
 tags:
 - release_notes
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 9108460666383
-zendesk_section_id: 360001091155
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.20.0 - handling projects whose research grant is not listed
 ---
 
 ## 28 February 2024
@@ -20,4 +17,4 @@ search:
  ability to enter multiple grants when choosing "Other".
 
 If you have any questions about any of the improvements or fixes,
-please [contact NeSI Support](mailto:support@nesi.org.nz).
+please {% include "partials/support_request.html" %}.

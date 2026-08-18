@@ -3,14 +3,12 @@
         "description": "Finite Element Analysis software for modeling, visualization and best-in-class implicit and explicit dynamics FEA.",
         "domains": [
             "engineering",
-            "gpu",
-            "mpi",
-            "openmp"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.simulia.com/products/abaqus_fea.html",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ABAQUS",
+        "support": "",
         "versions": [
             "2017",
             "2018",
@@ -49,7 +47,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.89,
+                        "hourly_average": 0.86,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -63,7 +61,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.51,
+                        "hourly_average": 0.44,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -374,13 +372,12 @@
         "domains": [
             "biology",
             "chemistry",
-            "gpu",
-            "machine_learning"
+            "gpu"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/deepmind/alphafold",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/AlphaFold",
+        "support": "",
         "versions": [
             "2.3.2",
             "3.0.0",
@@ -627,22 +624,15 @@
         "description": "A bundle of computer-aided engineering software including Fluent and CFX.",
         "domains": [
             "engineering",
-            "visualisation",
-            "earth_science"
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.ansys.com",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ANSYS",
+        "support": "",
         "versions": [
-            "19.1",
             "19.2",
-            "2019R3",
-            "2020R1",
-            "2020R2",
             "2021R2",
-            "2022R1",
-            "2022R2",
             "2023R1",
             "2023R2",
             "2024R2",
@@ -650,13 +640,13 @@
         ],
         "admin_list": [
             {
-                "19.1": "ANSYS/19.1 is deprecated and will be removed Jan 2023.Please change your scripts to use ANSYS/19.2 for long term support."
+                "2022R1": "ANSYS/2023R1 is deprecated and will be removed Jan 2026.Please change your scripts to use ANSYS/2024R2 for long term support."
             },
             {
-                "2020R1": "ANSYS/2020R1 is deprecated and will be removed Jan 2023.Please change your scripts to use ANSYS/2020R2 for long term support."
+                "2021R1": "ANSYS/2021R1 is deprecated and will be removed Jan 2025.Please change your scripts to use ANSYS/2024R2 for long term support."
             },
             {
-                "2022R1": "ANSYS/2022R1 is deprecated and will be removed Jan 2025.Please change your scripts to use ANSYS/2022R2 for longer term support."
+                "2022R2": "ANSYS/2022R2 is deprecated and will be removed Jan 2025.Please change your scripts to use ANSYS/2024R2 for longer term support."
             }
         ],
         "network_licences": [
@@ -694,7 +684,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.98,
+                "server_uptime": 0.97,
                 "server_version": "",
                 "features": [
                     {
@@ -1035,13 +1025,11 @@
     },
     "Apptainer": {
         "description": "",
-        "domains": [
-            "containers"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Apptainer",
+        "support": "",
         "versions": [
             "1.1.8",
             "1.1.9",
@@ -1479,6 +1467,33 @@
         "last_updated": 1773887176,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/Avogadro2/1.97.0-linux-x86_64.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "awscli": {
+        "description": "Universal Command Line Environment for AWS",
+        "domains": [],
+        "extensions": [
+            "awscli-2.36.14",
+            "awscrt-0.36.0",
+            "colorama-0.4.6",
+            "distro-1.8.0",
+            "ruamel.yaml-0.19.1",
+            "ruamel.yaml.clib-0.2.15"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/aws/aws-cli/",
+        "support": "",
+        "versions": [
+            "2.36.14-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.36.14-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786052902,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/awscli/2.36.14-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -1958,17 +1973,18 @@
         "versions": [
             "0.1.1-r16-GCC-11.3.0",
             "0.1.1-r16-GCC-12.3.0",
+            "0.1.1-r16-foss-2026",
             "0.1.1-r16-intel-2020a",
             "0.1.1-r16-intel-2022a",
             "0.1.1-r16-iofbf-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.1.1-r16-iofbf-2026",
+        "default": "0.1.1-r16-foss-2026",
         "default_type": "latest",
-        "last_updated": 1779857577,
+        "last_updated": 1786513331,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/BEEF/0.1.1-r16-iofbf-2026.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/BEEF/0.1.1-r16-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2239,6 +2255,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "bitsandbytes": {
+        "description": "bitsandbytes enables accessible large language models via k-bit quantization for PyTorch.\n\nThis build ships both the CUDA and the CPU native library, so the module works on GPU nodes\nand on nodes without a usable GPU. Note that it still depends on a CUDA-enabled PyTorch; if\nyou need a genuinely CUDA-free stack, build a separate easyconfig with COMPUTE_BACKEND=cpu,\nno CUDA dependency and no versionsuffix.",
+        "domains": [],
+        "extensions": [
+            "bitsandbytes-0.50.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://huggingface.co/docs/bitsandbytes/main/en/index",
+        "support": "",
+        "versions": [
+            "0.50.0-foss-2026-CUDA-13.2.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.50.0-foss-2026-CUDA-13.2.1",
+        "default_type": "latest",
+        "last_updated": 1786047845,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/bitsandbytes/0.50.0-foss-2026-CUDA-13.2.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "BLAST": {
         "description": "Basic Local Alignment Search Tool, or BLAST, is an algorithm\n for comparing primary biological sequence information, such as the amino-acid\n sequences of different proteins or the nucleotides of DNA sequences.",
         "domains": [
@@ -2247,7 +2285,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://blast.ncbi.nlm.nih.gov/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/BLAST",
+        "support": "",
         "versions": [
             "2.10.0-GCC-9.2.0",
             "2.12.0-GCC-9.2.0",
@@ -2280,7 +2318,8 @@
         "versions": [
             "2025-08",
             "2026-01",
-            "2026-04"
+            "2026-04",
+            "2026-08"
         ],
         "admin_list": [
             {
@@ -2288,11 +2327,11 @@
             }
         ],
         "network_licences": [],
-        "default": "2026-01",
+        "default": "2026-08",
         "default_type": "latest",
-        "last_updated": 1768561678,
+        "last_updated": 1785801827,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/lmod/generic/BLASTDB/2026-01.lua",
+        "module_path": "/opt/nesi/lmod/generic/BLASTDB/2026-08.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2414,6 +2453,51 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Boost.Python-NumPy": {
+        "description": "Boost.Python is a C++ library which enables seamless interoperability between C++\n and the Python programming language.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://boostorg.github.io/python",
+        "support": "",
+        "versions": [
+            "1.91.0-gfbf-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.91.0-gfbf-2026",
+        "default_type": "latest",
+        "last_updated": 1786049870,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Boost.Python-NumPy/1.91.0-gfbf-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "boto3": {
+        "description": "Boto3 is the Amazon Web Services (AWS) Software Development Kit\n(SDK) for Python, which allows Python developers to write software that makes\nuse of services like Amazon S3 and Amazon EC2.",
+        "domains": [],
+        "extensions": [
+            "boto3-1.43.62",
+            "botocore-1.43.62",
+            "jmespath-1.1.0",
+            "s3transfer-0.19.2"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/boto/boto3",
+        "support": "",
+        "versions": [
+            "1.43.62-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.43.62-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786052394,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/boto3/1.43.62-GCCcore-15.2.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Bowtie": {
         "description": "Ultrafast, memory-efficient short read aligner.",
         "domains": [
@@ -2506,7 +2590,7 @@
         ],
         "licence_type": "",
         "homepage": "https://github.com/Gaius-Augustus/BRAKER",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/BRAKER",
+        "support": "",
         "versions": [
             "2.1.6-gimkl-2022a-Perl-5.34.1",
             "3.0.2-gimkl-2022a-Perl-5.34.1",
@@ -2760,6 +2844,26 @@
         "last_updated": 1740132628,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CapnProto/1.0.2-GCC-12.3.0.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Catch2": {
+        "description": "A modern, C++-native, header-only,\n test framework for unit-tests, TDD and BDD\n - using C++11, C++14, C++17 and later",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/catchorg/Catch2",
+        "support": "",
+        "versions": [
+            "3.15.3-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.15.3-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786048389,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Catch2/3.15.3-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3208,7 +3312,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/HKU-BAL/Clair3",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Clair3",
+        "support": "",
         "versions": [
             "0.1.12-Miniconda3",
             "1.0.0-Miniconda3",
@@ -3420,13 +3524,12 @@
         "domains": [
             "chemistry",
             "engineering",
-            "physics",
-            "earth_science"
+            "physics"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.comsol.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/COMSOL",
+        "support": "",
         "versions": [
             "5.3",
             "5.4",
@@ -3455,7 +3558,7 @@
                 "server": "COMSOL@uoa_physics",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.98,
+                "server_uptime": 1.0,
                 "server_version": "11.16.2",
                 "features": [
                     {
@@ -3497,7 +3600,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.84,
+                        "hourly_average": 0.83,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -3565,7 +3668,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.91,
+                        "hourly_average": 0.9,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
@@ -3599,7 +3702,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.68,
+                        "hourly_average": 0.72,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
@@ -3667,12 +3770,12 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.53,
+                        "hourly_average": 0.56,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 5,
+                        "total": 10,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.3",
                         "visible_on_docs": true
@@ -3715,6 +3818,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "CoordgenLibs": {
+        "description": "Schrodinger-developed 2D Coordinate Generation",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/schrodinger/coordgenlibs",
+        "support": "",
+        "versions": [
+            "3.0.2-gompi-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.0.2-gompi-2026",
+        "default_type": "latest",
+        "last_updated": 1786048548,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/CoordgenLibs/3.0.2-gompi-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "CoverM": {
         "description": "DNA read coverage and relative abundance calculator focused on metagenomics applications",
         "domains": [
@@ -3746,7 +3869,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.cp2k.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/CP2K",
+        "support": "",
         "versions": [
             "2023.1-foss-2023a",
             "2025.2-foss-2023a",
@@ -4034,17 +4157,18 @@
             "12.4.1",
             "12.5.0",
             "12.6.3",
+            "13.2.1",
             "8.0.61",
             "9.0.176",
             "9.1.85"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "12.6.3",
+        "default": "13.2.1",
         "default_type": "latest",
-        "last_updated": 1747602667,
+        "last_updated": 1785120706,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CUDA/12.6.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CUDA/13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4070,6 +4194,7 @@
             "8.8.0.121-CUDA-12.0.0",
             "8.9.7.29-CUDA-12.2.2",
             "8.9.7.29-CUDA-12.3.0",
+            "9.24.0.43-CUDA-13.2.1",
             "9.3.0.75-CUDA-12.5.0",
             "9.5.1.17-CUDA-12.6.3"
         ],
@@ -4567,7 +4692,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://oss.deltares.nl/web/delft3d",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Delft3D",
+        "support": "",
         "versions": [
             "141732-intel-2022a",
             "64418-intel-2022a",
@@ -4687,15 +4812,16 @@
         "versions": [
             "3.5.0-foss-2023a",
             "3.5.0-intel-2022a",
-            "3.7.0-foss-2023a"
+            "3.7.0-foss-2023a",
+            "3.7.0-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.7.0-foss-2023a",
+        "default": "3.7.0-foss-2026",
         "default_type": "latest",
-        "last_updated": 1753325240,
+        "last_updated": 1786513449,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DFT-D4/3.7.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DFT-D4/3.7.0-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -4741,7 +4867,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nanoporetech.com/products/minit",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Dorado",
+        "support": "",
         "versions": [
             "0.3.2",
             "0.3.4",
@@ -5128,7 +5254,7 @@
         "network_licences": [],
         "default": "2025.06",
         "default_type": "latest",
-        "last_updated": 1779521581,
+        "last_updated": 1785446377,
         "modulefile_text": "",
         "module_path": "/opt/nesi/lmod/generic/EESSI/2025.06.lua",
         "force_hide": "False",
@@ -5140,22 +5266,23 @@
             "biology"
         ],
         "extensions": [
-            "XlsxWriter-3.1.8"
+            "xlsxwriter-3.2.9"
         ],
         "licence_type": "",
         "homepage": "http://eggnog-mapper.embl.de",
         "support": "",
         "versions": [
             "2.0.1b-gimkl-2020a-Python-2.7.18",
-            "2.1.12-gimkl-2022a"
+            "2.1.12-gimkl-2022a",
+            "2.1.14-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.12-gimkl-2022a",
+        "default": "2.1.14-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1786664140,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/eggnog-mapper/2.1.12-gimkl-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/eggnog-mapper/2.1.14-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5897,7 +6024,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://pages.nist.gov/fds-smv/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FDS",
+        "support": "",
         "versions": [
             "6.7.9-intel-2022a"
         ],
@@ -6225,14 +6352,11 @@
     },
     "FlexiBLAS": {
         "description": "FlexiBLAS is a wrapper library that enables the exchange of the BLAS and LAPACK implementation\nused by a program without recompiling or relinking it.",
-        "domains": [
-            "software",
-            "parallel"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://gitlab.mpi-magdeburg.mpg.de/software/flexiblas-release",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FlexiBLAS",
+        "support": "",
         "versions": [
             "3.1.3-GCC-11.3.0",
             "3.3.1-GCC-12.3.0",
@@ -6468,7 +6592,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://surfer.nmr.mgh.harvard.edu/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/FreeSurfer",
+        "support": "",
         "versions": [
             "7.2.0-centos7_x86_64"
         ],
@@ -6628,7 +6752,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.broadinstitute.org/gatk/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/GATK",
+        "support": "",
         "versions": [
             "3.5-Java-1.8.0_144",
             "3.5-Java-15.0.2",
@@ -6662,7 +6786,7 @@
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Gaussian",
+        "support": "",
         "versions": [
             "09-D.01"
         ],
@@ -7383,15 +7507,16 @@
         "homepage": "https://www.gnu.org/software/glpk/",
         "support": "",
         "versions": [
-            "5.0-GCCcore-12.3.0"
+            "5.0-GCCcore-12.3.0",
+            "5.0-GCCcore-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.0-GCCcore-12.3.0",
+        "default": "5.0-GCCcore-15.2.0",
         "default_type": "latest",
-        "last_updated": 1777582257,
+        "last_updated": 1786685495,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/GLPK/5.0-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/GLPK/5.0-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -7777,7 +7902,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.gromacs.org",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/GROMACS",
+        "support": "",
         "versions": [
             "2020.4-gimkl-2020a-cuda-11.3.1-hybrid-PLUMED-2.6.2",
             "2020.5-intel-2020a-cuda-11.0.2-hybrid",
@@ -8439,6 +8564,38 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "Hydra": {
+        "description": "Hydra is an open-source Python framework that simplifies the development of\nresearch and other complex applications. The key feature is the ability to\ndynamically create a hierarchical configuration by composition and override it\nthrough config files and the command line. The name Hydra comes from its\nability to run multiple similar jobs - much like a Hydra with multiple heads.",
+        "domains": [],
+        "extensions": [
+            "alembic-1.18.5",
+            "antlr4-python3-runtime-4.9.3",
+            "cmaes-0.13.0",
+            "colorlog-6.12.0",
+            "hydra-core-1.3.4",
+            "hydra-optuna-sweeper-1.4.0.dev7",
+            "hydra-submitit-launcher-1.2.0",
+            "omegaconf-2.3.1",
+            "optuna-4.9.0",
+            "read_version-0.3.2",
+            "submitit-1.5.4"
+        ],
+        "licence_type": "",
+        "homepage": "https://hydra.cc/",
+        "support": "",
+        "versions": [
+            "1.3.4-foss-2026-with-plugins"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.3.4-foss-2026-with-plugins",
+        "default_type": "latest",
+        "last_updated": 1786048146,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Hydra/1.3.4-foss-2026-with-plugins.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "Hypre": {
         "description": "Hypre is a library for solving large, sparse linear systems of equations on massively\n parallel computers. The problems of interest arise in the simulation codes being developed at LLNL\n and elsewhere to study physical phenomena in the defense, environmental, energy, and biological sciences.",
         "domains": [],
@@ -8816,15 +8973,32 @@
             "5.62-94.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
             "5.63-95.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
             "5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
-            "5.66-98.0-gimkl-2022aPerl-5.34.1-Python-3.11.3"
+            "5.66-98.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
+            "5.78-109.0-foss-2026-Perl-5.42.1-Python-3.14.4"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "5.51-85.0-gimkl-2020a-Perl-5.30.1-Python-3.8.2": "Warning: InterProScan/5.51-85.0-gimkl-2020a-Perl-5.30.1-Python-3.8.2 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.61-93.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.61-93.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.62-94.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.62-94.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.63-95.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.63-95.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3": "Warning: InterProScan/5.64-96.0-gimkl-2022aPerl-5.34.1-Python-3.11.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            }
+        ],
         "network_licences": [],
-        "default": "5.66-98.0-gimkl-2022aPerl-5.34.1-Python-3.11.3",
+        "default": "5.78-109.0-foss-2026-Perl-5.42.1-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1786672768,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/InterProScan/5.66-98.0-gimkl-2022aPerl-5.34.1-Python-3.11.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/InterProScan/5.78-109.0-foss-2026-Perl-5.42.1-Python-3.14.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8873,8 +9047,7 @@
     "ipyrad": {
         "description": "ipyrad is an interactive toolkit for assembly and analysis of restriction-site associated genomic\n data sets (e.g., RAD, ddRAD, GBS) for population genetic and phylogenetic studies.",
         "domains": [
-            "biology",
-            "python"
+            "biology"
         ],
         "extensions": [
             "cython-3.2.4",
@@ -8897,7 +9070,7 @@
         ],
         "licence_type": "",
         "homepage": "https://ipyrad.readthedocs.io",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ipyrad",
+        "support": "",
         "versions": [
             "0.9.102-gimkl-2022a-Python-3.10.5",
             "0.9.85-gimkl-2022a-Python-3.10.5"
@@ -9038,13 +9211,12 @@
     "Java": {
         "description": "Java Platform, Standard Edition (Java SE) lets you develop and deploy\n Java applications on desktops and servers.",
         "domains": [
-            "language",
-            "software"
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "http://java.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Java",
+        "support": "",
         "versions": [
             "1.7.0_51",
             "1.8.0_144",
@@ -9201,15 +9373,16 @@
         "homepage": "https://github.com/jacobwilliams/json-fortran",
         "support": "",
         "versions": [
-            "9.0.2-GCC-12.3.0"
+            "9.0.2-GCC-12.3.0",
+            "9.3.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "9.0.2-GCC-12.3.0",
+        "default": "9.3.1-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1753397850,
+        "last_updated": 1786513542,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.0.2-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.3.1-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9236,13 +9409,12 @@
     "Julia": {
         "description": "A high-level, high-performance dynamic language for technical computing.\n\nThis version was compiled from source with USE_INTEL_JITEVENTS=1 to enable profiling with VTune.",
         "domains": [
-            "language",
-            "julia"
+            "language"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://julialang.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Julia",
+        "support": "",
         "versions": [
             "1.11.3-GCC-12.3.0-VTune",
             "1.2.0-gimkl-2018b-VTune",
@@ -9450,6 +9622,26 @@
         "last_updated": 1740132630,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Kaiju/1.8.2-gimkl-2020a-Python-3.9.9-Perl-5.30.1-mt.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "Kalign": {
+        "description": "Kalign is a fast multiple sequence alignment program for biological sequences.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/TimoLassmann/kalign",
+        "support": "",
+        "versions": [
+            "3.5.1-GCCcore-15.2.0"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.5.1-GCCcore-15.2.0",
+        "default_type": "latest",
+        "last_updated": 1786048604,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Kalign/3.5.1-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9779,7 +9971,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://lammps.sandia.gov/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/LAMMPS",
+        "support": "",
         "versions": [
             "22Jul2025-foss-2023a-kokkos",
             "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
@@ -10023,15 +10215,16 @@
             "11.8.0",
             "12.2.2",
             "12.5.0",
-            "12.6.3"
+            "12.6.3",
+            "13.2.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "12.6.3",
+        "default": "13.2.1",
         "default_type": "latest",
-        "last_updated": 1777175489,
+        "last_updated": 1786945593,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/libcuda-stub/12.6.3.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libcuda-stub/13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -10853,6 +11046,7 @@
         "support": "",
         "versions": [
             "2.11.4-GCCcore-12.3.0",
+            "2.11.4-GCCcore-15.2.0",
             "2.9.10-GCCcore-11.3.0",
             "2.9.10-GCCcore-9.2.0",
             "2.9.4-gimkl-2018b",
@@ -10860,11 +11054,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.11.4-GCCcore-12.3.0",
+        "default": "2.11.4-GCCcore-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1786685254,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libxml2/2.11.4-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libxml2/2.11.4-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11330,6 +11524,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "maeparser": {
+        "description": "maeparser is a parser for Schrodinger Maestro files.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/schrodinger/maeparser",
+        "support": "",
+        "versions": [
+            "1.3.3-gompi-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.3.3-gompi-2026",
+        "default_type": "latest",
+        "last_updated": 1786048457,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/maeparser/1.3.3-gompi-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "maf_stream": {
         "description": "Collection of utilities to manipulate multiple alignments in the Multiple Alignment Format",
         "domains": [
@@ -11388,15 +11602,16 @@
         "homepage": "https://icl.cs.utk.edu/magma/",
         "support": "",
         "versions": [
+            "2.10.0-foss-2026-CUDA-13.2.1",
             "2.7.1-gimkl-2022a-CUDA-11.6.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.7.1-gimkl-2022a-CUDA-11.6.2",
+        "default": "2.10.0-foss-2026-CUDA-13.2.1",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1785799084,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/magma/2.7.1-gimkl-2022a-CUDA-11.6.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/magma/2.10.0-foss-2026-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11408,7 +11623,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www.yandell-lab.org/software/maker.html",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/MAKER",
+        "support": "",
         "versions": [
             "2.31.9-gimkl-2018b",
             "2.31.9-gimkl-2020a"
@@ -11636,15 +11851,13 @@
             "engineering",
             "gpu",
             "mathematics",
-            "visualisation",
-            "machine_learning"
+            "visualisation"
         ],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.mathworks.com/products/matlab",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/MATLAB",
+        "support": "",
         "versions": [
-            "2017b",
             "2018b",
             "2019b",
             "2020b",
@@ -11834,7 +12047,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 1.0,
+                "server_uptime": 0.99,
                 "server_version": "",
                 "features": []
             },
@@ -12004,7 +12217,6 @@
         "homepage": "http://www.mathworks.com/products/compiler/mcr.html",
         "support": "",
         "versions": [
-            "2016b",
             "2020b",
             "2021a",
             "2021b",
@@ -12047,15 +12259,16 @@
         "homepage": "https://grimme-lab.github.io/mctc-lib",
         "support": "",
         "versions": [
-            "0.3.1-GCC-12.3.0"
+            "0.3.1-GCC-12.3.0",
+            "0.5.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.3.1-GCC-12.3.0",
+        "default": "0.5.1-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1753397876,
+        "last_updated": 1786573586,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.3.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.5.1-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12067,15 +12280,16 @@
         "homepage": "https://github.com/MolSSI-MDI/MDI_Library",
         "support": "",
         "versions": [
-            "1.4.26-foss-2023a-Python-3.11.6"
+            "1.4.26-foss-2023a-Python-3.11.6",
+            "1.4.40-foss-2026-Python-3.14.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.4.26-foss-2023a-Python-3.11.6",
+        "default": "1.4.40-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1764018673,
+        "last_updated": 1786998898,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/MDI/1.4.26-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MDI/1.4.40-foss-2026-Python-3.14.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12639,14 +12853,11 @@
     },
     "Miniforge3": {
         "description": "Community-led recipes, infrastructure and distributions for conda.",
-        "domains": [
-            "python",
-            "software"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://conda-forge.org",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Miniforge3",
+        "support": "",
         "versions": [
             "24.3.0-0",
             "25.3.0-3",
@@ -12888,15 +13099,16 @@
             "12-113e3-gimkl-2020a",
             "13-45111-gimpi-2020a",
             "14-7e284-gimpi-2022a",
-            "15-6f452-gompi-2023a"
+            "15-6f452-gompi-2023a",
+            "18-8cc5c-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "15-6f452-gompi-2023a",
+        "default": "18-8cc5c-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1786664025,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/MMseqs2/15-6f452-gompi-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/MMseqs2/18-8cc5c-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -13008,7 +13220,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://molpro.net",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Molpro",
+        "support": "",
         "versions": [
             "mpp-2019.2.2.linux_x86_64_openmp"
         ],
@@ -13715,17 +13927,18 @@
             "2.16.5-GCCcore-11.3.0-CUDA-11.8.0",
             "2.17.1-CUDA-12.0.0",
             "2.27.7-GCCcore-12.3.0-CUDA-12.2.2",
+            "2.30.7-GCCcore-15.2.0-CUDA-13.2.1",
             "2.4.7-CUDA-10.1.243",
             "2.6.4-CUDA-10.2.89",
             "2.7.8-CUDA-11.0.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.27.7-GCCcore-12.3.0-CUDA-12.2.2",
+        "default": "2.30.7-GCCcore-15.2.0-CUDA-13.2.1",
         "default_type": "latest",
-        "last_updated": 1762394051,
+        "last_updated": 1786997226,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/NCCL/2.27.7-GCCcore-12.3.0-CUDA-12.2.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/NCCL/2.30.7-GCCcore-15.2.0-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14055,13 +14268,12 @@
     "Nextflow": {
         "description": "Nextflow is a reactive workflow framework and a programming DSL\n that eases writing computational pipelines with complex data",
         "domains": [
-            "workflow_management",
-            "workflow"
+            "workflow_management"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.nextflow.io/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Nextflow",
+        "support": "",
         "versions": [
             "19.04.0",
             "21.04.3",
@@ -14591,7 +14803,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nwchemgit.github.io/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/NWChem",
+        "support": "",
         "versions": [
             "6.8.1.revision133-gimkl-2018b-2018-06-14-Python-2.7.16"
         ],
@@ -14658,7 +14870,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://nanoporetech.com/products/minit",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ont-guppy-gpu",
+        "support": "",
         "versions": [
             "6.0.1",
             "6.2.1",
@@ -14776,13 +14988,12 @@
         "description": "OpenFOAM is a free, open source CFD software package.\n OpenFOAM has an extensive range of features to solve anything from complex fluid flows\n involving chemical reactions, turbulence and heat transfer,\n to solid dynamics and electromagnetics.",
         "domains": [
             "chemistry",
-            "engineering",
-            "earth_science"
+            "engineering"
         ],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.openfoam.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/OpenFOAM",
+        "support": "",
         "versions": [
             "10-gimkl-2022a",
             "2.4.0-gimkl-2018b",
@@ -14811,6 +15022,47 @@
         "last_updated": 1740132632,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/OpenFOAM/v2212-gimkl-2022a-noParaview.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "OpenFold3": {
+        "description": "A fully open source biomolecular structure prediction model based on AlphaFold3",
+        "domains": [],
+        "extensions": [
+            "absl-py-2.5.0",
+            "biotite-1.7.1",
+            "biotraj-1.2.2",
+            "deepspeed-0.19.3",
+            "einops-0.8.2",
+            "func-timeout-4.3.5",
+            "gemmi-0.7.5",
+            "hjson-3.1.0",
+            "ijson-3.5.1",
+            "kalign-python-3.6.0",
+            "lmdb-2.3.0",
+            "memory-profiler-0.61.0",
+            "ml-collections-1.1.0",
+            "nanobind-2.13.0",
+            "OpenFold3-0.4.4",
+            "patch-ng-1.19.1",
+            "pdbeccdutils-1.0.4",
+            "py-cpuinfo-9.0.0",
+            "sentry-sdk-2.66.1",
+            "wandb-0.28.1"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/aqlaboratory/openfold-3",
+        "support": "",
+        "versions": [
+            "0.4.4-foss-2026-CUDA-13.2.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.4.4-foss-2026-CUDA-13.2.1",
+        "default_type": "latest",
+        "last_updated": 1786677391,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/OpenFold3/0.4.4-foss-2026-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14909,7 +15161,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://opensees.berkeley.edu",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/OpenSees",
+        "support": "",
         "versions": [
             "20220411-gimkl-2020a",
             "3.2.0-gimkl-2020a",
@@ -15003,7 +15255,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://orcaforum.kofo.mpg.de",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ORCA",
+        "support": "",
         "versions": [
             "5.0.3-OpenMPI-4.1.1",
             "5.0.4-OpenMPI-4.1.5",
@@ -15014,7 +15266,7 @@
         "network_licences": [],
         "default": "6.1.0-f.0-OpenMPI-4.1.5",
         "default_type": "latest",
-        "last_updated": 1753225313,
+        "last_updated": 1786486043,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/ORCA/6.1.0-f.0-OpenMPI-4.1.5.lua",
         "force_hide": "False",
@@ -15401,7 +15653,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://www.paraview.org",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/ParaView",
+        "support": "",
         "versions": [
             "5.4.1-gimkl-2018b-Python-2.7.16",
             "5.4.1-gimpi-2018b",
@@ -16472,6 +16724,7 @@
         "support": "",
         "versions": [
             "2.10.0-foss-2023a",
+            "2.10.0-foss-2026",
             "2.6.2-gimkl-2020a",
             "2.7.2-intel-2022a",
             "2.8.0-gimkl-2022a",
@@ -16479,11 +16732,11 @@
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.10.0-foss-2023a",
+        "default": "2.10.0-foss-2026",
         "default_type": "latest",
-        "last_updated": 1761086482,
+        "last_updated": 1786998727,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/PLUMED/2.10.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PLUMED/2.10.0-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -17371,7 +17624,7 @@
         ],
         "licence_type": "",
         "homepage": "http://python.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Python",
+        "support": "",
         "versions": [
             "2.7.16-gimkl-2018b",
             "2.7.18-gimkl-2020a",
@@ -17471,21 +17724,48 @@
             "gpu"
         ],
         "extensions": [
-            "skorch-0.12.1"
+            "skorch-1.4.0",
+            "triton-3.7.1"
         ],
         "licence_type": "",
         "homepage": "https://pytorch.org/",
         "support": "",
         "versions": [
-            "1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2"
+            "1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2",
+            "2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2",
+        "default": "2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1785965820,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PyTorch/1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PyTorch/2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "PyTorch-Lightning": {
+        "description": "PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers.",
+        "domains": [],
+        "extensions": [
+            "jsonargparse-4.50.0",
+            "lightning-utilities-0.15.3",
+            "pytorch-lightning-2.6.5",
+            "torchmetrics-1.9.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://pytorchlightning.ai",
+        "support": "",
+        "versions": [
+            "2.6.5-foss-2026-Python-3.14.4-CUDA-13.2.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.6.5-foss-2026-Python-3.14.4-CUDA-13.2.1",
+        "default_type": "latest",
+        "last_updated": 1786048305,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/PyTorch-Lightning/2.6.5-foss-2026-Python-3.14.4-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -17672,8 +17952,7 @@
             "data_analytics",
             "language",
             "machine_learning",
-            "visualisation",
-            "r"
+            "visualisation"
         ],
         "extensions": [
             "abind-1.4-8",
@@ -18207,7 +18486,7 @@
         ],
         "licence_type": "",
         "homepage": "http://www.r-project.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/R",
+        "support": "",
         "versions": [
             "3.5.3-gimkl-2018b",
             "3.6.1-gimkl-2018b",
@@ -18901,7 +19180,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/stamatak/standard-RAxML",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/RAxML",
+        "support": "",
         "versions": [
             "8.2.12-gimkl-2020a",
             "8.2.12-gimkl-2022a"
@@ -18980,6 +19259,26 @@
         "last_updated": 1740132633,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Rcorrector/1.0.4-gimkl-2020a.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "RDKit": {
+        "description": "RDKit is a collection of cheminformatics and machine-learning software written in C++ and Python.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://www.rdkit.org",
+        "support": "",
+        "versions": [
+            "2025.09.6-foss-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2025.09.6-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1786051845,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/RDKit/2025.09.6-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -19077,7 +19376,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://www2.mrc-lmb.cam.ac.uk/relion/index.php/Main_Page",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Relion",
+        "support": "",
         "versions": [
             "4.0.1-gimkl-2020a"
         ],
@@ -19514,15 +19813,16 @@
         "support": "",
         "versions": [
             "2024.04.2-764",
-            "2024.12.1-563"
+            "2024.12.1-563",
+            "2026.07.1-147"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2024.12.1-563",
+        "default": "2026.07.1-147",
         "default_type": "latest",
-        "last_updated": 1741245527,
+        "last_updated": 1786492387,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/RStudio-Server/2024.12.1-563.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/RStudio-Server/2026.07.1-147.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20753,7 +21053,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://pcingola.github.io/SnpEff/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/snpEff",
+        "support": "",
         "versions": [
             "4.2",
             "5.0-Java-11.0.4",
@@ -21336,7 +21636,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "https://support.10xgenomics.com/de-novo-assembly/software/overview/latest/welcome",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Supernova",
+        "support": "",
         "versions": [
             "2.1.1"
         ],
@@ -21501,15 +21801,16 @@
             "2020.3-GCC-11.3.0",
             "2020.3-GCCcore-9.2.0",
             "2021.13.0-GCC-12.3.0",
-            "2021.5.0-GCC-11.3.0"
+            "2021.5.0-GCC-11.3.0",
+            "2023.1.0-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2021.13.0-GCC-12.3.0",
+        "default": "2023.1.0-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1787000200,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/tbb/2021.13.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/tbb/2023.1.0-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -21580,6 +21881,28 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "tensorboardX": {
+        "description": "Tensorboard for PyTorch.",
+        "domains": [],
+        "extensions": [
+            "tensorboardx-2.6.5"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/lanpa/tensorboardX",
+        "support": "",
+        "versions": [
+            "2.6.5-foss-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.6.5-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1786047890,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/tensorboardX/2.6.5-foss-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "TensorFlow": {
         "description": "An open-source software library for Machine Intelligence",
         "domains": [
@@ -21613,7 +21936,7 @@
         ],
         "licence_type": "",
         "homepage": "https://www.tensorflow.org/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/TensorFlow",
+        "support": "",
         "versions": [
             "2.0.1-gimkl-2018b-Python-3.8.1",
             "2.13.0-gimkl-2022a-Python-3.11.3",
@@ -21955,7 +22278,7 @@
         "extensions": [],
         "licence_type": "",
         "homepage": "http://trinityrnaseq.github.io",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/Trinity",
+        "support": "",
         "versions": [
             "2.11.0-gimkl-2020a",
             "2.13.2-gimkl-2020a",
@@ -22083,15 +22406,11 @@
     },
     "TUFLOW": {
         "description": "Hydraulic modelling software for flood, urban drainage, estuarine and coastal assessments.",
-        "domains": [
-            "hydrodynamics",
-            "flood modelling",
-            "hydraulics"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "https://www.tuflow.com/",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/TUFLOW",
+        "support": "",
         "versions": [
             "2026.0"
         ],
@@ -22227,15 +22546,16 @@
         "support": "",
         "versions": [
             "1.3.0-GCCcore-11.3.0-CUDA-11.8.0",
-            "1.3.0-GCCcore-12.3.0-CUDA-12.2.2"
+            "1.3.0-GCCcore-12.3.0-CUDA-12.2.2",
+            "1.7.0-GCCcore-15.2.0-CUDA-13.2.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.3.0-GCCcore-11.3.0-CUDA-11.8.0",
+        "default": "1.7.0-GCCcore-15.2.0-CUDA-13.2.1",
         "default_type": "latest",
-        "last_updated": 1767912583,
+        "last_updated": 1786998045,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/UCC-CUDA/1.3.0-GCCcore-11.3.0-CUDA-11.8.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/UCC-CUDA/1.7.0-GCCcore-15.2.0-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22280,15 +22600,16 @@
         "support": "",
         "versions": [
             "1.18.1-GCCcore-11.3.0-CUDA-11.8.0",
-            "1.18.1-GCCcore-12.3.0-CUDA-12.2.2"
+            "1.18.1-GCCcore-12.3.0-CUDA-12.2.2",
+            "1.20.0-GCCcore-15.2.0-CUDA-13.2.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.18.1-GCCcore-12.3.0-CUDA-12.2.2",
+        "default": "1.20.0-GCCcore-15.2.0-CUDA-13.2.1",
         "default_type": "latest",
-        "last_updated": 1762393566,
+        "last_updated": 1786996344,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/UCX-CUDA/1.18.1-GCCcore-12.3.0-CUDA-12.2.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/UCX-CUDA/1.20.0-GCCcore-15.2.0-CUDA-13.2.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22440,14 +22761,11 @@
     },
     "uv": {
         "description": "An extremely fast Python package installer and resolver, written in Rust.",
-        "domains": [
-            "python",
-            "software"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/astral-sh/uv",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/uv",
+        "support": "",
         "versions": [
             "0.10.3-GCC-12.3.0",
             "0.9.17-GCC-12.3.0"
@@ -22520,7 +22838,7 @@
         "extensions": [],
         "licence_type": "proprietary",
         "homepage": "http://www.vasp.at",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VASP",
+        "support": "",
         "versions": [
             "4.6-gimkl-2020a",
             "5.4.4-gimkl-2022a",
@@ -22533,7 +22851,8 @@
             "6.4.1-intel-2022a",
             "6.4.2-foss-2023a",
             "6.4.2-intel-2022a",
-            "6.4.3-foss-2023a"
+            "6.4.3-foss-2023a",
+            "6.5.1-foss-2026"
         ],
         "admin_list": [
             {
@@ -22546,7 +22865,7 @@
         "network_licences": [],
         "default": "6.4.2-intel-2022a",
         "default_type": "static",
-        "last_updated": 1755137199,
+        "last_updated": 1786576250,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VASP/6.4.2-intel-2022a.lua",
         "force_hide": "False",
@@ -22715,15 +23034,16 @@
             "113.3-GCC-11.3.0-Perl-5.34.1",
             "115.2-GCC-12.3.0-Perl-5.40.3",
             "115.2-GCC-15.2.0-Perl-5.42.1",
-            "116.0-GCC-15.2.0-Perl-5.42.1"
+            "116.0-GCC-15.2.0-Perl-5.42.1",
+            "116.1-GCC-15.2.0-Perl-5.42.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "116.0-GCC-15.2.0-Perl-5.42.1",
+        "default": "116.1-GCC-15.2.0-Perl-5.42.1",
         "default_type": "latest",
-        "last_updated": 1781633481,
+        "last_updated": 1785895197,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/VEP/116.0-GCC-15.2.0-Perl-5.42.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/VEP/116.1-GCC-15.2.0-Perl-5.42.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22761,15 +23081,16 @@
         "homepage": "https://github.com/vgteam/vg",
         "support": "",
         "versions": [
-            "1.46.0"
+            "1.46.0",
+            "1.76.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.46.0",
+        "default": "1.76.1",
         "default_type": "latest",
-        "last_updated": 1740132640,
+        "last_updated": 1785711610,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/vg/1.46.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/vg/1.76.1.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22878,7 +23199,7 @@
         ],
         "licence_type": "",
         "homepage": "https://github.com/jiarong/VirSorter2",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VirSorter",
+        "support": "",
         "versions": [
             "1.0.6-gimkl-2020a-Perl-5.30.1",
             "2.1-gimkl-2020a-Python-3.8.2",
@@ -22925,7 +23246,8 @@
         "homepage": "http://math.lbl.gov/voro++/",
         "support": "",
         "versions": [
-            "0.4.6-GCC-12.3.0"
+            "0.4.6-GCC-12.3.0",
+            "0.4.6-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
@@ -22985,13 +23307,11 @@
     },
     "VTune": {
         "description": "Intel VTune Amplifier XE is the premier performance profiler for C, C++, C#, Fortran,\n Assembly and Java.",
-        "domains": [
-            "profiling"
-        ],
+        "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://software.intel.com/en-us/vtune",
-        "support": "https://www.docs.nesi.org.nz/Software/Available_Applications/VTune",
+        "support": "",
         "versions": [
             "2019_update8",
             "2023.1.0",
@@ -23059,15 +23379,16 @@
         "homepage": "https://wannier.org/",
         "support": "",
         "versions": [
-            "3.1.0-foss-2023a"
+            "3.1.0-foss-2023a",
+            "3.1.0-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.1.0-foss-2023a",
+        "default": "3.1.0-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132640,
+        "last_updated": 1786574194,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/wannier90/3.1.0-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/wannier90/3.1.0-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },

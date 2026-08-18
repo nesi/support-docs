@@ -2,11 +2,7 @@
 created_at: '2019-09-23T00:08:13Z'
 tags:
 - biology
-title: Relion
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001174055
-zendesk_section_id: 360000040076
+description: Getting started with Relion and driving its GUI from a batch job
 ---
 
 

@@ -2,7 +2,8 @@
 created_at: '2020-02-25T02:35:13Z'
 tags:
     - account
-title: What is an Allocation?
+title: What Is an Allocation?
+description: What compute, online storage and Freezer allocations are and how they are granted
 ---
 
 Because the HPC platform resources are limited, we manage access to our resources
@@ -14,7 +15,7 @@ different allocation criteria.
 An allocation will come from one of our allocation classes. We will
 decide what class of allocation is most suitable for you and your
 research programme, however you're welcome to review
-[our article on allocation classes](../../Policy/Allocation_classes.md)
+[our article on allocation classes](../../Policy/Allocation_Classes.md)
 to find out what class you're likely eligible for.
 
 ## An important note on CPU hour allocations

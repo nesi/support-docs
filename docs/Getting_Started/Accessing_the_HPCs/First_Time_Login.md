@@ -4,6 +4,7 @@ tags:
 - access
 - interactive
 - account
+description: Logging in for the first time and setting up your authenticator app and trusted device
 ---
 
 !!! prerequisite
@@ -43,7 +44,7 @@ tags:
 
     If you have trusted your device, you have to enter a name for this device. This name must be unique. E.g. you cannot trust two devices the same day with the same name.
 
-    See [What is a trusted device?](https://docs.nesi.org.nz/Getting_Started/FAQs/What_Is_A_Trusted_Device/) for more information.
+    See [What is a trusted device?](../FAQs/What_Is_a_Trusted_Device.md) for more information.
 
 8. You will be prompted again to confirm that you initiated this sequence as a security measure against remote phishing. Click 'Yes' if you want to proceed with access. Click 'No' if you did not initiate this authentication process.
 

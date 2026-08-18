@@ -2,6 +2,7 @@
 created_at: '2020-01-15T21:56:01Z'
 tags:
 - profiling
+description: Profiling where a program spends its execution time with Intel VTune
 ---
 
 
