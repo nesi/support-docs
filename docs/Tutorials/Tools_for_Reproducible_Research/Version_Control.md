@@ -21,7 +21,7 @@ tags:
 ![Source: PhD Comics. ["notFinal.doc"](https://phdcomics.com/comics/archive.php?comicid=1531)](../../assets/images/ew-versions.png){alt='A comic strip titled "final.doc" by PhD Comics. The first panel shows a student saving a document on their computer and naming the file "final.doc". The second panel shows their professor editing the document on a printed piece of paper. The third panel shows the student making the edits and naming the new document "final\_rev2.doc". The fourth to ninth panels go back and forth between the professor and the student, with increasingly complex file names. By the end the student is exasperated and hitting their head on their computer screen.'}
 
 !!! question "Problems with change"
-    Which of this issues can you relate to?
+    Which of these issues can you relate to?
 
     - I have fifteen versions of this file and I don't know which is which
     - I can't remake this figure from last year
@@ -35,8 +35,7 @@ tags:
     - I came to an old project and forgot where I left it
     - I have trouble to find the source of a mistake in an experiment
     - My directory is polluted with a lot of unused/temporary/old folders because I'm afraid of losing something important
-    - I made a lot of changes to my paper but only want to bring back one of paragraph
-    
+    - I made a lot of changes to my paper but only want to bring back one paragraph
 
 Keeping track of changes that you or your collaborators make to data and
 software is a critical part of research. Being able to reference or
@@ -48,7 +47,7 @@ reviewers, editors, and readers.
 We believe that the best tools for tracking changes are the version
 control systems that are used in software development, such as Git,
 Mercurial, and Subversion. They keep track of what was changed in a file
-when and by whom, and synchronize changes to a central server so that
+when and by whom, and synchronise changes to a central server so that
 many users can manage changes to the same set of files.
 
 While these version control tools make tracking changes easier, they can
@@ -97,7 +96,7 @@ The list should include writing log messages that clearly explain
 any changes, the size and content of individual changes, style
 guidelines for code, updating to-do lists, and bans on committing
 half-done work or broken code.
-See [[gawande2011](https://books.google.co.uk/books/about/The_Checklist_Manifesto.html?id=qoZCRAAACAAJ&redir_esc=y)] for more on the
+See Gawande (2011), [*The Checklist Manifesto*](https://books.google.co.uk/books/about/The_Checklist_Manifesto.html?id=qoZCRAAACAAJ&redir_esc=y), for more on the
 proven value of checklists.
 
 ## Store each project in a folder that is mirrored off the researcher's working machine
@@ -107,7 +106,7 @@ This may include:
 - using a shared system such as a (institutional) cloud or shared drive, or
 - a remote version control repository such as GitHub.
 
-Synchronize that folder at least daily. It may take a few minutes, but that time is repaid the
+Synchronise that folder at least daily. It may take a few minutes, but that time is repaid the
 moment a laptop is stolen or its hard drive fails.
 
 !!! note "How to document a change"
@@ -148,7 +147,7 @@ two additional parts:
   equivalent of a lab notebook, and should contain entries like those
   shown below.
   
-  ```
+  ```log
   ## 2016-04-08
   
   * Switched to cubic interpolation as default.
@@ -163,10 +162,10 @@ two additional parts:
 2. ***Copy the entire project whenever a significant change
   has been made*** (i.e., one that
   materially affects the results), and store that copy in a sub-folder
-  whose name reflects the date in the area that's being synchronized.
-  This approach results in projects being organized as shown below:
+  whose name reflects the date in the area that's being synchronised.
+  This approach results in projects being organised as shown below:
   
-  ```
+  ```tree
   .
   |-- project_name
   |   -- current
@@ -231,7 +230,7 @@ many scientific users.
     Crucially, if several people have edited files simultaneously, the
     version control system will detect the collision and require them to
     resolve any conflicts before recording the changes. Modern version
-    control systems also allow repositories to be synchronized with each
+    control systems also allow repositories to be synchronised with each
     other, so that no one repository becomes a single point of failure.
     Tool-based version control has several benefits over manual version
     control:
@@ -291,7 +290,7 @@ many scientific users.
 The benefits of version control systems don't apply equally to all file
 types. In particular, version control can be more or less rewarding
 depending on file size and format. First, file comparison in version
-control systems is optimized for plain text files, such as source code.
+control systems is optimised for plain text files, such as source code.
 The ability to see so-called "diffs" is one of the great joys of version
 control systems. Unfortunately, Microsoft Office files (like the `.docx` files
 used by Word) or other binary files, e.g., PDFs, can be stored in a
