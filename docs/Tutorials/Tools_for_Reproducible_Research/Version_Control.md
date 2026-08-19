@@ -284,8 +284,7 @@ many scientific users.
 ## What Not to Put Under Version Control
 
 The benefits of version control systems don't apply equally to all file
-types. In particular, version control can be more or less rewarding
-depending on file size and format. First, file comparison in version
+types. First, file comparison in version
 control systems is optimised for plain text files, such as source code.
 The ability to see so-called "diffs" is one of the great joys of version
 control systems. Unfortunately, Microsoft Office files (like the `.docx` files
