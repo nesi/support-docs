@@ -123,13 +123,13 @@ moment a laptop is stolen or its hard drive fails.
 
     - Updated matplot library to version 3.4.3 and regenerated figures
 
-    - Added pane with protein localization to the Figure 3 and its discussion in the text
+    - Added pane with protein localisation to the Figure 3 and its discussion in the text
 
     - Reverted to the previous version of the abstract text as the manuscript reached word limits
 
     - Cleaned the strain inventory: Recent freezer cleaning and ordering indicated a lot of problem with the strains data. The missing physical samples were removed from the table, the duplicated ids are marked for checking with PCR. The antibiotic resistance were moved from phenotype description to its own column.
 
-    - New regulation heatmap: As suggested by Will I used the normalization and variance stabilization procedure from Hafemeister et al prior to clustering and heatmap generation
+    - New regulation heatmap: As suggested by Will I used the normalisation and variance stabilisation procedure from Hafemeister et al prior to clustering and heatmap generation
 
     The larger the project (measured either in: collaborators, file numbers, or workflow complexity) the more detailed the change description should be.
     While your personal project can get away with one liner descriptions, the largest projects should always contain information about motivation behind the change and
@@ -203,15 +203,13 @@ approach—the one we use in our own projects–don't just accelerate the
 manual process: they also automate some steps while enforcing others,
 and thereby require less self-discipline for more reliable results.
 
-1. ***Use a version control
-  system***, to manage changes to a
-  project.
+***Use a version control system*** to manage changes to a project.
 
-The note below briefly explains how version control systems work. It's hard to
-know what version control tool is most widely used in research today,
-but the one that's most talked about is undoubtedly Git. This is largely because of
+The most widely used version control tool in use today is Git. This is largely because of
 GitHub, a popular hosting site that combines the technical infrastructure for collaboration via Git with a
-modern web interface. GitHub is free for public and open source projects
+modern web interface. Git on it's own only tracks changes.
+GitHub add remote hosting, the web interface, and extensive collaboration tools.
+GitHub is free for public and open source projects
 and for users in academia and nonprofits.
 GitLab is a well-regarded alternative
 that some prefer, because the GitLab platform itself is free and open
