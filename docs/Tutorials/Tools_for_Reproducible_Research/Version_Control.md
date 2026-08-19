@@ -45,8 +45,7 @@ reviewer comments, and when providing supporting information for
 reviewers, editors, and readers.
 
 We believe that the best tools for tracking changes are the version
-control systems that are used in software development, such as Git,
-Mercurial, and Subversion. They keep track of what was changed in a file
+control systems that are used in software development, such as Git. They keep track of what was changed in a file
 when and by whom, and synchronise changes to a central server so that
 many users can manage changes to the same set of files.
 
@@ -69,8 +68,7 @@ rule are discussed below.
 
 ## Keep changes small
 
-Each change should not be
-so large as to make the change tracking irrelevant. For example, a
+Each change should be small enough that tracking is still useful. For example, a
 single change such as "Revise script file" that adds or changes
 several hundred lines is likely too large, as it will not allow
 changes to different components of an analysis to be investigated
@@ -208,7 +206,7 @@ and thereby require less self-discipline for more reliable results.
 The most widely used version control tool in use today is Git. This is largely because of
 GitHub, a popular hosting site that combines the technical infrastructure for collaboration via Git with a
 modern web interface. Git on it's own only tracks changes.
-GitHub add remote hosting, the web interface, and extensive collaboration tools.
+GitHub adds remote hosting, the web interface, and extensive collaboration tools.
 GitHub is free for public and open source projects
 and for users in academia and nonprofits.
 GitLab is a well-regarded alternative
