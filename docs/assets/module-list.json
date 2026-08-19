@@ -75,7 +75,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.59,
+                        "hourly_average": 0.58,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -1218,15 +1218,16 @@
             "3.6.3-gimkl-2020a",
             "3.6.3-intel-2020a",
             "3.8.0-intel-2022a",
-            "3.9.1-foss-2023a"
+            "3.9.1-foss-2023a",
+            "3.9.1-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.9.1-foss-2023a",
+        "default": "3.9.1-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1787088008,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/arpack-ng/3.9.1-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/arpack-ng/3.9.1-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -8713,7 +8714,8 @@
         "homepage": "https://igraph.org",
         "support": "",
         "versions": [
-            "1.0.1-foss-2023a"
+            "1.0.1-foss-2023a",
+            "1.0.1-foss-2026"
         ],
         "admin_list": [],
         "network_licences": [],
@@ -9374,15 +9376,16 @@
         "support": "",
         "versions": [
             "9.0.2-GCC-12.3.0",
+            "9.3.1-GCC-12.3.0",
             "9.3.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "9.3.1-GCC-15.2.0",
+        "default": "9.3.1-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1786513542,
+        "last_updated": 1787087160,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.3.1-GCC-15.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/json-fortran/9.3.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -9975,6 +9978,7 @@
         "versions": [
             "22Jul2025-foss-2023a-kokkos",
             "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
+            "22Jul2025-update5-foss-2026-kokkos",
             "23Jun2022-gimkl-2022a-kokkos",
             "23Jun2022-gimkl-2022a-kokkos-ECHEMDID-CUDA-11.8.0",
             "23Jun2022-gimkl-2022a-kokkos-EChemDID",
@@ -11025,15 +11029,16 @@
             "5.1.5-intel-2022a",
             "6.2.2-GCC-12.3.0",
             "6.2.2-intel-2022a",
+            "7.0.0-GCC-12.3.0",
             "7.0.0-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "7.0.0-GCC-15.2.0",
+        "default": "7.0.0-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1779850610,
+        "last_updated": 1787047872,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/libxc/7.0.0-GCC-15.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libxc/7.0.0-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12260,15 +12265,16 @@
         "support": "",
         "versions": [
             "0.3.1-GCC-12.3.0",
+            "0.5.1-GCC-12.3.0",
             "0.5.1-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.5.1-GCC-15.2.0",
+        "default": "0.5.1-GCC-12.3.0",
         "default_type": "latest",
-        "last_updated": 1786573586,
+        "last_updated": 1787088247,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.5.1-GCC-15.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/mctc-lib/0.5.1-GCC-12.3.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -22852,7 +22858,7 @@
             "6.4.2-foss-2023a",
             "6.4.2-intel-2022a",
             "6.4.3-foss-2023a",
-            "6.5.1-foss-2026"
+            "6.5.1-foss-2023a"
         ],
         "admin_list": [
             {
@@ -22865,7 +22871,7 @@
         "network_licences": [],
         "default": "6.4.2-intel-2022a",
         "default_type": "static",
-        "last_updated": 1786576250,
+        "last_updated": 1787091214,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/VASP/6.4.2-intel-2022a.lua",
         "force_hide": "False",
@@ -22969,6 +22975,26 @@
         "last_updated": 1770164095,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/VCFtools/0.1.17-GCC-12.3.0-Perl-5.38.2.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "vclust": {
+        "description": "Vclust is an alignment-based tool for fast and accurate calculation of Average Nucleotide Identity (ANI) between complete or metagenomically-assembled viral genomes.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/refresh-bio/vclust",
+        "support": "",
+        "versions": [
+            "1.3.1-foss-2026-Python-3.14.4"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.3.1-foss-2026-Python-3.14.4",
+        "default_type": "latest",
+        "last_updated": 1787088549,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/vclust/1.3.1-foss-2026-Python-3.14.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
