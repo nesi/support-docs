@@ -3771,7 +3771,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.56,
+                        "hourly_average": 0.57,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
@@ -9376,8 +9376,7 @@
         "support": "",
         "versions": [
             "9.0.2-GCC-12.3.0",
-            "9.3.1-GCC-12.3.0",
-            "9.3.1-GCC-15.2.0"
+            "9.3.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
@@ -9978,7 +9977,9 @@
         "versions": [
             "22Jul2025-foss-2023a-kokkos",
             "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
+            "22Jul2025-update5-foss-2026-GPU-CUDA-13.2.1",
             "22Jul2025-update5-foss-2026-kokkos",
+            "22Jul2025-update5-foss-2026-kokkos-CUDA-13.2.1",
             "23Jun2022-gimkl-2022a-kokkos",
             "23Jun2022-gimkl-2022a-kokkos-ECHEMDID-CUDA-11.8.0",
             "23Jun2022-gimkl-2022a-kokkos-EChemDID",
@@ -11022,23 +11023,21 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "https://libxc.gitlab.io",
+        "homepage": "https://www.tddft.org/programs/libxc",
         "support": "",
         "versions": [
             "5.1.5-intel-2020a",
             "5.1.5-intel-2022a",
             "6.2.2-GCC-12.3.0",
-            "6.2.2-intel-2022a",
-            "7.0.0-GCC-12.3.0",
-            "7.0.0-GCC-15.2.0"
+            "6.2.2-intel-2022a"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "7.0.0-GCC-12.3.0",
+        "default": "6.2.2-intel-2022a",
         "default_type": "latest",
-        "last_updated": 1787047872,
+        "last_updated": 1740132638,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/libxc/7.0.0-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libxc/6.2.2-intel-2022a.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -12265,8 +12264,7 @@
         "support": "",
         "versions": [
             "0.3.1-GCC-12.3.0",
-            "0.5.1-GCC-12.3.0",
-            "0.5.1-GCC-15.2.0"
+            "0.5.1-GCC-12.3.0"
         ],
         "admin_list": [],
         "network_licences": [],
