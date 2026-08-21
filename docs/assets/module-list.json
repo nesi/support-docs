@@ -2382,6 +2382,7 @@
             "0.9.0-GCC-12.3.0",
             "2.0-GCC-15.2.0",
             "2.0-intel-compilers-2025.3.0",
+            "2.0-nvidia-compilers-23.7-CUDA-12.2.2",
             "4.0-GCC-11.3.0-amd"
         ],
         "admin_list": [],
@@ -6079,6 +6080,7 @@
             "3.3.10-gompi-2022a",
             "3.3.10-intel-compilers-2023.2.1",
             "3.3.10-intel-compilers-2025.3.0",
+            "3.3.10-nvidia-compilers-23.7-CUDA-12.2.2",
             "3.3.8-gimpi-2020a",
             "3.3.9-iimpi-2022a"
         ],
@@ -6105,7 +6107,8 @@
             "3.3.10-gompi-2023a",
             "3.3.10-gompi-2026",
             "3.3.10-iompi-2023a",
-            "3.3.10-iompi-2026"
+            "3.3.10-iompi-2026",
+            "3.3.10-nvompi-2023b"
         ],
         "admin_list": [],
         "network_licences": [],
@@ -6363,15 +6366,16 @@
             "3.3.1-GCC-12.3.0",
             "3.4.4-intel-compilers-2023.2.1",
             "3.5.0-GCC-15.2.0",
-            "3.5.0-intel-compilers-2025.3.0"
+            "3.5.0-intel-compilers-2025.3.0",
+            "3.5.0-nvidia-compilers-23.7-CUDA-12.2.2"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.5.0-intel-compilers-2025.3.0",
+        "default": "3.5.0-nvidia-compilers-23.7-CUDA-12.2.2",
         "default_type": "latest",
-        "last_updated": 1778650933,
+        "last_updated": 1787201803,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/FlexiBLAS/3.5.0-intel-compilers-2025.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FlexiBLAS/3.5.0-nvidia-compilers-23.7-CUDA-12.2.2.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14799,6 +14803,66 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "nvidia-compilers": {
+        "description": "C, C++ and Fortran compilers included with the NVIDIA HPC SDK",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://developer.nvidia.com/hpc-sdk/",
+        "support": "",
+        "versions": [
+            "23.7-CUDA-12.2.2"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "23.7-CUDA-12.2.2",
+        "default_type": "latest",
+        "last_updated": 1787184642,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/nvidia-compilers/23.7-CUDA-12.2.2.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "nvofbf": {
+        "description": "NVHPC based toolchain, including OpenMPI for MPI support,\nOpenBLAS (via FlexiBLAS for BLAS and LAPACK support), FFTW and ScaLAPACK.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "(none)",
+        "support": "",
+        "versions": [
+            "2023b"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2023b",
+        "default_type": "latest",
+        "last_updated": 1787263552,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/nvofbf/2023b.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
+    "nvompi": {
+        "description": "NVHPC based compiler toolchain, including OpenMPI for MPI support.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "(none)",
+        "support": "",
+        "versions": [
+            "2023b"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2023b",
+        "default_type": "latest",
+        "last_updated": 1787191396,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/nvompi/2023b.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "NWChem": {
         "description": "NWChem aims to provide its users with computational chemistry tools that are scalable both in\n their ability to treat large scientific computational chemistry problems efficiently, and in their use of available\n parallel computing resources from high-performance parallel supercomputers to conventional workstation clusters.\n NWChem software can handle: biomolecules, nanostructures, and solid-state; from quantum to classical, and all\n combinations; Gaussian basis functions or plane-waves; scaling from one to thousands of processors; properties\n and relativity.",
         "domains": [
@@ -14947,6 +15011,7 @@
             "0.3.23-intel-compilers-2023.2.1",
             "0.3.32-GCC-15.2.0",
             "0.3.32-intel-compilers-2025.3.0",
+            "0.3.32-nvidia-compilers-23.7-CUDA-12.2.2",
             "0.3.6-GCC-9.2.0",
             "0.3.9-GCC-9.2.0"
         ],
@@ -15136,6 +15201,7 @@
             "4.1.5-NVHPC-23.9-CUDA-12.2.2-CUDA-12.2.2",
             "4.1.5-NVHPC-23.9-GCC-12.3.0-CUDA-12.2.2",
             "4.1.5-intel-compilers-2023.2.1",
+            "4.1.5-nvidia-compilers-23.7-CUDA-12.2.2",
             "5.0.10-GCC-15.2.0",
             "5.0.10-intel-compilers-2025.3.0"
         ],
@@ -20252,7 +20318,8 @@
             "2.2.0-gompi-2023a-fb",
             "2.2.0-iompi-2023a-fb",
             "2.2.2-gompi-2026-fb",
-            "2.2.2-iompi-2026-fb"
+            "2.2.2-iompi-2026-fb",
+            "2.2.2-nvompi-2023b-fb"
         ],
         "admin_list": [],
         "network_licences": [],
