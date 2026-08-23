@@ -53,6 +53,16 @@ See script for details.
 
 Does a 'strict' build of the site, capturing any errors emmited by mkdocs.
 
+### Accessibility (WCAG)
+
+*This linter is defined in [run_a11y_check.sh](run_a11y_check.sh), parsed by [parse_a11y_report.py](parse_a11y_report.py).*
+
+Runs the [AccessLint](https://github.com/AccessLint/audit) WCAG audit against a local `mkdocs build` (the `public/` directory), rather than a deployed site, so it runs the same way in CI as it does locally.
+
+Like the other checks, it can be scoped to specific pages by passing their `docs/*.md` source paths as arguments; with none given, every page in the site is audited.
+
+AccessLint's own inline annotations only fire for violations with a JS/React source map, which a server-rendered mkdocs site never has, so `parse_a11y_report.py` reads its JSON report instead and maps each violation back to the built HTML file under `public/`.
+
 ### Debugging Checks
 
 Each type of test has a debug job in VSCode.
