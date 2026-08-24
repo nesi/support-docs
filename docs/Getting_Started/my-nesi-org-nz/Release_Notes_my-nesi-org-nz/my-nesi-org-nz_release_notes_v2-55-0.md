@@ -9,7 +9,7 @@ description: Release notes for my.nesi.org.nz v2.55.0
 ---
 
 ## New and Improved
-- Removed the data transfer question from the project request form.
+- Simplified the project request form by removing a question about data transfer requirements. This information is no longer required during the initial project request stage.
 - Updated the list of organisations available through the Tuakiri authentication federation.
 
 
