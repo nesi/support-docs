@@ -133,7 +133,7 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
     </tr>
     <tr>
         <td>NVIDIA RTX PRO 6000</td>
-        <td></td>
+        <td>Very limited double precision floating point (fp64)</td>
         <td>96GB</td>
         <td>2</td>
         <td><a href="#gpu-genoa-rtx6000">Genoa</a></td>
@@ -156,6 +156,8 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
         <td>4</td>
     </tr>
 </table>
+
+
 
 If you have any questions about hardware or the status of anything listed in the table,
 {% include "partials/support_request.html" %}.
