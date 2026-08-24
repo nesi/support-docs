@@ -61,7 +61,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.44,
+                        "hourly_average": 0.43,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -3636,7 +3636,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.95,
+                        "hourly_average": 0.96,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
@@ -8299,6 +8299,7 @@
             "1.14.3-gompi-2023a",
             "1.14.3-iompi-2023a",
             "1.14.6-gompi-2026",
+            "1.14.6-nvompi-2023b",
             "1.8.12-gimpi-2020a"
         ],
         "admin_list": [],
@@ -22923,7 +22924,8 @@
             "6.4.2-foss-2023a",
             "6.4.2-intel-2022a",
             "6.4.3-foss-2023a",
-            "6.5.1-foss-2023a"
+            "6.5.1-foss-2023a",
+            "6.5.1-nvofbf-2023b"
         ],
         "admin_list": [
             {
@@ -23471,15 +23473,16 @@
         "support": "",
         "versions": [
             "3.1.0-foss-2023a",
-            "3.1.0-foss-2026"
+            "3.1.0-foss-2026",
+            "3.1.0-nvofbf-2023b"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.1.0-foss-2026",
+        "default": "3.1.0-nvofbf-2023b",
         "default_type": "latest",
-        "last_updated": 1786574194,
+        "last_updated": 1787456087,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/wannier90/3.1.0-foss-2026.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/wannier90/3.1.0-nvofbf-2023b.lua",
         "force_hide": "False",
         "force_show": "False"
     },
