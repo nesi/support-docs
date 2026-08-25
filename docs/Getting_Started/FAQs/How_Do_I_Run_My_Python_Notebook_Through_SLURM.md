@@ -32,7 +32,7 @@ This option might be less convenient as the exporter saves the python
 file to your local computer, meaning you will have to drag it back into
 the file explorer in Jupyter from your downloads folder.
 
-This script can then be run as a regular python script as described in
+This file can then be run as a regular python script inside a Slurm job as described in
 our
 [Python](../../Software/Available_Applications/Python.md)
 documentation.

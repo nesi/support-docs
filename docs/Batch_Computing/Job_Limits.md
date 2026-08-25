@@ -16,8 +16,8 @@ These are open for review if you find any of them unreasonable or inefficient.
 ![job limits](../assets/images/job_limits.png){ align=right width=75% }
 
 - 10 nodes
-- 21 node-days
-- 21 days
+- 21 days walltime
+- 21 node-days (walltime x nodes)
 
 <hr width=100%>
 

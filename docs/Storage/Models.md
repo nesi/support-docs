@@ -31,8 +31,7 @@ If you need a model that is not listed here, please {% include "partials/support
 </tr>
 <tr>
 <td><pre><code>/opt/nesi/model/gguf/llama3.1/llama3.1-70b.gguf</code></pre></td>
-<td><pre><code>#SBATCH --partition=milan
-#SBATCH --gpus-per-node=a100:1</code></pre></td>
+<td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
 </tr>
 <tr>
 <td rowspan="3"><a href="https://ollama.com/library/deepseek-r1">DeepSeek-R1</a></td>
@@ -42,13 +41,11 @@ If you need a model that is not listed here, please {% include "partials/support
 </tr>
 <tr>
 <td><pre><code>/opt/nesi/model/gguf/deepseek-r1/deepseek-r1-32b.gguf</code></pre></td>
-<td><pre><code>#SBATCH --partition=genoa
-#SBATCH --gpus-per-node=a100:1</code></pre></td>
+<td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
 </tr>
 <tr>
 <td><pre><code>/opt/nesi/model/gguf/deepseek-r1/deepseek-r1-70b.gguf</code></pre></td>
-<td><pre><code>#SBATCH --partition=milan
-#SBATCH --gpus-per-node=a100:1</code></pre></td>
+<td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
 </tr>
 <tr>
 <td rowspan="2"><a href="https://ollama.com/library/qwen3">Qwen3</a></td>
@@ -58,8 +55,7 @@ If you need a model that is not listed here, please {% include "partials/support
 </tr>
 <tr>
 <td><pre><code>/opt/nesi/model/gguf/qwen3/qwen3-32b.gguf</code></pre></td>
-<td><pre><code>#SBATCH --partition=genoa
-#SBATCH --gpus-per-node=a100:1</code></pre></td>
+<td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
 </tr>
 <tr>
 <td rowspan="2"><a href="https://ollama.com/library/qwen2.5">Qwen2.5</a></td>
@@ -75,8 +71,7 @@ If you need a model that is not listed here, please {% include "partials/support
 <td><a href="https://ollama.com/library/gemma3">Gemma 3</a></td>
 <td><a href="https://huggingface.co/google/gemma-3-27b/blob/main/LICENSE">Gemma</a></td>
 <td><pre><code>/opt/nesi/model/gguf/gemma3/gemma3-27b.gguf</code></pre></td>
-<td><pre><code>#SBATCH --partition=genoa
-#SBATCH --gpus-per-node=a100:1</code></pre></td>
+<td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
 </tr>
 </tbody>
 </table>
@@ -88,6 +83,6 @@ See [Hardware](../Batch_Computing/Hardware.md) for a full list of available GPUs
     The L4 is an inference-optimised GPU. It is suitable for running quantised models but should not be used for model training or workflows that require FP64 precision.
 
 
-## Related
-    - [Ollama](../Software/Available_Applications/ollama.md).
-    - [Hardware](../Batch_Computing/Hardware.md).
+!!! note "See Also"
+  - [Ollama](../Software/Available_Applications/ollama.md).
+  - [Hardware](../Batch_Computing/Hardware.md).
