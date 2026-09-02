@@ -161,6 +161,28 @@ Your job may end up using less memory, or less time, or fewer tasks or nodes, th
 It’s best if your requests accurately reflect your job’s requirements.
 We’ll talk more about how to make sure that you’re using resources effectively in a later episode of this lesson.
 
+Let's add some of these parameters to our script. Open it up again:
+
+```sh
+nano example_job.sl
+```
+
+And add a Slurm header after the shebang, so the whole script looks like this:
+
+```sl
+#!/bin/bash -e
+
+#SBATCH --job-name      example_job
+#SBATCH --account       nesi99991
+#SBATCH --time          00:15:00
+#SBATCH --mem           300M
+
+module purge
+module load R
+Rscript sum_matrix.r
+echo "Done!"
+```
+
 Now, rather than running our script with `bash` we submit it to the scheduler using the command `sbatch` (**s**lurm **batch**).
 
 ```sh
@@ -295,19 +317,33 @@ This can be suppressed using the flag `-X`.
 ??? question "Solution"
 
     ```sh
-    nano example_job.sl
-    cat example_job.sl
+    cp example_job.sl env_test.sl
+    nano env_test.sl
     ```
 
-    ```sh
+    Add the additional `echo` lines below, keeping the rest of the script as-is:
+
+    ```sl
     #!/bin/bash -e
-    #SBATCH --time 00:00:30
+
+    #SBATCH --job-name      example_job
+    #SBATCH --account       nesi99991
+    #SBATCH --time          00:15:00
+    #SBATCH --mem           300M
 
     echo -n "This script is running on "
     hostname
-
     echo "This job was launched in the following directory:"
     echo ${SLURM_SUBMIT_DIR}
+
+    module purge
+    module load R
+    Rscript sum_matrix.r
+    echo "Done!"
+    ```
+
+    ```sh
+    sbatch env_test.sl
     ```
 
 !!! keypoints
@@ -315,5 +351,5 @@ This can be suppressed using the flag `-X`.
     - A job is just a shell script
     - Request *slightly* more resources than you need
 
-!!! next
-    - Link to next page
+!!! next "What Next"
+    - [Parallel](Parallel.md)
