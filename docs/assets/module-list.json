@@ -3425,6 +3425,26 @@
         "force_hide": "False",
         "force_show": "False"
     },
+    "CMFGEN": {
+        "description": "A radiative transfer code designed to solve the radiative transfer and statistical equilibrium equations in spherical geometry. It has been designed for application to W-R stars, O stars, and Luminous Blue-Variables.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://sites.pitt.edu/~hillier/web/CMFGEN.htm",
+        "support": "",
+        "versions": [
+            "18-06-2025-foss-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "18-06-2025-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1788238490,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/CMFGEN/18-06-2025-foss-2026.lua",
+        "force_hide": "False",
+        "force_show": "False"
+    },
     "CNVnator": {
         "description": "Copy Number Variation discovery and genotyping from depth of read mapping.",
         "domains": [
@@ -11909,7 +11929,7 @@
                 "server": "MATLAB@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.92,
+                "server_uptime": 0.91,
                 "server_version": "",
                 "features": []
             },
