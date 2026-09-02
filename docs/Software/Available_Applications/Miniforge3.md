@@ -3,6 +3,7 @@ created_at: '2020-06-23T23:10:13Z'
 tags:
   - python
   - software
+description: Managing Conda and Mamba packages and environments with the Miniforge3 module
 ---
 
 {% set app_name = page.title | trim %}

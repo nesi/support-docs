@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.45.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.45.0 - Principal Investigator role and stricter validation
 ---
 
 ## New and Improved

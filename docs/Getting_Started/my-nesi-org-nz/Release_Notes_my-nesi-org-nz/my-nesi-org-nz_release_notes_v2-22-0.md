@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.22.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.22.0 - reworked project request page and searchable grants
 ---
 
 ## New and Improved

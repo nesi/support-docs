@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.31.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.31.0 - updated holiday banner and rounded compute defaults
 ---
 
 ## New and Improved
@@ -15,4 +16,4 @@ search:
 If you have any questions about any of the updates, please
 {% include "partials/support_request.html" %}.
 
-Note: This also covers [my.nesi.org.nz](my.nesi.org.nz) release notes v2.32.0 where we improved further the Mahuika compute units default values rounding.
+Note: This also covers [my.nesi.org.nz](https://my.nesi.org.nz) release notes v2.32.0 where we improved further the Mahuika compute units default values rounding.

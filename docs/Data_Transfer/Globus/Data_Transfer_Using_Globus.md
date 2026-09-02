@@ -2,6 +2,7 @@
 created_at: '2021-08-27T03:18:13Z'
 tags:
     - file_transfer
+description: Transferring files between the cluster and your computer in the Globus web interface
 ---
 
 Globus is useful for transferring files between Mahuika and your computer or server and can make it easy to transfer files due to its GUI web-based interface, as well as being able to resume transfers even if disrupted.
@@ -82,7 +83,7 @@ any person who has a Globus account.
 | Collection Name | Description | Recommended Use | Apply for Use | Contact |
 | ------------- | ----------- | --------------- | ------------- | ------- |
 | {{ globus_collection_storage }} | REANNZ Globus mapped collection, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
-| [University of Otago - HCS](https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007), [University of Otago - CHC HCS](https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9) | Endpoint for the High Capacity Research Storage Cluster, Dunedin Campus, University of Otago and Endpoint for the High Capacity Research Storage Cluster, Christchurch Campus, University of Otago | Primary endpoint for Otago Dunedin; uses local service accounts or Globus sharing. | [Access Form](https://www.otago.ac.nz/its/forms/hcs-high-speed-data-transfer-service-access-form) | [university@otago.ac.nz](mailto:university@otago.ac.nz) |
+| [University of Otago - HCS](https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007), [University of Otago - CHC HCS](https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9) | Endpoint for the High Capacity Research Storage Cluster, Dunedin Campus, University of Otago and Endpoint for the High Capacity Research Storage Cluster, Christchurch Campus, University of Otago | Primary endpoint for Otago Dunedin; uses local service accounts or Globus sharing. | [Access Form](https://www.otago.ac.nz/digital-services/services/file-storage-and-server-services/hcs-high-speed-data-transfer) | [university@otago.ac.nz](mailto:university@otago.ac.nz) |
 | University of Auckland Research Data Collection | Endpoint provides access to UoA research data. | Transferring files between UoA research drives and Mahuika | Apply by email | [researchdata@auckland.ac.nz](mailto:researchdata@auckland.ac.nz) |
 | AgResearch DTN01 | A Globus endpoint attached to AgResearch's institutional Linux storage platform | Sharing large datasets with external collaborators and moving large datasets between Mahuika and AgResearch's internal storage platform | Apply by email | [servicedesk@agresearch.co.nz](mailto:servicedesk@agresearch.co.nz) |
 | PFR Globus Connect Server | Endpoint provides access to Plant Food Research data | Generally for internal users, but also for sharing large datasets with collaborators | Contact the Plant and Food person you are wanting to share data with. |  |

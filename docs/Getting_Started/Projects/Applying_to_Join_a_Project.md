@@ -3,6 +3,7 @@ created_at: '2019-01-11T01:11:34Z'
 tags:
 - announcement
 - account
+description: How to join an existing project by contacting its owner with your username
 ---
 
 !!! prerequisite

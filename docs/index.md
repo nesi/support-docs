@@ -1,13 +1,14 @@
 ---
 template: home.html
 hide: toc
+description: Technical documentation for the REANNZ high performance computing platforms
 ---
 
 Technical documentation for our High Performance Computing (HPC) platforms.
 
 !!! note "REANNZ Integration"
     New Zealand eScience Infrastructure (NeSI) has integrated with Research and Education Advanced Network New Zealand (REANNZ).  
-    Some of our tools (e.g. [my.nesi.org.nz](my.nesi.org.nz) and emails (e.g. [support@nesi.org.nz](mailto:support@nesi.org.nz))
+    Some of our tools (e.g. [my.nesi.org.nz](https://my.nesi.org.nz) and emails (e.g. [support@nesi.org.nz](mailto:support@nesi.org.nz))
     have retained a 'NeSI' brand as we transition our services and develop a longer-term strategy for our integrated platform.
     
 ## Quickstart

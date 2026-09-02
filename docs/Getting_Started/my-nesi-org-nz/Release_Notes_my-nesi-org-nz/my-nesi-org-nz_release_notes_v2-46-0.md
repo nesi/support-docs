@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.46.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.46.0 - profile update feedback and refreshed doc links
 ---
 
 ## New and Improved

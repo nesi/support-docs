@@ -5,6 +5,7 @@ tags:
 - earth_science
 no_module: true
 status: deprecated
+description: Downloading CMIP6 data from the ESGF archive with Synda, now deprecated
 ---
 
 !!! warning "Tool deprecation"

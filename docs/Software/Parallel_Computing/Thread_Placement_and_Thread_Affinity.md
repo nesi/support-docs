@@ -3,6 +3,9 @@ created_at: '2019-06-13T04:08:43Z'
 tags:
 - openmp
 - parallel
+- mpi
+- smt
+description: Placing and pinning threads to cores so multithreaded jobs run at full speed
 ---
 
 Multithreading with OpenMP and other threading libraries is an important
