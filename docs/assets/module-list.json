@@ -61,7 +61,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.42,
+                        "hourly_average": 0.41,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -684,7 +684,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.97,
+                "server_uptime": 0.98,
                 "server_version": "",
                 "features": [
                     {
@@ -11929,7 +11929,7 @@
                 "server": "MATLAB@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.91,
+                "server_uptime": 0.9,
                 "server_version": "",
                 "features": []
             },
