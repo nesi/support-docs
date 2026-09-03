@@ -90,4 +90,4 @@ env \
   INPUT_MIN-IMPACT="$MIN_IMPACT" \
   "$NODE_BIN" "$CACHE_DIR/dist/index.js" >&2
 
-cat accesslint-report.json
+cat "${GITHUB_WORKSPACE:-$(pwd)}/accesslint-report.json"
