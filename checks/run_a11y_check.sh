@@ -52,9 +52,6 @@ fi
 
 READY_MARKER="$CACHE_DIR/.setup-complete"
 if [ ! -f "$READY_MARKER" ]; then
-  # Redirected to stderr: npm/playwright's install output (including a
-  # progress bar on first download) would otherwise land on this script's
-  # stdout, which callers pipe straight into a JSON parser.
   (cd "$CACHE_DIR" && npm ci --omit=dev --no-audit --no-fund --silent && npx --yes playwright install --only-shell chromium) >&2
   touch "$READY_MARKER"
 fi
@@ -85,10 +82,8 @@ if [ -z "$NODE_BIN" ]; then
   exit 1
 fi
 
-# AccessLint's own progress output and (source-mapless, so always empty here)
-# annotations go to stderr, leaving stdout free to carry just the JSON report -
-# so this script's output can be piped straight into parse_a11y_report.py.
 env \
+  -u GITHUB_STEP_SUMMARY \
   INPUT_URLS="$URLS" \
   INPUT_WCAG-LEVEL="AA" \
   INPUT_FAIL-ON="never" \
