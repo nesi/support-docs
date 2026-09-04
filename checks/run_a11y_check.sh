@@ -91,7 +91,9 @@ env \
   "$NODE_BIN" "$CACHE_DIR/dist/index.js" >&2
 
 # TEMPORARY DEBUG: figure out where the report actually landed.
-echo "DEBUG pwd=$(pwd) GITHUB_WORKSPACE=${GITHUB_WORKSPACE:-<unset>} HOME=$HOME" >&2
-find / -xdev -maxdepth 6 -iname 'accesslint-report*' 2>/dev/null >&2
+echo "DEBUG pwd=[$(pwd)] GITHUB_WORKSPACE=[${GITHUB_WORKSPACE:-<unset>}] HOME=[$HOME]" >&2
+echo "DEBUG ls pwd:" >&2; ls -la . >&2
+echo "DEBUG ls GITHUB_WORKSPACE:" >&2; ls -la "${GITHUB_WORKSPACE:-/nonexistent}" >&2
+find /__w /github -maxdepth 6 -iname 'accesslint-report*' 2>/dev/null >&2
 
 cat "${GITHUB_WORKSPACE:-$(pwd)}/accesslint-report.json"
