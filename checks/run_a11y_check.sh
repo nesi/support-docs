@@ -52,7 +52,10 @@ fi
 
 READY_MARKER="$CACHE_DIR/.setup-complete"
 if [ ! -f "$READY_MARKER" ]; then
-  (cd "$CACHE_DIR" && npm ci --omit=dev --no-audit --no-fund --silent && npx --yes playwright install --only-shell chromium)
+  # Redirected to stderr: npm/playwright's install output (including a
+  # progress bar on first download) would otherwise land on this script's
+  # stdout, which callers pipe straight into a JSON parser.
+  (cd "$CACHE_DIR" && npm ci --omit=dev --no-audit --no-fund --silent && npx --yes playwright install --only-shell chromium) >&2
   touch "$READY_MARKER"
 fi
 
