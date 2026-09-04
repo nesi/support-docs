@@ -161,7 +161,12 @@ jobs:
           path: ~/.cache/accesslint-audit
           key: accesslint-audit-v0-${{ runner.os }}
       - name: Run WCAG audit
-        run: ./checks/run_a11y_check.sh serious ${{needs.get.outputs.filelist}} | python3 checks/parse_a11y_report.py
+        run: |
+          ./checks/run_a11y_check.sh serious ${{needs.get.outputs.filelist}} > /tmp/a11y-raw-stdout.txt
+          echo "DEBUG bytes: $(wc -c < /tmp/a11y-raw-stdout.txt)"
+          echo "DEBUG first 300 bytes (escaped):"
+          head -c 300 /tmp/a11y-raw-stdout.txt | cat -A | head -20
+          python3 checks/parse_a11y_report.py /tmp/a11y-raw-stdout.txt
 
   tagcheck:
     name: Compile tags
