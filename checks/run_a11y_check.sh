@@ -56,7 +56,9 @@ if [ ! -f "$READY_MARKER" ]; then
   touch "$READY_MARKER"
 fi
 
-python3 -m http.server "$PORT" --directory public &
+# Redirected to avoid polluting this script's stdout, which callers pipe
+# straight into a JSON parser (its access-log lines aren't valid JSON).
+python3 -m http.server "$PORT" --directory public >/dev/null 2>&1 &
 SERVER_PID=$!
 trap 'kill "$SERVER_PID" 2>/dev/null || true' EXIT
 python3 -c "
@@ -90,10 +92,4 @@ env \
   INPUT_MIN-IMPACT="$MIN_IMPACT" \
   "$NODE_BIN" "$CACHE_DIR/dist/index.js" >&2
 
-# TEMPORARY DEBUG: figure out where the report actually landed.
-echo "DEBUG pwd=[$(pwd)] GITHUB_WORKSPACE=[${GITHUB_WORKSPACE:-<unset>}] HOME=[$HOME]" >&2
-echo "DEBUG ls pwd:" >&2; ls -la . >&2
-echo "DEBUG ls GITHUB_WORKSPACE:" >&2; ls -la "${GITHUB_WORKSPACE:-/nonexistent}" >&2
-find /__w /github -maxdepth 6 -iname 'accesslint-report*' 2>/dev/null >&2
-
-cat "${GITHUB_WORKSPACE:-$(pwd)}/accesslint-report.json"
+cat accesslint-report.json
