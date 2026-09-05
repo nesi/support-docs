@@ -684,7 +684,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.98,
+                "server_uptime": 0.99,
                 "server_version": "",
                 "features": [
                     {
