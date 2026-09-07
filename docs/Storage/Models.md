@@ -83,6 +83,6 @@ See [Hardware](../Batch_Computing/Hardware.md) for a full list of available GPUs
     The L4 is an inference-optimised GPU. It is suitable for running quantised models but should not be used for model training or workflows that require FP64 precision.
 
 
-## Related
-    - [Ollama](../Software/Available_Applications/ollama.md).
-    - [Hardware](../Batch_Computing/Hardware.md).
+!!! note "See Also"
+  - [Ollama](../Software/Available_Applications/ollama.md).
+  - [Hardware](../Batch_Computing/Hardware.md).
