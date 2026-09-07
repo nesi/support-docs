@@ -5,31 +5,11 @@ As opposed to `mkdocs_hooks.py` which works only in template step, (e.g. `overri
 If this is confusing, ask Cal to explain.
 """
 
-import importlib.util
 import os
 import json
 
 module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 tag_index_path = os.getenv("TAG_INDEX_PATH", "docs/assets/tag-index.json")
-
-
-def _load_mkdocs_hooks():
-    """Load mkdocs_hooks.py by file path rather than `import mkdocs_hooks`.
-
-    mkdocs and mkdocs-macros load their own hook module through different
-    mechanisms (mkdocs briefly patches sys.path and restores it; mkdocs-macros
-    execs this file directly by path), so a plain cross-file import can't
-    reliably resolve `mkdocs_hooks` regardless of how *this* file was loaded.
-    Resolving relative to our own (always-correct) __file__ sidesteps that.
-    """
-    path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "mkdocs_hooks.py")
-    spec = importlib.util.spec_from_file_location("mkdocs_hooks", path)
-    module = importlib.util.module_from_spec(spec)
-    spec.loader.exec_module(module)
-    return module
-
-
-configure_safe_includes = _load_mkdocs_hooks().configure_safe_includes
 
 
 class CaseInsensitiveDict(dict):
@@ -79,10 +59,3 @@ def define_env(env):
             {"title": e["title"], "path": os.path.relpath(e["path"], current_dir)}
             for e in entries
         ]
-
-
-def on_pre_page_macros(env):
-    # env.env (the actual Jinja Environment) doesn't exist yet at define_env()
-    # time - on_config() creates it afterwards - so patch it here instead.
-    # configure_safe_includes() is idempotent, so re-running per page is cheap.
-    configure_safe_includes(env.env)
