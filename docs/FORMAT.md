@@ -530,12 +530,17 @@ The macro plugin allows the use of 'includes', here is an example.
 {% endraw %}
 ```
 
+```{% raw %}{% include %}{% endraw %}``` fails soft in this project: if the included template errors while
+rendering (e.g. an app is missing an expected field in module-list.json), that
+include renders as nothing instead of taking out the whole page. No special
+syntax needed - this is patched into both Jinja environments in `mkdocs_hooks.py`.
+
 There are a few includes you may want to use.
 
 | Path | content | usage |
 | ---- | ------- | ----- |
 | ```{% raw %}{% include "partials/support_request.html" %}{% endraw %}``` | ```<a href="mailto:support@nesi.org.nz">Contact our Support Team</a>``` | Anywhere the user is told to contact support. |
-| ```{% raw %}{% include "partials/appHeader.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
+| ```{% raw %}{% include "partials/app_header.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
 | ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
 | ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' code-block. | When dynamic version info is required |
 

@@ -130,6 +130,24 @@ Organizing things hierarchically in this way helps us keep track of our work: it
 
 To **l**i**s**t the contents of a directory, we use the command `ls` followed by the path to the directory whose contents we want listed.
 
+??? note "Solo learners"
+    This tutorial series was originally written for a live workshop, where every attendee
+    was added to a shared training project (`nesi99991`) with a working directory already
+    created for them, pre-loaded with the files used in later exercises.
+
+    If you're working through this on your own, you won't have access to `nesi99991`.
+    Everywhere these lessons use `{{extra.working_directory[0]}}/{{extra.working_directory[1]}}`
+    (including the `--account` line in later Slurm scripts), substitute your own project's
+    id.
+
+    For the next excersise you will need to run,
+
+    ```sh
+    mkdir -p {{extra.working_directory[0]}}/{{extra.working_directory[1]}}
+    ```
+
+    When you have to download the additional files, they will be called out in blocks like this.
+
 We will now list the contents of the directory we will be working from.
 We can use the following command to do this:
 
@@ -217,7 +235,7 @@ mkdir <username>
 You should then be able to see your new directory is there using `ls`.
 
 ```sh
-ls {{extra.working_directory[0]}}
+ls {{extra.working_directory[0]}}/{{extra.working_directory[1]}}
 ```
 
 ```out
@@ -446,25 +464,23 @@ what will `ls ../backup` display?
 <quiz>
 <p class=admonition-title>Listing in Reverse Chronological Order</p>
 
-What command would you use in order to list files in reverse chronological order (newest first).
+By default, `ls` lists the contents of a directory in alphabetical
+order by name. The command `ls -t` lists items by time of last
+change instead of alphabetically. The command `ls -r` lists the
+contents of a directory in reverse order.
 
-`ls -[[lrt]]`
+What command would you use in order to list files in reverse chronological order (newest first)?
+Hint: You may need to use the `-l` flag to see the last changed dates.
+
+ls -[[lrt]]
+
+---
+
+The most recently changed file is listed last when using `-rt`. This
+can be very useful for finding your most recent edits or checking to
+see if a new output file was written.
 
 </quiz>
-
-!!! question "Listing in Reverse Chronological Order"
-    By default, `ls` lists the contents of a directory in alphabetical
-    order by name. The command `ls -t` lists items by time of last
-    change instead of alphabetically. The command `ls -r` lists the
-    contents of a directory in reverse order.
-    Which file is displayed last when you combine the `-t` and `-r` flags?
-    Hint: You may need to use the `-l` flag to see the
-    last changed dates.
-  
-??? question "Solution"
-    The most recently changed file is listed last when using `-rt`. This
-    can be very useful for finding your most recent edits or checking to
-    see if a new output file was written.
 
 ## Globbing
 
@@ -474,8 +490,16 @@ which will then be operated on as if you had typed out all of the matches.
 
 `*` is a **wildcard**, which matches zero or more characters.
 
-<!-- TODO fix this section given no shared directory -->
 Inside the `{{ config.extra.working_directory|join('/') }}` directory there is a directory called `birds`
+
+!!! note "Solo Learners"
+    If `{{extra.example_script}}` isn't present at that path (you are not in an organised workshop), fetch your own copy directly instead of using `cp`:
+
+    ```sh
+    mkdir -p {{ config.extra.working_directory|join('/') }}/birds
+    wget -P {{ config.extra.working_directory|join('/') }}/birds https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/workshop/birds/{kaka.txt,kea.txt,kakapo.jpeg,kiwi.jpeg,pukeko.jpeg}
+    # NOTE. Fix wget command.
+    ```
 
 ```sh
 cd {{ config.extra.working_directory|join('/') }}/birds
@@ -573,6 +597,12 @@ Which `ls` command(s) will produce this output?
 
 ## Create a text file
 
+Let's move back into the directory you created earlier:
+
+```sh
+cd {{ config.extra.working_directory|join('/') }}/<username>
+```
+
 Now let's create a file. To do this we will use a text editor called Nano to create a file called `draft.txt`:
 
 ```sh
@@ -643,10 +673,16 @@ draft.txt
 
 ## Copying files and directories
 
-<!-- TODO: R script!!! -->
 In a future lesson, we will be running the R script ```{{ extra.working_directory|join('/') }}/{{extra.example_script}}```, but as we can't all work on the same file at once you will need to take your own copy.
 This can be done with the **c**o**p**y command `cp`, at least two arguments are needed the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created.
 We will be copying the file into the directory we made previously, as this should be your current directory the second argument can be a simple `.`
+
+!!! tip "Solo Learners"
+    If `{{extra.example_script}}` isn't present at that path (you are not in an organised workshop), fetch your own copy directly instead of using `cp`:
+
+    ```sh
+    wget https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/workshop/{{extra.example_script}}
+    ```
 
 ```sh
 cp {{ extra.working_directory|join('/') }}/{{extra.example_script}}  .

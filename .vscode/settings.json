@@ -18,7 +18,7 @@
             "docs/**/*.md",
             "checks/fail_checks.md"
         ],
-        "wcag-check": [
+        "aria-check": [
             "docs/**/*.md",
             "checks/fail_checks.md"
         ],
