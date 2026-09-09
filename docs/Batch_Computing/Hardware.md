@@ -133,7 +133,7 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
     </tr>
     <tr>
         <td>NVIDIA RTX PRO 6000</td>
-        <td></td>
+        <td>Avoid for double precision floating point (fp64) as it is slow</td>
         <td>96GB</td>
         <td>2</td>
         <td><a href="#gpu-genoa-rtx6000">Genoa</a></td>
@@ -149,13 +149,176 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
     </tr>
     <tr>
         <td>NVIDIA L4</td>
-        <td>No double precision floating point (fp64)</td>
+        <td>Avoid for double precision floating point (fp64) as it is slow</td>
         <td>24GB</td>
         <td>4</td>
         <td><a href="#gpu-genoa-l4">Genoa</a></td>
         <td>4</td>
     </tr>
 </table>
+
+### Choosing a GPU
+
+A rough guide to which GPU suits which kind of work. See [Using GPUs](Using_GPUs.md)
+for how to request a specific type.
+
+<table>
+    <tr>
+        <td>Workload</td>
+        <td>Best fit</td>
+        <td>Avoid</td>
+    </tr>
+    <tr>
+        <td>fp64 HPC (VASP, Quantum ESPRESSO, CP2K, OpenFOAM, Gaussian)</td>
+        <td>H100 NVL, then A100</td>
+        <td>L4, RTX PRO 6000</td>
+    </tr>
+    <tr>
+        <td>Molecular dynamics (GROMACS, AMBER, OpenMM)</td>
+        <td>RTX PRO 6000 ≳ H100 NVL &gt; A100</td>
+        <td>L4</td>
+    </tr>
+    <tr>
+        <td>4-GPU tightly-coupled</td>
+        <td>A100 <em>(only option — see <a href="#gpu-milan-a100">Milan</a>)</em></td>
+        <td>everything else</td>
+    </tr>
+    <tr>
+        <td>2-GPU communication-bound</td>
+        <td>H100 NVL <em>(600GB/s NVLink between the pair)</em></td>
+        <td>RTX PRO 6000, L4</td>
+    </tr>
+    <tr>
+        <td>Working set larger than 24GB</td>
+        <td>A100, H100 NVL, RTX PRO 6000</td>
+        <td>L4</td>
+    </tr>
+    <tr>
+        <td>Single-GPU fine-tuning, large-model inference</td>
+        <td>RTX PRO 6000 or H100 NVL</td>
+        <td>L4</td>
+    </tr>
+    <tr>
+        <td>Small-model inference, video encoding, teaching</td>
+        <td>L4 <em>(best performance per watt)</em></td>
+        <td>-</td>
+    </tr>
+</table>
+
+!!! note "Multi-node GPU jobs"
+    GPUDirect RDMA is not currently enabled, and the GPU nodes are split across
+    two InfiniBand switches. Keep GPU jobs within a single node.
+
+### GPU specifications
+
+Peak **dense** throughput per GPU.
+
+!!! note "Dense figures, datasheets will show higher speeds"
+    Datasheets often quote tensor figures twice as large as the ones below,
+    marked with an asterisk for "with sparsity". Those speeds rely on *structured
+    sparsity*: Tensor cores can skip zeros in a weight
+    matrix, provided exactly two of every four consecutive values are zero. Half
+    the multiplies, so twice the rate.
+
+<table>
+    <tr>
+        <td></td>
+        <td>NVIDIA A100 SXM4</td>
+        <td>NVIDIA RTX PRO 6000</td>
+        <td>NVIDIA H100 NVL</td>
+        <td>NVIDIA L4</td>
+    </tr>
+    <tr>
+        <td>Architecture</td>
+        <td>Ampere GA100</td>
+        <td>Blackwell GB202</td>
+        <td>Hopper GH100</td>
+        <td>Ada AD104</td>
+    </tr>
+    <tr>
+        <td>FP64</td>
+        <td>9.7 TFLOPS</td>
+        <td>~1.9 TFLOPS</td>
+        <td>30 TFLOPS</td>
+        <td>~0.5 TFLOPS</td>
+    </tr>
+    <tr>
+        <td>FP64 tensor</td>
+        <td>19.5 TFLOPS</td>
+        <td>-</td>
+        <td>60 TFLOPS</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>FP32</td>
+        <td>19.5 TFLOPS</td>
+        <td>~120 TFLOPS</td>
+        <td>60 TFLOPS</td>
+        <td>30.3 TFLOPS</td>
+    </tr>
+    <tr>
+        <td>TF32 tensor</td>
+        <td>156 TFLOPS</td>
+        <td>~126 TFLOPS</td>
+        <td>418 TFLOPS</td>
+        <td>60 TFLOPS</td>
+    </tr>
+    <tr>
+        <td>FP16 / BF16 tensor</td>
+        <td>312 TFLOPS</td>
+        <td>~250 TFLOPS</td>
+        <td>836 TFLOPS</td>
+        <td>121 TFLOPS</td>
+    </tr>
+    <tr>
+        <td>FP8 tensor</td>
+        <td>-</td>
+        <td>~500 TFLOPS</td>
+        <td>1,671 TFLOPS</td>
+        <td>242 TFLOPS</td>
+    </tr>
+    <tr>
+        <td>FP4 tensor</td>
+        <td>-</td>
+        <td>~2,000 TFLOPS</td>
+        <td>-</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>INT8 tensor</td>
+        <td>624 TOPS</td>
+        <td>~1,000 TOPS</td>
+        <td>1,671 TOPS</td>
+        <td>242 TOPS</td>
+    </tr>
+    <tr>
+        <td>VRAM</td>
+        <td>80GB HBM2e</td>
+        <td>96GB GDDR7 ECC</td>
+        <td>94GB HBM3</td>
+        <td>24GB GDDR6</td>
+    </tr>
+    <tr>
+        <td>Memory bandwidth</td>
+        <td>2.04TB/s</td>
+        <td>~1.6TB/s</td>
+        <td>3.94TB/s</td>
+        <td>300GB/s</td>
+    </tr>
+    <tr>
+        <td>TDP</td>
+        <td>400W</td>
+        <td>600W</td>
+        <td>350-400W</td>
+        <td>72W</td>
+    </tr>
+</table>
+
+!!! warning "TF32 on the RTX PRO 6000"
+    Unlike the A100 and H100, the RTX PRO 6000 gets no TF32 tensor speedup — TF32
+    runs at roughly FP32 rate. PyTorch and cuBLAS defaults that rely on TF32 see no
+    speedup on these cards; the gain has to come from BF16, FP8 or FP4.
+
 
 If you have any questions about hardware or the status of anything listed in the table,
 {% include "partials/support_request.html" %}.

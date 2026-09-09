@@ -55,22 +55,22 @@ where `<gpu_type>` is the type of gpu you want to use (either 'h100', 'a100', or
         <td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
         <tr>
-        <td>RTX 6000</td>
-        <td>Slow at double precision floating point (fp64), avoid</td>
+        <td>NVIDIA RTX PRO 6000</td>
+        <td>Avoid for double precision floating point (fp64) as it is slow</td>
         <td>96GB</td>
         <td>2</td>
         <td><pre><code>#SBATCH --gpus-per-node=pro_6000:1</code></pre></td>
     </tr>
     <tr>
-        <td>NVIDIA H100</td>
+        <td>NVIDIA H100 NVL</td>
         <td></td>
-        <td>96GB</td>
+        <td>94GB</td>
         <td>2</td>
         <td><pre><code>#SBATCH --gpus-per-node=h100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA L4</td>
-        <td>No double precision floating point (fp64)</td>
+        <td>Avoid for double precision floating point (fp64) as it is slow</td>
         <td>24GB</td>
         <td>4</td>
         <td><pre><code>#SBATCH --gpus-per-node=l4:1</code></pre></td>
