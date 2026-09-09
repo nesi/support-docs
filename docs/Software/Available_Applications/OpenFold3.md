@@ -101,10 +101,6 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 	Setup configuration saved to /nesi/project/nesi12345/user.name/openfold3/setup_config.json
 	```
 
-	!!! warning
-
-		If you get an error message relating to Biotite CCD, get in touch with [Mahuika Support](mailto:support@nesi.org.nz).
-
 3. Add the following line to your `.bashrc` and source it. **Make sure you change `OPENFOLD_CACHE` to what you gave in step 2**:
 
 	```bash
@@ -184,16 +180,22 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 	[ok] query JSON validates against this version's schema
 	```
 
-### Downloading the database files
+### Downloading the database files (Optional)
 
 Many of the databases that OpenFold3 uses are also used by AlphaFold3. To find those databases, see the [AlphaFold Databases](AlphaFold.md#alphafold-databases). However, OpenFold3 can also use other databases. If you want access to them, you will need to download them:
 
-1. `cd` into the path where you would like to store your OpenFold3 databases. Ideally, this should be in your project directory:
+1. Create the directory where you would like to keep your OpenFold3
+	databases. Ideally this should be in your project directory:
 
 	```bash
 	mkdir -p /nesi/project/<PROJECT_ID>/openfold3_databases
-	cd /nesi/project/<PROJECT_ID>/openfold3_databases
+	cd /nesi/project/<PROJECT_ID>
 	```
+
+	The commands below are run from the directory *containing*
+	`openfold3_databases`, as above. The full path
+	`/nesi/project/<PROJECT_ID>/openfold3_databases` is what you will give as
+	`base_database_path` when you configure the alignment pipeline.
 
 2. Load OpenFold3:
 
@@ -201,28 +203,13 @@ Many of the databases that OpenFold3 uses are also used by AlphaFold3. To find t
 	module load OpenFold3
 	```
 
-3. Download the desired databases from the list below:
+3. List what is available:
 
 	```bash
 	aws s3 ls --no-sign-request --human-readable s3://openfold/alignment_databases/
 	```
 
-	For example, the following will download and uncompress your desired databases:
-
-	```bash
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/rfam.fasta.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/pdb_seqres.fasta.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/rnacentral.fasta.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/nucleotide_collection.fasta.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/uniref90.fasta.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/uniprot.fasta.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/mgnify.fasta.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/uniref30.tar.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/cfdb.tar.gz .
-	aws s3 cp --no-sign-request s3://openfold/alignment_databases/bfd.tar.gz .
-	```
-
-	Be mindful of the amount of space you will need before you download the databases:
+	Be mindful of the amount of space you will need before you download anything:
 
 	| #  | Database | Format | Size | Type |
 	|----|----------------------|------------|--------|--------------------|
@@ -238,6 +225,102 @@ Many of the databases that OpenFold3 uses are also used by AlphaFold3. To find t
 	| 10 | bfd | .tar.gz | 292 GB | protein (HHblits) |
 
 	**Total download:** ~918 GB — budget ~3–4 TB of filesystem for the decompressed set.
+
+4. Download and unpack the ones you want. Each database has to end up in its
+	own subdirectory named after it, because that is the layout the alignment
+	pipeline expects.
+
+	Each `aws s3 cp` reports its own download progress. Decompression does not,
+	so the commands below pipe through `pv`, which prints a percentage, a rate
+	and an ETA — worth having when a single file takes tens of minutes.
+
+	The **FASTA databases** are downloaded into a subdirectory you name, then
+	decompressed in place:
+
+	```bash
+	# Load the progress bar
+	module load pv
+
+	# rfam
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/rfam.fasta.gz ./openfold3_databases/rfam/
+	pv ./openfold3_databases/rfam/rfam.fasta.gz | gunzip > ./openfold3_databases/rfam/rfam.fasta
+	rm ./openfold3_databases/rfam/rfam.fasta.gz
+
+	# pdb_seqres  (needed for template search)
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/pdb_seqres.fasta.gz ./openfold3_databases/pdb_seqres/
+	pv ./openfold3_databases/pdb_seqres/pdb_seqres.fasta.gz | gunzip > ./openfold3_databases/pdb_seqres/pdb_seqres.fasta
+	rm ./openfold3_databases/pdb_seqres/pdb_seqres.fasta.gz
+
+	# rnacentral
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/rnacentral.fasta.gz ./openfold3_databases/rnacentral/
+	pv ./openfold3_databases/rnacentral/rnacentral.fasta.gz | gunzip > ./openfold3_databases/rnacentral/rnacentral.fasta
+	rm ./openfold3_databases/rnacentral/rnacentral.fasta.gz
+
+	# nucleotide_collection
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/nucleotide_collection.fasta.gz ./openfold3_databases/nucleotide_collection/
+	pv ./openfold3_databases/nucleotide_collection/nucleotide_collection.fasta.gz | gunzip > ./openfold3_databases/nucleotide_collection/nucleotide_collection.fasta
+	rm ./openfold3_databases/nucleotide_collection/nucleotide_collection.fasta.gz
+
+	# uniref90
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/uniref90.fasta.gz ./openfold3_databases/uniref90/
+	pv ./openfold3_databases/uniref90/uniref90.fasta.gz | gunzip > ./openfold3_databases/uniref90/uniref90.fasta
+	rm ./openfold3_databases/uniref90/uniref90.fasta.gz
+
+	# uniprot
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/uniprot.fasta.gz ./openfold3_databases/uniprot/
+	pv ./openfold3_databases/uniprot/uniprot.fasta.gz | gunzip > ./openfold3_databases/uniprot/uniprot.fasta
+	rm ./openfold3_databases/uniprot/uniprot.fasta.gz
+
+	# mgnify
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/mgnify.fasta.gz ./openfold3_databases/mgnify/
+	pv ./openfold3_databases/mgnify/mgnify.fasta.gz | gunzip > ./openfold3_databases/mgnify/mgnify.fasta
+	rm ./openfold3_databases/mgnify/mgnify.fasta.gz
+	```
+
+	The **HHblits databases** are tar archives that already contain their own
+	top-level directory, so they are downloaded into `./openfold3_databases` itself and
+	extracted there — `tar` creates the `uniref30/`, `cfdb/` and `bfd/`
+	directories for you:
+
+	```bash
+	# Load the progress bar
+	module load pv
+
+	# uniref30
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/uniref30.tar.gz ./openfold3_databases/
+	pv ./openfold3_databases/uniref30.tar.gz | tar -xz -C ./openfold3_databases/
+	rm ./openfold3_databases/uniref30.tar.gz
+
+	# cfdb
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/cfdb.tar.gz ./openfold3_databases/
+	pv ./openfold3_databases/cfdb.tar.gz | tar -xz -C ./openfold3_databases/
+	rm ./openfold3_databases/cfdb.tar.gz
+
+	# bfd
+	aws s3 cp --no-sign-request s3://openfold/alignment_databases/bfd.tar.gz ./openfold3_databases/
+	pv ./openfold3_databases/bfd.tar.gz | tar -xz -C ./openfold3_databases/
+	rm ./openfold3_databases/bfd.tar.gz
+	```
+
+	!!! warning "Do this in a job, not on the login node"
+
+		UniRef90, UniProt and MGnify take a long time to decompress and grow
+		well beyond their download sizes; the three HHblits archives are
+		larger still. Check your quota against the table above first, and run
+		the downloads and extractions from a Slurm job.
+
+5. Check the result. Each database should be a directory named after itself,
+	holding uncompressed files:
+
+	```bash
+	ls ./openfold3_databases/*/ | head -20
+	```
+
+	The FASTA databases should each hold a single plain `.fasta` — for example
+	`./openfold3_databases/uniref90/uniref90.fasta` — and the HHblits ones a set of
+	`.ffdata` and `.ffindex` files. A database left compressed is reported by
+	the alignment pipeline as a *missing input file* rather than as a
+	decompression problem, so it is worth confirming here.
 
 ## Using OpenFold3
 
@@ -261,8 +344,6 @@ A prediction is split into two stages:
 
 The following are the steps for running a prediction using OpenFold3
 (Reference: [OpenFold3 Inference](https://openfold-3.readthedocs.io/en/latest/inference.html)).
-Each step below also links the upstream page it is based on, which is the place
-to look for anything not covered here.
 
 ### Step 1: Describe what you want to fold
 
@@ -338,9 +419,16 @@ for the complete schema.
     supported by the inference pipeline. Templates are supported for protein
     chains only.
 
-### Step 2: Generate the MSAs from the local databases
+### Step 2: Generate the MSAs from the local databases (Optional)
 
 *Reference: [OpenFold3-Style Precomputed MSA Generation](https://openfold-3.readthedocs.io/en/latest/precomputed_msa_generation_how_to.html)*
+
+!!! note "This step is optional"
+
+	If you downloaded the database and want to generate your own MSA's using your local
+	databases, follow this step. 
+
+	**Do this if you are performing analysis on lots of samples**
 
 OpenFold3 ships a [Snakemake](snakemake.md) pipeline that
 searches each unique sequence against the databases you downloaded and writes
@@ -350,11 +438,11 @@ file, such as this example:
 ``` json title="config_protein.json"
 {
     "input_fasta": "/nesi/nobackup/nesi12345/openfold3/queries.fasta",
-    "openfold_env": "<GET PATH FROM 'echo $EBROOTOPENFOLD3'>",
+    "openfold_env": "<SEE BELOW FOR HOW TO GET THIS>",
     "databases": ["uniref90"],
     "base_database_path": "/nesi/project/nesi12345/openfold3_databases",
     "output_directory": "/nesi/nobackup/nesi12345/openfold3/alignments",
-    "jackhmmer_output_format": "a3m",
+    "jackhmmer_output_format": "sto",
     "jackhmmer_threads": 8,
     "nhmmer_threads": 8,
     "hhblits_threads": 8,
@@ -367,18 +455,41 @@ The fields are:
 
 * **`input_fasta`** *(path)* — the FASTA file of sequences to align, one record
     per unique sequence you intend to fold. Only protein and RNA chains need
-    alignments, so for the `query_1` example in Step 1 this file holds just the
-    one protein sequence:
+    alignments, so for the `query_1` example in Step 1 it holds just the one
+    protein sequence:
 
-    ``` bash
-    >query_1_A
+    ``` text title="queries.fasta"
+    >query1_A
     PVLSCGEWQCL
     ```
 
-* **`openfold_env`** *(path)* — the OpenFold3 environment the pipeline should
-    run its tools from. On Mahuika this is the module's install directory, which
-    `echo $EBROOTOPENFOLD3` prints once the module is loaded. JSON cannot expand
-    environment variables, so paste in the literal path the `echo $EBROOTOPENFOLD3` prints. 
+    Each record's header names the alignment directory the pipeline creates for
+    it, so `query1_A` here becomes `alignments/query1_A/` — the path you give
+    to that chain in [Step 3](#step-3-point-the-query-json-at-the-alignments).
+    Pick headers you can match back to your chains.
+
+    !!! warning "Headers need exactly one underscore"
+
+        Use the PDB-style `<name>_<chain>` form, as above. Template search
+        writes the header into the alignment as the query's identifier, and
+        OpenFold3 later splits it on the underscore to recover an entry and a
+        chain. A header with two underscores (`query_1_A`) or none
+        (`queryA`) fails at prediction time with `ValueError: too many values
+        to unpack` or `not enough values to unpack` — long after the
+        alignments themselves have finished.
+
+* **`openfold_env`** *(path)* — the directory holding the alignment tools the
+    pipeline shells out to: `jackhmmer`, `nhmmer`, `hmmbuild`, `hmmalign`,
+    `hmmsearch` and `esl-reformat` from HMMER, plus `hhblits` from HH-suite if
+    you are searching `cfdb` or `bfd`. To get `"openfold_env"` for Mahuika,
+    copy the following into the terminal and paste the output directory into
+    `"openfold_env"`:
+
+    ``` sh
+    module load OpenFold3
+    echo $OPENFOLD3_ALN_ENV
+    ```
+
 * **`databases`** *(list of strings)* — which databases to generate alignments
     against. One or more of `uniref90`, `uniprot`, `mgnify`, `cfdb` and `bfd`.
 * **`base_database_path`** *(path)* — the directory holding those databases.
@@ -389,16 +500,23 @@ The fields are:
 * **`output_directory`** *(path)* — where the per-chain alignment directories
     are written. This is the path you will point your query JSON at in Step 3.
 * **`jackhmmer_output_format`** *(string)* — `sto` or `a3m`, the format
-    `jackhmmer` writes its alignments in.
+    `jackhmmer` writes its alignments in. It applies to every database, not
+    one at a time, and two things force `sto`: template search builds its HMM
+    from the UniRef90 alignment and needs Stockholm to do it, and RNA
+    alignments are Stockholm-only. Pairing `a3m` with
+    `run_template_search: true` fails the dry run with *"Must generate
+    uniref90 MSAs in stockholm format for template search"*. OpenFold3 reads
+    either format happily when featurising, so `sto` is the safe default.
 * **`jackhmmer_threads`**, **`nhmmer_threads`**, **`hhblits_threads`**
     *(integers)* — threads used by **one** invocation of each search tool.
     `jackhmmer` handles the FASTA databases, `nhmmer` the RNA searches, and
     `hhblits` the `cfdb` and `bfd` databases. 
 * **`tmpdir`** *(path)* — scratch space for intermediate files.
 * **`run_template_search`** *(boolean)* — whether to also run `hmmsearch`
-    against `pdb_seqres` to produce the template alignments used in Step 4.
-    Requires `uniref90` to be in `databases`, or UniRef90 alignments completed
-    by an earlier run.
+    against `pdb_seqres` to produce the `hmm_output.sto` template alignments
+    used in Step 5. Requires `uniref90` to be in `databases` (or UniRef90
+    alignments completed by an earlier run) and
+    `jackhmmer_output_format: sto`.
 
 Always dry-run first to check the paths resolve:
 
@@ -419,7 +537,8 @@ Then submit the real run as a CPU job:
 #SBATCH --output        %j.out
 
 module purge
-module load OpenFold3
+module load OpenFold3/0.4.4-foss-2026-CUDA-13.2.1
+module load snakemake/9.25.2-foss-2026
 
 snakemake -s $OPENFOLD3_MSA_SNAKEFILE \
     --cores $SLURM_CPUS_PER_TASK \
@@ -428,6 +547,18 @@ snakemake -s $OPENFOLD3_MSA_SNAKEFILE \
     --keep-going \
     --latency-wait 120
 ```
+
+!!! warning "Make sure the toolchains are the same"
+
+	When choosing the version of OpenFold3 you want to use, take a note of 
+	the toolchain (this is the version of `foss` that is used). Whatever version 
+	of snakemake you use, it needs to use the same toolchain as OpenFold3. 
+	In this example, both OpenFold3 and snakemake use `foss-2026`
+
+	```
+	module load OpenFold3/0.4.4-foss-2026-CUDA-13.2.1
+	module load snakemake/9.25.2-foss-2026
+	```
 
 !!! tip "Aligning many sequences at once"
 
@@ -455,16 +586,14 @@ single-sequence example above:
 
 ``` bash
 alignments/
-└── query_1_A/
-    ├── uniref90_hits.a3m
-    ├── uniprot_hits.a3m
-    ├── mgnify_hits.a3m
+└── query1_A/
+    ├── uniref90_hits.sto
     └── hmm_output.sto      # template alignment, if run_template_search was true
 ```
 
+One `<database>_hits` file appears per database named in `databases`.
 Every additional unique sequence in `input_fasta` gets its own directory
 alongside it.
-
 RNA chains produce `rfam_hits.sto`, `rnacentral_hits.a3m` and `nt_hits.a3m`
 instead.
 
@@ -483,12 +612,19 @@ preparse_alignments_of3.py \
     --max_seq_counts '{"uniref90_hits": 10000, "uniprot_hits": 50000, "mgnify_hits": 5000}'
 ```
 
-This produces one `.npz` per unique sequence (`query_1_A.npz`, …) which can be
+This produces one `.npz` per unique sequence (`query1_A.npz`, …) which can be
 used in place of the chain directory everywhere below.
 
-### Step 3: Point the query JSON at the alignments
+### Step 3: Point the query JSON at the alignments (Optional)
 
 *Reference: [Precomputed MSA Use in the OpenFold3 Inference Pipeline](https://openfold-3.readthedocs.io/en/latest/precomputed_msa_how_to.html)*
+
+!!! note "This step is optional"
+
+	If you downloaded the database and want to generate your own MSA's using your local
+	databases, follow this step. 
+
+	**Do this if you are performing analysis on lots of samples**
 
 This step edits the **query JSON from Step 1** by adding a `main_msa_file_paths` field to each protein and RNA
 chain. This `main_msa_file_paths` field contains the information obtained from step 2. 
@@ -503,7 +639,7 @@ Only the protein chain get a `main_msa_file_paths` field. DNA and ligand chains 
                     "molecule_type": "protein",
                     "chain_ids": ["A", "B"],
                     "sequence": "PVLSCGEWQCL",
-                    "main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignments/query_1_A"
+                    "main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignments/query1_A"
                 },
                 {
                     "molecule_type": "dna",
@@ -540,15 +676,15 @@ its own alignment directory.
 
 	``` json
 	"main_msa_file_paths": [
-	    "/nesi/nobackup/nesi12345/openfold3/alignments/query_1_A/uniref90_hits.a3m",
-	    "/nesi/nobackup/nesi12345/openfold3/alignments/query_1_A/mgnify_hits.a3m"
+	    "/nesi/nobackup/nesi12345/openfold3/alignments/query1_A/uniref90_hits.a3m",
+	    "/nesi/nobackup/nesi12345/openfold3/alignments/query1_A/mgnify_hits.a3m"
 	]
 	```
 
 	or a single preparsed `.npz`, if you ran the optional preparse step:
 
 	``` json
-	"main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignment_arrays/query_1_A.npz"
+	"main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignment_arrays/query1_A.npz"
 	```
 
 	Use absolute paths — relative paths are resolved against the working directory
@@ -575,13 +711,44 @@ its own alignment directory.
     and
     [Providing Species Information for Online Pairing](https://openfold-3.readthedocs.io/en/latest/precomputed_msa_how_to.html#providing-species-information-for-online-pairing)*
 
+!!! note "Alignments from another pipeline"
+
+    If your alignment filenames differ from the OpenFold3 defaults — because
+    you generated them with something other than the Step 2 pipeline — the
+    featuriser has to be told what they are called. That is done in the
+    `inference_runner.yml`; see
+    [Alignments from another pipeline](#optional-alignments-from-another-pipeline)
+    in Step 4.
+
+### Step 4: Write the prediction config yaml file
+
+*References: [OpenFold3 Inference](https://openfold-3.readthedocs.io/en/latest/inference.html)
+and [OpenFold3 Configuration Reference](https://openfold-3.readthedocs.io/en/latest/configuration_reference.html)*
+
+The `inference_runner.yml` holds every setting that is not a command line
+argument. This is the minimum for a run against your own alignments:
+
+``` yaml title="inference_runner.yml"
+experiment_settings:
+  mode: predict
+  use_msa_server: false
+  use_templates: true
+
+model_update:
+  presets:
+    - predict
+
+output_writer_settings:
+  structure_format: cif
+```
+
 #### Optional: alignments from another pipeline
 
 If your alignment filenames differ from the OpenFold3 defaults (for example
-because you generated them with your own pipeline), tell the featuriser about
-them in the `runner.yml`:
+because you generated them with your own pipeline), add a
+`dataset_config_kwargs` section telling the featuriser what they are called:
 
-``` yaml
+``` yaml title="Add to inference_runner.yml"
 dataset_config_kwargs:
   msa:
     max_seq_counts:
@@ -595,15 +762,36 @@ dataset_config_kwargs:
       - custom_database_hits
 ```
 
-The `runner.yml` file contains the follow inputs:
-
-* `max_seq_counts` caps how many sequences are taken from each file, 
-* `aln_order` sets the order the alignments are stacked in, and 
-* `msas_to_pair` names the alignments used for cross-chain pairing in heteromeric complexes. 
+* `max_seq_counts` caps how many sequences are taken from each file,
+* `aln_order` sets the order the alignments are stacked in, and
+* `msas_to_pair` names the alignments used for cross-chain pairing in
+    heteromeric complexes.
 
 You do not need any of this if you used the OpenFold3 pipeline in Step 2.
 
-### Step 4: Templates (optional)
+!!! warning "Using the MSA server to grab allignments"
+
+	If you are not obtaining your MSAs from local databases, you will need to fatch them by 
+	sending your  protein sequences to the MSA server, which will run MMseqs2 against its 
+	own databases and return alignments. 
+
+	If you want to use the MSA server, set `use_msa_server` to `true`. For example: 
+
+	``` yaml title="inference_runner.yml"
+	experiment_settings:
+	  mode: predict
+	  use_msa_server: true
+	  use_templates: true
+
+	model_update:
+	  presets:
+	    - predict
+
+	output_writer_settings:
+	  structure_format: cif
+	```
+
+### Step 5: Templates (optional)
 
 *Reference: [Running OpenFold3 Inference with Templates](https://openfold-3.readthedocs.io/en/latest/template_how_to.html)*
 
@@ -611,7 +799,7 @@ Templates are optional and protein-only. There are three ways to handle them:
 
 #### Use the template alignments from Step 2
 
-If you set `run_template_search: true`, point each protein chain at its
+If you set `run_template_search: true` in your `inference_runner.yaml` file, point each protein chain at its
 `hmm_output.sto`.
 For example: 
 
@@ -624,8 +812,8 @@ For example:
                     "molecule_type": "protein",
                     "chain_ids": ["A", "B"],
                     "sequence": "PVLSCGEWQCL",
-                    "main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignments/query_1_A",
-                    "template_alignment_file_path": "/nesi/nobackup/nesi12345/openfold3/alignments/query_1_A/hmm_output.sto"
+                    "main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignments/query1_A",
+                    "template_alignment_file_path": "/nesi/nobackup/nesi12345/openfold3/alignments/query1_A/hmm_output.sto"
                 },
                 {
                     "molecule_type": "dna",
@@ -648,9 +836,40 @@ For example:
 }
 ```
 
-The alignment only names its templates, so OpenFold3 also needs a directory of
-mmCIF structures to read them from. That is set in the `runner.yml` you write
-in [Step 5](#step-5-run-the-prediction).
+!!! note "Add this to the `inference_runner.yml`"
+
+    The alignment names its templates but does not contain them, so the
+    `inference_runner.yml` you wrote in
+    [Step 4](#step-4-write-the-prediction-config) also has to say where the
+    structures live:
+
+    ``` yaml title="inference_runner.yml" hl_lines="13 14 15 16 17"
+    experiment_settings:
+      mode: predict
+      use_msa_server: false
+      use_templates: true
+
+    model_update:
+      presets:
+        - predict
+
+    output_writer_settings:
+      structure_format: cif
+
+    template_preprocessor_settings:
+      structure_directory: /opt/nesi/db/alphafold_db/2023-04/pdb_mmcif/mmcif_files/
+      structure_file_format: cif
+      fetch_missing_structures: false
+      n_processes: 4
+    ```
+
+    That `structure_directory` is the PDB mmCIF mirror that comes with the
+    [AlphaFold databases](AlphaFold.md#alphafold-databases). Setting
+    `fetch_missing_structures: false` keeps the job reading from it rather
+    than downloading anything it cannot find from the RCSB PDB mid-run.
+
+    Neither setting is needed if you use `template_cif_paths` below, or turn
+    templates off.
 
 !!! tip "Large batches"
 
@@ -683,7 +902,7 @@ chain. Only the protein chain changes; the rest of `query_1` is as above:
                     "molecule_type": "protein",
                     "chain_ids": ["A", "B"],
                     "sequence": "PVLSCGEWQCL",
-                    "main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignments/query_1_A",
+                    "main_msa_file_paths": "/nesi/nobackup/nesi12345/openfold3/alignments/query1_A",
                     "template_cif_paths": [
                         "/nesi/nobackup/nesi12345/openfold3/templates/1dgc.cif",
                         "/nesi/nobackup/nesi12345/openfold3/templates/1ysa.cif"
@@ -716,67 +935,17 @@ chain. Only the protein chain changes; the rest of `query_1` is as above:
 
 #### Skip templates
 
-Set `use_templates: false` under `experiment_settings` in your `runner.yml`.
+Set `use_templates: false` under `experiment_settings` in the
+`inference_runner.yml` you wrote in [Step 4](#step-4-write-the-prediction-config).
 
-### Step 5: Run the prediction
+### Step 6: Run the prediction
 
 *References: [OpenFold3 Inference](https://openfold-3.readthedocs.io/en/latest/inference.html)
 and [OpenFold3 Parameters](https://openfold-3.readthedocs.io/en/latest/parameters_reference.html)*
 
-Write a `runner.yml` for the prediction job.
+With `query.json` and `inference_runner.yml` in place, submit a GPU job:
 
-``` yaml title="inference.yml"
-experiment_settings:
-  mode: predict
-  use_msa_server: false
-  use_templates: true
-
-model_update:
-  presets:
-    - predict
-
-output_writer_settings:
-  structure_format: cif
-```
-
-!!! note "Add this if you are using template alignments"
-
-    If you gave your chains a `template_alignment_file_path` in
-    [Step 4](#use-the-template-alignments-from-step-2), the alignment names
-    its templates but does not contain them, so the `runner.yml` also has to
-    say where the structures live:
-
-    ``` yaml title="inference.yml" hl_lines="13 14 15 16 17"
-    experiment_settings:
-      mode: predict
-      use_msa_server: false
-      use_templates: true
-
-    model_update:
-      presets:
-        - predict
-
-    output_writer_settings:
-      structure_format: cif
-
-    template_preprocessor_settings:
-      structure_directory: /opt/nesi/db/alphafold_db/2023-04/pdb_mmcif/mmcif_files/
-      structure_file_format: cif
-      fetch_missing_structures: false
-      n_processes: 4
-    ```
-
-    That `structure_directory` is the PDB mmCIF mirror that comes with the
-    [AlphaFold databases](AlphaFold.md#alphafold-databases). Setting
-    `fetch_missing_structures: false` keeps the job reading from it rather
-    than downloading anything it cannot find from the RCSB PDB mid-run.
-
-    Neither setting is needed if you used `template_cif_paths` or turned
-    templates off.
-
-Then submit a GPU job:
-
-``` sl
+``` sl title="submit.gpu.sl"
 #!/bin/bash -e
 
 #SBATCH --account       nesi12345
@@ -793,7 +962,7 @@ module load OpenFold3
 
 QUERY=/nesi/nobackup/nesi12345/openfold3/query.json
 OUTPUT=/nesi/nobackup/nesi12345/openfold3/results
-RUNNER=/nesi/nobackup/nesi12345/openfold3/inference.yml
+RUNNER=/nesi/nobackup/nesi12345/openfold3/inference_runner.yml
 
 run_openfold predict \
     --query-json ${QUERY} \
@@ -827,8 +996,9 @@ than increasing diffusion samples.
     [setup](#downloading-the-parameters-files), the checkpoint you already
     downloaded is found and nothing is fetched from the network.
 
-    You can also drop a `runner.yml` at `$OPENFOLD_CACHE/runner.yml` and it
-    will be applied to every prediction automatically, without `--runner-yaml`.
+    OpenFold3 also reads a `runner.yml` from `$OPENFOLD_CACHE` automatically if
+    one is there — that filename is fixed, and it is applied to every
+    prediction without `--runner-yaml`.
     This is a convenient place to keep site-specific settings such as
     `use_msa_server: false`.
 
@@ -836,13 +1006,13 @@ than increasing diffusion samples.
 
 *Reference: [OpenFold3 Configuration Reference](https://openfold-3.readthedocs.io/en/latest/configuration_reference.html)*
 
-These all go in the `runner.yml`:
+These all go in the `inference_runner.yml`:
 
 **Use several GPUs.** Prediction is backed by PyTorch Lightning, which spreads
 a batch of queries over the available GPUs. This only helps if your query JSON
 contains several queries:
 
-``` yaml
+``` yaml title="Add to inference_runner.yml"
 pl_trainer_args:
   devices: 2      # GPUs per node
   num_nodes: 1
@@ -853,7 +1023,7 @@ pairformer embeddings for each diffusion sample sequentially instead of
 together. Expect a significant slowdown, especially with many diffusion
 samples:
 
-``` yaml
+``` yaml title="Add to inference_runner.yml"
 model_update:
   presets:
     - predict
@@ -862,7 +1032,7 @@ model_update:
 
 **Choose specific random seeds** instead of letting OpenFold3 pick them:
 
-``` yaml
+``` yaml title="Add to inference_runner.yml"
 experiment_settings:
   seeds:
     - 100
@@ -872,7 +1042,7 @@ experiment_settings:
 **Write PDB instead of mmCIF.** Per-residue pLDDT is stored in the B-factor
 column of PDB output:
 
-``` yaml
+``` yaml title="Add to inference_runner.yml"
 output_writer_settings:
   structure_format: pdb
 ```
@@ -880,7 +1050,7 @@ output_writer_settings:
 **Save disk space on big batches** by skipping the per-atom confidence files
 and keeping only the aggregated scores:
 
-``` yaml
+``` yaml title="Add to inference_runner.yml"
 output_writer_settings:
   write_full_confidence_scores: False
 ```
@@ -888,7 +1058,7 @@ output_writer_settings:
 **Save the trunk embeddings** as a `*_latent_output.pt` containing `si_trunk`,
 `zij_trunk` and `atom_positions_predicted`:
 
-``` yaml
+``` yaml title="Add to inference_runner.yml"
 output_writer_settings:
   write_latent_outputs: True
 ```
@@ -898,22 +1068,38 @@ output_writer_settings:
 *Reference: [Model Outputs](https://openfold-3.readthedocs.io/en/latest/inference.html#model-outputs)*
 
 Each query gets a directory named after its key, containing one subdirectory
-per seed:
+per seed. The seed directory is named after the seed actually used, which is
+picked at random unless you set one yourself:
 
 ``` bash
 results/
+├── summary.txt
+├── inference_query_set.json
+├── model_config.json
+├── experiment_config.json
 └── query_1
-    └── seed_42
-        ├── query_1_seed_42_sample_1_model.cif
-        ├── query_1_seed_42_sample_1_confidences.json
-        ├── query_1_seed_42_sample_1_confidences_aggregated.json
+    └── seed_2746317213
+        ├── query_1_seed_2746317213_sample_1_model.cif
+        ├── query_1_seed_2746317213_sample_1_confidences.json
+        ├── query_1_seed_2746317213_sample_1_confidences_aggregated.json
+        ├── ...                                     # one set per diffusion sample
+        ├── query_1_seed_2746317213_sample_5_model.cif
+        ├── query_1_seed_2746317213_sample_5_confidences.json
+        ├── query_1_seed_2746317213_sample_5_confidences_aggregated.json
         └── timing.json
 ```
 
+There is one `_model.cif` and two confidence files per diffusion sample, so
+`--num-diffusion-samples 5` gives the five sets above.
+
 * `*_model.cif` (or `.pdb`) — the predicted structure.
-* `*_confidences.json` — per-atom `plddt`, `pae` and `pde`.
+* `*_confidences.json` — `plddt` as one value per atom, plus `pae` and `pde`
+    as token-by-token matrices.
 * `*_confidences_aggregated.json` — whole-structure scores.
-* `timing.json` — model runtime in seconds, excluding any MSA computation.
+* `timing.json` — `runtime_s`, the model runtime in seconds, excluding any MSA
+    computation. One file per seed, not per sample.
+* `summary.txt` — how many queries were processed, and how many succeeded or
+    failed.
 
 The aggregated file is the one to rank predictions with:
 
@@ -928,10 +1114,13 @@ The aggregated file is the one to rank predictions with:
 | `has_clash` | `1.0` if any two polymer chains clash sterically |
 | `disorder` | Mean relative solvent-accessible surface area |
 
-Alongside the per-query directories, OpenFold3 writes `inference_query_set.json`
-(the validated input, with all resolved MSA and template paths),
-`model_config.json` and `experiment_config.json`. Keep these — together they
-record exactly what was run.
+The three JSON files at the top level record what was run:
+`inference_query_set.json` is the validated input with all resolved MSA and
+template paths, `model_config.json` the model settings, and
+`experiment_config.json` the experiment settings. Keep them — between them they
+capture everything needed to reproduce the run, and
+`inference_query_set.json` is the first place to look if a chain seems to have
+been folded without its MSA or templates.
 
 ### Inference troubleshooting
 
@@ -999,7 +1188,7 @@ aws s3 sync --no-sign-request s3://openfold3-data/pdb_training_set/ /nesi/noback
 *References: [Prepare the Training Config](https://openfold-3.readthedocs.io/en/latest/training.html#prepare-the-training-config)
 and [OpenFold3 Configuration Reference](https://openfold-3.readthedocs.io/en/latest/configuration_reference.html)*
 
-The training config is the same `runner.yml` used for inference, with
+The training config is the same kind of YAML file used for inference, with
 `mode: train` and additional sections describing the datasets. A minimal
 single-GPU config looks like this:
 
