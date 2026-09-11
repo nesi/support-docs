@@ -34,12 +34,9 @@ reference, and compare recent and past usage.
 - At the top of each tab is a summary of the contract, indicating the:
 
   - Term of agreement (contract start and end dates)
-
-    - Maximum contracted value
-
-    - Value of services utilised to date
-
-- Usage for each service is shown in the corresponding sections below
+  - Maximum contracted value
+  - Value of services utilised to date
+  - Usage for each service is shown in the corresponding sections below
 
 - In cases where a service has differently priced resources (eg.
     Compute pricing varies across our CPU and GPU resources), we will
