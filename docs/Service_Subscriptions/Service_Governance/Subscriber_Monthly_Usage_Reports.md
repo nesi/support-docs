@@ -31,7 +31,7 @@ training events that would be of interest to your research community.
 A new tab is added to the report for each month, making it easy to view,
 reference, and compare recent and past usage.
 
-- At the top of each tab is a summary of the contract, indicating the:
+At the top of each tab is a summary of the contract, indicating the:
 
   - Term of agreement (contract start and end dates)
   - Maximum contracted value
