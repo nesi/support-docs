@@ -38,17 +38,9 @@ reference, and compare recent and past usage.
   - Value of services utilised to date
   - Usage for each service is shown in the corresponding sections below
 
-- In cases where a service has differently priced resources (eg.
-    Compute pricing varies across our CPU and GPU resources), we will
-    also indicate additional information (eg. “Type of CPU” and “Type of
-    GPU”) so you have a breakdown of what usage contributes to the total
-    chargeable costs that month. See the Pricing section above for more
-    information on our service pricing.
+In cases where a service has differently priced resources (eg. Compute pricing varies across our CPU and GPU resources), we will also indicate additional information (eg. “Type of CPU” and “Type of GPU”) so you have a breakdown of what usage contributes to the total chargeable costs that month. See the Pricing section above for more information on our service pricing.
 
-- To showcase full value delivered through our services, our reports
-    will also show usage that is not chargeable (eg. Merit usage). This
-    is shown simply for information purposes and is not included or
-    reflected on invoices.
+To showcase full value delivered through our services, our reports will also show usage that is not chargeable (eg. Merit usage). This is shown simply for information purposes and is not included or reflected on invoices.
 
 Usage reports are generally ready to view by the middle of the following
 month. So, for example, January usage will appear as a new tab by mid-
