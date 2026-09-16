@@ -60,12 +60,12 @@ An unofficial AI skill for responsible operation of the REANNZ HPC can be found 
 
 ## Research Integrity
 
-Use of AI in research conducted on REANNZ HPC systems should follow the [Royal Society Te Apārangi guidelines for the best-practice use of GenAI in research](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf):
+Use of AI in research conducted on REANNZ HPC systems should follow the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf):
 
-!!! note See Also
-
-    [Access Policy](./Access_Policy.md)
-    [Acceptable Use Policy](./Acceptable_Use_Policy.md)
-    [Privacy Policy](./Privacy_Policy.md)
-    [Royal Society Te Apārangi GenAI guidelines (2025)](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf)
-    [Public Service AI Framework](https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence)
+!!! note "See Also"
+  
+  - [Access Policy](./Access_Policy.md)
+  - [Acceptable Use Policy](./Acceptable_Use_Policy.md)
+  - [Privacy Policy](./Privacy_Policy.md)
+  - [Royal Society Te Apārangi GenAI guidelines (2025)](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf)
+  - [Public Service AI Framework](https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence)
