@@ -135,6 +135,29 @@ The first time, you will be asked how to authenticate:
   Keep the key out of shared project directories and job scripts.
   Your home directory is not readable by other users, but it can be accessed by Mahuika administrators.
 
+!!! warning "The login URL breaks if it wraps"
+    The login URL is longer than a normal terminal line.
+    When you copy it from a wrapped terminal, especially inside `tmux`, a line break or space is often copied along with it.
+    The browser then shows an error such as `Invalid OAuth Request` or `Invalid code_challenge_method: S25 6. Expected: 'S256'`.
+
+    To avoid this, do one of the following:
+
+    - Paste the URL into a text editor, remove any spaces and line breaks, then open it in your browser.
+    - Make the terminal wide enough (or zoom out) that the URL fits on one line, and log in outside `tmux`.
+      You only need to log in once.
+    - Log in without a browser on Mahuika: run `claude setup-token` in Claude Code on your own computer, then add
+      `export CLAUDE_CODE_OAUTH_TOKEN=<token>` to your `~/.bashrc` on Mahuika.
+      Treat this token like a password.
+
+!!! warning "Choose 'Yes' when asked to trust the folder"
+    The first time you start `claude` in a directory, it asks
+    **"Is this a project you created or one you trust?"**.
+    The highlighted default is **"No, exit"**, so pressing <kbd>Enter</kbd> straight away quits Claude Code and returns you to the shell.
+    Press <kbd>↓</kbd> to select **"Yes, I trust this folder"**, then press <kbd>Enter</kbd>.
+    You are asked once per directory.
+
+    If the arrow keys do nothing, check that `echo $TERM` shows a value such as `xterm-256color`, or try again outside `tmux`.
+
 ### Keep sessions running
 
 Claude Code sessions can run for a long time, for example while waiting for a job to finish.
@@ -244,6 +267,10 @@ It uses a few seconds of compute time.
     claude
     ```
 
+    Because this is a new directory, Claude Code first asks whether you trust the folder.
+    Press <kbd>↓</kbd> to select **"Yes, I trust this folder"** before pressing <kbd>Enter</kbd>.
+    The default, **"No, exit"**, quits Claude Code.
+
 2. Give Claude Code this prompt:
 
     ```txt
@@ -271,6 +298,8 @@ The hostname in the output should not be a login node name such as `login01`.
 
 | Problem | Likely cause |
 | - | - |
+| `claude` exits straight back to the shell | You accepted the default **"No, exit"** when asked to trust the folder. Run `claude` again and [select "Yes, I trust this folder"](#log-in). |
+| The browser shows `Invalid OAuth Request` or `Invalid code_challenge_method` | The login URL was broken when it was copied from a wrapped terminal line. See [the login URL warning](#log-in). |
 | Login or network errors when starting `claude` | Claude Code cannot reach Anthropic's servers, or the login has expired. Run `claude` again and follow the login prompt. |
 | `module: command not found` or no compilers | The agent's shell has not loaded the module system. Ask it to run `source /etc/profile` first, or add this to your `CLAUDE.md`. |
 | The agent runs `mpirun` or `srun` on the login node instead of submitting a job | Add the "run everything through Slurm" rule from the [example `CLAUDE.md`](#project-claudemd-file) to your project. |
