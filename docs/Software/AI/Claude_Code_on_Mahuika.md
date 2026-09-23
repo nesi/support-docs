@@ -40,6 +40,22 @@ Option 1 is recommended for most HPC work.
 The agent runs next to your files, the environment modules, the compilers and Slurm,
 so it can complete the edit, build, submit and check cycle itself.
 
+!!! warning "Set your project code"
+    The instructions on this page use the shell variable `PROJECT` for your project code.
+    Set it first, **replacing `nesi12345` with your own project code**:
+
+    ```sh
+    export PROJECT=nesi12345
+    ```
+
+    To have it set in every new shell, including the shells Claude Code uses to run commands, add it to your `~/.bashrc` on Mahuika:
+
+    ```sh
+    echo 'export PROJECT=nesi12345' >> ~/.bashrc
+    ```
+
+    For Options 2 and 3, also set it on your own computer.
+
 ## Option 1: On Mahuika
 
 In this setup Claude Code is installed in your home directory and runs on a Mahuika login node.
@@ -66,12 +82,48 @@ source ~/.bashrc
 claude --version
 ```
 
+### Installing outside home
+
+Claude Code keeps its program files (a few hundred MB) in `~/.local/share/claude`,
+and its settings, login credentials and session history in `~/.claude`.
+The session history grows as you use it.
+If your home directory is short of space, you can store both in your project directory and leave symbolic links in your home directory.
+
+Ideally, do this **before** running the installer.
+Make sure `PROJECT` is [set to your project code](#where-to-run-claude-code) first:
+
+```sh
+CLAUDE_STORE=/nesi/project/$PROJECT/$USER/claude
+mkdir -p $CLAUDE_STORE/share $CLAUDE_STORE/config ~/.local/share
+chmod 700 $CLAUDE_STORE
+ln -s $CLAUDE_STORE/share ~/.local/share/claude
+ln -s $CLAUDE_STORE/config ~/.claude
+```
+
+If Claude Code is already installed, move the existing directories first:
+
+```sh
+CLAUDE_STORE=/nesi/project/$PROJECT/$USER/claude
+mkdir -p $CLAUDE_STORE
+chmod 700 $CLAUDE_STORE
+mv ~/.local/share/claude $CLAUDE_STORE/share
+mv ~/.claude $CLAUDE_STORE/config
+ln -s $CLAUDE_STORE/share ~/.local/share/claude
+ln -s $CLAUDE_STORE/config ~/.claude
+```
+
+!!! warning
+    - Use `/nesi/project`, not `/nesi/nobackup`.
+      Files in nobackup are [automatically deleted](../../Storage/Automatic_Cleaning_of_Nobackup.md), which would remove your installation and settings.
+    - Project directories can be read by other members of your project.
+      The `chmod 700` above keeps your credentials and session history private. Do not skip it.
+
 ### Log in
 
 Start Claude Code in your project directory:
 
 ```sh
-cd /nesi/project/nesi12345/my_code
+cd /nesi/project/$PROJECT/my_code
 claude
 ```
 
@@ -133,12 +185,14 @@ An example `CLAUDE.md`:
   4 cores or runs for more than a few minutes here. Compile with `make -j4`.
 - Run all tests and production runs through Slurm with `sbatch` (or `srun`
   for short interactive tests). Never run `mpirun` on the login node.
-- Slurm account: `nesi12345`. Use `--partition=milan` unless told otherwise.
+- Slurm account: the value of the `PROJECT` environment variable. `#SBATCH`
+  lines do not expand variables, so write the value itself in job scripts or
+  pass `--account=$PROJECT` to sbatch. Use `--partition=milan` unless told otherwise.
 - Load the build environment with:
       module purge
       module load foss/2023a netCDF-Fortran/4.6.1-gompi-2023a
-- Source code:   /nesi/project/nesi12345/my_code
-- Run directory: /nesi/nobackup/nesi12345/runs  (not backed up, auto-cleaned)
+- Source code:   /nesi/project/$PROJECT/my_code
+- Run directory: /nesi/nobackup/$PROJECT/runs  (not backed up, auto-cleaned)
 - After submitting a job, check its state with `squeue --me` or
   `sacct -j <jobid>`, at most every few minutes, and read the
   `slurm-<jobid>.out` file when it finishes.
@@ -177,6 +231,53 @@ You can pre-approve safe, routine commands to reduce prompts by creating `.claud
     Do not use `--dangerously-skip-permissions` or similar modes that bypass approval on Mahuika.
     Keep approval on for anything that deletes files, cancels jobs, or uses a significant part of your allocation.
 
+### Test your setup
+
+This short test checks that Claude Code can log in, use the module system, compile code, and submit and monitor a Slurm job.
+It uses a few seconds of compute time.
+
+1. Create an empty test directory and start Claude Code in it:
+
+    ```sh
+    mkdir -p /nesi/nobackup/$PROJECT/$USER/claude_test
+    cd /nesi/nobackup/$PROJECT/$USER/claude_test
+    claude
+    ```
+
+2. Give Claude Code this prompt:
+
+    ```txt
+    Write a small MPI "hello world" program in C that prints the rank,
+    the number of ranks and the hostname. Load the foss/2023a module and
+    compile it here. Then write a Slurm script hello.sl that runs it with
+    4 tasks, 1 GB of memory and a 5 minute time limit, using the Slurm
+    account in the PROJECT environment variable. Submit it with sbatch,
+    check with squeue until it has finished, then show me the output
+    file and the sacct summary.
+    ```
+
+3. Approve each step as Claude Code asks for permission.
+   You should see it:
+
+    - create `hello.c` and `hello.sl`,
+    - run `module load foss/2023a` and `mpicc` on the login node,
+    - run `sbatch hello.sl` and report the job ID,
+    - check the job with `squeue` or `sacct` until it finishes,
+    - show the `slurm-<jobid>.out` file, containing four lines like
+      `Hello from rank 2 of 4 on c0123`, and an `sacct` summary with the state `COMPLETED`.
+
+Check that the program ran on a compute node, not on the login node.
+The hostname in the output should not be a login node name such as `login01`.
+
+| Problem | Likely cause |
+| - | - |
+| Login or network errors when starting `claude` | Claude Code cannot reach Anthropic's servers, or the login has expired. Run `claude` again and follow the login prompt. |
+| `module: command not found` or no compilers | The agent's shell has not loaded the module system. Ask it to run `source /etc/profile` first, or add this to your `CLAUDE.md`. |
+| The agent runs `mpirun` or `srun` on the login node instead of submitting a job | Add the "run everything through Slurm" rule from the [example `CLAUDE.md`](#project-claudemd-file) to your project. |
+| The job stays pending for a long time | This is normal when the cluster is busy. See [Why is my job taking a long time to start?](../../Getting_Started/FAQs/Why_Is_My_Job_Taking_a_Long_Time_to_Start.md). |
+
+When you are finished, delete the test directory.
+
 ### Good practice on Mahuika
 
 - **Keep heavy work off the login node.** Login nodes are shared by all users.
@@ -185,13 +286,15 @@ You can pre-approve safe, routine commands to reduce prompts by creating `.claud
   because every job uses your project's allocation and [Fair Share](../../Batch_Computing/Fair_Share.md).
 - **Watch your home quota.** Claude Code stores its settings and session history under `~/.claude` and its program under `~/.local`.
   These are small, but home directories have a 20 GB quota (see [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md)).
+  If space is tight, [install outside your home directory](#installing-outside-home).
   Keep large outputs out of your source directory so the agent does not read through them.
 - **Use version control.** Commit your work with `git` before asking the agent for large changes, so you can review and undo them.
 
 ## Option 2: Local, over SSH
 
 In this setup Claude Code runs on your own computer and runs commands on Mahuika through SSH,
-for example `ssh mahuika 'squeue --me'` or `ssh mahuika 'cd /nesi/project/nesi12345/my_code && sbatch run.sl'`.
+for example `ssh mahuika 'squeue --me'` or `ssh mahuika "cd /nesi/project/$PROJECT/my_code && sbatch run.sl"`.
+The double quotes make your computer's shell fill in `$PROJECT` before the command is sent.
 
 This needs no installation on Mahuika, and your Claude credentials stay on your own computer.
 It works well for occasional tasks such as submitting a job or summarising output files.
@@ -225,8 +328,8 @@ In this setup you and Claude Code work on a copy of your code on your own comput
 When it is ready, copy it to Mahuika (for example with `rsync`) and submit jobs there, either yourself or through SSH as in Option 2.
 
 ```sh
-rsync -av --exclude .git ./ mahuika:/nesi/project/nesi12345/my_code/
-ssh mahuika 'cd /nesi/project/nesi12345/my_code && sbatch run.sl'
+rsync -av --exclude .git ./ mahuika:/nesi/project/$PROJECT/my_code/
+ssh mahuika "cd /nesi/project/$PROJECT/my_code && sbatch run.sl"
 ```
 
 This is a good fit if your code also builds and runs on your computer, so most development and testing can happen locally.
