@@ -2,6 +2,7 @@
 created_at: '2019-06-03T23:54:50Z'
 tags:
 - gpu
+description: Training and running deep neural networks with TensorFlow on CPUs and GPUs
 ---
 
 {% set app_name = "TensorFlow" %}

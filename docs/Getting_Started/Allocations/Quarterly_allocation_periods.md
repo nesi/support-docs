@@ -3,6 +3,7 @@ created_at: '2021-09-14T03:20:56Z'
 tags:
 - account
 title: Quarterly Allocation Periods
+description: When applications for new allocations on existing projects are due each year
 ---
 
 Applications for new allocations on existing projects are accepted and

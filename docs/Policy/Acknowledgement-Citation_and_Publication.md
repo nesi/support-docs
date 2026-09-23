@@ -3,6 +3,7 @@ created_at: '2021-01-13T00:24:35Z'
 tags:
 - account
 title: Acknowledgement, Citation and Publication
+description: How to acknowledge us in publications and report your research outputs
 ---
 
 Sharing your research outputs helps us demonstrate the impacts and benefits delivered and supported by our infrastructure, services, and team members.  

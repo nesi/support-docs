@@ -16,8 +16,8 @@ These are open for review if you find any of them unreasonable or inefficient.
 ![job limits](../assets/images/job_limits.png){ align=right width=75% }
 
 - 10 nodes
-- 21 node-days
-- 21 days
+- 21 days walltime
+- 21 node-days (walltime x nodes)
 
 <hr width=100%>
 
@@ -27,5 +27,5 @@ These are open for review if you find any of them unreasonable or inefficient.
 - 3528 core-days booked by running jobs (so 3 weeks of one full node).
 - 6 TB of memory occupied (4 full 1.5 TB nodes)
 - 30 TB-days booked by running jobs (so 3 weeks of one full 1.5 TB node).
-- 6 GPUs occupied, 14 GPU-days booked by running jobs (so 2 GPUs for 1 week).
+- 6 H100 GPUs occupied, or 14 GPU-days of any GPU type booked by running jobs (so 2 GPUs for 1 week).
 - No user can have more than 1,000 jobs in the queue at a time.

@@ -2,6 +2,7 @@
 created_at: '2023-03-06T19:04:56Z'
 tags:
 - biology
+description: Automated gene structure annotation of genomes with BRAKER
 ---
 
 {% set app_name = page.title | trim %}

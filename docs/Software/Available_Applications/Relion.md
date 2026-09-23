@@ -2,6 +2,7 @@
 created_at: '2019-09-23T00:08:13Z'
 tags:
 - biology
+description: Getting started with Relion and driving its GUI from a batch job
 ---
 
 

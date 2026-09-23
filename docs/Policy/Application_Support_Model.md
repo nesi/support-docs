@@ -2,6 +2,7 @@
 created_at: '2018-04-26T23:46:16Z'
 tags:
     - software
+description: The principles behind which scientific applications we install and support
 ---
 
 Our policy for management of scientific application software is

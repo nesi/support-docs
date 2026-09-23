@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.14.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.14.0 - option to stop copying project members on requests
 ---
 
 ## Release Update - 17. January 2023

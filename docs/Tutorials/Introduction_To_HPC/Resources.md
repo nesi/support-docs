@@ -4,6 +4,7 @@ status: tutorial
 tags:
 - tutorial
 - slurm
+description: Choosing how many CPUs a job needs, and measuring what it actually used
 ---
 
 !!! time "30 Minutes"
@@ -200,14 +201,14 @@ CPU Efficiency: 141.30%  00:01:05 of 00:00:46 core-walltime
 Mem Efficiency: 93.31%  233.29 MB of 250.00 MB
 ```
 
-Knowing what we do now about job efficiency, let's submit the previous job again but with more appropriate resources.
+Knowing what we do now about job efficiency, let's submit the previous job again, this time requesting enough memory to actually cover it:
 
 ```sl
 #!/bin/bash -e
 
 #SBATCH --job-name      example_job
 #SBATCH --account       nesi99991
-#SBATCH --mem           300M
+#SBATCH --mem           1200M
 #SBATCH --time          00:15:00
 #SBATCH --cpus-per-task 4
 
@@ -221,7 +222,7 @@ echo "Done!"
 sbatch example_job.sl
 ```
 
-Hopefully we will have better luck with this one!
+Now that we've requested more memory, this one should complete successfully!
 
 ### Simultaneous Multithreading (SMT)
 

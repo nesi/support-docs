@@ -3,6 +3,7 @@ created_at: '2018-05-01T03:39:22Z'
 tags:
 - announcement
 - account
+description: The information you need to provide when applying for a new project
 ---
 
 !!! prerequisite

@@ -12,6 +12,29 @@ module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 tag_index_path = os.getenv("TAG_INDEX_PATH", "docs/assets/tag-index.json")
 
 
+class CaseInsensitiveDict(dict):
+    """Dict wrapper allowing `applications[app_name]` lookups regardless of case."""
+
+    def __init__(self, data):
+        super().__init__(data)
+        self._lower_keys = {k.lower(): k for k in data}
+
+    def __getitem__(self, key):
+        try:
+            return super().__getitem__(key)
+        except KeyError:
+            return super().__getitem__(self._lower_keys[key.lower()])
+
+    def __contains__(self, key):
+        return super().__contains__(key) or key.lower() in self._lower_keys
+
+    def get(self, key, default=None):
+        try:
+            return self[key]
+        except KeyError:
+            return default
+
+
 def define_env(env):
     """
     This is the hook for defining variables, macros and filters
@@ -22,7 +45,7 @@ def define_env(env):
         used to perform a transformation
     """
 
-    env.variables.applications = json.load(open(module_list_path))
+    env.variables.applications = CaseInsensitiveDict(json.load(open(module_list_path)))
     tag_index = json.load(open(tag_index_path))
 
     @env.macro

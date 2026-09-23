@@ -3,6 +3,7 @@ created_at: '2018-05-18T02:34:03Z'
 tags:
 - account
 title: Allocations & Extensions
+description: Who may request a project extension or a new allocation, and how to do it
 ---
 
 We recognise that research programmes often continue over several

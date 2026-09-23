@@ -3,6 +3,7 @@ created_at: '2020-04-19T22:59:58Z'
 tags:
 - gpu
 - slurm
+description: Requesting GPUs through Slurm, loading CUDA, and measuring how well a job used them
 ---
 
 This page provides generic information about how to access GPUs through the Slurm scheduler.
@@ -47,27 +48,29 @@ where `<gpu_type>` is the type of gpu you want to use (either 'h100', 'a100', or
         <td>Slurm Header</td>
     </tr>
     <tr>
-        <td rowspan="2">NVIDIA A100</td>
-        <td rowspan="2"></td>
+        <td>NVIDIA A100</td>
+        <td></td>
         <td>80GB</td>
         <td>4</td>
-        <td><pre><code>#SBATCH --partition=milan<br>#SBATCH --gpus-per-node=a100:1</code></pre></td>
+        <td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
-    <tr>
-        <td>40GB</td>
-        <td>2</td>
-        <td><pre><code>#SBATCH --partition=genoa<br>#SBATCH --gpus-per-node=a100:1</code></pre></td>
-    </tr>
-    <tr>
-        <td>NVIDIA H100</td>
-        <td></td>
+        <tr>
+        <td>NVIDIA RTX PRO 6000</td>
+        <td>Avoid for double precision floating point (fp64) as it is slow</td>
         <td>96GB</td>
+        <td>2</td>
+        <td><pre><code>#SBATCH --gpus-per-node=pro_6000:1</code></pre></td>
+    </tr>
+    <tr>
+        <td>NVIDIA H100 NVL</td>
+        <td></td>
+        <td>94GB</td>
         <td>2</td>
         <td><pre><code>#SBATCH --gpus-per-node=h100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA L4</td>
-        <td>No double precision floating point (fp64)</td>
+        <td>Avoid for double precision floating point (fp64) as it is slow</td>
         <td>24GB</td>
         <td>4</td>
         <td><pre><code>#SBATCH --gpus-per-node=l4:1</code></pre></td>
@@ -79,7 +82,7 @@ You can also use the `--gpus-per-node`option in
 with the `srun` and `salloc` commands. For example:
 
 ``` sh
-srun --job-name "InteractiveGPU" --gpus-per-node L4:1 --partition genoa --cpus-per-task 8 --mem 2GB --time 00:30:00 --pty bash
+srun --job-name "InteractiveGPU" --gpus-per-node L4:1 --cpus-per-task 8 --mem 2GB --time 00:30:00 --pty bash
 ```
 
 will request and then start a bash session with access to a L4 GPU, for a
@@ -158,7 +161,6 @@ GPU:
 #SBATCH --job-name       GPUJob      # job name (shows up in the queue)
 #SBATCH --account        nesi99991   # Your account
 #SBATCH --time           00-00:10:00 # Walltime (DD-HH:MM:SS)
-#SBATCH --partition      genoa       # This means the job will land on A100 with 40GB VRAM
 #SBATCH --gpus-per-node  A100:1      # GPU resources required per node
 #SBATCH --cpus-per-task  2           # number of CPUs per task (1 by default)
 #SBATCH --mem            512MB       # amount of memory per node (1 by default)
@@ -299,11 +301,13 @@ The following flow diagram explains the steps you should take to test which GPU 
 When running a 15-minute test job, add the following settings in your Slurm submission script:
 
 ```sl
-#SBATCH --time=00:15:00
-#SBATCH --gpu-per-node=<gpu-type>:1
-#SBATCH --qos=debug
-#SBATCH --profile=task # Only for testing
-#SBATCH --acctg-freq=1 # Only for testing
+#!/bin/bash -e
+
+#SBATCH --time          00:15:00
+#SBATCH --gpu-per-node  <gpu-type>:1
+#SBATCH --qos           debug
+#SBATCH --profile       task # Only for testing
+#SBATCH --acctg-freq    1 # Only for testing
 ```
 
 To record the GPU utilisation and GPU memory, see [Measuring GPU efficiency after a job has finished](./Using_GPUs.md#measuring-gpu-efficiency-after-a-job-has-finished) for more information.

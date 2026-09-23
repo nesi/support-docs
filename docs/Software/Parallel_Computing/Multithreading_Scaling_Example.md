@@ -4,6 +4,7 @@ tags:
 - openmp
 - parallel
 - profiling
+description: A worked multithreading scaling test showing how to size a shared memory job
 ---
 
 In the example below we will use R scripts to demonstrate how you might

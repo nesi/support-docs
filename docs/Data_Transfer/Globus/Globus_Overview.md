@@ -2,6 +2,7 @@
 created_at: '2021-08-27T03:18:13Z'
 tags:
     - file_transfer
+description: What Globus is, when to reach for it, and the terms used across these pages
 ---
 
 !!! note

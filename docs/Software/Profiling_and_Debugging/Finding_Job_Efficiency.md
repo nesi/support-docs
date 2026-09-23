@@ -3,6 +3,7 @@ created_at: '2019-04-07T23:56:57Z'
 tags:
 - slurm
 status: []
+description: Checking how efficiently a job used its resources with seff, sacct and htop
 ---
 
 ## On Job Completion

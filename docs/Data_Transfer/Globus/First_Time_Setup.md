@@ -3,6 +3,7 @@ created_at: '2019-02-27T21:04:11Z'
 tags:
     - file_transfer
 title: Globus First Time Setup
+description: Setting up a Globus account for the first time and linking your other accounts
 ---
 
 This guide will show you how to setup Globus for the first time. This page includes:

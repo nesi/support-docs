@@ -4,6 +4,7 @@ tags:
   - access
   - file_transfer
 title: WinSCP/PuTTY Setup (Windows)
+description: Setting up WinSCP and PuTTY on Windows to connect to and copy files from the cluster
 ---
 
 !!! prerequisite

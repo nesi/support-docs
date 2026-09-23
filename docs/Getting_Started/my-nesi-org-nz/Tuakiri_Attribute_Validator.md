@@ -3,6 +3,7 @@ created_at: '2021-04-30T03:29:54Z'
 tags:
 - access
 - account
+description: Checking your identity provider sends the attributes Tuakiri services need
 ---
 
 ## Tuakiri Attribute Validator
@@ -23,7 +24,7 @@ department about unless you need a particular Optional Attribute to be
 correctly set for a specific purpose.
 
 To access the Tuakiri Attribute Validator, browse to this page:
-[https://attributes.tuakiri.ac.nz/snapshots/latest﻿](https://attributes.tuakiri.ac.nz/snapshots/latest)
+[https://attributes.tuakiri.ac.nz/](https://attributes.tuakiri.ac.nz/)
 
 The primary identifier NeSI consumes is the
 attribute **auEduPersonSharedToken**. This is a so-called, "Tuakiri Core

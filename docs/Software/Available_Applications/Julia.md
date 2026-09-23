@@ -4,6 +4,7 @@ tags:
 - julia
 vote_count: 3
 vote_sum: 3
+description: Using the Julia language for scientific and numerical computing on the cluster
 ---
 
 

@@ -3,6 +3,7 @@ created_at: '2021-08-27T03:18:13Z'
 tags:
     - file_transfer
 title: Data Transfer Between Two Personal Computers
+description: Copying files between two personal computers with Globus, which needs a subscription
 ---
 
 It is possible to copy files between two computers/servers using Globus. This excludes copying any data to/from Mahuika.

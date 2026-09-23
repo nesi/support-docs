@@ -2,6 +2,7 @@
 created_at: '2023-07-13T01:04:38Z'
 tags:
 - biology
+description: Annotating genetic variants with snpEff, including its one-off config setup
 ---
 
 

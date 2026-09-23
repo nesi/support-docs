@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.9.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.9.0 - list of open allocation requests added
 ---
 
 ## Release Update - 18. May 2022

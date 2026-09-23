@@ -3,6 +3,7 @@ created_at: '2020-04-30T01:28:34Z'
 tags:
 - containers
 - gpu
+description: Running GPU accelerated software from the NVIDIA NGC container registry
 ---
 
 NVIDIA provides access to GPU accelerated software through their
@@ -16,8 +17,7 @@ models, producing optimal solutions and gathering faster insights.
 
 Many of these containers are able to run under Apptainer, which is
 supported on the Mahuika platform. NVIDIA also specifies the GPU
-requirements for each container, i.e. whether it will run on our Pascal
-(sm60) GPUs.
+requirements for each container.
 
 There are instructions for converting their Docker images to Apptainer
 images on the NVIDIA site but some small changes are required to these

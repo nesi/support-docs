@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.50.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.50.0 - allocation end dates aligned to the renewal cycle
 ---
 
 ## New and Improved

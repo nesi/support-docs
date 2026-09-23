@@ -5,6 +5,7 @@ tags:
 title: 'Profiler: VTune'
 vote_count: 1
 vote_sum: -1
+description: Using VTune to find where a program spends its time before optimising it
 ---
 
 ## What is VTune?

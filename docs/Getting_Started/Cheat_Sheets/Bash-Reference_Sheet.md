@@ -6,6 +6,7 @@ tags:
 title: 'Bash: Reference Sheet'
 vote_count: 2
 vote_sum: 2
+description: The basic Unix shell commands you need to work on a Linux cluster
 ---
 
 Regardless of the operating system on your personal computer you will

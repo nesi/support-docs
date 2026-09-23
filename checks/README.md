@@ -2,6 +2,8 @@
 
 This directory contains QA tests for the documentation.
 
+All these checks are intended to run on the markdown files, not rendered files.
+
 Tests should be made as Python scripts to allow flexibility of use. Currently these checks are run two ways:
 
 - [GitHub Actions](https://docs.github.com/en/actions) as defined in [workflows](../.github/workflows/),
@@ -44,20 +46,22 @@ Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlin
 *This linter is defined in [run_meta_check.py](run_meta_check.py) script.*
 
 Catch-all for custom checks.
-Currently defined checks are:
 
-- title_redundant
-- title_length
-- meta_missing_description
-- meta_unexpected_key
-- minimum_tags
-- walk_toc
-- click_here
-- dynamic_slurm_link
+See script for details.
 
 ### Test Build
 
 Does a 'strict' build of the site, capturing any errors emmited by mkdocs.
+
+### Accessibility (WCAG)
+
+*This linter is defined in [run_a11y_check.sh](run_a11y_check.sh), parsed by [parse_a11y_report.py](parse_a11y_report.py).*
+
+Runs the [AccessLint](https://github.com/AccessLint/audit) WCAG audit against a local `mkdocs build` (the `public/` directory), rather than a deployed site, so it runs the same way in CI as it does locally.
+
+Like the other checks, it can be scoped to specific pages by passing their `docs/*.md` source paths as arguments; with none given, every page in the site is audited.
+
+AccessLint's own inline annotations only fire for violations with a JS/React source map, which a server-rendered mkdocs site never has, so `parse_a11y_report.py` reads its JSON report instead and maps each violation back to the built HTML file under `public/`.
 
 ### Debugging Checks
 
@@ -66,3 +70,12 @@ Each type of test has a debug job in VSCode.
 Most will run on the [fail_checks](fail_checks.md) page
 
 ![alt text](../docs/assets/images/debug_menu.png)
+
+## Tags
+
+Tags are used to help search indexing, but can also be used to search by topic.
+
+We don't want a large number of similar/duplicate tag topics, as this is visually messy and reduces the utility of being able to sort by one.
+There is a canonical vocabulary of tags (with aliases) in [tags.yml](../docs/assets/tags.yml), feel free to add to it.
+
+Tags are checked in [run_meta_check.py](run_meta_check.py).

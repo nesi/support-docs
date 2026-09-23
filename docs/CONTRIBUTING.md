@@ -114,7 +114,7 @@ Will give three levels of output, **Errors** (serious issues that will prevent m
 
 The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. If this check fails, the PR will show an error in the 'Checks' tab and the broken ARIA reference will be indicated.
 
-You can run a WCAG audit ([AccessLint/audit](https://github.com/AccessLint/audit)) locally with the `a11y-audit` VS Code task (builds the site, serves it, and audits it).
+You can run a WCAG audit ([AccessLint/audit](https://github.com/AccessLint/audit)) locally with the `a11y-audit` VS Code task (builds the site, serves it, and audits it). Violations show up in the 'PROBLEMS' tab like the other checks.
 After the audit runs, three files will be produced containing the audit report: `accesslint-report.json`, `accesslint-report.md`, and `accesslint-report.sarif`.
 
 The audit runs a headless Chromium browser, which needs some system libraries installed once per machine:
@@ -186,7 +186,7 @@ After a few minutes, a preview of the source branch will be deployed, a bot will
 
 Assign a reviewer if you wish.
 
-Adding the tag <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline"> will cause the request to be merged at midnight, if all checks passed.
+Adding the tag <a id="label-987ef8" href="https://github.com/nesi/support-docs/labels/auto_merge" data-name="auto_merge" style="--label-r:217;--label-g:244;--label-b:210;--label-h:107;--label-s:60;--label-l:89;" data-view-component="true" class="IssueLabel hx_IssueLabel Label--inline"> will cause the request to be merged at midnight, if all checks passed.</a>
 
 ### Reviewing A Merge Request
 

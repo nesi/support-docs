@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.0.3
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.0.3 - improvements to the HPC password reset form
 ---
 
 

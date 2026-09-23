@@ -2,6 +2,7 @@
 created_at: '2016-02-04T03:09:05Z'
 tags:
 - chemistry
+description: Ab initio molecular electronic structure calculations with Molpro
 ---
 
 

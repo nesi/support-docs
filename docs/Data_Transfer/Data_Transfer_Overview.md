@@ -2,6 +2,7 @@
 created_at: '2018-11-20T22:41:32Z'
 tags:
 - file_transfer
+description: Choosing how to move data to, from and within the cluster, and transfer best practice
 ---
 
 !!! prerequisite

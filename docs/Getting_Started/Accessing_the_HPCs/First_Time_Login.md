@@ -4,6 +4,7 @@ tags:
 - access
 - interactive
 - account
+description: Logging in for the first time and setting up your authenticator app and trusted device
 ---
 
 !!! prerequisite

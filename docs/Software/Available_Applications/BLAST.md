@@ -5,6 +5,7 @@ tags:
 - biology
 vote_count: 1
 vote_sum: -1
+description: Running BLAST sequence searches and using the quarterly NCBI database modules
 ---
 
 

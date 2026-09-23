@@ -2,6 +2,7 @@
 created_at: '2025-09-24T21:33:58Z'
 tags:
  - cloud
+description: What the Research Developer Cloud offers and how to get started on it
 ---
 
 Our Research Developer Cloud enables easier and more adaptable collaboration around research data.
@@ -45,4 +46,4 @@ Billable services available via the Research Developer Cloud include:
 - Graphical Processing Units (GPUs)
 - Storage
 
-For more information, check [the Research Developer Cloud pricing](Service_Subscriptions/Pricing.md#research-developer-cloud).
+For more information, check [the Research Developer Cloud pricing](../Pricing.md#research-developer-cloud).

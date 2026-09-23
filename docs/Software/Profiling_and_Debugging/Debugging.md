@@ -4,6 +4,7 @@ tags:
 - profiling
 vote_count: 1
 vote_sum: 1
+description: Debugging jobs by tracing job scripts and analysing core files with GDB
 ---
 
 !!! warning

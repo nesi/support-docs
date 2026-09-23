@@ -3,6 +3,7 @@ created_at: 2026-07-15
 tags:
 - biology
 - containers
+description: Running the FreeSurfer neuroimaging container, including obtaining a licence
 ---
 
 {% set app_name = page.title | trim %}

@@ -32,9 +32,14 @@ Code that has no serial components is said to be "embarrassingly parallel".
 
 It is worth noting that Amdahl's law assumes all other elements of scaling are happening with 100% efficiency, in reality there are additional computational and communication overheads.
 
+!!! note "Solo learners"
+    The [spreadsheet]({{ config.extra.exercise }}) below is shared between attendees of a
+    live workshop. To work through the same steps on your own, pick a handful of `--cpus-per-task` values (1, 2, 4, 8, etc), and record the
+    "Elapsed", "TotalCPU" and "Memory" value. Plot the values, and note the trends.
+
 !!! question "Scaling Exercise"
     1. Find your name in the [spreadsheet]({{ config.extra.exercise }}) and modify your `example_job.sl` to request
-    "x" `--cpus-per-task`. 
+    "x" `--cpus-per-task`.
     For example `#SBATCH --cpus-per-task 10`.
     2. Estimate memory requirement based on our previous runs and the cpus requested, memory
     is specified with the `--mem ` flag, it does not accept decimal values, however you may

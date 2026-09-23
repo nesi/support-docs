@@ -3,6 +3,7 @@ created_at: '2026-02-12'
 tags:
 - version_control
 title: 'Git Hosting Platform Setup'
+description: Authenticating to GitHub, GitLab, Bitbucket or Gitea from the cluster
 ---
 
 ## Description

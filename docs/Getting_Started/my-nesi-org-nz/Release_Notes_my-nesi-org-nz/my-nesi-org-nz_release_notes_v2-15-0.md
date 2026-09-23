@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.15.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.15.0 - improved new allocation request page
 ---
 
 

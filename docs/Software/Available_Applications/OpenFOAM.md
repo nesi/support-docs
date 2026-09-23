@@ -3,6 +3,7 @@ created_at: '2019-02-24T22:16:04Z'
 tags:
 - engineering
 - earth_science
+description: Computational fluid dynamics and continuum mechanics with the OpenFOAM toolbox
 ---
 
 

@@ -3,6 +3,7 @@ created_at: '2021-01-13T00:17:34Z'
 tags:
 - access
 - account
+description: Who may access HPC compute, analytics and consultancy, and on what terms
 ---
 
 REANNZ provides access to New Zealand’s national services for High Performance Computing (HPC) Compute and Analytics, Consultancy, and Training, supported by research data sharing and transfer services.  This policy applies to HPC Compute and Analytics, and Consultancy services. 

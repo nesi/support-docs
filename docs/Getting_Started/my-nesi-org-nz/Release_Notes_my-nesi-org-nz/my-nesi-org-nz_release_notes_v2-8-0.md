@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.8.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.8.0 - notification preference and allocation renewal changes
 ---
 
 ## Release Update - 12. April 2022

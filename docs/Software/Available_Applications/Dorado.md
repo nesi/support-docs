@@ -4,6 +4,7 @@ tags:
 - biology
 vote_count: 5
 vote_sum: 3
+description: Basecalling Oxford Nanopore reads with Dorado, including on multiple GPUs
 ---
 
 
@@ -18,7 +19,7 @@ vote_sum: 3
 Dorado is a high-performance, easy-to-use, open source basecaller for
 Oxford Nanopore reads.
 
-### [](https://github.com/nanoporetech/dorado#features)Features
+### [Features](https://github.com/nanoporetech/dorado#features)
 
 - One executable with sensible defaults, automatic hardware detection
     and configuration.

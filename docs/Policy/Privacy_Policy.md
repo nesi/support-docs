@@ -2,6 +2,7 @@
 created_at: '2021-03-31T04:19:38Z'
 tags:
 - account
+description: How REANNZ collects, stores, uses and discloses your personal information
 ---
 
 ## 1. Purpose

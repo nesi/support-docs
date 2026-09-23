@@ -2,6 +2,7 @@
 created_at: '2019-02-14T23:33:05Z'
 tags:
 - engineering
+description: Large-eddy simulation of fire, smoke and heat transport with FDS
 ---
 
 [//]: <> (APPS PAGE BOILERPLATE START)

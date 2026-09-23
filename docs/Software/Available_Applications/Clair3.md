@@ -2,6 +2,7 @@
 created_at: '2022-08-10T21:31:45Z'
 tags:
 - biology
+description: Germline small variant calling from long reads with Clair3
 ---
 
 

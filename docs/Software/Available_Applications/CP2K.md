@@ -3,6 +3,7 @@ title: CP2K
 created_at: '2015-09-08T03:11:50Z'
 tags:
 - chemistry
+description: Atomistic simulation of solids, liquids and molecules with CP2K
 ---
 
 [//]:CP2K.md> (APPS PAGE BOILERPLATE START)

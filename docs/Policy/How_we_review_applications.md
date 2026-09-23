@@ -4,6 +4,7 @@ tags:
 - account
 title: How We Review Applications
 vote_count: 2
+description: What happens to a project application after you submit it, step by step
 ---
 
 When you submit your application through our web site, it will go to our

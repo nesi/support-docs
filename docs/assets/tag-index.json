@@ -45,6 +45,10 @@
             "path": "Batch_Computing/Using_GPUs.md"
         },
         {
+            "title": "scron",
+            "path": "Batch_Computing/scron.md"
+        },
+        {
             "title": "Slurm: Reference Sheet",
             "path": "Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md"
         },
@@ -503,7 +507,7 @@
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/containers_as_kernels_in_JupyterLab.md"
         },
         {
-            "title": "index",
+            "title": "JupyterLab",
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/index.md"
         },
         {
@@ -511,7 +515,7 @@
             "path": "Interactive_Computing/OnDemand/Apps/JupyterLab/python_and_r_kernels_in_JupyterLab.md"
         },
         {
-            "title": "MATLAB via OnDemand",
+            "title": "MATLAB",
             "path": "Interactive_Computing/OnDemand/Apps/MATLAB.md"
         },
         {
@@ -527,7 +531,7 @@
             "path": "Interactive_Computing/OnDemand/Apps/VSCode.md"
         },
         {
-            "title": "Virtual Desktop via OnDemand",
+            "title": "Virtual Desktop",
             "path": "Interactive_Computing/OnDemand/Apps/Virtual_Desktop.md"
         },
         {
@@ -969,7 +973,7 @@
     ],
     "mathematics": [
         {
-            "title": "MATLAB via OnDemand",
+            "title": "MATLAB",
             "path": "Interactive_Computing/OnDemand/Apps/MATLAB.md"
         },
         {
@@ -1645,6 +1649,10 @@
         {
             "title": "Creating an Account",
             "path": "Getting_Started/Creating_an_Account.md"
+        },
+        {
+            "title": "Introductory Session for New Users",
+            "path": "Getting_Started/Introductory_Session_for_New_Users.md"
         },
         {
             "title": "Weekly Online Office Hours",

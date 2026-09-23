@@ -3,6 +3,7 @@ created_at: '2023-07-05T23:23:28Z'
 tags:
 - account
 title: Types of Contracts
+description: The subscription contract types on offer and what each one includes
 ---
 
 Typically our Subscription contracts are based on one-year terms and

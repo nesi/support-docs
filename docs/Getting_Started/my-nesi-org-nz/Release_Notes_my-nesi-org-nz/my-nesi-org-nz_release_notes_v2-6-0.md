@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.6.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.6.0 - notification preferences introduced
 ---
 
 ## Release Update - 14. December 2021
