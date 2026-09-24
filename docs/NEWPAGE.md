@@ -199,12 +199,55 @@ The following sections detail the most usual entries.
 | `icon`        | Page icon.                                                    | Path |  |
 | `status`      | Will display a symbol on nav                                  | `new`, `deprecated` or `tutorial` | |
 | `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
-| `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml) — see that file for the full list and aliases. | String[] | `tags: [ slurm, containers ]` |
+| `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml). See [Tags](#tags). | String[] | `tags: [ slurm, containers ]` |
 | `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
 | `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
 | `no_module: true` | Will disable linter warnings if corresponding module data is not found (applications pages only) | Bool | `True` `False` |
 
 A good description/tags improve RAG retrieval for the whole page.
+
+### Tags
+
+Tags come from a fixed vocabulary in [`docs/assets/tags.yml`](assets/tags.yml).
+Each tag has a canonical key (used in front matter), a `display` label (shown on the site) and a list of `aliases`.
+Tags are used for search, the [tag index](tags.md) and the `pages_with_tag()` macro.
+On pages under `Software/Available_Applications/`, tags also become the application's domains, which are the filter options on the Supported Applications page.
+
+Run `python3 list_tags.py` to see which tags are in use and how often.
+
+#### Tagging a Page
+
+- Use 1 to 5 tags; 2 or 3 is usual. The meta check warns outside this range.
+- Use canonical keys only (`python`, not `Python` or `conda`). Aliases are accepted for old pages, but the meta check will ask you to replace them.
+- Start with the tags on sibling pages in the same folder.
+- Choose from each of these that applies, and skip the rest:
+    - **Topic**: the part of the platform the page is about (`slurm`, `storage`, `file_transfer`, `access`, `gpu`, ...).
+    - **Research domain**: only if the page is specific to a field (`chemistry`, `biology`, `earth_science`, ...). Application pages usually have one.
+    - **Content type**: `tutorial`, `troubleshooting`, `announcement` or `release_notes`, if the page is one.
+- Do not use the retired tags listed at the bottom of `tags.yml`.
+- Do not use a tag that is not in `tags.yml`. If nothing fits, use the closest tag and propose a change to the vocabulary.
+
+#### Changing the Vocabulary
+
+Prefer adding an alias to an existing tag over adding a new tag.
+Specific tools, commands, products and spellings (for example `globus`, `tmux`, `apptainer`) are aliases, not tags.
+
+A new tag should:
+
+- apply to at least 3 pages,
+- be a topic, research domain or content type that a reader would browse by, and not overlap an existing tag,
+- not be too generic (`general`, `hpc`, `tips`) or too specific (a single command). These are the reasons past tags were retired.
+
+```yml
+new_tag:                          # snake_case key, used in front matter
+  display: New Tag                # Title Case label shown on the site
+  aliases: [new tag, other name]  # lower case unless a proper noun
+```
+
+- An alias must belong to only one tag. `compile_tags.py` warns if an alias is listed under more than one.
+- Renaming or removing a tag, or moving an alias to a different tag, changes every page that uses it.
+  Update those pages in the same change (`python3 normalize_tags.py --dry-run` shows what it would rewrite).
+- Retired tags are listed as comments at the bottom of `tags.yml` with the reason, so they are not added again.
 
 ### Zendesk Imported
 
