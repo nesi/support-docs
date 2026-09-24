@@ -2,7 +2,7 @@
 created_at: 2026-06-22
 description: Announcement about Globus collection renaming
 tags:
-    - globus
+    - file_transfer
 ---
 
 The REANNZ Globus endpoint and mapped collections names have been updated to reflect our organisational name change from NeSI to REANNZ. The new names are effective as of 3:30 pm, 22 June 2026.

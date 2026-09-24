@@ -2,7 +2,7 @@
 title: Containers as Kernels in JupyterLab
 description: How to use containers as kernels in JupyterLab on Mahuika
 tags:
-    - JupyterHub
+    - interactive
 ---
 
 Apptainer containers can be run as kernels in JupyterLab, so that the code in

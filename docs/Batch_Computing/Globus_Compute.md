@@ -1,8 +1,8 @@
 ---
 created_at: 2026-07-15
 description: How to use globus compute
-tags: 
-    - globus
+tags:
+    - file_transfer
 ---
 
 !!! warning

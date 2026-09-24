@@ -56,6 +56,21 @@ def _load_approved_tags(path):
     return approved
 
 
+def _load_tag_aliases(path):
+    """Lower-cased alias (or mis-cased canonical tag) -> canonical tag, matched the same way as compile_tags.py."""
+    vocab = yaml.safe_load(open(path, "r"))
+    aliases = {}
+    for canonical, entry in vocab.items():
+        aliases[canonical.lower()] = canonical
+        for alias in (entry.get("aliases") or []):
+            aliases[str(alias).lower()] = canonical
+    return aliases
+
+
+CANONICAL_TAGS = set(yaml.safe_load(open(TAGS_VOCAB_PATH, "r")))
+TAG_ALIASES = _load_tag_aliases(TAGS_VOCAB_PATH)
+
+
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
     "title": "",
@@ -456,8 +471,17 @@ def approved_tags():
     if "tags" not in meta or not isinstance(meta["tags"], list):
         return
     for tag in meta["tags"]:
-        if tag not in EXPECTED_PARAMETERS["tags"]:
-            similar, ji = _most_similar(tag, EXPECTED_PARAMETERS["tags"])
+        if tag in CANONICAL_TAGS:
+            continue
+        if str(tag).lower() in TAG_ALIASES:
+            canonical = TAG_ALIASES[str(tag).lower()]
+            yield {
+                "line": _get_lineno(rf".*{tag}.*"),
+                "message": f"Tag '{tag}' is an alias, use the canonical tag '{canonical}' instead. \
+('python3 normalize_tags.py' can fix this.)",
+            }
+        else:
+            similar, ji = _most_similar(tag, CANONICAL_TAGS)
             yield {
                 "line": _get_lineno(rf".*{tag}.*"),
                 "message": f"Tag '{tag}' is not an approved tag, {'did you mean \'' + similar + "\'?" if ji > 0.4 else 'See \'' + TAGS_VOCAB_PATH + '\'.'}",
