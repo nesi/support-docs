@@ -19,12 +19,22 @@ This page describes how to set up Claude Code so that it runs tasks on Mahuika.
     - Be able to [log in to Mahuika with SSH](../../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md).
     - Have a Claude subscription (Pro, Max, Team or Enterprise) or an Anthropic API key.
       REANNZ does not provide Claude licences.
+    - Read the [AI Agent Usage Policy](../../Policy/AI_Agent_Usage_Policy.md).
+      It applies in addition to the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md).
 
 !!! warning "Your code and data leave the cluster"
     Claude Code sends the prompts, file contents and command output it works with to Anthropic's servers for processing.
-    Before using it, check that this is allowed for your project's data and any third-party code or datasets,
-    and that it is consistent with the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md).
-    Do not use it in directories containing sensitive, identifiable or otherwise restricted data.
+    Before using it, check that this is allowed under the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md)
+    and the [AI Agent Usage Policy](../../Policy/AI_Agent_Usage_Policy.md). In particular:
+
+    - Only let the agent read code and data you have permission to share with a third party.
+      Do not use it in directories containing sensitive, identifiable or otherwise restricted data.
+    - Project directories are shared. Start the agent in a directory that holds only your own work,
+      so that it does not read other project members' files.
+    - Some software licences do not allow the source code to be shared with third parties.
+      Check the licence conditions of any third-party code before the agent reads it.
+    - Check your Claude account's privacy settings to see how long Anthropic keeps your conversations
+      and whether they are used to train models.
 
 ## Where to run Claude Code
 
@@ -58,7 +68,8 @@ so it can complete the edit, build, submit and check cycle itself.
 
 ## Option 1: On Mahuika
 
-In this setup Claude Code is installed in your home directory and runs on a Mahuika login node.
+In this setup Claude Code is installed in the home directory of your agent service account and runs on a Mahuika login node.
+Log in with the service account, not your own account, for all the steps below.
 You connect to it from your own computer with a terminal, VS Code, or the Claude apps.
 The agent works directly on your files in `/nesi/project` and `/nesi/nobackup`, uses the same modules and compilers that you do,
 and submits and monitors Slurm jobs with the standard commands.
@@ -134,6 +145,7 @@ The first time, you will be asked how to authenticate:
 - **API key:** set `ANTHROPIC_API_KEY` in your environment before starting `claude`.
   Keep the key out of shared project directories and job scripts.
   Your home directory is not readable by other users, but it can be accessed by Mahuika administrators.
+  Variables set in `~/.bashrc` are also set inside your Slurm jobs, so do not print the environment (for example with `env`) in job scripts.
 
 !!! warning "The login URL breaks if it wraps"
     The login URL is longer than a normal terminal line.
@@ -171,6 +183,10 @@ claude
 
 Detach with <kbd>ctrl</kbd> + <kbd>b</kbd> then <kbd>d</kbd>, and reattach later with `tmux attach -t agent`.
 
+Only run one Claude Code session at a time.
+The AI Agent Usage Policy [allows one agent session per user](../../Policy/AI_Agent_Usage_Policy.md#conduct) unless support has approved more.
+Before starting a new session, check for an old one with `tmux ls` and reattach to it or close it.
+
 !!! warning "Remember which login node you are on"
     Mahuika has several login nodes, and `ssh mahuika` can connect you to any of them.
     A `tmux` session only exists on the node where it was started.
@@ -185,13 +201,13 @@ Once Claude Code is running on Mahuika, you can interact with it in any of these
 - **VS Code:** connect to Mahuika with [VS Code Remote-SSH](../../Getting_Started/Accessing_the_HPCs/VSCode.md)
   and install the Claude Code extension in the remote window.
   The agent then runs on Mahuika and shows file edits as diffs in the editor.
-- **Remote Control:** in a running Claude Code session, type `/remote-control`.
-  You can then follow and steer the session from the Claude desktop app, the Claude website or the Claude mobile app.
-  This is useful for checking on a long-running task away from your desk.
 - **Claude desktop app SSH session:** the Code tab of the Claude desktop app can open sessions on a remote machine over SSH.
-  It needs a working `ssh mahuika` connection from your computer.
-  Because of the browser-based two-factor login, open a normal `ssh mahuika` connection in a terminal first
-  so the app can reuse it (see the `ControlMaster` settings in [Option 2](#option-2-local-over-ssh)).
+  It must connect with your agent service account, not by reusing your own `ssh mahuika` login.
+
+!!! warning "Do not use Remote Control on Mahuika"
+    Claude Code's `/remote-control` command lets a session be controlled from the Claude website or apps.
+    It works by keeping a connection open from Mahuika to Anthropic's servers that carries instructions back to the session.
+    This acts as a reverse tunnel out of the cluster, which the AI Agent Usage Policy [does not allow](../../Policy/AI_Agent_Usage_Policy.md#conduct).
 
 ### Project CLAUDE.md file
 
@@ -237,20 +253,29 @@ You can pre-approve safe, routine commands to reduce prompts by creating `.claud
       "Bash(squeue:*)",
       "Bash(sacct:*)",
       "Bash(sinfo:*)",
-      "Bash(module:*)",
-      "Bash(make:*)"
+      "Bash(module:*)"
     ],
     "ask": [
+      "Bash(make:*)",
       "Bash(sbatch:*)",
       "Bash(scancel:*)",
       "Bash(rm:*)"
+    ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(~/.bashrc)"
     ]
   }
 }
 ```
 
+`make` is in the `ask` list because targets such as `make test` or `make -j` can run heavy work on the login node.
+The `deny` rules stop the agent from reading your SSH keys and any tokens in `~/.bashrc`,
+so that they are not sent to Anthropic.
+They apply to Claude Code's file tools, so also keep passwords and keys out of the directories the agent works in.
+
 !!! warning
-    Claude Code runs with your user permissions, including write access to your shared project directories.
+    Claude Code runs with the permissions of the account it runs under, including write access to your shared project directories.
     Do not use `--dangerously-skip-permissions` or similar modes that bypass approval on Mahuika.
     Keep approval on for anything that deletes files, cancels jobs, or uses a significant part of your allocation.
 
@@ -318,43 +343,42 @@ When you are finished, delete the test directory.
   If space is tight, [install outside your home directory](#installing-outside-home).
   Keep large outputs out of your source directory so the agent does not read through them.
 - **Use version control.** Commit your work with `git` before asking the agent for large changes, so you can review and undo them.
+- **Keep the agent's view narrow.** Start it in the directory for the task at hand and ask it to use `squeue --me` and `ps -u $USER`,
+  not commands that list every user's jobs or processes.
+  Avoid recursive `find` or `grep` over whole shared directories such as `/nesi/project`.
+- **Report exposed credentials.** If the agent reads or prints a password, SSH key or token for REANNZ systems,
+  treat it as exposed and report it, as required by the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md).
+  {% include "partials/support_request.html" %}.
+
+See the [AI Agent Usage Policy best practice](../../Policy/AI_Agent_Usage_Policy.md#best-practice) for more examples of what to do and avoid.
 
 ## Option 2: Local, over SSH
 
-In this setup Claude Code runs on your own computer and runs commands on Mahuika through SSH,
-for example `ssh mahuika 'squeue --me'` or `ssh mahuika "cd /nesi/project/$PROJECT/my_code && sbatch run.sl"`.
+In this setup Claude Code runs on your own computer and runs commands on Mahuika through SSH with your agent service account,
+for example `ssh mahuika-agent 'squeue --me'` or `ssh mahuika-agent "cd /nesi/project/$PROJECT/my_code && sbatch run.sl"`,
+where `mahuika-agent` is the SSH host name for your service account.
 The double quotes make your computer's shell fill in `$PROJECT` before the command is sent.
 
 This needs no installation on Mahuika, and your Claude credentials stay on your own computer.
 It works well for occasional tasks such as submitting a job or summarising output files.
 It is awkward for development, because the agent cannot easily edit files on the cluster.
 
-Mahuika requires a browser-based two-factor login, which Claude Code cannot complete.
-Instead, you log in once yourself and let the agent reuse that connection.
-In `~/.ssh/config` on your computer, add a longer `ControlPersist` to the `mahuika` entry from the
-[Standard Terminal Setup](../../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md):
+!!! warning "Use a service account, not your own login"
+    Do not let the agent reuse your own SSH connection to Mahuika, for example by keeping a connection open with `ControlPersist`.
+    Letting an automated tool use your login gets around Mahuika's two-factor authentication,
+    which [clause 12 of the Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow.
+    The AI Agent Usage Policy [requires agents that access the cluster to use a service account](../../Policy/AI_Agent_Usage_Policy.md#conduct).
 
-```sh
-Host mahuika
-    User username
-    Hostname login.hpc.nesi.org.nz
-    ProxyCommand ssh -W %h:%p lander
-    ControlMaster auto
-    ControlPath ~/.ssh/sockets/ssh_mux_%h_%p_%r
-    ControlPersist 8h
-```
+You must apply to support for a service account: {% include "partials/support_request.html" %}.
 
-!!! tip
-    SSH uses the first value it finds for each setting.
-    Put this `Host mahuika` block **above** any `Host *` block, otherwise the `ControlPersist 1` from `Host *` is used instead.
-
-Log in once with `ssh mahuika` in your own terminal and complete the authentication.
-For the next 8 hours, `ssh mahuika` commands run by Claude Code will reuse this connection without asking you to log in again.
+The service account is for the agent only.
+Do not give the agent your own passwords, SSH keys or tokens.
 
 ## Option 3: Local, then sync
 
 In this setup you and Claude Code work on a copy of your code on your own computer.
-When it is ready, copy it to Mahuika (for example with `rsync`) and submit jobs there, either yourself or through SSH as in Option 2.
+When it is ready, copy it to Mahuika (for example with `rsync`) and submit jobs there yourself.
+If you want the agent to run these commands, it must use a service account as in [Option 2](#option-2-local-over-ssh).
 
 ```sh
 rsync -av --exclude .git ./ mahuika:/nesi/project/$PROJECT/my_code/
