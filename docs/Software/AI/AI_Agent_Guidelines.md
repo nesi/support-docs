@@ -22,19 +22,46 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 3. Agents should follow the same shared-system etiquette expected of any other user process.
 4. Take reasonable precautions to protect the platform, other users and REANNZ when operating an agent.
 
-## Working on the cluster
+## Data and privacy
 
-- When polling commands that use shared resources (filesystem operations, `squeue`, `sacct`), leave generous delays between calls, for example `sleep 60` between `squeue --me` calls.
-- Run only one agent session at a time, unless support has agreed to more.
-- Use `squeue --me` and `ps -u $USER` to keep the agent's view limited to your own work.
-- If the agent runs off the cluster, do not give it your passwords, SSH keys, tokens or other sensitive information.
+Most AI agents send your prompts, the files they read and the output of the commands they run to the provider's servers for processing.
+This happens whether the agent runs on your own computer or on the cluster.
+
+- Only let the agent read code and data you have permission to share with a third party.
+  Do not use it in directories containing sensitive, identifiable or otherwise restricted data.
+- Project directories are shared. Start the agent in a directory that holds only your own work,
+  so that it does not read other project members' files.
+- Some software licences do not allow the source code to be shared with third parties.
+  Check the licence conditions of any third-party code before the agent reads it.
+- Check your account's privacy settings with the provider to see how long your conversations are kept
+  and whether they are used to train models.
+
+## Credentials and access
+
+- Do not let an agent read your passwords, SSH keys or tokens, wherever it runs.
+  Anything the agent reads is sent to the provider.
+  Use the agent's own settings to block access to files such as `~/.ssh`, and keep credentials out of the directories it works in.
+- If an agent reads or prints a password, SSH key or token for REANNZ systems, treat it as exposed and report it,
+  as required by the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree).
+  {% include "partials/support_request.html" %}.
+- Do not let an agent on your own computer reuse your SSH connection to the cluster, for example one kept open with `ControlPersist`.
+  Letting an automated tool use your login session gets around two-factor authentication,
+  which [clause 12 of the Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow.
+- If an agent needs access to the cluster, apply to support for a service account: {% include "partials/support_request.html" %}.
 - Do not expose an MCP server or open a reverse tunnel from a REANNZ HPC system outward.
   This includes tools such as `ngrok`, `cloudflared`, VS Code tunnels and remote-control features of AI tools.
   [The Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow tunnels that let connections from outside reach the cluster without logging in.
   An agent on your workstation connecting in to a service on the cluster is fine, but not the other way around.
   Tunnels within the cluster, such as
   [forwarding a port from a compute node to a login node](../../Getting_Started/Accessing_the_HPCs/Port_Forwarding.md#forwarding-to-compute-nodes), are fine.
-- If an agent needs access to the cluster, apply to support for a service account: {% include "partials/support_request.html" %}.
+
+## Working on the cluster
+
+- When polling commands that use shared resources (filesystem operations, `squeue`, `sacct`), leave generous delays between calls, for example `sleep 60` between `squeue --me` calls.
+- Run only one agent session at a time, unless support has agreed to more.
+- Use `squeue --me` and `ps -u $USER` to keep the agent's view limited to your own work.
+- Keep approval turned on for anything that deletes files, cancels jobs or uses a significant part of your allocation.
+  Do not use modes that let the agent act without asking.
 - Under the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-accept), REANNZ can stop any process that disrupts the service, including agent processes.
 
 ## Best Practice
@@ -44,9 +71,12 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 - Scope status checks to your own work: `squeue --me`, `sacct -j <jobid>`, `ps -u $USER`.
 - Poll on the order of tens of seconds apart rather than in a tight loop.
 - Submit jobs in small, bounded batches, job-arrays or dependency chains (`sbatch --dependency=afterok:...`) instead of many independent submissions.
+- Review job scripts before they are submitted. Check the resources requested (`--time`, `--mem`, `--ntasks`, GPUs),
+  because every job uses your project's allocation and [Fair Share](../../Batch_Computing/Fair_Share.md).
 - Point file operations (`find`, `grep`, `du`) at specific known paths rather than whole shared parent directories.
-- Run IO, CPU or memory heavy work as a job, not on the login node.
+- Run IO, CPU or memory heavy work as a job, not on the login node. Compiling with a few cores on the login node is fine.
 - Give an agent a narrow working directory rather than broad filesystem access.
+- Commit your work with `git` before asking the agent for large changes, so you can review and undo them.
 - Review the packages or dependencies an agent proposes to install before it installs them, and pre-install where practical.
 
 ### Don't
