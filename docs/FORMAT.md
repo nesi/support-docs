@@ -540,8 +540,8 @@ There are a few includes you may want to use.
 | Path | content | usage |
 | ---- | ------- | ----- |
 | ```{% raw %}{% include "partials/support_request.html" %}{% endraw %}``` | ```<a href="mailto:support@nesi.org.nz">Contact our Support Team</a>``` | Anywhere the user is told to contact support. |
-| ```{% raw %}{% include "partials/app_header.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
-| ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
+| ```{% raw %}{% include "partials/app_header.html" %}{% endraw %}``` | Description, homepage, warnings, module versions and licences for an application | At the top of pages in `Software/Available_Applications/`, inside the "apps page boilerplate" (needs `app_name` and `app` set first) |
+| ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `app_header.html`)  |
 | ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' code-block. | When dynamic version info is required |
 
 ### Variables injection

@@ -235,8 +235,8 @@ The script `.github/fetch_includes.sh` pulls in all the updates from various sou
 As redundancy, and also to make changes to be visible, there is also a workflow that runs daily that will run `.github/fetch_includes.sh` and commit the changes.
 Anything in the repo will be overwritten by the most up to date version on deployment.
 
-1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
-2. A branch `new-assets` will be created, which can be merged into main.
+To update them straight away, run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
+If anything changed, it commits the new files directly to `main` as `nesi-mkdocs-bot` ("Automatic asset update"). There is no branch to merge.
 
 ## Adding Words to Dictionary
 
