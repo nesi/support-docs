@@ -8,7 +8,7 @@ tags:
 ---
 
 
-!!! time ""
+!!! time "wibbly wobbly timey wimey"
 
 !!! objectives
     - review the resource utilisation of a previous job
@@ -32,8 +32,8 @@ The example used here is based on materials from the [Data Carpentry Data Wrangl
 There are 3 broad steps that need to run in this workflow:
 
 1. Quality control
-2. Alignment
-3. Variant calling
+2. Indexing the reference genome
+3. Alignment and variant calling
 
 To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/intermediate_hpc`.
 You will want to have these files in your `nobackup` directory.
@@ -44,10 +44,11 @@ cd /nesi/nobackup/<project_id>/
 mkdir -p intermed_hpc_<username>
 cd intermed_hpc_<username>
 cp -r /opt/nesi/examples/intermediate_hpc .
-ls
 ```
 
 ## Looking at a previous job and its efficiency
+
+### `sacct`
 
 The example script `01_script.sl` has already been run as a batch job and has the job ID `{{ intermediate_hpc_job_id }}`.
 Let's take a look at the status of that job before we even start looking at the script and see what we can learn.
@@ -69,6 +70,8 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
     
     stick this in bash profile
 
+### `seff`
+
 The basic `sacct` tells us a little about the job: the runtime, how many CPUs were allocated, the final job state.
 But this information doesn't really help us evaluate how well the job ran.
 To look at the efficiency of our job, we can use the command `seff` (short for **s**lurm **eff**iciency):
@@ -88,8 +91,8 @@ Peak Mem Utilisation:  27%  1.37 GB of 5.00 GB
 
 `seff` gives us a lot of the same information but with a bit more context.
 
-!!! question "What resources would you request if resubmitting the job based only on this information?"
-    
+!!! exercise "What resources would you request if resubmitting the job based only on this information?"
+    You aren't working with a lot of information yet, but we can take a first stab at how to improve our job efficiency just by adjusting our requested resources.
     
 
 ??? solution "Resources for next time"
@@ -99,7 +102,7 @@ This is a good first step, we noticed that we are requesting more resources than
 But this assumes that the resources being used are fairly stable over the script.
 The CPU utilisation is just an average, so we don't know if there was a portion of the job that did use all the CPUs we allocated to the job.
 
-## Using job profiling
+### Job profiling
 
 SLURM has the ability to conduct 'profiling' on jobs being submitted.
 This stores extra data about the resources the job uses at various times throughout the job and can let you assess your efficiency in more detail.
@@ -113,3 +116,41 @@ Luckily for us, this was included in our script when it was run previously, so w
 We can run `profile_plot {{ intermediate_hpc_job_id }}` to produce a PNG with plots of the CPU, memory and I/O utilisation over the course of our job.
 
 ![Profile plot for job ID `{{ intermediate_hpc_job_id }}`](../../assets/images/intermediate_hpc_profile_plot.png)
+
+Now we can see things in a bit more detail.
+
+!!! exercise "What stands out?"
+    What more can we learn from these plots? Does this change your thoughts on how to adjust the requested resources?
+
+## Reviewing our job script
+
+Now let's actually take a look at what this job was running.
+Let's open `01_script.sl` and poke around.
+
+!!! tip "Looking at the script based on the job ID"
+    If we add the flag `-B` to our `sacct` command, `sacct` will return the script that was called for the job we are interested in.
+
+    ```bash
+    sacct -B -j {{ intermediate_hpc_job_id }}
+    ```
+
+    Ideally you remember what script was run, but this can be helpful if you aren't sure what you changed since you last ran a job or if you aren't sure which script was actually used.
+
+As mentioned above, this script is doing 3 major steps which are indicated with comments in the script:
+
+1. Quality control
+2. Indexing the reference genome
+3. Alignment and variant calling
+
+While we might be able to dig in and figure out a bit more, right now we don't know when we switch between these steps during our job, so we can't tell which processes need more memory or can't use all the CPUs available.
+
+### Splitting up your job (without adding to your workload)
+
+Ideally we want to know the performance of each step in our workflow, but no one likes watching for one job to finish so they can submit another.
+Luckily, there are ways to make SLURM do all the work for you!
+
+#### Job steps
+
+
+#### Dependent jobs
+
