@@ -33,9 +33,11 @@ Following pages contain information to help maintain the documentation:
 
 ## Viewing PR Branches
 
-![Demo Site](https://github.com/CallumWalley/support-docs-dev/actions/workflows/deploy.yml/badge.svg)
+Every pull request is built and deployed to a preview site by [demo_deploy.yml](.github/workflows/demo_deploy.yml).
+A comment on the pull request links to the preview and to each changed page.
 
-Deployments of open pull requests can be viewed at [https://callumwalley.github.io/support-docs-dev/NAME-OF-BRANCH](https://callumwalley.github.io/support-docs-dev/)
+Previews are at `https://callumwalley.github.io/mkdocs-demo-deploy/nesi/support-docs/NAME-OF-BRANCH`,
+and all of them are listed at [https://callumwalley.github.io/mkdocs-demo-deploy](https://callumwalley.github.io/mkdocs-demo-deploy).
 
 ## Theme
 
