@@ -2,6 +2,8 @@
 # Each key is the canonical tag name (used in tag-index.json and MkDocs).
 # 'display' is the human-readable label shown in the UI.
 # 'aliases' are alternative spellings found in frontmatter that map to this tag.
+#   An alias must belong to only one tag (compile_tags.py warns otherwise).
+# Rules for choosing tags and adding new ones: docs/NEWPAGE.md#tags
 
 slurm:
   display: Slurm
@@ -24,9 +26,14 @@ machine_learning:
   display: Machine Learning
   aliases: [ml, ai, Machine Learning, machine learning, AI, llm]
 
+ai_tools:
+  display: AI Tools
+  aliases: [ai tools, ai agent, ai agents, agent, agents, coding assistant, copilot, claude, codex, mcp]
+  # AI agents and assistants used to operate the platform. For AI/ML as the research workload, use machine_learning.
+
 python:
   display: Python
-  aliases: [Python, conda, anaconda, mamba, miniconda, ipython]
+  aliases: [Python, conda, anaconda, mamba, miniconda]
 
 containers:
   display: Containers
@@ -42,7 +49,7 @@ file_transfer:
 
 interactive:
   display: Interactive Computing
-  aliases: [interactive, jupyter, JupyterHub, JupyterLab, notebook, lab, ipython, rstudio, ondemand, OnDemand, ood, Marimo, Pluto]
+  aliases: [interactive, jupyter, JupyterHub, JupyterLab, notebook, lab, ipython, ondemand, OnDemand, ood, Marimo, Pluto]
 
 software:
   display: Software
