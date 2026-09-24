@@ -87,7 +87,7 @@
                 "reveal": "never",
                 "showReuseMessage": false
             },
-            "command": "export NO_MKDOCS_2_WARNING=1 && ./checks/run_test_build.py",
+            "command": "export NO_MKDOCS_2_WARNING=1 && ./checks/run_test_build.py --dirty",
             "problemMatcher": {
                 "severity": "info",
                 "pattern": {

@@ -7,6 +7,7 @@ Runs checks on slurm scrips found in code and outputs in github action readable 
 __author__ = "cal w"
 
 import re
+import os
 import sys
 import time
 from pathlib import Path
@@ -48,8 +49,7 @@ def main():
     inputs = sys.argv[1:]
 
     for input_string in inputs:
-        print(f"::DEBUG file={input_string},title=filenamecol=0,endColumn=99,line=0:: \
-            Running Meta-Check on {input_string}")
+        print(f"::debug file={input_string},title=file,col=0,endColumn=99,line=0::Running Slurm lint on {input_string}")
         input_path = Path(input_string)
         with open(input_path, "r") as f:
             contents = f.read()
@@ -57,7 +57,8 @@ def main():
                 try:
                     parse_script(lineno+3, indent, slurm)
                 except Exception as e:
-                    print(f"::ERROR file={input_path},title=failed_to_parse, col=0, endColumn=99, line={lineno}::Failed to parse slurm script {e}")
+                    msg_count["error"] += 1
+                    print(f"::error file={input_path},title=failed_to_parse,col=0,endColumn=99,line={lineno}::Failed to parse slurm script {e}")
 
 
 def parse_script(start_linno, indent, slurm):
@@ -200,5 +201,6 @@ if __name__ == "__main__":
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
 
-    # Arbitrary weighting whether to fail check or not
-    # exit(100*(len(sys.argv)-1) < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))
+    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
+    if os.getenv("CHECKS_STRICT") and msg_count["warning"] + msg_count["error"]:
+        sys.exit(1)
