@@ -47,7 +47,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "gpgpu",
-                        "hourly_average": 0.86,
+                        "hourly_average": 0.87,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
@@ -61,7 +61,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.4,
+                        "hourly_average": 0.38,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -75,7 +75,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "abaqus",
-                        "hourly_average": 0.61,
+                        "hourly_average": 0.63,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
@@ -577,7 +577,7 @@
         "force_show": "False"
     },
     "ANIcalculator": {
-        "description": "Calculate the bidirectional average nucleotide identity (gANI) and \nAlignment Fraction (AF) between two genomes.",
+        "description": "Calculate the bidirectional average nucleotide identity (gANI) and \nAlignment Fraction (AF) between two genomes. Also known as gANI",
         "domains": [
             "biology"
         ],
@@ -586,15 +586,16 @@
         "homepage": "https://ani.jgi.doe.gov/html/home.php",
         "support": "",
         "versions": [
-            "1.0-GCC-11.3.0"
+            "1.0-GCC-11.3.0",
+            "1.0-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.0-GCC-11.3.0",
+        "default": "1.0-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132625,
+        "last_updated": 1790118672,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANIcalculator/1.0-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/ANIcalculator/1.0-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -2837,15 +2838,16 @@
             "0.7.0-GCCcore-7.4.0",
             "0.8.0-GCCcore-9.2.0",
             "0.9.1-GCC-11.3.0",
-            "1.0.2-GCC-12.3.0"
+            "1.0.2-GCC-12.3.0",
+            "1.5.0-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.0.2-GCC-12.3.0",
+        "default": "1.5.0-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1789946895,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CapnProto/1.0.2-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CapnProto/1.5.0-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3105,26 +3107,32 @@
         "domains": [
             "biology"
         ],
-        "extensions": [],
+        "extensions": [
+            "checkm-genome-1.2.5"
+        ],
         "licence_type": "",
         "homepage": "https://github.com/Ecogenomics/CheckM",
         "support": "",
         "versions": [
             "1.0.13-gimkl-2018b-Python-2.7.16",
             "1.2.1-gimkl-2022a-Python-3.10.5",
-            "1.2.3-foss-2023a-Python-3.11.6"
+            "1.2.3-foss-2023a-Python-3.11.6",
+            "1.2.5-foss-2026-Python-3.14.4"
         ],
         "admin_list": [
             {
                 "1.0.13-gimkl-2018b-Python-2.7.16": "Warning: CheckM/1.0.13-gimkl-2018b-Python-2.7.16 is old and marked for deletion. Please select a more recent version (try 'module spider CheckM') or let us know that you still need it."
+            },
+            {
+                "1.2.1-gimkl-2022a-Python-3.10.5": "Warning: CheckM/1.2.1-gimkl-2022a-Python-3.10.5 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
             }
         ],
         "network_licences": [],
-        "default": "1.2.3-foss-2023a-Python-3.11.6",
+        "default": "1.2.5-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1740132628,
+        "last_updated": 1790119092,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/CheckM/1.2.3-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/CheckM/1.2.5-foss-2026-Python-3.14.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -3622,7 +3630,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "comsol",
-                        "hourly_average": 0.83,
+                        "hourly_average": 0.85,
                         "slurm_block": false,
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
@@ -5001,22 +5009,30 @@
             "biology"
         ],
         "extensions": [
-            "drep-3.4.2"
+            "drep-3.7.1"
         ],
         "licence_type": "",
         "homepage": "https://drep.readthedocs.io/en/latest/",
         "support": "",
         "versions": [
             "2.3.2-gimkl-2018b-Python-3.7.3",
-            "3.4.2-gimkl-2022a-Python-3.10.5"
+            "3.4.2-gimkl-2022a-Python-3.10.5",
+            "3.7.1-foss-2026-Python-3.14.4"
         ],
-        "admin_list": [],
+        "admin_list": [
+            {
+                "2.3.2-gimkl-2018b-Python-3.7.3": "Warning: drep/2.3.2-gimkl-2018b-Python-3.7.3 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            },
+            {
+                "3.4.2-gimkl-2022a-Python-3.10.5": "Warning: drep/3.4.2-gimkl-2022a-Python-3.10.5 is old and marked for deletion. Please select a more recent version or let us know that you still need it."
+            }
+        ],
         "network_licences": [],
-        "default": "3.4.2-gimkl-2022a-Python-3.10.5",
+        "default": "3.7.1-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1740132636,
+        "last_updated": 1790198891,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/drep/3.4.2-gimkl-2022a-Python-3.10.5.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/drep/3.7.1-foss-2026-Python-3.14.4.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -5807,7 +5823,8 @@
             "1.3-GCCcore-9.2.0",
             "1.33-GCC-11.3.0",
             "1.33-intel-2020a",
-            "1.33-intel-2022a"
+            "1.33-intel-2022a",
+            "1.34-GCC-15.2.0"
         ],
         "admin_list": [
             {
@@ -5815,11 +5832,11 @@
             }
         ],
         "network_licences": [],
-        "default": "1.33-intel-2020a",
+        "default": "1.34-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1790118362,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FastANI/1.33-intel-2020a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FastANI/1.34-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11233,22 +11250,23 @@
         "force_show": "False"
     },
     "likwid": {
-        "description": "Command line tools for Linux to support programmers in developing high\n performance multi threaded programs.",
+        "description": "Likwid stands for Like I knew what I am doing. This project contributes easy\nto use command line tools for Linux to support programmers in developing high\nperformance multi threaded programs.",
         "domains": [],
         "extensions": [],
         "licence_type": "",
         "homepage": "https://github.com/RRZE-HPC/likwid",
         "support": "",
         "versions": [
-            "5.2.1-GCC-11.3.0"
+            "5.2.1-GCC-11.3.0",
+            "5.5.2-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "5.2.1-GCC-11.3.0",
+        "default": "5.5.2-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1789697911,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/likwid/5.2.1-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/likwid/5.5.2-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11812,15 +11830,16 @@
             "2.2-GCC-9.2.0",
             "2.3-GCC-11.3.0",
             "2.3-GCC-12.3.0",
+            "2.3-GCC-15.2.0",
             "2.3-GCC-9.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.3-GCC-12.3.0",
+        "default": "2.3-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132631,
+        "last_updated": 1790118228,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Mash/2.3-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Mash/2.3-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -11951,7 +11970,7 @@
                 "server": "MATLAB@uow",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 0.73,
+                "server_uptime": 0.64,
                 "server_version": "",
                 "features": []
             },
@@ -13549,7 +13568,8 @@
             "3.23-gimkl-2018b",
             "4.0.0rc1-GCCcore-11.3.0",
             "4.0.0rc1-GCCcore-9.2.0",
-            "4.0.1-GCCcore-12.3.0"
+            "4.0.1-GCCcore-12.3.0",
+            "4.0.1-GCCcore-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
@@ -20895,15 +20915,16 @@
         "homepage": "https://github.com/bluenote-1577/skani",
         "support": "",
         "versions": [
-            "0.2.2-GCC-12.3.0"
+            "0.2.2-GCC-12.3.0",
+            "0.3.2-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.2.2-GCC-12.3.0",
+        "default": "0.3.2-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132639,
+        "last_updated": 1790118617,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/skani/0.2.2-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/skani/0.3.2-GCC-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
