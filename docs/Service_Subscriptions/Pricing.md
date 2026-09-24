@@ -7,7 +7,7 @@ description: Prices for the HPC platform, Research Developer Cloud, GPUs and sto
 
 
 !!! note "Upcoming changes"
-    We are currently reviewing our Subscription pricing structure and the prices listed below will be changing in the coming months. If you have any questions in the meantime, please contact engagement@reannz.co.nz.
+    (Thu 24 Sept) We are currently reviewing our Subscription pricing structure and the prices listed on this page will change in the coming months. If you have any questions in the meantime, please contact engagement@reannz.co.nz.
 
 We have two categories of pricing for Subscription services:
 
