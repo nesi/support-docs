@@ -65,7 +65,9 @@ jobs:
           # `|| true` only absorbs grep's own "no markdown files matched" exit
           # code - pipefail still lets a bad/missing origin/$BASE ref from the
           # `git diff` above it fail the step loudly.
-          changed_files="$(git diff --name-only "origin/${BASE}...HEAD" | { grep -E '^docs/.*\.md$' || true; } | tr '\n' ' ')"
+          # `--diff-filter=d` drops deleted (and the old side of renamed) files - the
+          # checks crash on paths that no longer exist.
+          changed_files="$(git diff --name-only --diff-filter=d "origin/${BASE}...HEAD" | { grep -E '^docs/.*\.md$' || true; } | tr '\n' ' ')"
           echo "Changed files: '${changed_files}'"
           echo "filelist=${changed_files}" >> $GITHUB_OUTPUT
     outputs:
