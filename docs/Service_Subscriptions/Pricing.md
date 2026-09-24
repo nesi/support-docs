@@ -6,11 +6,8 @@ description: Prices for the HPC platform, Research Developer Cloud, GPUs and sto
 ---
 
 
-!!! note "REANNZ Integration"
-    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd. NeSI’s services and technologies are now hosted by REANNZ as a national [eResearch Infrastructure Platform](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/investment-funds/strategic-science-investment-fund/funded-infrastructure/eresearch-infrastructure-platform). Some of our tools (eg. my.nesi.org.nz) and emails (eg. support@nesi.org.nz) will retain a ‘NeSI’ brand as we transition our services and develop a longer-term strategy for this integrated platform.
-
-    All NeSI services and support – including these Support Documentation pages and team monitoring the support@nesi.org.nz email – are continuing as you’ve known them. Also, the principles of our policies (Access, Acceptable Use, Security & Privacy, etc.) are carrying over and remain in effect. We'll be in touch if anything changes. If you have any questions about the NeSI-REANNZ integration, {% include "partials/support_request.html" %}
-
+!!! note "Upcoming changes"
+    (Thu 24 Sept 2026) We are currently reviewing our Subscription pricing structure and the prices listed on this page will change in the coming months. If you have any questions in the meantime, please contact engagement@reannz.co.nz.
 
 We have two categories of pricing for Subscription services:
 
