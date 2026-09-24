@@ -9,7 +9,7 @@ tags:
 ## Purpose
 
 This policy sets out the principles and rules governing the use of AI agents, coding assistants and other autonomous tools on REANNZ platforms.
-These are additional requirements, and does not replace the [Acceptable Use Policy](./Acceptable_Use_Policy.md).
+These are additional requirements and do not replace the [Acceptable Use Policy](./Acceptable_Use_Policy.md).
 
 This _does not_ cover AI or machine learning as the research workload itself.
 
@@ -22,7 +22,7 @@ This _does not_ cover AI or machine learning as the research workload itself.
 
 ## Conduct
 
-- If polling commands that utilise shared resources (filesystem op, `sacct`), conservative delays (>30 seconds) must be used, (e.g )
+- If polling commands that utilise shared resources (filesystem op, `sacct`), conservative delays must be used (e.g. `sleep 60` between `squeue --me` calls).
 - Only one agent session may run per user at a time (unless otherwise approved by support).
 - REANNZ may kill disruptive agent processes without notice (consistent with the Acceptable Use Policy).
 - Use `squeue --me` and `ps -u $USER` to keep agent context limited to your own work.
@@ -39,7 +39,7 @@ This _does not_ cover AI or machine learning as the research workload itself.
 - Poll on the order of tens of seconds apart rather than in a tight loop.
 - Submit jobs in small, bounded batches, job-arrays or dependency chains (`sbatch --dependency=afterok:...`) instead of many independent submissions.
 - Point file operations (`find`, `grep`, `du`) at specific known paths rather than whole shared parent directories.
-- Run /IO/CPU/memory heavy work as a job, not on the login node.
+- Run IO, CPU or memory heavy work as a job, not on the login node.
 - Give an agent a narrow working directory rather than broad filesystem access.
 - Review the packages or dependencies an agent proposes to install before it installs them, and pre-install where practical.
 
@@ -53,19 +53,18 @@ This _does not_ cover AI or machine learning as the research workload itself.
 
 ## Support
 
-REANNZ is not responsible for supporting for third-party AI tools.
-Before raising a support ticket, verify any commands an agent has generated against the relevant documentation, and that nothing has been halucinated.
+REANNZ is not responsible for supporting third-party AI tools.
+Before raising a support ticket, verify any commands an agent has generated against the relevant documentation, and that nothing has been hallucinated.
 
 An unofficial AI skill for responsible operation of the REANNZ HPC can be found at [nesi-support-skill](https://github.com/chrisdjscott/nesi-support-skill).
 
 ## Research Integrity
 
-Use of AI in research conducted on REANNZ HPC systems should follow the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf):
+Use of AI in research conducted on REANNZ HPC systems should follow the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf).
 
 !!! note "See Also"
-  
-  - [Access Policy](./Access_Policy.md)
-  - [Acceptable Use Policy](./Acceptable_Use_Policy.md)
-  - [Privacy Policy](./Privacy_Policy.md)
-  - [Royal Society Te Apārangi GenAI guidelines (2025)](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf)
-  - [Public Service AI Framework](https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence)
+    - [Access Policy](./Access_Policy.md)
+    - [Acceptable Use Policy](./Acceptable_Use_Policy.md)
+    - [Privacy Policy](./Privacy_Policy.md)
+    - [Royal Society Te Apārangi GenAI guidelines (2025)](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf)
+    - [Public Service AI Framework](https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence)
