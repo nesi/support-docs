@@ -29,7 +29,7 @@ This _does not_ cover AI or machine learning as the research workload itself.
 - Do not give an agent your passwords, SSH keys, tokens or other sensitive information if they are running off cluster.
 - Do not expose a MCP server or open a reverse tunnel from a REANNZ HPC system outward.
 - A workstation agent connecting inward to a cluster MCP endpoint is acceptable, the reverse is not.
-- You must request a service account for agents that require cluster access.
+- Agents that require cluster access must use a service account. Service accounts are only issued by REANNZ support: {% include "partials/support_request.html" %} to request one.
 
 ## Best Practice
 
