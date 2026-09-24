@@ -19,22 +19,12 @@ This page describes how to set up Claude Code so that it runs tasks on Mahuika.
     - Be able to [log in to Mahuika with SSH](../../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md).
     - Have a Claude subscription (Pro, Max, Team or Enterprise) or an Anthropic API key.
       REANNZ does not provide Claude licences.
-    - Read the [AI Agent Usage Policy](../../Policy/AI_Agent_Usage_Policy.md).
-      It applies in addition to the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md).
+    - Read the [AI Agent Guidelines](./AI_Agent_Guidelines.md) and the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md).
 
 !!! warning "Your code and data leave the cluster"
     Claude Code sends the prompts, file contents and command output it works with to Anthropic's servers for processing.
-    Before using it, check that this is allowed under the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md)
-    and the [AI Agent Usage Policy](../../Policy/AI_Agent_Usage_Policy.md). In particular:
-
-    - Only let the agent read code and data you have permission to share with a third party.
-      Do not use it in directories containing sensitive, identifiable or otherwise restricted data.
-    - Project directories are shared. Start the agent in a directory that holds only your own work,
-      so that it does not read other project members' files.
-    - Some software licences do not allow the source code to be shared with third parties.
-      Check the licence conditions of any third-party code before the agent reads it.
-    - Check your Claude account's privacy settings to see how long Anthropic keeps your conversations
-      and whether they are used to train models.
+    Only let it read code and data you are allowed to share with a third party,
+    and see [Data and privacy](./AI_Agent_Guidelines.md#data-and-privacy) in the AI Agent Guidelines before you start.
 
 ## Where to run Claude Code
 
@@ -183,8 +173,7 @@ claude
 
 Detach with <kbd>ctrl</kbd> + <kbd>b</kbd> then <kbd>d</kbd>, and reattach later with `tmux attach -t agent`.
 
-Only run one Claude Code session at a time.
-The AI Agent Usage Policy [allows one agent session per user](../../Policy/AI_Agent_Usage_Policy.md#conduct) unless support has approved more.
+[Run only one agent session at a time](./AI_Agent_Guidelines.md#working-on-the-cluster).
 Before starting a new session, check for an old one with `tmux ls` and reattach to it or close it.
 
 !!! warning "Remember which login node you are on"
@@ -206,8 +195,8 @@ Once Claude Code is running on Mahuika, you can interact with it in any of these
 
 !!! warning "Do not use Remote Control on Mahuika"
     Claude Code's `/remote-control` command lets a session be controlled from the Claude website or apps.
-    It works by keeping a connection open from Mahuika to Anthropic's servers that carries instructions back to the session.
-    This acts as a reverse tunnel out of the cluster, which the AI Agent Usage Policy [does not allow](../../Policy/AI_Agent_Usage_Policy.md#conduct).
+    It keeps a connection open from Mahuika to Anthropic's servers, which is a
+    [reverse tunnel out of the cluster](./AI_Agent_Guidelines.md#credentials-and-access).
 
 ### Project CLAUDE.md file
 
@@ -271,8 +260,8 @@ You can pre-approve safe, routine commands to reduce prompts by creating `.claud
 
 `make` is in the `ask` list because targets such as `make test` or `make -j` can run heavy work on the login node.
 The `deny` rules stop the agent from reading your SSH keys and any tokens in `~/.bashrc`,
-so that they are not sent to Anthropic.
-They apply to Claude Code's file tools, so also keep passwords and keys out of the directories the agent works in.
+so that they are not sent to Anthropic (see [Credentials and access](./AI_Agent_Guidelines.md#credentials-and-access)).
+They apply to Claude Code's file tools, not every shell command.
 
 !!! warning
     Claude Code runs with the permissions of the account it runs under, including write access to your shared project directories.
@@ -334,23 +323,14 @@ When you are finished, delete the test directory.
 
 ### Good practice on Mahuika
 
-- **Keep heavy work off the login node.** Login nodes are shared by all users.
-  The agent should compile with a few cores and send everything else to Slurm.
-- **Review job scripts before they are submitted.** Check the resources requested (`--time`, `--mem`, `--ntasks`, GPUs),
-  because every job uses your project's allocation and [Fair Share](../../Batch_Computing/Fair_Share.md).
-- **Watch your home quota.** Claude Code stores its settings and session history under `~/.claude` and its program under `~/.local`.
-  These are small, but home directories have a 20 GB quota (see [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md)).
-  If space is tight, [install outside your home directory](#installing-outside-home).
-  Keep large outputs out of your source directory so the agent does not read through them.
-- **Use version control.** Commit your work with `git` before asking the agent for large changes, so you can review and undo them.
-- **Keep the agent's view narrow.** Start it in the directory for the task at hand and ask it to use `squeue --me` and `ps -u $USER`,
-  not commands that list every user's jobs or processes.
-  Avoid recursive `find` or `grep` over whole shared directories such as `/nesi/project`.
-- **Report exposed credentials.** If the agent reads or prints a password, SSH key or token for REANNZ systems,
-  treat it as exposed and report it, as required by the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md).
-  {% include "partials/support_request.html" %}.
+Follow the [AI Agent Guidelines best practice](./AI_Agent_Guidelines.md#best-practice),
+such as reviewing job scripts before they are submitted and keeping heavy work off the login node.
+The [example `CLAUDE.md`](#project-claudemd-file) passes the most important of these on to the agent.
 
-See the [AI Agent Usage Policy best practice](../../Policy/AI_Agent_Usage_Policy.md#best-practice) for more examples of what to do and avoid.
+Also watch your home quota. Claude Code stores its settings and session history under `~/.claude` and its program under `~/.local`.
+These are small, but home directories have a 20 GB quota (see [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md)).
+If space is tight, [install outside your home directory](#installing-outside-home).
+Keep large outputs out of your source directory so the agent does not read through them.
 
 ## Option 2: Local, over SSH
 
@@ -364,15 +344,12 @@ It works well for occasional tasks such as submitting a job or summarising outpu
 It is awkward for development, because the agent cannot easily edit files on the cluster.
 
 !!! warning "Use a service account, not your own login"
-    Do not let the agent reuse your own SSH connection to Mahuika, for example by keeping a connection open with `ControlPersist`.
-    Letting an automated tool use your login gets around Mahuika's two-factor authentication,
-    which [clause 12 of the Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow.
-    The AI Agent Usage Policy [requires agents that access the cluster to use a service account](../../Policy/AI_Agent_Usage_Policy.md#conduct).
+    Do not let the agent reuse your own SSH connection to Mahuika, for example one kept open with `ControlPersist`.
+    This gets around two-factor authentication, which
+    [clause 12 of the Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow.
+    See [Credentials and access](./AI_Agent_Guidelines.md#credentials-and-access) in the AI Agent Guidelines.
 
 You must apply to support for a service account: {% include "partials/support_request.html" %}.
-
-The service account is for the agent only.
-Do not give the agent your own passwords, SSH keys or tokens.
 
 ## Option 3: Local, then sync
 
