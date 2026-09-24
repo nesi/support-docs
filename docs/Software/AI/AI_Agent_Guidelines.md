@@ -12,9 +12,6 @@ The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md) still applies
 
 These guidelines _do not_ cover AI or machine learning as the research workload itself.
 
-!!! tip "See also: agent setup guides"
-    - [Claude Code on Mahuika](./Claude_Code_on_Mahuika.md)
-
 ## Principles
 
 1. You are responsible for anything an agent does under your account, in the same way you are responsible for any other process you run.
