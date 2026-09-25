@@ -62,7 +62,13 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
         - name: txt
           class: force-wrap
-  - pymdownx.highlight
+  - pymdownx.highlight:
+      # Adds `language-*` classes, so code blocks keep their language in the llms.txt markdown.
+      pygments_lang_class: true
+      # Pygments has no `sl` lexer, so without this the `sl` blocks FORMAT.md asks for are not highlighted.
+      extend_pygments_lang:
+        - name: sl
+          lang: slurm
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.tabbed:
@@ -128,6 +134,9 @@ plugins:
       module_name: macro_hooks
       include_dir: overrides
   - llmstxt:
+      # llmstxt_preprocess.py tidies admonitions, tabs and app page widgets, then runs autoclean itself.
+      autoclean: false
+      preprocess: llmstxt_preprocess.py
       markdown_description: >-
         NeSI Mahuika HPC support documentation: getting access, running batch jobs
         with Slurm, available software and modules, storage and data transfer,
