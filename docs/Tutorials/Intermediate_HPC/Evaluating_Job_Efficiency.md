@@ -17,6 +17,7 @@ tags:
 !!! info "Prerequisites"
     This tutorial assumes familiarity with Mahuika and the use of HPCs. You should be able to:
     
+    - use the terminal to navigate a filesystem
     - find and load software
     - write a SLURM batch script
     - submit batch jobs to SLURM
@@ -144,6 +145,8 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
 3. Alignment and variant calling
 
 While we might be able to dig in and figure out a bit more, right now we don't know when we switch between these steps during our job, so we can't tell which processes need more memory or can't use all the CPUs available.
+
+## Later / for the bin
 
 ### Splitting up your job (without adding to your workload)
 
