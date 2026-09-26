@@ -10697,15 +10697,16 @@
         "support": "",
         "versions": [
             "2.11.2-GCC-12.3.0-lmax-6-cp2k",
+            "2.13.1-GCC-15.2.0-lmax-6-cp2k",
             "2.6.0-iimpi-2022a-lmax-6-cp2k"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.11.2-GCC-12.3.0-lmax-6-cp2k",
+        "default": "2.13.1-GCC-15.2.0-lmax-6-cp2k",
         "default_type": "latest",
-        "last_updated": 1772570740,
+        "last_updated": 1790308279,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Libint/2.11.2-GCC-12.3.0-lmax-6-cp2k.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Libint/2.13.1-GCC-15.2.0-lmax-6-cp2k.lua",
         "force_hide": "False",
         "force_show": "False"
     },
