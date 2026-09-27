@@ -10,6 +10,19 @@ The [REANNZ HPC Portal](https://hpc-portal.reannz.co.nz) is where you see your p
 who is in them, and the allocations (resources) they hold.
 The portal is built on [Waldur](https://docs.waldur.com/latest/user-guide/).
 
+## Log in
+
+1. Go to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz).
+2. Click **Sign in with reannz**.
+    ![Sign in with reannz button](../../assets/images/HPC_Portal_sign_in_with_reannz.png)
+3. Choose your home institution and log in with your institutional credentials.
+   This login goes through Tuakiri, the same as for my.nesi.org.nz.
+
+If your institution is not part of the Tuakiri federation, see
+[Account Requests for non-Tuakiri Members](../../Policy/Account_Requests_for_non_Tuakiri_Members.md).
+For other login problems, see
+[Logging in to my.nesi.org.nz](../my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md#troubleshooting-login-issues).
+
 ## Main navigation
 
 The sidebar on the left holds the main sections:
