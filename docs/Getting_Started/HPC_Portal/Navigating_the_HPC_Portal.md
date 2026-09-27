@@ -40,7 +40,7 @@ The **Roles and permissions** table lists every role you hold:
 | Role | Who holds it | What they can do |
 | --- | --- | --- |
 | Project member | Researchers on a project | View the project and its resources, and request an end date change. |
-| Project manager | The project owner or PI | Manage the project team, change resource limits and request an end date change. |
+| Project manager | The project owner or PI | Change resource limits and request an end date change. |
 | Organization owner | Nominated staff at your institution | Approve requests from projects in their organization and set end dates directly. |
 
 ## See your projects
@@ -61,8 +61,6 @@ A project page has four tabs:
 1. Open the project and click the **Team** tab.
 2. The **Active** list shows each **Member**, their **Email**, their **Role in project** and any **Role expiration**.
 3. The **Invitations** list shows people invited who have not yet joined.
-
-A project manager can add people from the **Team** tab.
 
 ## See resources
 

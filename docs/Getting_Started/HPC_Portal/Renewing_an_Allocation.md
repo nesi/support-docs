@@ -25,8 +25,7 @@ To renew *and* grow an allocation, make both.
 - Make your request **before** the current end date.
   The portal does not accept an end date in the past,
   and an allocation may be removed once its end date has passed.
-- The portal emails project members 7 days and 1 day before a resource ends.
-  Do not wait for these emails; request well ahead.
+- Request well ahead. Do not wait for a reminder.
 
 ## Extend the end date
 
@@ -52,10 +51,10 @@ The **Pending** list shows open requests and **All** shows past ones.
 - An organization owner at your institution reviews the request and approves or rejects it.
 - When approved, the new end date applies at once. There is no further step.
 - When rejected, the end date does not change.
-- You receive an email when the request is created, approved or rejected.
+- Check the **End date change requests** tab on the resource to see the outcome.
 
-If your organization owner sees **Set termination date** in the **Actions** menu,
-they can change the date directly without a request.
+If you see **Set termination date** instead of **Request end date change**,
+you are an organization owner and can set the date directly.
 
 If you do not know who approves requests at your institution,
 or the request is waiting too long,
@@ -68,8 +67,8 @@ Project members cannot; ask your project manager.
 
 1. Open the resource as above.
 2. Click **Actions**, then **Change limits**.
-3. The **Change resource limits** dialog shows current usage and limits.
-   Enter the new limits.
+3. The **Change resource limits** dialog shows each component with its **Usage** and **Current limit**.
+   Enter the **New limit** for each component you want to change.
 4. Click **Request for a change**.
 
 The change goes to your organization for approval, then to REANNZ.
