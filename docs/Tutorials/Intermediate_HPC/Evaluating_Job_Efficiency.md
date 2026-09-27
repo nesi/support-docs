@@ -51,6 +51,66 @@ cp -r /opt/nesi/examples/intermediate_hpc .
 
 ### `sacct`
 
+??? note "`01_script.sl`"
+
+    ```bash
+
+    #!/bin/bash -e
+
+    #SBATCH --job-name=intermed-hpc-01
+    #SBATCH --output=log/%x_%j.out
+    #SBATCH --error=log/%x_%j.err
+    #SBATCH --time=1:00:00
+    #SBATCH --mem=5G
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=4
+    #SBATCH --profile=task
+
+    module purge
+
+    # Quality control
+    module load FastQC/0.12.1
+
+    cd untrimmed_fastq
+    fastqc *.fastq* # fastqc can take multiple files as input, so we can run it on all fastq files in the current directory
+
+    mkdir -p ../trimmed
+    cd ../trimmed
+    module load Trimmomatic/0.39-Java-1.8.0_144
+
+    for infile in ../untrimmed_fastq/*_1.fastq.gz
+    do
+        base=$(basename ${infile} _1.fastq.gz)
+        trimmomatic PE ${infile} ../untrimmed_fastq/${base}_2.fastq.gz \
+                        ${base}_1.trim.fastq.gz ${base}_1un.trim.fastq.gz \
+                        ${base}_2.trim.fastq.gz ${base}_2un.trim.fastq.gz \
+                        SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:/opt/nesi/CS400_centos7_bdw/Trimmomatic/0.39-Java-1.8.0_144/adapters/NexteraPE-PE.fa:2:40:15 
+    done
+
+
+    cd ..
+    mkdir -p results/sam results/bam results/bcf results/vcf
+    gunzip trimmed/*.fastq.gz
+
+    module load bwa-mem2/2.3-GCC-12.3.0
+    module load SAMtools/1.22-GCC-12.3.0
+    module load BCFtools/1.22-GCC-12.3.0
+    # Reference genome indexing
+    gunzip -k ref_genome/ecoli_rel606.fasta.gz
+    bwa-mem2 index ref_genome/ecoli_rel606.fasta
+    # Alignment and variant calling
+    for infile in trimmed/*_1.trim.fastq
+    do
+        base=$(basename ${infile} _1.trim.fastq)
+        bwa-mem2 mem -t 4 ref_genome/ecoli_rel606.fasta ${infile} trimmed/${base}_2.trim.fastq > results/sam/${base}.aligned.sam
+        samtools view -S -b results/sam/${base}.aligned.sam > results/bam/${base}.aligned.bam
+        samtools sort results/bam/${base}.aligned.bam -o results/bam/${base}.aligned.sorted.bam
+        bcftools mpileup -O b -o results/bcf/${base}.bcf -f ref_genome/ecoli_rel606.fasta results/bam/${base}.aligned.sorted.bam
+        bcftools call --ploidy 1 -m -v -o results/vcf/${base}.vcf results/bcf/${base}.bcf
+        vcfutils.pl varFilter results/vcf/${base}.vcf > results/vcf/${base}.var.vcf
+    done
+    ```
+
 The example script `01_script.sl` has already been run as a batch job and has the job ID `{{ intermediate_hpc_job_id_01 }}`.
 Let's take a look at the status of that job before we even start looking at the script and see what we can learn.
 
@@ -144,172 +204,106 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
 2. Indexing the reference genome
 3. Alignment and variant calling
 
-While we might be able to dig in and figure out a bit more, right now we don't know when we switch between these steps during our job, so we can't tell which processes need more memory or can't use all the CPUs available.
+!!! exercise "Splitting tasks by resource needs"
+    Let's identify different sections of the script (`01_script.sl`) that have significantly different resource needs and split them into separate jobs with appropriate resource requests for each.
 
-## Later / for the bin
+??? solution "Updated scripts"
+    There is no one correct answer here! But here is one option.
+    Looking at the profile plot, we can try to identify the steps of the job.
 
-### Splitting up your job (without adding to your workload)
+    ![Annotated profile plot for `{{ intermediate_hpc_job_id_01 }}`](../../assets/images/intermediate_hpc_job_id_01_markup.png)
 
-Ideally we want to know the performance of each step in our workflow, but no one likes watching for one job to finish so they can submit another.
-Luckily, there are ways to make SLURM do all the work for you!
+    There are two major sections in the profile plot, and one little blip in the middle that we can guess is the reference genome indexing occurring between the quality control and alignment/variant calling steps.
 
-#### Job steps
+    So we can create three scripts to better assign resources:
 
-SLURM provides ways to submit a single batch job that has multiple steps.
-Within a SLURM script separate job steps are indicated by using `srun` before the command.
-`srun` can be used to run multiple processes simultaneously with portions of the resources allocated to the entire job script.
-To get a quick sense for the resources used in our job, we've modified `01_script.sl` to make `02_script.sl` which wraps different sections in `srun`.
-There are 4 calls of `srun` within the script, which SLURM will label sequentially as steps 0 through 3.
-We can look at the results of this job the same way as our previous job:
+    `01_script_a.sl`
+    
+    ```bash
 
-```bash
-sacct {{ intermediate_hpc_job_id_02 }}
-```
+    #!/bin/bash -e
 
-```output
-JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State      
---------------- ---------------- ----- ----------- ------------ ------- -------- ---------- 
-9310633         intermed-hpc-02      8    00:16:43    27:40.806      5G          COMPLETED  
-9310633.batch   batch                8    00:16:43    00:22.645            6908K COMPLETED  
-9310633.extern  extern               8    00:16:43     00:00:00                  COMPLETED  
-9310633.0       bash                 8    00:01:52    01:51.996          593880K COMPLETED  
-9310633.1       bash                 8    00:03:54    10:19.651         2263436K COMPLETED  
-9310633.2       bash                 8    00:00:03    00:01.645                0 COMPLETED  
-9310633.3       bash                 8    00:10:29    15:04.867         1299004K COMPLETED
-```
+    #SBATCH --job-name=intermed-hpc-01a
+    #SBATCH --output=log/%x_%j.out
+    #SBATCH --error=log/%x_%j.err
+    #SBATCH --time=00:30:00
+    #SBATCH --mem=5G
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=1
+    #SBATCH --profile=task
 
-`sacct` now gives us information for the entire job as well as for each individual job step.
+    module purge
+    # Quality control
+    module load FastQC/0.12.1
+    cd untrimmed_fastq
+    fastqc *.fastq* # fastqc can take multiple files as input, so we can run it on all fastq files in the current directory
 
-```bash
-seff {{ intermediate_hpc_job_id_02 }}
-```
+    mkdir -p ../trimmed
+    cd ../trimmed
+    module load Trimmomatic/0.39-Java-1.8.0_144
 
-```output
-Job ID: 9310633
-State: COMPLETED
-Steps: batch + 4
-Tasks: 1
-Cores: 4
-Job Wall-time:         28%  00:16:43 of 01:00:00 time limit
-Avg CPU Utilisation:   41%  00:27:41 of 01:06:52 core-walltime
-Peak Mem Utilisation:  43%  2.17 GB of 5.00 GB (6.75 MB to 2.16 GB in each of 2 tasks from 2 job steps)
-```
+    for infile in ../untrimmed_fastq/*_1.fastq.gz
+    do
+        base=$(basename ${infile} _1.fastq.gz)
+        trimmomatic PE ${infile} ../untrimmed_fastq/${base}_2.fastq.gz \
+                        ${base}_1.trim.fastq.gz ${base}_1un.trim.fastq.gz \
+                        ${base}_2.trim.fastq.gz ${base}_2un.trim.fastq.gz \
+                        SLIDINGWINDOW:4:20 MINLEN:25 ILLUMINACLIP:/opt/nesi/CS400_centos7_bdw/Trimmomatic/0.39-Java-1.8.0_144/adapters/NexteraPE-PE.fa:2:40:15 
+    done
+    ```
+    
+    `01_script_b.sl`
+    
+    ```bash
 
-`seff` still summarises across the entire job, but we can see the range of peak memory utilisations across the different job steps.
+    #!/bin/bash -e
 
-```bash
-profile_plot {{ intermediate_hpc_job_id_02 }}
-```
+    #SBATCH --job-name=intermed-hpc-01b
+    #SBATCH --output=log/%x_%j.out
+    #SBATCH --error=log/%x_%j.err
+    #SBATCH --time=00:30:00
+    #SBATCH --mem=1G
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=1
+    #SBATCH --profile=task
 
-![Profile plot for job ID `{{ intermediate_hpc_job_id_02 }}`](../../assets/images/intermediate_hpc_profile_plot_02.png)
+    module load bwa-mem2/2.3-GCC-12.3.0
+    # Reference genome indexing
+    gunzip -k ref_genome/ecoli_rel606.fasta.gz
+    bwa-mem2 index ref_genome/ecoli_rel606.fasta
+    ```
 
-The profile plot now shows each step in a different line/color.
+    `01_script_c.sl`
+    
+    ```bash
 
-#### Dependent jobs
+    #!/bin/bash -e
 
-SLURM also allows us to submit a job with a dependency specified.
-In this case, we can indicate that we only want the job to run after a previous job has finished successfully.
-To use this method, we've split `01_script.sl` into three separate job scripts: `03a_script.sl`, `03b_script.sl`, and `03c_script.sl`.
-These jobs were then submitted as three commands:
+    #SBATCH --job-name=intermed-hpc-01c
+    #SBATCH --output=log/%x_%j.out
+    #SBATCH --error=log/%x_%j.err
+    #SBATCH --time=00:30:00
+    #SBATCH --mem=1G
+    #SBATCH --ntasks=1
+    #SBATCH --cpus-per-task=4
+    #SBATCH --profile=task
+        
+    mkdir -p results/sam results/bam results/bcf results/vcf
+    gunzip trimmed/*.fastq.gz
 
-```bash
-sbatch 03a_script.sl
-```
+    module load bwa-mem2/2.3-GCC-12.3.0
+    module load SAMtools/1.22-GCC-12.3.0
+    module load BCFtools/1.22-GCC-12.3.0
+    # Alignment and variant calling
+    for infile in trimmed/*_1.trim.fastq
+    do
+        base=$(basename ${infile} _1.trim.fastq)
+        bwa-mem2 mem -t 4 ref_genome/ecoli_rel606.fasta ${infile} trimmed/${base}_2.trim.fastq > results/sam/${base}.aligned.sam
+        samtools view -S -b results/sam/${base}.aligned.sam > results/bam/${base}.aligned.bam
+        samtools sort results/bam/${base}.aligned.bam -o results/bam/${base}.aligned.sorted.bam
+        bcftools mpileup -O b -o results/bcf/${base}.bcf -f ref_genome/ecoli_rel606.fasta results/bam/${base}.aligned.sorted.bam
+        bcftools call --ploidy 1 -m -v -o results/vcf/${base}.vcf results/bcf/${base}.bcf
+        vcfutils.pl varFilter results/vcf/${base}.vcf > results/vcf/${base}.var.vcf
+    done
+    ```
 
-```output
-Submitted batch job {{ intermediate_hpc_job_id_03a }}
-```
-
-```bash
-sbatch --dependency=afterok:{{ intermediate_hpc_job_id_03a }} 03b_script.sl
-```
-
-```output
-Submitted batch job {{ intermediate_hpc_job_id_03b }}
-```
-
-```bash
-sbatch --dependency=afterok:{{ intermediate_hpc_job_id_03b }} 03c_script.sl
-```
-
-```output
-Submitted batch job {{ intermediate_hpc_job_id_03c }}
-```
-
-!!! tip "Submitting dependent jobs via scripts"
-    bash script use variables
-    <!-- TODO -->
-
-When you've submitted dependent jobs, they will appear in your queue as pending with the reason being 'Dependency'. For example:
-
-```bash
-squeue --me
-```
-
-```output
-JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
-9311120       <user> <project> intermed-hpc   8      5G genoa   Sep 25 15:17       55:35 RUNNING  c005                
-9311121       <user> <project> intermed-hpc   4      5G milan,g N/A              1:00:00 PENDING  (Dependency)        
-9311125       <user> <project> intermed-hpc   4      5G milan,g N/A              1:00:00 PENDING  (Dependency) 
-```
-
-And again the same options for reviewing our jobs are available, but now we have 3 separate job IDs we need to query.
-
-```bash
-sacct -j {{ intermediate_hpc_job_id_03a }},{{ intermediate_hpc_job_id_03b }},{{ intermediate_hpc_job_id_03c }}
-```
-
-```output
-JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State      
---------------- ---------------- ----- ----------- ------------ ------- -------- ---------- 
-9311120         intermed-hpc-03a     8    00:04:47    10:35.512      5G          COMPLETED  
-9311120.batch   batch                8    00:04:47    10:35.512         2199560K COMPLETED  
-9311120.extern  extern               8    00:04:47     00:00:00                  COMPLETED  
-9311121         intermed-hpc-03b     8    00:00:26    00:22.655      5G          COMPLETED  
-9311121.batch   batch                8    00:00:26    00:22.655                0 COMPLETED  
-9311121.extern  extern               8    00:00:26     00:00:00                  COMPLETED  
-9311125         intermed-hpc-03c     8    00:11:17    15:45.592      5G          COMPLETED  
-9311125.batch   batch                8    00:11:17    15:45.592         1632720K COMPLETED  
-9311125.extern  extern               8    00:11:17     00:00:00                  COMPLETED  
-```
-
-```bash
-seff {{ intermediate_hpc_job_id_03a }} {{ intermediate_hpc_job_id_03b }} {{ intermediate_hpc_job_id_03c }}
-```
-
-```output
-Job ID: 9311120
-State: COMPLETED
-Cores: 4
-Job Wall-time:          8%  00:04:47 of 01:00:00 time limit
-Avg CPU Utilisation:   55%  00:10:35 of 00:19:08 core-walltime
-Peak Mem Utilisation:  42%  2.10 GB of 5.00 GB
-
-Job ID: 9311121
-State: COMPLETED
-Cores: 4
-Job Wall-time:          1%  00:00:26 of 01:00:00 time limit
-Avg CPU Utilisation:   22%  00:00:22 of 00:01:44 core-walltime
-Peak Mem Utilisation:   0%  0.00 MB of 5.00 GB
-
-Job ID: 9311125
-State: COMPLETED
-Cores: 4
-Job Wall-time:         19%  00:11:17 of 01:00:00 time limit
-Avg CPU Utilisation:   35%  00:15:45 of 00:45:08 core-walltime
-Peak Mem Utilisation:  31%  1.56 GB of 5.00 GB
-```
-
-And for profile plot we will need to run the command separately for each job ID to get our plots.
-
-`{{ intermediate_hpc_job_id_03a }}`
-
-![Profile plot for job ID `{{ intermediate_hpc_job_id_03a }}`](../../assets/images/intermediate_hpc_profile_plot_03a.png)
-
-`{{ intermediate_hpc_job_id_03b }}`
-
-![Profile plot for job ID `{{ intermediate_hpc_job_id_03b }}`](../../assets/images/intermediate_hpc_profile_plot_03b.png)
-
-`{{ intermediate_hpc_job_id_03c }}`
-
-![Profile plot for job ID `{{ intermediate_hpc_job_id_03c }}`](../../assets/images/intermediate_hpc_profile_plot_03c.png)
