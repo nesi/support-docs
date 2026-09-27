@@ -349,7 +349,7 @@ It is awkward for development, because the agent cannot easily edit files on the
     [clause 12 of the Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow.
     See [Credentials and access](./AI_Agent_Guidelines.md#credentials-and-access) in the AI Agent Guidelines.
 
-You must apply to support for a service account: {% include "partials/support_request.html" %}.
+You must apply for a service account on Mahuika: {% include "partials/support_request.html" %}.
 
 ## Option 3: Local, then sync
 
