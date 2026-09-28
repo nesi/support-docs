@@ -193,7 +193,7 @@ Do not silence a word any other way: the spellcheck configuration and scripts ar
 Findings are printed as lines starting with `::error`, `::warning` or `::notice` (some scripts use uppercase, for example `::WARNING`).
 Lines starting with `::debug`/`::DEBUG` are progress messages and can be ignored.
 
-**Always set `CHECKS_STRICT=1`.** Without it, every check exits `0` whatever it finds.
+**Always set `CHECKS_STRICT=1`.** Without it, a check only exits `1` on an error (a failed build, a broken link, a macro or include error, or front matter that is not valid YAML).
 With it, a check exits `1` if it reported any warning or error (notices do not count), so a non-zero exit means there is something to read.
 A zero exit only means there were no warnings or errors: still read the notices.
 

@@ -21,12 +21,12 @@ All Users who are using the REANNZ Data storage must be aware of the content of 
 
 ## Principles
 
-- All users are required to provide and, update as needed, their names, telephone number, email address and check that they belong to the correct organisation(s). Please contact [REANNZ]({% include "partials/support_request.html" %}) if it is not the case.
+- All users are required to provide and, update as needed, their names, telephone number, email address and check that they belong to the correct organisation(s). Please {% include "partials/support_request.html" %} if it is not the case.
 - The project owners, when leaving their organisation, must update the project records with subsequent owners in case of data being still present in REANNZ systems.
 - It is the responsibility of the project owners to acknowledge all communications from the REANNZ staff.
 - Project owners are given notice before data is deleted under REANNZ cleaning process with the contact information provided by the active project owners (and other active members).
-    - for the scratch filesystem, an email is sent prior to the deletion cycle. Please contact [REANNZ]({% include "partials/support_request.html" %}) if you need to keep the data longer.
-    - for the project and home filesystems as well as the freezer data, emails are sent on three occasions at least one month before the deletion is triggered. Please contact [REANNZ]({% include "partials/support_request.html" %}) if the project is going to be reopen or if the user is still going to use the REANNZ services.
+    - for the scratch filesystem, an email is sent prior to the deletion cycle. Please {% include "partials/support_request.html" %} if you need to keep the data longer.
+    - for the project and home filesystems as well as the freezer data, emails are sent on three occasions at least one month before the deletion is triggered. Please {% include "partials/support_request.html" %} if the project is going to be reopen or if the user is still going to use the REANNZ services.
 - Data (in read-only mode) is retained for a defined period after a project or account ends, so that research outputs can be recovered or migrated in an orderly way.
 - Responsibility for ensuring that irreplaceable data exists in more than one place rests with the project owners.
 - In case of loss of ownership where project owners have left their organisation, REANNZ staff will contact the institution contacts to determine what to do with the data. 
