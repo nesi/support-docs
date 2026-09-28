@@ -48,11 +48,20 @@ where `<gpu_type>` is the type of gpu you want to use (either 'h100', 'a100', or
         <td>Slurm Header</td>
     </tr>
     <tr>
-        <td>NVIDIA A100</td>
-        <td></td>
+        <td>NVIDIA A100 80GB</td>
+        <td>NVLink between all 4 GPUs on a node. An <code>a100</code> request can land on either A100 type, so if you need 80GB of VRAM add <code>--constraint=a100_80gb</code></td>
         <td>80GB</td>
         <td>4</td>
-        <td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
+        <td><pre><code>#SBATCH --gpus-per-node=a100:1
+#SBATCH --constraint=a100_80gb</code></pre></td>
+    </tr>
+    <tr>
+        <td>NVIDIA A100 40GB</td>
+        <td>No NVLink; GPUs on a node communicate over PCIe</td>
+        <td>40GB</td>
+        <td>3</td>
+        <td><pre><code>#SBATCH --gpus-per-node=a100:1
+#SBATCH --constraint=a100_40gb</code></pre></td>
     </tr>
         <tr>
         <td>NVIDIA RTX PRO 6000</td>
