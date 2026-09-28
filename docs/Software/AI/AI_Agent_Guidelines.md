@@ -2,7 +2,7 @@
 created_at: 2026-09-16
 description: Guidelines for using AI agents and coding assistants responsibly on REANNZ HPC systems
 tags:
-- machine_learning
+- ai_tools
 - access
 ---
 
