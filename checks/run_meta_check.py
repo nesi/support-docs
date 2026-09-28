@@ -284,7 +284,7 @@ def _nav_check():
     items here to justify it's existence.",
                     },
                 )
-            elif num_siblings > RANGE_SIBLING[1] and file_name not in ALLOWED_BE_BIG:
+            elif num_siblings > RANGE_SIBLING[1] and rel_path.parts[i - 1] not in ALLOWED_BE_BIG:
                 _emit(
                     "meta.siblings",
                     {

@@ -9,6 +9,7 @@ search:
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
     - For information about page creation, [see NEWPAGE](NEWPAGE.md).
+    - For what to write, and whether to write it, [see PRINCIPLES](PRINCIPLES.md).
 
 This page is an overview of the Markdown syntax supported in this documentation.
 

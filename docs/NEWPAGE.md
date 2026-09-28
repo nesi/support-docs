@@ -9,6 +9,7 @@ search:
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
     - For examples of markdown use, [see FORMAT](FORMAT.md).
+    - For what to write, and whether to write it, [see PRINCIPLES](PRINCIPLES.md).
 
 This page details how to create a new article or category in the documentation.
 

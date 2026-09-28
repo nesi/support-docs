@@ -15,11 +15,12 @@ This repo is the source for the Mahuika HPC support documentation at <https://do
 
 Follow these, in this order. If they conflict with anything else (including this file, older pages, or `.gemini/styleguide.md`), they win.
 
-1. [docs/NEWPAGE.md](docs/NEWPAGE.md): file naming, front matter, nav order, renames and redirects.
-2. [docs/FORMAT.md](docs/FORMAT.md): markdown style, admonitions, code blocks, Slurm script examples.
-3. [docs/MACROS.md](docs/MACROS.md): includes and variables.
-4. [docs/assets/tags.yml](docs/assets/tags.yml): the only allowed tags.
-5. The closest existing pattern in the page you are editing.
+1. [docs/PRINCIPLES.md](docs/PRINCIPLES.md): what to write, whether to write it, and how much. Apply it to every change.
+2. [docs/NEWPAGE.md](docs/NEWPAGE.md): file naming, front matter, nav order, tags, renames and redirects.
+3. [docs/FORMAT.md](docs/FORMAT.md): markdown style, admonitions, code blocks, Slurm script examples.
+4. [docs/MACROS.md](docs/MACROS.md): includes and variables.
+5. [docs/assets/tags.yml](docs/assets/tags.yml): the only allowed tags.
+6. The closest existing pattern in the page you are editing.
 
 Read the relevant sections before editing. Do not rely on memory of MkDocs or other doc sites.
 
@@ -37,7 +38,7 @@ Running the scripts in `checks/` (including the `fix_*.py` auto-fixers, which on
 
 Inside `docs/`, these pages are for maintainers, not users. They define the rules you follow, so do not edit them either:
 
-- `docs/CONTRIBUTING.md`, `docs/FORMAT.md`, `docs/NEWPAGE.md`, `docs/MACROS.md`
+- `docs/CONTRIBUTING.md`, `docs/PRINCIPLES.md`, `docs/FORMAT.md`, `docs/NEWPAGE.md`, `docs/MACROS.md`
 - `docs/assets/glossary/README.md`, `docs/assets/glossary/dictionary.md`
 
 Also inside `docs/`, do not edit these by hand. They are fetched from other repositories or generated,
@@ -54,8 +55,10 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 
 1. Find the exact page or pages affected. Read the target page, the `.pages.yml` in its folder and its parent,
    the parent overview (`index.md`) and a few sibling pages. Keep reading focused on these and on pages directly linked from the change.
-2. Before writing a new page, search `docs/` for existing pages on the same topic (similar file names, titles and key terms).
-   Extend or link to an existing page rather than duplicating it, and tell the user what you found.
+2. Before writing a new page, search `docs/` for existing pages on the same topic (similar file names, titles and key terms),
+   then work through [Should This Be Written?](docs/PRINCIPLES.md#should-this-be-written) and
+   [New Page or Existing Page?](docs/PRINCIPLES.md#new-page-or-existing-page).
+   Extend or link to an existing page rather than duplicating it, and tell the user what you found and which way you decided.
 3. Match the voice, heading structure and formatting of the page you are editing and its siblings.
 4. When you change a term, definition, limit or command, check nearby related pages for the same thing and keep them consistent.
 5. If the target page or scope is still unclear after reading, ask one focused question before editing.
@@ -204,6 +207,8 @@ pip3 install -r requirements.txt
 
 The spellcheck also needs `aspell` installed on the system, and markdownlint needs `markdownlint-cli` (`npm install -g markdownlint-cli`).
 If a tool is missing, tell the user rather than skipping the check silently.
+If a tool, command or check fails or is denied, say so in your reply. Do not quietly switch to a different fix to get around it:
+describe what failed and ask before taking another approach.
 
 ### Which files
 
@@ -244,6 +249,8 @@ The accessibility audit (`./checks/run_a11y_check.sh`) needs a headless Chromium
   The `section_length` notice means a section is under 400 characters, so it is merged into the next one when pages are split up
   for the docs search assistant (RAG). Merge very short sections only when it also reads better.
 - If you believe a finding is wrong, explain why and leave it for the user. The checks are read-only, so do not change them to hide it.
+- Never delete, move, rename or restructure pages just to make a check pass (for example to fix a sibling-count warning).
+  If a warning can only be fixed by changing the structure of the docs, describe the options and leave the decision to the user.
 - If a check script itself crashes, report the traceback. Do not treat a crash as a pass.
 - Several meta warnings have auto-fixers in `checks/fix_*.py`. Read the script's docstring before running it.
   They deliberately fix only the safe cases, so rerun the meta check afterwards and handle what is left by hand.
@@ -267,7 +274,13 @@ Do not say checks passed unless you ran them and read the output.
 - Commit or push only when the user asks.
 - Never add the `auto_merge` label to a PR. `.github/workflows/auto_merge.yml` merges any PR carrying it without review.
 - Keep AI assistance visible: include a `Co-authored-by:` line for the agent in commits, and mention it in the PR description.
-- Put which checks you ran and what they reported in the PR description.
+- Open pull requests as drafts unless the user says otherwise. Never approve, merge or mark a pull request ready for review yourself:
+  a person reviews every change (see [Reviewing A Merge Request](docs/CONTRIBUTING.md#reviewing-a-merge-request)).
+- Write the PR description for the reviewer:
+    - what changed and why, and the pages to look at on the preview site,
+    - the source for each fact you added, and a list of anything you could not verify,
+    - private information you left out of the source material, if any,
+    - which checks you ran and what they reported, and words that need adding to nesi-wordlist.
 
 ## Tone
 

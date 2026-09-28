@@ -26,7 +26,8 @@ Following pages contain information to help maintain the documentation:
 
 - See [contributing](https://nesi.github.io/support-docs/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
 - See [formatting](https://nesi.github.io/support-docs/FORMAT), for examples of markdown syntax.
-- See [create a new page](https://nesi.github.io/support-docs/NEWPAGE), for general principles to consider when writing pages.
+- See [writing principles](https://nesi.github.io/support-docs/PRINCIPLES) ([local version](docs/PRINCIPLES.md)), for what to write, whether to write it, and how much.
+- See [create a new page](https://nesi.github.io/support-docs/NEWPAGE), for page structure, metadata, naming and tags.
 - See [macros](https://nesi.github.io/support-docs/MACROS), for `mkdocs-macros-plugin` environment.
 - See [checks](checks/README.md), for information on quality assurance tests.
 - See [workflows](.github/workflows/README.md), for information on CI workflows.

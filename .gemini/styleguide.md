@@ -10,11 +10,12 @@ Make sure to pay attention to the annotations output from the `Checks` workflow 
 
 Do not rely on a copy of the rules here. The sources of truth are, in order:
 
-1. `docs/NEWPAGE.md`: file naming, front matter, nav order, tags, renames and redirects.
-2. `docs/FORMAT.md`: markdown style, admonitions, code blocks, Slurm script examples.
-3. `docs/MACROS.md`: includes and variables.
-4. `docs/assets/tags.yml`: the tag vocabulary.
-5. `AGENTS.md`: rules for AI-assisted changes, and which files are generated or maintainer-only.
+1. `docs/PRINCIPLES.md`: what to write, whether to write it, and how much.
+2. `docs/NEWPAGE.md`: file naming, front matter, nav order, tags, renames and redirects.
+3. `docs/FORMAT.md`: markdown style, admonitions, code blocks, Slurm script examples.
+4. `docs/MACROS.md`: includes and variables.
+5. `docs/assets/tags.yml`: the tag vocabulary.
+6. `AGENTS.md`: rules for AI-assisted changes, and which files are generated or maintainer-only.
 
 ## What to look for
 
@@ -24,13 +25,15 @@ Prioritise, in this order:
 2. Broken links and anchors, and renamed, moved or deleted pages without a line in `docs/redirect_map.yml`.
 3. Private information: real usernames, emails, project codes, job IDs or internal chat links (examples should use `nesi99991`).
 4. Hand edits to generated files (`docs/assets/glossary/dictionary.txt`, `snippets.md`, `module-list.json`, `tag-index.json`).
-5. The conventions most often missed:
+5. Against `docs/PRINCIPLES.md`: new pages that duplicate an existing page or copy vendor documentation,
+   pages doing more than one job (tutorial, how-to, reference, explanation), and wordiness or rare cases crowding out the common case.
+6. The conventions most often missed:
     - front matter has `created_at:`, a specific `description:` and 1 to 5 canonical tags from `tags.yml` (not aliases),
     - no H1 (`#`) in the body,
     - code blocks have a language, and commands have no `$` prefix,
     - Slurm examples use `#!/bin/bash -e`, long options, `--job-name`, `--account`, `--time`, and `module purge` before `module load`,
     - contacting support uses the `partials/support_request.html` include,
     - links are relative, and link text is descriptive (not "here").
-6. Wording and style last.
+7. Wording and style last.
 
-For AI-assisted pull requests, check the description says which checks were run and what they reported.
+For AI-assisted pull requests, check the description gives sources for new facts, lists anything unverified, and says which checks were run and what they reported.
