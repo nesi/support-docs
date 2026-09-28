@@ -217,7 +217,7 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
 
     So we can create three scripts to better assign resources:
 
-    `01_script_a.sl`
+    **Quality control**:`01_script_a.sl` requests reduced CPUs and time, but the same amount of memory.
     
     ```bash
 
@@ -252,7 +252,7 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
     done
     ```
     
-    `01_script_b.sl`
+    **Reference genome indexing**: `01_script_b.sl` requests less CPUs, memory, and time.
     
     ```bash
 
@@ -273,7 +273,7 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
     bwa-mem2 index ref_genome/ecoli_rel606.fasta
     ```
 
-    `01_script_c.sl`
+    **Alignment and variant calling**: `01_script_c.sl` requests the same CPUs but less memory and time.
     
     ```bash
 
