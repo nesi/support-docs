@@ -26,16 +26,19 @@ Following pages contain information to help maintain the documentation:
 
 - See [contributing](https://nesi.github.io/support-docs/CONTRIBUTING) ([local version](docs/CONTRIBUTING.md)), to learn how to you can contribute.
 - See [formatting](https://nesi.github.io/support-docs/FORMAT), for examples of markdown syntax.
-- See [create a new page](https://nesi.github.io/support-docs/NEWPAGE), for general principles to consider when writing pages.
+- See [writing principles](https://nesi.github.io/support-docs/PRINCIPLES) ([local version](docs/PRINCIPLES.md)), for what to write, whether to write it, and how much.
+- See [create a new page](https://nesi.github.io/support-docs/NEWPAGE), for page structure, metadata, naming and tags.
 - See [macros](https://nesi.github.io/support-docs/MACROS), for `mkdocs-macros-plugin` environment.
 - See [checks](checks/README.md), for information on quality assurance tests.
 - See [workflows](.github/workflows/README.md), for information on CI workflows.
 
 ## Viewing PR Branches
 
-![Demo Site](https://github.com/CallumWalley/support-docs-dev/actions/workflows/deploy.yml/badge.svg)
+Every pull request is built and deployed to a preview site by [demo_deploy.yml](.github/workflows/demo_deploy.yml).
+A comment on the pull request links to the preview and to each changed page.
 
-Deployments of open pull requests can be viewed at [https://callumwalley.github.io/support-docs-dev/NAME-OF-BRANCH](https://callumwalley.github.io/support-docs-dev/)
+Previews are at `https://callumwalley.github.io/mkdocs-demo-deploy/nesi/support-docs/NAME-OF-BRANCH`,
+and all of them are listed at [https://callumwalley.github.io/mkdocs-demo-deploy](https://callumwalley.github.io/mkdocs-demo-deploy).
 
 ## Theme
 

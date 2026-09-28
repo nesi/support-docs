@@ -200,6 +200,33 @@ If some of the CI checks failed (make sure they are not important ones), you wil
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
+#### What to Check
+
+Read the changed pages on the preview site, not just the diff. Then check:
+
+- **Facts:** commands, paths, limits, module names and versions match the sources (for example [Hardware](Batch_Computing/Hardware.md), [Job Limits](Batch_Computing/Job_Limits.md), `module-list.json`). If you can, run new commands and Slurm scripts on the cluster.
+- **Need:** the change follows [PRINCIPLES](PRINCIPLES.md). A new page is not duplicating an existing one or copying vendor documentation.
+- **Private information:** no real names, usernames, emails, project codes, job IDs or internal chat links.
+- **Links:** renamed, moved or deleted pages have a line in `docs/redirect_map.yml`, and the CI checks show no new broken links.
+- **Scope:** every file in the diff belongs to this change.
+
+#### AI-Assisted Changes
+
+AI-assisted pull requests say so in their description and have a `Co-authored-by:` line in the commits.
+They need the same review as any other change, with extra attention to:
+
+- **Invented details.** Agents write plausible commands, flags, paths and numbers with the same confidence as real ones.
+  Check the facts the description lists as unverified, and spot-check the rest against their sources.
+- **Private information** copied from a support ticket or chat that was used as source material.
+- **Files outside `docs/`**, or maintainer pages such as this one. Agents are told not to change them, so treat any such change as a question for the author.
+- **More than was asked for:** extra rewording, restructuring or new pages.
+
+An automated review (for example Gemini's comments) does not replace a person's review.
+
+- **New pages, or changes to facts, commands or policy:** ask someone other than the person who prompted the agent to review.
+  Small fixes (typos, links, formatting) can be reviewed and merged by the author as usual.
+- **`auto_merge`:** only add the label once a person has read the change.
+
 ### Updating A Merge Request
 
 If the main branch has changed since your feature branch diverged from main, an 'Update' button will appear where the merge button would usually be.
@@ -235,8 +262,8 @@ The script `.github/fetch_includes.sh` pulls in all the updates from various sou
 As redundancy, and also to make changes to be visible, there is also a workflow that runs daily that will run `.github/fetch_includes.sh` and commit the changes.
 Anything in the repo will be overwritten by the most up to date version on deployment.
 
-1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
-2. A branch `new-assets` will be created, which can be merged into main.
+To update them straight away, run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
+If anything changed, it commits the new files directly to `main` as `nesi-mkdocs-bot` ("Automatic asset update"). There is no branch to merge.
 
 ## Adding Words to Dictionary
 

@@ -46,14 +46,19 @@ DOC_ROOT = "docs"
 TAGS_VOCAB_PATH = "docs/assets/tags.yml"
 
 
-def _load_approved_tags(path):
-    """Canonical tag names plus their aliases, as accepted by compile_tags.py."""
+def _load_tag_aliases(path):
+    """Lower-cased alias (or mis-cased canonical tag) -> canonical tag, matched the same way as compile_tags.py."""
     vocab = yaml.safe_load(open(path, "r"))
-    approved = set()
+    aliases = {}
     for canonical, entry in vocab.items():
-        approved.add(canonical)
-        approved.update(entry.get("aliases") or [])
-    return approved
+        aliases[canonical.lower()] = canonical
+        for alias in (entry.get("aliases") or []):
+            aliases[str(alias).lower()] = canonical
+    return aliases
+
+
+CANONICAL_TAGS = set(yaml.safe_load(open(TAGS_VOCAB_PATH, "r")))
+TAG_ALIASES = _load_tag_aliases(TAGS_VOCAB_PATH)
 
 
 # Warning level for missing parameters.
@@ -62,12 +67,12 @@ EXPECTED_PARAMETERS = {
     "template": ["main.html", "supported_apps.html", "updates.html"],
     "description": "",
     "icon": "",
-    "status": ["new", "deprecated"],
+    "status": ["new", "deprecated", "tutorial"],
     "prereq": "",
     "postreq": "",
     "suggested": "",  # Add info here when implimented.
     "created_at": "",
-    "tags": _load_approved_tags(TAGS_VOCAB_PATH),
+    "tags": "",  # Values are checked by approved_tags().
     "search": "",
     "hide": ["toc", "nav", "tags"],
     "no_module": [True, False],
@@ -279,7 +284,7 @@ def _nav_check():
     items here to justify it's existence.",
                     },
                 )
-            elif num_siblings > RANGE_SIBLING[1] and file_name not in ALLOWED_BE_BIG:
+            elif num_siblings > RANGE_SIBLING[1] and rel_path.parts[i - 1] not in ALLOWED_BE_BIG:
                 _emit(
                     "meta.siblings",
                     {
@@ -355,7 +360,7 @@ def meta_unexpected_key():
             yield {
                 "level": "error",
                 "line": _get_lineno(f"^{key}:.*$"),
-                "message": f"'{value}' is not valid for {key}. [{','.join(EXPECTED_PARAMETERS[key])}]",
+                "message": f"'{v}' is not valid for {key}. [{','.join(str(x) for x in EXPECTED_PARAMETERS[key])}]",
             }
 
     for key, value in meta.items():
@@ -368,9 +373,9 @@ def meta_unexpected_key():
         elif EXPECTED_PARAMETERS[key]:
             if isinstance(value, list):
                 for v in value:
-                    _test(v)
+                    yield from _test(v)
             else:
-                _test(value)
+                yield from _test(value)
 
 
 def meta_missing_description():
@@ -456,8 +461,17 @@ def approved_tags():
     if "tags" not in meta or not isinstance(meta["tags"], list):
         return
     for tag in meta["tags"]:
-        if tag not in EXPECTED_PARAMETERS["tags"]:
-            similar, ji = _most_similar(tag, EXPECTED_PARAMETERS["tags"])
+        if tag in CANONICAL_TAGS:
+            continue
+        if str(tag).lower() in TAG_ALIASES:
+            canonical = TAG_ALIASES[str(tag).lower()]
+            yield {
+                "line": _get_lineno(rf".*{tag}.*"),
+                "message": f"Tag '{tag}' is an alias, use the canonical tag '{canonical}' instead. \
+('python3 normalize_tags.py' can fix this.)",
+            }
+        else:
+            similar, ji = _most_similar(tag, CANONICAL_TAGS)
             yield {
                 "line": _get_lineno(rf".*{tag}.*"),
                 "message": f"Tag '{tag}' is not an approved tag, {'did you mean \'' + similar + "\'?" if ji > 0.4 else 'See \'' + TAGS_VOCAB_PATH + '\'.'}",
@@ -655,6 +669,6 @@ if __name__ == "__main__":
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
 
-    # Arbitrary weighting whether to fail check or not
-
-    # exit((100 * (len(sys.argv)-1)) < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))
+    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
+    if os.getenv("CHECKS_STRICT") and msg_count["warning"] + msg_count["error"]:
+        sys.exit(1)
