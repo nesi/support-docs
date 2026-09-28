@@ -196,7 +196,7 @@ for how to request a specific type.
     </tr>
     <tr>
         <td>4-GPU tightly-coupled</td>
-        <td>A100 80GB <em>(only option, NVLink — see <a href="#gpu-milan-a100">Milan</a>)</em></td>
+        <td>A100 80GB <em>(only option, NVLink)</em></td>
         <td>everything else</td>
     </tr>
     <tr>
