@@ -4,7 +4,6 @@ tags:
 - openmp
 - parallel
 - mpi
-- smt
 description: Placing and pinning threads to cores so multithreaded jobs run at full speed
 ---
 
