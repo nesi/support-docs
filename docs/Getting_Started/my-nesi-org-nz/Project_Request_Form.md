@@ -7,41 +7,34 @@ description: Filling in the project request form, and saving a draft to finish l
 
 {% include 'partials/status-no-bsi.md' %}
 
-See [Applying for a project](../Projects/Applying_for_a_New_Project.md) 
+See [Applying for a project](../Projects/Applying_for_a_New_Project.md)
 for how to access the form.
 
-## Preparing a request to use Mahuika resources
-
-The procedures for starting a request for a new NeSI project and editing
-an in-progress request (draft) that you previously started are described
-below.
+To start a request for a new project, or to continue editing a draft
+request you started previously:
 
 1. Point your web browser to
-    [https://my.nesi.org.nz](https://my.nesi.org.nz/projects/apply) and
+    [https://my.nesi.org.nz](https://my.nesi.org.nz/projects/apply) and
     login. Select "Apply for Access" from the sidebar navigation on the
-    left.  
-    ![mceclip1.png](../../assets/images/The_NeSI_Project_Request_Form.png)
+    left.
+    ![The project request form](../../assets/images/The_NeSI_Project_Request_Form.png)
 2. Choose from the following items:
     - If you are returning to continue work on a draft request you
         started earlier, choose the link based on the date/time or title
         you've set.
     - For a new project request, select "Start a new
-        application. Note, this is the default in case there is not
-        draft request for your account.
+        application". This is the default if there is no draft request
+        for your account.
+
+    Once you've started filling in details, the system will automatically
+    save a draft, so you can come back and finish your request later.
 3. When your request is ready to submit, progress through the form
     sections using the 'Next' button at the bottom of the page until you
     reach the 'Summary' section. After clicking the 'Submit' button and
     passing the validation the request is submitted for review. You will
     also receive a confirmation via email.
 
-### Saving a Request for Later
-
-Once you've started filling in details, the system will automatically
-save a draft.
-
-### Asterisks to indicate mandatory data next to questions
-
-The request can only be successfully submitted once all mandatory data
-has been entered. The final section in the form 'Summary' will highlight
-missing data and allow you to navigate back to the relevant section.
-
+    Questions marked with an asterisk (\*) are mandatory. The request can
+    only be submitted once all mandatory data has been entered. The
+    'Summary' section will highlight any missing data and allow you to
+    navigate back to the relevant section.

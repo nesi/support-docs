@@ -20,15 +20,6 @@ research programme, however you're welcome to review
 [our article on allocation classes](../../Policy/Allocation_Classes.md)
 to find out what class you're likely eligible for.
 
-## An important note on CPU hour allocations
-
-You may continue to submit jobs even if you have used all your CPU-hour
-allocation. The effect of 0 remaining CPU hours allocation is a
-[lower fairshare](../../Batch_Computing/Fair_Share.md),
-not the inability to use CPUs. Your ability to submit jobs will only be
-removed when your project's allocation expires, not when core-hours are
-exhausted.
-
 ## HPC Platform allocations
 
 The form of our allocation you may be most familiar with is an
@@ -45,9 +36,9 @@ relative "prices" of resources used by those allocations should not be
 taken as any indicator of the real NZD costs of purchasing or running
 the associated infrastructure and services.
 
-### Allocations
+### Compute allocations
 
-Allocations are measured in compute units, with the price of hardware in terms of compute units shown in the
+These are measured in compute units, with the price of hardware in terms of compute units shown in the
 following table.
 
 |  Hardware type         |    Fair Share Price                     |
@@ -61,34 +52,40 @@ following table.
 | L4 GPU device          | 4.0 compute units per device-hour       |
 | H100 GPU device        | 40.0 compute units per device-hour      |
 
-The total compute unit cost of a job is the sum of these three
-components. Once the job has finished running, this composite price is
+The total compute unit cost of a job is the sum of the costs of the
+hardware it uses. Once the job has finished running, this composite price is
 what affects your project's Fair Share score. However, whether your
 institution will be charged based on the composite price or based on
 your job's CPU core hour consumption alone, or on some other basis, will
 depend on your contractual arrangements with REANNZ.
 
+!!! note "Using up your compute allocation"
+    You may continue to submit jobs even if you have used all of your
+    compute allocation. The effect of having no compute units remaining is a
+    [lower Fair Share](../../Batch_Computing/Fair_Share.md),
+    not the inability to use CPUs. Your ability to submit jobs will only be
+    removed when your project's allocation expires, not when your compute
+    units are exhausted.
+
 ### Online storage allocations
 
-An online storage allocation, unlike compute allocations, functions more 
-like a lease than a rate‑of‑consumption model. It provides your project 
-team with a fixed amount of disk space and a corresponding number of inodes 
-(directory entries, i.e., files and metadata) on our high‑performance online filesystems. 
-The inode limit is not normally visible to users, as the default allocation 
-is sufficient for most workflows. Online storage is typically granted to 
+An online storage allocation, unlike compute allocations, functions more
+like a lease than a rate‑of‑consumption model. It provides your project
+team with a fixed amount of disk space and a corresponding number of inodes
+(directory entries, i.e., files and metadata) on our high‑performance online filesystems.
+The inode limit is not normally visible to users, as the default allocation
+is sufficient for most workflows. Online storage is typically granted to
 both your persistent project directory and your temporary project directory.
 
 We do not yet have a ratio of online storage disk space or inodes to
 compute units.
 
-## Data storage allocations
-
-### Freezer storage allocations
+## Freezer allocations
 
 A Freezer storage allocation, like online storage allocations but
 unlike compute allocations, is more like a lease than a rate of
-consumption. It provides your project team with a defined amount 
-of storage space and a corresponding number of inodes (directory 
+consumption. It provides your project team with a defined amount
+of storage space and a corresponding number of inodes (directory
 entries, i.e., files and metadata) on our Tape system.
 
 We do not define a specific ratio between Freezer storage capacity (tape space or file count) and compute units.
@@ -102,3 +99,6 @@ scientific programming expertise to your project.
 
 We do not yet have a ratio of consultancy hours to compute
 units.
+
+If you would like to discuss a consultancy allocation for your project,
+please {% include "partials/support_request.html" %}.
