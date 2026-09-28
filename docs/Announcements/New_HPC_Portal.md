@@ -7,8 +7,9 @@ status: new
 ---
 
 !!! warning "Beta testers only"
-   Only user with a BSI email have access to [the new portal](https://hpc-portal.reannz.co.nz).
-   If you are not a BSI please continue using my.nesi.org, see [Logging In](https://docs.nesi.org.nz/Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz/) for further instructions.
+    Only user with a BSI email have access to [the new portal](https://hpc-portal.reannz.co.nz).  
+    If you are not a BSI please continue using my.nesi.org,
+    see [Logging In](..//Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md) for further instructions.
 
 The [REANNZ HPC Portal](https://hpc-portal.reannz.co.nz) is where you see your projects,
 who is in them, and the allocations (resources) they hold.
@@ -18,14 +19,14 @@ The portal is built on [Waldur](https://docs.waldur.com/latest/user-guide/).
 
 1. Go to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz).
 2. Click **Sign in with REANNZ**.
-    ![Sign in with REANNZ button](../../assets/images/HPC_Portal_sign_in_with_reannz.png)
+    ![Sign in with REANNZ button](../assets/images/HPC_Portal_sign_in_with_reannz.png)
 3. Choose your home institution and log in with your institutional credentials.
    This login goes through Tuakiri, the same as for my.nesi.org.nz.
 
 If your institution is not part of the Tuakiri federation, see
-[Account Requests for non-Tuakiri Members](../../Policy/Account_Requests_for_non_Tuakiri_Members.md).
+[Account Requests for non-Tuakiri Members](../Policy/Account_Requests_for_non_Tuakiri_Members.md).
 For other login problems, see
-[Logging in to my.nesi.org.nz](../my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md#troubleshooting-login-issues).
+[Logging in to my.nesi.org.nz](../Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md#troubleshooting-login-issues).
 
 ## Main navigation
 
@@ -93,8 +94,6 @@ The resource page shows:
 
 The **Actions** button on the resource page lists what you can do with it.
 The options depend on your role.
-To extend or grow an allocation, see
-[Renewing an Allocation](Renewing_an_Allocation.md).
 
 ## Extending a Request
 
@@ -113,7 +112,7 @@ To renew *and* grow an allocation, make both.
 
 ### Before you start
 
-- You need a role on the project. See [Navigating the HPC Portal](Navigating_the_HPC_Portal.md#see-your-roles).
+- You need a role on the project. See [Navigating the HPC Portal](#see-your-roles).
 - Make your request **before** the current end date.
   The portal does not accept an end date in the past,
   and an allocation may be removed once its end date has passed.
@@ -125,7 +124,7 @@ Project managers and project members can ask for a new end date.
 An organization owner at your institution approves it.
 
 1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with REANNZ**.
-   See [Log in](Navigating_the_HPC_Portal.md#log-in).
+   See [Log in](#log-in).
 2. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the allocation.
 3. Click **Actions**, then **Request end date change**.
 4. In **Requested end date**, pick the new end date.
@@ -184,7 +183,7 @@ or **Actions** → **Show usage**.
 
 Allocations are subject to the size and duration limits in force at the time,
 and to approval by your institution.
-See [Project Extensions and New Allocations on Existing Projects](../Allocations/Allocations_and_Extensions.md)
+See [Project Extensions and New Allocations on Existing Projects](../Getting_Started/Allocations/Allocations_and_Extensions.md)
 for more details.
 
 
