@@ -6,6 +6,8 @@ tags:
 description: Checking your identity provider sends the attributes Tuakiri services need
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 ## Tuakiri Attribute Validator
 
 This Tuakiri service is a health check for your managed identity. It

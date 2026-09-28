@@ -6,6 +6,8 @@ title: What Is an Allocation?
 description: What compute, online storage and Freezer allocations are and how they are granted
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 Because the HPC platform resources are limited, we manage access to our resources
 through allocations. Typically, an allocation is a grant of a certain
 amount of a resource, or of a rate at which a resource can be consumed,

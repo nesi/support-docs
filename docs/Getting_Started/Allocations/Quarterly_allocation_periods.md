@@ -6,6 +6,8 @@ title: Quarterly Allocation Periods
 description: When applications for new allocations on existing projects are due each year
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 Applications for new allocations on existing projects are accepted and
 assessed in quarterly allocation periods. Under this quarterly call
 schedule, applications for new allocations on existing projects are due

@@ -6,6 +6,8 @@ tags:
 description: How to reset your authentication credendials for MFA.
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 If you have no longer access to your authenticator application (e.g. change of device), you may need to re-enroll your device.
 
 1. On the screen where you are prompted for your 6-digit code, click 'Reset code'

@@ -5,6 +5,8 @@ tags:
 description: How to request a Mahuika allocation renewal.
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 ## Types of Resource Requests
 
 1. Compute Resources:

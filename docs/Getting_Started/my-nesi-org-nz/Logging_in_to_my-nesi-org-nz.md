@@ -9,6 +9,8 @@ vote_sum: -2
 description: Logging in to my.nesi.org.nz through Tuakiri and fixing common login problems
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 ## Login credentials
 
 We allow students, academics, alumni and researchers to securely login

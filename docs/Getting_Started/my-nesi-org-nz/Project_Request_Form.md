@@ -5,6 +5,8 @@ tags:
 description: Filling in the project request form, and saving a draft to finish later
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 See [Applying for a project](../Projects/Applying_for_a_New_Project.md) 
 for how to access the form.
 

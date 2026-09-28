@@ -6,6 +6,8 @@ tags:
 description: How to add a new member to your project.
 ---
 
+{% include 'partials/status-no-bsi.md' %}
+
 !!! prerequisite
     - Have a [Account profile](../Creating_an_Account.md).
     - Be the **owner** of a [project](./Applying_for_a_New_Project.md).
