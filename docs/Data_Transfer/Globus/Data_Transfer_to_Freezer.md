@@ -1,8 +1,7 @@
 ---
-tags: 
-    - globus
-    - freezer
-    - file transfer
+tags:
+    - file_transfer
+    - storage
 description: Moving data to Freezer long-term storage through Globus using your S3 credentials
 ---
 

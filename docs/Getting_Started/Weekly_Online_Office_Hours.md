@@ -1,6 +1,7 @@
 ---
 created_at: '2022-05-18T03:38:21Z'
-tags: [intro]
+tags:
+    - tutorial
 description: |
     Have questions about our HPC, data analytics, or other eResearch services?  
     Looking for tips on how to optimise your HPC jobs?  
