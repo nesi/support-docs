@@ -3,10 +3,7 @@
 """
 Summarise check output as markdown, for a pull request comment.
 
-Usage: summarise_annotations.py BASE_REF ANNOTATIONS_DIR
-
-ANNOTATIONS_DIR holds one file per check (e.g. `spelling.txt`), each containing that
-check's stdout (the `::warning file=...::message` lines GitHub turns into annotations).
+ANNOTATIONS_DIR holds one file per check (e.g. `spelling.txt`).
 
 Only findings on lines changed since BASE_REF are shown, so contributors aren't
 shown problems they didn't introduce. Errors are always shown, as they block merging.
@@ -84,46 +81,60 @@ def cell(text):
     return html.escape(text, quote=False).replace("|", "\\|")
 
 
+def table(by_file, expanded=False):
+    """Collapsible table of findings for each file."""
+    out = []
+    for file, findings in by_file.items():
+        out += [f"<details{' open' if expanded else ''}><summary><code>{file}</code> ({len(findings)})</summary>", "",
+                "| Line | Check | Message |", "| --- | --- | --- |"]
+        for f in sorted(findings, key=lambda f: f["line"])[:MAX_ROWS_PER_FILE]:
+            out += [f"| {f['line'] or 'page'} | {cell(f['check'])} | {cell(f['message'])} |"]
+        if len(findings) > MAX_ROWS_PER_FILE:
+            out += [f"| | | …and {len(findings) - MAX_ROWS_PER_FILE} more, see the 'Checks' tab |"]
+        out += ["", "</details>", ""]
+    return out
+
+
 def main(base, annotations_dir):
     changed = changed_lines(base)
-    errors, suggestions = [], {}
+    errors, warnings, notices = {}, {}, {}
     for f in parse(annotations_dir):
+        # Errors block merging, so are shown wherever they are.
         if f["level"] == "error":
-            errors.append(f)
+            errors.setdefault(f["file"], []).append(f)
         # Line 0 is a whole-page finding.
         elif f["file"] in changed and (f["line"] == 0 or f["line"] in changed[f["file"]]):
-            suggestions.setdefault(f["file"], []).append(f)
+            by_file = warnings if f["level"] == "warning" else notices
+            by_file.setdefault(f["file"], []).append(f)
 
     failed_jobs = [job for job, v in json.loads(os.getenv("NEEDS") or "{}").items() if v["result"] == "failure"]
-    n_suggestions = sum(len(v) for v in suggestions.values())
 
-    status = "❌" if errors or failed_jobs else "✅"
-    out = [f"### {status} Checks: {len(errors)} must fix · {n_suggestions} suggestions on lines you changed", ""]
+    out = ""
+    if errors:
+        out += f"🛑 {sum(len(v) for v in errors.values())}"
+    if warnings:
+        out += f"⚠️ {sum(len(v) for v in errors.values())}" 
+    if notices:
+        out += f"ℹ️ {sum(len(v) for v in errors.values())}"
 
-    if failed_jobs:
-        out += [f"Failed jobs: {', '.join(f'`{j}`' for j in failed_jobs)}. See the 'Checks' tab for details.", ""]
+    if not any(errors, warnings, notices):
+        out += "✅ Wow! Great job!"
+
+    # Errors already explain why a job failed, this catches failures that printed nothing (e.g. install errors).
+    if failed_jobs and not errors:
+        out += [f"Failed jobs: {', '.join(f'`{j}`' for j in failed_jobs)}.", ""]
 
     if errors:
-        out += ["#### Must fix", "These block merging.", ""]
-        for e in errors:
-            location = f"{e['file']}:{e['line']}" if e["line"] else e["file"]
-            out += [f"- `{location}` **{cell(e['check'])}**: {cell(e['message'])}"]
-        out += [""]
-
-    if suggestions:
-        out += ["#### Suggestions", "Optional. Fix them if they make sense, ignore them if they don't.", ""]
-        for file, findings in suggestions.items():
-            out += [f"<details><summary><code>{file}</code> ({len(findings)})</summary>", "",
-                    "| Line | Check | Message |", "| --- | --- | --- |"]
-            for f in sorted(findings, key=lambda f: f["line"])[:MAX_ROWS_PER_FILE]:
-                out += [f"| {f['line'] or 'page'} | {cell(f['check'])} | {cell(f['message'])} |"]
-            if len(findings) > MAX_ROWS_PER_FILE:
-                out += [f"| | | …and {len(findings) - MAX_ROWS_PER_FILE} more, see the 'Checks' tab |"]
-            out += ["", "</details>", ""]
+        out += ["#### Errors", "Merging blocked", ""] + table(errors, expanded=True)
+    if warnings:
+        out += ["#### Warnings", ""] + table(warnings)
+    if notices:
+        out += ["#### Notices", ""] + table(notices)
 
     text = "\n".join(out)
     if len(text) > MAX_LENGTH:
-        text = text[:MAX_LENGTH] + "\n\n…truncated, see the 'Checks' tab for the full output."
+        text = text[:MAX_LENGTH] + "\n\n…truncated, "
+    text += "\n\n See the 'Checks' tab for the full output."
     print(text)
 
 
