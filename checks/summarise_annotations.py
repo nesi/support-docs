@@ -112,14 +112,14 @@ def main(base, annotations_dir):
     status = ""
 
     if errors:
-        status += [f"🛑 {sum(len(v) for v in errors.values())} errors "]
+        status += f"🛑 {sum(len(v) for v in errors.values())} errors "
     if warnings:
-        status += [f"⚠️ {sum(len(v) for v in warnings.values())} warnings " ]
+        status += f"⚠️ {sum(len(v) for v in warnings.values())} warnings "
     if notices:
-        status += [f"ℹ️ {sum(len(v) for v in notices.values())} "]
+        status += f"ℹ️ {sum(len(v) for v in notices.values())} "
 
     if not any([errors, warnings, notices]):
-        status += ["✅ Wow! Great job!"]
+        status += "✅ Wow! Great job!"
 
     out = [status]
 
