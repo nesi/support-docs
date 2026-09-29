@@ -109,16 +109,20 @@ def main(base, annotations_dir):
 
     failed_jobs = [job for job, v in json.loads(os.getenv("NEEDS") or "{}").items() if v["result"] == "failure"]
 
-    out = []
+    status = ""
+
     if errors:
-        out += [f"🛑 {sum(len(v) for v in errors.values())}"]
+        status += [f"🛑 {sum(len(v) for v in errors.values())} errors "]
     if warnings:
-        out += [f"⚠️ {sum(len(v) for v in warnings.values())}" ]
+        status += [f"⚠️ {sum(len(v) for v in warnings.values())} warnings " ]
     if notices:
-        out += [f"ℹ️ {sum(len(v) for v in notices.values())}"]
+        status += [f"ℹ️ {sum(len(v) for v in notices.values())} "]
 
     if not any([errors, warnings, notices]):
-        out += ["✅ Wow! Great job!"]
+        status += ["✅ Wow! Great job!"]
+
+    out = [status]
+
 
     # Errors already explain why a job failed, this catches failures that printed nothing (e.g. install errors).
     if failed_jobs and not errors:
