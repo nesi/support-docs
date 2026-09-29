@@ -6,19 +6,17 @@ tags:
 description: The information you need to provide when applying for a new project
 ---
 
-{% include 'partials/status-no-bsi.md' %}
-
 !!! prerequisite
-    - Have an [account profile](../Creating_an_Account.md).
+    - Have a [Account profile](../Creating_an_Account.md).
 
 !!! note "Preferred"
     - Assemble your project team.
-    - Become familiar with the Linux command line. There are many
+    - Becoming familiar with the Linux command line. There are many
          courses and online materials available, such as [Software
          Carpentry](https://swcarpentry.github.io/shell-novice/), to help
          you and your project team gain the necessary skills.
     - Become familiar with foundational HPC skills, for example by
-         [watching our recorded introductory webinars](../Getting_Help.md#youtube-recordings),
+         watching our introductory webinar, [watching the recorded introductory webinars](../Getting_Help.md#youtube-recordings),
          or having one or more of your project team members do so.
     - Review our [allocation classes](../../Policy/Allocation_Classes.md). If
          you don't think you currently qualify for any class other than
@@ -32,6 +30,9 @@ Requests to use REANNZ HPC resources are [submitted via a web
 form](https://my.nesi.org.nz/). Our team will endeavour to approve
 your project, or contact you for more information, within 3-5 working
 days of your submitting your project request.
+
+
+## Information you will need to provide
 
 During the application process, we will ask you for the following
 information:

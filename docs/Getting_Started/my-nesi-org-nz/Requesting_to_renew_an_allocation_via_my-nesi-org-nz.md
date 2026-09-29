@@ -2,11 +2,8 @@
 created_at: '2022-03-31T20:51:51Z'
 tags:
 - account
-title: Renewing an Allocation
 description: How to request a Mahuika allocation renewal.
 ---
-
-{% include 'partials/status-no-bsi.md' %}
 
 ## Types of Resource Requests
 
@@ -40,7 +37,7 @@ description: How to request a Mahuika allocation renewal.
     Choose the option **"Increase/Extend Storage allocation (adding/replacing any current storage allocation for this project)"**.  
     Indicate the long-term storage space, its current name, and the new end date.
 
-## Raising a request
+## How to raise a request using my.nesi.org.nz?
 
 1. Login to [https://my.nesi.org.nz/projects/list](https://my.nesi.org.nz/projects/list) and select a project
     from the list.  
@@ -55,7 +52,7 @@ description: How to request a Mahuika allocation renewal.
     Finally, click 'Submit'  
     ![click submit](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
 
-## Allocation size
+### Can I request any allocation size?
 
 If you are requesting a new allocation of computing resources, we will
 look at your usage history and come up with an estimated allocation size
@@ -72,5 +69,5 @@ Please be aware that:
 - An allocation from an institution's entitlement is subject to
     approval by that institution.
 
-See [Allocations & Extensions](../Allocations/Allocations_and_Extensions.md)
+See [Project Extensions and New Allocations on Existing Projects](../Allocations/Allocations_and_Extensions.md)
 for more details.

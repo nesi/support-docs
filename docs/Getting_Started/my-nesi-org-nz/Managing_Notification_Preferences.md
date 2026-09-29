@@ -2,11 +2,8 @@
 created_at: '2022-03-24T20:50:10Z'
 tags:
 - account
-title: Notification Preferences
 description: How to manage your notification preferences.
 ---
-
-{% include 'partials/status-no-bsi.md' %}
 
 We use email as a communications channel for many types of notifications. These notifications can range from system-related updates to broader scope newsletters about our organisational activities and events.
 
@@ -16,5 +13,5 @@ Use the 'Manage' and 'Subscribe' buttons to open externally hosted preferences f
 
 ![2022-04-12\_16-46-56.png](../../assets/images/Managing_notification_preferences.png)
 
-!!! note "See also"
-    Our support article on [System status](../System_Status.md).
+!! note "See also"
+    Our support article on [System status.](../System_Status.md)

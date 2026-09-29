@@ -3,14 +3,11 @@ created_at: '2024-05-16T01:11:34Z'
 tags:
 - announcement
 - account
-title: Adding Project Members
 description: How to add a new member to your project.
 ---
 
-{% include 'partials/status-no-bsi.md' %}
-
 !!! prerequisite
-    - Have an [account profile](../Creating_an_Account.md).
+    - Have a [Account profile](../Creating_an_Account.md).
     - Be the **owner** of a [project](./Applying_for_a_New_Project.md).
 
 1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.
