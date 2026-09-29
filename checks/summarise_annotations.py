@@ -109,7 +109,7 @@ def main(base, annotations_dir):
 
     failed_jobs = [job for job, v in json.loads(os.getenv("NEEDS") or "{}").items() if v["result"] == "failure"]
 
-    out = ""
+    out = []
     if errors:
         out += [f"🛑 {sum(len(v) for v in errors.values())}"]
     if warnings:
