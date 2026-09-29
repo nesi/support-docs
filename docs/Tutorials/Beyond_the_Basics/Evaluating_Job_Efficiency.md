@@ -29,8 +29,8 @@ tags:
 
 This tutorial aims to give you hands on experience evaluating and improving job efficiency.
 To do that, we are going to work with an example workflow from genomics, but no genomics knowledge is needed for the tutorial.
-The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) if you want more information.
-There are 3 broad steps that need to run in this workflow:
+The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) and [Genomics Aotearoa Intro to Bash Scripting and HPC Scheduler](https://genomicsaotearoa.github.io/Workshop-Bash_Scripting_And_HPC_Job_Scheduler/) workshops if you want more information.
+There are 3 broad steps in this workflow:
 
 1. Quality control
 2. Indexing the reference genome
@@ -307,3 +307,10 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
     done
     ```
 
+!!! keypoints
+    - There are multiple tools for evaluating job efficiency
+    - Different processes take different resources
+
+We've assessed our job on a general scale and made some changes without editing the script at all.
+The next step is to work on improving the efficiency of the script itself.
+There are many ways to approach improving our script, but let's start by looking at [job arrays](../Beyond_the_Basics/Job_Arrays.md).
