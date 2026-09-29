@@ -10,6 +10,8 @@ tags:
 ---
 
 
+mroe bad changlers
+
 This page is meant for testing the linting checks. For all checks to run properly this file should be moved under `docs`.
 
 It should produce warnings or errors from `meta-checks`, `proselint-checks`, `spelling-checks`, `slurm-lint`, and `test-build`,

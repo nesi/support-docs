@@ -116,18 +116,18 @@ def main(base, annotations_dir):
     out = []
 
     if not any([errors, warnings, notices, failed_jobs]):
-        out += ["###✅ Wow! No notes! Great job!"]
+        out += ["### ✅ Wow! No notes! Great job!"]
 
     # Errors already explain why a job failed, this catches failures that printed nothing (e.g. install errors).
     if failed_jobs and not errors:
         out += [f"Failed jobs: {', '.join(f'`{j}`' for j in failed_jobs)}.", ""]
 
     if errors:
-        out = out + [f"####🛑 {sum(len(v) for v in errors.values())} Errors Merging blocked" ] + table(errors, expanded=True)
+        out = out + [f"#### 🛑 {sum(len(v) for v in errors.values())} Errors Merging blocked" ] + table(errors, expanded=True)
     if warnings:
-        out = out + [f"####⚠️ {sum(len(v) for v in warnings.values())} Warnings"] + table(warnings)
+        out = out + [f"#### ⚠️ {sum(len(v) for v in warnings.values())} Warnings"] + table(warnings)
     if notices:
-        out = out + [f"####ℹ️ {sum(len(v) for v in notices.values())} Notices"] +  table(notices)
+        out = out + [f"#### ℹ️ {sum(len(v) for v in notices.values())} Notices"] +  table(notices)
 
     text = "\n".join(out)
     if len(text) > MAX_LENGTH:
