@@ -15,6 +15,14 @@ import requests
 
 """
 This works but is a bit messy
+
+Usage: run_test_build.py [--dirty]
+
+By default every page is rebuilt, so every page's warnings are reported.
+--dirty only rebuilds pages changed since the last build in the site dir (faster,
+used by the VS Code task), which silently drops warnings for the pages it skips.
+
+Set CHECKS_STRICT=1 to exit non-zero if any warning or error was reported.
 """
 
 msg_count = {"DEBUG": 0, "NOTICE": 0, "WARNING": 0, "ERROR": 0}
@@ -63,6 +71,7 @@ def parse_macro(record):
     if record.levelname == "INFO":
         record.levelname = "NOTICE"
 
+    msg_count[record.levelname] = msg_count.get(record.levelname, 0) + 1
     return True
 
 
@@ -89,9 +98,10 @@ if __name__ == '__main__':
         os.environ["MODULE_LIST_PATH"] = tmp_module_list_path
 
     config = load_config(config_file_path="./mkdocs.yml")
-    config.plugins.on_startup(command='build', dirty=True)
+    dirty = "--dirty" in sys.argv[1:]
+    config.plugins.on_startup(command='build', dirty=dirty)
     try:
-        build.build(config, dirty=True)
+        build.build(config, dirty=dirty)
     except Exception as e:
         print(f"::ERROR file={__file__},title=build_failed,col=0,endColumn=0,line=0::{e}")
         sys.exit(1)
@@ -109,4 +119,7 @@ if __name__ == '__main__':
             f.write(module_list)
 
     time.sleep(5)
-    # exit(100 < msg_count["NOTICE"] + (30 * msg_count["WARNING"] + (100 * msg_count["ERROR"])))
+
+    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
+    if os.getenv("CHECKS_STRICT") and msg_count["WARNING"] + msg_count["ERROR"] + msg_count.get("CRITICAL", 0):
+        sys.exit(1)

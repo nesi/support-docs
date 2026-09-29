@@ -9,6 +9,9 @@ Tests should be made as Python scripts to allow flexibility of use. Currently th
 - [GitHub Actions](https://docs.github.com/en/actions) as defined in [workflows](../.github/workflows/),
 - [VSCode Problem Matchers](https://code.visualstudio.com/docs/editor/tasks#_processing-task-output-with-problem-matchers) as defined in [tasks.json](../.vscode/tasks.json).
 
+By default every check exits `0` whatever it reports. Set `CHECKS_STRICT=1` to make a check exit `1` if it reported any warning or error
+(notices do not count). This is intended for local use and AI agents, CI does not set it.
+
 ## Check Types
 
 ### Spellcheck
@@ -52,6 +55,9 @@ See script for details.
 ### Test Build
 
 Does a 'strict' build of the site, capturing any errors emmited by mkdocs.
+
+It rebuilds every page by default. `./checks/run_test_build.py --dirty` only rebuilds pages changed since the last build in `public/`,
+which is faster (the VS Code task uses it) but drops warnings for skipped pages and adds false `mkdocs_llmstxt` warnings.
 
 ### Accessibility (WCAG)
 

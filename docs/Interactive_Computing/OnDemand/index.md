@@ -1,8 +1,8 @@
 ---
 created_at: 2026-07-15
 description: Using Mahuika OnDemand
-tags: 
-    - OnDemand
+tags:
+    - interactive
 ---
 
 

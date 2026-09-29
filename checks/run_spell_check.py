@@ -2,6 +2,7 @@
 
 # FIXME direct use of aspell might be simpler than postprocessing pyspelling
 
+import os
 import sys
 import time
 from collections import Counter
@@ -12,8 +13,6 @@ from pyspelling import spellcheck
 from pyspelling.filters import context as context_filter
 from pyspelling.filters import url as url_filter
 from flashtext import KeywordProcessor
-
-ALLOWABLE_TYPOS = 20
 
 CONFIG_FILE = ".spellcheck.yml"
 
@@ -135,4 +134,7 @@ if __name__ == "__main__":
     # FIXME terrible hack to make VSCode in codespace capture the error messages
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
-    # exit(count_typos >= ALLOWABLE_TYPOS*(len(sys.argv)-1))
+
+    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
+    if os.getenv("CHECKS_STRICT") and count_typos:
+        sys.exit(1)
