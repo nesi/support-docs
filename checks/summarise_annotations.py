@@ -117,7 +117,7 @@ def main(base, annotations_dir):
     if notices:
         out += f"ℹ️ {sum(len(v) for v in errors.values())}"
 
-    if not any(errors, warnings, notices):
+    if not any([errors, warnings, notices]):
         out += "✅ Wow! Great job!"
 
     # Errors already explain why a job failed, this catches failures that printed nothing (e.g. install errors).
