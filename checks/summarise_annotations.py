@@ -92,7 +92,7 @@ def table(by_file, expanded=False):
         if len(findings) > MAX_ROWS_PER_FILE:
             out += [f"| | | …and {len(findings) - MAX_ROWS_PER_FILE} more, see the 'Checks' tab |"]
         out += ["", "</details>", ""]
-    return str(out)
+    return out
 
 
 def main(base, annotations_dir):
@@ -111,25 +111,25 @@ def main(base, annotations_dir):
 
     out = ""
     if errors:
-        out += f"🛑 {sum(len(v) for v in errors.values())}"
+        out += [f"🛑 {sum(len(v) for v in errors.values())}"]
     if warnings:
-        out += f"⚠️ {sum(len(v) for v in warnings.values())}" 
+        out += [f"⚠️ {sum(len(v) for v in warnings.values())}" ]
     if notices:
-        out += f"ℹ️ {sum(len(v) for v in notices.values())}"
+        out += [f"ℹ️ {sum(len(v) for v in notices.values())}"]
 
     if not any([errors, warnings, notices]):
-        out += "✅ Wow! Great job!"
+        out += ["✅ Wow! Great job!"]
 
     # Errors already explain why a job failed, this catches failures that printed nothing (e.g. install errors).
     if failed_jobs and not errors:
         out += [f"Failed jobs: {', '.join(f'`{j}`' for j in failed_jobs)}.", ""]
 
     if errors:
-        out += ["#### Errors", "Merging blocked", table(errors, expanded=True)]
+        out = out + ["#### Errors Merging blocked" ] + table(errors, expanded=True)
     if warnings:
-        out += ["#### Warnings", table(warnings)]
+        out = out + ["#### Warnings"] + table(warnings)
     if notices:
-        out += ["#### Notices", table(notices)]
+        out = out + ["#### Notices"] +  table(notices)
 
     text = "\n".join(out)
     if len(text) > MAX_LENGTH:
