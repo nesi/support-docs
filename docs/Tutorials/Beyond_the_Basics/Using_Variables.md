@@ -117,7 +117,7 @@ do
     bwa-mem2 mem -t 4 ${ref_genome} ${fq1} ${fq2} > ${sam}
     samtools view -S -b ${sam} > ${bam}
     samtools sort ${bam} -o ${sorted_bam}
-    bcftools mpileup -O b -o ${bcf} -f ${ref_genome} ${sorted_bam}$
+    bcftools mpileup -O b -o ${bcf} -f ${ref_genome} ${sorted_bam}
     bcftools call --ploidy 1 -m -v -o ${vcf} ${bcf}
     vcfutils.pl varFilter ${vcf} > ${final_variants}
 done
