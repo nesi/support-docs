@@ -125,7 +125,7 @@ def main(base, annotations_dir):
         out += [f"Failed jobs: {', '.join(f'`{j}`' for j in failed_jobs)}.", ""]
 
     if errors:
-        out += ["#### Errors", "Merging blocked", ""] + table(errors, expanded=True)
+        out += ["#### Errors", "Merging blocked", table(errors, expanded=True)]
     if warnings:
         out += ["#### Warnings", ""] + table(warnings)
     if notices:
