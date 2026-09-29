@@ -127,9 +127,9 @@ def main(base, annotations_dir):
     if errors:
         out += ["#### Errors", "Merging blocked", table(errors, expanded=True)]
     if warnings:
-        out += ["#### Warnings", ""] + table(warnings)
+        out += ["#### Warnings", table(warnings)]
     if notices:
-        out += ["#### Notices", ""] + table(notices)
+        out += ["#### Notices", table(notices)]
 
     text = "\n".join(out)
     if len(text) > MAX_LENGTH:
