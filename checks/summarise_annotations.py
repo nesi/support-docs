@@ -115,6 +115,9 @@ def main(base, annotations_dir):
 
     out = []
 
+    if not any([errors, warnings, notices, failed_jobs]):
+        out += ["✅ Wow! No notes! Great job!"]
+
     # Errors already explain why a job failed, this catches failures that printed nothing (e.g. install errors).
     if failed_jobs and not errors:
         out += [f"Failed jobs: {', '.join(f'`{j}`' for j in failed_jobs)}.", ""]
