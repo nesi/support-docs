@@ -92,7 +92,7 @@ def table(by_file, expanded=False):
         if len(findings) > MAX_ROWS_PER_FILE:
             out += [f"| | | …and {len(findings) - MAX_ROWS_PER_FILE} more, see the 'Checks' tab |"]
         out += ["", "</details>", ""]
-    return out
+    return str(out)
 
 
 def main(base, annotations_dir):
