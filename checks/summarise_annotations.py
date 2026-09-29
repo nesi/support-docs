@@ -23,6 +23,10 @@ MAX_ROWS_PER_FILE = 30
 MAX_MESSAGE_LENGTH = 300
 MAX_LENGTH = 60000  # GitHub comments are capped at 65536 characters.
 ANNOTATION = re.compile(r"^::(error|warning|notice)(?: (.*?))?::(.*)$", re.IGNORECASE)
+# Link to this workflow run. These are set by GitHub Actions, plain text when run locally.
+RUN_URL = "{GITHUB_SERVER_URL}/{GITHUB_REPOSITORY}/actions/runs/{GITHUB_RUN_ID}".format_map(os.environ) \
+    if os.getenv("GITHUB_RUN_ID") else None
+CHECKS_TAB = f"[Checks tab]({RUN_URL})" if RUN_URL else "'Checks' tab"
 
 
 def changed_lines(base):
@@ -90,7 +94,7 @@ def table(by_file, expanded=False):
         for f in sorted(findings, key=lambda f: f["line"])[:MAX_ROWS_PER_FILE]:
             out += [f"| {f['line'] or 'page'} | {cell(f['check'])} | {cell(f['message'])} |"]
         if len(findings) > MAX_ROWS_PER_FILE:
-            out += [f"| | | …and {len(findings) - MAX_ROWS_PER_FILE} more, see the 'Checks' tab |"]
+            out += [f"| | | …and {len(findings) - MAX_ROWS_PER_FILE} more, see the {CHECKS_TAB} |"]
         out += ["", "</details>", ""]
     return out
 
@@ -109,36 +113,23 @@ def main(base, annotations_dir):
 
     failed_jobs = [job for job, v in json.loads(os.getenv("NEEDS") or "{}").items() if v["result"] == "failure"]
 
-    status = ""
-
-    if errors:
-        status += f"🛑 {sum(len(v) for v in errors.values())} errors "
-    if warnings:
-        status += f"⚠️ {sum(len(v) for v in warnings.values())} warnings "
-    if notices:
-        status += f"ℹ️ {sum(len(v) for v in notices.values())} "
-
-    if not any([errors, warnings, notices]):
-        status += "✅ Wow! Great job!"
-
-    out = [status]
-
+    out = []
 
     # Errors already explain why a job failed, this catches failures that printed nothing (e.g. install errors).
     if failed_jobs and not errors:
         out += [f"Failed jobs: {', '.join(f'`{j}`' for j in failed_jobs)}.", ""]
 
     if errors:
-        out = out + ["#### Errors Merging blocked" ] + table(errors, expanded=True)
+        out = out + [f"####🛑 {sum(len(v) for v in errors.values())} Errors Merging blocked" ] + table(errors, expanded=True)
     if warnings:
-        out = out + ["#### Warnings"] + table(warnings)
+        out = out + [f"####⚠️ {sum(len(v) for v in warnings.values())} Warnings"] + table(warnings)
     if notices:
-        out = out + ["#### Notices"] +  table(notices)
+        out = out + [f"####ℹ️ {sum(len(v) for v in notices.values())} Notices"] +  table(notices)
 
     text = "\n".join(out)
     if len(text) > MAX_LENGTH:
         text = text[:MAX_LENGTH] + "\n\n…truncated, "
-    text += "\n\n See the 'Checks' tab for the full output."
+    text += f"\n\nSee the {CHECKS_TAB} for the full output."
     print(text)
 
 
