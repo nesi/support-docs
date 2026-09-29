@@ -7,8 +7,8 @@ status: new
 ---
 
 !!! warning "Beta testers only"
-    Only user with a BSI email have access to [the new portal](https://hpc-portal.reannz.co.nz).  
-    If you are not a BSI please continue using my.nesi.org,
+    Only users with a BSI email have access to [the new portal](https://hpc-portal.reannz.co.nz).  
+    If you are not with BSI please continue using my.nesi.org,
     see [Logging In](..//Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md) for further instructions.
 
 The [REANNZ HPC Portal](https://hpc-portal.reannz.co.nz) is where you see your projects,
