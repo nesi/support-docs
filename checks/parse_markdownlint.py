@@ -6,6 +6,7 @@ annotations.
 """
 
 import json
+import os
 import sys
 
 if sys.stdin.isatty():
@@ -31,3 +32,7 @@ for m in findings:
         f"{error_range}title={m['ruleDescription']}::{m['errorDetail']}",
         flush=True,
     )
+
+# CHECKS_STRICT=1: exit non-zero if any warning was reported.
+if os.getenv("CHECKS_STRICT") and findings:
+    sys.exit(1)

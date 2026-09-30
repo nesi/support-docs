@@ -8,3 +8,4 @@ dictionary.dic
 accesslint-report.*
 spellcheck.results
 .DS_Store
+checks/agent_eval*
