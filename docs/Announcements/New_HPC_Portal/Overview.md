@@ -91,4 +91,3 @@ The resource page shows:
 
 The **Actions** button on the resource page lists what you can do with it.
 The options depend on your role.
-

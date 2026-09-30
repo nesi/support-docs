@@ -2,7 +2,7 @@
 created_at: '2026-09-29'
 tags:
 - account
-description: Find your projects, project members, roles and resources in the REANNZ HPC Portal.
+description: Request a new end date or changed limits for a project allocation in the REANNZ HPC Portal, and approve those requests.
 status: new
 ---
 
@@ -21,21 +21,21 @@ To renew *and* grow an allocation, make both.
     Do not apply to an allocation call again.
     A call application creates a new project with a new project code.
 
-### Before you start
+## Before you start
 
-- You need a role on the project. See [Navigating the HPC Portal](#see-your-roles).
+- You need a role on the project. See [your roles in the HPC Portal](Overview.md#see-your-roles).
 - Make your request **before** the current end date.
   The portal does not accept an end date in the past,
   and an allocation may be removed once its end date has passed.
 - Request well ahead. Do not wait for a reminder.
 
-### Extend the end date
+## Extend the end date
 
 Project managers and project members can ask for a new end date.
 An organization owner at your institution approves it.
 
 1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with REANNZ**.
-   See [Log in](#log-in).
+   See [logging in to the HPC Portal](Overview.md#log-in).
 2. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the allocation.
 3. Click **Actions**, then **Request end date change**.
 4. In **Requested end date**, pick the new end date.
@@ -49,7 +49,7 @@ An organization owner at your institution approves it.
 The request appears on the resource's **End date change requests** tab.
 The **Pending** list shows open requests and **All** shows past ones.
 
-### After you send a request
+## After you send a request
 
 - An organization owner at your institution reviews the request and approves or rejects it.
 - When approved, the new end date applies at once. There is no further step.
@@ -63,7 +63,7 @@ If you do not know who approves requests at your institution,
 or the request is waiting too long,
 {% include "partials/support_request.html" %}.
 
-### Change allocation limits
+## Change allocation limits
 
 Project managers can change limits, such as compute or storage.
 Project members cannot; ask your project manager.
@@ -77,7 +77,7 @@ Project members cannot; ask your project manager.
 The change goes to your organization for approval, then to REANNZ.
 The new limits apply once both approve.
 
-### Approve a request
+## Approve a request
 
 This section is for organization owners, who receive requests from projects in their organization.
 
@@ -90,13 +90,12 @@ This section is for organization owners, who receive requests from projects in t
 To check usage before you decide, use the **Usage history** chart on the resource page
 or **Actions** → **Show usage**.
 
-### Allocation size limits
+## Allocation size limits
 
 Allocations are subject to the size and duration limits in force at the time,
 and to approval by your institution.
 See [Project Extensions and New Allocations on Existing Projects](../../Getting_Started/Allocations/Allocations_and_Extensions.md)
 for more details.
-
 
 The HPC Portal is built on Waldur. Its user guide covers these features in more depth:
 

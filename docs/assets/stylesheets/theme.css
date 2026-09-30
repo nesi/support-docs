@@ -293,8 +293,17 @@ span.md-status.md-status--deprecated {
   cursor: pointer;
 }
 
+/* The default link colour is only 4.44:1 on the banner's yellow, darken it to pass WCAG AA (5.08:1). */
+.md-event-banner a {
+  color: #007591;
+}
+
 [data-md-color-scheme="slate"] .md-event-banner {
   background: var(--reannz-blue--dark-shade1);
+}
+
+[data-md-color-scheme="slate"] .md-event-banner a {
+  color: var(--md-typeset-a-color);
 }
 
 /* custom admonition */
