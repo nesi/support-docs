@@ -67,6 +67,11 @@ Runs on every pull request (except from `assets-update`). Triggers a build of th
 [CallumWalley/mkdocs-demo-deploy](https://github.com/CallumWalley/mkdocs-demo-deploy), waits up to 10 minutes for it,
 then comments on the pull request with a link to the preview and to each changed page.
 
+## [review_gate.yml](review_gate.yml)
+
+Required check. Passes if the PR only modifies existing `docs/**/*.md` files and changes 50 lines or fewer (`MAX_LINES`),
+or if someone other than the author has approved it. Bot PRs are exempt. Re-runs when a review is submitted or dismissed.
+
 ## [auto_merge.yml](auto_merge.yml)
 
 Runs daily at 12:30 UTC, and manually. Squash-merges **every** open pull request with the `auto_merge` label, with no review.

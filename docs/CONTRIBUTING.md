@@ -250,6 +250,10 @@ This will allow you to fix any merge conflicts in your feature branch, before me
 <span style="color:green;">✔</span> **Do** review open pull requests!  
 <span style="color:green;">✔</span> **Do** merge pull requests you've reviewed, unless someone else is assigned.  
 
+You can merge your own pull request if it only edits existing pages and changes 50 lines or fewer.
+Anything else, such as new, moved or deleted pages, or changes outside `docs/`, needs an approval from someone else first.
+The 'Review gate' check shows which applies.
+
 ## Redirects When Moving or Renaming Pages
 
 Renaming, moving, or deleting a page changes or removes its URL, breaking existing links. Add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working, one line per page (paths relative to `docs/`, keep the `.md`):

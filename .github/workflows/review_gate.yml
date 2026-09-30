@@ -1,0 +1,64 @@
+name: Review gate
+# Small edits to existing pages can be self-merged, anything else needs one approval
+# from someone other than the author. Make 'Review gate' a required check for this to block merging.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_review:
+    types: [submitted, dismissed]
+permissions:
+  contents: read
+  pull-requests: read
+env:
+  MAX_LINES: 50
+  GH_TOKEN: ${{ github.token }}
+  PR: ${{ github.event.pull_request.number }}
+  AUTHOR: ${{ github.event.pull_request.user.login }}
+jobs:
+  review-gate:
+    name: Review gate
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Check if a review is needed
+        run: |
+          if [ "${AUTHOR}" = "nesi-mkdocs-bot" ] || [[ "${AUTHOR}" == *"[bot]" ]]; then
+            echo "Bot PR, no review needed."
+            exit 0
+          fi
+
+          files="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[]')"
+          lines="$(jq -s 'map(.additions + .deletions) | add // 0' <<< "${files}")"
+          # Anything other than an edit to an existing page (new, deleted or renamed pages, nav, config, workflows...).
+          other="$(jq -rs 'map(select(.status != "modified" or (.filename | test("^docs/.*\\.md$") | not))) | map("\(.filename) (\(.status))") | .[]' <<< "${files}")"
+
+          if [ -z "${other}" ] && [ "${lines}" -le "${MAX_LINES}" ]; then
+            echo "Small edit (${lines} lines changed), no review needed."
+            exit 0
+          fi
+
+          # Latest approve/request-changes/dismiss from each reviewer, ignoring plain comments.
+          approvals="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/reviews" --paginate --jq '.[]' \
+            | jq -s --arg author "${AUTHOR}" '
+                map(select(.state != "COMMENTED" and .user.login != $author))
+                | group_by(.user.login) | map(last | select(.state == "APPROVED")) | length')"
+
+          if [ "${approvals}" -gt 0 ]; then
+            echo "Approved by someone other than the author."
+            exit 0
+          fi
+
+          reason="changes ${lines} lines (more than ${MAX_LINES})"
+          if [ -n "${other}" ]; then
+            reason="changes more than existing pages"
+          fi
+          msg="This PR ${reason}, so it needs one approval from someone other than the author."
+          echo "::error title=Review needed::${msg}"
+          {
+            echo "### Review needed"
+            echo "${msg}"
+            if [ -n "${other}" ]; then
+              echo; echo "Files that need a review:"; echo
+              sed 's/^/- /' <<< "${other}"
+            fi
+          } >> "${GITHUB_STEP_SUMMARY}"
+          exit 1
