@@ -1,9 +1,7 @@
 ---
 created_at: '2026-08-18T00:20:08Z'
 tags:
-- data
-- data management
-- data retention
+- storage
 description: Statement about the data on REANNZ platform
 ---
 

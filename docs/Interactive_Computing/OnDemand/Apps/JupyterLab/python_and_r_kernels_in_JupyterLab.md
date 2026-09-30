@@ -39,7 +39,7 @@ custom kernel; select the tab that suits you:
 
         !!! warning
 
-            Your environment module needs to be based on Python. Contact [Mahuika Support](mailto:support@nesi.org.nz)
+            Your environment module needs to be based on Python. {% include "partials/support_request.html" %} for help.
             if you are unsure about this.
 
         First you need to open a terminal. It can be from a session on Jupyter
@@ -381,7 +381,7 @@ custom kernel; select the tab that suits you:
 
         !!! warning
 
-            Your environment module needs to be based on Python. Contact [Mahuika Support](mailto:support@nesi.org.nz)
+            Your environment module needs to be based on Python. {% include "partials/support_request.html" %} for help.
             if you are unsure about this.
 
         First, change directory into the path where you would like to place your

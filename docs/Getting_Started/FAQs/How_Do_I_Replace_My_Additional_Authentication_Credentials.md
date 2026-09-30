@@ -12,7 +12,7 @@ If you have no longer access to your authenticator application (e.g. change of d
    ![Reset Code Example](../../assets/images/resetcode_link.png).
 
 !!! warning "Not seeing this page?"
-   If you perviously confirmed your device as 'Trusted', you will not be prompted for further authentication.
+   If you previously confirmed your device as 'Trusted', you will not be prompted for further authentication.
    In order to see the option to reset, open the link in a private/incognito session.
 
 2. You will be redirected to a window for confirmation. Your username should be pre-populated, if this is not the case, enter your username and click send. Yooun may have to re-authenticate via Tuakiri.

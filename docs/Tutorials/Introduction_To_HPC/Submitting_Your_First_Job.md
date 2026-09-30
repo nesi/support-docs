@@ -39,7 +39,7 @@ The exact syntax might change, but the concepts remain the same.
 Typically, when we enter a command into our terminal, we receive a response immediately in the same terminal.
 This is what we call an *interactive session*.
 
-This is all well for doing small tasks, but what if we want to do several things one after another without without waiting in-between?
+This is all well for doing small tasks, but what if we want to do several things one after another without waiting in-between?
 Or what if we want to repeat a series of command again later?
 
 This is where *batch* processing becomes useful, this is where instead of entering commands directly to the terminal we write them down in a text file or script.
