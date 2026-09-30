@@ -69,6 +69,19 @@ Like the other checks, it can be scoped to specific pages by passing their `docs
 
 AccessLint's own inline annotations only fire for violations with a JS/React source map, which a server-rendered mkdocs site never has, so `parse_a11y_report.py` reads its JSON report instead and maps each violation back to the built HTML file under `public/`.
 
+## Errors and the PR summary
+
+Only use `error` level for problems that should block merging, currently: a failed build,
+broken links, macro or include errors ([run_test_build.py](run_test_build.py)) and front matter
+that isn't valid YAML ([run_meta_check.py](run_meta_check.py)).
+Checks exit non-zero if they emitted an error. Everything else should be a `warning` or `notice`.
+
+In CI each check's output is saved and [summarise_annotations.py](summarise_annotations.py)
+turns it into a single PR comment (posted by [pr_comment.sh](../.github/pr_comment.sh)).
+Errors are always listed. Other findings are only listed if they are on a line the PR changed.
+To preview locally, save each check's output to `annotations/<check>.txt` then run
+`python3 checks/summarise_annotations.py origin/main annotations`.
+
 ### Debugging Checks
 
 Each type of test has a debug job in VSCode.

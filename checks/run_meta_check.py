@@ -133,7 +133,12 @@ def main():
                     )
                     meta = {}
                 else:
-                    meta = yaml.safe_load(match.group(1))
+                    try:
+                        meta = yaml.safe_load(match.group(1)) or {}
+                    except yaml.YAMLError as e:
+                        # Only blocking error, mkdocs silently ignores front matter it can't parse.
+                        _emit("meta.parse", {"level": "error", "line": 1, "message": "Front matter is not valid YAML. " + " ".join(str(e).split())})
+                        continue
 
                 title_from_filename = _title_from_filename()
                 title_from_h1 = _title_from_h1()
@@ -165,7 +170,7 @@ def main():
                 for check in ENDCHECKS:
                     _run_check(check)
             except Exception as e:
-                _emit("misc", {"level": "error", "file": input_path, "message": e})
+                _emit("misc", {"level": "warning", "file": input_path, "message": e})
 
 
 def _run_check(f):
@@ -256,7 +261,7 @@ def _get_nav_tree():
             _emit(
                 "misc.nav",
                 {
-                    "level": "error",
+                    "level": "warning",
                     "file": input_path,
                     "message": "Failed to parse Nav tree. Something is very wrong.",
                 },
@@ -299,7 +304,7 @@ def _nav_check():
             "meta.nav",
             {
                 "file": input_path,
-                "level": "error",
+                "level": "warning",
                 "message": f"{e}. Nav checks will be skipped",
             },
         )
@@ -358,7 +363,7 @@ def meta_unexpected_key():
     def _test(v):
         if v not in EXPECTED_PARAMETERS[key]:
             yield {
-                "level": "error",
+                "level": "warning",
                 "line": _get_lineno(f"^{key}:.*$"),
                 "message": f"'{v}' is not valid for {key}. [{','.join(str(x) for x in EXPECTED_PARAMETERS[key])}]",
             }
@@ -669,6 +674,9 @@ if __name__ == "__main__":
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
     time.sleep(5)
 
-    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
-    if os.getenv("CHECKS_STRICT") and msg_count["warning"] + msg_count["error"]:
+    # Only unparseable front matter is an error.
+    if msg_count["error"]:
+        sys.exit(1)
+    # CHECKS_STRICT=1: also exit non-zero on warnings.
+    if os.getenv("CHECKS_STRICT") and msg_count["warning"]:
         sys.exit(1)

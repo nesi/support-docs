@@ -10,6 +10,7 @@ tags:
 ---
 
 
+mroe bad changlers
 
 This page is meant for testing the linting checks. For all checks to run properly this file should be moved under `docs`.
 
@@ -62,7 +63,7 @@ module load something
 ```
 
 [bad link](../docs/General/not-a-page.md)
-[bad link](not-a-page.md)
+[bad link](../docs/not-a-page.md)
 
 [bad internal link](#impropers)
 

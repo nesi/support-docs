@@ -105,14 +105,19 @@ Tasks allow continuous checks to be run in the background, these can be defined 
 
 ## Checks
 
-Whenever a change is committed, or a merge request opened, a series of automatic checks will be started.
-From a pull request, the status of these checks can be seen in the 'Checks' tab, or inline under the 'Files Changed' Tab.
+When you open a pull request, or push to one, a series of automatic checks will run.
+When they finish, a bot posts a comment on the pull request with the results, and updates it after each push.
 
-Will give three levels of output, **Errors** (serious issues that will prevent merging into main), **Warnings** (non-critical suggestions for improvement) and **Info** (pedantry).
+The comment has two sections:
+
+- **Must fix**: these block merging. Only a failed build, a broken link, a broken macro or include, or front matter that is not valid YAML will appear here.
+- **Suggestions**: spelling, prose, formatting, accessibility and style. Only lines you changed are shown. Fix them if they make sense, and ignore them if they don't.
+
+The full output of every check is in the 'Checks' tab, or inline under the 'Files Changed' tab.
 
 ### ARIA and accessibility checks
 
-The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. If this check fails, the PR will show an error in the 'Checks' tab and the broken ARIA reference will be indicated.
+The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. Broken references are reported as suggestions.
 
 You can run a WCAG audit ([AccessLint/audit](https://github.com/AccessLint/audit)) locally with the `a11y-audit` VS Code task (builds the site, serves it, and audits it). Violations show up in the 'PROBLEMS' tab like the other checks.
 After the audit runs, three files will be produced containing the audit report: `accesslint-report.json`, `accesslint-report.md`, and `accesslint-report.sarif`.
@@ -166,8 +171,8 @@ When you are done with your changes
 git push origin <branchname>
 ```
 
-CI checks will run on your branch, you can check them under 'Actions'
-Might be worth having a quick look at these before making a pull request.
+CI checks will run once you open a pull request.
+To see results before anyone reviews it, open it as a draft (see below).
 
 Make a pull [request](https://github.com/nesi/support-docs/pulls)
 
@@ -196,7 +201,7 @@ See [Merge Etiquette](#merge-etiquette) below.
 
 Clicking on the 'Files Changed' tab, will give a convenient diff of the changes, as well as inline errors identified by the CI checks.
 
-If some of the CI checks failed (make sure they are not important ones), you will have to click the  `Merge without waiting for requirements to be met (bypass branch protections)` button before proceeding with the merge.
+If the checks comment lists anything under **Must fix**, ask the author to fix it before merging. Suggestions do not need to be fixed.
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
 
@@ -244,6 +249,10 @@ This will allow you to fix any merge conflicts in your feature branch, before me
   
 <span style="color:green;">✔</span> **Do** review open pull requests!  
 <span style="color:green;">✔</span> **Do** merge pull requests you've reviewed, unless someone else is assigned.  
+
+You can merge your own pull request if it only edits existing pages and changes 50 lines or fewer.
+Anything else, such as new, moved or deleted pages, or changes outside `docs/`, needs an approval from someone else first.
+The 'Review gate' check shows which applies.
 
 ## Redirects When Moving or Renaming Pages
 

@@ -1,0 +1,58 @@
+name: Review gate
+# Small edits to existing pages can be self-merged, anything else needs one approval
+# from someone other than the author. Make 'Review gate' a required check for this to block merging.
+# While blocked, a comment on the PR explains why. It's removed once unblocked.
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  pull_request_review:
+    types: [submitted, dismissed]
+permissions:
+  contents: read
+  pull-requests: write
+concurrency:
+  group: review-gate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+env:
+  MAX_LINES: 50
+  GH_TOKEN: ${{ github.token }}
+  PR: ${{ github.event.pull_request.number }}
+jobs:
+  review-gate:
+    name: Review gate
+    # Skipped required checks count as passed.
+    if: github.event.pull_request.user.login != 'nesi-mkdocs-bot'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: .github
+      - name: Check if a review is needed
+        run: |
+          reason="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[]' \
+            | jq -rs --argjson max "${MAX_LINES}" '
+                (map(.additions + .deletions) | add // 0) as $lines
+                # Anything other than an edit to an existing page (new, deleted or renamed pages, nav, config, workflows...).
+                | if any(.status != "modified" or (.filename | test("^docs/.*\\.md$") | not)) then "changes more than page content"
+                  elif $lines > $max then "changes \($lines) lines (more than \($max))"
+                  else empty end')"
+          if [ -z "${reason}" ]; then
+            echo "Small edit, no review needed."
+            bash .github/pr_comment.sh "${PR}" review-gate
+            exit 0
+          fi
+
+          # Latest approval or change request from each reviewer.
+          approvals="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/reviews" --paginate --jq '.[]' \
+            | jq -s 'map(select(.state != "COMMENTED")) | group_by(.user.login) | map(last | select(.state == "APPROVED")) | length')"
+          if [ "${approvals}" -gt 0 ]; then
+            echo "Approved."
+            bash .github/pr_comment.sh "${PR}" review-gate
+            exit 0
+          fi
+
+          msg="This PR ${reason}, at least one other person must review _(or, press the 'merge anyway' button 😠)_"
+          echo "::error title=Review needed::${msg}"
+          printf '### 🛑 Review needed\n%s\n' "${msg}" > comment.md
+          bash .github/pr_comment.sh "${PR}" review-gate comment.md
+          exit 1
