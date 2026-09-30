@@ -33,7 +33,7 @@ jobs:
             | jq -rs --argjson max "${MAX_LINES}" '
                 (map(.additions + .deletions) | add // 0) as $lines
                 # Anything other than an edit to an existing page (new, deleted or renamed pages, nav, config, workflows...).
-                | if any(.status != "modified" or (.filename | test("^docs/.*\\.md$") | not)) then "changes more than existing pages"
+                | if any(.status != "modified" or (.filename | test("^docs/.*\\.md$") | not)) then "changes more than page content"
                   elif $lines > $max then "changes \($lines) lines (more than \($max))"
                   else empty end')"
           if [ -z "${reason}" ]; then
@@ -51,8 +51,8 @@ jobs:
             exit 0
           fi
 
-          msg="This PR ${reason}, at least one other person must review (or, press the big red button)"
+          msg="This PR ${reason}, at least one other person must review _(or, press the big red button)_"
           echo "::error title=Review needed::${msg}"
-          printf '### Review needed\n%s\n' "${msg}" > comment.md
+          printf '### 🛑 Review needed\n%s\n' "${msg}" > comment.md
           bash .github/pr_comment.sh "${PR}" review-gate comment.md
           exit 1
