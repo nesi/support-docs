@@ -88,7 +88,8 @@ There are two ways to run a container as a kernel; select the tab that suits you
         Multiple arguments can be passed together:
 
         ``` sh
-        nesi-add-kernel <kernel_name> -cp <container_image.sif> --container-args="--nv --pwd /opt/app"
+        nesi-add-kernel <kernel_name> -cp <container_image.sif> \
+            --container-args="--nv --pwd /opt/app"
         ```
 
     !!! tip

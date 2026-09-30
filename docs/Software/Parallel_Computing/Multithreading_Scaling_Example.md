@@ -205,7 +205,7 @@ small. We could try running our script with more than 16 CPU cores,
 however, in the case of this script we start to have a pretty
 significant drop in marginal speed-up after eight CPU cores.
 
-![](../../assets/images/Multithreading_Scaling_Example_3.png)
+![Scatter plot of CPUs against memory for 5000 iterations, with memory use rising roughly linearly from about 240,000 at 2 CPUs to about 1,200,000 at 16 CPUs](../../assets/images/Multithreading_Scaling_Example_3.png)
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

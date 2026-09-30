@@ -87,7 +87,7 @@ referring to your nobackup or projects directory, but is likely to be
 Java applications pointing to the small temporary filesystem available
 in a compute node.
 
-To work around this, create another directory to use for temporrary
+To work around this, create another directory to use for temporary
 files.
 
 ``` sl

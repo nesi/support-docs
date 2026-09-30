@@ -6,7 +6,7 @@ description: Introductory Session for New Users
 ---
 
 We recommend that all new users watch a recording of, or attend an in person, introductory session where we will cover the basics of getting up and running on the REANNZ HPC.
-If you would like to attend an in person introductory session then please contact us by emailing us at support@nesi.org.nz, otherwise, you can find a recording of one of our introductory sessions below:
+If you would like to attend an in person introductory session then please {% include "partials/support_request.html" %}, otherwise, you can find a recording of one of our introductory sessions below:
 
 
 !!! tip "Getting started with Mahuika OnDemand"

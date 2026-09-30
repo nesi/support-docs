@@ -67,16 +67,16 @@ This endpoint submits work in Slurm jobs. The following configuration options ar
 ## Simple example
 
 1. Install Python 3.11 and create a virtual environment
-   ```
+   ```sh
    python -m venv venv
    source venv/bin/activate
    ```
 2. Install Globus Compute
-   ```
+   ```sh
    pip install "globus_compute_sdk>=3,<4"
    ```
 3. Create a simple Python script (replacing `<your_project_code>` with your project code)
-   ```
+   ```py
    # test.py
    from globus_compute_sdk import Executor
 
@@ -93,10 +93,9 @@ This endpoint submits work in Slurm jobs. The following configuration options ar
        print(f.result())
    ```
 4. Run the test
-   ```
+   ```sh
    python test.py
    ```
- c
 ## Limitations and known problems
 
 Limitations and known problems related to our current implementation are listed here.
