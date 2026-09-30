@@ -6,10 +6,7 @@ description: Find your projects, project members, roles and resources in the REA
 status: new
 ---
 
-!!! warning "Beta testers only"
-    Only users with a BSI email have access to [the new portal](https://hpc-portal.reannz.co.nz).  
-    If you are not with BSI please continue using my.nesi.org,
-    see [Logging In](../Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md) for further instructions.
+{% include 'partials/status-only-pro.md' %}
 
 The [REANNZ HPC Portal](https://hpc-portal.reannz.co.nz) is where you see your projects,
 who is in them, and the allocations (resources) they hold.
@@ -19,14 +16,14 @@ The portal is built on [Waldur](https://docs.waldur.com/latest/user-guide/).
 
 1. Go to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz).
 2. Click **Sign in with REANNZ**.
-    ![Sign in with REANNZ button](../assets/images/HPC_Portal_sign_in_with_reannz.png)
+    ![Sign in with REANNZ button](../../assets/images/HPC_Portal_sign_in_with_reannz.png)
 3. Choose your home institution and log in with your institutional credentials.
    This login goes through Tuakiri, the same as for my.nesi.org.nz.
 
 If your institution is not part of the Tuakiri federation, see
-[Account Requests for non-Tuakiri Members](../Policy/Account_Requests_for_non_Tuakiri_Members.md).
+[Account Requests for non-Tuakiri Members](../../Policy/Account_Requests_for_non_Tuakiri_Members.md).
 For other login problems, see
-[Logging in to my.nesi.org.nz](../Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md#troubleshooting-login-issues).
+[Logging in to my.nesi.org.nz](../../Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md#troubleshooting-login-issues).
 
 ## Main navigation
 
@@ -59,10 +56,38 @@ The **Roles and permissions** table lists every role you hold:
 | --- | --- | --- |
 | Project member | Researchers on a project | View the project and its resources, and request an end date change. |
 | Project manager | The project owner or PI | Change resource limits and request an end date change. |
-| Organization owner | Nominated staff at your institution | Approve orders and end date changes for their organization, and set end dates directly. See [HPC Portal Approvals](HPC_Portal_Approvals.md). |
+| Organization owner | Nominated staff at your institution | Approve requests from projects in their organization and set end dates directly. |
 
-## Guides
+## See your projects
 
-- [HPC Portal Projects](HPC_Portal_Projects.md) – find your projects, members and allocations.
-- [HPC Portal Renewals](HPC_Portal_Renewals.md) – extend an end date or change limits.
-- [HPC Portal Approvals](HPC_Portal_Approvals.md) – find and approve requests from your organization.
+1. Click **Projects** in the sidebar.
+2. Each card shows the project name, its **Organization**, its **Resources** and its **End date**.
+3. Click **Details** to open the project.
+
+A project page has four tabs:
+
+- **Project dashboard** – description, team summary and usage views.
+- **Resources** – the allocations the project holds.
+- **Team** – the project members.
+- **Audit logs** – a record of changes to the project.
+
+## See project members
+
+1. Open the project and click the **Team** tab.
+2. The **Active** list shows each **Member**, their **Email**, their **Role in project** and any **Role expiration**.
+3. The **Invitations** list shows people invited who have not yet joined.
+
+## See resources
+
+1. Open the project and click the **Resources** tab, or pick a group under **Resources** in the sidebar.
+2. Click a resource to open it.
+
+The resource page shows:
+
+- the offering, for example **Mahuika** or **Freezer**;
+- the **Termination date**, when the allocation ends;
+- current usage against each limit, for example compute, project storage and scratch storage;
+- a **Usage history** chart.
+
+The **Actions** button on the resource page lists what you can do with it.
+The options depend on your role.
