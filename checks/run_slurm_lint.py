@@ -57,8 +57,8 @@ def main():
                 try:
                     parse_script(lineno+3, indent, slurm)
                 except Exception as e:
-                    msg_count["error"] += 1
-                    print(f"::error file={input_path},title=failed_to_parse,col=0,endColumn=99,line={lineno}::Failed to parse slurm script {e}")
+                    msg_count["warning"] += 1
+                    print(f"::warning file={input_path},title=failed_to_parse,col=0,endColumn=99,line={lineno}::Failed to parse slurm script {e}")
 
 
 def parse_script(start_linno, indent, slurm):
@@ -152,7 +152,7 @@ def lines_after_shebang():
 
 
 def content_before_slurm_header():
-    yield {"level": "error", "message": f"There is text ('{line}') between the shebang and slurm header. This is not a valid SLURM script."}
+    yield {"level": "warning", "message": f"There is text ('{line}') between the shebang and slurm header. This is not a valid SLURM script."}
 
 
 def malformed_delimiter():
@@ -164,7 +164,7 @@ def malformed_delimiter():
     elif delim.isspace():
         uses_whitespace_delim = True
     else:
-        yield {"level": "error", "message": f"'{delim}' is not a valid SLURM header delimiter."}
+        yield {"level": "warning", "message": f"'{delim}' is not a valid SLURM header delimiter."}
 
 
 def inconsistant_delimiter():
