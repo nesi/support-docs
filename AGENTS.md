@@ -272,6 +272,26 @@ Do not say checks passed unless you ran them and read the output.
 
 - Work on a branch, never commit directly to `main`.
 - Commit or push only when the user asks.
+
+### Stay current with `main`
+
+Other people change the same pages while you work. Pages get moved, split or rewritten, and a change made on an old copy can be lost in a merge.
+
+- **Before you start**, run `git fetch origin`. Start new work from the latest main: `git switch -c <branch> origin/main`.
+  On an existing branch, check whether main has changed the pages you are working on: `git diff --stat HEAD...origin/main -- <paths>`.
+  If it has, merge `origin/main` into the branch before editing.
+- **Before you push or open a pull request**, fetch again and merge `origin/main` into the branch. Merge, don't rebase: do not rewrite a branch that has been pushed.
+- **If main moved, renamed, split or rewrote a page you changed**, don't just pick one side of the merge.
+  Redo your change on main's version of the page, fix links to the old path, and tell the user what happened.
+- **After any merge**, check what the branch now changes with `git diff --stat origin/main...HEAD`.
+  It should match what you meant to change and what the PR description says. A clean merge can still lose or duplicate content.
+  Then run the checks and the test build again.
+- **After you push**, check that the pull request can merge: `gh pr view --json mergeable,mergeStateStatus`.
+  If it is `CONFLICTING` or `DIRTY`, fix it before you say the work is done.
+  If new commits change what the PR does, update its description.
+
+### Pull requests
+
 - Never add the `auto_merge` label to a PR. `.github/workflows/auto_merge.yml` merges any PR carrying it without review.
 - Keep AI assistance visible: include a `Co-authored-by:` line for the agent in commits, and mention it in the PR description.
 - Open pull requests as drafts unless the user says otherwise. Never approve, merge or mark a pull request ready for review yourself:
