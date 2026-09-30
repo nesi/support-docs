@@ -83,7 +83,7 @@ To change an end date yourself, click **Actions** → **Set termination date** o
 
 ## Further reading
 
-For how projects raise these requests, see [Extending a request](Extending_a_request.md).
+For how projects raise these requests, see [Extending a request](Extending_a_Request.md).
 
 The HPC Portal is built on Waldur. Its user guide covers
 [resource end date changes](https://docs.waldur.com/latest/user-guide/customer-organization/resource-end-date-changes)

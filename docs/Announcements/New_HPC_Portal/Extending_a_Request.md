@@ -56,7 +56,7 @@ The **Pending** list shows open requests and **All** shows past ones.
 - When rejected, the end date does not change.
 - Check the **End date change requests** tab on the resource to see the outcome.
 
-If you are an organization owner, see [Approving requests](Approving_requests.md).
+If you are an organization owner, see [Approving requests](Approving_Requests.md).
 
 If you see **Set termination date** instead of **Request end date change**,
 you are an organization owner and can set the date directly.
