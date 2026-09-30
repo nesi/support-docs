@@ -56,7 +56,7 @@ The **Roles and permissions** table lists every role you hold:
 | --- | --- | --- |
 | Project member | Researchers on a project | View the project and its resources, and request an end date change. |
 | Project manager | The project owner or PI | Change resource limits and request an end date change. |
-| Organization owner | Nominated staff at your institution | Approve requests from projects in their organization and set end dates directly. |
+| Organization owner | Nominated staff at your institution | Approve requests from projects in their organization and set end dates directly. See [Approving requests](Approving_Requests.md). |
 
 ## See your projects
 
@@ -91,3 +91,5 @@ The resource page shows:
 
 The **Actions** button on the resource page lists what you can do with it.
 The options depend on your role.
+
+To extend or grow an allocation, see [Extending a request](Extending_a_Request.md).

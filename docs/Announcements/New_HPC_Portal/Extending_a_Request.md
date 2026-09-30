@@ -2,7 +2,7 @@
 created_at: '2026-09-29'
 tags:
 - account
-description: Request a new end date or changed limits for a project allocation in the REANNZ HPC Portal, and approve those requests.
+description: How to extend the end date or change the limits of a Mahuika or Freezer allocation in the REANNZ HPC Portal.
 status: new
 ---
 
@@ -16,10 +16,10 @@ To make an allocation bigger or smaller, change its limits.
 These are two separate requests, approved by different people.
 To renew *and* grow an allocation, make both.
 
-!!! note "Renew in the portal, not through an allocation call"
-    To renew an existing project, use the steps on this page.
-    Do not apply to an allocation call again.
-    A call application creates a new project with a new project code.
+!!! note "Renew your existing project"
+    To renew a project, use the steps on this page.
+    Do not ask for a new project through a group invitation link.
+    That creates a new project with a new project code.
 
 ## Before you start
 
@@ -56,6 +56,8 @@ The **Pending** list shows open requests and **All** shows past ones.
 - When rejected, the end date does not change.
 - Check the **End date change requests** tab on the resource to see the outcome.
 
+If you are an organization owner, see [Approving requests](Approving_Requests.md).
+
 If you see **Set termination date** instead of **Request end date change**,
 you are an organization owner and can set the date directly.
 
@@ -77,19 +79,6 @@ Project members cannot; ask your project manager.
 The change goes to your organization for approval, then to REANNZ.
 The new limits apply once both approve.
 
-## Approve a request
-
-This section is for organization owners, who receive requests from projects in their organization.
-
-1. Open the resource and click the **End date change requests** tab.
-2. Under **Pending**, find the request.
-   Read the **Requested end date**, **Current end date** and **Comment**.
-3. Click the **⋮** menu on the row, then **Approve** or **Reject**.
-4. Confirm.
-
-To check usage before you decide, use the **Usage history** chart on the resource page
-or **Actions** → **Show usage**.
-
 ## Allocation size limits
 
 Allocations are subject to the size and duration limits in force at the time,
@@ -97,9 +86,6 @@ and to approval by your institution.
 See [Project Extensions and New Allocations on Existing Projects](../../Getting_Started/Allocations/Allocations_and_Extensions.md)
 for more details.
 
-The HPC Portal is built on Waldur. Its user guide covers these features in more depth:
-
-- [Resource end date changes](https://docs.waldur.com/latest/user-guide/customer-organization/resource-end-date-changes)
-- [Resource limit change requests](https://docs.waldur.com/latest/user-guide/customer-organization/resource-limit-change-requests)
-
-Some screens in that guide may differ from the REANNZ HPC Portal.
+The HPC Portal is built on Waldur. Its user guide covers
+[resource end date changes](https://docs.waldur.com/latest/user-guide/customer-organization/resource-end-date-changes)
+in more depth. Some screens in that guide may differ from the REANNZ HPC Portal.
