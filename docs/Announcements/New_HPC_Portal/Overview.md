@@ -6,10 +6,7 @@ description: Find your projects, project members, roles and resources in the REA
 status: new
 ---
 
-!!! warning "Beta testers only"
-    Only users with a BSI email have access to [the new portal](https://hpc-portal.reannz.co.nz).  
-    If you are not with BSI please continue using my.nesi.org,
-    see [Logging In](../../Getting_Started/my-nesi-org-nz/Logging_in_to_my-nesi-org-nz.md) for further instructions.
+{% include 'partials/status-only-bsi.md' %}
 
 The [REANNZ HPC Portal](https://hpc-portal.reannz.co.nz) is where you see your projects,
 who is in them, and the allocations (resources) they hold.
