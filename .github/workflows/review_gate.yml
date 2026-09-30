@@ -1,6 +1,7 @@
 name: Review gate
 # Small edits to existing pages can be self-merged, anything else needs one approval
 # from someone other than the author. Make 'Review gate' a required check for this to block merging.
+# While blocked, a comment on the PR explains why. It's removed once unblocked.
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
@@ -8,57 +9,50 @@ on:
     types: [submitted, dismissed]
 permissions:
   contents: read
-  pull-requests: read
+  pull-requests: write
+concurrency:
+  group: review-gate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
 env:
   MAX_LINES: 50
   GH_TOKEN: ${{ github.token }}
   PR: ${{ github.event.pull_request.number }}
-  AUTHOR: ${{ github.event.pull_request.user.login }}
 jobs:
   review-gate:
     name: Review gate
+    # Skipped required checks count as passed.
+    if: github.event.pull_request.user.login != 'nesi-mkdocs-bot'
     runs-on: ubuntu-24.04
     steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: .github
       - name: Check if a review is needed
         run: |
-          if [ "${AUTHOR}" = "nesi-mkdocs-bot" ] || [[ "${AUTHOR}" == *"[bot]" ]]; then
-            echo "Bot PR, no review needed."
+          reason="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[]' \
+            | jq -rs --argjson max "${MAX_LINES}" '
+                (map(.additions + .deletions) | add // 0) as $lines
+                # Anything other than an edit to an existing page (new, deleted or renamed pages, nav, config, workflows...).
+                | if any(.status != "modified" or (.filename | test("^docs/.*\\.md$") | not)) then "changes more than existing pages"
+                  elif $lines > $max then "changes \($lines) lines (more than \($max))"
+                  else empty end')"
+          if [ -z "${reason}" ]; then
+            echo "Small edit, no review needed."
+            bash .github/pr_comment.sh "${PR}" review-gate
             exit 0
           fi
 
-          files="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[]')"
-          lines="$(jq -s 'map(.additions + .deletions) | add // 0' <<< "${files}")"
-          # Anything other than an edit to an existing page (new, deleted or renamed pages, nav, config, workflows...).
-          other="$(jq -rs 'map(select(.status != "modified" or (.filename | test("^docs/.*\\.md$") | not))) | map("\(.filename) (\(.status))") | .[]' <<< "${files}")"
-
-          if [ -z "${other}" ] && [ "${lines}" -le "${MAX_LINES}" ]; then
-            echo "Small edit (${lines} lines changed), no review needed."
-            exit 0
-          fi
-
-          # Latest approve/request-changes/dismiss from each reviewer, ignoring plain comments.
+          # Latest approval or change request from each reviewer (GitHub doesn't let authors approve their own PRs).
           approvals="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/reviews" --paginate --jq '.[]' \
-            | jq -s --arg author "${AUTHOR}" '
-                map(select(.state != "COMMENTED" and .user.login != $author))
-                | group_by(.user.login) | map(last | select(.state == "APPROVED")) | length')"
-
+            | jq -s 'map(select(.state != "COMMENTED")) | group_by(.user.login) | map(last | select(.state == "APPROVED")) | length')"
           if [ "${approvals}" -gt 0 ]; then
-            echo "Approved by someone other than the author."
+            echo "Approved."
+            bash .github/pr_comment.sh "${PR}" review-gate
             exit 0
           fi
 
-          reason="changes ${lines} lines (more than ${MAX_LINES})"
-          if [ -n "${other}" ]; then
-            reason="changes more than existing pages"
-          fi
-          msg="This PR ${reason}, so it needs one approval from someone other than the author."
+          msg="This PR ${reason}, so it needs one approval from someone other than the author before it can be merged."
           echo "::error title=Review needed::${msg}"
-          {
-            echo "### Review needed"
-            echo "${msg}"
-            if [ -n "${other}" ]; then
-              echo; echo "Files that need a review:"; echo
-              sed 's/^/- /' <<< "${other}"
-            fi
-          } >> "${GITHUB_STEP_SUMMARY}"
+          printf '### 👀 Review needed\n%s\n' "${msg}" > comment.md
+          bash .github/pr_comment.sh "${PR}" review-gate comment.md
           exit 1

@@ -71,6 +71,7 @@ then comments on the pull request with a link to the preview and to each changed
 
 Required check. Passes if the PR only modifies existing `docs/**/*.md` files and changes 50 lines or fewer (`MAX_LINES`),
 or if someone other than the author has approved it. Bot PRs are exempt. Re-runs when a review is submitted or dismissed.
+While the gate is failing, a comment on the PR explains why. It is deleted once the gate passes.
 
 ## [auto_merge.yml](auto_merge.yml)
 
