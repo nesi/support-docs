@@ -83,8 +83,8 @@ where `<NODE_NAME>` is the name of the node, and where:
 * `STATE`: The state of this job
 * `CPUS`: The number of CPUs this job is using (this will be 2 times the number of CPUs requested, i.e. if a job requests 4 CPUs, it will show here as 8)
 * `MIN_MEMORY`: The amount of RAM that the job is using
-* `TRES_PER_NODE`: The resources that the job is using, such as the numbver of GPUs and internal SSDs that are being used.
-* `TIME_LEFT`: The time left on the job before it timesout
+* `TRES_PER_NODE`: The resources that the job is using, such as the number of GPUs and internal SSDs that are being used.
+* `TIME_LEFT`: The time left on the job before it times out
 
 An example of what this looks like is shown below
 

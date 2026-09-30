@@ -2,6 +2,9 @@ name: Review gate
 # Small edits to existing pages can be self-merged, anything else needs one approval
 # from someone other than the author. Make 'Review gate' a required check for this to block merging.
 # While blocked, a comment on the PR explains why. It's removed once unblocked.
+# A review re-runs the pull_request run rather than checking itself: a check from the review event
+# would sit alongside the old one instead of replacing it. The job name changes with the event so
+# review runs never add a second (or skipped, which counts as passed) 'Review gate' check.
 on:
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
@@ -10,24 +13,35 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  actions: write
 concurrency:
-  group: review-gate-${{ github.event.pull_request.number }}
+  group: review-gate-${{ github.event_name }}-${{ github.event.pull_request.number }}
   cancel-in-progress: true
 env:
   MAX_LINES: 50
   GH_TOKEN: ${{ github.token }}
+  GH_REPO: ${{ github.repository }}
   PR: ${{ github.event.pull_request.number }}
 jobs:
   review-gate:
-    name: Review gate
+    name: ${{ github.event_name == 'pull_request' && 'Review gate' || 'Re-run review gate' }}
     # Skipped required checks count as passed.
     if: github.event.pull_request.user.login != 'nesi-mkdocs-bot'
     runs-on: ubuntu-24.04
     steps:
+      - name: Re-run the review gate for the latest commit
+        if: github.event_name == 'pull_request_review'
+        run: |
+          run_id="$(gh run list --workflow review_gate.yml --event pull_request \
+            --commit "${{ github.event.pull_request.head.sha }}" --limit 1 --json databaseId --jq '.[0].databaseId')"
+          gh run watch "${run_id}" > /dev/null || true  # Can only re-run a finished run.
+          gh run rerun "${run_id}"
       - uses: actions/checkout@v6
+        if: github.event_name == 'pull_request'
         with:
           sparse-checkout: .github
       - name: Check if a review is needed
+        if: github.event_name == 'pull_request'
         run: |
           reason="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/files" --paginate --jq '.[]' \
             | jq -rs --argjson max "${MAX_LINES}" '
@@ -51,7 +65,7 @@ jobs:
             exit 0
           fi
 
-          msg="This PR ${reason}, at least one other person must review _(or, press the 'merge anyway' button 😠)_"
+          msg="This PR ${reason}, at least one other person must review _(or, press the 'merge anyway' button. You monster)._"
           echo "::error title=Review needed::${msg}"
           printf '### 🛑 Review needed\n%s\n' "${msg}" > comment.md
           bash .github/pr_comment.sh "${PR}" review-gate comment.md
