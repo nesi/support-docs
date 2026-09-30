@@ -63,7 +63,7 @@ module load something
 ```
 
 [bad link](../docs/General/not-a-page.md)
-[bad link](not-a-page.md)
+[bad link](../docs/not-a-page.md)
 
 [bad internal link](#impropers)
 
