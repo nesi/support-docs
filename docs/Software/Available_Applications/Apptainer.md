@@ -16,6 +16,7 @@ By default, Apptainer uses your home directory for all storage, creating a hidde
 export APPTAINER_CACHEDIR="/nesi/nobackup/nesi12345/apptainer-cache"
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
 mkdir -p $APPTAINER_CACHEDIR
+setfacl -b "$APPTAINER_TMPDIR"
 ```
 
 To make these changed permanent, add them to your `~/.bashrc`:
@@ -38,6 +39,15 @@ For example, to pull a TensorFlow GPU image from Docker Hub:
 ```bash
 apptainer pull tensorflow.sif docker://tensorflow/tensorflow:latest-gpu
 ```
+
+!!! note
+    You will need to make sure you have either entered the following into your bash session on mahuika or into your `~/.bashrc`:
+    ``` bash
+    export APPTAINER_CACHEDIR="/nesi/nobackup/nesi12345/apptainer-cache"
+    export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
+    mkdir -p $APPTAINER_CACHEDIR
+    setfacl -b "$APPTAINER_TMPDIR"
+    ```
 
 ## Building a container
 
@@ -72,6 +82,7 @@ unset APPTAINER_BIND
 export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
 mkdir -p ${APPTAINER_CACHEDIR}
+setfacl -b "$APPTAINER_TMPDIR"
 
 apptainer build my_container.sif my_container.def
 ```
