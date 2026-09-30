@@ -6,7 +6,7 @@ title: Allocations & Extensions
 description: Who may request a project extension or a new allocation, and how to do it
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 We recognise that research programmes often continue over several
 years before coming to an end. To reduce administrative overhead, we

@@ -7,7 +7,7 @@ title: How Do I Reset My MFA?
 description: How to reset your authentication credentials for MFA.
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 If you no longer have access to your authenticator application (e.g. change of device), you may need to re-enroll your device.
 

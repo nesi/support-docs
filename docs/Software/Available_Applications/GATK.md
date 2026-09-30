@@ -68,7 +68,7 @@ GATK-picard commands, use:
 gatk <picard function> <options>
 ```
 
-This is different what what is currently written on the GATK
+This is different what is currently written on the GATK
 documentation, you do not need to call "java -jar picard.jar
 &lt;Picard-function&gt;". Simply replace the Java parts with "gatk" and
 the function of interest.

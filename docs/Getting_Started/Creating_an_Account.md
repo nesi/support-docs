@@ -6,7 +6,7 @@ tags:
 description: How to create a REANNZ HPC account.
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 !!! prerequisite
      Either an active login at a Tuakiri member institution, or

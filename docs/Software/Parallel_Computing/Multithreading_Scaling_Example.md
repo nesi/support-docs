@@ -31,7 +31,7 @@ context, it will take the sum of *z* random numbers derived from a
 normal distribution with a mean of 0 and a standard deviation of 1
 (where is *z* is a value from 1,000,000 to 1,060,000, meaning 60,000
 iterations). The script will take the number of CPUs per task from the
-environment and and run it in parallel with that many threads. We
+environment and run it in parallel with that many threads. We
 unfortunately do not know how many CPUs, how much memory (RAM), or how
 much time to request for this script to complete. This means the first
 thing we need to do is run a small scale test and see how long that runs

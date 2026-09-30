@@ -6,7 +6,7 @@ tags:
 description: The information you need to provide when applying for a new project
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 !!! prerequisite
     - Have an [account profile](../Creating_an_Account.md).

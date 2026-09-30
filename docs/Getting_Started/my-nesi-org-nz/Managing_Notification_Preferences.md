@@ -6,7 +6,7 @@ title: Notification Preferences
 description: How to manage your notification preferences.
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 We use email as a communications channel for many types of notifications. These notifications can range from system-related updates to broader scope newsletters about our organisational activities and events.
 

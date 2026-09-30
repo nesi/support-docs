@@ -6,7 +6,7 @@ title: Navigating my.nesi.org.nz
 description: Finding your way around the my.nesi.org.nz web interface
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 ![The my.nesi.org.nz web interface](../../assets/images/Navigating_the_my-nesi-org-nz_web_interface2025.png)
 

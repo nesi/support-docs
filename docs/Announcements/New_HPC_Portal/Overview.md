@@ -6,7 +6,7 @@ description: Find your projects, project members, roles and resources in the REA
 status: new
 ---
 
-{% include 'partials/status-only-bsi.md' %}
+{% include 'partials/status-only-pro.md' %}
 
 The [REANNZ HPC Portal](https://hpc-portal.reannz.co.nz) is where you see your projects,
 who is in them, and the allocations (resources) they hold.

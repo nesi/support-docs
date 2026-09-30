@@ -6,7 +6,7 @@ description: Find your projects, project members, roles and resources in the REA
 status: new
 ---
 
-{% include 'partials/status-only-bsi.md' %}
+{% include 'partials/status-only-pro.md' %}
 
 Allocations on Mahuika and Freezer have an end date.
 To keep using an allocation past that date, ask for a new end date in the

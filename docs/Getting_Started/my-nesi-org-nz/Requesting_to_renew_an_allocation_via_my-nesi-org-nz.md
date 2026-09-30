@@ -6,7 +6,7 @@ title: Renewing an Allocation
 description: How to request a Mahuika allocation renewal.
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 ## Types of Resource Requests
 

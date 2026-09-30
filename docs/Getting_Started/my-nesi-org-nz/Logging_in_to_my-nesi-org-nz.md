@@ -7,7 +7,7 @@ title: Logging in to my.nesi.org.nz
 description: Logging in to my.nesi.org.nz through Tuakiri and fixing common login problems
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 ## Login credentials
 

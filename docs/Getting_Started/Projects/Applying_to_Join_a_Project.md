@@ -6,7 +6,7 @@ tags:
 description: How to join an existing project by contacting its owner with your username
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 !!! prerequisite
      -   You must have an [account](../Creating_an_Account.md).

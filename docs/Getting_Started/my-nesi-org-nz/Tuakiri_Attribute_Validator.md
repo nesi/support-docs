@@ -6,7 +6,7 @@ tags:
 description: Checking your identity provider sends the attributes Tuakiri services need
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 This Tuakiri service is a health check for your managed identity. It
 checks the attributes provided about you from your identity provider,

@@ -7,7 +7,7 @@ title: Adding Project Members
 description: How to add a new member to your project.
 ---
 
-{% include 'partials/status-no-bsi.md' %}
+{% include 'partials/status-no-pro.md' %}
 
 !!! prerequisite
     - Have an [account profile](../Creating_an_Account.md).
