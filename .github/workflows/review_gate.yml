@@ -51,7 +51,7 @@ jobs:
             exit 0
           fi
 
-          msg="This PR ${reason}, at least one other person must review _(or, press the 'merge anyway' button 😠)_"
+          msg="This PR ${reason}, at least one other person must review _(or, press the 'merge anyway' button. You monster)._"
           echo "::error title=Review needed::${msg}"
           printf '### 🛑 Review needed\n%s\n' "${msg}" > comment.md
           bash .github/pr_comment.sh "${PR}" review-gate comment.md
