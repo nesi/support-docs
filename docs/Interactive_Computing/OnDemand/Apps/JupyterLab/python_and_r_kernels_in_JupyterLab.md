@@ -2,9 +2,9 @@
 title: Python and R Kernels in JupyterLab
 description: How to register and manage custom Jupyter kernels on Mahuika JupyterHub
 tags:
-    - JupyterHub
-    - Python
-    - R
+    - interactive
+    - python
+    - r
 ---
 
 A Jupyter kernel is the actual thing that executes the code in your Jupyter notebook.
