@@ -80,6 +80,14 @@ But how can they help us improve our script further?
 Using variables helps with several aspects of writing and using code.
 Variables can help with ensuring our script is readable, reusable and robust.
 
+!!! tip "Formatting variables"
+    You will likely see variables called several different ways: `$var`, `${var}` and `"${var}"` are all common options.
+    All of these are technically correct, and in some situations you can use whatever option you want.
+    BUT, in some situations how you format your variable calls makes a difference.
+    
+    Let's say that we have defined `var=/path/my_path/to-file.txt`.
+
+
 ## Variables in file paths
 
 For example, the for loop is quite the block of code and not the easiest to read, but most of that is just listing file names.
@@ -126,12 +134,37 @@ done
 Our for loop is definitely longer, but the commands are easier to read because we don't need to sift through the file paths to know what file is being used where.
 Beyond readability, this also helps reduce errors and make any errors that do occur easier to fix.
 
-Let's compare the impact of a simple typo in each version of this loop:
+Let's compare the impact of a simple typo in each version of this loop. For example, what if I miss a letter when typing in the path for the `.sam` file?
 
-<!-- TODO: just make a typo in the sam file path, either once in the OG script or just in the variable setting in the second script -->
+Without variables this returns:
 
-## SLURM environment variables
+```bash
+[E::hts_open_format] Failed to open file "results/sam/SRR2584863.aligned.sam" : No such file or directory
+samtools view: failed to open "results/sam/SRR2584863.aligned.sam" for reading: No such file or directory
+```
+
+When we use variables the script actually succeeds even though we have made a small mistake in the `.sam` variable (`sam=results/sam/${base}.aliged.sam`).
+And instead of needing to search for which call of the `.sam` path is incorrect, there is only one place that the path is defined.
+
+## Environmental nvironment variables
+
+|    Variable name      |           Potential use          |
+| ------------------------ | ------------------------------------------------ |
+| `$USER`        |  |
+| `$HOME`      |                                  |
+| `$` |              |
+| `$` |  |
+| `$`        |             |
+| `$`    |            |
 
 <!-- TODO: bwa-mem2 takes the threads as an argument, switch to use SLURM TASKS or whatever  -->
+SLURM has some specific environmental variables that it sets when running a job as well.
 
-<!-- TODO: table of other useful SLURM vars? -->
+|    Variable name      |           Potential use          |
+| ------------------------ | ------------------------------------------------ |
+| `$SLURM_JOB_ID`        | Useful for naming output files that won't clash. |
+| `$SLURM_JOB_NAME`      | Name of the job.                                 |
+| `$SLURM_ARRAY_TASK_ID` | The current index of your array job.             |
+| `$SLURM_CPUS_PER_TASK` | Useful as an input for multi-threaded functions. |
+| `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
+| `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.           |
