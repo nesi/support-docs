@@ -28,9 +28,15 @@ description: The information you need to provide when applying for a new project
          Development allocation is in effect if they do not already possess
          one.
 
-Requests to use REANNZ HPC resources are [submitted via a web
-form](https://my.nesi.org.nz/). Our team will endeavour to approve
-your project, or contact you for more information, within 3-5 working
+
+We are launching a new HPC Portal for managing project and allocation requests, designed to make it easier for organisations to understand, approve and support the use of REANNZ HPC resources. Our first organisations to use the new HPC Poral will be Public Research Organisations (PROs), i.e. Bioeconomy Science Institute, Earth Sciences New Zealand, Public Health and Forensic Science).
+
+- If you **are not** affiliated with a PRO, please apply for new projects in [my.nesi.org.nz](https://my.nesi.org.nz/).
+- If you **are** affiliated with a PRO, please apply for new projects in our [new HPC portal](http://hpc-portal.reannz.co.nz/).
+
+If you are unsure where to create your new user profile, [mailto:support@nesi.org.nz}(get in touch) and we can help.
+
+Our team will endeavour to approve your project, or contact you for more information, within 3-5 working
 days of your submitting your project request.
 
 During the application process, we will ask you for the following
