@@ -42,7 +42,7 @@ jobs:
             exit 0
           fi
 
-          # Latest approval or change request from each reviewer (GitHub doesn't let authors approve their own PRs).
+          # Latest approval or change request from each reviewer.
           approvals="$(gh api "repos/${GITHUB_REPOSITORY}/pulls/${PR}/reviews" --paginate --jq '.[]' \
             | jq -s 'map(select(.state != "COMMENTED")) | group_by(.user.login) | map(last | select(.state == "APPROVED")) | length')"
           if [ "${approvals}" -gt 0 ]; then
@@ -51,8 +51,8 @@ jobs:
             exit 0
           fi
 
-          msg="This PR ${reason}, so it needs one approval from someone other than the author before it can be merged."
+          msg="This PR ${reason}, at least one other person must review (or, press the big red button)"
           echo "::error title=Review needed::${msg}"
-          printf '### 👀 Review needed\n%s\n' "${msg}" > comment.md
+          printf '### Review needed\n%s\n' "${msg}" > comment.md
           bash .github/pr_comment.sh "${PR}" review-gate comment.md
           exit 1

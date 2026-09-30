@@ -2,9 +2,6 @@
 # Create or update a pull request comment, found by a hidden marker, so each
 # workflow keeps a single comment up to date rather than posting new ones.
 # If BODY_FILE is left out, the comment is deleted instead (if there is one).
-#
-# Usage: pr_comment.sh PR_NUMBER MARKER [BODY_FILE]
-# Needs GH_TOKEN and GITHUB_REPOSITORY set (both are in GitHub Actions).
 set -euo pipefail
 
 pr=$1
