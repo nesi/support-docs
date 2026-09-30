@@ -6,6 +6,8 @@ description: How organization owners find and approve orders and end date change
 status: new
 ---
 
+{% include 'partials/status-only-pro.md' %}
+
 As an organization owner, you approve what projects in your organization ask for.
 A request waits until you act on it.
 
@@ -80,6 +82,8 @@ or **Actions** → **Show usage**.
 To change an end date yourself, click **Actions** → **Set termination date** on the resource.
 
 ## Further reading
+
+For how projects raise these requests, see [Extending a request](Extending_a_request.md).
 
 The HPC Portal is built on Waldur. Its user guide covers
 [resource end date changes](https://docs.waldur.com/latest/user-guide/customer-organization/resource-end-date-changes)
