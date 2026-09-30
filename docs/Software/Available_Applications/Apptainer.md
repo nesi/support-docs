@@ -16,7 +16,7 @@ By default, Apptainer uses your home directory for all storage, creating a hidde
 export APPTAINER_CACHEDIR="/nesi/nobackup/nesi12345/apptainer-cache"
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
 mkdir -p $APPTAINER_CACHEDIR
-setfacl -b "$APPTAINER_TMPDIR"
+setfacl -b $APPTAINER_TMPDIR
 ```
 
 To make these changed permanent, add them to your `~/.bashrc`:
@@ -24,6 +24,7 @@ To make these changed permanent, add them to your `~/.bashrc`:
 ```bash
 echo 'export APPTAINER_CACHEDIR="/nesi/nobackup/nesi12345/apptainer-cache"' >> ~/.bashrc
 echo 'export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}' >> ~/.bashrc
+echo 'setfacl -b ${APPTAINER_TMPDIR}' >> ~/.bashrc
 ```
 
 ## Pulling a container image
@@ -46,7 +47,7 @@ apptainer pull tensorflow.sif docker://tensorflow/tensorflow:latest-gpu
     export APPTAINER_CACHEDIR="/nesi/nobackup/nesi12345/apptainer-cache"
     export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
     mkdir -p $APPTAINER_CACHEDIR
-    setfacl -b "$APPTAINER_TMPDIR"
+    setfacl -b $APPTAINER_TMPDIR
     ```
 
 ## Building a container
@@ -82,7 +83,7 @@ unset APPTAINER_BIND
 export APPTAINER_CACHEDIR="/nesi/nobackup/$SLURM_JOB_ACCOUNT/$USER/apptainer_cache"
 export APPTAINER_TMPDIR=${APPTAINER_CACHEDIR}
 mkdir -p ${APPTAINER_CACHEDIR}
-setfacl -b "$APPTAINER_TMPDIR"
+setfacl -b $APPTAINER_TMPDIR
 
 apptainer build my_container.sif my_container.def
 ```
