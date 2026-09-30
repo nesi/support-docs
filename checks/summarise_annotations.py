@@ -27,6 +27,9 @@ ANNOTATION = re.compile(r"^::(error|warning|notice)(?: (.*?))?::(.*)$", re.IGNOR
 RUN_URL = "{GITHUB_SERVER_URL}/{GITHUB_REPOSITORY}/actions/runs/{GITHUB_RUN_ID}".format_map(os.environ) \
     if os.getenv("GITHUB_RUN_ID") else None
 CHECKS_TAB = f"[Checks tab]({RUN_URL})" if RUN_URL else "'Checks' tab"
+# Files as of the checked commit, so line numbers match what the checks saw.
+BLOB_URL = "{GITHUB_SERVER_URL}/{GITHUB_REPOSITORY}/blob/{GITHUB_SHA}".format_map(os.environ) \
+    if os.getenv("GITHUB_SHA") else None
 
 
 def changed_lines(base):
@@ -85,6 +88,16 @@ def cell(text):
     return html.escape(text, quote=False).replace("|", "\\|")
 
 
+def location(f):
+    """Line number (or 'page'), linked to the file if it's in the repo."""
+    text = f["line"] or "page"
+    if not BLOB_URL or not os.path.isfile(f["file"]):
+        return text
+    # plain=1 shows markdown as source, so line anchors work.
+    anchor = f"?plain=1#L{f['line']}" if f["line"] else ""
+    return f"[{text}]({BLOB_URL}/{f['file']}{anchor})"
+
+
 def table(by_file, expanded=False):
     """Collapsible table of findings for each file."""
     out = []
@@ -92,7 +105,7 @@ def table(by_file, expanded=False):
         out += [f"<details{' open' if expanded else ''}><summary><code>{file}</code> ({len(findings)})</summary>", "",
                 "| Line | Check | Message |", "| --- | --- | --- |"]
         for f in sorted(findings, key=lambda f: f["line"])[:MAX_ROWS_PER_FILE]:
-            out += [f"| {f['line'] or 'page'} | {cell(f['check'])} | {cell(f['message'])} |"]
+            out += [f"| {location(f)} | {cell(f['check'])} | {cell(f['message'])} |"]
         if len(findings) > MAX_ROWS_PER_FILE:
             out += [f"| | | …and {len(findings) - MAX_ROWS_PER_FILE} more, see the {CHECKS_TAB} |"]
         out += ["", "</details>", ""]
