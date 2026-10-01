@@ -67,14 +67,9 @@ The steps below cover installation, login, keeping sessions alive, and configuri
 
 ### Install Claude Code
 
-Log in to Mahuika and run the native installer.
-It installs into your home directory and does not need administrator rights or a Node.js module.
+Log in to Mahuika and follow the installation instruction detailed at [Claude Code Docs](https://code.claude.com/docs/en/quickstart).
 
-```sh
-curl -fsSL https://claude.ai/install.sh | bash
-```
-
-The `claude` command is installed in `~/.local/bin`.
+The `claude` command will be installed in `~/.local/bin`.
 If that directory is not already on your `PATH`, add it to your `~/.bashrc`:
 
 ```sh
