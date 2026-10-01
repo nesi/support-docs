@@ -12,11 +12,11 @@ description: Logging in to my.nesi.org.nz through Tuakiri and fixing common logi
 ## Login credentials
 
 We allow students, academics, alumni and researchers to securely login
-and create a [NeSI account
+and create a [REANNZ HPC account
 profile](../Creating_an_Account.md)
 using the credentials granted by their home organisation via Tuakiri.
 
-Most New Zealand universities and Crown Research Institutes are members
+Most New Zealand universities and Public Research Organisations are members
 of the [Tuakiri authentication
 federation](https://www.reannz.co.nz/products-and-services/tuakiri/join/),
 but many other institutions, including private sector organisations and
