@@ -46,8 +46,8 @@ The **Roles and permissions** table lists every role you hold:
 
 | Column | Meaning |
 | --- | --- |
-| Scope type | Whether the role is on a project or an organization. |
-| Scope name | The project or organization name. Click it to open it. |
+| Scope type | Whether the role is on a project or an organisation. |
+| Scope name | The project or organisation name. Click it to open it. |
 | Organization | The institution that owns the project. |
 | Role name | Your role, for example *Project manager* or *Project member*. |
 
@@ -57,7 +57,7 @@ The **Roles and permissions** table lists every role you hold:
 | --- | --- | --- |
 | Project member | Researchers on a project | View the project and its resources, and request an end date change. |
 | Project manager | The project owner or PI | Change resource limits and request an end date change. |
-| Organization owner | Nominated staff at your institution | Approve requests from projects in their organization and set end dates directly. See [Approving requests](Approving_Requests.md). |
+| Organization owner | Nominated staff at your institution | Approve requests from projects in their organisation and set end dates directly. See [Approving requests](Approving_Requests.md). |
 
 ## See your projects
 
