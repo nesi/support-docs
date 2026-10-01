@@ -1,7 +1,9 @@
 ---
 created_at: '2023-07-05T23:18:57Z'
-tags: []
-title: What is a Subscription?
+tags:
+- account
+title: What Is a Subscription?
+description: What a subscription gives your institution access to, and the options available
 ---
 
 We have a range of options for research institutions and independent

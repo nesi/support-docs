@@ -3,6 +3,7 @@ created_at: '2019-02-24T23:26:19Z'
 tags:
 - slurm
 - profiling
+description: 'Recording resource usage across a job''s runtime with Slurm''s own profiling'
 ---
 
 Job resource usage can be determined on job completion by checking the

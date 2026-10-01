@@ -1,10 +1,12 @@
 ---
 created_at: '2022-03-31T20:51:51Z'
 tags:
-- mynesi
-- allocation
-description: How to request a NeSI allocation renewal.
+- account
+title: Renewing an Allocation
+description: How to request a Mahuika allocation renewal.
 ---
+
+{% include 'partials/status-no-pro.md' %}
 
 ## Types of Resource Requests
 
@@ -12,7 +14,7 @@ description: How to request a NeSI allocation renewal.
 
     - At least annually, you will need to renew your compute resources and associated resources for your projects. You should receive emails ahead of time warning you of any expiring allocation.  
     - Additionally, you can request a new allocation early in order to have your compute allocation increased before the current allocation expires, if you find that the current compute allocation is no longer meeting your needs.  
-    - If you made a mistake in your allocation request, please respond to the confirmation email will receive after submitting your request with the details of the changes you wish to make to your renewal request.  
+    - If you made a mistake in your allocation request, please respond to the confirmation email you will receive after submitting your request with the details of the changes you wish to make to your renewal request.  
 
     Choose the default option **"New/Increase Compute Allocation Request (replacing any existing allocation for this project)"**.  
     Indicate the number of compute units or CPU core hours, the persistent and temporary storage limits, and the start and end dates of the proposed allocation. Add any comments to describe the platform, the intended usage (e.g. "Will use mostly JupyterLab") to help tune the allocation.  
@@ -33,12 +35,12 @@ description: How to request a NeSI allocation renewal.
 
 4. Storage Update Requests:
 
-    - Biennially, Freezer allocations need to be extended. You must raise a request to update the storage of an existing allocation for this purpose. You should receive emails ahead of time warning you of any expiring allocation.  
+    - Biennially, Freezer allocations need to be extended. You must raise a request to update the storage of an existing allocation for this purpose. You should receive emails ahead of time warning you of any expiring allocations.  
 
     Choose the option **"Increase/Extend Storage allocation (adding/replacing any current storage allocation for this project)"**.  
     Indicate the long-term storage space, its current name, and the new end date.
 
-## How to raise a request using my.nesi.org.nz?
+## Raising a request
 
 1. Login to [https://my.nesi.org.nz/projects/list](https://my.nesi.org.nz/projects/list) and select a project
     from the list.  
@@ -53,7 +55,7 @@ description: How to request a NeSI allocation renewal.
     Finally, click 'Submit'  
     ![click submit](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz_1.png)
 
-### Can I request any allocation size?
+## Allocation size
 
 If you are requesting a new allocation of computing resources, we will
 look at your usage history and come up with an estimated allocation size
@@ -64,11 +66,11 @@ differ from our forecast.
 
 Please be aware that:
 
-- First and subsequent allocations are subject to the NeSI allocation
+- First and subsequent allocations are subject to the allocation
     size and duration limits in force at the time they are considered by
     our reviewers.
 - An allocation from an institution's entitlement is subject to
     approval by that institution.
 
-See [Project Extensions and New Allocations on Existing Projects](../Allocations/Allocations_and_Extensions.md)
+See [Allocations & Extensions](../Allocations/Allocations_and_Extensions.md)
 for more details.

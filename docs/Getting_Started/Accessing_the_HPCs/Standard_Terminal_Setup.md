@@ -1,8 +1,8 @@
 ---
 created_at: '2018-11-30T00:34:14Z'
 tags:
-- ssh
-- howto
+- access
+- tutorial
 description: How to setup your ssh config file in order to connect to the HPC cluster.
 ---
 
@@ -106,6 +106,8 @@ configurations.
     If you have trusted your device, you have to enter a name for this device.
     This name can be anything you want, but it must be unique (e.g. you cannot have two devices with the same name).
 
+    See [What is a trusted device?](../FAQs/What_Is_a_Trusted_Device.md) for more information.
+
 9. Scan the QR code with your authenticator app. Then enter the 6-digit code provided.
 
     ![alt text](../../assets/images/Standard_Terminal_Setup_2.png)
@@ -119,11 +121,9 @@ configurations.
 
      You will be asked to confirm each time to ensure you initiated the sequence and to maintain your security.  
 
-11. Return to your terminal, and press <kbd>enter</kbd>.
+11. Return to your terminal, and press <kbd>enter</kbd>. You will need to complete the authentication proccess twice (e.g. you will be provided another link to follow as shown in step 6 to complete the browser-based authentication, confirming whether you trust the device again if you didn't trust it the first time, then you will return to your terminal again, and press <kbd>enter</kbd>). this second authentication in future logins can be avoided by following the steps outlined in [Adding an SSH Key](#adding-a-ssh-key-optional).
 
-!!! warning "Double Authentication"
-    You will need to complete the authentication proccess twice, this can be avoided by following the steps outlined in [Adding an SSH Key](#adding-a-ssh-key-optional).
-
+    
 ## Adding a SSH key (optional)
 
 Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
@@ -133,21 +133,21 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
     ```sh
     mkdir -p ~/.ssh
     ```
-    ```sh
-    [ -f .ssh/id_rsa ] || ssh-keygen -t rsa -q -N ""
-    ```
-    If you get a message after this step, hit enter.
-    ```sh
-    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
-    ```
 
 2. In a terminal **on your local machine**, run the command; 
 
     ```sh
-    scp mahuika:~/.ssh/id_rsa ~/.ssh/mahuika_key 
+    [ -f .ssh/mahuika_key ] || ssh-keygen -t rsa -q -N "" -f ".ssh/mahuika_key"
+    scp ~/.ssh/mahuika_key.pub mahuika:~/.ssh/mahuika_key.pub
     ```
 
-3. If you set up your ssh config recently, you may already have this line added.
+3. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
+
+    ```sh
+    cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys
+    ```
+
+4. If you set up your ssh config recently, you may already have this line added.
 
     Open the file `~/.ssh/config` **on your local machine**, for example;
 

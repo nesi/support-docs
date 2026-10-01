@@ -1,39 +1,38 @@
 ---
 created_at: '2019-08-26T00:02:24Z'
 tags:
-- disk quota exceeded
-title: I've run out of storage space
-status: deprecated
+- troubleshooting
+title: I've Run Out of Storage Space
+description: What to do when you hit a disk space or file count quota, and how to free space
 ---
 
-There are two tracked resources in the NeSI filesystem, *disk space* and
+There are two tracked resources in the Mahuika filesystem, *disk space* and
 *inodes (number of files)*.
 
 Trying to write to a filesystem over its inode or disk quota will cause
 an error (and probably kill your job).
 
-Current file-count and disk space can be found using `nn_storage_quota`.
+Current file-count and disk space can be found using `storage_quota`.
 
 ```sh
-Filesystem         Available      Used     Use%     Inodes     IUsed     IUse%
-home_user123             20G    1.957G    9.79%      92160     21052    22.84%
-project_nesi99999         2T      798G   38.96%     100000     66951    66.95%
-nobackup_nesi99999              6.833T            10000000    2691383   26.91%
+Quota_Location    AvailableGiB   UsedGiB     Use%
+home_user123               20G    1.957G    9.79%
+project_nesi99999           2T      798G   38.96%
+nobackup_nesi99999      6.833T
 ```
 
 !!! note
      There is a delay between making changes to a filesystem and seeing the
-     change in `nn_storage_quota`, immediate file count and disk space can
+     change in `storage_quota`, immediate file count and disk space can
      be found using the commands `du --inodes` and `du -h` respectively.
 
 There are a few ways to deal with file count problems
 
-### Use the nobackup filesystem
+## Use the nobackup filesystem
 
-Your nobackup directories `/nesi/nobackup/<projectcode>` has a significantly higher inode count and no disk space limits.
-Files here are not backed up, so best used for intermediary or replaceable data.
+Your nobackup directories `/nesi/nobackup/<projectcode>` has a significantly disk space limits.
 
-### Delete unnecessary files
+## Delete unnecessary files
 
 Some applications will generate a large number of files during
 runtime, using the command `du --inodes -d 1 | sort -hr` (for
@@ -41,7 +40,7 @@ inodes) or `du -h -d 1 | sort -hr` for disk space.  You can then
 drill down into the directories with the largest file count deleting
 files as viable.
 
-### SquashFS archive
+## SquashFS archive
 
 Many files can be compressed into a single SquashFS archive. We have
 written a utility, `nn_archive_files`, to help with this process.
@@ -80,6 +79,6 @@ using,
 tar -xzf tarname.tar
 ```
 
-### Contact Support
+## Contact Support
 
 If you are following the recommendations here yet are still concerned about inodes or disk space, {% include "partials/support_request.html" %} and we can raise the limit for you.

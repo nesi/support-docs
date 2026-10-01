@@ -1,17 +1,16 @@
 ---
 template: home.html
 hide: toc
+description: Technical documentation for the REANNZ high performance computing platforms
 ---
-
 
 Technical documentation for our High Performance Computing (HPC) platforms.
 
 !!! note "REANNZ Integration"
-    On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd. NeSI's services and technologies are now hosted by REANNZ as a national [eResearch Infrastructure Platform](https://www.mbie.govt.nz/science-and-technology/science-and-innovation/funding-information-and-opportunities/investment-funds/strategic-science-investment-fund/funded-infrastructure/eresearch-infrastructure-platform). Some of our tools (eg. my.nesi.org.nz) will retain a 'NeSI' brand as we transition our services and develop a longer-term strategy for this integrated platform.
-
-    All NeSI services and support - including these Support Documentation pages and team monitoring the support@nesi.org.nz email - are continuing as you've known them. Also, the principles of our policies (Access, Acceptable Use, Security & Privacy, etc.) are carrying over and remain in effect. We'll be in touch if anything changes. If you have any questions about the NeSI-REANNZ integration, 
-    {% include "partials/support_request.html" %}
-
+    New Zealand eScience Infrastructure (NeSI) has integrated with Research and Education Advanced Network New Zealand (REANNZ).  
+    Some of our tools (e.g. [my.nesi.org.nz](https://my.nesi.org.nz) and emails (e.g. [support@nesi.org.nz](mailto:support@nesi.org.nz))
+    have retained a 'NeSI' brand as we transition our services and develop a longer-term strategy for our integrated platform.
+    
 ## Quickstart
 
 <div class="grid cards">
@@ -31,17 +30,17 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <p>Access the cluster Via the OnDemand web application.</p>
 </a>
 <a href="Scientific_Computing/Batch_Jobs/Hardware/">
-    <img alt="account details" src="assets/icons/material/widget-small.svg">
+    <img alt="HPC resources" src="assets/icons/material/widget-small.svg">
     <h3>Resources</h3>
     <p>What CPUs and GPUs are available on the REANNZ Cluster.</p>
 </a>
-<a href="Data_Transfer/Introduction/">
-    <img alt="ssh setup" src="./assets/icons/material/file-arrow-up-down.svg">
+<a href="Data_Transfer/Data_Transfer_Overview/">
+    <img alt="Data transfer" src="./assets/icons/material/file-arrow-up-down.svg">
     <h3>Data Transfer</h3>
     <p>Getting your data on and off the cluster.</p>
 </a>
-<a href="Getting_Started/Next_Steps/Submitting_your_first_job#slurm">
-    <img alt="ondemand" src="assets/icons/material/tray-full.svg">
+<a href="Batch_Computing/Batch_Computing_Guide">
+    <img alt="Job scheduler" src="assets/icons/material/tray-full.svg">
     <h3>Job Scheduler</h3>
     <p>How to use our job scheduler, Slurm.</p>
 </a>

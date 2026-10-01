@@ -2,6 +2,7 @@
 created_at: 2025-11-10
 tags: 
   - workflow
+description: Running Snakemake workflows on the cluster and grouping jobs to avoid queue churn
 ---
 
 !!! note "Alternatives"

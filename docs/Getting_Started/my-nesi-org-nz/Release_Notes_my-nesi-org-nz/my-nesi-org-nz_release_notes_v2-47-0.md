@@ -1,10 +1,11 @@
 ---
 created_at: '2025-12-15T19:53:24Z'
 tags:
-- releasenote
-title: my.nesi.org.nz release notes v2.47.0
+- release_notes
+title: my.nesi.org.nz Release Notes v2.47.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.47.0 - fixed a spurious error on Apply for Access
 ---
 
 ## Fixed

@@ -9,6 +9,7 @@ search:
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
     - For information about page creation, [see NEWPAGE](NEWPAGE.md).
+    - For what to write, and whether to write it, [see PRINCIPLES](PRINCIPLES.md).
 
 This page is an overview of the Markdown syntax supported in this documentation.
 
@@ -43,6 +44,10 @@ h2 and h3 elements will be used to generate a table of contents (toc).
 Try to keep headers short enough that they do not 'wrap' (become more than one line) in the toc,
 this usually happens around 32-ish characters however this will vary depending on the letters being used.
 
+Header boundaries are also how the docs chat assistant splits pages into retrievable chunks, aiming for
+roughly 400-3200 characters of body text per section. A section outside that band gets silently merged
+into a neighbour or force-split on a paragraph boundary before being embedded.
+
 ## Line breaks
 
 Put 2 spaces at the end of a line to force a line break.  
@@ -55,7 +60,7 @@ If you simply hit enter and don't use 2 spaces it will be considered one line.
 
 Most markdown structures (lists, Admonitions, headers, code blocks, etc) should be surrounded by an empty line.
 i.e. A newline before and after.
-It is good practice to add a new line after every sentance, or when the line becomes too long.
+It is good practice to add a new line after every sentence, or when the line becomes too long.
 This won't change how the text is rendered, but helps make the source markdown more readable.
 
 ## Text Emphasis
@@ -104,6 +109,8 @@ Admonitions should be surrounded by blank lines.
 
 Adding titles helps users find key information, however if you can't be bothered thinking of a good title,
 refrain from using something unnecessary or non descriptive (e.g. `!!! info "More Information"`), better to leave titleless.
+A good title also helps the docs chat assistant, which shows the admonition kind/title as a label
+(e.g. `**Warning:**`) when it surfaces this section as a source.
 
 Don't use a title if another Admonition already exists for that purpose (e.g. `!!! info "Watch out!"`).
 
@@ -156,6 +163,22 @@ There are various flavors.
     Automatically added to pages with the `status:deprecated`, should be used when page is out of date.
     *This page is rubbish!*
 
+!!! time "30 Minutes (for use in tutorial pages)"
+
+!!! objectives
+    - For use in tutorials
+    - learning goal one.
+    - learning goal two.
+
+!!! keypoints
+    - For use in tutorials
+    - should summarize learning goal one.
+    - should summarize learning goal two.
+
+!!! next
+    - For use in tutorials
+    - should link to next lesson.
+
 ??? warning "Extra Admonitions you probably won't need"
     !!! note
         Use `info` instead of this.
@@ -172,116 +195,6 @@ There are various flavors.
     !!! quote
         Havn't seen a reason to use this yet.
     
-    !!! pied-piper
-        don't use this (unless Dini).
-    
-    !!! desktop-download-24
-        don't use this (unless Dini).
-    
-    !!! magnifying-glass
-        don't use this (unless Dini).
-    
-    !!! microscope
-        don't use this (unless Dini).
-    
-    !!! vial-virus
-        don't use this (unless Dini).
-    
-    !!! database
-        don't use this (unless Dini).
-    
-    !!! folder-open
-        don't use this (unless Dini).
-    
-    !!! backward
-        don't use this (unless Dini).
-    
-    !!! jupyter
-        don't use this (unless Dini).
-    
-    !!! terminal
-        don't use this (unless Dini).
-    
-    !!! r-project
-        don't use this (unless Dini).
-    
-    !!! calendar-days
-        don't use this (unless Dini).
-    
-    !!! bell
-        don't use this (unless Dini).
-    
-    !!! comment-dots
-        don't use this (unless Dini).
-    
-    !!! check-to-slot
-        don't use this (unless Dini).
-    
-    !!! square-xmark
-        don't use this (unless Dini).
-    
-    !!! rectangle-list
-        don't use this (unless Dini).
-    
-    !!! screwdriver-wrench
-        don't use this (unless Dini).
-    
-    !!! linux
-        don't use this (unless Dini).
-    
-    !!! code-compare
-        don't use this (unless Dini).
-    
-    !!! heading
-        don't use this (unless Dini).
-    
-    !!! space-awesome
-        don't use this (unless Dini).
-    
-    !!! stethoscope
-        don't use this (unless Dini).
-    
-    !!! key
-        don't use this (unless Dini).
-    
-    !!! users-line
-        don't use this (unless Dini).
-    
-    !!! file-code
-        don't use this (unless Dini).
-    
-    !!! hand-holding-dollar
-        don't use this (unless Dini).
-    
-    !!! circle-question
-        don't use this (unless Dini).
-    
-    !!! microphone
-        don't use this (unless Dini).
-    
-    !!! tower-observation
-        don't use this (unless Dini).
-    
-    !!! circle-info
-        don't use this (unless Dini).
-    
-    !!! icon--python
-        don't use this (unless Dini).
-    
-    !!! quote-right
-        don't use this (unless Dini).
-    
-    !!! image
-        don't use this (unless Dini).
-    
-    !!! table
-        don't use this (unless Dini).
-    
-    !!! glass-chart
-        don't use this (unless Dini).
-    
-    !!! file-export
-        don't use this (unless Dini).
 
 ## Code
 
@@ -354,9 +267,9 @@ paste them, so we also want them to be working scripts that wont cause easily av
 If possible stick to the following principles.
 
 - Make sure the code block has the `sl` language tag. This will inform syntax highlight an CI checks.
-- Use `!#/bin/bash -e` as your shebang.
+- Use `#!/bin/bash -e` as your shebang.
 - One blank line between shebang and Slurm Header.
-- Use <kbd>tab</kbd> for your Slurm header delimiter.
+- Use whitespace for your Slurm header delimiter (preferably aligned in a tidy way).
 - Use the long for Slurm keywords, e.g. `--job-name` rather than `-j`.
 - Make sure to include `--job-name`, `--account` (`nesi99991`) and `--time`.
 - One blank line after Slurm header.
@@ -400,6 +313,9 @@ but your script examples should do the bare minimum needed to provide a safe exa
     In markdown where you pasted the image, and upload `image.png`, into the same directory.
 
     Make sure you rename the `image.png` to something more descriptive, move it into the 'assets/images' folder, and update then markdown accordingly.
+
+    Write a real alt text too, not just the filename. The docs chat assistant has no way to see the
+    image itself - the alt text is the only information it gets. The alt text should be written as if no image is visible at all.
 
 !!! tip "Drag and Drop"
     You can easily get the path to a image file by dragging it from the left hand Explorer panel over your document, then pressing <kbd>shift</kbd> (you will be prompted) and dropping the image in the desired position. Copy pasting an image from Explorer into markdown also works.
@@ -615,13 +531,18 @@ The macro plugin allows the use of 'includes', here is an example.
 {% endraw %}
 ```
 
+```{% raw %}{% include %}{% endraw %}``` fails soft in this project: if the included template errors while
+rendering (e.g. an app is missing an expected field in module-list.json), that
+include renders as nothing instead of taking out the whole page. No special
+syntax needed - this is patched into both Jinja environments in `mkdocs_hooks.py`.
+
 There are a few includes you may want to use.
 
 | Path | content | usage |
 | ---- | ------- | ----- |
 | ```{% raw %}{% include "partials/support_request.html" %}{% endraw %}``` | ```<a href="mailto:support@nesi.org.nz">Contact our Support Team</a>``` | Anywhere the user is told to contact support. |
-| ```{% raw %}{% include "partials/appHeader.html" %}{% endraw %}``` | Info block | At the top of documents about particular software (TODO: elaborate) |
-| ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `appHeader.html`)  |
+| ```{% raw %}{% include "partials/app_header.html" %}{% endraw %}``` | Description, homepage, warnings, module versions and licences for an application | At the top of pages in `Software/Available_Applications/`, inside the "apps page boilerplate" (needs `app_name` and `app` set first) |
+| ```{% raw %}{% include "partials/app/app_network_licence.html" %}{% endraw %}``` | List of network licences | When dynamic licence info is required (used in `app_header.html`)  |
 | ```{% raw %}{% include "partials/app/app_version.html" %}{% endraw %}``` | List of versions and a 'module load' code-block. | When dynamic version info is required |
 
 ### Variables injection

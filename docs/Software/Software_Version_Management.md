@@ -2,15 +2,12 @@
 created_at: '2019-07-04T20:48:57Z'
 tags:
     - software
-    - versions
-    - toolchain
-    - module
-title: Software Version Management
+description: How software versions, environment modules and compiler toolchains are organised
 ---
 
 ## Software Versions
 
-Much of the software installed on the NeSI cluster have multiple
+Much of the software installed on the Mahuika cluster have multiple
 versions available as shown on the
 [supported applications page](Available_Applications/index.md)
 or by using the `module avail` or `module spider` commands.
@@ -23,7 +20,7 @@ execution of your job even after the default version has been changed.
 If you need a specific version of software, feel free to ask support and
 we may install it.
 
-#### Example
+### Example
 
 ``` bash
 module load ANSYS
@@ -72,7 +69,7 @@ compatibility or conflict error will arise. So if you ever see a notification of
 module versions, check the module toolchain versions.  
 
 If you need help with this or require a software built with a specific toolchain reach out to 
-<support@nesi.org.nz>
+{% include "partials/support_request.html" %}
 
 ### System Toolchain
 

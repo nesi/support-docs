@@ -1,20 +1,18 @@
 ---
+title: Pluto.jl Interactive Sessions
 created_at: '2020-01-05T21:43:18Z'
-tags: 
+tags:
   - interactive
-  - Pluto
-description: How to run a Pluto interactive session on the NeSI cluster.
+  - julia
+description: How to run a Pluto interactive session on the Mahuika cluster.
 ---
 
-# Pluto.ji interactive sessions
+For new users we recommend running Pluto from our [OnDemand Service](./OnDemand/index.md).  However,
+many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
-!!! warning
-     If you are using a windows computer, this method has currently
-     been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not
-     tested it yet in Putty or Mobaxterm
+>If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
 
-To run Julia+Pluto.ji in interactive mode, first we need to load
-your interactive session:
+To run Pluto.jl in interactive mode, first we need to load your interactive session:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
@@ -40,13 +38,13 @@ export pluto_port=${PORT}
 
 Make a note of the hostname and the port, given by the `hostname | cut -d'.' -f1`
 and `echo $PORT` commands. Then, we need to start up Julia, install and
-run Pluto.ji:
+run Pluto.jl:
 
 ```sh
 #Start Julia
 julia
 
-# Install Pluto.ji. This might take a minute
+# Install Pluto.jl. This might take a minute
 import Pkg; Pkg.add("Pluto")
 
 # Start Pluto. This might take a minute
@@ -85,4 +83,4 @@ http://0.0.0.0:PORT/?secret=SECRET
 # http://0.0.0.0:9627/?secret=mXmq6659
 ```
 
-You will now be able to see and work wih Julia+Pluto in your web browser.
+You will now be able to see and work with Julia+Pluto in your web browser.

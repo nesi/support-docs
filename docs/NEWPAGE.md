@@ -1,5 +1,5 @@
 ---
-title: Create a new page
+title: Create a New Page
 search:
   exclude: true
 ---
@@ -9,6 +9,7 @@ search:
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
     - For examples of markdown use, [see FORMAT](FORMAT.md).
+    - For what to write, and whether to write it, [see PRINCIPLES](PRINCIPLES.md).
 
 This page details how to create a new article or category in the documentation.
 
@@ -30,9 +31,10 @@ This page details how to create a new article or category in the documentation.
 
     ```yml
     ---
-    created: 
+    created_at: 
     description: "Will be used to generate page preview. Should not contain keywords not in the body of article."
-    tags: [Tag1, Tag2]
+    tags:
+    - canonical_tag
     ---
     ```
 
@@ -103,6 +105,21 @@ In the case of an articles (including category-articles), this title can be over
 If you need to rename a regular category (one without an `index.md`), this can be done in the
 [`.pages.yml` file](#articlecategory-order).
 
+## Renaming, Moving, or Deleting Pages
+
+Renaming or moving a page changes its URL. Deleting one removes it. In every case, any existing link (bookmarks, other pages, external sites, app menus) will break and land on a generic page instead.
+
+Whenever you rename, move, or delete a page, add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working. One line per page, paths relative to `docs/`, keep the `.md` extension:
+
+```yml
+old/Path/To/Page.md: new/Path/To/Page.md
+```
+
+For a moved directory, add a line for each page it contained (including `index.md`). For a deleted page, point the old path at the closest surviving page.
+
+!!! tip
+    The redirect key is the *old* path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
+
 ## Article/Category Order
 
 By default articles will be ordered alphabetically.
@@ -116,10 +133,10 @@ The `.page.yml` might looks like this:
 nav: 
   - Introduction.md
   - Next_Steps.md
-  - ... 
+  - "*"
 ```
 
-`...` will be replaced by all other pages, in the default order.
+`*` will be replaced by all other pages, in the default order.
 
 !!! warning
     If you do set page order manually, make sure you include the `...` else some pages will not be rendered.
@@ -133,7 +150,7 @@ nav:
 - Getting_Started
 - Māui-Mahuika (Differences) : Maui_Mahuika_Differences
 - ZA̡͊͠͝LGΌ H̸̡̪̯ͨ͊̽̅̾̎Ȩ̬̩̾͛ͪ̈́̀́͘ ̶̧̨̱̹̭̯ͧ̾ͬC̷̙̲̝͖ͭ̏ͥͮ͟Oͮ͏̮̪̝͍M̲̖͊̒ͪͩͬ̚̚͜Ȇ̴̟̟͙̞ͩ͌͝S̨̥̫͎̭ͯ̿̔̀ͅ : Using_regex_to_parse_html
-- ...
+- "*"
 
 ```
 
@@ -181,17 +198,63 @@ The following sections detail the most usual entries.
 | - | - | - | - |
 | `description` | Used for internal and external search indexing. This will appear as the page preview when searching in Google. Try not to include words and information here that is not in the body of the article. | string | `description: A short summary.` |
 | `icon`        | Page icon.                                                    | Path |  |
-| `status`      | Will display a symbol on nav                                  | `new` or `deprecated` | |
+| `status`      | Will display a symbol on nav                                  | `new`, `deprecated` or `tutorial` | |
 | `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
-| `tags`        | Used for internal and external search indexing                | String[] | `tags: [ "slurm", "containers" ]` |
+| `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml). See [Tags](#tags). | String[] | `tags: [ slurm, containers ]` |
 | `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
 | `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
+| `no_module: true` | Will disable linter warnings if corresponding module data is not found (applications pages only) | Bool | `True` `False` |
+
+A good description/tags improve RAG retrieval for the whole page.
+
+### Tags
+
+Tags come from a fixed vocabulary in [`docs/assets/tags.yml`](assets/tags.yml).
+Each tag has a canonical key (used in front matter), a `display` label (shown on the site) and a list of `aliases`.
+Tags are used for search, the [tag index](tags.md) and the `pages_with_tag()` macro.
+On pages under `Software/Available_Applications/`, tags also become the application's domains, which are the filter options on the Supported Applications page.
+
+Run `python3 list_tags.py` to see which tags are in use and how often.
+
+#### Tagging a Page
+
+- Use 1 to 5 tags; 2 or 3 is usual. The meta check warns outside this range.
+- Use canonical keys only (`python`, not `Python` or `conda`). Aliases are accepted for old pages, but the meta check will ask you to replace them.
+- Start with the tags on sibling pages in the same folder.
+- Choose from each of these that applies, and skip the rest:
+    - **Topic**: the part of the platform the page is about (`slurm`, `storage`, `file_transfer`, `access`, `gpu`, ...).
+    - **Research domain**: only if the page is specific to a field (`chemistry`, `biology`, `earth_science`, ...). Application pages usually have one.
+    - **Content type**: `tutorial`, `troubleshooting`, `announcement` or `release_notes`, if the page is one.
+- Do not use the retired tags listed at the bottom of `tags.yml`.
+- Do not use a tag that is not in `tags.yml`. If nothing fits, use the closest tag and propose a change to the vocabulary.
+
+#### Changing the Vocabulary
+
+Prefer adding an alias to an existing tag over adding a new tag.
+Specific tools, commands, products and spellings (for example `globus`, `tmux`, `apptainer`) are aliases, not tags.
+
+A new tag should:
+
+- apply to at least 3 pages,
+- be a topic, research domain or content type that a reader would browse by, and not overlap an existing tag,
+- not be too generic (`general`, `hpc`, `tips`) or too specific (a single command). These are the reasons past tags were retired.
+
+```yml
+new_tag:                          # snake_case key, used in front matter
+  display: New Tag                # Title Case label shown on the site
+  aliases: [new tag, other name]  # lower case unless a proper noun
+```
+
+- An alias must belong to only one tag. `compile_tags.py` warns if an alias is listed under more than one.
+- Renaming or removing a tag, or moving an alias to a different tag, changes every page that uses it.
+  Update those pages in the same change (`python3 normalize_tags.py --dry-run` shows what it would rewrite).
+- Retired tags are listed as comments at the bottom of `tags.yml` with the reason, so they are not added again.
 
 ### Zendesk Imported
 
 The following fields were imported from Zendesk Page:
 
-- `vote_count` 
+- `vote_count`
 - `vote_sum`
 - `zendesk_article_id`
 - `zendesk_section_id`
@@ -219,7 +282,114 @@ If you want to draw attention to a page (for any reason), you may give it the `n
 status: new
 ```
 
-This will show a little exclaimation mark next to the page title in the nav.
+This will show a little exclamation mark next to the page title in the nav.
+
+### Tutorial
+
+Indicates a tutorial page.
+
+```yaml
+status: tutorial
+```
+
+Will add a tutorial banner to the top of the page, and a hat icon next to page title in nav.
+
+## Tutorial Page
+
+There are a couple of extra things you should try to include in a tutorial page.
+
+### Time
+
+Right at the top try to include a time block.
+
+```md
+!!! time "30 Minutes"
+```
+
+!!! time "30 Minutes"
+
+### Objectives
+
+Then include an 'objectives' admonition.
+
+```md
+!!! objectives
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+```
+
+!!! objectives
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+
+This helps set expectations and allows people to determine if this lesson is relevant to them.
+
+### Prerequisites
+
+A 'prerequisites' admonition, to point to the previous lesson.
+
+```md
+!!! prerequisites
+    - [Link to Previous Page](CONTRIBUTING.md)
+```
+
+!!! prerequisites
+    - [Link to Previous Page](FORMAT.md)
+
+### Quiz
+
+Try to have one quiz per learning objective.
+
+```md
+<quiz>
+Question goes here.
+  
+```out
+Can include code blocks and pictures.
+```
+
+Answers are in the form of a checkbox list.
+
+- [ ] A Wrong Answer
+- [ ] Another Wrong Answer
+- [X] The Correct Answer
+- [ ] Can be multiple correct answers.
+
+This text will show after giving an answer (correct or incorrect unfortunately)
+</quiz>
+```
+
+### Keypoints
+
+Second to last is a keypoints admonition.
+
+```md
+!!! keypoints
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+```
+
+!!! keypoints
+    - learning goal one.
+    - learning goal two.
+    - learning goal three.
+
+This should be a short summary of the key topics covered,
+and answer the 'questions' posed in the objectives.
+
+### Next
+
+Finally a `next` admonition pointing to the next page.
+
+!!! next
+    [Next Page](NEWPAGE.md)
+
+### Rule of Three
+
+Repeat things three + times (objective, lesson, quiz, keypoints).
 
 ## Accessibility Standards
 

@@ -1,7 +1,10 @@
 ---
 created_at: '2019-06-13T04:08:43Z'
-tags: []
-title: Thread Placement and Thread Affinity
+tags:
+- openmp
+- parallel
+- mpi
+description: Placing and pinning threads to cores so multithreaded jobs run at full speed
 ---
 
 Multithreading with OpenMP and other threading libraries is an important
@@ -32,7 +35,7 @@ performance, as a socket connects the processor to its RAM and other
 processors. A processor in each socket consists of multiple physical
 cores, and each physical core is split into two logical cores using a
 technology called
-[Hyperthreading](Hyperthreading.md)).
+[Simultaneous Multithreading](Simultaneous_Multithreading.md).
 
 A processor also includes caches - a
 [cache](https://en.wikipedia.org/wiki/CPU_cache) is very fast memory
@@ -69,12 +72,12 @@ For a thread that runs on a given core, this means:
 ## Thread Placement and Affinity
 
 Given the arrangement of node, sockets, and cores, with different access
-to RAM and caches, we want to to make sure that our threads are located
+to RAM and caches, we want to make sure that our threads are located
 as close as possible to their data, and as close as possible to each
 other if they need to work on the same piece of data. Threads can even
 share the data in a cache for maximum performance.
 
-This configuration is is called **thread placement**.
+This configuration is called **thread placement**.
 
 The operating system on a computer with multiple cores can normally
 freely move processes and threads around between the different cores, to
@@ -83,7 +86,7 @@ available cores. This is very useful on general purpose computers like
 laptops that run a great number of applications at the same time.
 
 However, moving processes and threads can cause performance problems on
-an HPC, where we usually want to run only a single processe or threads
+an HPC, where we usually want to run only a single process or threads
 per core for best performance. The problem is that every time a process
 or thread moves from one core to another, registers and caches need to
 be flushed and reloaded. This can become very costly if it happens
@@ -175,14 +178,14 @@ Hello World from Thread 2!
 The runtime library tells us that:
 
 - Slurm provided 3 physical cores with only 1 logical core ("thread")
-    per physical core - no hyperthreading
+    per physical core - no simultaneous multithreading.
 - We got the cores with IDs 0, 6, 8 in this particular example - these
     happen to be on the same socket, but that is not guaranteed!
 - All our threads are "bound" to all 3 cores at once - this means that
     no affinity setup has been made, and the threads are free to move
     from one core to another
 
-Setting "--hint=multithread" instead to activate hyperthreading should
+Setting "--hint=multithread" instead to activate simultaneous multithreading should
 result in output similar to this:
 
 ```out
@@ -344,7 +347,7 @@ held up by other jobs or system processes. It is therefore worth trying
 out different affinity setups to see which one works best for your
 program.
 
-It is usually a good idea to start without hyperthreading, and to activate
+It is usually a good idea to start without simultaneous multithreading, and to activate
 thread affinity by choosing:
 
 ``` sl

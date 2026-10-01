@@ -2,9 +2,10 @@
 created_at: 2025-05-07
 description: This article presents an overview comparison of the differences between the NeSI Mahuika cluster and the new cluster.
 status:
-tags: 
-    - hpc3
-    - refresh
+tags:
+    - release_notes
+    - announcement
+status: deprecated
 ---
 
 This article presents an overview comparison of the differences between the NeSI Mahuika cluster and the new cluster (often referred to in documentation under the provisional name HPC3).
@@ -32,7 +33,7 @@ such as the latest versions of VSCode.
 The GPFS `/home`, `/nesi/project`, and `/nesi/nobackup` filesystems have been replaced by WEKA filesystems mounted at the same paths.  There may be some performance differences, mostly positive ones.
 One particular feature of WEKA is that it keeps recently accessed files in fast SSD storage while moving other files out to slower disk-based storage.
 
-We have had [automatic compression of some files](../../Storage/File_Systems_and_Quotas/Data_Compression.md) enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressable files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised.
+We have had automatic compression of some files enabled in GPFS for some time. We don't have an equivalent enabled in WEKA, and so highly compressible files (such as long output logs with many numbers in them) may appear to expand in size around five-fold without their content changing. To see if that is going to happen to your files you can compare the outputs from `du -h ...` and `du -h --apparent-size ...` on Mahuika. `--apparent-size` will give a larger number if GPFS has stored the file in a compressed state.  Compressing such files explicitly with a tool such as `gzip` would help, but some projects with many such files and small storage quotas might need those quotas raised.
 
 Storage (byte) quotas in WEKA work the same way, but there are no inode (file) quotas.
 
@@ -43,7 +44,7 @@ There are snapshots for short-term recovery of deleted files, in `/home/.snapsho
 
 ### Tape
 
-[Freezer](../../Storage/Long_Term_Storage/Freezer_long_term_storage.md) replaces Nearline.
+[Freezer](../../Storage/Long_Term_Storage/Freezer_Long_Term_Storage.md) replaces Nearline.
 
 ## Access via Web browser
 
@@ -58,19 +59,19 @@ The many ImageMagick commands such as **display** have been replaced by Graphics
 
 ## External IP address for outbound connections
 
-Internet connections made from NeSI (eg: to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
+Internet connections made from NeSI (e.g: to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
 
 ## Slurm
 
 ### Simultaneous multithreading (Hyperthreading)
 
 All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
-On Mahuika mutithreaded jobs placed a thread on each virtual CPU by default,
+On Mahuika multithreaded jobs placed a thread on each virtual CPU by default,
 with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs were not hyperthreaded while single-task multithreaded jobs were.
 
 On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
 
-Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a mutiple of two or also use the slurm option `--tasks-per-core`.
+Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a multiple of two or also use the slurm option `--tasks-per-core`.
 
 ### Partitions
 
@@ -86,7 +87,7 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
 
 ### CPU cores per node
 
-Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs.
+Two CPU cores on each compute node have been "specialized" (as the Slurm documentation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally available for Slurm jobs.
 
 ### Limits
 
@@ -117,7 +118,7 @@ Other consequences of this change include:
 - Job profiles are not private.
 - Incomplete profiles can be obtained while a job is still running.
 - Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
-- The raw profile data isn't so accessable - please let us know if you need it.
+- The raw profile data isn't so accessible - please let us know if you need it.
 
 ### Miscellaneous
 

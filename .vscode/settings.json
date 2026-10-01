@@ -18,6 +18,10 @@
             "docs/**/*.md",
             "checks/fail_checks.md"
         ],
+        "aria-check": [
+            "docs/**/*.md",
+            "checks/fail_checks.md"
+        ],
         "test-build": [
             "docs/**/*.md",
             "checks/fail_checks.md"

@@ -1,10 +1,11 @@
 ---
 created_at: '2025-12-04T19:53:24Z'
 tags:
-- releasenote
-title: my.nesi.org.nz release notes v2.45.0
+- release_notes
+title: my.nesi.org.nz Release Notes v2.45.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.45.0 - Principal Investigator role and stricter validation
 ---
 
 ## New and Improved

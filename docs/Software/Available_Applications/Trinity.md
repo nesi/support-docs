@@ -1,11 +1,10 @@
 ---
 created_at: '2019-06-03T23:23:13Z'
-tags: []
-title: Trinity
+tags:
+- biology
 vote_count: 2
 vote_sum: 2
-zendesk_article_id: 360000980375
-zendesk_section_id: 360000040076
+description: De novo reconstruction of transcriptomes from RNA-seq data with Trinity
 ---
 
 
@@ -27,13 +26,12 @@ and then processes each graph independently to extract full-length
 splicing isoforms and to tease apart transcripts derived from paralogous
 genes.
 
-General documentation for running Trinity can be found on their GitHub
-page
-[here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity).
+[General documentation for running Trinity](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity)
+can be found on their GitHub page.
 
-## Running Trinity on NeSI
+## Running Trinity on Mahuika
 
-The recommended approach for running Trinity on NeSI is to split the run
+The recommended approach for running Trinity on Mahuika is to split the run
 into two separate job submissions. The first submission will run Trinity
 Phase 1 (read clustering) and the second submission will run Trinity
 Phase 2 (assembling read clusters). We have observed faster run times
@@ -44,10 +42,10 @@ data, compared to running both phases in one multithreaded job (see the
 ### filesystem considerations
 
 You should run Trinity within your [nobackup project
-directory](../../Storage/File_Systems_and_Quotas/Filesystems_and_Quotas.md),
+directory](../../Storage/Filesystems_and_Quotas.md),
 which has no limit on disk space usage but does have a file count quota.
 Trinity creates a large number of files, particularly in the
-"read\_partitions" directory, thus it is important that you {% include "partials/support_request.html" %} before running Trinity on NeSI, as we
+"read\_partitions" directory, thus it is important that you {% include "partials/support_request.html" %} before running Trinity on Mahuika, as we
 may need to increase your default file count quota.
 
 ### Quality Control
@@ -85,7 +83,6 @@ The following Slurm script is a template for running Trinity Phase 1
 #SBATCH --ntasks=1            # always 1
 #SBATCH --cpus-per-task=16    # number of threads to use for Trinity
 #SBATCH --mem=220G            # maximum memory available to Trinity
-#SBATCH --hint=nomultithread  # disable hyper-threading
 
 # load a Trinity module
 module load Trinity/2.14.0-gimkl-2022a
@@ -111,9 +108,8 @@ The extra Trinity arguments are:
 
 ### Running Trinity Phase 2
 
-Upstream documentation for running Trinity Phase 2 in parallel can be
-found
-[here](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity#optional-adapting-trinity-to-a-computing-grid-for-massively-parallel-processing-of-embarrassingly-parallel-steps).
+[Upstream documentation for running Trinity Phase 2 in parallel](https://github.com/trinityrnaseq/trinityrnaseq/wiki/Running-Trinity#optional-adapting-trinity-to-a-computing-grid-for-massively-parallel-processing-of-embarrassingly-parallel-steps)
+is available on their wiki.
 
 Trinity Phase 2 performs all the mini-assemblies in parallel. This phase
 consists of a large number (e.g. tens or hundreds of thousands) of
@@ -155,14 +151,13 @@ gridtype=SLURM
 # template for a grid submission
 # make sure:
 #     --partition is chosen appropriately for the resource requirements 
-#       (here we choose either large or bigmem, whichever is available first)
 #     --ntasks and --cpus-per-task should always be 1
 #     --mem may need to be adjusted
 #     --time may need to adjusted
 #       (must be enough time for a batch of commands to finish)
 #     --account should be your NeSI project code
 #     add other sbatch options as required
-cmd=sbatch --partition=large,bigmem --mem=5G --ntasks=1 --cpus-per-task=1 --time=01:00:00 --account=nesi12345
+cmd=sbatch --partition=hugemem --mem=5G --ntasks=1 --cpus-per-task=1 --time=01:00:00 --account=nesi12345
 
 # note -e error.file -o out.file are set internally, so dont set them in the above cmd.
 
@@ -180,15 +175,12 @@ cmds_per_node=50
  The important details are:
 
 - `cmds_per_node` is the size of each batch of commands, i.e. here
-  each Slurm sub-job runs 100 commands and then exits
+  each Slurm sub-job runs 50 commands and then exits
 - `max_nodes` is the number of sub-jobs that can be in the queue at
   any given time (each sub-job is single threaded, i.e. it uses just
   one core)
 - name this file `SLURM.conf` in the directory you will submit the job
   from
-- memory usage may be low enough that the sub-jobs can be run on
-  either the large or bigmem partitions, which should improve
-  throughput compared to bigmem alone
 
 A template Slurm submission script for Trinity Phase 2 is shown below:
 
@@ -200,7 +192,7 @@ A template Slurm submission script for Trinity Phase 2 is shown below:
 #SBATCH --ntasks=1           # always 1 - this is the master process
 #SBATCH --cpus-per-task=1    # always 1
 #SBATCH --mem=20G            # memory requirements for master process
-#SBATCH --partition=bigmem   # submit to an appropriate partition
+#SBATCH --partition=hugemem   # submit to an appropriate partition
 #SBATCH --hint=nomultithread
 
 # load Trinity and HPC GridRunner
@@ -233,8 +225,8 @@ srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
 ## Benchmarks
 
 Here we provide details of a number of Trinity assemblies that have been
-carried out on NeSI, in order to give a rough idea of how Trinity can
-perform on NeSI and an indication of its resource requirements.
+carried out on Mahuika, in order to give a rough idea of how Trinity can
+perform on Mahuika and an indication of its resource requirements.
 
 Timings mentioned here should be taken as indicative only and, even if
 assembling the same sample again, would be expected to vary
@@ -277,13 +269,13 @@ geographical locations, of approximately 286 million paired reads. The
 assembly was performed using the two-phase Trinity workflow discussed
 above, using those submission scripts as templates.
 
-Phase 1 ran on 18 threads with 220 GB memory on the bigmem partition and
+Phase 1 ran on 18 threads with 220 GB memory on the bigmem partition (now hugemem) and
 took approximately 15 hours to complete.
 
 For Phase 2, the master process ran on a single core with 20 GB memory
-on the bigmem partition. HPC GridRunner was configured with both
+on the bigmem partition (now hugemem). HPC GridRunner was configured with both
 `cmds_per_node` and `max_nodes` set to 100, with the sub-jobs running on
-either large or bigmem partitions and requesting 5 GB memory and 1 hour
+either large or bigmem partitions (now only hugemem) and requesting 5 GB memory and 1 hour
 wall time each. The number of commands (mini-assemblies) that needed to
 be run during this phase was 2,020,460. Phase 2 took approximately 19
 hours to complete (elapsed time) and cost around 1,800 core hours.
@@ -296,9 +288,9 @@ was performed using the two-phase Trinity workflow discussed above,
 using those submission scripts as templates.
 
 There were 4,136,295 mini-assemblies to run in Phase 2. The master
-process requested 30 GB memory on the bigmem partition and HPC
+process requested 30 GB memory on the bigmem partition (now hugemem) and HPC
 GridRunner was configured with both `cmds_per_node` and `max_nodes` set
-to 100. The sub-jobs ran on either the large or bigmem partitions and
+to 100. The sub-jobs ran on either the large or bigmem partitions (now only hugemem) and
 required 1 hour wall time and 5 GB memory each. Phase 2 took
 approximately 32 hours to complete (elapsed time) and cost around 3,100
 core hours.

@@ -3,10 +3,11 @@ created_at: '2020-05-12T01:43:30Z'
 tags: 
     - access
     
+description: Forwarding a port over SSH to reach a service running on the cluster
 ---
 
 !!! prerequisite
-    Have your [connection to the NeSI cluster](Standard_Terminal_Setup.md) configured
+    Have your [connection to the Mahuika cluster](Standard_Terminal_Setup.md) configured
 
 Some applications only accept connections from internal ports (i.e a
 port on the same local network), if you are running one such application
@@ -27,10 +28,10 @@ cluster, `nesi` if you have set up your ssh config file as
 described in [Standard Terminal Setup](Standard_Terminal_Setup.md).
 
 **Remote Port:** The port number you will use on the remote machine (in
-this case the NeSI cluster)
+this case the Mahuika cluster)
 !!! note
     The following examples use aliases as set up in [standard terminal setup](Standard_Terminal_Setup.md).
-    This allows the forwarding from your local machine to the NeSI
+    This allows the forwarding from your local machine to the Mahuika
     cluster, without having to re-tunnel through the lander node.
 
 ## Command line (OpenSSH)

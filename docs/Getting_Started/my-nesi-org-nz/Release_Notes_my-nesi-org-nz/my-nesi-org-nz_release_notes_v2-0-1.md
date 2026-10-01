@@ -1,14 +1,11 @@
 ---
 created_at: '2021-03-02T00:48:08Z'
 tags:
-- releasenote
-title: my.nesi.org.nz release notes v2.0.1
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360003550396
-zendesk_section_id: 360001091155
+- release_notes
+title: my.nesi.org.nz Release Notes v2.0.1
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.0.1 - new web application and improved project applications
 ---
 
 ## Release Update - 28. April 2021
@@ -20,7 +17,7 @@ search:
     in the sidebar and links to important functions
 
 -   Improved [project application
-    form](../../../Getting_Started/my-nesi-org-nz/The_NeSI_Project_Request_Form.md)
+    form](../Project_Request_Form.md)
     with automatic draft state so you can continue the application at a
     later stage without the need to re-enter details
 

@@ -1,7 +1,7 @@
 ---
 created_at: 2025-12-09
 description: How to utilise job arrays. 
-tags: 
+tags:
     - slurm
     - parallel
 ---
@@ -10,6 +10,8 @@ tags:
 SLURM Job arrays are best used for tasks that are completely independent, such as parameter sweeps, permutation analysis or simulation, that could be executed in any order and don't have to run at the same time.
 This kind of work is often described as *embarrassingly parallel*.  
 An embarrassingly parallel problem is one that requires no communication or dependency between the tasks (unlike distributed computing problems that need communication between tasks).
+
+> Note: The maximum number of submitted jobs and thus the maximum number of tasks in an array is 1000.  If your job requires more than 1000 tasks, please reach out to the support team.
 
 A job array will submit the same script repeatedly over a designated index using the `SBATCH` command  `--array`
 

@@ -1,10 +1,10 @@
 ---
 created_at: '2019-09-22T21:07:48Z'
-tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 360001173895
-zendesk_section_id: 360000189716
+tags:
+- openmp
+- parallel
+- profiling
+description: A worked multithreading scaling test showing how to size a shared memory job
 ---
 
 In the example below we will use R scripts to demonstrate how you might
@@ -31,7 +31,7 @@ context, it will take the sum of *z* random numbers derived from a
 normal distribution with a mean of 0 and a standard deviation of 1
 (where is *z* is a value from 1,000,000 to 1,060,000, meaning 60,000
 iterations). The script will take the number of CPUs per task from the
-environment and and run it in parallel with that many threads. We
+environment and run it in parallel with that many threads. We
 unfortunately do not know how many CPUs, how much memory (RAM), or how
 much time to request for this script to complete. This means the first
 thing we need to do is run a small scale test and see how long that runs
@@ -205,7 +205,7 @@ small. We could try running our script with more than 16 CPU cores,
 however, in the case of this script we start to have a pretty
 significant drop in marginal speed-up after eight CPU cores.
 
-![](../../assets/images/Multithreading_Scaling_Example_3.png)
+![Scatter plot of CPUs against memory for 5000 iterations, with memory use rising roughly linearly from about 240,000 at 2 CPUs to about 1,200,000 at 16 CPUs](../../assets/images/Multithreading_Scaling_Example_3.png)
 
 Looking at our jobs' memory use, we can see that as we increase the
 number of CPUs taken by a job, the job's memory requirements increase

@@ -1,10 +1,11 @@
 ---
 created_at: '2019-09-22T21:07:28Z'
-tags: []
+tags:
+- mpi
+- parallel
+- profiling
 vote_count: 2
-vote_sum: 0
-zendesk_article_id: 360001173875
-zendesk_section_id: 360000189716
+description: A worked MPI scaling test showing how to size a distributed memory job
 ---
 
 <!-- TODO review the scripts, it looks like there is a missing word after $ -->
@@ -74,7 +75,7 @@ to create arrays of random numbers. The dot product of each array is
 then calculated and those numbers are summed together and sent back to
 the master task (via MPI) and all those numbers are summed together and
 the results are printed. The script will take the number of MPI tasks
-from the environment and and run it in parallel with that many ranks. We
+from the environment and run it in parallel with that many ranks. We
 unfortunately do not know how many CPUs, how much memory (RAM) or how
 much time to request for this script to complete. This means the first
 thing we need to do is run a small scale test and see how long that runs
@@ -174,7 +175,7 @@ Let's run our Slurm script with sbatch and look at our output from
 Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
 will always receive 2 logical CPUs which is equal to 1 physical CPUs.
 For a more in depth explanation about logical and physical CPU cores see
-our [Hyperthreading article](Hyperthreading.md))
+our [Simultaneous Multithreading article](Simultaneous_Multithreading.md))
 and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
 18 minutes and 51 seconds.
 

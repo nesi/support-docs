@@ -1,10 +1,10 @@
 ---
 created_at: '2018-11-26T03:03:23Z'
-tags: 
-  - windows
-  - winscp
-  - putty
+tags:
+  - access
+  - file_transfer
 title: WinSCP/PuTTY Setup (Windows)
+description: Setting up WinSCP and PuTTY on Windows to connect to and copy files from the cluster
 ---
 
 !!! prerequisite
@@ -65,7 +65,7 @@ password and pass it to PuTTY*
 ## Setup for Xming (Optional)
 
 Xming is an X server for Windows allowing graphical interface with the
-HPC. [Xming can be downloaded here](https://sourceforge.net/projects/xming/).
+HPC. [Xming can be downloaded from SourceForge](https://sourceforge.net/projects/xming/).
 
 1\. Install Xming following the prompts. (Make sure 'Normal PuTTY Link
 SSH Client' is selected).
@@ -123,11 +123,14 @@ for a single transfer'.
 ![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png)
 
 !!! warning
-     As WinSCP uses multiple tunnels for file transfer you will be required
-     to authenticate again on your first file operation of the session. The
-     second prompt for your second-factor token can be skipped, just as
-     with login authentication.
+    Transfer Mode: There are known issues using the default Automatic transfer mode. Some files, including 
+    source code files (aka text files), can be transferred with erroneous line endings. This will cause 
+    scripts or jobs to fail. If you see extra ^M characters in your files (easily seen with the cat -v 
+    command, this means your files have been transferred incorrectly. A workaround that sometimes works 
+    is to switch the WinSCP transfer mode to Binary
+
+    We recommend using a different file transfer client.
 
 !!! prerequisite "What Next?"
      -  [Moving files to and from the cluster](../../Data_Transfer/Data_Transfer_Overview.md)
-     -  [X11 on NeSI](./X11.md)(optional).
+     -  [X11 on Mahuika](./X11.md)(optional).

@@ -1,12 +1,9 @@
 ---
 created_at: '2024-02-15T03:27:38Z'
-hidden: false
-position: 0
-tags: []
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 9027967596303
-zendesk_section_id: 360000040076
+tags:
+- software
+- parallel
+description: Switching between BLAS and LAPACK implementations at run time with FlexiBLAS
 ---
 
 {% set app_name = page.title | trim %}

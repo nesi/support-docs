@@ -1,12 +1,10 @@
 ---
 created_at: '2015-09-07T00:34:30Z'
 tags:
-- mahuika
-- R
+- r
 vote_count: 7
 vote_sum: 3
-zendesk_article_id: 209338087
-zendesk_section_id: 360000040076
+description: Using R for statistical computing and graphics on the cluster
 ---
 
 ## Description
@@ -30,7 +28,7 @@ to participation in that activity.
 R is made available at no cost under the terms of version 2 of the [GNU
 General Public Licence](https://www.r-project.org/COPYING).
 
-## NeSI Customisations
+## Mahuika Customisations
 
 - We patch the *snow* package so that there is no need to use RMPISNOW
   when using it over MPI.
@@ -263,7 +261,7 @@ or just use the module command:
 module show R/4.2.1-gimkl-2022a
 ```
 
-Please note that different installations of R, even on the same NeSI
+Please note that different installations of R, even on the same Mahuika
 cluster, may contain different collections of packages. Furthermore, if
 you have your own packages in a directory that R can automatically
 detect, these will also be shown in a separate section.
@@ -290,7 +288,7 @@ For R/4.2.1 the command `.libPaths()` will return the following:
 
 When using the `library()` function R will first look to your
 Home/Personal library for the package and then to the Systems Library
-provided by NeSI. This can be used in conjuction with
+provided by Mahuika. This can be used in conjunction with
 `installed.packages()` to see what is available in a specific library.
 eg:
 
@@ -435,10 +433,12 @@ Options:
 
 Running functions from the INLA package may results in GLib versions not found. Installing a specific version and binary for the package as below has worked.
 
+```sh
+module load R-bundle-Bioconductor/3.17-gimkl-2022a-R-4.3.1
+R
 ```
-module load R-bundle-Bioconductor/3.17-gimkl-2022a-R-4.3.1 
-R 
 
+```r
 #https://inla.r-inla-download.org/R/testing/bin/windows/contrib/4.3/ 
 remotes::install_version("INLA", version="23.06.29",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/testing"), dep=TRUE) 
 

@@ -4,17 +4,44 @@
 from mkdocs.commands import build, serve
 from mkdocs.config.base import Config, load_config
 import logging
+import os
 import sys
 import re
+import tempfile
 import time
-import mkdocs_awesome_nav.nav as nav
+
+import requests
 
 
-""" 
+"""
 This works but is a bit messy
+
+Usage: run_test_build.py [--dirty]
+
+By default every page is rebuilt, so every page's warnings are reported.
+--dirty only rebuilds pages changed since the last build in the site dir (faster,
+used by the VS Code task), which silently drops warnings for the pages it skips.
+
+Exits non-zero if the build fails, or on any broken link, macro or include error
+(these are reported as ERROR). Everything else is a WARNING or NOTICE.
+Set CHECKS_STRICT=1 to also exit non-zero on warnings.
 """
 
 msg_count = {"DEBUG": 0, "NOTICE": 0, "WARNING": 0, "ERROR": 0}
+
+MODULES_LIST_URL = "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
+
+
+def fetch_module_list():
+    """Fetch the latest module-list.json contents, or None if unavailable."""
+    try:
+        response = requests.get(MODULES_LIST_URL, timeout=10)
+        response.raise_for_status()
+        return response.content
+    except requests.RequestException as e:
+        print(f"::WARNING file={__file__},title=module_list_fetch_failed,col=0,endColumn=0,line=0::"
+              f"Could not fetch latest module-list.json ({e}); using committed copy instead.")
+        return None
 
 
 def parse_macro(record):
@@ -35,23 +62,28 @@ def parse_macro(record):
         record.name = g["title"]
         record.filename = g["file"]
         record.msg = g["message"]
+    else:
+        # Does not give correct path to file in question in 'title'.
+        # Infer from message.
+        m = re.search(r"'(.*?\.md)'",  record.msg)
+        if m:
+            record.filename = m.group(1)
 
-    # Does not give correct path to file in question in 'title'.
-    # Infer from message.
-    m = re.search(r"'(.*?\.md)'",  record.msg)
-    if m:
-        record.filename = m.group(1)
+    # Broken links are only a warning in mkdocs, but should block merging.
+    if record.name == "mkdocs.structure.pages" and "is not found among documentation files" in record.msg:
+        record.levelname = "ERROR"
+
+    # Paths are relative to docs dir, make relative to repo root so GitHub can match them.
+    if record.filename.endswith(".md") and not record.filename.startswith("docs/"):
+        record.filename = "docs/" + record.filename
+    # Line numbers are from the logging source, not the page.
+    record.lineno = 0
 
     # Swap to use notice for github parsing.
     if record.levelname == "INFO":
         record.levelname = "NOTICE"
 
-    return True
-
-
-def count_msg(record):
-    msg_count[record.levelname] += 1
-
+    msg_count[record.levelname] = msg_count.get(record.levelname, 0) + 1
     return True
 
 
@@ -63,22 +95,45 @@ if __name__ == '__main__':
     log.setLevel(logging.INFO)
     sh = logging.StreamHandler(sys.stdout)
     sh.addFilter(parse_macro)
-    sh.addFilter(count_msg)
     sh.setFormatter(logging.Formatter(
         '::%(levelname)s file=%(filename)s,title=%(name)s,col=0,endColumn=0,line=%(lineno)s::%(message)s'))
     log.addHandler(sh)
+
+    module_list = fetch_module_list()
+    tmp_module_list_path = None
+    if module_list is not None:
+        # mkdocs_hooks.py / macro_hooks.py read MODULE_LIST_PATH at import time,
+        # so it must be set before load_config() pulls those in.
+        fd, tmp_module_list_path = tempfile.mkstemp(suffix=".json", prefix="module-list-")
+        with os.fdopen(fd, "wb") as f:
+            f.write(module_list)
+        os.environ["MODULE_LIST_PATH"] = tmp_module_list_path
+
     config = load_config(config_file_path="./mkdocs.yml")
-    config.plugins.on_startup(command='build', dirty=True)
+    dirty = "--dirty" in sys.argv[1:]
+    config.plugins.on_startup(command='build', dirty=dirty)
     try:
-        build.build(config, dirty=True)
-    except nav.NavEntryNotFound as e:
-        match = re.match(r"(.*) \[(.*)\]", str(e))
-        print(f"::ERROR file={match.group(2)},title=nav_entry_not_found,col=0,endColumn=0,line=0::{match.group(1)}")
+        build.build(config, dirty=dirty)
     except Exception as e:
         print(f"::ERROR file={__file__},title=build_failed,col=0,endColumn=0,line=0::{e}")
         sys.exit(1)
     finally:
         config.plugins.on_shutdown()
+        if tmp_module_list_path:
+            os.remove(tmp_module_list_path)
+
+    if module_list is not None:
+        # Overwrite the stale copy mkdocs just copied from docs/assets/module-list.json,
+        # so the client-side app filter (supportedApplications.js) also sees fresh data.
+        site_module_list_path = os.path.join(config.site_dir, "assets", "module-list.json")
+        os.makedirs(os.path.dirname(site_module_list_path), exist_ok=True)
+        with open(site_module_list_path, "wb") as f:
+            f.write(module_list)
 
     time.sleep(5)
-    # exit(100 < msg_count["NOTICE"] + (30 * msg_count["WARNING"] + (100 * msg_count["ERROR"])))
+
+    if msg_count["ERROR"] + msg_count.get("CRITICAL", 0):
+        sys.exit(1)
+    # CHECKS_STRICT=1: also exit non-zero on warnings.
+    if os.getenv("CHECKS_STRICT") and msg_count["WARNING"]:
+        sys.exit(1)

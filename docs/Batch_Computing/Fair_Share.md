@@ -1,21 +1,17 @@
 ---
 created_at: '2019-02-05T03:58:21Z'
 tags:
-  - accounting
-  - Slurm
-  - Fairshare
-  - Fair Share
-  - Job priority
-  - Long queue time
-  - Queing
-  - long wait time
+  - account
+  - slurm
+  - fairshare
+  - troubleshooting
 description: How balancing your workload lets you make the most of your allocation.
 ---
 
 The fair-share system is designed to encourage users to balance their
 use of resources over their allocation period. Fair-share is the largest
 factor in determining priority, but not the only one. For more details
-see [Job Prioritisation](Job_prioritisation.md).
+see [Job Prioritisation](Job_Prioritisation.md).
 
 ## Fair Share Score
 

@@ -281,6 +281,8 @@ trace {
 !!! warning "Nextflow plugins"
     nf-core pipelines expect to use nf-plugins in their base configuration. If you want to use these plugins, you will need to manually download them and store them in a plugin cache directory that you can specify with the `NXF_PLUGINS_DIR` environmental variable (as in the example `.sl` above)
 
+For Nextflow 26.04.0, we have also created a joint module which has the nf-core tools installed and is available via `module load nf-core/4.0.2-foss-2026-Nextflow-26.04.0`.
+
 <!-- ## Comparison of submission methods
 
 The [nf-core rnaseq pipeline (v3.21.0)](https://nf-co.re/rnaseq/3.21.0) was run using the `test_full` dataset (v3.10) with three methods: a batch job, a head job, and a batch job with specific processes flagged for submission to Slurm.
@@ -302,7 +304,7 @@ Duration    : 11h 16m 47s
 CPU hours   : 319.6
 
 ```bash
-> nn_seff <job-id>
+> seff <job-id>
 Cluster: hpc
 Job ID: 3034402
 State: ['COMPLETED']
@@ -336,7 +338,7 @@ Labeled processes (list below) could submit via slurm array requesting 12 CPUs, 
 - `QUALIMAP_RNASEQ`
 
 ```bash
-nn_seff <job-id>
+seff <job-id>
 Cluster: hpc
 Job ID: 3059728
 State: ['OUT_OF_MEMORY']

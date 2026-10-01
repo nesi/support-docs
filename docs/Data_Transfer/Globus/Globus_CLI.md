@@ -1,9 +1,8 @@
 ---
 created_at: '2025-12-23T07:00:00Z'
-tags: 
-    - globus
-    - file transfer
-title: Globus CLI
+tags:
+    - file_transfer
+description: Transferring files with the Globus command line interface instead of the web app
 ---
 
 This page will describe the various step to how to use the Globus Command Line Interface (CLI).
@@ -32,7 +31,7 @@ globus login
 ```
 
 This will show you a website that will require you to authenticate yourself, as well as to allow
-Globus CLI to have access to your Globus files. You will be given an authorization codethat you
+Globus CLI to have access to your Globus files. You will be given an authorization code that you
 want to enter into the terminal.
 
 ![Globus_CLI_1.png](../../assets/images/Globus_CLI_1.png)
@@ -48,12 +47,12 @@ To transfer a files/folders using Globus CLI, you need to obtain the `Endpoint` 
 endpoints you want to transfer data to and from.
 
 !!! hint
-    The `Endpoint` id for mahuika is: `763d50ee-e814-4080-878b-6a8be5cf7570`
+    The `Endpoint` id for Mahuika is: `763d50ee-e814-4080-878b-6a8be5cf7570`
     ```sh
-    globus endpoint search "NeSI HPC Storage"
+    globus endpoint search "{{ globus_collection_storage }}"
     ```
 
-To get the `Endpoint` id of your computer, type into your terminal (on your local machine or mahuika):
+To get the `Endpoint` id of your computer, type into your terminal (on your local machine or Mahuika):
 
 ```sh
 globus endpoint search --filter-scope my-endpoints
@@ -69,10 +68,10 @@ Next, you will need to authorise Mahuika to allow your transfer. Do this by typi
 globus session update --all
 ```
 
-This will take you to a website where you can authenticate yourself across mahuika, as well as all your
+This will take you to a website where you can authenticate yourself across Mahuika, as well as all your
 devices and institutional infrastructure (servers) you are using
 
-Then, you can then transfer a file using `globus transfer` in the terminal. To transfer a folder off of mahuika
+Then, you can then transfer a file using `globus transfer` in the terminal. To transfer a folder off of Mahuika
 onto your computer (you will need to give full paths):
 
 ```sh

@@ -1,10 +1,11 @@
 ---
 created_at: '2025-05-29T19:53:24Z'
 tags:
-- releasenote
-title: my.nesi.org.nz release notes v2.37.0
+- release_notes
+title: my.nesi.org.nz Release Notes v2.37.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.37.0 - one compute usage field instead of one per platform
 ---
 
 ## New and Improved

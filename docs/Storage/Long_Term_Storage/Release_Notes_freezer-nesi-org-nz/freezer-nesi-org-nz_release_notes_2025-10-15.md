@@ -1,8 +1,8 @@
 ---
 created_at: '2025-10-15T10:00:00Z'
 tags:
-- freezer
-- release notes
+- storage
+- release_notes
 title: 2025/10/15
 description: Freezer upgrade release notes
 search:
@@ -17,4 +17,4 @@ search:
 - Implement Cross-origin resource sharing (CORS) restrictions for buckets
 - Rotate internally used secret
 
-If you have any questions about any of the fixes, please [contact NeSI Support](mailto:support@nesi.org.nz "mailto:support@nesi.org.nz").
+If you have any questions about any of the fixes, please {% include "partials/support_request.html" %}.

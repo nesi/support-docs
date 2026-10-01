@@ -2,6 +2,8 @@
 created_at: '2022-08-03T21:35:50Z'
 tags: 
   - workflow
+no_module: true
+description: Running general purpose and cycling workflows with the Cylc workflow engine
 ---
 
 !!! note "Alternatives"
@@ -25,8 +27,7 @@ less resources that the complete problem, it is thus easier for each
 task to slip into the queue and start running.
 
 In this article, we show how you can create a simple workflow and run it
-on NeSI's platform. Consult the [Cylc
-documentation](https://cylc.github.io/documentation/) for more elaborate
+on Mahuika's platform. Consult the [Cylc documentation](https://cylc.github.io/documentation/) for more elaborate
 examples, including some with a cycling (repeated) graph pattern. One of
 the strengths of Cylc is that simple workflows can be executed simply
 while allowing for very complex workflows, with thousands of tasks,
@@ -158,7 +159,7 @@ JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME    
 2974409       pletzera nesi99999 a.1.slurm/ru   1    512M milan,g N/A                 1:00 PENDING  (Priority)
 ```
 
-You casn also monitor the tasks with the command
+You can also monitor the tasks with the command
 
 ``` sh
 cylc tui slurm

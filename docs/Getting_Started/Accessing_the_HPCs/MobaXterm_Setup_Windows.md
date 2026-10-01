@@ -1,8 +1,7 @@
 ---
 created_at: '2018-11-30T00:32:25Z'
-tags: 
-    - ssh
-    - windows
+tags:
+    - access
 title: MobaXterm Setup (Windows)
 description: How to set up cluster access using MobaXterm
 ---
@@ -24,7 +23,7 @@ description: How to set up cluster access using MobaXterm
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Data_Transfer/Data_Transfer_Overview.md)
      
-The interactive login configuration for MobaXterm is not compatable with the current web-based authentication method. If you wish to use MobaXterm as your SSH client you therefore need to use a non-interactive setup.
+The interactive login configuration for MobaXterm is not compatible with the current web-based authentication method. If you wish to use MobaXterm as your SSH client you therefore need to use a non-interactive setup.
 This can be done by following a modified version of the instructions for setting up the [the standard terminal setup described on this support page](Standard_Terminal_Setup.md).
 
 ## First time setup

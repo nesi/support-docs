@@ -1,11 +1,9 @@
 ---
-created_at: '2023-02-21T21:21:50Z'
-tags: []
 title: GATK
-vote_count: 0
-vote_sum: 0
-zendesk_article_id: 6443618773519
-zendesk_section_id: 360000040076
+created_at: '2023-02-21T21:21:50Z'
+tags:
+- biology
+description: Variant discovery and genotyping in germline DNA and RNAseq data with GATK
 ---
 
 
@@ -21,8 +19,8 @@ tools focusing primarily on variant discovery and genotyping. It is
 regarded as the industry standard for identifying SNPS and indels in
 germline DNA and RNAseq data.
 
-General documentation for running GATK can be found at their website
-[here.](https://gatk.broadinstitute.org/hc/en-us)
+[General documentation for running GATK](https://gatk.broadinstitute.org/hc/en-us)
+can be found at their website.
 
 ## Running GATK
 
@@ -40,7 +38,7 @@ need to load a Java module separately.
 #SBATCH --job-name=MarkDuplicates
 #SBATCH --output=%x_%j.out     # log file
 #SBATCH --error=%x_%j.err      # error log file
-#SBATCH --account=nesi12345    # your NeSI project code
+#SBATCH --account=nesi12345    # your project code
 #SBATCH --time=2:00:00         # maximum run time hh:mm:ss
 #SBATCH --mem=30G              # maximum memory available to GATK
 
@@ -70,7 +68,7 @@ GATK-picard commands, use:
 gatk <picard function> <options>
 ```
 
-This is different what what is currently written on the GATK
+This is different from what is currently written on the GATK
 documentation, you do not need to call "java -jar picard.jar
 &lt;Picard-function&gt;". Simply replace the Java parts with "gatk" and
 the function of interest.
@@ -89,7 +87,7 @@ referring to your nobackup or projects directory, but is likely to be
 Java applications pointing to the small temporary filesystem available
 in a compute node.
 
-To work around this, create another directory to use for temporrary
+To work around this, create another directory to use for temporary
 files.
 
 ``` sl
