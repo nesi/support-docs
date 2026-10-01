@@ -1,10 +1,11 @@
 ---
 created_at: '2026-05-22T09:00:24Z'
 tags:
-- releasenote
+- release_notes
 title: my.nesi.org.nz Release Notes v2.52.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.52.0 - default organisation on requests and Angular 21
 ---
 
 ## New and Improved

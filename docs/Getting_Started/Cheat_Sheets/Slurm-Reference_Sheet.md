@@ -71,8 +71,10 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | -- | -- | -- |
 | `--qos` | `#SBATCH --qos=debug` | Adding this line gives your job a high priority. *Limited to one job at a time, max 15 minutes*. |
 | `--profile` | `#SBATCH --profile=ALL` | Allows generation of a .h5 file containing job profile information. See [Slurm Native Profiling](../../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md) |
-| `--dependency` | `#SBATCH --dependency=afterok:123456789` | Will only start after the job 123456789 has completed. |
+| `--dependency` | `#SBATCH --dependency=afterok:123456789` | Will only start after the job 123456789 has completed (more below)|
 | `--hint` | `#SBATCH --hint=multithread` | Enables [simultaneous multithreading (SMP)](../../Software/Parallel_Computing/Simultaneous_Multithreading.md), be aware that this will significantly change how your job is defined. |
+
+Alternatively, you can set up a dependent job within the first job's script by adding the line `sbatch --dependency=afterok:$SLURM_JOB_ID second_job.sl` to have the dependent job automatically submitted to start after the first job completes successfully.
 
 !!! tip
      Many options have a short (`-`) and long (`--`) form e.g.  

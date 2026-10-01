@@ -2,6 +2,7 @@
 created_at: '2019-08-15T05:48:41Z'
 tags:
 - earth_science
+description: Choosing between the serial, SP and MP OpenSees commands when launching a job
 ---
 
 

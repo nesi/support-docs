@@ -3,6 +3,8 @@ created_at: '2019-06-13T04:08:43Z'
 tags:
 - openmp
 - parallel
+- mpi
+description: Placing and pinning threads to cores so multithreaded jobs run at full speed
 ---
 
 Multithreading with OpenMP and other threading libraries is an important
@@ -70,12 +72,12 @@ For a thread that runs on a given core, this means:
 ## Thread Placement and Affinity
 
 Given the arrangement of node, sockets, and cores, with different access
-to RAM and caches, we want to to make sure that our threads are located
+to RAM and caches, we want to make sure that our threads are located
 as close as possible to their data, and as close as possible to each
 other if they need to work on the same piece of data. Threads can even
 share the data in a cache for maximum performance.
 
-This configuration is is called **thread placement**.
+This configuration is called **thread placement**.
 
 The operating system on a computer with multiple cores can normally
 freely move processes and threads around between the different cores, to
@@ -84,7 +86,7 @@ available cores. This is very useful on general purpose computers like
 laptops that run a great number of applications at the same time.
 
 However, moving processes and threads can cause performance problems on
-an HPC, where we usually want to run only a single processe or threads
+an HPC, where we usually want to run only a single process or threads
 per core for best performance. The problem is that every time a process
 or thread moves from one core to another, registers and caches need to
 be flushed and reloaded. This can become very costly if it happens

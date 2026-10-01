@@ -11,7 +11,7 @@ You are always welcome to {% include "partials/support_request.html" %}, with an
 
 ## Introductory Session for New Users
 
-We recommend that new users attend an in person, or watch a pre-recorded, introductory session, which will cover the basics of acessing and utilising the HPC.
+We recommend that new users attend an in person, or watch a pre-recorded, introductory session, which will cover the basics of accessing and utilising the HPC.
 See our ["Introductory Session for New Users" page](./Introductory_Session_for_New_Users.md) for more information.
 
 ## Office Hours

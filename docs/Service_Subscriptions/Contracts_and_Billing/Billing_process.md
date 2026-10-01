@@ -3,6 +3,7 @@ created_at: '2023-07-06T05:48:34Z'
 tags:
 - account
 title: Billing Process
+description: How subscription usage is invoiced, and when a purchase order number is needed
 ---
 
 Charges for Subscription usage are typically invoiced on a monthly

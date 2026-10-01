@@ -3,6 +3,7 @@ created_at: '2019-04-07T23:56:57Z'
 tags:
 - slurm
 status: []
+description: Checking how efficiently a job used its resources with seff, sacct and htop
 ---
 
 ## On Job Completion
@@ -106,7 +107,7 @@ however bear in mind there are other factors that affect CPU efficiency.
 ## During Runtime
 
 In order to check in on a job that is running, you will need to ssh to
-the compute node where it it running.
+the compute node where it is running.
 
 ### Finding Job Node
 

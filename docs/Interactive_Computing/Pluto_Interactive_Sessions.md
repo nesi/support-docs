@@ -83,4 +83,4 @@ http://0.0.0.0:PORT/?secret=SECRET
 # http://0.0.0.0:9627/?secret=mXmq6659
 ```
 
-You will now be able to see and work wih Julia+Pluto in your web browser.
+You will now be able to see and work with Julia+Pluto in your web browser.

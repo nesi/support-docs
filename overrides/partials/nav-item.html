@@ -120,10 +120,21 @@
           </div>
         {% endif %}
         <nav class="md-nav" data-md-level="{{ level }}" aria-labelledby="{{ path }}_label">
-          <label class="md-nav__title" for="{{ path }}" {% if index and nav_item.children | length <= 1 %}id="{{ path }}_label"{% endif %}>
-            <span class="md-nav__icon md-icon"></span>
-            {{ render_title(nav_item) }}
-          </label>
+          {% if index and nav_item.children | length <= 1 %}
+            <label class="md-nav__title" for="{{ path }}" id="{{ path }}_label">
+              <span class="md-nav__icon md-icon"></span>
+              {{ render_title(nav_item) }}
+            </label>
+          {% else %}
+            {# The opener above (id="{{ path }}_label") already labels this checkbox;
+               a second <label for> here would give the field two labels. This title
+               bar still needs to collapse the section on tap/click, so it's a button
+               wired up in general.js instead of a real label. #}
+            <div class="md-nav__title" role="button" tabindex="0" data-md-toggle-checkbox="{{ path }}">
+              <span class="md-nav__icon md-icon"></span>
+              {{ render_title(nav_item) }}
+            </div>
+          {% endif %}
           <ul class="md-nav__list" data-md-scrollfix>
             {% for item in nav_item.children %}
               {% if not index or item != index %}

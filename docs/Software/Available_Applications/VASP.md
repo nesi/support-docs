@@ -3,6 +3,7 @@ title: VASP
 created_at: '2015-09-08T03:11:50Z'
 tags:
 - chemistry
+description: Atomic-scale materials modelling with VASP on the cluster
 ---
 
 [//]: <> (APPS PAGE BOILERPLATE START)

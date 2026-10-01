@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.1.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.1.0 - ORCID iD field added to the account profile
 ---
 
 ## Release Update - 24. June 2021

@@ -2,6 +2,7 @@
 created_at: '2018-07-31T10:59:09Z'
 tags:
     - software
+description: What to tell us when asking for a new application or version to be installed
 ---
 
 To request that we install a scientific application (either a new

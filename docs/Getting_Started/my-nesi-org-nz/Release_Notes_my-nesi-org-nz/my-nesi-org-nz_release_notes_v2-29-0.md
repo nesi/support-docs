@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.29.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.29.0 - allocation form separates new and storage-only requests
 ---
 
 ## New and Improved

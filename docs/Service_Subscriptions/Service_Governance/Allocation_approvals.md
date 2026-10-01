@@ -3,6 +3,7 @@ created_at: '2023-07-05T23:49:27Z'
 tags:
 - account
 title: Allocation Approvals
+description: How allocations are approved when a subscription covers one or many projects
 ---
 
 Access to our HPC platform resources is managed through

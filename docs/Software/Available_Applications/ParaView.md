@@ -2,6 +2,7 @@
 created_at: '2019-06-12T03:00:10Z'
 tags:
 - visualisation
+description: Running ParaView in client-server mode from an interactive visualisation session
 ---
 
 

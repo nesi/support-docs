@@ -3,6 +3,7 @@ created_at: '2019-07-22T03:46:24Z'
 tags:
 - openmp
 - parallel
+description: The environment settings that control how many threads OpenMP code runs
 ---
 
 [OpenMP](https://en.wikipedia.org/wiki/OpenMP) is an application
@@ -33,7 +34,7 @@ consistent, additional information can be found in our article
 
 1. `--threads-per-core=2`. Use this option to tell srun or sbatch to
 that you want to use [Simultaneous Multithreading (SMP)](Simultaneous_Multithreading.md),
-so use both of the virual CPUs available on each physical core,
+so use both of the virtual CPUs available on each physical core,
 halving the number of physical cores you occupy.
 If you use SMP, you will be charged for the number of physical cores that
 you requested - the second logical CPU on a physical CPU core is free,

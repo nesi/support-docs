@@ -4,6 +4,7 @@ tags:
 - r
 vote_count: 7
 vote_sum: 3
+description: Using R for statistical computing and graphics on the cluster
 ---
 
 ## Description
@@ -432,10 +433,12 @@ Options:
 
 Running functions from the INLA package may results in GLib versions not found. Installing a specific version and binary for the package as below has worked.
 
+```sh
+module load R-bundle-Bioconductor/3.17-gimkl-2022a-R-4.3.1
+R
 ```
-module load R-bundle-Bioconductor/3.17-gimkl-2022a-R-4.3.1 
-R 
 
+```r
 #https://inla.r-inla-download.org/R/testing/bin/windows/contrib/4.3/ 
 remotes::install_version("INLA", version="23.06.29",repos=c(getOption("repos"),INLA="https://inla.r-inla-download.org/R/testing"), dep=TRUE) 
 

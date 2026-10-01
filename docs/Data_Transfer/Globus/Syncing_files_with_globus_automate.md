@@ -3,6 +3,7 @@ created_at: '2023-01-12T20:45:15Z'
 tags:
     - file_transfer
 title: Sync'ing With Globus-Automate
+description: Transferring data off the cluster programmatically with Globus automate
 ---
 
 It is common to generate large amounts of simulation data on Mahuika and

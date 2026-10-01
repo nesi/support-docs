@@ -2,10 +2,15 @@
 
 This directory contains QA tests for the documentation.
 
+All these checks are intended to run on the markdown files, not rendered files.
+
 Tests should be made as Python scripts to allow flexibility of use. Currently these checks are run two ways:
 
 - [GitHub Actions](https://docs.github.com/en/actions) as defined in [workflows](../.github/workflows/),
 - [VSCode Problem Matchers](https://code.visualstudio.com/docs/editor/tasks#_processing-task-output-with-problem-matchers) as defined in [tasks.json](../.vscode/tasks.json).
+
+By default every check exits `0` whatever it reports. Set `CHECKS_STRICT=1` to make a check exit `1` if it reported any warning or error
+(notices do not count). This is intended for local use and AI agents, CI does not set it.
 
 ## Check Types
 
@@ -44,20 +49,38 @@ Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlin
 *This linter is defined in [run_meta_check.py](run_meta_check.py) script.*
 
 Catch-all for custom checks.
-Currently defined checks are:
 
-- title_redundant
-- title_length
-- meta_missing_description
-- meta_unexpected_key
-- minimum_tags
-- walk_toc
-- click_here
-- dynamic_slurm_link
+See script for details.
 
 ### Test Build
 
 Does a 'strict' build of the site, capturing any errors emmited by mkdocs.
+
+It rebuilds every page by default. `./checks/run_test_build.py --dirty` only rebuilds pages changed since the last build in `public/`,
+which is faster (the VS Code task uses it) but drops warnings for skipped pages and adds false `mkdocs_llmstxt` warnings.
+
+### Accessibility (WCAG)
+
+*This linter is defined in [run_a11y_check.sh](run_a11y_check.sh), parsed by [parse_a11y_report.py](parse_a11y_report.py).*
+
+Runs the [AccessLint](https://github.com/AccessLint/audit) WCAG audit against a local `mkdocs build` (the `public/` directory), rather than a deployed site, so it runs the same way in CI as it does locally.
+
+Like the other checks, it can be scoped to specific pages by passing their `docs/*.md` source paths as arguments; with none given, every page in the site is audited.
+
+AccessLint's own inline annotations only fire for violations with a JS/React source map, which a server-rendered mkdocs site never has, so `parse_a11y_report.py` reads its JSON report instead and maps each violation back to the built HTML file under `public/`.
+
+## Errors and the PR summary
+
+Only use `error` level for problems that should block merging, currently: a failed build,
+broken links, macro or include errors ([run_test_build.py](run_test_build.py)) and front matter
+that isn't valid YAML ([run_meta_check.py](run_meta_check.py)).
+Checks exit non-zero if they emitted an error. Everything else should be a `warning` or `notice`.
+
+In CI each check's output is saved and [summarise_annotations.py](summarise_annotations.py)
+turns it into a single PR comment (posted by [pr_comment.sh](../.github/pr_comment.sh)).
+Errors are always listed. Other findings are only listed if they are on a line the PR changed.
+To preview locally, save each check's output to `annotations/<check>.txt` then run
+`python3 checks/summarise_annotations.py origin/main annotations`.
 
 ### Debugging Checks
 
@@ -66,3 +89,12 @@ Each type of test has a debug job in VSCode.
 Most will run on the [fail_checks](fail_checks.md) page
 
 ![alt text](../docs/assets/images/debug_menu.png)
+
+## Tags
+
+Tags are used to help search indexing, but can also be used to search by topic.
+
+We don't want a large number of similar/duplicate tag topics, as this is visually messy and reduces the utility of being able to sort by one.
+There is a canonical vocabulary of tags (with aliases) in [tags.yml](../docs/assets/tags.yml), feel free to add to it.
+
+Tags are checked in [run_meta_check.py](run_meta_check.py).

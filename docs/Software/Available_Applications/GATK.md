@@ -3,6 +3,7 @@ title: GATK
 created_at: '2023-02-21T21:21:50Z'
 tags:
 - biology
+description: Variant discovery and genotyping in germline DNA and RNAseq data with GATK
 ---
 
 
@@ -67,7 +68,7 @@ GATK-picard commands, use:
 gatk <picard function> <options>
 ```
 
-This is different what what is currently written on the GATK
+This is different from what is currently written on the GATK
 documentation, you do not need to call "java -jar picard.jar
 &lt;Picard-function&gt;". Simply replace the Java parts with "gatk" and
 the function of interest.
@@ -86,7 +87,7 @@ referring to your nobackup or projects directory, but is likely to be
 Java applications pointing to the small temporary filesystem available
 in a compute node.
 
-To work around this, create another directory to use for temporrary
+To work around this, create another directory to use for temporary
 files.
 
 ``` sl

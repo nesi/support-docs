@@ -56,7 +56,7 @@ later on in this guide.
 On Māui only, you may need to install the Perl *XML::LibXML* module,
 especially if you encounter errors like:
 
-```
+```txt
 err=Can't locate XML/LibXML.pm in @INC (you may need to install the XML::LibXML module)
 ```
 
@@ -235,7 +235,7 @@ Next, set up the case and preview the run:
 
 Check that everything looks correct in the preview. On Mahuika you should see that the case is setup to run on 192 total tasks:
 
-```
+```txt
 CASE INFO:
   nodes: 6
   total tasks: 192

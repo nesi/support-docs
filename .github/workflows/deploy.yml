@@ -9,6 +9,7 @@ env:
   PYTHON_VERSION: 3.14.2
   GH_TOKEN: ${{ github.token }}
   NO_MKDOCS_2_WARNING: "1"
+  ENABLED_GIT_DATES: "true"
 
 permissions:
   contents: write
@@ -72,4 +73,17 @@ jobs:
         with:
           key: mkdocs-${{ hashfiles('.cache/**') }}
           path: .cache
-
+  rag-ingest:
+    if: false
+    name: Trigger RAG index refresh
+    runs-on: ubuntu-24.04
+    steps:
+      # Trigger pipeline at gitlab.com/nesi1/nesi-rst/nesi-docs-rag, not GitHub)
+      - name: Trigger nesi-docs-rag pipeline
+        env:
+          TRIGGER_TOKEN: ${{ secrets.GITLAB_TRIGGER_TOKEN }}
+        run: |
+          curl -sS --fail -X POST \
+            --form token="$TRIGGER_TOKEN" \
+            --form ref=main \
+            "https://gitlab.com/api/v4/projects/nesi1%2Fnesi-rst%2Fnesi-docs-rag/trigger/pipeline"

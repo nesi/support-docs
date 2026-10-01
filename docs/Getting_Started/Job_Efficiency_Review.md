@@ -4,6 +4,7 @@ tags:
 - slurm
 - profiling
 - account
+description: What a job efficiency review involves and what we expect from each side
 ---
 
 ## Introduction

@@ -3,7 +3,10 @@ created_at: '2021-09-14T03:20:56Z'
 tags:
 - account
 title: Quarterly Allocation Periods
+description: When applications for new allocations on existing projects are due each year
 ---
+
+{% include 'partials/status-no-pro.md' %}
 
 Applications for new allocations on existing projects are accepted and
 assessed in quarterly allocation periods. Under this quarterly call
@@ -31,12 +34,10 @@ graphic below).
 
 ![Blank\_Diagram\_\_1\_.png](../../assets/images/Quarterly_allocation_periods_0.png)
 
-## Existing allocations
-
 If you have an existing allocation, you will be reminded about the
 upcoming call by email during the second month before your project
 expires. For example, if your allocation expires at the end of May, you
-will receive email reminders during the month of April. This applies 
+will receive email reminders during the month of April. This applies
 to Compute and Freezer allocations.
 
 We aggregate requests and deal with them in batches during the review

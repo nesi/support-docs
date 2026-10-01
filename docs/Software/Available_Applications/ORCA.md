@@ -5,6 +5,7 @@ tags:
 - chemistry
 vote_count: 6
 vote_sum: 4
+description: General purpose quantum chemistry and spectroscopic properties with ORCA
 ---
 
 

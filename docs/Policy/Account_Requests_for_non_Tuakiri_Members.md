@@ -5,6 +5,7 @@ tags:
 - access
 - account
 title: Account Requests for Non-Tuakiri Members
+description: Getting an account when your institution is not in the Tuakiri federation
 ---
 
 Most New Zealand universities and Public Research Organisations are members

@@ -4,6 +4,7 @@ tags:
 - release_notes
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.20.0 - handling projects whose research grant is not listed
 ---
 
 ## 28 February 2024

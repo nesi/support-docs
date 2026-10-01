@@ -1,8 +1,8 @@
 ---
 created_at: 2026-07-15
 description: Using Mahuika OnDemand
-tags: 
-    - OnDemand
+tags:
+    - interactive
 ---
 
 
@@ -40,11 +40,11 @@ A number of interactive applications can be accessed through OnDemand, including
 
 ## Known Issues
 
-A list of known issues and limitations with OnDemand, can be found on [this page](../../Announcements/Known_Issues_HPC3.md/#ondemand-apps)
+A list of known issues and limitations with OnDemand can be found in [Known Issues: OnDemand Apps](../../Announcements/Known_Issues_HPC3.md#ondemand-apps).
 
 ## Release notes
 
-Release notes can be found [here](Release_Notes/index.md).
+See the [OnDemand release notes](Release_Notes/index.md).
 
 ## Acknowledgements
 

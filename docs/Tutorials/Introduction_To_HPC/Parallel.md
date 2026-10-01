@@ -4,6 +4,7 @@ status: tutorial
 tags:
 - tutorial
 - parallel
+description: How programs use more than one CPU, and the difference between SMP and MPI
 ---
 
 
@@ -62,7 +63,7 @@ Which methods are available to you is largely dependent on the nature of the pro
 
 ### Shared-Memory (SMP)
 
-Shared-memory multiproccessing divides work among _CPUs_ or _threads_, all of these threads require access to the same memory.
+Shared-memory multiprocessing divides work among _CPUs_ or _threads_, all of these threads require access to the same memory.
 
 Often called *Multithreading*.
 
@@ -74,13 +75,13 @@ Number of threads to use is specified by the Slurm option `--cpus-per-task`.
 
 ### Distributed-Memory (MPI)
 
-Distributed-memory multiproccessing divides work among _tasks_, a task may contain multiple CPUs (provided they all share memory, as discussed previously).
+Distributed-memory multiprocessing divides work among _tasks_, a task may contain multiple CPUs (provided they all share memory, as discussed previously).
 
-Message Passing Interface (MPI) is a communication standard for distributed-memory multiproccessing. While there are other standards, often 'MPI' is used synonymously with Distributed parallelism.  
+Message Passing Interface (MPI) is a communication standard for distributed-memory multiprocessing. While there are other standards, often 'MPI' is used synonymously with Distributed parallelism.  
 
 Each task has it's own exclusive memory, tasks can be spread across multiple nodes, communicating via and _interconnect_. This allows MPI jobs to be much larger than shared memory jobs. It also means that memory requirements are more likely to increase proportionally with CPUs.
 
-Distributed-Memory multiproccessing predates shared-memory multiproccessing, and is more common with classical high performance applications (older computers had one CPU per node).
+Distributed-Memory multiprocessing predates shared-memory multiprocessing, and is more common with classical high performance applications (older computers had one CPU per node).
 
 Number of tasks to use is specified by the Slurm option `--ntasks`, because the number of tasks ending up on one node is variable you should use `--mem-per-cpu` rather than `--mem` to ensure each task has enough.
 
@@ -111,7 +112,7 @@ Create a new script called `gpu-job.sl`
 #SBATCH --account         {{config.extra.project_code}} 
 #SBATCH --output          %x.out
 #SBATCH --mem-per-cpu     2G
-#SBATCH --gpu-per-node    A100:1
+#SBATCH --gpus-per-node   A100:1
 
 module load CUDA
 nvidia-smi  
@@ -123,6 +124,9 @@ then submit with
  sbatch gpu-job.sl
 ```
 
+!!! question "Check the output"
+    Once the job has finished, check `gpu-job.out`
+
 ??? question "Solution"
   
     ```out
@@ -131,24 +135,24 @@ then submit with
 
     ```out
     hu Mar 26 12:47:29 2026       
-+-----------------------------------------------------------------------------------------+
-| NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
-+-----------------------------------------+------------------------+----------------------+
-| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
-| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
-|                                         |                        |               MIG M. |
-|=========================================+========================+======================|
-|   0  NVIDIA A100-SXM4-80GB          Off |   00000000:C7:00.0 Off |                    0 |
-| N/A   31C    P0             61W /  400W |       0MiB /  81920MiB |      0%      Default |
-|                                         |                        |             Disabled |
-+-----------------------------------------+------------------------+----------------------+
-+-----------------------------------------------------------------------------------------+
-| Processes:                                                                              |
-|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
-|        ID   ID                                                               Usage      |
-|=========================================================================================|
-|  No running processes found                                                             |
-+-----------------------------------------------------------------------------------------+
+    +-----------------------------------------------------------------------------------------+
+    | NVIDIA-SMI 580.105.08             Driver Version: 580.105.08     CUDA Version: 13.0     |
+    +-----------------------------------------+------------------------+----------------------+
+    | GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+    | Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+    |                                         |                        |               MIG M. |
+    |=========================================+========================+======================|
+    |   0  NVIDIA A100-SXM4-80GB          Off |   00000000:C7:00.0 Off |                    0 |
+    | N/A   31C    P0             61W /  400W |       0MiB /  81920MiB |      0%      Default |
+    |                                         |                        |             Disabled |
+    +-----------------------------------------+------------------------+----------------------+
+    +-----------------------------------------------------------------------------------------+
+    | Processes:                                                                              |
+    |  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+    |        ID   ID                                                               Usage      |
+    |=========================================================================================|
+    |  No running processes found                                                             |
+    +-----------------------------------------------------------------------------------------+
     ```
 
 ### Job arrays

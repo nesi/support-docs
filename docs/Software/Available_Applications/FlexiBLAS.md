@@ -3,6 +3,7 @@ created_at: '2024-02-15T03:27:38Z'
 tags:
 - software
 - parallel
+description: Switching between BLAS and LAPACK implementations at run time with FlexiBLAS
 ---
 
 {% set app_name = page.title | trim %}

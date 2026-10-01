@@ -5,6 +5,7 @@ tags:
 - parallel
 - profiling
 vote_count: 2
+description: A worked MPI scaling test showing how to size a distributed memory job
 ---
 
 <!-- TODO review the scripts, it looks like there is a missing word after $ -->
@@ -74,7 +75,7 @@ to create arrays of random numbers. The dot product of each array is
 then calculated and those numbers are summed together and sent back to
 the master task (via MPI) and all those numbers are summed together and
 the results are printed. The script will take the number of MPI tasks
-from the environment and and run it in parallel with that many ranks. We
+from the environment and run it in parallel with that many ranks. We
 unfortunately do not know how many CPUs, how much memory (RAM) or how
 much time to request for this script to complete. This means the first
 thing we need to do is run a small scale test and see how long that runs

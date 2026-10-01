@@ -3,6 +3,7 @@ created_at: '2019-08-26T00:02:24Z'
 tags:
 - troubleshooting
 title: I've Run Out of Storage Space
+description: What to do when you hit a disk space or file count quota, and how to free space
 ---
 
 There are two tracked resources in the Mahuika filesystem, *disk space* and
@@ -27,11 +28,11 @@ nobackup_nesi99999      6.833T
 
 There are a few ways to deal with file count problems
 
-### Use the nobackup filesystem
+## Use the nobackup filesystem
 
 Your nobackup directories `/nesi/nobackup/<projectcode>` has a significantly disk space limits.
 
-### Delete unnecessary files
+## Delete unnecessary files
 
 Some applications will generate a large number of files during
 runtime, using the command `du --inodes -d 1 | sort -hr` (for
@@ -39,7 +40,7 @@ inodes) or `du -h -d 1 | sort -hr` for disk space.  You can then
 drill down into the directories with the largest file count deleting
 files as viable.
 
-### SquashFS archive
+## SquashFS archive
 
 Many files can be compressed into a single SquashFS archive. We have
 written a utility, `nn_archive_files`, to help with this process.
@@ -78,6 +79,6 @@ using,
 tar -xzf tarname.tar
 ```
 
-### Contact Support
+## Contact Support
 
 If you are following the recommendations here yet are still concerned about inodes or disk space, {% include "partials/support_request.html" %} and we can raise the limit for you.

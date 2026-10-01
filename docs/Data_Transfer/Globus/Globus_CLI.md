@@ -2,6 +2,7 @@
 created_at: '2025-12-23T07:00:00Z'
 tags:
     - file_transfer
+description: Transferring files with the Globus command line interface instead of the web app
 ---
 
 This page will describe the various step to how to use the Globus Command Line Interface (CLI).
@@ -30,7 +31,7 @@ globus login
 ```
 
 This will show you a website that will require you to authenticate yourself, as well as to allow
-Globus CLI to have access to your Globus files. You will be given an authorization codethat you
+Globus CLI to have access to your Globus files. You will be given an authorization code that you
 want to enter into the terminal.
 
 ![Globus_CLI_1.png](../../assets/images/Globus_CLI_1.png)

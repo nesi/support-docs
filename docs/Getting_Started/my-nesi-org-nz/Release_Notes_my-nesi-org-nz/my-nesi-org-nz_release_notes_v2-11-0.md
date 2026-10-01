@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.11.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.11.0 - backend security updates
 ---
 
 ## Release Update - 21. June 2022

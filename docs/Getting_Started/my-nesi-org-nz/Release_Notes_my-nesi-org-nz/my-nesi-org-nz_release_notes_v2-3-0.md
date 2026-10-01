@@ -5,6 +5,7 @@ tags:
 title: my.nesi.org.nz Release Notes v2.3.0
 search:
   boost: 0.1
+description: Release notes for my.nesi.org.nz v2.3.0 - project member list and member management
 ---
 
 ## Release Update - 16. August 2021

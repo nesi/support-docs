@@ -11,15 +11,15 @@ import sys
 import yaml
 import os
 import time
+import traceback
 from titlecase import titlecase
 from pathlib import Path
+from difflib import get_close_matches
 
 # Ignore files if they match this regex
 EXCLUDED_FROM_CHECKS = [
     r"docs/assets/.*",
-    r".*/index\.html",
     r".*/index\.md",
-    r".*\.pages\.yml",
     r".*\.yml"
 ]
 
@@ -28,8 +28,16 @@ msg_count = {"debug": 0, "notice": 0, "warning": 0, "error": 0}
 # Constants for use in checks.
 
 MAX_TITLE_LENGTH = 28  # As font isn't monospace, this is only approx
-MAX_HEADER_LENGTH = 32  # minus 2 per extra header level
-MIN_TAGS = 1
+MAX_HEADER_LENGTH = 32  # minus 2 per header level, so h2: 28, h3: 26
+MAX_CODE_LINE_LENGTH = 80  # Approx monospace chars visible in a top level code block at 1280-1920px wide
+CODE_ADMONITION_EXTRA = 5  # Admonitions use a smaller font, so fit more (85-94 chars)
+CODE_LIST_LESS = 3  # Each level of list indent costs ~3 chars
+RANGE_SECTION_CHARS = [ 400, 3200 ] # Mirrors nesi-docs-rag's scripts/chunker.mjs MIN_CHARS/MAX_CHARS
+RANGE_TAGS = [1, 5]
+# Below this, descriptions stop distinguishing pages ("Release notes", "Freezer Quick
+# Start", eleven Freezer pages all sharing "Freezer upgrade release notes"). Descriptions
+# in the low 30s are still doing real work, so don't raise this without checking.
+MIN_DESCRIPTION_LENGTH = 30
 RANGE_SIBLING = [4, 8]
 ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many children warnings.
 # Site-infrastructure pages (tag index, updates feed, glossary) have no topic of their
@@ -37,6 +45,23 @@ ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many
 # vocabulary explicitly discourages (see its "RETIRED TAGS" section).
 NO_TAGS_REQUIRED = ["docs/tags.md", "docs/updates.md", "docs/GLOSSARY.md"]
 DOC_ROOT = "docs"
+TAGS_VOCAB_PATH = "docs/assets/tags.yml"
+
+
+def _load_tag_aliases(vocab):
+    """Lower-cased alias (or mis-cased canonical tag) -> canonical tag, matched the same way as compile_tags.py."""
+    aliases = {}
+    for canonical, entry in vocab.items():
+        aliases[canonical.lower()] = canonical
+        for alias in (entry.get("aliases") or []):
+            aliases[str(alias).lower()] = canonical
+    return aliases
+
+
+TAGS_VOCAB = yaml.safe_load(Path(TAGS_VOCAB_PATH).read_text())
+CANONICAL_TAGS = set(TAGS_VOCAB)
+TAG_ALIASES = _load_tag_aliases(TAGS_VOCAB)
+
 
 # Warning level for missing parameters.
 EXPECTED_PARAMETERS = {
@@ -44,12 +69,12 @@ EXPECTED_PARAMETERS = {
     "template": ["main.html", "supported_apps.html", "updates.html"],
     "description": "",
     "icon": "",
-    "status": ["new", "deprecated"],
+    "status": ["new", "deprecated", "tutorial"],
     "prereq": "",
     "postreq": "",
     "suggested": "",  # Add info here when implimented.
     "created_at": "",
-    "tags": "",  # Add info here when implimented.
+    "tags": "",  # Values are checked by approved_tags().
     "search": "",
     "hide": ["toc", "nav", "tags"],
     "no_module": [True, False],
@@ -58,96 +83,76 @@ EXPECTED_PARAMETERS = {
 
 def main():
     # Per file variables
-    global \
-        input_path, \
-        title_from_h1, \
-        title_from_filename, \
-        title, \
-        meta, \
-        contents, \
-        input_path
+    global input_path, title_from_filename, title, meta, contents, crashed_checks
 
     # Walk variables
-    global \
-        lineno, \
-        line, \
-        in_code_block, \
-        last_header_level, \
-        last_header_lineno, \
-        sibling_headers
+    global lineno, line, in_code_block, toc, toc_parents, nav_tree_failed
 
-    global toc, toc_parents, header, nav_tree_failed
+    # code_line_length variables
+    global code_fence_indent, code_containers, code_line_limit, code_line_where
 
-    inputs = sys.argv[1:]
-
-    for input_string in inputs:
+    for input_string in sys.argv[1:]:
         input_path = Path(input_string)
+        lineno = 1
         if any(re.match(pattern, input_string) for pattern in EXCLUDED_FROM_CHECKS):
             continue
+        if not input_path.is_file():
+            _emit("misc", {"message": "File not found, skipping. (Deleted in this change?)"})
+            continue
         _nav_check()
-        with open(input_path, "r") as f:
-            _emit(
-                "",
-                {
-                    "level": "debug",
-                    "file": input_path,
-                    "message": f"Checking meta for {f.name}",
-                },
-            )
+        _emit("", {"level": "debug", "message": f"Checking meta for {input_path}"})
+        contents = input_path.read_text()
+
+        match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
+        if not match:
+            _emit("meta.parse", {"line": 1, "message": "Meta block missing or malformed."})
+            meta = {}
+        else:
             try:
-                contents = f.read()
-                match = re.match(r"---\n([\s\S]*?)---", contents, re.MULTILINE)
-                if not match:
-                    _emit(
-                        "meta.parse",
-                        {
-                            "file": input_path,
-                            "col": 0,
-                            "endColumn": 99,
-                            "line": 1,
-                            "message": "Meta block missing or malformed.",
-                        },
-                    )
-                    meta = {}
-                else:
-                    meta = yaml.safe_load(match.group(1))
+                meta = yaml.safe_load(match.group(1)) or {}
+            except yaml.YAMLError as e:
+                # Only blocking error, mkdocs silently ignores front matter it can't parse.
+                _emit("meta.parse", {"level": "error", "line": 1, "message": "Front matter is not valid YAML. " + " ".join(str(e).split())})
+                continue
 
-                title_from_filename = _title_from_filename()
-                title_from_h1 = _title_from_h1()
-                title = (
-                    meta["title"]
-                    if "title" in meta
-                    else "" or title_from_h1 or title_from_filename
-                )
-                # global lineno, line, in_code_block, last_header_level, last_header_lineno, sibling_headers
+        title_from_filename = _title_from_filename()
+        title = meta.get("title") or title_from_filename
+        crashed_checks = set()
 
-                header = ""
-                lineno = 0
-                in_code_block = False
-                toc_parents = [title]
-                toc = {title: {"level": 1, "lineno": 0, "children": {}}}
-                nav_tree_failed = False
+        lineno = 0
+        in_code_block = False
+        toc_parents = [(title, 1)]
+        toc = {title: {"level": 1, "lineno": 0, "children": {}}}
+        nav_tree_failed = False
 
-                for line in contents.split("\n"):
-                    lineno += 1
-                    in_code_block = (
-                            not in_code_block
-                            if re.match(r"^\s*```.*$", line)
-                            else in_code_block
-                        )
-                    for check in WALKCHECKS:
+        code_fence_indent = 0
+        code_containers = []
+        code_line_limit = MAX_CODE_LINE_LENGTH
+        code_line_where = ""
 
-                        _get_nav_tree()
-                        _run_check(check)
-                for check in ENDCHECKS:
-                    _run_check(check)
-            except Exception as e:
-                _emit("misc", {"level": "error", "file": input_path, "message": e})
+        for line in contents.split("\n"):
+            lineno += 1
+            if re.match(r"^\s*```", line):
+                in_code_block = not in_code_block
+            _get_nav_tree()
+            for check in WALKCHECKS:
+                _run_check(check)
+        for check in ENDCHECKS:
+            _run_check(check)
 
 
 def _run_check(f):
-    for r in f():
-        _emit(f.__name__, r)
+    """Runs a check, a check that crashes is reported once per file and skipped, the others still run."""
+    if f.__name__ in crashed_checks:
+        return
+    try:
+        for r in f():
+            _emit(f.__name__, r)
+    except Exception as e:
+        crashed_checks.add(f.__name__)
+        traceback.print_exc(file=sys.stderr)
+        _emit(f.__name__, {"line": lineno, "message": f"Check '{f.__name__}' crashed ({type(e).__name__}: {e}), \
+it was skipped for the rest of this file."})
 
 
 def _emit(f, r):
@@ -176,23 +181,26 @@ def _title_from_filename():
     return name
 
 
-def _title_from_h1():
-    m = re.search(r"^ #(\S*)$", contents, flags=re.MULTILINE)
-    return m.group(1) if m else ""
-
-
 def _get_lineno(pattern):
-    i = 1
-    for line in contents.split("\n"):
-        m = re.match(pattern, line)
-        if m:
+    """Line number of the first line matching pattern, or 1 if none do."""
+    for i, l in enumerate(contents.split("\n"), start=1):
+        if re.match(pattern, l):
             return i
-        i += 1
-    return i
+    return 1
+
+
+def _did_you_mean(word, options):
+    """Closest option to word, or None if nothing is close enough to be worth suggesting."""
+    match = get_close_matches(str(word), sorted(options), n=1, cutoff=0.6)
+    return match[0] if match else None
 
 
 def _get_nav_tree():
-    """Makes a nice dictionary of header tree"""
+    """
+    Makes a nice dictionary of header tree.
+    toc_parents is the stack of (name, level) headers enclosing the current line, so a skipped level
+    (### straight after ##, or no ## at all) still nests under the nearest header above it.
+    """
     global toc, toc_parents, nav_tree_failed
 
     def _unpack(toc, a):
@@ -215,29 +223,22 @@ def _get_nav_tree():
 
         if header_level == 1:
             toc = {header_name: {"lineno": lineno, "children": {}}}
-            toc_parents = [header_name]
+            toc_parents = [(header_name, 1)]
             return
 
-        while header_level < len(toc_parents) + 1:
+        while toc_parents[-1][1] >= header_level:
             toc_parents.pop(-1)
 
-        _unpack(toc, toc_parents)["children"][header_name] = {
+        _unpack(toc, [name for name, _ in toc_parents])["children"][header_name] = {
             "level": header_level,
             "lineno": lineno,
             "children": {},
         }
-        toc_parents += [header_name]
+        toc_parents.append((header_name, header_level))
     except Exception:
         if not nav_tree_failed:
             nav_tree_failed = True
-            _emit(
-                "misc.nav",
-                {
-                    "level": "error",
-                    "file": input_path,
-                    "message": "Failed to parse Nav tree. Something is very wrong.",
-                },
-            )
+            _emit("misc.nav", {"line": lineno, "message": "Failed to parse Nav tree. Something is very wrong."})
 
 
 def _nav_check():
@@ -245,6 +246,7 @@ def _nav_check():
         doc_root = Path(DOC_ROOT).resolve()
         rel_path = input_path.resolve().relative_to(doc_root)
         for i in range(1, len(rel_path.parts)):
+            category = rel_path.parts[i - 1]
             num_siblings = 0
             for file_name in os.listdir(doc_root.joinpath(Path(*rel_path.parts[:i]))):
                 if not any(
@@ -255,31 +257,22 @@ def _nav_check():
                 _emit(
                     "meta.siblings",
                     {
-                        "file": input_path,
-                        "message": f"Parent category \
-    '{rel_path.parts[i - 1]}' has too few children ({num_siblings}). Try to nest '{RANGE_SIBLING[0]}' or more \
-    items here to justify it's existence.",
+                        "level": "notice",
+                        "message": f"Parent category '{category}' has too few children ({num_siblings}). \
+Try to nest '{RANGE_SIBLING[0]}' or more items here to justify its existence.",
                     },
                 )
-            elif num_siblings > RANGE_SIBLING[1] and file_name not in ALLOWED_BE_BIG:
+            elif num_siblings > RANGE_SIBLING[1] and category not in ALLOWED_BE_BIG:
                 _emit(
                     "meta.siblings",
                     {
-                        "file": input_path,
-                        "message": f"Parent category \
-    '{rel_path.parts[i - 1]}' has too many children ({num_siblings}). Try to keep number of items in a category \
-    under '{RANGE_SIBLING[1]}', maybe add some new categories?",
+                        "level": "notice",
+                        "message": f"Parent category '{category}' has too many children ({num_siblings}). \
+Try to keep number of items in a category under '{RANGE_SIBLING[1]}', maybe add some new categories?",
                     },
                 )
     except ValueError as e:
-        _emit(
-            "meta.nav",
-            {
-                "file": input_path,
-                "level": "error",
-                "message": f"{e}. Nav checks will be skipped",
-            },
-        )
+        _emit("meta.nav", {"message": f"{e}. Nav checks will be skipped"})
 
 
 def title_redundant():
@@ -287,24 +280,11 @@ def title_redundant():
     # keep it explicit so a future filename change can't silently break that lookup.
     if "Available_Applications" in input_path.parts:
         return
-    lineno = _get_lineno(r"^title:.*$")
-    if "title" in meta.keys() and title_from_filename == meta["title"]:
+    if meta.get("title") == title_from_filename:
         yield {
             "level": "notice",
-            "line": lineno,
+            "line": _get_lineno(r"^title:.*$"),
             "message": "Title set in meta is redundant as it is already set in filename.",
-        }
-    if "title" in meta.keys() and title_from_h1 == meta["title"]:
-        yield {
-            "level": "notice",
-            "line": lineno,
-            "message": "Title set in h1 is redundant as it is already set in filename.",
-        }
-    if title_from_filename == title_from_h1:
-        yield {
-            "level": "notice",
-            "line": lineno,
-            "message": "Title set in meta is redundant as it is already set in h1.",
         }
 
 
@@ -316,23 +296,24 @@ def meta_unexpected_key():
     def _test(v):
         if v not in EXPECTED_PARAMETERS[key]:
             yield {
-                "level": "error",
-                "line": _get_lineno(f"^{key}:.*$"),
-                "message": f"'{value}' is not valid for {key}. [{','.join(EXPECTED_PARAMETERS[key])}]",
+                "level": "warning",
+                "line": _get_lineno(f"^{re.escape(key)}:.*$"),
+                "message": f"'{v}' is not valid for {key}. [{','.join(str(x) for x in EXPECTED_PARAMETERS[key])}]",
             }
 
     for key, value in meta.items():
-        if key not in EXPECTED_PARAMETERS.keys():
+        if key not in EXPECTED_PARAMETERS:
+            similar = _did_you_mean(key, EXPECTED_PARAMETERS)
             yield {
-                "line": _get_lineno(r"^" + key + r":.*$"),
-                "message": f"Unexpected parameter in front-matter '{key}'",
+                "line": _get_lineno(f"^{re.escape(str(key))}:.*$"),
+                "message": f"Unexpected parameter in front-matter '{key}'" + (f", did you mean '{similar}'?" if similar else "."),
             }
         elif EXPECTED_PARAMETERS[key]:
             if isinstance(value, list):
                 for v in value:
-                    _test(v)
+                    yield from _test(v)
             else:
-                _test(value)
+                yield from _test(value)
 
 
 def meta_missing_description():
@@ -340,9 +321,45 @@ def meta_missing_description():
         yield {"message": "Missing 'description' from front matter."}
 
 
+def meta_thin_description():
+    """
+    A description that just restates the title carries no information. These descriptions
+    are what each llms.txt link is annotated with (see mkdocs_hooks.on_config), so a reader
+    picking between pages has only this line to go on - 'Guide to batch computing' on
+    Batch_Computing_Guide.md tells them nothing the title didn't.
+    """
+    description = meta.get("description")
+    if not isinstance(description, str):
+        return
+    description = " ".join(description.split())
+    if not description:
+        return
+    lineno = _get_lineno(r"^description:.*$")
+    if len(description) < MIN_DESCRIPTION_LENGTH:
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": f"Description '{description}' is too short to tell pages apart. \
+Aim for at least {MIN_DESCRIPTION_LENGTH} characters saying what the page answers.",
+        }
+    elif title and _squash(description) == _squash(title):
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": f"Description '{description}' just restates the title. \
+Say what the page answers instead.",
+        }
+
+
+def _squash(text):
+    """Lowercase and strip everything but letters and digits, for comparing phrasings."""
+    return re.sub(r"[^a-z0-9]", "", text.lower())
+
+
 def title_length():
     if len(title) > MAX_TITLE_LENGTH:
         yield {
+            "level": "notice",
             "line": _get_lineno(r"^title:.*$"),
             "message": f"Title '{title}' is too long. \
 Try to keep it under {MAX_TITLE_LENGTH} characters to avoid word wrapping in the nav.",
@@ -357,23 +374,49 @@ def title_capitalisation():
     correct_title = titlecase(title)
     if title != correct_title:
         yield {
+            "level": "notice",
             "line": _get_lineno(r"^title:.*$"),
             "message": f"Title '{title}' uses incorrect capitalisation. \
 '{correct_title}' is preferred",
         }
 
-def minimum_tags():
+def number_tags():
     if str(input_path) in NO_TAGS_REQUIRED or (meta.get("search") or {}).get("exclude"):
         return
     if "tags" not in meta or not isinstance(meta["tags"], list):
         yield {"message": "'tags' property in meta is missing or malformed."}
-    elif len(meta["tags"]) < MIN_TAGS:
+    elif len(meta["tags"]) < RANGE_TAGS[0]:
         yield {
             "line": _get_lineno(r"^tags:.*$"),
-            "message": "Try to include at least 2 'tags'\
-(helps with search optimisation).",
+            "message": f"Try to include at least {RANGE_TAGS[0]} 'tags' (helps with search optimisation).",
+        }
+    elif len(meta["tags"]) > RANGE_TAGS[1]:
+        yield {
+            "line": _get_lineno(r"^tags:.*$"),
+            "message": f"{len(meta['tags'])} is a lot of 'tags', are you sure they are all useful?",
         }
 
+def approved_tags():
+    if "tags" not in meta or not isinstance(meta["tags"], list):
+        return
+    for tag in meta["tags"]:
+        if tag in CANONICAL_TAGS:
+            continue
+        tag_lineno = _get_lineno(rf"^\s*-\s*['\"]?{re.escape(str(tag))}['\"]?\s*$")
+        if str(tag).lower() in TAG_ALIASES:
+            canonical = TAG_ALIASES[str(tag).lower()]
+            yield {
+                "line": tag_lineno,
+                "message": f"Tag '{tag}' is an alias, use the canonical tag '{canonical}' instead. \
+('python3 normalize_tags.py' can fix this.)",
+            }
+        else:
+            similar = _did_you_mean(tag, CANONICAL_TAGS)
+            yield {
+                "line": tag_lineno,
+                "message": f"Tag '{tag}' is not an approved tag, "
+                + (f"did you mean '{similar}'?" if similar else f"see '{TAGS_VOCAB_PATH}'."),
+            }
 
 def h1_in_body():
     """
@@ -462,6 +505,54 @@ def support_mailto_link():
         }
 
 
+def code_line_length():
+    """
+    Checks for code block lines too long to fit in the block, which force the reader to scroll sideways.
+    Length is counted from the fence's indent. The limit depends on what the block is nested in,
+    tracked as a stack of (kind, body indent) for the admonitions, tabs and list items enclosing the line.
+    """
+    global code_fence_indent, code_containers, code_line_limit, code_line_where
+
+    expanded = line.expandtabs(4)
+    indent = len(expanded) - len(expanded.lstrip())
+    m = re.match(r"^\s*```", line)
+
+    if not in_code_block or m:
+        if expanded.strip():
+            # A line indented less than a container's body closes that container.
+            code_containers = [c for c in code_containers if c[1] <= indent]
+        opener = re.match(r"^\s*(?:(?:!!!|\?\?\?\+?)\s|===\s)", expanded)
+        item = re.match(r"^\s*([-*+]|\d+[.)])\s+", expanded)
+        if opener:
+            kind = "tab" if opener.group(0).strip() == "===" else "admonition"
+            code_containers.append((kind, indent + 4))
+        elif item and not m:
+            code_containers.append(("list", item.end()))
+        if m and in_code_block:
+            # Opening fence, work out the limit for this block.
+            code_fence_indent = indent
+            kinds = [c[0] for c in code_containers]
+            code_line_limit = (
+                MAX_CODE_LINE_LENGTH
+                + (CODE_ADMONITION_EXTRA if "admonition" in kinds else 0)
+                - CODE_LIST_LESS * kinds.count("list")
+            )
+            names = {"admonition": "an admonition", "list": "a list"}
+            code_line_where = " and ".join(names[k] for k in dict.fromkeys(kinds) if k in names)
+        return
+
+    length = len(expanded[code_fence_indent:].rstrip())
+    if length > code_line_limit:
+        where = f" in {code_line_where}" if code_line_where else ""
+        yield {
+            "line": lineno,
+            "col": code_fence_indent + code_line_limit + 1,
+            "endColumn": code_fence_indent + length,
+            "message": f"Code line is {length} characters long, so it will scroll sideways. Code blocks{where} \
+fit about {code_line_limit} characters.",
+        }
+
+
 def walk_toc():
     """
     Checks if toc is sensible.
@@ -472,22 +563,59 @@ def walk_toc():
         for title, c in d["children"].items():
             if only_child:
                 yield {
+                    "level": "notice",
                     "line": c["lineno"],
                     "message": f"Header '{title}' is a useless only-child. Give it siblings or remove it.",
                 }
             # As header gets deeper nested, it will have less horizontal room in toc.
-            if len(title) > (MAX_HEADER_LENGTH - (2 * c["level"])):
+            limit = MAX_HEADER_LENGTH - (2 * c["level"])
+            if len(title) > limit:
                 yield {
+                    "level": "notice",
                     "line": c["lineno"],
                     "message": f"Header '{title}' is too long. \
- Try to keep it under {MAX_HEADER_LENGTH} characters to avoid word wrapping in the toc.",
+Try to keep h{c['level']} headers under {limit} characters to avoid word wrapping in the toc.",
                 }
-            for y in _count_children(c):
-                yield y
+            yield from _count_children(c)
 
     for d in toc.values():
-        for y in _count_children(d):
-            yield y
+        yield from _count_children(d)
+
+
+def section_length():
+    """
+    Flags h2/h3 sections outside the band the RAG chunker merges/splits at.
+    """
+    lines = contents.split("\n")
+    headers = []  # (lineno, name)
+    in_code = False
+    for i, l in enumerate(lines, start=1):
+        if re.match(r"^\s*```", l):
+            in_code = not in_code
+            continue
+        if in_code:
+            continue
+        m = re.match(r"^#{2,3}\s+(.*)$", l)
+        if m:
+            headers.append((i, m.group(1)))
+
+    for idx, (start, name) in enumerate(headers):
+        end = headers[idx + 1][0] - 1 if idx + 1 < len(headers) else len(lines)
+        length = len("\n".join(lines[start:end]))
+        if length < RANGE_SECTION_CHARS[0]:
+            yield {
+                "level": "notice",
+                "line": start,
+                "message": f"Section '{name}' is only ~{length} chars. \
+Sections under {RANGE_SECTION_CHARS[0]} will be lumped into the next section when parsed by the RAG.",
+            }
+        elif length > RANGE_SECTION_CHARS[1]:
+            yield {
+                "line": start,
+                "message": f"Section '{name}' is ~{length} chars. \
+Sections over {RANGE_SECTION_CHARS[1]} are too long to be meaningfully parsed by the RAG. \
+Consider breaking this into sub-headers.",
+            }
 
 
 def dynamic_slurm_link():
@@ -513,21 +641,27 @@ ENDCHECKS = [
     title_length,
     title_capitalisation,
     meta_missing_description,
+    meta_thin_description,
     meta_unexpected_key,
-    minimum_tags,
+    number_tags,
+    approved_tags,
     walk_toc,
+    section_length,
 ]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body]
+WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body, code_line_length]
 
 if __name__ == "__main__":
     main()
 
     # FIXME terrible hack to make VSCode in codespace capture the error messages
     # see https://github.com/microsoft/vscode/issues/92868 as a tentative explanation
-    time.sleep(5)
+    time.sleep(1)
 
-    # Arbitrary weighting whether to fail check or not
-
-    # exit((100 * (len(sys.argv)-1)) < msg_count["notice"] + (30 * msg_count["warning"] + (100 * msg_count["error"])))
+    # Only unparseable front matter is an error.
+    if msg_count["error"]:
+        sys.exit(1)
+    # CHECKS_STRICT=1: also exit non-zero on warnings.
+    if os.getenv("CHECKS_STRICT") and msg_count["warning"]:
+        sys.exit(1)
