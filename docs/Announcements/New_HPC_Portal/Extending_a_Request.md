@@ -1,5 +1,5 @@
 ---
-title: Extending a Request - renew an allocation
+title: Extending a Request - Renew an Allocation
 created_at: '2026-09-29'
 tags:
 - account
