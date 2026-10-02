@@ -2,13 +2,13 @@
 created_at: '2026-10-01'
 tags:
 - account
-description: How organization owners find and approve orders and end date changes in the REANNZ HPC Portal.
+description: How organisation owners find and approve orders and end date changes in the REANNZ HPC Portal.
 status: new
 ---
 
 {% include 'partials/status-only-pro.md' %}
 
-As an organization owner, you approve what projects in your organization ask for.
+As an organisation owner, you approve what projects in your organisation ask for.
 A request waits until you act on it.
 
 ## Find pending requests
@@ -18,15 +18,15 @@ Each type of request waits in its own place.
 
 | Request | Raised by | Email to you | Where to act |
 | --- | --- | --- | --- |
-| New resource | A project manager | Yes. The subject names the order. | Your organization's **Resources** → **Orders**. See [Approve an order](#approve-an-order). |
+| New resource | A project manager | Yes. The subject names the order. | Your organisation's **Resources** → **Orders**. See [Approve an order](#approve-an-order). |
 | Limit change | A project manager | Yes, as for a new resource. A limit change is an order. | As for a new resource. |
 | End date change | A project manager or member | Sometimes a short notice. Do not rely on it. | The resource's **End date change requests** tab. See [Approve end dates](#approve-end-dates). |
 
 Most portal emails do not repeat the request details.
 Log in to the portal to review them.
 
-End date change requests have no organization-wide list.
-Open your organization's **Resources** and check the allocations with the nearest **Termination date**.
+End date change requests have no organisation-wide list.
+Open your organisation's **Resources** and check the allocations with the nearest **Termination date**.
 
 ## New projects
 
@@ -40,7 +40,7 @@ You do not approve this step.
 
 To see who has used a link:
 
-1. Open your organization and click **Team**.
+1. Open your organisation and click **Team**.
 2. Click the **Group invitations** tab.
 3. Expand the invitation to see its requests.
 
@@ -53,7 +53,7 @@ and that order comes to you. See [Approve an order](#approve-an-order).
 Orders cover new resources and limit changes.
 A project manager raises a limit change with **Actions** → **Change limits** on the resource.
 
-1. Open your organization, then click **Resources** → **Orders**.
+1. Open your organisation, then click **Resources** → **Orders**.
 2. Click the order to open it.
    You cannot approve from the **⋮** menu in the list.
 3. Check the project, the offering and the requested limits.
