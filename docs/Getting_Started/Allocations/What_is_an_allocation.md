@@ -38,15 +38,16 @@ to balance work between different projects.
 These are measured in REANNZ Service Units (RSUs), with the price of hardware in terms of RSUs shown in the
 following table.
 
-|  Hardware type         |    Fair Share Price              |
-|------------------------|----------------------------------|
-| Milan CPU              | 0.9 RSUs per CPU-core-hour       |
-| Milan Memory (RAM)     | 0.1286 RSUs per GB-hour          |
-| Genoa CPU              | 1.4 RSUs per CPU-core-hour       |
-| Genoa Memory (RAM)     | 0.20 RSUs per GB-hour            |
-| A100 GPU device        | 36.0 RSUs per device-hour        |
-| L4 GPU device          | 8.0 RSUs per device-hour         |
-| H100 GPU device        | 162.0 RSUs per device-hour       |
+|  Hardware type           |    Fair Share Price              |
+|--------------------------|----------------------------------|
+| Milan CPU                | 0.9 RSUs per CPU-core-hour       |
+| Milan Memory (RAM)       | 0.1286 RSUs per GB-hour          |
+| Genoa CPU                | 1.4 RSUs per CPU-core-hour       |
+| Genoa Memory (RAM)       | 0.20 RSUs per GB-hour            |
+| A100 GPU device          | 36.0 RSUs per device-hour        |
+| L4 GPU device            | 8.0 RSUs per device-hour         |
+| H100 GPU device          | 162.0 RSUs per device-hour       |
+| RTX PRO 6000 GPU device  | 108.0 RSUs per device-hour       |
 
 The total RSU cost of a job is the sum of the costs of the
 hardware it uses. Once the job has finished running, this composite price is
