@@ -339,7 +339,7 @@ Be aware that your job is not fully scanned for correctness when you submit the 
 While you may get an immediate error if your `#SBATCH` directives are malformed, it is not until the job starts to run that the interpreter starts to process the batch script.
 Mahuika has an easy way for you to test your job submission.
 One can employ the debug QOS to get a short, high priority test job.
-Debug jobs have to run within 15 minutes and cannot use more than 2 nodes.
+Debug jobs have to run within 120 minutes and cannot use more than 2 nodes.
 To use debug QOS, add or change the following in your batch submit script:
 
 ```sh
