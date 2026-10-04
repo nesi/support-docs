@@ -42,7 +42,7 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 - Poll on the order of tens of seconds apart rather than in a tight loop.
 - Submit jobs in small, bounded batches, job-arrays or dependency chains (`sbatch --dependency=afterok:...`) instead of many independent submissions.
 - Point file operations (`find`, `grep`, `du`) at specific known paths rather than whole shared parent directories.
-- Run IO, CPU or memory heavy work as a job, not on the login node.
+- Run CPU or memory heavy work as a job, not on the login node (I/O heavy work will slow down any node being used, login node is preferable, however measures should be taken not to degrade performance).
 - Give an agent a narrow working directory rather than broad filesystem access.
 - Review the packages or dependencies an agent proposes to install before it installs them, and pre-install where practical.
 
