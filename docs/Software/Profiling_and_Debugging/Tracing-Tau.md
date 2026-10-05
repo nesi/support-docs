@@ -31,20 +31,17 @@ Load the required modules for the compiler toolchain and MPI. TAU should be comp
 module purge
 module load gimkl/2022a CMake
 ```
-
-Confirm the versions:
-
+Alternatively, 
 ```bash
-g++ --version
-mpicxx --version
-cmake --version
+module purge
+module load intel/2022a CMake
 ```
 
 ## 1. Build TAU on Mahuika
 
-The instructions have been tested for
+As of September 2026, the latest versions are
 ```bash
-TAU_VERSION=2.35.1
+TAU_VERSION=2.35.2
 PDT_VERSION=3.25.2
 ```
 Adapt as required.
@@ -78,6 +75,9 @@ Configure TAU for MPI and OpenMP (check the TAU documentation for CUDA support):
   -otf=download \
   -prefix=$TAU_HOME
 ```
+When building for intel, you may need to add `-c++=mpiicpc`.
+
+
 Build and install TAU:
 ```bash
 make install
