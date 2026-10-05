@@ -25,6 +25,7 @@ Before accepting this Policy, please note: We anticipate that they will change r
 10. Not to use the REANNZ HPC services for illegal or immoral purposes, such as theft, fraud, drug-trafficking, money-laundering, terrorism, pornography, violence, cruelty, incitement to racial hatred, or for offensive, obscene, abusive, menacing, defamatory or insulting behaviour.
 11. To comply with any special conditions and licence conditions that may apply to particular software packages you choose to use.
 12. Not to bypass or weaken the REANNZ HPC Services' authentication, for example by getting around two-factor authentication, letting automated tools log in with your credentials or use your login sessions without your supervision, or opening a tunnel (such as a reverse SSH tunnel) that lets connections from outside reach the REANNZ HPC Services without logging in through them. Automated tools that need their own access must use a service account.
+13. Not to hide or disguise the processes you run on the REANNZ HPC Services, or who or what is running them, for example by renaming a process to mislead, running an automated tool or agent under a misleading name, or deliberately working around the monitoring, accounting or resource limits.
 
 ## We agree
 
