@@ -40,6 +40,10 @@ Option 1 is recommended for most HPC work.
 The agent runs next to your files, the environment modules, the compilers and Slurm,
 so it can complete the edit, build, submit and check cycle itself.
 
+All three options use your own account, as long as you start Claude Code yourself and are there to approve what it does.
+If you want it to keep working after you log out, or to start without you, it needs a service account.
+See [Which account to use](./AI_Agent_Guidelines.md#which-account-to-use).
+
 !!! warning "Set your project code"
     The instructions on this page use the shell variable `PROJECT` for your project code.
     Set it first, **replacing `nesi12345` with your own project code**:
@@ -58,8 +62,7 @@ so it can complete the edit, build, submit and check cycle itself.
 
 ## Option 1: On Mahuika
 
-In this setup Claude Code is installed in the home directory of your agent service account and runs on a Mahuika login node.
-Log in with the service account, not your own account, for all the steps below.
+In this setup Claude Code is installed in your home directory and runs on a Mahuika login node.
 You connect to it from your own computer with a terminal, VS Code, or the Claude apps.
 The agent works directly on your files in `/nesi/project` and `/nesi/nobackup`, uses the same modules and compilers that you do,
 and submits and monitors Slurm jobs with the standard commands.
@@ -159,7 +162,7 @@ The first time, you will be asked how to authenticate:
 
 Claude Code sessions can run for a long time, for example while waiting for a job to finish.
 Start Claude Code inside [`tmux`](../../Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md)
-so that the session continues if your SSH connection drops:
+so that the session is not lost if your SSH connection drops:
 
 ```sh
 tmux new -s agent
@@ -167,6 +170,10 @@ claude
 ```
 
 Detach with <kbd>ctrl</kbd> + <kbd>b</kbd> then <kbd>d</kbd>, and reattach later with `tmux attach -t agent`.
+
+Do not leave Claude Code working in a detached session after you log out.
+An agent that keeps working without you [needs a service account](./AI_Agent_Guidelines.md#which-account-to-use).
+Leaving it waiting for your approval is fine.
 
 [Run only one agent session at a time](./AI_Agent_Guidelines.md#working-on-the-cluster).
 Before starting a new session, check for an old one with `tmux ls` and reattach to it or close it.
@@ -186,7 +193,7 @@ Once Claude Code is running on Mahuika, you can interact with it in any of these
   and install the Claude Code extension in the remote window.
   The agent then runs on Mahuika and shows file edits as diffs in the editor.
 - **Claude desktop app SSH session:** the Code tab of the Claude desktop app can open sessions on a remote machine over SSH.
-  It must connect with your agent service account, not by reusing your own `ssh mahuika` login.
+  Open the session yourself and stay with it, as you would in a terminal.
 
 !!! warning "Do not use Remote Control on Mahuika"
     Claude Code's `/remote-control` command lets a session be controlled from the Claude website or apps.
@@ -329,28 +336,26 @@ Keep large outputs out of your source directory so the agent does not read throu
 
 ## Option 2: Local, over SSH
 
-In this setup Claude Code runs on your own computer and runs commands on Mahuika through SSH with your agent service account,
-for example `ssh mahuika-agent 'squeue --me'` or `ssh mahuika-agent "cd /nesi/project/$PROJECT/my_code && sbatch run.sl"`,
-where `mahuika-agent` is the SSH host name for your service account.
+In this setup Claude Code runs on your own computer and runs commands on Mahuika through a login session you opened,
+for example `ssh mahuika 'squeue --me'` or `ssh mahuika "cd /nesi/project/$PROJECT/my_code && sbatch run.sl"`.
 The double quotes make your computer's shell fill in `$PROJECT` before the command is sent.
 
 This needs no installation on Mahuika, and your Claude credentials stay on your own computer.
 It works well for occasional tasks such as submitting a job or summarising output files.
 It is awkward for development, because the agent cannot easily edit files on the cluster.
 
-!!! warning "Use a service account, not your own login"
-    Do not let the agent reuse your own SSH connection to Mahuika, for example one kept open with `ControlPersist`.
-    This gets around two-factor authentication, which
-    [clause 12 of the Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow.
-    See [Credentials and access](./AI_Agent_Guidelines.md#credentials-and-access) in the AI Agent Guidelines.
-
-You must apply for a service account on Mahuika: {% include "partials/support_request.html" %}.
+!!! warning "Log in yourself and stay with the agent"
+    First log in with `ssh mahuika` in your own terminal, including two-factor authentication.
+    With the [standard SSH configuration](../../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md),
+    the agent's `ssh mahuika` commands then reuse that connection, and stop working once you log out.
+    Do not give the agent your SSH key or password, or let it log in on its own.
+    See [Which account to use](./AI_Agent_Guidelines.md#which-account-to-use) in the AI Agent Guidelines.
 
 ## Option 3: Local, then sync
 
 In this setup you and Claude Code work on a copy of your code on your own computer.
 When it is ready, copy it to Mahuika (for example with `rsync`) and submit jobs there yourself.
-If you want the agent to run these commands, it must use a service account as in [Option 2](#option-2-local-over-ssh).
+The agent can also run these commands for you, through a login session you opened, as in [Option 2](#option-2-local-over-ssh).
 
 ```sh
 rsync -av --exclude .git ./ mahuika:/nesi/project/$PROJECT/my_code/

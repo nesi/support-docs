@@ -99,25 +99,26 @@ li {
 }
 
 .badge-domain-biology{
-    background-color: #28a745;
+    background-color: #208637;
 }
 
 .badge-domain-chemistry {
-    background-color: #ff07d8;
+    background-color: #d600b4;
 }
 
 .badge-domain-climate_science {
     background-color: #add8e6;
+    color: #4d4d4d;
 }
 .badge-domain-earth_science {
     background-color: #794e00;
 }
 
 .badge-domain-engineering{
-    background-color: #ff7737;
+    background-color: #d04300;
 }
 .badge-domain-gpu{
-    background-color: #808080;
+    background-color: #757575;
     text-transform: uppercase;
 }
 .badge-domain-mathematics {
@@ -125,21 +126,21 @@ li {
 }
 
 .badge-domain-physics {
-    background-color: #6495ed;
+    background-color: #2b6ee6;
 }
 
 .badge-domain-social_science {
-    background-color: #1797ad;
+    background-color: #137f92;
 }
 
 .badge-domain-machine_learning {
     background-color: #ffdd00;
-    color: dimgrey;
+    color: #4d4d4d;
 }
 
 .badge-domain-data_analytics {
     background-color: #feff00;
-    color: dimgrey;
+    color: #4d4d4d;
 }
 
 .badge-domain-visualisation {

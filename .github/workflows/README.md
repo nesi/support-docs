@@ -44,11 +44,14 @@ A series of QA checks run on the documentation.
 The checks can be started manually from the ![workflow page](https://github.com/nesi/support-docs/actions/workflows/checks.yml/badge.svg),
 select the target branch, give the pattern of files to include, and select which checks you want done.
 
-Checks will also be run on any _non main_ branch pushes. All checks will be run, but only on _changed_ files
+Checks will also be run on every pull request. All checks will be run, but only on _changed_ files
 (deleted files are left out).
 
-Jobs: spelling, prose, markdownlint, page meta (plus an ARIA reference check), Slurm scripts, accessibility (WCAG),
-compile tags, and a full test build. Findings are reported as annotations; the jobs do not fail on warnings.
+Jobs: spelling, prose, markdownlint, page meta, Slurm scripts, accessibility (WCAG),
+compile tags, and a full test build (plus an ARIA reference check). Findings are reported as annotations.
+Only the test build and page meta jobs can fail, and only on errors.
+
+The `summary` job collects every job's output into a single PR comment, see [checks/README.md](../../checks/README.md#errors-and-the-pr-summary).
 
 More info on what these checks do in [README.md](../../checks/README.md)
 
@@ -63,6 +66,12 @@ The `rag-ingest` job, which triggers a refresh of the docs search assistant inde
 Runs on every pull request (except from `assets-update`). Triggers a build of the branch in
 [CallumWalley/mkdocs-demo-deploy](https://github.com/CallumWalley/mkdocs-demo-deploy), waits up to 10 minutes for it,
 then comments on the pull request with a link to the preview and to each changed page.
+
+## [review_gate.yml](review_gate.yml)
+
+Required check. Passes if the PR only modifies existing `docs/**/*.md` files and changes 50 lines or fewer (`MAX_LINES`),
+or if someone other than the author has approved it. Bot PRs are exempt.
+A submitted or dismissed review re-runs the gate for the latest commit, so its check is replaced rather than duplicated. While the gate is failing, a comment on the PR explains why. It is deleted once the gate passes.
 
 ## [auto_merge.yml](auto_merge.yml)
 

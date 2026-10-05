@@ -22,7 +22,9 @@ By default every page is rebuilt, so every page's warnings are reported.
 --dirty only rebuilds pages changed since the last build in the site dir (faster,
 used by the VS Code task), which silently drops warnings for the pages it skips.
 
-Set CHECKS_STRICT=1 to exit non-zero if any warning or error was reported.
+Exits non-zero if the build fails, or on any broken link, macro or include error
+(these are reported as ERROR). Everything else is a WARNING or NOTICE.
+Set CHECKS_STRICT=1 to also exit non-zero on warnings.
 """
 
 msg_count = {"DEBUG": 0, "NOTICE": 0, "WARNING": 0, "ERROR": 0}
@@ -60,12 +62,22 @@ def parse_macro(record):
         record.name = g["title"]
         record.filename = g["file"]
         record.msg = g["message"]
+    else:
+        # Does not give correct path to file in question in 'title'.
+        # Infer from message.
+        m = re.search(r"'(.*?\.md)'",  record.msg)
+        if m:
+            record.filename = m.group(1)
 
-    # Does not give correct path to file in question in 'title'.
-    # Infer from message.
-    m = re.search(r"'(.*?\.md)'",  record.msg)
-    if m:
-        record.filename = m.group(1)
+    # Broken links are only a warning in mkdocs, but should block merging.
+    if record.name == "mkdocs.structure.pages" and "is not found among documentation files" in record.msg:
+        record.levelname = "ERROR"
+
+    # Paths are relative to docs dir, make relative to repo root so GitHub can match them.
+    if record.filename.endswith(".md") and not record.filename.startswith("docs/"):
+        record.filename = "docs/" + record.filename
+    # Line numbers are from the logging source, not the page.
+    record.lineno = 0
 
     # Swap to use notice for github parsing.
     if record.levelname == "INFO":
@@ -120,6 +132,8 @@ if __name__ == '__main__':
 
     time.sleep(5)
 
-    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
-    if os.getenv("CHECKS_STRICT") and msg_count["WARNING"] + msg_count["ERROR"] + msg_count.get("CRITICAL", 0):
+    if msg_count["ERROR"] + msg_count.get("CRITICAL", 0):
+        sys.exit(1)
+    # CHECKS_STRICT=1: also exit non-zero on warnings.
+    if os.getenv("CHECKS_STRICT") and msg_count["WARNING"]:
         sys.exit(1)

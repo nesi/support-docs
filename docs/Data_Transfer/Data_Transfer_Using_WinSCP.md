@@ -9,7 +9,7 @@ title:  WinSCP (Windows)
 !!! prerequisite
     [WinSCP-PuTTY Setup Windows](../Getting_Started/Accessing_the_HPCs/WinSCP-PuTTY_Setup_Windows.md)
 
-**Transfer Mode:** There are known issues using the default _Automatic_ transfer mode.  Some files, including source code files (aka text files), can be transferred with erroneous line endings. This will cause scripts or jobs to fail.  If you see extra _^M_ charcaters in your files (easily seen with the `cat -v` command, this means your files have been transferred incorrectly.  A worksround that sometimes works is to switch the WinSCP transfer mode to _Binary_
+**Transfer Mode:** There are known issues using the default _Automatic_ transfer mode.  Some files, including source code files (aka text files), can be transferred with erroneous line endings. This will cause scripts or jobs to fail.  If you see extra _^M_ characters in your files (easily seen with the `cat -v` command, this means your files have been transferred incorrectly.  A workaround that sometimes works is to switch the WinSCP transfer mode to _Binary_
 
 We recommend using a different file transfer client.
 
