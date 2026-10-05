@@ -159,7 +159,7 @@ JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME    
 2974409       pletzera nesi99999 a.1.slurm/ru   1    512M milan,g N/A                 1:00 PENDING  (Priority)
 ```
 
-You casn also monitor the tasks with the command
+You can also monitor the tasks with the command
 
 ``` sh
 cylc tui slurm

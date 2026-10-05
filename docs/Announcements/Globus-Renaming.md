@@ -2,7 +2,7 @@
 created_at: 2026-06-22
 description: Announcement about Globus collection renaming
 tags:
-    - globus
+    - file_transfer
 ---
 
 The REANNZ Globus endpoint and mapped collections names have been updated to reflect our organisational name change from NeSI to REANNZ. The new names are effective as of 3:30 pm, 22 June 2026.
@@ -18,6 +18,6 @@ The new names replace the “NeSI” prefix with a “REANNZ” prefix and inclu
 - NeSI RDC Storage mapped collection is now REANNZ Research Developer Cloud (RDC)
 - NeSI Data Transfer Node Tamaki endpoint is now REANNZ Data Transfer Node Tamaki 
 
-If you have any questions about this change, please contact support@nesi.org.nz.
+If you have any questions about this change, please {% include "partials/support_request.html" %}.
 
 For more information about using Globus to transfer data to or from the REANNZ HPC Platform, visit our [Globus documentation](../Data_Transfer/Globus/Globus_Overview.md) in the 'Data Transfer' section of this site.

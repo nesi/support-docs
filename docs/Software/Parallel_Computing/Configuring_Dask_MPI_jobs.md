@@ -213,7 +213,7 @@ srun python dask_example.py
 The Slurm output file should contain some status information from
 Dask-MPI, along with program output
 
-```
+```txt
 Dask result: 5
 Local result: 5
 ```

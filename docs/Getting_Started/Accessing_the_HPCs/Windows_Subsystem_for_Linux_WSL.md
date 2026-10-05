@@ -10,7 +10,7 @@ description: Enabling WSL allows utilising Linux tools on Windows.
 !!! prerequisite
      -   Windows 10 (version 2004) or later.
 
-Windows Subsystem for Linux is a feature that allows you to run a Linux OS that seemlessly functions alongside and within your Windows Desktop.
+Windows Subsystem for Linux is a feature that allows you to run a Linux OS that seamlessly functions alongside and within your Windows Desktop.
 
 WSL is enabled by default on Windows (since later releases of Windows 10).  However, your IT department may have disabled WSL.  If the instructions below do not work, please reach out to your IT helpdesk.
 

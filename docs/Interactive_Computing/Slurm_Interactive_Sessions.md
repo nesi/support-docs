@@ -75,7 +75,7 @@ salloc: Nodes c038 are ready for job
 ```
 
 Note the that you are still on the login node `login03`, however you
-will now have permission to `ssh` to the nodes mendtioned in the output or from `squeue --me`, in the above case, the node is `c038`, and now we can:
+will now have permission to `ssh` to the nodes mentioned in the output or from `squeue --me`, in the above case, the node is `c038`, and now we can:
 
 ```bash
 ssh c038

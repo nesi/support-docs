@@ -9,6 +9,7 @@ hide: toc
 ---
 
 To avoid unnecessary storage use, we maintain readonly versions of popular models in `/opt/nesi/models`, if you can use this please do.
+
 If you need a model that is not listed here, please {% include "partials/support_request.html" %} with the model name, source, and a brief description of your use case.
 
 ## Available models
@@ -82,7 +83,7 @@ See [Hardware](../Batch_Computing/Hardware.md) for a full list of available GPUs
 !!! warning "L4 GPUs have no double-precision floating point"
     The L4 is an inference-optimised GPU. It is suitable for running quantised models but should not be used for model training or workflows that require FP64 precision.
 
-
 !!! note "See Also"
+  
   - [Ollama](../Software/Available_Applications/ollama.md).
   - [Hardware](../Batch_Computing/Hardware.md).

@@ -9,6 +9,7 @@ env:
   WORKFLOW_ID: "deploy.yml"
   DEPLOY_URL: "https://callumwalley.github.io/mkdocs-demo-deploy"
   HEAD: ${{ github.event.pull_request.head.ref }}
+  PR: ${{ github.event.pull_request.number }}
   GH_REPO: ${{ github.repository }}
   NO_MKDOCS_2_WARNING: "1"
 permissions:
@@ -22,6 +23,9 @@ jobs:
     name: Trigger test deployments
     runs-on: ubuntu-24.04
     steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: .github
       - name: Trigger Workflow in Another Repository
         id: trigger
         run: |
@@ -40,7 +44,8 @@ jobs:
           msg="Deployment in progress...<br><br>\
           <img src='https://c.tenor.com/tYyW3H6uO8oAAAAC/tenor.gif' width=20% \
           alt='kakapo'><br><br>Waiting for test environment to finish building, please be patient ☺️"
-          gh pr comment "${HEAD}" --edit-last --create-if-none --body "${msg}"
+          echo "${msg}" > comment.md
+          bash .github/pr_comment.sh "${PR}" demo-deploy comment.md
       - name: Wait for target workflow to complete
         id: wait
         env:
@@ -114,4 +119,5 @@ jobs:
               echo "::error title=Deploy failed::${conclusion}" 
             fi
             # Update message in pull request.
-            gh pr comment "${HEAD}" --edit-last --create-if-none --body "${msg}"
+            echo "${msg}" > comment.md
+            bash .github/pr_comment.sh "${PR}" demo-deploy comment.md
