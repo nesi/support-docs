@@ -123,7 +123,7 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 
 	If this doesn't look right, you will need to change your `~/.bashrc` file by using `nano` or `vim`. 
 
-4. Test that your setup was successful. In the terminal, copy the following json file from [openfold3](from https://github.com/aqlaboratory/openfold-3/blob/main/examples/example_inference_inputs/query_ubiquitin.json): 
+4. Test that your setup was successful. In the terminal, copy the following json file from openfold3 (from https://github.com/aqlaboratory/openfold-3/blob/main/examples/example_inference_inputs/query_ubiquitin.json): 
 
 	```bash
 	cat > query_ubiquitin.json << 'EOF'
