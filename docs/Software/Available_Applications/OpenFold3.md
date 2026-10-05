@@ -1133,7 +1133,7 @@ been folded without its MSA or templates.
   want a fast, low-accuracy run, that trade-off is available via
   `"use_msas": false` on a chain, but do not use it for production results.
 
-## Running a training session with OpenFold3
+## Running a training session with OpenFold3 [alpha testing]
 
 OpenFold3 is fully trainable — you can train it from scratch
 or fine-tune the released checkpoints on your own structures. As with inference,
@@ -1149,6 +1149,11 @@ rather than from any network service.
     users actually want. Talk to us before requesting a large GPU allocation
     for training.
 
+!!! warning "This is still in alpha testing"
+
+	This information is still begin tested by users. Please report any issues
+	to support@nesi.org.nz if the documentation is not correct.
+
 ### Step 1: Get the training data
 
 *References: [Download the Dataset](https://openfold-3.readthedocs.io/en/latest/training.html#download-the-dataset)
@@ -1161,7 +1166,10 @@ so you can be sure of your `/nesi/nobackup` quota:
 ``` bash
 module load OpenFold3
 
+# to get summary details (please wait for this, will take a while)
 aws s3 ls --no-sign-request --summarize --human-readable --recursive s3://openfold3-data/pdb_training_set/ | tail -3
+# or to get all details
+aws s3 ls --no-sign-request --summarize --human-readable --recursive s3://openfold3-data/pdb_training_set/
 ```
 
 Then sync it to a directory that every node in your job can read:
@@ -1411,7 +1419,7 @@ For a single GPU, which is the right way to debug a config before scaling up:
 
 #SBATCH --account       nesi12345
 #SBATCH --job-name      of3-train
-#SBATCH --cpus-per-task 8
+#SBATCH --cpus-per-task 4
 #SBATCH --mem           64G
 #SBATCH --gpus-per-node A100:1
 #SBATCH --time          08:00:00
@@ -1430,7 +1438,7 @@ For several GPUs on one node, request them in the job and set `devices` to
 match. Mahuika GPU nodes carry two A100s each, so change the job header to:
 
 ``` sh
-#SBATCH --cpus-per-task 16
+#SBATCH --cpus-per-task 8
 #SBATCH --mem           128G
 #SBATCH --gpus-per-node A100:2
 ```
@@ -1476,11 +1484,12 @@ pl_trainer_args:
   distributed_timeout: PT30M
 ```
 
-!!! warning "Multi-node jobs need shared storage"
+!!! warning "Multi-node GPU jobs are not recommended"
 
-    Every rank must be able to read the dataset and write to `output_dir`.
-    Use `/nesi/nobackup` or `/nesi/project`, never `$TMPDIR`, which is
-    node-local (and in RAM).
+	Currently, The GPU nodes on mahuika interact with each other through ethernet.
+	This is very slow and will cause your jobs to run very slow. Before undertaking this 
+	task, please email support@nesi.org.nz so we can guide you through performing
+	these sorts of jobs on Mahuika.
 
 ### Step 4: Monitor the run
 
