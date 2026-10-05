@@ -26,9 +26,9 @@ jobs, but is limited to one small job per user at a time: no more than
 120 minutes and no more than 2 nodes.
 
 !!! warning "Abuse of Debug QoS"
-
   The debug QoS is intended for short running test jobs and debugging.
-  We monitor debug QoS use and may remove your debug-qos privileges if we believe they are being abused.
+  We monitor debug QoS use and may remove your debug-qos privileges
+  if we believe they are being abused.
 
 ### Fair Share
 
