@@ -1,5 +1,4 @@
 ---
 nav:
-  - Overview.md
-  - Extending_a_Request.md
-  - Approving_Requests.md
+  - HPC_Portal_Overview.md
+  - "*"
