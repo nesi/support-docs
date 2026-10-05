@@ -21,17 +21,26 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 
 ## Working on the cluster
 
+- Approve what the agent does. Review commands that change or delete files, submit jobs or install software before they run,
+  and do not use a mode that skips approval for them. Letting read-only status checks such as `squeue --me` run without approval is fine.
+- An agent sends everything it reads, including file contents and command output, to its model provider (offshore), whether it runs on the cluster or off it.
+  Only use agents on data that its owner has approved to be shared
+  (see the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree)), and follow any data conditions agreed for your project (see the [Access Policy](../../Policy/Access_Policy.md)).
+  Personal or health information, Māori data, and data under ethics, contract or export conditions often cannot be shared.
 - When polling commands that use shared resources (filesystem operations, `squeue`, `sacct`), leave generous delays between calls, for example `sleep 60` between `squeue --me` calls.
 - Run only one agent session at a time, unless support has agreed to more.
 - Use `squeue --me` and `ps -u $USER` to keep the agent's view limited to your own work.
-- If the agent runs off the cluster, do not give it your passwords, SSH keys, tokens or other sensitive information.
+- An agent on your own computer may run commands on the cluster through a login session you opened yourself, while you supervise it.
+  It is acting as you, so everything on this page applies to it.
+  It will not see guidance installed on the cluster, so give it these guidelines yourself.
+  Do not give it your passwords, SSH keys, tokens or other sensitive information, and do not let it log in on its own.
+- An agent that can access the cluster on its own, or that keeps running on the cluster when you are not supervising it, needs a service account.
 - Do not expose an MCP server or open a reverse tunnel from a REANNZ HPC system outward.
   This includes tools such as `ngrok`, `cloudflared`, VS Code tunnels and remote-control features of AI tools.
   [The Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow tunnels that let connections from outside reach the cluster without logging in.
   An agent on your workstation connecting in to a service on the cluster is fine, but not the other way around.
   Tunnels within the cluster, such as
   [forwarding a port from a compute node to a login node](../../Getting_Started/Accessing_the_HPCs/Port_Forwarding.md#forwarding-to-compute-nodes), are fine.
-- If an agent needs access to the cluster, apply to support for a service account: {% include "partials/support_request.html" %}.
 - Under the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-accept), REANNZ can stop any process that disrupts the service, including agent processes.
 
 ## Best Practice
@@ -42,7 +51,7 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 - Poll on the order of tens of seconds apart rather than in a tight loop.
 - Submit jobs in small, bounded batches, job-arrays or dependency chains (`sbatch --dependency=afterok:...`) instead of many independent submissions.
 - Point file operations (`find`, `grep`, `du`) at specific known paths rather than whole shared parent directories.
-- Run IO, CPU or memory heavy work as a job, not on the login node.
+- Run CPU or memory heavy work as a job, not on the login node (I/O heavy work will slow down any node being used, login node is preferable, however measures should be taken not to degrade performance).
 - Give an agent a narrow working directory rather than broad filesystem access.
 - Review the packages or dependencies an agent proposes to install before it installs them, and pre-install where practical.
 
@@ -58,6 +67,7 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 
 REANNZ does not provide support for third-party AI tools.
 Before raising a support ticket, verify any commands an agent has generated against the relevant documentation, and check that nothing has been hallucinated.
+Agents can look up this documentation themselves, starting from the index at `https://docs.nesi.org.nz/llms.txt`.
 
 An unofficial AI skill for responsible operation of the REANNZ HPC can be found at [nesi-support-skill](https://github.com/chrisdjscott/nesi-support-skill).
 
