@@ -24,7 +24,7 @@ To renew *and* grow an allocation, make both.
 
 ## Before you start
 
-- You need a role on the project. See [your roles in the HPC Portal](Overview.md#see-your-roles).
+- You need a role on the project. See [your roles in the HPC Portal](HPC_Portal_Overview.md#see-your-roles).
 - Make your request **before** the current end date.
   The portal does not accept an end date in the past,
   and an allocation may be removed once its end date has passed.
@@ -36,7 +36,7 @@ Project managers and project members can ask for a new end date.
 An organisation owner at your institution approves it.
 
 1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with REANNZ**.
-   See [logging in to the HPC Portal](Overview.md#log-in).
+   See [logging in to the HPC Portal](HPC_Portal_Overview.md#log-in).
 2. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the allocation.
 3. Click **Actions**, then **Request end date change**.
 4. In **Requested end date**, pick the new end date.
