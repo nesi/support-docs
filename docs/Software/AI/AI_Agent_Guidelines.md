@@ -51,7 +51,19 @@ An agent needs a service account when it:
 - keeps working in `tmux`, `screen` or another detached session after you log out,
 - can open its own connections to the cluster, for example with your SSH key or from a scheduled or cloud-hosted agent.
 
-Contact support before running an agent this way: {% include "partials/support_request.html" %}.
+Running such an agent under your own account breaks item 12 of the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree),
+which does not allow automated tools to log in with your credentials, or use your login session when you are not present.
+
+## Service accounts
+
+A service account is a separate user on the cluster for one application, such as an agent.
+It limits what the agent can reach, and how much harm it can do if something goes wrong.
+
+- It belongs to a project, and the project owner is responsible for everything it does.
+- It may be given an SSH key so that the agent can log in without you.
+- Its activity is monitored more closely than that of a personal account.
+
+To request a service account, {% include "partials/support_request.html" %}.
 
 ## Credentials and access
 
