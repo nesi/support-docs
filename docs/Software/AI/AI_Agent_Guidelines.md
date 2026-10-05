@@ -59,9 +59,9 @@ which does not allow automated tools to log in with your credentials, or use you
 A service account is a separate user on the cluster for one application, such as an agent.
 It limits what the agent can reach, and how much harm it can do if something goes wrong.
 
-- It belongs to a project, and the project owner is responsible for everything it does.
+<!-- - It belongs to a project, and the project owner is responsible for everything it does.
 - It may be given an SSH key so that the agent can log in without you.
-- Its activity is monitored more closely than that of a personal account.
+- Its activity is monitored more closely than that of a personal account. -->
 
 To request a service account, {% include "partials/support_request.html" %}.
 
