@@ -105,14 +105,19 @@ Tasks allow continuous checks to be run in the background, these can be defined 
 
 ## Checks
 
-Whenever a change is committed, or a merge request opened, a series of automatic checks will be started.
-From a pull request, the status of these checks can be seen in the 'Checks' tab, or inline under the 'Files Changed' Tab.
+When you open a pull request, or push to one, a series of automatic checks will run.
+When they finish, a bot posts a comment on the pull request with the results, and updates it after each push.
 
-Will give three levels of output, **Errors** (serious issues that will prevent merging into main), **Warnings** (non-critical suggestions for improvement) and **Info** (pedantry).
+The comment has two sections:
+
+- **Must fix**: these block merging. Only a failed build, a broken link, a broken macro or include, or front matter that is not valid YAML will appear here.
+- **Suggestions**: spelling, prose, formatting, accessibility and style. Only lines you changed are shown. Fix them if they make sense, and ignore them if they don't.
+
+The full output of every check is in the 'Checks' tab, or inline under the 'Files Changed' tab.
 
 ### ARIA and accessibility checks
 
-The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. If this check fails, the PR will show an error in the 'Checks' tab and the broken ARIA reference will be indicated.
+The CI now includes an ARIA reference validation step that checks generated HTML for broken references like `aria-labelledby`, `aria-describedby`, and `aria-controls` IDs. Broken references are reported as suggestions.
 
 You can run a WCAG audit ([AccessLint/audit](https://github.com/AccessLint/audit)) locally with the `a11y-audit` VS Code task (builds the site, serves it, and audits it). Violations show up in the 'PROBLEMS' tab like the other checks.
 After the audit runs, three files will be produced containing the audit report: `accesslint-report.json`, `accesslint-report.md`, and `accesslint-report.sarif`.
@@ -166,8 +171,8 @@ When you are done with your changes
 git push origin <branchname>
 ```
 
-CI checks will run on your branch, you can check them under 'Actions'
-Might be worth having a quick look at these before making a pull request.
+CI checks will run once you open a pull request.
+To see results before anyone reviews it, open it as a draft (see below).
 
 Make a pull [request](https://github.com/nesi/support-docs/pulls)
 
@@ -196,9 +201,36 @@ See [Merge Etiquette](#merge-etiquette) below.
 
 Clicking on the 'Files Changed' tab, will give a convenient diff of the changes, as well as inline errors identified by the CI checks.
 
-If some of the CI checks failed (make sure they are not important ones), you will have to click the  `Merge without waiting for requirements to be met (bypass branch protections)` button before proceeding with the merge.
+If the checks comment lists anything under **Must fix**, ask the author to fix it before merging. Suggestions do not need to be fixed.
 
 Feel free to raise an issue, make a proposal or [add words to the dictionary](#adding-words-to-dictionary) if you feel you are being unfairly targeted by the CI checks.
+
+#### What to Check
+
+Read the changed pages on the preview site, not just the diff. Then check:
+
+- **Facts:** commands, paths, limits, module names and versions match the sources (for example [Hardware](Batch_Computing/Hardware.md), [Job Limits](Batch_Computing/Job_Limits.md), `module-list.json`). If you can, run new commands and Slurm scripts on the cluster.
+- **Need:** the change follows [PRINCIPLES](PRINCIPLES.md). A new page is not duplicating an existing one or copying vendor documentation.
+- **Private information:** no real names, usernames, emails, project codes, job IDs or internal chat links.
+- **Links:** renamed, moved or deleted pages have a line in `docs/redirect_map.yml`, and the CI checks show no new broken links.
+- **Scope:** every file in the diff belongs to this change.
+
+#### AI-Assisted Changes
+
+AI-assisted pull requests say so in their description and have a `Co-authored-by:` line in the commits.
+They need the same review as any other change, with extra attention to:
+
+- **Invented details.** Agents write plausible commands, flags, paths and numbers with the same confidence as real ones.
+  Check the facts the description lists as unverified, and spot-check the rest against their sources.
+- **Private information** copied from a support ticket or chat that was used as source material.
+- **Files outside `docs/`**, or maintainer pages such as this one. Agents are told not to change them, so treat any such change as a question for the author.
+- **More than was asked for:** extra rewording, restructuring or new pages.
+
+An automated review (for example Gemini's comments) does not replace a person's review.
+
+- **New pages, or changes to facts, commands or policy:** ask someone other than the person who prompted the agent to review.
+  Small fixes (typos, links, formatting) can be reviewed and merged by the author as usual.
+- **`auto_merge`:** only add the label once a person has read the change.
 
 ### Updating A Merge Request
 
@@ -218,6 +250,10 @@ This will allow you to fix any merge conflicts in your feature branch, before me
 <span style="color:green;">✔</span> **Do** review open pull requests!  
 <span style="color:green;">✔</span> **Do** merge pull requests you've reviewed, unless someone else is assigned.  
 
+You can merge your own pull request if it only edits existing pages and changes 50 lines or fewer.
+Anything else, such as new, moved or deleted pages, or changes outside `docs/`, needs an approval from someone else first.
+The 'Review gate' check shows which applies.
+
 ## Redirects When Moving or Renaming Pages
 
 Renaming, moving, or deleting a page changes or removes its URL, breaking existing links. Add a redirect in [`docs/redirect_map.yml`](redirect_map.yml) so old URLs keep working, one line per page (paths relative to `docs/`, keep the `.md`):
@@ -235,8 +271,8 @@ The script `.github/fetch_includes.sh` pulls in all the updates from various sou
 As redundancy, and also to make changes to be visible, there is also a workflow that runs daily that will run `.github/fetch_includes.sh` and commit the changes.
 Anything in the repo will be overwritten by the most up to date version on deployment.
 
-1. Run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
-2. A branch `new-assets` will be created, which can be merged into main.
+To update them straight away, run the [![Fetch Remote Assets](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml/badge.svg?branch=main&event=workflow_run)](https://github.com/nesi/support-docs/actions/workflows/fetch_includes.yml) workflow in this repo.
+If anything changed, it commits the new files directly to `main` as `nesi-mkdocs-bot` ("Automatic asset update"). There is no branch to merge.
 
 ## Adding Words to Dictionary
 

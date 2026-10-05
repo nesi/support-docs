@@ -30,6 +30,19 @@
   /* --md-default-bg-color: var(--reannz-orange); */ /* main background color */
   /* --md-code-fg-color: rgb(53,69,77); */ /* main color for code text */
   --md-code-bg-color: #eef1f3; /* Material's default is a ~70%-opacity #f5f5f5, which barely reads against a white page; bump contrast a touch */
+  /* Material's syntax colours drop just below WCAG AA (4.5:1) on the darker code background above.
+     Same hues, darkened to >= 4.7:1 against #eef1f3. */
+  --md-code-hl-keyword-color: #3968bf;
+  --md-code-hl-constant-color: #6a55d8;
+  --md-code-hl-function-color: #a042b0;
+  --md-code-hl-number-color: #cc2828;
+  --md-code-hl-special-color: #cf1352;
+  --md-code-hl-string-color: #1b794a;
+  --md-code-hl-comment-color: rgba(0, 0, 0, 0.58);
+  --md-code-hl-generic-color: rgba(0, 0, 0, 0.58);
+  --md-code-hl-operator-color: rgba(0, 0, 0, 0.58);
+  --md-code-hl-punctuation-color: rgba(0, 0, 0, 0.58);
+  --md-code-hl-variable-color: rgba(0, 0, 0, 0.58);
   /* --md-typeset-color: var(--reannz-orange); */ /* main text color, sub H1 headers too */
   --chat-accent-color: var(--md-primary-fg-color); /* chat fab/bubble background */
   --chat-accent-contrast-color: var(--md-primary-bg-color); /* chat fab/bubble text */
@@ -280,8 +293,17 @@ span.md-status.md-status--deprecated {
   cursor: pointer;
 }
 
+/* The default link colour is only 4.44:1 on the banner's yellow, darken it to pass WCAG AA (5.08:1). */
+.md-event-banner a {
+  color: #007591;
+}
+
 [data-md-color-scheme="slate"] .md-event-banner {
   background: var(--reannz-blue--dark-shade1);
+}
+
+[data-md-color-scheme="slate"] .md-event-banner a {
+  color: var(--md-typeset-a-color);
 }
 
 /* custom admonition */
@@ -449,4 +471,25 @@ img.center {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+/* overrides/partials/search.html swapped this icon's <label for="__search">
+   for a <div data-md-toggle-checkbox="__search"> to fix an a11y "multiple
+   labels" warning. The theme's own CSS positions the icon off the [for]
+   attribute, so it needs the same rules re-targeted at the new attribute. */
+[dir=ltr] .md-search__icon[data-md-toggle-checkbox=__search] { left: .5rem; }
+[dir=rtl] .md-search__icon[data-md-toggle-checkbox=__search] { right: .5rem; }
+.md-search__icon[data-md-toggle-checkbox=__search] { position: absolute; top: .3rem; z-index: 2; }
+[dir=rtl] .md-search__icon[data-md-toggle-checkbox=__search] svg { transform: scaleX(-1); }
+
+@media screen and (max-width: 59.984375em) {
+  [dir=ltr] .md-search__icon[data-md-toggle-checkbox=__search] { left: .8rem; }
+  [dir=rtl] .md-search__icon[data-md-toggle-checkbox=__search] { right: .8rem; }
+  .md-search__icon[data-md-toggle-checkbox=__search] { top: .6rem; }
+  .md-search__icon[data-md-toggle-checkbox=__search] svg:first-child { display: none; }
+}
+
+@media screen and (min-width: 60em) {
+  .md-search__icon[data-md-toggle-checkbox=__search] { pointer-events: none; }
+  .md-search__icon[data-md-toggle-checkbox=__search] svg:last-child { display: none; }
 }

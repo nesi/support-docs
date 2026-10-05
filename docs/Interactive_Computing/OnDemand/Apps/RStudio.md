@@ -1,12 +1,12 @@
 ---
 created_at: 2026-07-15
 description: How to use RStudio via OnDemand
-tags: 
-    - OnDemand
+tags:
+    - interactive
 ---
 
 ## Logging in
-![UPDATE WITH PROJECT](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png){width=35%} ![](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png){fig.align="right" width=62%}
+![RStudio-Server launch form in OnDemand, with fields for project code, RStudio-Server version, R version, hours, cores and memory, and a Launch button](../../../assets/images/RStudio_via_OOD_on_NeSI_0.png){width=35%} ![My Interactive Sessions page showing a running RStudio-Server session card with a 'Connect to RStudio Server' button](../../../assets/images/RStudio_via_OOD_on_NeSI_1.png){fig.align="right" width=62%}
 
 ## Settings
 Recommendation to set *Save Workspace to Never* to avoid saving large files to the workspace. This can be done by going to `Tools` -> `Global Options` -> `General` and setting the `Save workspace to .RData on exit` to `Never`. This will prevent the workspace from being unable to load due to not enough memory in the selected session.
@@ -18,7 +18,7 @@ The current R modules on Mahuika OnDemand do not support the default graphics de
 
 This can be done by going to `Tools` -> `Global Options` -> `Graphics` and switch `Default` to `AGG`. This will allow the plots to be displayed in the RStudio interface. You do not need to restart the RStudio session for this to take effect.
 
-![](../../../assets/images/RStudio_via_OOD_on_NeSI_2.png)
+![RStudio Graphics options tab with the Backend drop-down open and AGG selected](../../../assets/images/RStudio_via_OOD_on_NeSI_2.png)
 
 Modules from 4.4 onwards will have this issue fixed.
 
@@ -45,7 +45,7 @@ myPaths <- c(myPaths[1], myPaths[3], myPaths[2])
 ```
 2. Permanent fix by adding the library path(s) to the `.Rprofile` file in your home directory. This will automatically add the library path to the R console when it starts up. Copy and Paste the following lines to the file:
 
-```
+```r
 # CHECK LIBRARY PATHS
 myPaths <- .libPaths()
 newPaths <- c("/opt/nesi/CS400_centos7_bdw/R-Geo/4.3.1-gimkl-2022a",

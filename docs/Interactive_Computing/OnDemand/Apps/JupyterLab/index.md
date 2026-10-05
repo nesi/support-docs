@@ -2,8 +2,8 @@
 title: JupyterLab
 created_at: 2026-07-15
 description: How to use jupyterhub through OnDemand.
-tags: 
-    - OnDemand
+tags:
+    - interactive
 ---
 
 ## Introduction
@@ -61,8 +61,8 @@ Keep reading if you need to install extensions yourself.
 
 Note, there were some changes related to extensions in JupyterLab 3.0
 and there are now multiple methods to install extensions. More details
-about JupyterLab extensions can be found
-[here](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
+about JupyterLab extensions can be found in the
+[JupyterLab extensions documentation](https://jupyterlab.readthedocs.io/en/stable/user/extensions.html).
 Check the extension's documentation to find out the supported
 installation method for that particular extension.
 

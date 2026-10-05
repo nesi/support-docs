@@ -4,6 +4,7 @@
 Modify proselint outputs into a format recognised by github actions.
 """
 
+import os
 import sys
 from pathlib import Path
 import time
@@ -12,8 +13,6 @@ import proselint
 from proselint import config, tools
 from proselint.checks import __register__
 from proselint.registry import CheckRegistry
-
-ALLOWABLE_NOTICES = 5
 
 if __name__ == "__main__":
 
@@ -38,4 +37,6 @@ if __name__ == "__main__":
             count_notices += 1
             time.sleep(0.01)
 
-    # exit(count_notices >= ALLOWABLE_NOTICES*(len(sys.argv)-1))
+    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
+    if os.getenv("CHECKS_STRICT") and count_notices:
+        sys.exit(1)
