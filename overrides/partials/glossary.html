@@ -37,7 +37,7 @@ NCBI Antimicrobial Resistance Gene Finder Plus
 ## ANIcalculator:
 
 Calculate the bidirectional average nucleotide identity (gANI) and 
-Alignment Fraction (AF) between two genomes.
+Alignment Fraction (AF) between two genomes. Also known as gANI
 
 ## ANNOVAR:
 
@@ -350,6 +350,11 @@ Bison is a general-purpose parser generator that converts an annotated context-f
 
 Boost provides free peer-reviewed portable C++ source libraries.
 
+## Boost.Python-NumPy:
+
+Boost.Python is a C++ library which enables seamless interoperability between C++
+ and the Python programming language.
+
 ## Bowtie:
 
 Ultrafast, memory-efficient short read aligner.
@@ -382,6 +387,10 @@ FITS (Flexible Image Transport System) data format.
 
 The goal of the CGAL Open Source Project is to provide easy access to efficient 
  and reliable geometric algorithms in the form of a C++ library.
+
+## CMFGEN:
+
+A radiative transfer code designed to solve the radiative transfer and statistical equilibrium equations in spherical geometry. It has been designed for application to W-R stars, O stars, and Luminous Blue-Variables.
 
 ## CMake:
 
@@ -452,6 +461,12 @@ Sequence assembler designed for high-noise single-molecule sequencing.
 
 Fast data interchange format and capability-based RPC system.
 
+## Catch2:
+
+A modern, C++-native, header-only,
+ test framework for unit-tests, TDD and BDD
+ - using C++11, C++14, C++17 and later
+
 ## CellRanger:
 
 Cell Ranger is a set of analysis pipelines that process Chromium
@@ -517,6 +532,10 @@ Clustal Omega is a multiple sequence alignment
 
 ClustalW2 is a general purpose multiple sequence alignment program for DNA or proteins.
 
+## CoordgenLibs:
+
+Schrodinger-developed 2D Coordinate Generation
+
 ## CoverM:
 
 DNA read coverage and relative abundance calculator focused on metagenomics applications
@@ -552,6 +571,11 @@ DAS Tool is an automated method that integrates the results of a flexible number
 Berkeley DB enables the development of custom data management
  solutions, without the overhead traditionally associated with such custom
  projects.
+
+## DBCSR:
+
+DBCSR stands for Distributed Blocked Compressed Sparse Row. It is a library designed to
+ efficiently perform sparse matrix-matrix multiplication, among other operations. Used by CP2K
 
 ## DBD-mysql:
 
@@ -721,6 +745,14 @@ FCM Build - A powerful build system for modern Fortran software applications. FC
 
 Fire Dynamics Simulator (FDS) is a large-eddy simulation (LES) code for low-speed flows,
  with an emphasis on smoke and heat transport from fires.
+
+## FEBio:
+
+FEBio is a nonlinear finite element (FE) solver that is specifically designed
+for biomechanical applications. It offers modeling scenarios, constitutive
+models and boundary conditions that are relevant to many research areas in
+biomechanics. All features can be used together seamlessly, giving the user a
+powerful tool for solving 3D problems in computational biomechanics.
 
 ## FFTW:
 
@@ -1063,6 +1095,12 @@ HDF5 is a data model, library, and file format for storing and managing data.
  It supports an unlimited variety of datatypes, and is designed for flexible
  and efficient I/O and for high volume and complex data.
 
+## HH-suite:
+
+The HH-suite is an open-source software package
+ for sensitive protein sequence searching based on the pairwise
+ alignment of hidden Markov models (HMMs).
+
 ## HISAT2:
 
 HISAT2 is a fast and sensitive alignment program for mapping next-generation sequencing reads
@@ -1119,6 +1157,14 @@ Pipeline for efficiently and accurately determining the coverage and abundance o
 ## HybPiper:
 
 Extracting Coding Sequence and Introns for Phylogenetics from High-Throughput Sequencing Reads Using Target Enrichment.
+
+## Hydra:
+
+Hydra is an open-source Python framework that simplifies the development of
+research and other complex applications. The key feature is the ability to
+dynamically create a hierarchical configuration by composition and override it
+through config files and the command line. The name Hydra comes from its
+ability to run multiple similar jobs - much like a Hydra with multiple heads.
 
 ## Hypre:
 
@@ -1225,6 +1271,10 @@ Disk-based programm for counting k-mers from (possibly gzipped) FASTQ/FASTA file
 
 Kaiju is a program for sensitive taxonomic classification of high-throughput
 sequencing reads from metagenomic whole genome sequencing experiments
+
+## Kalign:
+
+Kalign is a fast multiple sequence alignment program for biological sequences.
 
 ## Kent-core:
 
@@ -1816,6 +1866,10 @@ OpenFOAM is a free, open source CFD software package.
  involving chemical reactions, turbulence and heat transfer,
  to solid dynamics and electromagnetics.
 
+## OpenFold3:
+
+A fully open source biomolecular structure prediction model based on AlphaFold3
+
 ## OpenJPEG:
 
 An open-source JPEG 2000 codec written in C
@@ -1894,6 +1948,14 @@ Memory-efficient,fully parallelized and highly accurate pair-end read merger.
 
 PETSc, pronounced PET-see (the S is silent), is a suite of data structures and routines for the
  scalable (parallel) solution of scientific applications modeled by partial differential equations.
+
+## PGPLOT:
+
+The PGPLOT Graphics Subroutine Library is a Fortran- or C-callable,
+device-independent graphics package for making simple scientific graphs. It is intended
+for making graphical images of publication quality with minimum effort on the part of
+the user. For most applications, the program can be device-independent, and the output
+can be directed to the appropriate device at run time.
 
 ## PILERCR:
 
@@ -2038,6 +2100,10 @@ This bundle includes PyQtWebEngine, a set of Python bindings for The Qt Companyâ
 Tensors and Dynamic neural networks in Python with strong GPU acceleration.
 PyTorch is a deep learning framework that puts Python first.
 
+## PyTorch-Lightning:
+
+PyTorch Lightning is the lightweight PyTorch wrapper for ML researchers.
+
 ## Python:
 
 Python is a programming language that lets you work more quickly and integrate your systems more effectively.
@@ -2097,6 +2163,10 @@ RAxML search algorithm for maximum likelihood based inference of phylogenetic tr
 RAxML-NG is a phylogenetic tree inference tool which uses maximum-likelihood (ML)
  optimality criterion. Its search heuristic is based on iteratively performing a series of Subtree
  Pruning and Regrafting (SPR) moves, which allows to quickly navigate to the best-known ML tree.
+
+## RDKit:
+
+RDKit is a collection of cheminformatics and machine-learning software written in C++ and Python.
 
 ## RDP-Classifier:
 
@@ -2800,6 +2870,10 @@ Assistive Technology Service Provider Interface.
 
 Commands for Manipulating Filesystem Extended Attributes
 
+## awscli:
+
+Universal Command Line Environment for AWS
+
 ## azul-zulu:
 
 Java Development Kit (JDK), and a compliant implementation of the Java Standard Edition (SE) specification.
@@ -2841,6 +2915,21 @@ binutils: GNU binary utilities
 ## bioawk:
 
 An extension to awk, adding the support of several common biological data formats
+
+## bitsandbytes:
+
+bitsandbytes enables accessible large language models via k-bit quantization for PyTorch.
+
+This build ships both the CUDA and the CPU native library, so the module works on GPU nodes
+and on nodes without a usable GPU. Note that it still depends on a CUDA-enabled PyTorch; if
+you need a genuinely CUDA-free stack, build a separate easyconfig with COMPUTE_BACKEND=cpu,
+no CUDA dependency and no versionsuffix.
+
+## boto3:
+
+Boto3 is the Amazon Web Services (AWS) Software Development Kit
+(SDK) for Python, which allows Python developers to write software that makes
+use of services like Amazon S3 and Amazon EC2.
 
 ## breseq:
 
@@ -3334,6 +3423,14 @@ in an ultra-fast manner using seed and extend.
 Implementation of the Leiden algorithm for various quality
 functions to be used with igraph in Python.
 
+## levmar:
+
+This is levmar, a copylefted C/C++ implementation of the Levenberg-Marquardt non-linear
+least squares algorithm. levmar includes double and single precision LM versions, both
+with analytic and finite difference approximated Jacobians. levmar also has some support
+for constrained non-linear least squares, allowing linear equation, box and linear
+inequality constraints.
+
 ## libFLAME:
 
 libFLAME is a portable library for dense matrix computations,
@@ -3508,6 +3605,13 @@ Libxc is a library of exchange-correlation functionals for density-functional th
 Libxml2 is the XML C parser and toolchain developed for the Gnome project
  (but usable outside of the Gnome platform).
 
+## libxs:
+
+LIBXS is a portable C library providing building blocks for memory operations,
+ numerics, synchronization and more, with a focus on performance and minimal dependencies. It is
+ used by CP2K and DBCSR for host-side small matrix multiplication, with
+ LIBXSMM layered on top to supply the JIT-compiled kernels.
+
 ## libxslt:
 
 Libxslt is the XSLT C library developed for the GNOME project
@@ -3528,8 +3632,9 @@ A web server.
 
 ## likwid:
 
-Command line tools for Linux to support programmers in developing high
- performance multi threaded programs.
+Likwid stands for Like I knew what I am doing. This project contributes easy
+to use command line tools for Linux to support programmers in developing high
+performance multi threaded programs.
 
 ## lp_solve:
 
@@ -3544,6 +3649,10 @@ group MPI processes as an ordered set.
 
 LZ4 is lossless compression algorithm, providing compression speed at 400 MB/s per core.
  It features an extremely fast decoder, with speed in multiple GB/s per core.
+
+## maeparser:
+
+maeparser is a parser for Schrodinger Maestro files.
 
 ## maf_stream:
 
@@ -3590,6 +3699,10 @@ Flexible pipeline for genome-resolved metagenomic data analysis.
 ## miRDeep2:
 
 Completely overhauled tool which discovers microRNA genes by analyzing sequenced RNAs
+
+## micro:
+
+micro is a terminal-based text editor that aims to be easy to use and intuitive, while also taking advantage of the capabilities of modern terminals.
 
 ## miniBUSCO:
 
@@ -3738,6 +3851,19 @@ The numactl program allows you to run your application program on specific
  cpu's and memory nodes. It does this by supplying a NUMA memory policy to
  the operating system before running your program. The libnuma library provides
  convenient ways for you to add NUMA memory policies into your own program.
+
+## nvidia-compilers:
+
+C, C++ and Fortran compilers included with the NVIDIA HPC SDK
+
+## nvofbf:
+
+NVHPC based toolchain, including OpenMPI for MPI support,
+OpenBLAS (via FlexiBLAS for BLAS and LAPACK support), FFTW and ScaLAPACK.
+
+## nvompi:
+
+NVHPC based compiler toolchain, including OpenMPI for MPI support.
 
 ## ollama:
 
@@ -4030,6 +4156,10 @@ Fast C++ logging library.
 c++ implementation of the partial order alignment (POA) algorithm
  which is used to generate consensus sequences
 
+## squashfs-tools:
+
+tools to create and extract Squashfs filesystems
+
 ## sratoolkit:
 
 The SRA Toolkit, and the source-code SRA System Development
@@ -4070,6 +4200,10 @@ Intel(R) Threading Building Blocks (Intel(R) TBB) lets you easily write parallel
 
 Command-line program that automates the creation of
  sequence records for submission to GenBank
+
+## tensorboardX:
+
+Tensorboard for PyTorch.
 
 ## tmux:
 
@@ -4112,6 +4246,10 @@ An extremely fast Python package installer and resolver, written in Rust.
 vcflib provides methods to manipulate and interpret sequence variation as it can be
  described by VCF. The Variant Call Format (VCF) is a flat-file, tab-delimited textual format intended
  to concisely describe reference-indexed genetic variations between individuals.
+
+## vclust:
+
+Vclust is an alignment-based tool for fast and accurate calculation of Average Nucleotide Identity (ANI) between complete or metagenomically-assembled viral genomes.
 
 ## verkko:
 

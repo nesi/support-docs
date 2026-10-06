@@ -173,6 +173,8 @@ Bison
 Bitbucket
 Boost's
 Boost
+Boost.Python-NumPy's
+Boost.Python-NumPy
 Bourne
 Bowtie's
 Bowtie
@@ -196,6 +198,8 @@ CGAL's
 CGAL
 CIME
 CLI
+CMFGEN's
+CMFGEN
 CMIP
 CMake's
 CMake
@@ -235,6 +239,8 @@ Canu's
 Canu
 CapnProto's
 CapnProto
+Catch2's
+Catch2
 CellRanger's
 CellRanger
 CentOS
@@ -267,6 +273,8 @@ Clustal-Omega
 ClustalW2's
 ClustalW2
 Conda
+CoordgenLibs's
+CoordgenLibs
 CoverM's
 CoverM
 CpG
@@ -286,6 +294,8 @@ DAS_Tool's
 DAS_Tool
 DB's
 DB
+DBCSR's
+DBCSR
 DBD-mysql's
 DBD-mysql
 DB_File's
@@ -390,6 +400,8 @@ FCS-GX
 FDS's
 FDS
 FEA
+FEBio's
+FEBio
 FENSAP
 FFT
 FFTW's
@@ -578,6 +590,8 @@ HDF
 HDF5's
 HDF5
 HGX
+HH-suite's
+HH-suite
 HISAT2's
 HISAT2
 HMMs
@@ -604,6 +618,8 @@ Humann's
 Humann
 HybPiper's
 HybPiper
+Hydra's
+Hydra
 Hypre's
 Hypre
 IBM
@@ -668,6 +684,8 @@ KNP
 KPAR
 Kaiju's
 Kaiju
+Kalign's
+Kalign
 Kent-core's
 Kent-core
 Kent_tools's
@@ -984,6 +1002,8 @@ OpenCV's
 OpenCV
 OpenFOAM's
 OpenFOAM
+OpenFold3's
+OpenFold3
 OpenGL
 OpenJPEG's
 OpenJPEG
@@ -1026,6 +1046,8 @@ PEAR
 PETSc's
 PETSc
 PFR
+PGPLOT's
+PGPLOT
 PILERCR's
 PILERCR
 PISM's
@@ -1096,6 +1118,8 @@ PyQt's
 PyQt
 PyTorch's
 PyTorch
+PyTorch-Lightning's
+PyTorch-Lightning
 Python's
 Python
 Python-Geo's
@@ -1127,6 +1151,8 @@ RAxML
 RAxML-NG's
 RAxML-NG
 RDC
+RDKit's
+RDKit
 RDP-Classifier's
 RDP-Classifier
 RE2's
@@ -1476,6 +1502,7 @@ Waikato's
 Waikato
 Waipapa
 Waitangi
+Waldur
 Wavefunction
 WhatsHap's
 WhatsHap
@@ -1553,6 +1580,8 @@ automagically
 automata
 autoscale
 autoscaling
+awscli's
+awscli
 azul-zulu's
 azul-zulu
 backends
@@ -1592,6 +1621,10 @@ bioinformatics
 biomolecular
 biomolecules
 biomolecule
+bitsandbytes's
+bitsandbytes
+boto3's
+boto3
 breseq's
 breseq
 buildenv's
@@ -1913,6 +1946,8 @@ kpoints
 kāwanatanga
 leidenalg's
 leidenalg
+levmar's
+levmar
 libFLAME's
 libFLAME
 libGLU's
@@ -1993,6 +2028,8 @@ libxc's
 libxc
 libxml2's
 libxml2
+libxs's
+libxs
 libxslt's
 libxslt
 libxsmm's
@@ -2018,6 +2055,8 @@ lwgrp's
 lwgrp
 lz4's
 lz4
+maeparser's
+maeparser
 maf_stream's
 maf_stream
 magma's
@@ -2051,6 +2090,8 @@ metagenomic
 methylation
 miRDeep2's
 miRDeep2
+micro's
+micro
 microRNAs
 microRNA
 microarchitecture
@@ -2143,6 +2184,12 @@ nullarbor's
 nullarbor
 numactl's
 numactl
+nvidia-compilers's
+nvidia-compilers
+nvofbf's
+nvofbf
+nvompi's
+nvompi
 ollama's
 ollama
 onboard
@@ -2358,6 +2405,8 @@ spdlog's
 spdlog
 spoa's
 spoa
+squashfs-tools's
+squashfs-tools
 sratoolkit's
 sratoolkit
 srun
@@ -2398,6 +2447,8 @@ tbb
 tbl2asn's
 tbl2asn
 templating
+tensorboardX's
+tensorboardX
 timeframe
 tino
 tmp
@@ -2444,6 +2495,8 @@ vGPU
 validator
 vcflib's
 vcflib
+vclust's
+vclust
 vectorisation
 vectorize
 venv
