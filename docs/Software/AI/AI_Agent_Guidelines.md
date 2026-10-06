@@ -19,28 +19,75 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 3. Agents should follow the same shared-system etiquette expected of any other user process.
 4. Take reasonable precautions to protect the platform, other users and REANNZ when operating an agent.
 
-## Working on the cluster
+## Data and privacy
 
-- Approve what the agent does. Review commands that change or delete files, submit jobs or install software before they run,
-  and do not use a mode that skips approval for them. Letting read-only status checks such as `squeue --me` run without approval is fine.
-- An agent sends everything it reads, including file contents and command output, to its model provider (offshore), whether it runs on the cluster or off it.
-  Only use agents on data that its owner has approved to be shared
-  (see the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree)), and follow any data conditions agreed for your project (see the [Access Policy](../../Policy/Access_Policy.md)).
+Most AI agents send your prompts, the files they read and the output of the commands they run to the provider's servers for processing, which are usually overseas.
+This happens whether the agent runs on your own computer or on the cluster.
+
+- Only let the agent read code and data that its owner has approved for sharing with a third party
+  (see the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree)),
+  and follow any data conditions agreed for your project (see the [Access Policy](../../Policy/Access_Policy.md)).
   Personal or health information, Māori data, and data under ethics, contract or export conditions often cannot be shared.
-- When polling commands that use shared resources (filesystem operations, `squeue`, `sacct`), leave generous delays between calls, for example `sleep 60` between `squeue --me` calls.
-- Run only one agent session at a time, unless support has agreed to more.
-- Use `squeue --me` and `ps -u $USER` to keep the agent's view limited to your own work.
-- An agent on your own computer may run commands on the cluster through a login session you opened yourself, while you supervise it.
-  It is acting as you, so everything on this page applies to it.
-  It will not see guidance installed on the cluster, so give it these guidelines yourself.
-  Do not give it your passwords, SSH keys, tokens or other sensitive information, and do not let it log in on its own.
-- An agent that can access the cluster on its own, or that keeps running on the cluster when you are not supervising it, needs a service account.
+- Project directories are shared. Start the agent in a directory that holds only your own work,
+  so that it does not read other project members' files.
+- Some software licences do not allow the source code to be shared with third parties.
+  Check the licence conditions of any third-party code before the agent reads it.
+- Check your account's privacy settings with the provider to see how long your conversations are kept
+  and whether they are used to train models.
+
+## Which account to use
+
+Ask yourself: would the agent keep working, or be able to start, if you closed your laptop or logged out?
+If so, it needs a service account.
+
+You may run an agent under your own account when you started it yourself, in a terminal or editor you are using,
+on the cluster or on your own computer, and you are there to approve what it does.
+This includes an agent on your own computer that runs commands through a login session you opened.
+Leaving it waiting for your approval while you step away is fine.
+
+An agent needs a service account when it:
+
+- runs in a batch job, `scrontab`, cron or CI, or in an agent's non-interactive mode,
+- keeps working in `tmux`, `screen` or another detached session after you log out,
+- can open its own connections to the cluster, for example with your SSH key or from a scheduled or cloud-hosted agent.
+
+Running such an agent under your own account breaks item 12 of the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree),
+which does not allow automated tools to log in with your credentials, or use your login session when you are not present.
+
+## Service accounts
+
+A service account is a separate user on the cluster for one application, such as an agent.
+It limits what the agent can reach, and how much harm it can do if something goes wrong.
+
+<!-- - It belongs to a project, and the project owner is responsible for everything it does.
+- It may be given an SSH key so that the agent can log in without you.
+- Its activity is monitored more closely than that of a personal account. -->
+
+To request a service account, {% include "partials/support_request.html" %}.
+
+## Credentials and access
+
+- Do not let an agent read your passwords, SSH keys or tokens, wherever it runs.
+  Anything the agent reads is sent to the provider.
+  Use the agent's own settings to block access to files such as `~/.ssh`, and keep credentials out of the directories it works in.
+- If an agent reads or prints a password, SSH key or token for REANNZ systems, treat it as exposed and report it,
+  as required by the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree).
+  {% include "partials/support_request.html" %}.
+- An agent on your own computer will not see guidance installed on the cluster, so give it these guidelines yourself.
 - Do not expose an MCP server or open a reverse tunnel from a REANNZ HPC system outward.
   This includes tools such as `ngrok`, `cloudflared`, VS Code tunnels and remote-control features of AI tools.
   [The Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow tunnels that let connections from outside reach the cluster without logging in.
   An agent on your workstation connecting in to a service on the cluster is fine, but not the other way around.
   Tunnels within the cluster, such as
   [forwarding a port from a compute node to a login node](../../Getting_Started/Accessing_the_HPCs/Port_Forwarding.md#forwarding-to-compute-nodes), are fine.
+
+## Working on the cluster
+
+- Approve what the agent does. Review commands that change or delete files, cancel or submit jobs, or install software before they run,
+  and do not use a mode that skips approval for them. Letting read-only status checks such as `squeue --me` run without approval is fine.
+- When polling commands that use shared resources (filesystem operations, `squeue`, `sacct`), leave generous delays between calls, for example `sleep 60` between `squeue --me` calls.
+- Run only one agent session at a time, unless support has agreed to more.
+- Use `squeue --me` and `ps -u $USER` to keep the agent's view limited to your own work.
 - Under the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-accept), REANNZ can stop any process that disrupts the service, including agent processes.
 
 ## Best Practice
@@ -50,9 +97,13 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 - Scope status checks to your own work: `squeue --me`, `sacct -j <jobid>`, `ps -u $USER`.
 - Poll on the order of tens of seconds apart rather than in a tight loop.
 - Submit jobs in small, bounded batches, job-arrays or dependency chains (`sbatch --dependency=afterok:...`) instead of many independent submissions.
+- Review job scripts before they are submitted. Check the resources requested (`--time`, `--mem`, `--ntasks`, GPUs),
+  because every job uses your project's allocation and [Fair Share](../../Batch_Computing/Fair_Share.md).
 - Point file operations (`find`, `grep`, `du`) at specific known paths rather than whole shared parent directories.
-- Run CPU or memory heavy work as a job, not on the login node (I/O heavy work will slow down any node being used, login node is preferable, however measures should be taken not to degrade performance).
+- Run CPU or memory heavy work as a job, not on the login node. Compiling with a few cores on the login node is fine.
+  I/O heavy work slows down any node it runs on. The login node is preferable for it, but take care not to degrade its performance.
 - Give an agent a narrow working directory rather than broad filesystem access.
+- Commit your work with `git` before asking the agent for large changes, so you can review and undo them.
 - Review the packages or dependencies an agent proposes to install before it installs them, and pre-install where practical.
 
 ### Don't
