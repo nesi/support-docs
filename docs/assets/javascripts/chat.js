@@ -172,7 +172,7 @@
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${getToken()}`
+        ...(getToken() && { Authorization: `Bearer ${getToken()}` })
       },
       body: JSON.stringify({ question, history })
     });
@@ -222,10 +222,6 @@
   async function send() {
     const question = input.value.trim();
     if (!question || sending) return;
-
-    if (!getToken()) {
-      return;
-    }
 
     sending = true;
     sendBtn.disabled = true;
@@ -346,18 +342,13 @@
   });
 
   document$.subscribe(() => {
-    // if (getToken()) {
-      // if (!document.body.contains(fab)) {
-    document.body.append(win, fab);
+    if (!document.body.contains(fab)) {
+      document.body.append(win, fab);
 
-    if (!localStorage.getItem(FAB_SEEN_KEY)) {
-      fab.classList.add("chat-fab--pulse");
-      localStorage.setItem(FAB_SEEN_KEY, "1");
+      if (!localStorage.getItem(FAB_SEEN_KEY)) {
+        fab.classList.add("chat-fab--pulse");
+        localStorage.setItem(FAB_SEEN_KEY, "1");
+      }
     }
-      // }
-    // } else if (document.body.contains(fab)) {
-    //   win.remove();
-    //   fab.remove();
-    // }
-    });
-  })();
+  });
+})();
