@@ -91,7 +91,7 @@ configurations.
 
     Depending on the terminal used, you may have to hold `ctrl` when clicking to follow the link.
 
-    !!! warn "Double Authentication"
+    !!! warning "Double Authentication"
         If you set up your `.ssh/config` as recommended you will be prompted to authenticate again.  
         We are working on fixing this.
 

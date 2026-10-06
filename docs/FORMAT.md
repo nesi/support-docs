@@ -175,7 +175,7 @@ There are various flavors.
     - should summarize learning goal one.
     - should summarize learning goal two.
 
-!!! next
+!!! postrequisite
     - For use in tutorials
     - should link to next lesson.
 
