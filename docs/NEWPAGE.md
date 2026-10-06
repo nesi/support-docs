@@ -328,14 +328,14 @@ This helps set expectations and allows people to determine if this lesson is rel
 
 ### Prerequisites
 
-A 'prerequisites' admonition, to point to the previous lesson.
+A 'prerequisite' admonition, to point to the previous lesson.
 
 ```md
-!!! prerequisites
+!!! prerequisite
     - [Link to Previous Page](CONTRIBUTING.md)
 ```
 
-!!! prerequisites
+!!! prerequisite
     - [Link to Previous Page](FORMAT.md)
 
 ### Quiz
@@ -382,9 +382,9 @@ and answer the 'questions' posed in the objectives.
 
 ### Next
 
-Finally a `next` admonition pointing to the next page.
+Finally a `postrequisite` admonition pointing to the next page.
 
-!!! next
+!!! postrequisite
     [Next Page](NEWPAGE.md)
 
 ### Rule of Three

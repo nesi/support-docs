@@ -52,12 +52,17 @@ Catch-all for custom checks.
 
 See script for details.
 
+Admonitions (`!!!`, `???`) and content tabs (`===`) are checked here, not by markdownlint, which only understands CommonMark.
+A body indented less than 4 spaces renders as an empty box without any build warning, so `admonition_structure` looks for that,
+malformed openers, and admonition types with no style (Material's built-in types plus any `.admonition.<type>` in `docs/assets/stylesheets/`).
+
 ### Test Build
 
 Does a 'strict' build of the site, capturing any errors emmited by mkdocs.
 
 It rebuilds every page by default. `./checks/run_test_build.py --dirty` only rebuilds pages changed since the last build in `public/`,
-which is faster (the VS Code task uses it) but drops warnings for skipped pages and adds false `mkdocs_llmstxt` warnings.
+which is faster (the VS Code task uses it) but drops warnings for skipped pages.
+It also writes an incomplete `llms.txt`, so the `mkdocs_llmstxt` 'not found in the generated pages' warnings are hidden in that mode.
 
 ### Accessibility (WCAG)
 

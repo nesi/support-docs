@@ -58,6 +58,26 @@ def _load_tag_aliases(vocab):
     return aliases
 
 
+# Material's admonition types and their aliases, plus the custom ones styled in our stylesheets.
+MATERIAL_ADMONITION_TYPES = {
+    "note", "abstract", "summary", "tldr", "info", "todo", "tip", "hint", "important", "success", "check",
+    "done", "question", "help", "faq", "warning", "caution", "attention", "failure", "fail", "missing",
+    "danger", "error", "bug", "example", "quote", "cite",
+}
+ADMONITION_TYPES = MATERIAL_ADMONITION_TYPES | {
+    m.lower()
+    for css in Path(DOC_ROOT, "assets", "stylesheets").glob("*.css")
+    for m in re.findall(r"\.admonition\.([\w-]+)", css.read_text())
+}
+# Used title-only by design (eg. '!!! time "45 Minutes"' in tutorials), so no body is expected.
+TITLE_ONLY_ADMONITION_TYPES = {"time"}
+# Opener syntax from python-markdown's admonition.py and pymdownx's details.py and tabbed.py, applied to a stripped line.
+BLOCK_OPENERS = {
+    "!!!": re.compile(r'^!!! ?[\w\-]+(?: +[\w\-]+)*(?: +".*?")? *$'),
+    "???": re.compile(r'^\?{3}\+? ?(?:(?:[\w\-]+(?: +[\w\-]+)*?)?(?: +".*?")|[\w\-]+(?: +[\w\-]+)*?) *$'),
+    "===": re.compile(r'^={3}(?:\+|\+!|!\+|!)? +".*?" *$'),
+}
+
 TAGS_VOCAB = yaml.safe_load(Path(TAGS_VOCAB_PATH).read_text())
 CANONICAL_TAGS = set(TAGS_VOCAB)
 TAG_ALIASES = _load_tag_aliases(TAGS_VOCAB)
@@ -618,6 +638,54 @@ Consider breaking this into sub-headers.",
             }
 
 
+def admonition_structure():
+    """
+    Checks admonitions (!!!), collapsible blocks (???) and content tabs (===) are well-formed.
+    These aren't CommonMark, so markdownlint can't see them, and a broken one renders without any build warning.
+    """
+    opener = line.expandtabs(4).strip()
+    # '===' alone is a setext header underline, not a tab.
+    if in_code_block or opener[:3] not in BLOCK_OPENERS or not opener.strip("="):
+        return
+    name = "Content tab" if opener[:3] == "===" else "Admonition"
+    if not BLOCK_OPENERS[opener[:3]].match(opener):
+        yield {"line": lineno, "message": f"{name} opener '{opener}' is malformed, so it renders as plain text."}
+        return
+
+    m = re.match(r"^(?:!!!|\?{3}\+?) ?([\w-]+)", opener)
+    kind = m.group(1).lower() if m else ""  # No type for tabs, or '??? "Title"'.
+    if kind and kind not in ADMONITION_TYPES:
+        suggestion = _did_you_mean(kind, ADMONITION_TYPES)
+        yield {
+            "line": lineno,
+            "message": f"Admonition type '{kind}' has no style, so it renders as a plain grey box."
+            + (f" Did you mean '{suggestion}'?" if suggestion else "")
+            + " Types are listed in FORMAT.md.",
+        }
+
+    # The body is the next non-blank line, and must be indented 4 more than the opener.
+    indent = len(line.expandtabs(4)) - len(line.expandtabs(4).lstrip())
+    rest = contents.split("\n")[lineno:]
+    body_lineno, body = next(((i, l.expandtabs(4)) for i, l in enumerate(rest, lineno + 1) if l.strip()), (lineno, ""))
+    body_indent = len(body) - len(body.lstrip())
+    if body_indent >= indent + 4:
+        return
+    if body_indent > indent:
+        yield {
+            "line": body_lineno,
+            "message": f"{name} body is indented {body_indent - indent} spaces, it needs 4 more than the opener \
+(line {lineno}). As it is, the {name.lower()} renders empty and this text falls out below it.",
+        }
+    elif name == "Content tab":
+        yield {"line": lineno, "message": "Content tab is empty. Indent its contents 4 spaces."}
+    elif kind not in TITLE_ONLY_ADMONITION_TYPES:
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": "Admonition has a title but no body. If it should have contents, indent them 4 spaces.",
+        }
+
+
 def dynamic_slurm_link():
     """
     Checks if slurm links point to right version of docs.
@@ -650,7 +718,8 @@ ENDCHECKS = [
 ]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body, code_line_length]
+WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body, code_line_length,
+              admonition_structure]
 
 if __name__ == "__main__":
     main()
