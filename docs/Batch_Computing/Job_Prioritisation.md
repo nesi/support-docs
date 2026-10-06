@@ -25,6 +25,11 @@ This adds 5000 to the job priority so raises it above all non-debug
 jobs, but is limited to one small job per user at a time: no more than
 120 minutes and no more than 2 nodes.
 
+!!! warning "Abuse of debug QoS"
+    The debug QoS is intended for short running test jobs and debugging.
+    We run monitoring and may remove your debug-qos privileges
+    if we believe they are being abused.
+
 ### Fair Share
 
 Job priority decreases whenever the project uses more core-hours than
