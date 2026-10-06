@@ -224,6 +224,7 @@ jobs:
       - name: Summarise
         env:
           BASE: ${{ github.base_ref || github.event.repository.default_branch }}
+          HEAD_REPO: ${{ github.event.pull_request.head.repo.full_name }}
           NEEDS: ${{ toJSON(needs) }}
         run: python3 checks/summarise_annotations.py "origin/${BASE}" annotations | tee summary.md >> "$GITHUB_STEP_SUMMARY"
       # Fork PRs get a read-only token, so can't comment.
