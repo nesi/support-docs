@@ -351,5 +351,5 @@ This can be suppressed using the flag `-X`.
     - A job is just a shell script
     - Request *slightly* more resources than you need
 
-!!! next "What Next"
+!!! postrequisite "What Next"
     - [Parallel](Parallel.md)

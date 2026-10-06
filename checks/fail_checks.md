@@ -28,6 +28,19 @@ typos shuold be igonred in code blokcs
 !!! warning "some admonistion"
     contents of admonition
 
+!!! warning "Body only indented 2 spaces"
+  so the admonition renders empty
+
+!!! warn "Type with no style"
+    renders as a grey box
+
+!!! note "Unclosed title
+    renders as plain text
+
+=== "Empty tab"
+
+Not in the tab.
+
 Typos should `be igonred` in inline code blocks.
 
 Typos should [be ignored](https://www.docs.nesi.org.nz)

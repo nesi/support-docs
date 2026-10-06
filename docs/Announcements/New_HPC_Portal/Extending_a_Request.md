@@ -1,4 +1,5 @@
 ---
+title: Extending a Request - Renew an Allocation
 created_at: '2026-09-29'
 tags:
 - account
@@ -23,7 +24,7 @@ To renew *and* grow an allocation, make both.
 
 ## Before you start
 
-- You need a role on the project. See [your roles in the HPC Portal](Overview.md#see-your-roles).
+- You need a role on the project. See [your roles in the HPC Portal](HPC_Portal_Overview.md#see-your-roles).
 - Make your request **before** the current end date.
   The portal does not accept an end date in the past,
   and an allocation may be removed once its end date has passed.
@@ -32,10 +33,10 @@ To renew *and* grow an allocation, make both.
 ## Extend the end date
 
 Project managers and project members can ask for a new end date.
-An organization owner at your institution approves it.
+An organisation owner at your institution approves it.
 
 1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with REANNZ**.
-   See [logging in to the HPC Portal](Overview.md#log-in).
+   See [logging in to the HPC Portal](HPC_Portal_Overview.md#log-in).
 2. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the allocation.
 3. Click **Actions**, then **Request end date change**.
 4. In **Requested end date**, pick the new end date.
@@ -51,15 +52,15 @@ The **Pending** list shows open requests and **All** shows past ones.
 
 ## After you send a request
 
-- An organization owner at your institution reviews the request and approves or rejects it.
+- An organisation owner at your institution reviews the request and approves or rejects it.
 - When approved, the new end date applies at once. There is no further step.
 - When rejected, the end date does not change.
 - Check the **End date change requests** tab on the resource to see the outcome.
 
-If you are an organization owner, see [Approving requests](Approving_Requests.md).
+If you are an organisation owner, see [Approving requests](Approving_Requests.md).
 
 If you see **Set termination date** instead of **Request end date change**,
-you are an organization owner and can set the date directly.
+you are an organisation owner and can set the date directly.
 
 If you do not know who approves requests at your institution,
 or the request is waiting too long,
@@ -76,7 +77,7 @@ Project members cannot; ask your project manager.
    Enter the **New limit** for each component you want to change.
 4. Click **Request for a change**.
 
-The change goes to your organization for approval, then to REANNZ.
+The change goes to your organisation for approval, then to REANNZ.
 The new limits apply once both approve.
 
 ## Allocation size limits

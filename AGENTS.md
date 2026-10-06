@@ -142,7 +142,7 @@ Pages in `docs/Software/Available_Applications/` are linked to the module list b
 ### Tutorials
 
 Follow [Tutorial Page in NEWPAGE.md](docs/NEWPAGE.md#tutorial-page): `status: tutorial` in the front matter, then a time block,
-objectives, prerequisites, the lesson with a quiz per objective, keypoints, and a `next` link. Existing tutorials are in `docs/Tutorials/`.
+objectives, prerequisites, the lesson with a quiz per objective, keypoints, and a `postrequisite` admonition linking to the next lesson. Existing tutorials are in `docs/Tutorials/`.
 
 ### Announcements and release notes
 
