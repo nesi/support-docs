@@ -346,18 +346,18 @@
   });
 
   document$.subscribe(() => {
-    if (getToken()) {
-      if (!document.body.contains(fab)) {
-        document.body.append(win, fab);
+    // if (getToken()) {
+      // if (!document.body.contains(fab)) {
+    document.body.append(win, fab);
 
-        if (!localStorage.getItem(FAB_SEEN_KEY)) {
-          fab.classList.add("chat-fab--pulse");
-          localStorage.setItem(FAB_SEEN_KEY, "1");
-        }
-      }
-    } else if (document.body.contains(fab)) {
-      win.remove();
-      fab.remove();
+    if (!localStorage.getItem(FAB_SEEN_KEY)) {
+      fab.classList.add("chat-fab--pulse");
+      localStorage.setItem(FAB_SEEN_KEY, "1");
     }
-  });
-})();
+      // }
+    // } else if (document.body.contains(fab)) {
+    //   win.remove();
+    //   fab.remove();
+    // }
+    });
+  })();
