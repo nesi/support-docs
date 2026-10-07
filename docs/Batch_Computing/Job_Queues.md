@@ -8,7 +8,7 @@ tags:
 
 Mahuika has two job queues:
 
-- The [normal queue](#normal-queue) is for everyday jobs and workflows. Your jobs go here unless you ask for the debug queue.
+- The [normal queue](#normal-queue) is for everyday jobs and workflows.
 - The [debug queue](#debug-queue) is for short tests and debugging when you need the results straight away.
 
 The two queues differ in how soon a job starts, how big and long it can be, and what you may use it for.
@@ -18,7 +18,7 @@ The two queues differ in how soon a job starts, how big and long it can be, and 
 Use the normal queue for all your regular work, including:
 
 - production jobs, [job arrays](Job_Arrays.md) and workflows,
-- tests and checks that are a routine part of your workflow, such as a short run before each calculation to check its input or measure how much memory it needs,
+- tests and checks that are a routine part of your workflow, such as a short run before each calculation to check its inputs,
 - any job whose results you don't need as soon as it finishes.
 
 Jobs in the normal queue start in order of [priority](Job_Prioritisation.md), which mainly depends on your project's [Fair Share](Fair_Share.md) score and how long the job has been waiting.
