@@ -52,8 +52,8 @@ It is for one-off tests, not daily use. Good uses include:
 Do not use the debug queue:
 
 - for normal jobs, or to make regular work start sooner,
-- for tests that are a routine part of your workflow, such as a short run before every calculation to check its input or measure its memory use.
-  Even if this feels like debugging, it is part of your normal workflow and does not need a higher priority.
+- for tests that are a routine part of your workflow, such as a short run before every calculation to check its inputs.
+  Even though this might feel like debugging, it is part of your normal workflow and does not need a higher priority.
 - for jobs whose results you won't look at straight away, such as jobs that run overnight or while you are away,
 - to submit debug jobs automatically, one after another, such as from a script that submits the next job when the last one finishes.
 
