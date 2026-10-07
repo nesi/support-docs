@@ -21,14 +21,8 @@ Use the normal queue for all your regular work, including:
 - tests and checks that are a routine part of your workflow, such as a short run before each calculation to check its input or measure how much memory it needs,
 - any job whose results you don't need as soon as it finishes.
 
-You don't need to do anything to use the normal queue.
-Jobs submitted without the `--qos` option go to it, so the [template batch script](Batch_Computing_Guide.md#batch-scripts) works as it is.
-
 Jobs in the normal queue start in order of [priority](Job_Prioritisation.md), which mainly depends on your project's [Fair Share](Fair_Share.md) score and how long the job has been waiting.
 For the largest job you can run and the most jobs you can queue, see [Job Limits](Job_Limits.md).
-
-If your workflow has many short tests, [combine them into one job](SLURM-Best_Practice.md#wall-time),
-for example with a loop in your batch script, rather than running them as many separate jobs.
 
 ## Debug Queue
 
@@ -42,11 +36,10 @@ A debug job can use at most:
 
 You can only have one debug job at a time.
 
-Every debug job goes ahead of other researchers' jobs that are waiting for the same resources,
-so only use the debug queue when you need the result straight away. It is there so that you can:
+The debug queue is for:
 
-- test or debug your code or program, while it runs or as soon as it finishes, and
-- decide straight away what to do next, such as fixing your script and trying again.
+- testing or debugging your code or program, while it runs or as soon as it finishes, and
+- deciding straight away what to do next, such as fixing your script and trying again.
 
 It is for one-off tests, not daily use. Good uses include:
 
@@ -70,7 +63,7 @@ If you are still not sure, {% include "partials/support_request.html" %}.
 
 !!! warning "Misusing the debug queue"
     We monitor how the debug queue is used.
-    Using it for normal work goes against the [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree), because it delays other researchers' jobs.
+    Using it for normal work goes against the [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree).
     If we find this, we may remove your access to the debug queue, and your debug jobs will be rejected with:
 
     ```txt
