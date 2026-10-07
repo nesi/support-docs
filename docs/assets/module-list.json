@@ -61,7 +61,7 @@
                         "buffer_constant": 1,
                         "buffer_constant_other": 0,
                         "feature_name": "parallel_teaching",
-                        "hourly_average": 0.35,
+                        "hourly_average": 0.36,
                         "slurm_block": false,
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
@@ -3447,7 +3447,7 @@
         "network_licences": [],
         "default": "18-06-2025-foss-2026",
         "default_type": "latest",
-        "last_updated": 1788238490,
+        "last_updated": 1791321961,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/CMFGEN/18-06-2025-foss-2026.lua",
         "force_hide": "False",
@@ -3544,7 +3544,7 @@
         "network_licences": [],
         "default": "0.2.9",
         "default_type": "latest",
-        "last_updated": 1791238147,
+        "last_updated": 1791316100,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/compleasm/0.2.9.lua",
         "force_hide": "False",
@@ -10923,15 +10923,16 @@
             "8.0-GCCcore-7.4.0",
             "8.0-GCCcore-9.2.0",
             "8.1-GCCcore-11.3.0",
-            "8.2-GCCcore-12.3.0"
+            "8.2-GCCcore-12.3.0",
+            "8.3-GCCcore-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "8.2-GCCcore-12.3.0",
+        "default": "8.3-GCCcore-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132638,
+        "last_updated": 1791247979,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/libreadline/8.2-GCCcore-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/libreadline/8.3-GCCcore-15.2.0.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -14390,15 +14391,16 @@
             "4.6.0-gimpi-2022a",
             "4.6.0-iimpi-2022a",
             "4.6.1-gompi-2023a",
-            "4.6.1-iofbf-2023a"
+            "4.6.1-iofbf-2023a",
+            "4.6.4-gompi-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.6.1-iofbf-2023a",
+        "default": "4.6.4-gompi-2026",
         "default_type": "latest",
-        "last_updated": 1773650413,
+        "last_updated": 1791248315,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/netCDF-Fortran/4.6.1-iofbf-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/netCDF-Fortran/4.6.4-gompi-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
@@ -20849,7 +20851,8 @@
             "4.1-b4-intel-2020a",
             "4.1.5-intel-2022a",
             "5.0.0-beta1-foss-2023a",
-            "5.0.0-foss-2023a"
+            "5.0.0-foss-2023a",
+            "5.4.2-foss-2026"
         ],
         "admin_list": [
             {
@@ -20857,11 +20860,11 @@
             }
         ],
         "network_licences": [],
-        "default": "5.0.0-beta1-foss-2023a",
+        "default": "5.4.2-foss-2026",
         "default_type": "latest",
-        "last_updated": 1740132634,
+        "last_updated": 1791249474,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/Siesta/5.0.0-beta1-foss-2023a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Siesta/5.4.2-foss-2026.lua",
         "force_hide": "False",
         "force_show": "False"
     },
