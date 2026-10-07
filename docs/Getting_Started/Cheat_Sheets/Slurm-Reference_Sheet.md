@@ -17,9 +17,9 @@ A complete list of Slurm commands can be found [in the full documentation](https
 |           |                       |                                                                          |
 | --------- | --------------------- | ------------------------------------------------------------------------ |
 | `sbatch`  | `sbatch submit.sl`    | Submits the Slurm script `submit.sl`                                      |
-| `squeue`  | `squeue`              | Displays entire queue.                                                   |
-|           | `squeue --me`         | Displays your queued jobs.                                               |
-|           | `squeue -p long`      | Displays queued jobs on the *long* partition.                             |
+| `squeue`  | `squeue --me`         | Displays your queued jobs.                                               |
+|           | `squeue --me -p milan` | Displays your queued jobs on the *milan* partition.                     |
+|           | `squeue`              | Displays entire queue.                                                   |
 | `sacct`   | `sacct`               | Displays all the jobs run by you that day.                               |
 |           | `sacct -S 2019-01-01` | Displays all the jobs run by you since the *1st Jan 2019*                 |
 |           | `sacct -j 123456789`  | Displays job *123456789*                                                  |

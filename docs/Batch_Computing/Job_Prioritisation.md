@@ -30,6 +30,11 @@ jobs, but is limited to one small job per user at a time: no more than
     We run monitoring and may remove your debug-qos privileges
     if we believe they are being abused.
 
+    <!-- Using the debug QoS for more than one short job counts as abuse.
+    This includes chaining debug jobs back to back (in a loop, with `scrontab`, with a job that submits its successor, or with `--dependency`),
+    cancelling a debug job near its limit and resubmitting it, holding GPUs with an idle `salloc`, or splitting a long run into debug-sized pieces.
+    Use the normal QoS with [checkpointing](Job_Checkpointing.md), or a [job array](Job_Arrays.md), instead. -->
+
 ### Fair Share
 
 Job priority decreases whenever the project uses more core-hours than
@@ -79,7 +84,7 @@ starting regardless of their priority score.
 
 ## Backfill
 
-Backfill is a scheduling strategy that allows small, short jobs to run
+'Backfill' is a scheduling strategy that allows small, short jobs to run
 immediately if by doing so they will not delay the expected start time
 of any higher-priority jobs. Since the expected start time of pending
 jobs depends upon the expected completion time of running jobs it is

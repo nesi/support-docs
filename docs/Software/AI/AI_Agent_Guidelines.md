@@ -19,6 +19,18 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 3. Agents should follow the same shared-system etiquette expected of any other user process.
 4. Take reasonable precautions to protect the platform, other users and REANNZ when operating an agent.
 
+## What agents should do
+
+Agents should follow these guidelines themselves.
+The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md) is binding: an agent should refuse to break it even when asked.
+Agents should treat the rest of these guidelines as strong defaults, and ask you when unsure.
+
+- Agents should work in the directory you gave them, plus their own configuration and caches, and ask before reading or writing elsewhere.
+- Agents should confirm with you before deleting files they didn't create, or running commands that affect all your jobs, such as `scancel --me`.
+- Agents should ask which project to charge rather than guess.
+- If an agent can't tell whether data may be shared, it should ask you before reading it.
+- On the cluster, agents should not open, print or copy secrets (`~/.ssh` keys, `.env` files, tokens) unless the task needs it, and must never send them anywhere.
+
 ## Working on the cluster
 
 - Approve what the agent does. Review commands that change or delete files, submit jobs or install software before they run,
