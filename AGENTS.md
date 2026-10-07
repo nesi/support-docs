@@ -272,12 +272,15 @@ Do not say checks passed unless you ran them and read the output.
 
 - Work on a branch, never commit directly to `main`.
 - Commit or push only when the user asks.
+- A branch must never track `origin/main`. Create branches with `--no-track` (see below), and push them with `git push -u origin <branch>` so they track a branch of the same name.
+  A branch that tracks `origin/main` sends every plain `git push`, and the VS Code "Sync" or "Commit & Sync" buttons, straight to `main` without review.
+  Before any push, check the upstream with `git rev-parse --abbrev-ref @{upstream}`. If it is `origin/main`, run `git branch --unset-upstream` and tell the user.
 
 ### Stay current with `main`
 
 Other people change the same pages while you work. Pages get moved, split or rewritten, and a change made on an old copy can be lost in a merge.
 
-- **Before you start**, run `git fetch origin`. Start new work from the latest main: `git switch -c <branch> origin/main`.
+- **Before you start**, run `git fetch origin`. Start new work from the latest main: `git switch -c <branch> --no-track origin/main`.
   On an existing branch, check whether main has changed the pages you are working on: `git diff --stat HEAD...origin/main -- <paths>`.
   If it has, merge `origin/main` into the branch before editing.
 - **Before you push or open a pull request**, fetch again and merge `origin/main` into the branch. Merge, don't rebase: do not rewrite a branch that has been pushed.
