@@ -19,6 +19,8 @@ These are open for review if you find any of them unreasonable or inefficient.
 - 21 days walltime
 - 21 node-days (walltime x nodes)
 
+Jobs in the [debug queue](Job_Queues.md#debug-queue) have much smaller limits.
+
 <!-- The walltime limit is there so that long work uses checkpointing.
 Splitting it into jobs that use [checkpointing](Job_Checkpointing.md) and chaining them with `--dependency` is good practice;
 only the [debug QoS](Job_Prioritisation.md#quality-of-service) may not be used this way.

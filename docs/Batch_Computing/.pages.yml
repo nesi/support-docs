@@ -1,6 +1,7 @@
 nav:
  - Batch_Computing_Guide.md
  - Hardware.md
+ - Job_Queues.md
  - Job_Prioritisation.md
  - SLURM-Best_Practice.md
  - Using_GPUs.md

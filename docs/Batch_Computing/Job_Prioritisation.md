@@ -19,16 +19,12 @@ Priority scores are determined by a number of factors:
 
 ### Quality of Service
 
-The "debug" Quality of Service can be gained by adding the `sbatch`
-command line option `--qos=debug`.  
-This adds 5000 to the job priority so raises it above all non-debug
-jobs, but is limited to one small job per user at a time: no more than
-120 minutes and no more than 2 nodes.
+Jobs in the [debug queue](Job_Queues.md#debug-queue), requested with `--qos=debug`, get 5000 added to their priority.
+This raises them above all jobs in the normal queue.
 
-!!! warning "Abuse of debug QoS"
-    The debug QoS is intended for short running test jobs and debugging.
-    We run monitoring and may remove your debug-qos privileges
-    if we believe they are being abused.
+!!! warning "Debug queue is only for short tests and debugging"
+    Do not use it for normal work or to make regular jobs start sooner.
+    See [Job Queues](Job_Queues.md#debug-queue) for its limits and when you may use it.
 
     <!-- Using the debug QoS for more than one short job counts as abuse.
     This includes chaining debug jobs back to back (in a loop, with `scrontab`, with a job that submits its successor, or with `--dependency`),
