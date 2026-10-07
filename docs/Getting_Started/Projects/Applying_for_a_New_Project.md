@@ -27,6 +27,12 @@ description: The information you need to provide when applying for a new project
          position to buy a subscription from us while your Proposal
          Development allocation is in effect if they do not already possess
          one.
+    - Read about [online storage allocations](../Allocations/What_is_an_allocation.md#online-storage-allocations)
+         and the difference between your persistent project directory and your
+         temporary `nobackup` directory in [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md).
+         The default quotas (100 GB in `/nesi/project`, 10 TB in `/nesi/nobackup`)
+         are enough for most projects, so you only need to ask for more if you
+         know your project will exceed them.
 
 Requests to use REANNZ HPC resources are [submitted via a web
 form](https://my.nesi.org.nz/). Our team will endeavour to approve
