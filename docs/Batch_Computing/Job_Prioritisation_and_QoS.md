@@ -1,6 +1,5 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
-title: Job Prioritisation and QoS
 description: The factors that set a job's priority on Mahuika, and when to use the normal QoS or the debug QoS for short tests and debugging.
 tags:
  - slurm
@@ -21,13 +20,9 @@ Priority scores are determined by a number of factors:
 
 ### Quality of Service
 
-Mahuika has two Quality of Service (QoS) levels:
-
-- The [normal QoS](#normal-qos) is for everyday jobs and workflows.
-- The [debug QoS](#debug-qos) is for short tests and debugging when you need the results straight away.
-
-Jobs using the debug QoS (`--qos=debug`) get 5000 added to their priority, which raises them above all jobs using the normal QoS.
-The two QoS also differ in how big and long a job can be, and in what you may use them for.
+Jobs using the debug Quality of Service (QoS), requested with `--qos=debug`, get 5000 added to their priority.
+This raises them above all jobs using the normal QoS.
+See [QoS](#qos) for what each QoS is for.
 
 ### Fair Share
 
@@ -94,7 +89,16 @@ done on Mahuika.
 
 See the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sched_config.html) for more info on backfilling.
 
-## Normal QoS
+## QoS
+
+Mahuika has two QoS levels:
+
+- The [normal QoS](#normal-qos) is for everyday jobs and workflows.
+- The [debug QoS](#debug-qos) is for short tests and debugging when you need the results straight away.
+
+The two QoS differ in their [priority](#quality-of-service), how big and long a job can be, and what you may use them for.
+
+### Normal QoS
 
 Use the normal QoS for all your regular work, including:
 
@@ -105,7 +109,7 @@ Use the normal QoS for all your regular work, including:
 Jobs using the normal QoS start in order of priority, which mainly depends on your project's [Fair Share](#fair-share) score and [how long the job has been waiting](#job-age).
 For the largest job you can run and the most jobs you can queue, see [Job Limits](Job_Limits.md).
 
-## Debug QoS
+### Debug QoS
 
 The debug QoS is for short tests and debugging when you need the results straight away.
 Debug jobs get a much higher [priority](#quality-of-service) than jobs using the normal QoS, so a small debug job usually starts within a few minutes.
@@ -128,7 +132,7 @@ It is for one-off tests, not daily use. Good uses include:
 - re-running a small part of a failed job to find out what went wrong,
 - a small, one-off scaling test to choose how many CPUs or which GPU to request.
 
-### When Not to Use It
+### When Not to Use Debug QoS
 
 Do not use the debug QoS:
 

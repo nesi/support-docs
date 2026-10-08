@@ -349,7 +349,7 @@ To use debug QOS, add or change the following in your batch submit script:
 
 Adding these SBATCH directives will provide your job with the highest priority possible, meaning it should start to run within a few minutes, provided your resource request is not too large.
 Only use the debug QOS for one-off tests like this, not as a regular step in your workflow.
-See [Debug QoS](../../Batch_Computing/Job_Prioritisation.md#debug-qos) for when you may use it.
+See [Debug QoS](../../Batch_Computing/Job_Prioritisation_and_QoS.md#debug-qos) for when you may use it.
 
 ## Determining initial resource requirements
 

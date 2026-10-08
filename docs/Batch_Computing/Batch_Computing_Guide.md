@@ -10,8 +10,8 @@ Batch jobs can be submitted via several methods. The most basic is a [simple Slu
 Slurm can also run [jobs arrays](Job_Arrays.md).
 We also provide access to a [Globus Compute](Globus_Compute.md) endpoint which can be used to submit jobs.
 
-The Slurm scheduler utilises [Fair Share](Fair_Share.md) to help with [job prioritisation](Job_Prioritisation.md). We also impose [general limits on the size and number of jobs](Job_Limits.md) submitted by any user.
-Jobs use the [normal QoS](Job_Prioritisation.md#normal-qos) unless you request the [debug QoS](Job_Prioritisation.md#debug-qos), which is only for short tests and debugging.
+The Slurm scheduler utilises [Fair Share](Fair_Share.md) to help with [job prioritisation](Job_Prioritisation_and_QoS.md). We also impose [general limits on the size and number of jobs](Job_Limits.md) submitted by any user.
+Jobs use the [normal QoS](Job_Prioritisation_and_QoS.md#normal-qos) unless you request the [debug QoS](Job_Prioritisation_and_QoS.md#debug-qos), which is only for short tests and debugging.
 
 Depending on the needs of your batch jobs, you may need to specify the partition you want the job to run on. Please see the [Hardware](Hardware.md) page for specifics about the system. If you need to use GPUs, the [Using GPUs](Using_GPUs.md) page will provide generic information to get started.
 
