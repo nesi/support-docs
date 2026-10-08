@@ -20,9 +20,12 @@ description: How to set up cluster access using MobaXterm
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Data_Transfer/Data_Transfer_Overview.md)
 
-## GUI Setup
+There are two ways to set up MobaXterm. You only need to follow one of them:
 
-This setup saves your login details as a session in MobaXterm. You only need to create the session once.
+- [GUI Setup](#gui-setup): save your login details as a session using the MobaXterm menus, then log in from the session list.
+- [Terminal Setup](#terminal-setup): save your login details in an SSH config file, then log in by typing `ssh mahuika` in the MobaXterm terminal.
+
+## GUI Setup
 
 ### Creating a session
 
@@ -55,7 +58,7 @@ This setup saves your login details as a session in MobaXterm. You only need to 
 
 ### Using a saved session
 
-1. In the left sidebar, click the star icon, then click your session under **User sessions**.
+1. In the left sidebar, click the star icon, then double-click your session under **User sessions**.
 
     ![The MobaXterm main window, with the saved session "login.hpc.nesi.org.nz (user.name)" circled under User sessions in the left sidebar.](../../assets/images/MobaXterm_Setup_Windows_4.png)
 
@@ -73,8 +76,6 @@ This setup saves your login details as a session in MobaXterm. You only need to 
     The terminal opens in the main window, and your files on Mahuika are shown in the left sidebar.
 
 ## Terminal Setup
-
-This setup saves your login details in an SSH config file, so you can log in by typing `ssh mahuika` in the MobaXterm terminal.
 
 ### First time setup
 
