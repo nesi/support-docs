@@ -66,7 +66,7 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
     Copy this address into your web browser, replacing `XXXX-XXXX` with the code shown in the window:
 
     ```bash
-    https://iam.nesi.org.nz/realms/public/device/?user_code=XXXX-XXXX
+    https://iam.nznesi.io?user_code=XXXX-XXXX
     ```
 
     ![A MobaXterm window saying "Authenticate at", followed by a link with a user code, "and press ENTER", with the link circled. Below it are an empty text box and the OK and Cancel buttons.](../../assets/images/MobaXterm_Setup_Windows_5.png)
