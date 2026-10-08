@@ -62,11 +62,16 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
 
     ![The MobaXterm main window, with the saved session "login.hpc.nesi.org.nz (user.name)" circled under User sessions in the left sidebar.](../../assets/images/MobaXterm_Setup_Windows_4.png)
 
-2. A window opens with a link to the authentication website.
-    Open the link in your web browser and log in.
-    If you have not logged in before, [First Time Login](First_Time_Login.md) shows what to expect.
+2. A window opens asking you to authenticate.
+    Copy this address into your web browser, replacing `XXXX-XXXX` with the code shown in the window:
+
+    ```bash
+    https://iam.nesi.org.nz/realms/public/device/?user_code=XXXX-XXXX
+    ```
 
     ![A MobaXterm window saying "Authenticate at", followed by a link with a user code, "and press ENTER", with the link circled. Below it are an empty text box and the OK and Cancel buttons.](../../assets/images/MobaXterm_Setup_Windows_5.png)
+
+    Log in on the website. If you have not logged in before, [First Time Login](First_Time_Login.md) shows what to expect.
 
 3. Once you have logged in on the website, click **OK** in the MobaXterm window.
 
