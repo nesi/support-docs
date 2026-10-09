@@ -24,7 +24,7 @@ an updated Mahuika XML configuration as of October 2026.
 ## Download CESM
 
 First, set an environment with your project code to make replacing our default one easier
-in the commands below (replacing *&lt;your\_project\_code&gt;* with your project code):
+in the commands below (replacing `&lt;your\_project\_code&gt;` with your project code):
 
 ```sh
 export PROJECT_CODE=<your_project_code>
@@ -48,8 +48,8 @@ certificate.
 
 ([CIME](http://esmci.github.io/cime/versions/master/html/what_cime/index.html)
 provides a case control system for configuring, building and executing
-Earth system models) and copy the config files to *~/.cime* (this will overwrite
-any current configuration your have in *~/.cime*):
+Earth system models) and copy the config files to `~/.cime` (this will overwrite
+any current configuration your have in `~/.cime`):
 
 Clone the repo containing Mahuika specific CIME configuration
 
@@ -87,7 +87,7 @@ guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html). The
 following are basic instructions to create and run the case, see the
 above link for more information.
 
-Change to the *cime/scripts* directory:
+Change to the `cime/scripts` directory:
 
 ``` sh
 cd /nesi/project/${PROJECT_CODE}/my_cesm_sandbox/cime/scripts
@@ -104,7 +104,7 @@ Create the case directory:
 In the above command:
 
 - `--compiler gnu` could be changed to `--compiler intel` if you want to build with the Intel compilers instead of GNU (it can be useful to compare different compilers in case one performs much better)
-- the name of the directory for `--case` (i.e. *b.e20.B1850.f19\_g17.test* in this example) is arbitrary
+- the name of the directory for `--case` (i.e. `b.e20.B1850.f19\_g17.test` in this example) is arbitrary
 
 Change to the new case directory that you just created:
 
@@ -165,7 +165,7 @@ Finally, run the job (this could take a while if it needs to download input data
 ```
 
 A job will be submitted to the Slurm queue, you can view the queue using
-*squeue --me*. Check the job succeeded as described on the upstream
+`squeue --me`. Check the job succeeded as described on the upstream
 [quick start guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html#run-the-case).
 
 ## Performance tuning - optimising processor layout
