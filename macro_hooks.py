@@ -10,6 +10,7 @@ import json
 
 module_list_path = os.getenv("MODULE_LIST_PATH", "docs/assets/module-list.json")
 tag_index_path = os.getenv("TAG_INDEX_PATH", "docs/assets/tag-index.json")
+slurm_limits_path = os.getenv("SLURM_LIMITS_PATH", "docs/assets/slurm-limits.json")
 
 
 class CaseInsensitiveDict(dict):
@@ -33,6 +34,55 @@ class CaseInsensitiveDict(dict):
             return self[key]
         except KeyError:
             return default
+
+
+def _tb(size):
+    """Slurm memory size in TB, e.g. '6T' -> 6, '512G' -> 0.5."""
+    return float(size[:-1]) / {"G": 1024, "T": 1}[size[-1]]
+
+
+def _tidy(x):
+    """21.0 -> 21, 31.5 -> 31.5."""
+    if isinstance(x, float):
+        x = round(x, 1)
+        return int(x) if x.is_integer() else x
+    return x
+
+
+def slurm_limits_for_docs(raw):
+    """
+    slurm-limits.json in the units the docs use, named in each key.
+    Slurm counts time in minutes and CPUs as hardware threads.
+    """
+    day = 1440
+    partitions = raw["partitions"].values()
+    threads = max(p["threads_per_core"] for p in partitions)
+    debug, normal = raw["qos"]["debug"], raw["qos"]["normal"]
+    run_mins = normal["max_tres_run_mins_per_user"]
+    limits = {
+        "debug": {
+            "jobs": debug["max_submit_per_user"],
+            "hours": debug["max_wall_minutes"] / 60,
+            "nodes": debug["max_tres_per_job"]["node"],
+            "cores": debug["max_tres_per_job"]["cpu"] // threads,
+            "memory_gb": _tb(debug["max_tres_per_job"]["mem"]) * 1024,
+            "gpus": debug["max_tres_per_job"]["gres/gpu"],
+        },
+        "per_job": {
+            "days": max(p["max_walltime_minutes"] for p in partitions) / day,
+            "nodes": normal["max_tres_per_job"]["node"],
+            "node_days": normal["max_tres_mins_per_job"]["node"] / day,
+        },
+        "per_user": {
+            "cores": normal["max_tres_per_user"]["cpu"] // threads,
+            "core_days": run_mins["cpu"] / threads / day,
+            "memory_tb": _tb(normal["max_tres_per_user"]["mem"]),
+            "tb_days": _tb(run_mins["mem"]) / day,
+            "gpus": normal["max_tres_per_user"]["gres/gpu"],
+            "gpu_days": run_mins["gres/gpu"] / day,
+        },
+    }
+    return {group: {k: _tidy(v) for k, v in values.items()} for group, values in limits.items()}
 
 
 def define_env(env):
@@ -59,3 +109,6 @@ def define_env(env):
             {"title": e["title"], "path": os.path.relpath(e["path"], current_dir)}
             for e in entries
         ]
+
+    # Not `slurm`, mkdocs.yml `extra.slurm` (the Slurm version) already has that name.
+    env.variables["slurm_limits"] = slurm_limits_for_docs(json.load(open(slurm_limits_path)))
