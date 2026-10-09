@@ -6,36 +6,96 @@ title: MobaXterm Setup (Windows)
 description: How to set up cluster access using MobaXterm
 ---
 
-!!! WARNING  
-    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure.  
-    It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
+!!! tip
+    For file browsing, uploading and downloading files, and terminal access, you can also use [OnDemand](https://ondemand.nesi.org.nz/) in your web browser.
 
 !!! prerequisite
-     -   Have an [active account and project.](../Creating_an_Account.md)
+     - Have an [active account and project.](../Creating_an_Account.md)
      - [Download MobaXterm](https://mobaxterm.mobatek.net/download-home-edition.html)
-     - Followed the steps in [Standard Terminal](Standard_Terminal_Setup.md).
 
 !!! WARNING
-    - Use the Portable Edition if you don't have administrator rights
-        on your machine.
+    - Use the Portable Edition if you don't have administrator rights on your machine.
     - Otherwise, choose freely the Portable or Installer Edition.
 
 !!! prerequisite "What Next?"
      -   [Moving files to/from a cluster.](../../Data_Transfer/Data_Transfer_Overview.md)
-     
-The interactive login configuration for MobaXterm is not compatible with the current web-based authentication method. If you wish to use MobaXterm as your SSH client you therefore need to use a non-interactive setup.
-This can be done by following a modified version of the instructions for setting up the [the standard terminal setup described on this support page](Standard_Terminal_Setup.md).
 
-## First time setup
+There are two ways to set up MobaXterm. You only need to follow one of them:
 
-The login process can be simplified significantly with a few easy
-configurations.
+- [GUI Setup](#gui-setup): save your login details as a session using the MobaXterm menus, then log in from the session list.
+- [Terminal Setup](#terminal-setup): save your login details in an SSH config file, then log in by typing `ssh mahuika` in the MobaXterm terminal.
+
+## GUI Setup
+
+### Creating a session
+
+1. Open MobaXterm.
+
+2. Click **Session**.
+
+    ![The MobaXterm main window, with the Session button at the top left circled.](../../assets/images/MobaXterm_Setup_Windows_1-1.png)
+
+3. In the **Session settings** window:
+
+    1. Click **SSH** at the top left of the window.
+    2. In the **Remote host** box, type `login.hpc.nesi.org.nz`.
+    3. Tick **Specify username** and type your username.
+    4. On the **Network settings** tab, click **SSH gateway (jump host)**.
+
+    ![The Session settings window with SSH selected, login.hpc.nesi.org.nz in the Remote host box, Specify username ticked with the username user.name, and the SSH gateway (jump host) button circled.](../../assets/images/MobaXterm_Setup_Windows_2.png)
+
+4. In the **MobaXterm jump hosts configuration** window:
+
+    1. In the **Gateway host** box, type `lander.hpc.nesi.org.nz`.
+    2. In the **Username** box, type your username.
+    3. Click **OK**.
+
+    ![The MobaXterm jump hosts configuration window with lander.hpc.nesi.org.nz in the Gateway host box, user.name in the Username box, and the OK button circled.](../../assets/images/MobaXterm_Setup_Windows_3.png)
+
+5. In the **Session settings** window, click **OK**.
+
+6. Log in by following the steps in [Using a saved session](#using-a-saved-session).
+
+### Using a saved session
+
+1. In the left sidebar, click the star icon, then double-click your session under **User sessions**.
+
+    ![The MobaXterm main window, with the saved session "login.hpc.nesi.org.nz (user.name)" circled under User sessions in the left sidebar.](../../assets/images/MobaXterm_Setup_Windows_4.png)
+
+2. A window opens asking you to authenticate.
+    Copy this address into your web browser, replacing `XXXX-XXXX` with the code shown in the window:
+
+    ```bash
+    https://iam.nznesi.io?user_code=XXXX-XXXX
+    ```
+
+    ![A MobaXterm window saying "Authenticate at", followed by a link with a user code, "and press ENTER", with the link circled. Below it are an empty text box and the OK and Cancel buttons.](../../assets/images/MobaXterm_Setup_Windows_5.png)
+
+    Log in on the website. If you have not logged in before, [First Time Login](First_Time_Login.md) shows what to expect.
+
+3. Once you have logged in on the website, click **OK** in the MobaXterm window.
+
+4. You may be asked to authenticate one or two more times. Repeat steps 2 and 3 each time.
+
+5. You are now logged in to Mahuika.
+    The terminal opens in the main window, and your files on Mahuika are shown in the left sidebar.
+
+## Terminal Setup
+
+### First time setup
 
 1. In a new local terminal run; `mkdir -p ~/.ssh/` this will
     ensure you have an `.ssh/` directory
 
-2. Open your ssh config file (e.g. `notepad config.txt` to open with the text editor `notepad`) and add the
-    following (replacing **`username`** with your username):
+2. Open your ssh config file by typing the following into your MobaXterm terminal:
+
+    ```bash
+    notepad config.txt
+    ```
+
+    Notepad will ask you "Do you want to create a new file?". **Click yes**
+
+3. Add the following (replacing **`username`** with your username):
 
     ```sh
     Host lander 
@@ -46,7 +106,6 @@ configurations.
         ServerAliveInterval 300
         ServerAliveCountMax 2
 
-
     Host mahuika
         User username 
         Hostname login.hpc.nesi.org.nz
@@ -55,24 +114,22 @@ configurations.
         ForwardX11Trusted yes
         ServerAliveInterval 300
         ServerAliveCountMax 2
-
-        
     ```
 
-    Close and save with `ctrl x`, `ctrl y`, `Enter`
-    
-4. Run the command `mv config.txt ~/.ssh/config`
+4. Save the file and close Notepad.
 
-5. Ensure the permissions are correct by
+5. Run the command `mv config.txt ~/.ssh/config`
+
+6. Ensure the permissions are correct by
     running `chmod 600 ~/.ssh/config`.
 
-6. Run the command.
+7. Run the command.
 
     ```sh
     ssh mahuika
     ```
 
-6. You will be prompted to approve host authenticity
+8. You will be prompted to approve host authenticity
 
     ```sh
     The authenticity of host 'lander.hpc.nesi.org.nz (163.7.144.68)' can't be established.
@@ -83,7 +140,7 @@ configurations.
 
     Type `yes` and <kbd>Enter</kbd>
 
-7. You will be presented with a link.
+9. You will be presented with a link.
 
     ```sh
     Authenticate at https://iam.nesi.org.nz/realms/public/device?user_code=XXXX-XXXX and press ENTER.
@@ -95,24 +152,26 @@ configurations.
         If you set up your `.ssh/config` as recommended you will be prompted to authenticate again.  
         We are working on fixing this.
 
-8. Select your institution, you will be prompted to provide your login details.
+10. Select your institution, you will be prompted to provide your login details.
 
-9. You are now asked about your current device: do you trust it or not?  
--  If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your 6-digit code every time you log.
--  If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without additional authentication for 7 days.
+11. You are now asked about your current device: do you trust it or not?
 
-If you have trusted your device, you have to enter a name for this device. This name must be unique but can be anything you want.
+    ![The "Trust this device?" prompt, with Yes and No buttons.](../../assets/images/Standard_Terminal_Setup_1.png)
 
-Note: You cannot trust two devices the same day with the same name.
-    ![alt text](../../assets/images/Standard_Terminal_Setup_1.png).
+    - If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows, please do not trust it: click No. This means that you will need to enter your 6-digit code every time you log in.
+    - If this device is your own laptop and you are using a secure network, you can trust it: click Yes. This will allow you to log in without additional authentication for 7 days.
 
-10. Scan the QR code with your authenticator app. Then enter the 6-digit code provided. You may give your device a name.
+    If you have trusted your device, you have to enter a name for this device. This name must be unique but can be anything you want.
 
-    ![alt text](../../assets/images/Standard_Terminal_Setup_2.png)
+    Note: You cannot trust two devices the same day with the same name.
 
-11. Return to your terminal, and press <kbd>enter</kbd>.
+12. Scan the QR code with your authenticator app. Then enter the 6-digit code provided. You may give your device a name.
 
-## Subsequent log in
+    ![The Mobile Authenticator Setup page, with a QR code to scan and a box for the one-time code.](../../assets/images/Standard_Terminal_Setup_2.png)
+
+13. Return to your terminal, and press <kbd>enter</kbd>.
+
+### Subsequent log in
 
 1. `ssh mahuika`
 2. Follow the link.
