@@ -1,0 +1,71 @@
+{
+    "partitions": {
+        "genoa": {
+            "gpu_mig_profiles": [],
+            "gpu_types": [
+                "h100",
+                "l4",
+                "pro_6000"
+            ],
+            "max_walltime_minutes": 30240,
+            "threads_per_core": 2
+        },
+        "hugemem": {
+            "gpu_mig_profiles": [],
+            "gpu_types": [],
+            "max_walltime_minutes": 30240,
+            "threads_per_core": 2
+        },
+        "milan": {
+            "gpu_mig_profiles": [
+                "1g.10gb",
+                "1g.5gb",
+                "2g.10gb",
+                "3g.20gb",
+                "4g.20gb"
+            ],
+            "gpu_types": [
+                "a100"
+            ],
+            "max_walltime_minutes": 30240,
+            "threads_per_core": 2
+        }
+    },
+    "qos": {
+        "debug": {
+            "max_jobs_per_user": null,
+            "max_submit_per_user": 1,
+            "max_tres_mins_per_job": {},
+            "max_tres_per_job": {
+                "cpu": 336,
+                "gres/gpu": 2,
+                "mem": "512G",
+                "node": 2
+            },
+            "max_tres_per_user": {},
+            "max_tres_run_mins_per_user": {},
+            "max_wall_minutes": 120
+        },
+        "normal": {
+            "max_jobs_per_user": null,
+            "max_submit_per_user": null,
+            "max_tres_mins_per_job": {
+                "node": 30240
+            },
+            "max_tres_per_job": {
+                "node": 10
+            },
+            "max_tres_per_user": {
+                "cpu": 5376,
+                "gres/gpu": 6,
+                "mem": "6T"
+            },
+            "max_tres_run_mins_per_user": {
+                "cpu": 10160640,
+                "gres/gpu": 20160,
+                "mem": "45360T"
+            },
+            "max_wall_minutes": null
+        }
+    }
+}
