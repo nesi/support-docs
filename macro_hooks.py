@@ -62,7 +62,7 @@ def slurm_limits_for_docs(raw):
     limits = {
         "debug": {
             "jobs": debug["max_submit_per_user"],
-            "hours": debug["max_wall_minutes"] / 60,
+            "minutes": debug["max_wall_minutes"],
             "nodes": debug["max_tres_per_job"]["node"],
             "cores": debug["max_tres_per_job"]["cpu"] // threads,
             "memory_gb": _tb(debug["max_tres_per_job"]["mem"]) * 1024,

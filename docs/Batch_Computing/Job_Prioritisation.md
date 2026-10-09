@@ -1,6 +1,6 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
-description: What factors are used to determine a jobs prioroty.
+description: What factors are used to determine a job's priority.
 tags:
  - slurm
  - account
@@ -22,8 +22,12 @@ Priority scores are determined by a number of factors:
 The "debug" Quality of Service can be gained by adding the `sbatch`
 command line option `--qos=debug`.  
 This adds 5000 to the job priority so raises it above all non-debug
-jobs, but is limited to one small job per user at a time: no more than
-120 minutes and no more than 2 nodes.
+jobs, but is limited to small, short jobs:
+
+- Jobs per user, queued or running: {{ slurm_limits.debug.jobs }}
+- Walltime: {{ slurm_limits.debug.minutes }} minutes
+- Size per job: up to {{ slurm_limits.debug.nodes }} nodes, {{ slurm_limits.debug.cores }} CPU cores,
+  {{ slurm_limits.debug.memory_gb }} GB of memory and {{ slurm_limits.debug.gpus }} GPUs
 
 !!! warning "Abuse of debug QoS"
     The debug QoS is intended for short running test jobs and debugging.
