@@ -69,7 +69,7 @@ Submitted batch job 23137702
     Care should be used when using `watch` as repeatedly running a command can have adverse effects.
     Exit `watch` with <kbd>ctrl</kbd> + <kbd>c</kbd>.
 
-Note in squeue, the number under cpus, should be '4'.
+Note in `squeue`, the number under cpus, should be '4'.
 
 Checking on our job with `sacct`.
 
@@ -82,6 +82,8 @@ JobID           JobName  Partition    Account  AllocCPUS      State ExitCode
 27323464.ba+      batch             {{ config.extra.project_code }}          4 OUT_OF_ME+    0:125 
 27323464.ex+     extern             {{ config.extra.project_code }}          4  COMPLETED      0:0 
 ```
+
+## Too Little or Too Much
 
 To understand why our job failed, we need to talk about the resources involved.
 
@@ -182,6 +184,8 @@ _48 seconds_ used out of _15 minutes_ requested give a time efficiency of about 
 
     b. Memory efficiency is `( 14 / 32 ) x 100` or around **43%**.
 
+### Using `seff`
+
 For convenience, Mahuika has provided the command `seff <jobid>` to calculate **S**lurm **Eff**iciency.
 
 ```sh
@@ -253,7 +257,7 @@ squeue --me
 
 ```out
 JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
-26763045      cwal219  {{config.extra.project_code}} test           2    512M genoa   May 11 11:35       14:46 RUNNING  c001 
+26763045      username {{config.extra.project_code}} test           2    512M genoa   May 11 11:35       14:46 RUNNING  c001 
 ```
 
 Now that we know the location of the job (c001) we can use `svisit` to run `htop` _on that node_.
@@ -329,7 +333,6 @@ We will cover a bit more on running tests in the last lesson.
 !!! tip "Example inputs"
     Mahuika has a shared directory (`/opt/nesi/examples`) with some small input files of commonly used types for use in testing.
     If you have requests or example files to contribute to this directory, please {% include "partials/support_request.html" %}.
-    
 
 ### Run tests jobs using debug QOS (Quality of Service)
 
@@ -339,7 +342,7 @@ Be aware that your job is not fully scanned for correctness when you submit the 
 While you may get an immediate error if your `#SBATCH` directives are malformed, it is not until the job starts to run that the interpreter starts to process the batch script.
 Mahuika has an easy way for you to test your job submission.
 One can employ the debug QOS to get a short, high priority test job.
-Debug jobs have to run within 120 minutes and cannot use more than 2 nodes.
+Debug jobs have to run within {{ slurm_limits.debug.minutes }} minutes and cannot use more than {{ slurm_limits.debug.nodes }} nodes.
 To use debug QOS, add or change the following in your batch submit script:
 
 ```sh
@@ -361,7 +364,7 @@ So it is also advised to search the web for others that may have written up guid
 
 ### Ask Other Users
 
-If you know someone who has used the software before, they may be able to give you a ballpark figure.
+If you know someone who has used the software before, they may be able to give you a rough estimate.
 
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
