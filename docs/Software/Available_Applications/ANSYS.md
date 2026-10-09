@@ -399,7 +399,7 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --time              01:00:00          # Walltime
     #SBATCH --nodes             1                 # (OPTIONAL) Limit to n nodes
     #SBATCH --ntasks            36                # Number processes
-    #SBATCH --mem-per-cpu       512MB             # Standard for large partition
+    #SBATCH --mem-per-cpu       512MB             # Memory per cpu
 
     module purge
     module load ANSYS/{{ applications.ANSYS.default }}
