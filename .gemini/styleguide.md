@@ -24,7 +24,7 @@ Prioritise, in this order:
 1. Factual errors about the platform: partitions, limits, module names and versions, hostnames, paths. Flag anything that looks invented.
 2. Broken links and anchors, and renamed, moved or deleted pages without a line in `docs/redirect_map.yml`.
 3. Private information: real usernames, emails, project codes, job IDs or internal chat links (examples should use `nesi99991`).
-4. Hand edits to generated files (`docs/assets/glossary/dictionary.txt`, `snippets.md`, `module-list.json`, `tag-index.json`).
+4. Hand edits to generated files (`docs/assets/glossary/dictionary.txt`, `snippets.md`, `module-list.json`, `slurm-limits.json`, `tag-index.json`).
 5. Against `docs/PRINCIPLES.md`: new pages that duplicate an existing page or copy vendor documentation,
    pages doing more than one job (tutorial, how-to, reference, explanation), and wordiness or rare cases crowding out the common case.
 6. The conventions most often missed:
