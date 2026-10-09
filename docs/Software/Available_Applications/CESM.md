@@ -82,9 +82,9 @@ Make sure you still have the environment variable set with your project code:
 export PROJECT_CODE=<your_project_code>
 ```
 
-Here we will run the test described in the CESM [quick start
-guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html). The
-following are basic instructions to create and run the case, see the
+Here we will run the test described in the CESM 
+[quick start guide](https://escomp.github.io/CESM/release-cesm2/quickstart.html).
+The following are basic instructions to create and run the case, see the
 above link for more information.
 
 Change to the `cime/scripts` directory:
@@ -120,7 +120,8 @@ We can adjust the number of processors (tasks) the simulation will run on. This 
 ```
 
 Changes to the number of processors/tasks and layout must be made before calling `case.setup`.
-More details about modifying a case can be found in the CESM documentation and also in [ARCHER2's CESM documentation](https://docs.archer2.ac.uk/research-software/cesm213_run/#making-changes-to-a-case).
+More details about modifying a case can be found in the CESM documentation and also in
+[ARCHER2's CESM documentation](https://docs.archer2.ac.uk/research-software/cesm213_run/#making-changes-to-a-case).
 
 Let's also reduce the wall time (which will default to the maximum value otherwise):
 
