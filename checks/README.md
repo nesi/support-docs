@@ -34,7 +34,7 @@ the typo is probably occuring elsewhere in the text in a valid context, fix it h
 
 *This linter is defined in [run_proselint.py](run_proselint.py) script.*
 
-Checks text follows best practice for English language.
+Checks text follows best practice for English language. Fenced code blocks are skipped.
 
 Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json).
 
