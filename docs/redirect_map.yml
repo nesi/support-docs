@@ -1,7 +1,7 @@
 hc.md: index.md
 hc/en-gb.md: index.md
 Storage/Freezer_long_term_storage.md : Storage/Long_Term_Storage/Freezer_Long_Term_Storage.md
-Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md: Batch_Computing/Job_Prioritisation.md
+Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Job_prioritisation.md: Batch_Computing/Job_Prioritisation_and_QoS.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/SLURM-Best_Practice.md: Batch_Computing/SLURM-Best_Practice.md
 Scientific_Computing/HPC_Software_Environment/Installing_Third_Party_applications.md : Software/Installing_Applications_Yourself.md
 Scientific_Computing/Supported_Applications/ABAQUS.md : Software/Available_Applications/ABAQUS.md
@@ -72,7 +72,7 @@ Scientific_Computing/Batch_Jobs/Fair_Share.md : Batch_Computing/Fair_Share.md
 Scientific_Computing/Batch_Jobs/Hardware.md : Batch_Computing/Hardware.md
 Scientific_Computing/Batch_Jobs/Job_Checkpointing.md : Batch_Computing/Job_Checkpointing.md
 Scientific_Computing/Batch_Jobs/Job_Limits.md : Batch_Computing/Job_Limits.md
-Scientific_Computing/Batch_Jobs/Job_prioritisation.md : Batch_Computing/Job_Prioritisation.md
+Scientific_Computing/Batch_Jobs/Job_prioritisation.md : Batch_Computing/Job_Prioritisation_and_QoS.md
 Scientific_Computing/Batch_Jobs/SLURM-Best_Practice.md : Batch_Computing/SLURM-Best_Practice.md
 Scientific_Computing/HPC_Software_Environment/Temporary_directories.md : Batch_Computing/Temporary_Directories.md
 Scientific_Computing/Running_Jobs_on_Maui_and_Mahuika/Slurm_Interactive_Sessions.md: Interactive_Computing/Slurm_Interactive_Sessions.md
@@ -200,7 +200,7 @@ Announcements/Globus-renaming.md: Announcements/Globus-Renaming.md
 Announcements/Identity_provider_system_maintenance.md: Announcements/Identity_Provider_System_Maintenance.md
 Announcements/Slurm_Job_email.md: Announcements/Slurm_Job_Email.md
 Batch_Computing/Checking_resource_usage.md: Batch_Computing/Checking_Resource_Usage.md
-Batch_Computing/Job_prioritisation.md: Batch_Computing/Job_Prioritisation.md
+Batch_Computing/Job_prioritisation.md: Batch_Computing/Job_Prioritisation_and_QoS.md
 Batch_Computing/Temporary_directories.md: Batch_Computing/Temporary_Directories.md
 Data_Transfer/Globus/Data_Transfer_using_Globus.md: Data_Transfer/Globus/Data_Transfer_Using_Globus.md
 Getting_Started/FAQs/Can_I_change_my_time_zone_to_New_Zealand_time.md: Getting_Started/FAQs/Can_I_Change_My_Time_Zone_to_New_Zealand_Time.md
@@ -237,3 +237,4 @@ Getting_Started/Job_efficiency_review.md: Getting_Started/Job_Efficiency_Review.
 Software/Available_Applications/GUFI.md: Software/Available_Applications/gufi.md
 Announcements/New_HPC_Portal.md: Announcements/New_HPC_Portal/HPC_Portal_Overview.md
 Announcements/New_HPC_Portal/Overview.md: Announcements/New_HPC_Portal/HPC_Portal_Overview.md
+Batch_Computing/Job_Prioritisation.md: Batch_Computing/Job_Prioritisation_and_QoS.md
