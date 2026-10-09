@@ -89,17 +89,17 @@ The starting point for a Fair Share calculation is a comparison of the
 project's actual share of use to the expected share of use. This share
 of use is based on what all users of the cluster have actually used
 during the relevant period of time, not what the cluster was capable of
-delivering during that same period. Currently, each period is five
+delivering during that same period. Currently, each period is {{ slurm_limits.priority.calc_minutes }}
 minutes.
 
-Because five minutes is a short time, Fair Share aggregates the
+Because {{ slurm_limits.priority.calc_minutes }} minutes is a short time, Fair Share aggregates the
 ratio of actual share to expected share since records began on that
 cluster. But as the time gets further back from the present, each
-five-minute window has slightly less influence on fair share scores. Our
-current configuration has it that after two weeks (that is, 4,032
-successive five-minute windows), the effect of the ratio for that
-five-minute slice is worth only half of what it was worth initially;
-after four weeks, it is worth a quarter; after six weeks, one eighth;
+window has slightly less influence on fair share scores. Our
+current configuration has it that after {{ slurm_limits.priority.half_life_days }} days (that is, {{ slurm_limits.priority.half_life_periods }}
+successive windows), the effect of the ratio for that
+window is worth only half of what it was worth initially;
+after twice as long, it is worth a quarter; after three times as long, one eighth;
 and so on. The effect of this decay curve is that over-use or under-use in
 the recent past has a greater effect on your project's fair share score
 than the same extent of overuse or under-use long ago.

@@ -21,7 +21,7 @@ Priority scores are determined by a number of factors:
 
 The "debug" Quality of Service can be gained by adding the `sbatch`
 command line option `--qos=debug`.  
-This adds 5000 to the job priority so raises it above all non-debug
+This adds {{ slurm_limits.debug.priority }} to the job priority so raises it above all non-debug
 jobs, but is limited to small, short jobs:
 
 - Jobs per user, queued or running: {{ slurm_limits.debug.jobs }}
@@ -49,12 +49,12 @@ recent past compared to their expected rate of use (either by submitting
 and running many jobs, or by submitting and running large jobs) will
 have a lower priority, and projects with little recent activity compared
 to their expected rate of use will see their waiting jobs start sooner.
-Fair Share contributes up to 1000 points to the job priority. To see the current fair-share score of a project you can use the command `sshare`, for seeing recent usage use `nn_corehour_usage`.
+Fair Share contributes up to {{ slurm_limits.priority.fairshare_points }} points to the job priority. To see the current fair-share score of a project you can use the command `sshare`, for seeing recent usage use `nn_corehour_usage`.
 
 ### Job Age
 
-Job priority slowly rises with time as a pending job gets older -1
-point per hour for up to 3 weeks.
+Job priority slowly rises with time as a pending job gets older: {{ slurm_limits.priority.age_points_per_hour }}
+point per hour for up to {{ slurm_limits.priority.age_days }} days.
 
 ### Job Size or "TRES" (Trackable RESources)
 

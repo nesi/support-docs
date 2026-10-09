@@ -59,6 +59,7 @@ def slurm_limits_for_docs(raw):
     threads = max(p["threads_per_core"] for p in partitions)
     debug, normal = raw["qos"]["debug"], raw["qos"]["normal"]
     run_mins = normal["max_tres_run_mins_per_user"]
+    priority = raw["priority"]
     limits = {
         "debug": {
             "jobs": debug["max_submit_per_user"],
@@ -67,6 +68,8 @@ def slurm_limits_for_docs(raw):
             "cores": debug["max_tres_per_job"]["cpu"] // threads,
             "memory_gb": _tb(debug["max_tres_per_job"]["mem"]) * 1024,
             "gpus": debug["max_tres_per_job"]["gres/gpu"],
+            # Points added to job priority. Raw, as NO_NORMAL_ALL turns off normalisation.
+            "priority": debug["priority"] * priority["weight_qos"],
         },
         "per_job": {
             "days": max(p["max_walltime_minutes"] for p in partitions) / day,
@@ -80,6 +83,14 @@ def slurm_limits_for_docs(raw):
             "tb_days": _tb(run_mins["mem"]) / day,
             "gpus": normal["max_tres_per_user"]["gres/gpu"],
             "gpu_days": run_mins["gres/gpu"] / day,
+        },
+        "priority": {
+            "fairshare_points": priority["weight_fairshare"],
+            "age_points_per_hour": priority["weight_age"] / (priority["max_age_minutes"] / 60),
+            "age_days": priority["max_age_minutes"] / day,
+            "calc_minutes": priority["calc_period_minutes"],
+            "half_life_days": priority["decay_half_life_minutes"] / day,
+            "half_life_periods": priority["decay_half_life_minutes"] // priority["calc_period_minutes"],
         },
     }
     return {group: {k: _tidy(v) for k, v in values.items()} for group, values in limits.items()}
@@ -111,4 +122,7 @@ def define_env(env):
         ]
 
     # Not `slurm`, mkdocs.yml `extra.slurm` (the Slurm version) already has that name.
-    env.variables["slurm_limits"] = slurm_limits_for_docs(json.load(open(slurm_limits_path)))
+    slurm_limits = json.load(open(slurm_limits_path))
+    env.variables["slurm_limits"] = slurm_limits_for_docs(slurm_limits)
+    # Pages link to the Slurm docs for this version with `config.extra.slurm`.
+    env.conf["extra"]["slurm"] = f"slurm-{slurm_limits['slurm_version']}"
