@@ -10,6 +10,8 @@ import re
 import sys
 import yaml
 import os
+import json
+import datetime
 import time
 import traceback
 from titlecase import titlecase
@@ -46,6 +48,91 @@ ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many
 NO_TAGS_REQUIRED = ["docs/tags.md", "docs/updates.md", "docs/GLOSSARY.md"]
 DOC_ROOT = "docs"
 TAGS_VOCAB_PATH = "docs/assets/tags.yml"
+MODULE_LIST_PATH = "docs/assets/module-list.json"
+NEW_STATUS_DAYS = 60  # 'status: new' is flagged this long after created_at.
+
+# Pages where old names are expected: dated announcements and release notes record what was true at the time,
+# and the maintainer pages (FORMAT.md etc.) name the banned words in order to ban them.
+HISTORY_PAGES = r"(?i)(^|/)docs/Announcements/|release_notes"
+MAINTAINER_PAGES = r"(^|/)docs/[A-Z]+\.md$"
+
+# Words and patterns that shouldn't appear in pages. Add to this list rather than writing a new check.
+#   scope "text": prose only, so code blocks, inline code and link targets are ignored.
+#   scope "all": code too, for things that are wrong wherever they appear (eg. hostnames).
+#   skip: path patterns the entry doesn't apply to.
+#   message: '{0}' is replaced with the matched text, or with the pattern's capture group if it has one.
+BANNED_PATTERNS = [
+    {
+        # Not the history notes ("New Zealand eScience Infrastructure (NeSI) was integrated...", "NeSI-REANNZ"),
+        # the brand in quotes, or names that still carry it ("NeSI Keycloak").
+        "pattern": r"(?<!Infrastructure \()(?<![‘'\"])\bNeSI\b(?![’'\"]|-REANNZ| Keycloak)",
+        "scope": "text",
+        "level": "notice",
+        "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
+        "message": "Call the organisation REANNZ and the platform Mahuika. Only write NeSI where a name still \
+carries it (see 'Names and terms' in FORMAT.md).",
+    },
+    {
+        # 'the HPC Portal' and 'the HPC platform' are names, 'HPC GridRunner' is a Trinity tool.
+        "pattern": r"\b[Tt]he HPC\b(?! (?:[Pp]ortal|[Pp]latform|GridRunner))",
+        "scope": "text",
+        "level": "notice",
+        "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
+        "message": "Call the platform Mahuika (or 'the cluster' after the first mention), not '{0}'.",
+    },
+    {
+        "pattern": r"\bHPC3\b",
+        "scope": "text",
+        "level": "notice",
+        "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
+        "message": "'HPC3' was a temporary name for Mahuika, call it Mahuika.",
+    },
+    {
+        "pattern": r"\b(?:lander|login|mahuika|maui)\.nesi\.org\.nz\b",
+        "scope": "all",
+        "level": "warning",
+        "skip": [HISTORY_PAGES],
+        "message": "'{0}' is a retired hostname. Use the hosts in Standard_Terminal_Setup.md \
+(login.hpc.nesi.org.nz, through lander.hpc.nesi.org.nz).",
+    },
+    {
+        "pattern": r"^\s*Host\s+nesi\s*$|\bssh\b[^#\n]*?\snesi\b(?![.\w-])|(?<![\w./-])nesi:(?!//)",
+        "scope": "all",
+        "level": "warning",
+        "skip": [HISTORY_PAGES],
+        "message": "The SSH host alias set up in Standard_Terminal_Setup.md is 'mahuika', not 'nesi', \
+so this fails for readers who followed it.",
+    },
+    {
+        "pattern": r"^#{2,6}\s+(Introduction|Overview|Description|Summary|Details|Background|General)\s*:?\s*$",
+        "flags": re.IGNORECASE,
+        "scope": "text",
+        "level": "notice",
+        "message": "Heading '{0}' doesn't say what its section is about. Name the topic instead, \
+or if it's the first heading remove it: the text after the title is the introduction.",
+    },
+    {
+        "pattern": r"!\[\s*(alt text|alt|image|img|picture|screenshot|this is an image)\s*\]\("
+                   r"|!\[([^\]]*\.(?:png|jpe?g|gif|svg|webp))\s*\]\(|!\[\s*(mceclip\d*[^\]]*)\]\(",
+        "flags": re.IGNORECASE,
+        "scope": "text",
+        "level": "warning",
+        "skip": [MAINTAINER_PAGES],
+        "message": "Image alt text '{0}' is a placeholder. Describe what the image shows, as if no image were \
+visible: screen readers and the docs chat assistant only get this text.",
+    },
+]
+
+
+def _load_module_names():
+    """Lower-cased module name -> module name, for the case-insensitive applications[] lookup."""
+    try:
+        return {name.lower(): name for name in json.loads(Path(MODULE_LIST_PATH).read_text())}
+    except (OSError, ValueError):
+        return {}
+
+
+MODULE_NAMES = _load_module_names()
 
 
 def _load_tag_aliases(vocab):
@@ -686,6 +773,112 @@ def admonition_structure():
         }
 
 
+def _blank(m):
+    return " " * len(m.group(0))
+
+
+def _mask_non_prose(text):
+    """Blanks out inline code, link targets and HTML tags, keeping columns, so prose checks don't see them."""
+    text = re.sub(r"`[^`]*`", _blank, text)
+    text = re.sub(r"(?<=\]\()[^)]*(?=\))", _blank, text)
+    return re.sub(r"<[^>]+>", _blank, text)
+
+
+def banned_patterns():
+    """
+    Flags the words and patterns in BANNED_PATTERNS.
+    """
+    prose = None
+    for banned in BANNED_PATTERNS:
+        if any(re.search(skip, str(input_path)) for skip in banned.get("skip", [])):
+            continue
+        if banned["scope"] == "text":
+            if in_code_block:
+                continue
+            if prose is None:
+                prose = _mask_non_prose(line)
+            text = prose
+        else:
+            text = line
+        for m in re.finditer(banned["pattern"], text, banned.get("flags", 0)):
+            yield {
+                "level": banned["level"],
+                "line": lineno,
+                "col": m.start() + 1,
+                "endColumn": m.end(),
+                "message": banned["message"].format((m.group(m.lastindex) if m.lastindex else m.group(0)).strip()),
+            }
+
+
+def module_version_hardcoded():
+    """
+    A version typed into 'module load' goes out of date, the applications macro follows the default.
+    """
+    if not in_code_block or not MODULE_NAMES or re.search(HISTORY_PAGES, str(input_path)):
+        return
+    m = re.search(r"\bmodule\s+(?:load|add)\s+(.*)", line)
+    if not m:
+        return
+    for module in re.finditer(r"([\w.+-]+)/([^\s{}]+)", m.group(1)):
+        name = MODULE_NAMES.get(module.group(1).lower())
+        if not name:
+            continue
+        macro = f"applications.{name}" if name.isidentifier() else f"applications['{name}']"
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "col": m.start(1) + module.start() + 1,
+            "endColumn": m.start(1) + module.end(),
+            "message": f"'{module.group(0)}' has the version typed in, so it will go out of date. If any version \
+will do, use '{name}/{{{{ {macro}.default }}}}'.",
+        }
+
+
+def link_not_to_md():
+    """
+    The build only checks links to .md files, so a link to a rendered page path (or a folder) can break unnoticed.
+    """
+    if in_code_block:
+        return
+    text = re.sub(r"`[^`]*`", _blank, line)
+    for m in re.finditer(r"(?<!!)\[[^\]]*\]\(\s*<?([^)\s>]+)", text):
+        target = m.group(1)
+        # Other sites, mailto:, anchors on this page, and macros.
+        if re.match(r"(?i)[a-z][a-z0-9+.-]*:|#|\{\{|\{%", target):
+            continue
+        path = target.split("#")[0].split("?")[0]
+        # A file with an extension is fine: a page (.md), or an image, PDF or script.
+        if re.search(r"\.\w{1,5}$", path):
+            continue
+        yield {
+            "line": lineno,
+            "col": m.start(1) + 1,
+            "endColumn": m.end(1),
+            "message": f"Link to '{target}' doesn't point at a .md file, so the build can't check it. Link to the \
+page's .md file with a path relative to this page (eg. '../Storage/Filesystems_and_Quotas.md').",
+        }
+
+
+def status_new_expired():
+    """
+    'status: new' puts a badge in the nav. Left on, it stops meaning anything.
+    """
+    if meta.get("status") != "new":
+        return
+    try:
+        created = datetime.date.fromisoformat(str(meta.get("created_at") or "")[:10])
+    except ValueError:
+        return
+    age = (datetime.date.today() - created).days
+    if age > NEW_STATUS_DAYS:
+        yield {
+            "level": "notice",
+            "line": _get_lineno(r"^status:.*$"),
+            "message": f"Page has had 'status: new' for {age} days (created_at {created}). \
+Remove it {NEW_STATUS_DAYS} days after the page was created.",
+        }
+
+
 def dynamic_slurm_link():
     """
     Checks if slurm links point to right version of docs.
@@ -715,11 +908,12 @@ ENDCHECKS = [
     approved_tags,
     walk_toc,
     section_length,
+    status_new_expired,
 ]
 
 # Checks to be run on each line
 WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body, code_line_length,
-              admonition_structure]
+              admonition_structure, banned_patterns, module_version_hardcoded, link_not_to_md]
 
 if __name__ == "__main__":
     main()

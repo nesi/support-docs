@@ -50,6 +50,10 @@ Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlin
 
 Catch-all for custom checks.
 
+Words and patterns that shouldn't appear in pages (old names, retired hostnames, generic headings,
+placeholder image alt text) are listed in `BANNED_PATTERNS` at the top of the script.
+To ban something new, add an entry there rather than writing a new check.
+
 See script for details.
 
 Admonitions (`!!!`, `???`) and content tabs (`===`) are checked here, not by markdownlint, which only understands CommonMark.

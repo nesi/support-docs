@@ -96,14 +96,18 @@ Public facing articles are found in the `docs` folder:
     and give it a descriptive title, for example [Data Transfer Overview](Data_Transfer/Data_Transfer_Overview.md).
     Small categories often don't need one.
 
+    This follows NN/g's advice against [split buttons in navigation menus](https://www.nngroup.com/articles/split-buttons-navigation/),
+    and Baymard's usability testing, where people [didn't tap category headers](https://baymard.com/blog/mobile-main-nav-view-all)
+    to reach the broader page.
+
 ![Documentation Structure](assets/images/doc_struct.png)
 
 ## Article/Category Naming
 
 By default, the filename will be use as title of the article/category.
 
-Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav,
-this usually happens around 24-ish characters however this will vary depending on the letters being used.
+Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav.
+The meta check warns when a title is over 28 characters, but this will vary depending on the letters being used.
 
 Use [Title Case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case), pretty much every word should be capitalised except for the little ones.
 
@@ -294,6 +298,7 @@ status: new
 ```
 
 This will show a little exclamation mark next to the page title in the nav.
+Remove it eventually (60 days approx).
 
 ### Tutorial
 

@@ -5,8 +5,6 @@ tags:
     - interactive
 ---
 
-## Introduction
-
 Mahuika supports the use of [Jupyter](https://jupyter.org/) for interactive computing.
 Jupyter allows you to create notebooks that contain live code,
 equations, visualisations and explanatory text. There are many uses for
@@ -28,7 +26,7 @@ For more details see the [how-to guide](../../how_to_guide.md).
 is the next generation of the Jupyter user interface and provides a way
 to use notebooks, text editor, terminals and custom components together.
 
-### filesystems
+### Filesystems
 
 Your JupyterLab session will start in your home directory the first time you launch it. On subsequent launches it may remember your previous working directory and start there.
 

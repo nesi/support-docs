@@ -74,8 +74,13 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 
 - Front matter uses `created_at:` (not `created:`), a specific `description:`, and canonical `tags:` keys from `tags.yml` (see [Tags](#tags)).
   `description` is used for search previews and for the generated `llms.txt`, so only use terms that appear in the page.
-- No H1 (`#`) in the body. Headings start at `##`.
+- No H1 (`#`) in the body. Headings start at `##`, use sentence case and say what their section is about.
+  Don't open a page with `## Introduction` or `## Overview`: the text after the title is the introduction.
+- Call the organisation REANNZ and the platform Mahuika. Only write NeSI where a name still carries it
+  (see [Names and terms](docs/FORMAT.md#names-and-terms)).
 - Code blocks always have a language (`sh`, `sl` for Slurm scripts, `py`, `txt`, ...). Do not prefix commands with `$`.
+- Values the reader replaces: use `username` and `nesi99991`, capitals for anything else (`INPUT_FILE`), never `<...>`,
+  and say what to replace after the block (see [Values to replace](docs/FORMAT.md#values-to-replace)).
 - Slurm examples: `#!/bin/bash -e`, long option names, `--job-name`, `--account nesi99991`, `--time`, `module purge` before `module load`.
 - Use `{% include "partials/support_request.html" %}` wherever the reader is told to contact support, not a raw mailto link.
 - Prefer module version macros such as `{{ applications.ANSYS.default }}` over hard-coded versions.

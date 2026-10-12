@@ -11,7 +11,18 @@ search:
     - For information about page creation, [see NEWPAGE](NEWPAGE.md).
     - For what to write, and whether to write it, [see PRINCIPLES](PRINCIPLES.md).
 
-This page is an overview of the Markdown syntax supported in this documentation.
+This page is an overview of the naming conventions and Markdown syntax used in this documentation.
+
+## Names and terms
+
+- Call the organisation REANNZ.
+- Call the platform Mahuika. After the first mention, "the cluster" is fine.
+  Don't use ""HPC3", which was a temporary name.
+- Only write NeSI where a name still carries it, for example `my.nesi.org.nz`, the support email address,
+  hostnames, and the example project code `nesi99991`.
+- For other terms, use the words in the [Glossary](GLOSSARY.md), so they match the tooltips.
+
+The meta check flags these old names, outside announcements and release notes.
 
 ## Headers
 
@@ -39,10 +50,26 @@ Headers should have a blank line before and after.
 
 Don't use `H1` (`#`) this is reserved for the page title. Setting a title here will change it in the nav also.
 
+Don't start a page with a heading such as "Introduction" or "Overview": the text after the title is the introduction.
+
+Make each heading say what its section is about, with the key word first.
+Avoid generic headings such as "Description", "Details" or "Summary".
+Start the heading of a task with a verb, for example "Connect with SSH".
+Don't write headings as questions: they're hard to front-load, and readers want answers.
+
+Write headings in sentence case: capitalise only the first word and proper nouns.
+Page titles use Title Case instead, see [Article/Category Naming](NEWPAGE.md#articlecategory-naming).
+
+These follow GOV.UK's [Create a clear structure](https://guidance.publishing.service.gov.uk/writing-to-gov-uk-standards/writing-guidelines/clear-structure/),
+the UK Office for National Statistics guide to [structuring content](https://service-manual.ons.gov.uk/content/writing-for-users/structuring-content),
+and Google's [Headings and titles](https://developers.google.com/style/headings).
+The [GOV.UK Design System](https://design-system.service.gov.uk/styles/headings/) and
+[Google](https://developers.google.com/style/capitalization) both use sentence case for headings.
+
 h2 and h3 elements will be used to generate a table of contents (toc).
 
-Try to keep headers short enough that they do not 'wrap' (become more than one line) in the toc,
-this usually happens around 32-ish characters however this will vary depending on the letters being used.
+Try to keep headers short enough that they do not 'wrap' (become more than one line) in the toc.
+The meta check warns when an `h2` is over 28 characters or an `h3` is over 26, but this will vary depending on the letters being used.
 
 Header boundaries are also how the docs chat assistant splits pages into retrievable chunks, aiming for
 roughly 400-3200 characters of body text per section. A section outside that band gets silently merged
@@ -61,13 +88,14 @@ If you simply hit enter and don't use 2 spaces it will be considered one line.
 Most markdown structures (lists, Admonitions, headers, code blocks, etc) should be surrounded by an empty line.
 i.e. A newline before and after.
 It is good practice to add a new line after every sentence, or when the line becomes too long.
-This won't change how the text is rendered, but helps make the source markdown more readable.
+This won't change how the text is rendered, but makes the source easier to read,
+and a change to one sentence shows up as a change to one line in the diff ([Semantic Line Breaks](https://sembr.org/)).
 
 ## Text Emphasis
 
 **bold**: `**bold**`
 
-_italic_: `_italic`
+_italic_: `_italic_`
 
 ## Tab Containers
 
@@ -86,6 +114,11 @@ Tab Containers should be surrounded by blank lines.
 ```
 
 ## Admonitions
+
+Use admonitions sparingly. Too many, especially in a row, stop standing out and get skipped
+(Google's guide to [notes and warnings](https://developers.google.com/style/notices)).
+Keep `warning` and `danger` for real risk, such as lost data or a killed job.
+Only put something in an `info` box if a reader who skips it will still succeed.
 
 Admonitions should be surrounded by blank lines.
 
@@ -131,7 +164,7 @@ An Admonition **shouldn't be made collapsable-closed** (`???`) unless it has bee
 
 ### Admonition Flavours
 
-There are various flavors.
+There are various flavours.
 
 !!! prerequisite
     - [link to page a user should read in order to follow](FORMAT.md)
@@ -172,8 +205,8 @@ There are various flavors.
 
 !!! keypoints
     - For use in tutorials
-    - should summarize learning goal one.
-    - should summarize learning goal two.
+    - should summarise learning goal one.
+    - should summarise learning goal two.
 
 !!! postrequisite
     - For use in tutorials
@@ -234,7 +267,33 @@ May want to add formatting to this later.
 some code 
 ```
 
-DON'T prefix a command with `$` (e.g. `$ ls` if this is something we want it should be added through formatting, not text.
+DON'T prefix a command with `$` (e.g. `$ ls`). Commands are easier to copy without it
+([`markdownlint` rule MD014](https://github.com/DavidAnson/markdownlint/blob/main/doc/md014.md)).
+If a prompt is ever wanted, it should be added through formatting, not text.
+
+Keep code lines to about 80 characters, or the block scrolls sideways.
+The meta check warns about longer lines (allowing a little more in admonitions and a little less in lists).
+Google's guide to [code samples](https://developers.google.com/style/code-samples) uses the same limit.
+
+Put a command and its output in separate blocks (the output as `txt`), so the command can be copied on its own.
+
+### Values to replace
+
+When a command or script needs the reader's own details, use the standard example values, so every page reads the same:
+
+| Value | Example |
+| ----- | ------- |
+| Username | `username` |
+| Project code | `nesi99991` |
+| Project directory | `/nesi/project/nesi99991/my_data` |
+
+For anything else, name the value in capitals with underscores, for example `INPUT_FILE`.
+Don't use angle brackets such as `<username>`: copied unchanged, a shell reads `<` and `>` as redirects.
+Don't use `XXXX` either.
+
+Straight after the block, say what to replace, for example "Replace `nesi99991` with your project code."
+For two or more values, start a list with "Replace the following:".
+This follows Google's guide to [placeholders](https://developers.google.com/style/placeholders).
 
 ### Inline
 
@@ -270,7 +329,7 @@ If possible stick to the following principles.
 - Use `#!/bin/bash -e` as your shebang.
 - One blank line between shebang and Slurm Header.
 - Use whitespace for your Slurm header delimiter (preferably aligned in a tidy way).
-- Use the long for Slurm keywords, e.g. `--job-name` rather than `-j`.
+- Use the long form of Slurm options, e.g. `--job-name` rather than `-J`.
 - Make sure to include `--job-name`, `--account` (`nesi99991`) and `--time`.
 - One blank line after Slurm header.
 - Always `module purge` before `module load`.
@@ -289,9 +348,9 @@ but your script examples should do the bare minimum needed to provide a safe exa
 <span>#SBATCH --time             01:00:00 </span>
 <span></span>
 <span>module purge</span>
-<span>module load MATLAB/2022a</span>
+<span>module load MATLAB/{% raw %}{{ applications.MATLAB.default }}{% endraw %}</span>
 <span></span>
-<span>matlab -r myFile.m    # Some nice informative comment.</span>
+<span>matlab -batch "myScript"    # Some nice informative comment.</span>
 <span>```</span></code></pre>
 
 ## Images
@@ -316,28 +375,43 @@ but your script examples should do the bare minimum needed to provide a safe exa
 
     Write a real alt text too, not just the filename. The docs chat assistant has no way to see the
     image itself - the alt text is the only information it gets. The alt text should be written as if no image is visible at all.
+    This is required by [WCAG 1.1.1 Non-text Content](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html),
+    and the meta check flags placeholders such as `alt text` or a file name.
 
 !!! tip "Drag and Drop"
     You can easily get the path to a image file by dragging it from the left hand Explorer panel over your document, then pressing <kbd>shift</kbd> (you will be prompted) and dropping the image in the desired position. Copy pasting an image from Explorer into markdown also works.
 
     You can also start typing `!` and then use context suggestions (<kbd>ctrl</kbd> + <kbd>space</kbd>), select 'Insert Image' and navigate the rest of the way.
 
+### Screenshots, diagrams and video
+
+- Only use a screenshot when words can't do the job. Screenshots of web pages go out of date (see [Principles](PRINCIPLES.md#principles)).
+- Crop screenshots to what matters, and check they don't show real usernames, project codes, email addresses,
+  job IDs or file paths. The site is public.
+- A Mermaid diagram has no alt text, so say what it shows in the text next to it
+  ([WCAG 1.1.1 Non-text Content](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html)).
+- Only embed a video that has accurate captions ([WCAG 1.2.2 Captions](https://www.w3.org/WAI/WCAG21/Understanding/captions-prerecorded.html)),
+  and give its `iframe` a `title` that says what the video is.
+
 ## Links
 
-[External Link]("https://example.com")
+[External Link](https://example.com)
 
 ```md
-[External Link]("https://example.com")
+[External Link](https://example.com)
 ```
 
-[Internal Link]("General/FAQs/Password_Expiry")
+[Internal Link](Storage/Filesystems_and_Quotas.md)
 
 ```md
-[Internal Link]("General/FAQs/Password_Expiry")
+[Internal Link](Storage/Filesystems_and_Quotas.md)
 ```
 
 !!! warning
-    Link paths are relative to current file!!!
+    Link paths are relative to the current file, and point at the `.md` file,
+    for example `../Storage/Filesystems_and_Quotas.md` from a page in `Batch_Computing/`.
+    Don't link to pages on this site with a full `https://docs.nesi.org.nz/...` URL.
+    The build can't check those, so it won't catch a broken one (the meta check warns about them).
 
 [Anchor Link](#links)
 
@@ -355,7 +429,8 @@ For example a header `## This is my (nasty-Header)` can be linked to with the an
 
 ??? tip "Ambiguous links"
 
-    Try to avoid putting links on ambiguous words, e.g.
+    Try to avoid putting links on ambiguous words. Link text should say where the link goes
+    ([WCAG 2.4.4 Link Purpose](https://www.w3.org/WAI/WCAG21/Understanding/link-purpose-in-context.html)), e.g.
 
     === "Bad"
         View the software homepage [here](https://www.example.com).
@@ -388,32 +463,32 @@ Use
 </code></pre>
 
 
-The current version of Slurm can be changed in the [`mkdocs.yml`](https://github.com/nesi/support-docs/blob/181a3d96716795a04e2c1084be8d1d9b7b45cacf/mkdocs.yml#L67) file.
-
-```yml
-extra:
-  slurm: slurm-24.11.6
-```
-
-Make sure the specified version is in [the archive](https://slurm.schedmd.comarchive) else you will _break every link_.
+The version is set at build time from `docs/assets/slurm-limits.json`, which is fetched from
+[modules-list](https://github.com/nesi/modules-list), so don't change it by hand.
+If links to the Slurm docs break after a Slurm upgrade, check that the version is listed in the archive at `https://slurm.schedmd.com/archive/`.
 
 ## Tooltips
 
+Only use a tooltip for extra detail. Tooltips show on mouse hover, so keyboard and touch users
+[don't see them](https://www.tpgi.com/using-the-html-title-attribute-updated/).
+
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 
 ```md
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 ```
 
-Acroynym should be automatically made tool-tips e.g. MPI.
+Acronyms should be automatically made tool-tips e.g. MPI.
 
 ```md
-Acroynym should be automatically made tool-tips e.g. MPI.
+Acronyms should be automatically made tool-tips e.g. MPI.
 ```
 
 ## Lists
 
 As with other markdown structures, lists must be surrounded by a blank line.
+
+Indent nested items and continuation lines by 4 spaces. With fewer, the items render as one flat list.
 
 ### Unordered List
 
@@ -422,12 +497,12 @@ some text
 - item1
 - item2
 - a
-  multi-line
-  item
+    multi-line
+    item
 - nested
-  - items
-    - nested-er
-   
+    - items
+        - nested-er
+
 some other text
 
 ```md
@@ -436,12 +511,12 @@ some text
 - item1
 - item2
 - a
-  multi-line
-  item
+    multi-line
+    item
 - nested
-  - items
-    - nested-er
-   
+    - items
+        - nested-er
+
 some other text
 ```
 
@@ -451,14 +526,14 @@ some text
 
 1. item1
 2. a
-   multi-line
-   item
-   with multiple
-   lines
+    multi-line
+    item
+    with multiple
+    lines
 3. nested
-   1. nested item 1
-   2. nested item 2
-      1. even nested-er
+    1. nested item 1
+    2. nested item 2
+        1. even nested-er
 
 some other text
 
@@ -467,14 +542,14 @@ some text
 
 1. item1
 2. a
-   multi-line
-   item
-   with multiple
-   lines
+    multi-line
+    item
+    with multiple
+    lines
 3. nested
-   1. nested item 1
-   2. nested item 2
-      1. even nested-er
+    1. nested item 1
+    2. nested item 2
+        1. even nested-er
 
 some other text
 ```
@@ -504,7 +579,7 @@ Leading and trailing `|` are optional.
 
 `:`'s can be used to align tables.
 
-| Left  | Center | Right |
+| Left  | Centre | Right |
 | :---- | :----: | ----: |
 | Words | Words | Words |
 | Words | Words | Words |
