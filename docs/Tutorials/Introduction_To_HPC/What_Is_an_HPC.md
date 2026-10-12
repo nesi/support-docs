@@ -66,8 +66,8 @@ It is common for nodes to connect to a shared, remote disk.
 ![A diagram representing the cluster. There are four identical sections connected to one another. Each section is split into two parts. The first part is the memory. The second part is further subdivided into four CPUs.](../../assets/images/clusterDiagram.png)
 
 !!! info "Differences Between Nodes"
-    Many HPC clusters have a variety of nodes optimized for particular workloads.
-    Some nodes may have larger amount of memory, or specialized resources such as
+    Many HPC clusters have a variety of nodes optimised for particular workloads.
+    Some nodes may have larger amount of memory, or specialised resources such as
     Graphical Processing Units (GPUs).
 
 !!! info "Dedicated Transfer Nodes"

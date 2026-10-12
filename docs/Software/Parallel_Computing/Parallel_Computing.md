@@ -17,7 +17,7 @@ Some definitions that will help you understand this page:
 - **Shared Memory**: Multiple CPUs used within a single task
 - **Distributed Memory**: Multiple tasks used across nodes
 
-## Utilizing Multiple CPUs
+## Utilising Multiple CPUs
 
 Requesting extra resources through Slurm doesn't guarantee your program will use them. 
 Always consult the software specific documentation first when trying to determine what types of parallel computing to use (and how).
@@ -25,7 +25,7 @@ Software may:
 
 - Claim implicit multi-core support (verify this works)
 - Require explicit core specification in command line (e.g., `-n 8`, `-np 16`)
-- Need parallelization type specified in command line (e.g., `-dis`, `-mpi=intelmpi`)
+- Need parallelisation type specified in command line (e.g., `-dis`, `-mpi=intelmpi`)
 - Require input file regeneration to be configured in a particular way, (partitioning into same number of domains as tasks, etc).
 - Give estimates on initial resource requirements.
 
@@ -37,7 +37,7 @@ Software may:
 | [Distributed Memory](#distributed-memory) | MPI | `--ntasks` | Scales across nodes; higher overhead |
 | [Hybrid](#hybrid-parallel) | - | `--ntasks` + `--cpus-per-task` | Combines both approaches |
 | [Job Array](#job-arrays) | - | `--array` | Best for independent tasks |
-| [GPU](#gpus) | GPGPU | `--gpus-per-node` | Specialized hardware for matrix operations |
+| [GPU](#gpus) | GPGPU | `--gpus-per-node` | Specialised hardware for matrix operations |
 
 ## Shared Memory
 
@@ -163,7 +163,7 @@ echo "This is result ${SLURM_ARRAY_TASK_ID}"
 
 GPUs excel at large-scale parallel operations on matrices, making them ideal for machine learning, graphics processing and simulating many kinds of physical systems.
 
-- Specialized hardware requested in addition to CPUs and memory.
+- Specialised hardware requested in addition to CPUs and memory.
 - Well-suited for large matrix operations and machine learning.
 - Use `--gpus-per-node=<gpu_type>:<gpu_number>`
 

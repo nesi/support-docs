@@ -39,7 +39,7 @@ srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 16 --mem-pe
 ```
 
 Once your interactive session has launched,
-load the Nextflow module with `module load Nextflow/{{app.default}}` (or your required version) and proceed. Parallelization of Nextflow processes will occur within this job.
+load the Nextflow module with `module load Nextflow/{{app.default}}` (or your required version) and proceed. Parallelisation of Nextflow processes will occur within this job.
 
 There are several environmental variables that can be helpful to avoid loading containers and plugins into your persistent project space:
 
@@ -240,9 +240,9 @@ Please note that there is an [additional ranking of priority for process configu
 Nextflow provides tools that can assist you in making efficient use of the HPC resources. We strongly recommend testing your pipeline with a small subset of data to determine optimal settings before running full datasets.
 
 The most human-readable, but least configurable option is the execution report which is
-[an HTML execution report containing CPU and memory utilization information](https://www.nextflow.io/docs/latest/reports.html#execution-report) for each individual process as well as each process type. This information can be used to ensure processes are only getting the resources they need.
+[an HTML execution report containing CPU and memory utilisation information](https://www.nextflow.io/docs/latest/reports.html#execution-report) for each individual process as well as each process type. This information can be used to ensure processes are only getting the resources they need.
 
-For a more configurable option, [the trace file](https://www.nextflow.io/docs/latest/reports.html#trace-file) provides many potential fields of interest which can be requested. A full list of fields is available at the previous documentation link, but several of note for optimization and debugging:
+For a more configurable option, [the trace file](https://www.nextflow.io/docs/latest/reports.html#trace-file) provides many potential fields of interest which can be requested. A full list of fields is available at the previous documentation link, but several of note for optimisation and debugging:
 
 - `native_id` will provide the job ID for any jobs submitted to Slurm
 - `duration` will show the time from *submission* of the process to completion of the process

@@ -129,7 +129,7 @@ workload manager if necessary) and opens the following window.
 ![DDT\_overview.PNG](../../assets/images/Debugging_1.PNG)
 
 In the top part the processes and threads can be selected. The
-application is paused at the initialization phase, giving the user the
+application is paused at the initialisation phase, giving the user the
 opportunity to set break/watch points, and define the type execution
 (in/over/out of functions or just until next break point). For more
 detailed information see the [DDT manual](https://developer.arm.com/docs/101136/latest/ddt)

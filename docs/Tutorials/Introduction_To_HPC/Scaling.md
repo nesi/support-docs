@@ -17,7 +17,7 @@ Unfortunately we cannot assume speedup will be linear (e.g. double CPUs won't us
 
 In order to establish an understanding of the scaling properties we may have to repeat this test several times, giving more resources each iteration.
 
-## Scaling Behavior
+## Scaling Behaviour
 
 ### Amdahl's Law
 

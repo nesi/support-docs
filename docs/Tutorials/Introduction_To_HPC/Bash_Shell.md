@@ -21,7 +21,7 @@ tags:
     The Software Carpentry '[Unix Shell](https://swcarpentry.github.io/shell-novice/)' lesson covers the subject in more depth, we recommend you check it out.
   
 The part of the operating system responsible for managing files and directories is called the **file system**.
-It organizes our data into files, which hold information, and directories (also called 'folders'), which hold files or other directories.
+It organises our data into files, which hold information, and directories (also called 'folders'), which hold files or other directories.
 
 Understanding how to navigate the file system using command line is essential for using an HPC.
 
@@ -123,8 +123,8 @@ Finally, stored inside `home` is the directory with your username.
     it refers to the root directory. When it appears *inside* a path,
     it's just a separator.
 
-As you may now see, using a bash shell is strongly dependent on the idea that your files are organized in a hierarchical file system.
-Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
+As you may now see, using a bash shell is strongly dependent on the idea that your files are organised in a hierarchical file system.
+Organising things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
 ## Listing contents of directories
 
@@ -272,7 +272,7 @@ The **prompt** tells us that the terminal is accepting inputs, prompts can be cu
 
 The **command**, what are we trying to do.
 
-**Options** will modify the behavior of the command, multiple options can be specified.
+**Options** will modify the behaviour of the command, multiple options can be specified.
 Options will either start with a single dash (`-`) or two dashes (`--`).
 Often options will have a short and long format e.g. `-a` and `--all`.
 
@@ -280,7 +280,7 @@ Often options will have a short and long format e.g. `-a` and `--all`.
 
 Each part is separated by spaces: if you omit the space
 between `ls` and `-l` the shell will look for a command called `ls-l`, which
-doesn't exist. Also, capitalization can be important.
+doesn't exist. Also, capitalisation can be important.
 For example, `ls -s` will display the size of files and directories alongside the names,
 while `ls -S` will sort the files and directories by size.
 

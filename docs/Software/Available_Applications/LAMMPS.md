@@ -104,7 +104,7 @@ performance of your LAMMPS simulations can vary, so testing is key
 to optimising your LAMMPS simulation. However, in general terms:
 
 * For dense, homogeneous, well behaved system with a sufficient
-  number of atoms, so that the MPI parallelization can be at its
+  number of atoms, so that the MPI parallelisation can be at its
   most efficient.
 * In inhomogeneous systems where there could be lots of empty spaces
   in the simulation cell, a sensible mix of MPI and OpenMP could be

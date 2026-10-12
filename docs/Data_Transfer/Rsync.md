@@ -9,7 +9,7 @@ tags:
     Have SSH setup as described in [Standard Terminal Setup](../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md)
 
 Rsync is an utility that provides fast incremental file transfer and
-efficient file synchronization between a computer and a storage disk.
+efficient file synchronisation between a computer and a storage disk.
 The basic command syntax of:
 
 ```bash

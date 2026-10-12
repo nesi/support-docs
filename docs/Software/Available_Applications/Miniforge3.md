@@ -16,7 +16,7 @@ environment managers. Miniforge is a replacement for Miniconda and the Anaconda 
 
 `conda` and `mamba` provide the tools that allow you to install packages and their
 dependencies in a dedicated environment. This gives you more freedom to
-install software yourself.  Note this may come at the expense of less optimized
+install software yourself.  Note this may come at the expense of less optimised
 packages and no curation by the REANNZ team.
 
 ## Module loading and conda environments isolation

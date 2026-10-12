@@ -11,7 +11,7 @@ search:
 
 ## New and Improved
 
-- Various bug fixes and performance optimizations
+- Various bug fixes and performance optimisations
 - Enhanced networking by adding static routes to both the Identity Manager and Object Storage
 
 If you have any questions about any of the fixes, please {% include "partials/support_request.html" %}.

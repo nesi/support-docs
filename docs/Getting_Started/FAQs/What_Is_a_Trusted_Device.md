@@ -30,7 +30,7 @@ Using a trusted device will simplify your login process. For example, if a devic
 
 You should name your trusted device something that helps you identify it and differentiates it from your other devices. Each name should be unique (e.g. the process will fail if a name is used more than once).
 Good names are descriptive but also personal, such as "My Personal Laptop" or "Sarah's iPhone."
-Avoid names such as "My Favorite Device", as that could make it harder to manage if you have multiple trusted devices for the same account.
+Avoid names such as "My Favourite Device", as that could make it harder to manage if you have multiple trusted devices for the same account.
 
 ## How can I manage my trusted devices?
 

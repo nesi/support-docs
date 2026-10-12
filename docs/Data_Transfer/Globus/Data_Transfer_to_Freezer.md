@@ -67,6 +67,6 @@ This is expected behaviour and does not affect the integrity or accessibility of
 
 If you initiate a transfer of offline data (only on tape - Glacier) from Freezer, the data will be automatically staged from tape before the transfer begins.
 
-## Organizing Files Using Globus
+## Organising Files Using Globus
 
 We do NOT recommend organising or moving files or directories on Freezer using the Globus interface. Please use the s3cmd tool in these instances. Please see our [Freezer Guide](../../Storage/Long_Term_Storage/Freezer_Guide.md) for more information.

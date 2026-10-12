@@ -111,7 +111,7 @@ where:
 
 ### Step 2a: Synchronise data
 
-Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
+Synchronise a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
 
 ```sh
 s3cmd sync --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
