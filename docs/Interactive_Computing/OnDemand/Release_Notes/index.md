@@ -62,7 +62,7 @@ This is our first release to a group of early access users for feedback around N
 
     * In addition to the two core apps above, we have the following applications accessible, but are still under development, and are unsupported. We will update you with more information in the future releases as they stabilise.
     * Virtual desktop
-    * Matlab
+    * MATLAB
     * VS Code-Server
 
 - New login process for the NeSI systems going forward

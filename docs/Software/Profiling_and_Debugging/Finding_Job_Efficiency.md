@@ -106,7 +106,7 @@ however bear in mind there are other factors that affect CPU efficiency.
 
 ## During Runtime
 
-In order to check in on a job that is running, you will need to ssh to
+In order to check in on a job that is running, you will need to SSH to
 the compute node where it is running.
 
 ### Finding Job Node

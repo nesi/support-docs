@@ -23,13 +23,13 @@ File transfer methods from the terminal:
 
 * [Rsync](./Rsync.md): Good for large and more complex data moving operations providing additional features over SCP.
 * [RClone](./RClone.md): Best tool for transferring to cloud storage services or parallelising transfer from command line.
-* [SCP (Secure Copy)](./SCP.md): SCP is pre-installed on all versions of MacOS, Linux and WSL and is a good tool for data transfer.
+* [SCP (Secure Copy)](./SCP.md): SCP is pre-installed on all versions of macOS, Linux and WSL and is a good tool for data transfer.
 
 For transferring data using specific tools, see:
 
 * [File transfer using MobaXterm (Windows)](./Data_Transfer_Using_MobaXterm.md)
 * [File transfer using WinSCP (Windows)](./Data_Transfer_Using_WinSCP.md)
-* [File transfer using VSCode (Windows/MacOS/Linux)](./VSCode.md)
+* [File transfer using VSCode (Windows/macOS/Linux)](./VSCode.md)
 * [Connecting with the default file manager (Ubuntu Desktop)](./File_Managers.md)
 
 !!! info

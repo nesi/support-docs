@@ -101,7 +101,7 @@ ssh login.hpc.nesi.org.nz
 **If this succeeds**:
 
 * If you are using a bash terminal, confirm your .ssh config is [set up correctly](./Connecting_to_the_Cluster.md).
-* If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](./Connecting_to_the_Cluster.md).
+* If you are using an SSH client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](./Connecting_to_the_Cluster.md).
 
 ### Check you are a member of an active project
 

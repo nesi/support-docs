@@ -130,8 +130,8 @@ On login nodes there is a fast `/tmp` filesystem for very transient files, and i
 It is vital that files that are important to your work are backed up after you have processed them and want to move them off Mahuika. The 3,2,1 rule is best practise for storing and backing up files to minimise lose of mission critical data. The rule is:
 
 - **3 Copies**: Keep your original data plus two backups.
-- **2 Media Types**: Store backups on different media (e.g., internal hard drive, external hard drives, cloud, network attached storage device, high capacity storage, freezer).
-- **1 Offsite**: Keep one copy physically separate (e.g., cloud, freezer, high capacity storage, offsite drive) to survive local disasters.
+- **2 Media Types**: Store backups on different media (e.g., internal hard drive, external hard drives, cloud, network attached storage device, high capacity storage, Freezer).
+- **1 Offsite**: Keep one copy physically separate (e.g., cloud, Freezer, high capacity storage, offsite drive) to survive local disasters.
 
 ### Where to run jobs
 

@@ -35,9 +35,9 @@ which may be repeated ad infinitum.
 
 ## SSH configuration
 
-Cylc uses ssh  to automatically start schedulers on configured "run
+Cylc uses SSH  to automatically start schedulers on configured "run
 hosts" and to submit jobs to remote platforms, so if you haven't already
-done so you need to allow ssh to connect to other hosts on the HPC
+done so you need to allow SSH to connect to other hosts on the HPC
 cluster without prompting for a passphrase (all HPC nodes see the same
 filesystem, so this is easy):
 
@@ -45,7 +45,7 @@ filesystem, so this is easy):
     passphrase** (when it asks for a passphrase, just hit enter)
 - add your own public key to your authorized keys
     file: **`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`**
-- check that your **keys, authorized\_keys file, ssh
+- check that your **keys, authorized\_keys file, SSH
     directory, **and** home directory** all have sufficiently secure
     file permissions. If not, `ssh` will silently revert to requiring
     password entry. See for
@@ -120,7 +120,7 @@ export PATH=$CYLC_HOME/wrapper:$PATH
 
 ## Setting up Cylc on Mahuika
 
-In order to allow Cylc to submit tasks to the SLURM scheduler, we need to configure platforms. Edit (or create) your global configuration file:
+In order to allow Cylc to submit tasks to the Slurm scheduler, we need to configure platforms. Edit (or create) your global configuration file:
 
 ``` sh
 mkdir -p ~/.cylc/flow/
@@ -146,7 +146,7 @@ cylc clean slurm
 cylc vip .
 ```
 
-This will submit a job to SLURM
+This will submit a job to Slurm
 
 ``` sh
 squeue --me

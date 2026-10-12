@@ -3,7 +3,7 @@ created_at: '2018-11-30T00:34:14Z'
 tags:
 - access
 - tutorial
-description: How to setup your ssh config file in order to connect to the HPC cluster.
+description: How to setup your SSH config file in order to connect to the HPC cluster.
 ---
 
 !!! prerequisite
@@ -25,7 +25,7 @@ configurations.
     create a subdirectory in your home directory to store socket
     configurations.
 
-2. Open your ssh config file (e.g. `nano ~/.ssh/config` to open with the text editor `nano`) and add the
+2. Open your SSH config file (e.g. `nano ~/.ssh/config` to open with the text editor `nano`) and add the
     following (replacing **`username`** with your username):
 
     ```sh
@@ -59,7 +59,7 @@ configurations.
 
     !!! warning
         MobaXterm does not allow the use of sockets.
-        If you are using MobaXterm please exclude the **first four lines** from your own ssh config.
+        If you are using MobaXterm please exclude the **first four lines** from your own SSH config.
 
 3. Ensure the permissions are correct by running;
 
@@ -147,7 +147,7 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
     cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys
     ```
 
-4. If you set up your ssh config recently, you may already have this line added.
+4. If you set up your SSH config recently, you may already have this line added.
 
     Open the file `~/.ssh/config` **on your local machine**, for example;
 

@@ -110,7 +110,7 @@ packages.
     This example is similar to the above except that workers can run across
     multiple nodes. Note that we don't need to specify the number of workers
     when starting the cluster -- it will be derived by the mpiexec command,
-    which slurm will invoke. You will need to load the gimkl module to
+    which Slurm will invoke. You will need to load the gimkl module to
     expose the MPI library.
 
     ``` R

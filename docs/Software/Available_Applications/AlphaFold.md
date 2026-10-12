@@ -499,7 +499,7 @@ Input *fasta* used in following example and subsequent benchmarking is
 
 - If you are to encounter the message "*RuntimeError: Resource
     exhausted: Out of memory*" , add the following variables to the
-    slurm script
+    Slurm script
 
 For module based runs
 

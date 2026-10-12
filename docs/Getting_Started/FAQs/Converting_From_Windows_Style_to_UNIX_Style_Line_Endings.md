@@ -17,7 +17,7 @@ represented line endings using different sequences:
 
 - All versions of Microsoft Windows represent line endings as CR
     followed by LF.
-- UNIX and UNIX-like operating systems (including Mac OS X) represent
+- UNIX and UNIX-like operating systems (including macOS) represent
     line endings as LF alone.
 
 Therefore, a text file prepared in a Windows environment will, when

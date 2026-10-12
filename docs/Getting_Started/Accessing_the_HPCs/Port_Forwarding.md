@@ -24,7 +24,7 @@ to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 **Local Port:** The port number you will use on your local machine.
 
 **Host Alias:** An alias for the socket of your main connection to the
-cluster, `nesi` if you have set up your ssh config file as
+cluster, `nesi` if you have set up your SSH config file as
 described in [Standard Terminal Setup](Standard_Terminal_Setup.md).
 
 **Remote Port:** The port number you will use on the remote machine (in
@@ -68,7 +68,7 @@ procedure.
 
 If you are using port forwarding on a regular basis, and don't want the
 hassle of opening a new tunnel every time, you can include a port
-forwarding line in your ssh config file ~/.ssh/config on your local
+forwarding line in your SSH config file ~/.ssh/config on your local
 machine.
 
 Under the alias for the cluster you want to connect to add the following
@@ -148,7 +148,7 @@ The two tunnels should look like this.
 
 [sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
-MacOS platforms (unfortunately Windows is not supported). `sshuttle`
+macOS platforms (unfortunately Windows is not supported). `sshuttle`
 allows users to create a VPN connection from a local machine to any
 remote server that they can connect to via `ssh`.There is no need to
 create a separate tunnel for every port to be forwarded, the package

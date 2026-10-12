@@ -5,7 +5,7 @@ tags:
   - storage
 ---
 
-Freezer, powered by Versity, is our completely redesigned long-term storage service to support research data. It consists of a staging area (disk) connected to a tape library. Users gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use Freezer for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the freezer backend service and size of the data to be ingested or retrieved.
+Freezer, powered by Versity, is our completely redesigned long-term storage service to support research data. It consists of a staging area (disk) connected to a tape library. Users gain access to more persistent storage space for their research data, in return for slower access to those files that are stored on tape. We recommend that you use Freezer for larger datasets that you will only need to access occasionally and will not need to change in situ. The retrieval of data may be delayed, due to tape handling, queuing of the Freezer backend service and size of the data to be ingested or retrieved.
 
 Due to the tape storage backend, Freezer is intended for use with relatively large files and should not be used for a large number of small files. Freezer is compatible with the common Amazon Web Services Simple Storage Service (AWS S3) cloud protocol and existing tools such as those used for accessing AWS S3 service.
 

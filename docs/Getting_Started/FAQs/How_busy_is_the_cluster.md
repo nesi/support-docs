@@ -78,8 +78,8 @@ squeue -w <NODE_NAME> -O "JobID,UserName,State,NumCPUs,MinMemory,GRES,TimeLeft"
 
 where `<NODE_NAME>` is the name of the node, and where:
 
-* `JOBID`: The job id for the slurm job
-* `USER`: The username of the slurm job
+* `JOBID`: The job id for the Slurm job
+* `USER`: The username of the Slurm job
 * `STATE`: The state of this job
 * `CPUS`: The number of CPUs this job is using (this will be 2 times the number of CPUs requested, i.e. if a job requests 4 CPUs, it will show here as 8)
 * `MIN_MEMORY`: The amount of RAM that the job is using

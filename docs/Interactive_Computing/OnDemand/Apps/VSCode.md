@@ -30,7 +30,7 @@ Please see the VS Code docs for more information on [Settings](https://code.visu
 
 ### VS Code terminal
 
-The VS Code terminal acts like the Shell Access terminal also available via OnDemand. At present, slurm jobs cannot be submitted via the VS Code terminal and you must use Shell Access.
+The VS Code terminal acts like the Shell Access terminal also available via OnDemand. At present, Slurm jobs cannot be submitted via the VS Code terminal and you must use Shell Access.
 
 ## Installing VS Code extensions
 

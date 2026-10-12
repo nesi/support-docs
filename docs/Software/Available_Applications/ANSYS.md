@@ -72,7 +72,7 @@ prefer_teaching_license
 ## Journal files
 
 Some ANSYS applications take a 'journal' text file as input. It is often
-useful to create this journal file in your SLURM script (tidiness,
+useful to create this journal file in your Slurm script (tidiness,
 submitting jobs programmatically, etc). This can be done by using `cat`
 to make a file from a
 '[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
@@ -202,10 +202,10 @@ Must have one of these flags.
 
 ### Interactive
 
-While it will always be more time and resource efficient using a slurm
+While it will always be more time and resource efficient using a Slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
-the login node, otherwise use of an [slurm interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md)
+the login node, otherwise use of a [Slurm interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md)
 is recommended.
 
 For example.
@@ -251,7 +251,7 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 ```
 
 !!! warning
-    Closing the fluent GUI will not end the SLURM interactive session. Use
+    Closing the fluent GUI will not end the Slurm interactive session. Use
     `exit` or `scancel <jobid>` when finished, else you will continue to
     'use' the requested CPUs.
 
@@ -582,7 +582,7 @@ number of (physical) CPUs.
 2. Open the 'configure' panel.
     ![FENSAP gui](../../assets/images/ANSYS.png)
 3. Under 'Additional mpirun parameters' add
-    your inline SLURM options. You should include at least.
+    your inline Slurm options. You should include at least.
 
     ```sh
     --job-name my_job
@@ -623,7 +623,7 @@ Then in your terminal type `fensap2slurm path/to/project` or run
 `fensap2slurm` from inside the run directory.
 
 This will generate a template file for each stage of the job, edit these
-as you would a normal SLURM script and set the resources requirements.
+as you would a normal Slurm script and set the resources requirements.
 
 For your first shot, it is a good idea to set `CONTINUE=FALSE` for the
 last stage of the shot, that way you can set more accurate resource
@@ -634,14 +634,14 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a slurm script or by
+ANSYS-EM jobs can be submitted through a Slurm script or by
 [interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).
 
 ### RSM
 
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
 manager) running on all nodes. The command `startRSM` has been written
-to facilitate this and needs to be run *after* starting the slurm job
+to facilitate this and needs to be run *after* starting the Slurm job
 but *before* running edt. Please contact REANNZ support if the command is
 not working for you.
 
@@ -680,7 +680,7 @@ ansysedt -batchoptionhelp
 
 ### EM Interactive
 
-First start an interactive slurm session.
+First start an interactive Slurm session.
 
 ``` sh
 salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1500

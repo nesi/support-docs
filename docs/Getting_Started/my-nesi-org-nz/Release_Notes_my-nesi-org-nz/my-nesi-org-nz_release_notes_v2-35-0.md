@@ -10,7 +10,7 @@ description: Release notes for my.nesi.org.nz v2.35.0 - default Freezer naming a
 
 ## New and Improved
 
-- Default Freezer Naming: Default freezer names now automatically follow the format <project code>-<compound allocation id>, making it easier to identify and manage your resources.  
+- Default Freezer Naming: Default Freezer names now automatically follow the format <project code>-<compound allocation id>, making it easier to identify and manage your resources.  
 
 - Credentials Page Update: We've revamped the Credentials pages to include the new HPC platform, enhancing your experience and making it easier to manage your credentials. The NeSI Credentials menu now combines the previous NeSI Password and NeSI 2FA Token menus into one streamlined interface.  
 

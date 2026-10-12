@@ -118,7 +118,7 @@ The link assumes the form..
 - &lt;auth&gt; Taken from above code snippet is
     Bx2ccMZmJxaIfRNBOZ\_XO\_mQd1njNGL3rZry\_eNI1yU
 
-In a new local terminal window open an ssh tunnel to the node. This
+In a new local terminal window open an SSH tunnel to the node. This
 takes the following general form
 
 `ssh -L <d>:<node>:<port> -N <server>`

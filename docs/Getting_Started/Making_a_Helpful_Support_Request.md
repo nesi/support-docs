@@ -23,7 +23,7 @@ General Troubleshooting
         be long).
 - What things you have tried so far.
 
-If your problem involves a SLURM job, please include:
+If your problem involves a Slurm job, please include:
 
 - The job ID
     - `sacct` will show a list of all your recently run jobs and their

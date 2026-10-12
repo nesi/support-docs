@@ -552,8 +552,8 @@ snakemake -s $OPENFOLD3_MSA_SNAKEFILE \
 
 	When choosing the version of OpenFold3 you want to use, take a note of 
 	the toolchain (this is the version of `foss` that is used). Whatever version 
-	of snakemake you use, it needs to use the same toolchain as OpenFold3. 
-	In this example, both OpenFold3 and snakemake use `foss-2026`
+	of Snakemake you use, it needs to use the same toolchain as OpenFold3. 
+	In this example, both OpenFold3 and Snakemake use `foss-2026`
 
 	```
 	module load OpenFold3/0.4.4-foss-2026-CUDA-13.2.1

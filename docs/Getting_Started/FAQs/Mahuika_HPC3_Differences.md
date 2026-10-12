@@ -71,7 +71,7 @@ with the restriction that different tasks would never share a core, so by defaul
 
 On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
 
-Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a multiple of two or also use the slurm option `--tasks-per-core`.
+Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a multiple of two or also use the Slurm option `--tasks-per-core`.
 
 ### Partitions
 

@@ -15,7 +15,7 @@ onto your computer.
     * Mac: [docs.globus.org/globus-connect-personal/install/mac](https://docs.globus.org/globus-connect-personal/install/mac/#installation)
     * Linux: [docs.globus.org/globus-connect-personal/install/linux](https://docs.globus.org/globus-connect-personal/install/linux/)
 2. During your installation you will be asked to `Log In`. Login using your Globus
-   login. This may require you to login to your Tuakiri, Github, Google, or ORCID ID
+   login. This may require you to login to your Tuakiri, GitHub, Google, or ORCID ID
    account.
    ![Globus_Connect_Personal_2.png](../../assets/images/Globus_Connect_Personal_2.png)
 3. You will be required to click `Allow` to connect your computer to Globus.

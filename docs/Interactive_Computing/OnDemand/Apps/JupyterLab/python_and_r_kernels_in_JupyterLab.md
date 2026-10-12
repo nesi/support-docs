@@ -43,9 +43,9 @@ custom kernel; select the tab that suits you:
             if you are unsure about this.
 
         First you need to open a terminal. It can be from a session on Jupyter
-        via OnDemand or from a regular ssh connection on the Mahuika login node.
+        via OnDemand or from a regular SSH connection on the Mahuika login node.
 
-        - If you use the ssh option, make sure to load the JupyterLab module to
+        - If you use the SSH option, make sure to load the JupyterLab module to
             have access to the `nesi-add-kernel` tool:
 
             ``` sh
@@ -241,9 +241,9 @@ custom kernel; select the tab that suits you:
     === "R environment"
 
         First you need to open a terminal. It can be from a session on Jupyter
-        via OnDemand or from a regular ssh connection on the Mahuika login node.
+        via OnDemand or from a regular SSH connection on the Mahuika login node.
 
-        - If you use the ssh option, make sure to load the JupyterLab module to
+        - If you use the SSH option, make sure to load the JupyterLab module to
             have access to the `nesi-add-kernel` tool:
 
             ``` sh

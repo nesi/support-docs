@@ -2,7 +2,7 @@
 created_at: '2019-01-18T01:56:15Z'
 tags: 
     - slurm
-title: 'SLURM: Best Practice'
+title: 'Slurm: Best Practice'
 description: Some tips on how to get more out of the job sceduler.
 ---
 

@@ -54,13 +54,13 @@ description: Examples and tips on how to use MATLAB on the Mahuika platform.
     ```
 
 !!! tip "Command Line"
-     When using matlab on command line, all flag options use a single '`-`'
+     When using MATLAB on command line, all flag options use a single '`-`'
      e.g. `-nodisplay`, this differs from the GNU convention of using `--`
      for command line options of more than one character.
 
 !!! tip
      Using the prefix `!` will allow you to run bash commands from within
-     MATLAB. e.g. `!squeue -u $USER` will print your currently queued slurm
+     MATLAB. e.g. `!squeue -u $USER` will print your currently queued Slurm
      jobs.
 
 ## Parallelism
@@ -80,7 +80,7 @@ utilise more than a 4-8 CPUs this way.
 
 !!! tip
      If your code is explicitly parallel at a high level it is preferable to use
-     [SLURM job arrays](../Parallel_Computing/Parallel_Computing.md)
+     [Slurm job arrays](../Parallel_Computing/Parallel_Computing.md)
      as there is less computational overhead and the multiple smaller jobs
      will queue faster and therefore improve your throughput.
 
@@ -104,7 +104,7 @@ parpool(pc, str2num(getenv('SLURM_CPUS_PER_TASK')))
 !!! tip
      Parpool will throw a warning when started due to a difference in how
      time zone is specified. To fix this, add the following line to your
-     SLURM script: `export TZ="Pacific/Auckland'`
+     Slurm script: `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 
@@ -121,7 +121,7 @@ parfor i=1:100
 end
 ```
 
-`parfor` operates similarly to a SLURM job array and must be
+`parfor` operates similarly to a Slurm job array and must be
 embarrassingly parallel. Therefore all variables either need to be
 defined locally (used internally within one iteration of the loop), or
 static (not changing during execution of loop).

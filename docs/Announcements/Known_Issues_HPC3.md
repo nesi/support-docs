@@ -35,7 +35,7 @@ This uninformative message can appear in the `squeue` output as the reason for a
 
 ## SSHing into compute nodes
 
-You may find that you are unable to ssh from the login node into compute nodes that are running your jobs. This should still be possible but only if you have an ssh key pair set up for use within the cluster. Or an alternative to ssh is to use the Slurm command (once your job is running):
+You may find that you are unable to SSH from the login node into compute nodes that are running your jobs. This should still be possible but only if you have an SSH key pair set up for use within the cluster. Or an alternative to SSH is to use the Slurm command (once your job is running):
 
 ```sh
 srun --pty --overlap --jobid <jobid> bash

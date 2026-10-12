@@ -6,7 +6,7 @@ tags:
 description: How to run an interactive session on the REANNZ HPC cluster.
 ---
 
-A SLURM interactive session reserves resources on compute nodes allowing
+A Slurm interactive session reserves resources on compute nodes allowing
 you to use them interactively as you would the login node.
 
 There are two main commands that can be used to make a session, `srun`

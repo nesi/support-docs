@@ -23,7 +23,7 @@ Please note that your bucket has the same name as your Freezer allocation. If yo
 
 ### Get information about a Freezer bucket
 
-To determine all the users that have access to a freezer bucket, type into the terminal:
+To determine all the users that have access to a Freezer bucket, type into the terminal:
 
 ```sh
 s3cmd info s3://<freezer-bucket>/
@@ -117,7 +117,7 @@ Synchronise a directory tree to S3 (checks files freshness using size and md5 ch
 s3cmd sync --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
-If you have already tried use `put` or `sync` but were interrupted, you can use the `--skip-existing` to skip putting files into your freezer that have already been transferred:
+If you have already tried use `put` or `sync` but were interrupted, you can use the `--skip-existing` to skip putting files into your Freezer that have already been transferred:
 
 ```sh
 s3cmd sync --skip-existing --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/

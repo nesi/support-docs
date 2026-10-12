@@ -51,7 +51,7 @@ Prior to data being deleted, we’ll send you an email identifying what has been
 ## How can I check which files are scheduled for deletion?
 
 You can manually check at any time if you have any data that's scheduled for deletion. 
-When you are connected to the HPCs via ssh, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
+When you are connected to the HPCs via SSH, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
 
 ```sh
 $ nn_doomed_list --project nesi12345 

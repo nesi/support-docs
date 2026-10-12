@@ -60,7 +60,7 @@ delayed. Common answers include "Priority", "Resources", "Dependency",
     not exist.
 
 A more comprehensive list of job reason codes is available
-[in the SLURM documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html#lbAF) (offsite). As noted
+[in the Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html#lbAF) (offsite). As noted
 on that page, if a job is waiting for execution for several reasons,
 only one reason will be displayed, and there is not a documented
 importance of reasons. For example, one job could say Priority and

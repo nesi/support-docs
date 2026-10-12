@@ -32,9 +32,9 @@ There are two ways to run a container as a kernel; select the tab that suits you
     **This is the recommended way to run a container as a kernel.**
 
     First you need to open a terminal. It can be from a session on Jupyter via
-    OnDemand or from a regular ssh connection on the Mahuika login node.
+    OnDemand or from a regular SSH connection on the Mahuika login node.
 
-    - If you use the ssh option, make sure to load the JupyterLab module to have
+    - If you use the SSH option, make sure to load the JupyterLab module to have
         access to the `nesi-add-kernel` tool:
 
         ``` sh
@@ -344,7 +344,7 @@ tool-assisted or manual approach:
     !!! note
 
         Run `nesi-add-kernel --shared` from a terminal inside a Jupyter session
-        on OnDemand so it can detect your project. From a regular ssh session you
+        on OnDemand so it can detect your project. From a regular SSH session you
         will also need to pass the project code with the `--account` option, for
         example `nesi-add-kernel --shared --account <project-code> ...`.
 

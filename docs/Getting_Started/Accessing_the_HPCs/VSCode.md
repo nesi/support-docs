@@ -19,7 +19,7 @@ The 'Remote' extension allows you to connect to a remote computer (like Mahuika)
     rm -rf ~/.vscode-server
     ```
 
-=== "Linux / MacOS"
+=== "Linux / macOS"
     1. Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](Standard_Terminal_Setup.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
@@ -86,7 +86,7 @@ As the Mahuika cluster utilises [Environment Modules](../../Tutorials/Introducti
 
 The only way to make sure that VSCode has access to a suitable environment, is to load the required modules in your `~/.bashrc`
 
-For example, if you use `Python/3.11.3-gimkl-2022a` in your SLURM scripts, and wish to use the VSCode plugins with this version of Python you will need to add `module load Python/3.11.3-gimkl-2022a` at the end of your `~/.bashrc`
+For example, if you use `Python/3.11.3-gimkl-2022a` in your Slurm scripts, and wish to use the VSCode plugins with this version of Python you will need to add `module load Python/3.11.3-gimkl-2022a` at the end of your `~/.bashrc`
 then restart [VSCode](#killing-vscode).
 
 !!! warning

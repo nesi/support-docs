@@ -27,7 +27,7 @@ PuTTY.
 !!! tip
     For "file protocol" (the topmost drop-down menu), either SCP or SFTP
     is acceptable. If you are trying to move many small files or have a
-    slow or flaky Internet connection, you may find that SFTP performs
+    slow or flaky internet connection, you may find that SFTP performs
     better than SCP. Feel free to try both and see which works best for
     you.
    

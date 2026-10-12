@@ -87,7 +87,7 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
 1. In a new local terminal run; `mkdir -p ~/.ssh/` this will
     ensure you have an `.ssh/` directory
 
-2. Open your ssh config file by typing the following into your MobaXterm terminal:
+2. Open your SSH config file by typing the following into your MobaXterm terminal:
 
     ```bash
     notepad config.txt
