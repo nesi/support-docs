@@ -237,3 +237,6 @@ Getting_Started/Job_efficiency_review.md: Getting_Started/Job_Efficiency_Review.
 Software/Available_Applications/GUFI.md: Software/Available_Applications/gufi.md
 Announcements/New_HPC_Portal.md: Announcements/New_HPC_Portal/HPC_Portal_Overview.md
 Announcements/New_HPC_Portal/Overview.md: Announcements/New_HPC_Portal/HPC_Portal_Overview.md
+Batch_Computing/SLURM-Best_Practice.md: Batch_Computing/Slurm-Best_Practice.md
+Getting_Started/FAQs/How_Do_I_Run_My_Python_Notebook_Through_SLURM.md : Getting_Started/FAQs/How_Do_I_Run_My_Python_Notebook_Through_Slurm.md
+
