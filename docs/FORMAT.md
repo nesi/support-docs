@@ -22,7 +22,7 @@ This page is an overview of the naming conventions and Markdown syntax used in t
   hostnames, and the example project code `nesi99991`.
 - For other terms, use the words in the [Glossary](GLOSSARY.md), so they match the tooltips.
 
-The meta check flags these old names, outside announcements and release notes.
+The prose check flags these old names, outside announcements and release notes.
 
 ## Headers
 
@@ -376,7 +376,7 @@ but your script examples should do the bare minimum needed to provide a safe exa
     Write a real alt text too, not just the filename. The docs chat assistant has no way to see the
     image itself - the alt text is the only information it gets. The alt text should be written as if no image is visible at all.
     This is required by [WCAG 1.1.1 Non-text Content](https://www.w3.org/WAI/WCAG21/Understanding/non-text-content.html),
-    and the meta check flags placeholders such as `alt text` or a file name.
+    and the prose check flags placeholders such as `alt text` or a file name.
 
 !!! tip "Drag and Drop"
     You can easily get the path to a image file by dragging it from the left hand Explorer panel over your document, then pressing <kbd>shift</kbd> (you will be prompted) and dropping the image in the desired position. Copy pasting an image from Explorer into markdown also works.

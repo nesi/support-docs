@@ -38,6 +38,12 @@ Checks text follows best practice for English language. Fenced code blocks are s
 
 Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json).
 
+Our own rules, words and patterns that shouldn't appear in pages (old names, retired hostnames, generic headings,
+placeholder image alt text, "here" as link text, the support email address), are listed in `BANNED_PATTERNS` in
+[prose_rules.py](prose_rules.py). Each runs as a proselint check named `reannz.<name>`, at the level the entry gives
+(only warnings fail `CHECKS_STRICT`), so one can be turned off in `.proselint.json` with `"reannz.<name>": false`.
+To ban something new, add an entry there rather than writing a new check.
+
 ### Markdown Lint
 
 Checks markdown for compliance against general [best practice rules](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md).
@@ -48,11 +54,8 @@ Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlin
 
 *This linter is defined in [run_meta_check.py](run_meta_check.py) script.*
 
-Catch-all for custom checks.
-
-Words and patterns that shouldn't appear in pages (old names, retired hostnames, generic headings,
-placeholder image alt text) are listed in `BANNED_PATTERNS` at the top of the script.
-To ban something new, add an entry there rather than writing a new check.
+Custom checks for page structure: front matter, titles, tags, nav, headings, sections, admonitions, code blocks and links.
+Rules about the words on a page are in [Prose Lint](#prose-lint).
 
 See script for details.
 

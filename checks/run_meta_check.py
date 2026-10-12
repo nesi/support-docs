@@ -18,6 +18,9 @@ from titlecase import titlecase
 from pathlib import Path
 from difflib import get_close_matches
 
+# Dated announcements and release notes, shared with the prose rules.
+from prose_rules import HISTORY_PAGES
+
 # Ignore files if they match this regex
 EXCLUDED_FROM_CHECKS = [
     r"docs/assets/.*",
@@ -51,77 +54,7 @@ TAGS_VOCAB_PATH = "docs/assets/tags.yml"
 MODULE_LIST_PATH = "docs/assets/module-list.json"
 NEW_STATUS_DAYS = 60  # 'status: new' is flagged this long after created_at.
 
-# Pages where old names are expected: dated announcements and release notes record what was true at the time,
-# and the maintainer pages (FORMAT.md etc.) name the banned words in order to ban them.
-HISTORY_PAGES = r"(?i)(^|/)docs/Announcements/|release_notes"
-MAINTAINER_PAGES = r"(^|/)docs/[A-Z]+\.md$"
-
-# Words and patterns that shouldn't appear in pages. Add to this list rather than writing a new check.
-#   scope "text": prose only, so code blocks, inline code and link targets are ignored.
-#   scope "all": code too, for things that are wrong wherever they appear (eg. hostnames).
-#   skip: path patterns the entry doesn't apply to.
-#   message: '{0}' is replaced with the matched text, or with the pattern's capture group if it has one.
-BANNED_PATTERNS = [
-    {
-        # Not the history notes ("New Zealand eScience Infrastructure (NeSI) was integrated...", "NeSI-REANNZ"),
-        # the brand in quotes, or names that still carry it ("NeSI Keycloak").
-        "pattern": r"(?<!Infrastructure \()(?<![‘'\"])\bNeSI\b(?![’'\"]|-REANNZ| Keycloak)",
-        "scope": "text",
-        "level": "notice",
-        "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
-        "message": "Call the organisation REANNZ and the platform Mahuika. Only write NeSI where a name still \
-carries it (see 'Names and terms' in FORMAT.md).",
-    },
-    {
-        # 'the HPC Portal' and 'the HPC platform' are names, 'HPC GridRunner' is a Trinity tool.
-        "pattern": r"\b[Tt]he HPC\b(?! (?:[Pp]ortal|[Pp]latform|GridRunner))",
-        "scope": "text",
-        "level": "notice",
-        "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
-        "message": "Call the platform Mahuika (or 'the cluster' after the first mention), not '{0}'.",
-    },
-    {
-        "pattern": r"\bHPC3\b",
-        "scope": "text",
-        "level": "notice",
-        "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
-        "message": "'HPC3' was a temporary name for Mahuika, call it Mahuika.",
-    },
-    {
-        "pattern": r"\b(?:lander|login|mahuika|maui)\.nesi\.org\.nz\b",
-        "scope": "all",
-        "level": "warning",
-        "skip": [HISTORY_PAGES],
-        "message": "'{0}' is a retired hostname. Use the hosts in Standard_Terminal_Setup.md \
-(login.hpc.nesi.org.nz, through lander.hpc.nesi.org.nz).",
-    },
-    {
-        "pattern": r"^\s*Host\s+nesi\s*$|\bssh\b[^#\n]*?\snesi\b(?![.\w-])|(?<![\w./-])nesi:(?!//)",
-        "scope": "all",
-        "level": "warning",
-        "skip": [HISTORY_PAGES],
-        "message": "The SSH host alias set up in Standard_Terminal_Setup.md is 'mahuika', not 'nesi', \
-so this fails for readers who followed it.",
-    },
-    {
-        "pattern": r"^#{2,6}\s+(Introduction|Overview|Description|Summary|Details|Background|General)\s*:?\s*$",
-        "flags": re.IGNORECASE,
-        "scope": "text",
-        "level": "notice",
-        "message": "Heading '{0}' doesn't say what its section is about. Name the topic instead, \
-or if it's the first heading remove it: the text after the title is the introduction.",
-    },
-    {
-        "pattern": r"!\[\s*(alt text|alt|image|img|picture|screenshot|this is an image)\s*\]\("
-                   r"|!\[([^\]]*\.(?:png|jpe?g|gif|svg|webp))\s*\]\(|!\[\s*(mceclip\d*[^\]]*)\]\(",
-        "flags": re.IGNORECASE,
-        "scope": "text",
-        "level": "warning",
-        "skip": [MAINTAINER_PAGES],
-        "message": "Image alt text '{0}' is a placeholder. Describe what the image shows, as if no image were \
-visible: screen readers and the docs chat assistant only get this text.",
-    },
-]
+# Words and patterns that shouldn't appear in pages are prose rules: BANNED_PATTERNS in prose_rules.py.
 
 
 def _load_module_names():
@@ -543,24 +476,6 @@ page title and overrides the nav title. Remove it (or set 'title' in front matte
         }
 
 
-def click_here():
-    """
-    Click [here](for more details)
-    """
-    if in_code_block:
-        return
-
-    m1 = re.search(r"\[[^\]]*\bhere\b[^\]]*\]\([^)]*\)", line, re.IGNORECASE)
-    if m1:
-        yield {
-            "line": lineno,
-            "col": m1.start() + 1,
-            "endColumn": m1.end() - 1,
-            "message": "Don't use 'here' for link text, impedes accessibility.",
-        }
-
-    # Impliment check for html links when I can be fd.
-    # m2 = re.search(r"\[here\]\(.*\)", line)
 
 
 def absolute_site_link():
@@ -586,30 +501,6 @@ site root or to the linked page.",
         }
 
 
-def support_mailto_link():
-    """
-    Checks for any mention of support@nesi.org.nz - as a markdown/HTML link,
-    an autolink, or just raw text - these should use the
-    'partials/support_request.html' include instead.
-    """
-    if in_code_block:
-        return
-
-    for m in re.finditer(
-        r"(\[[^\]]*\]\((mailto:)?support@nesi\.org\.nz[^)]*\)"
-        r"|<a\s[^>]*href=[\"'](mailto:)?support@nesi\.org\.nz[^>]*>"
-        r"|<(mailto:)?support@nesi\.org\.nz>"
-        r"|(mailto:)?support@nesi\.org\.nz)",
-        line,
-        re.IGNORECASE,
-    ):
-        yield {
-            "line": lineno,
-            "col": m.start() + 1,
-            "endColumn": m.end() - 1,
-            "message": 'Don\'t reference support@nesi.org.nz directly, use the \
-{% include "partials/support_request.html" %} macro instead.',
-        }
 
 
 def code_line_length():
@@ -777,37 +668,8 @@ def _blank(m):
     return " " * len(m.group(0))
 
 
-def _mask_non_prose(text):
-    """Blanks out inline code, link targets and HTML tags, keeping columns, so prose checks don't see them."""
-    text = re.sub(r"`[^`]*`", _blank, text)
-    text = re.sub(r"(?<=\]\()[^)]*(?=\))", _blank, text)
-    return re.sub(r"<[^>]+>", _blank, text)
 
 
-def banned_patterns():
-    """
-    Flags the words and patterns in BANNED_PATTERNS.
-    """
-    prose = None
-    for banned in BANNED_PATTERNS:
-        if any(re.search(skip, str(input_path)) for skip in banned.get("skip", [])):
-            continue
-        if banned["scope"] == "text":
-            if in_code_block:
-                continue
-            if prose is None:
-                prose = _mask_non_prose(line)
-            text = prose
-        else:
-            text = line
-        for m in re.finditer(banned["pattern"], text, banned.get("flags", 0)):
-            yield {
-                "level": banned["level"],
-                "line": lineno,
-                "col": m.start() + 1,
-                "endColumn": m.end(),
-                "message": banned["message"].format((m.group(m.lastindex) if m.lastindex else m.group(0)).strip()),
-            }
 
 
 def module_version_hardcoded():
@@ -912,8 +774,8 @@ ENDCHECKS = [
 ]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body, code_line_length,
-              admonition_structure, banned_patterns, module_version_hardcoded, link_not_to_md]
+WALKCHECKS = [dynamic_slurm_link, absolute_site_link, h1_in_body, code_line_length,
+              admonition_structure, module_version_hardcoded, link_not_to_md]
 
 if __name__ == "__main__":
     main()

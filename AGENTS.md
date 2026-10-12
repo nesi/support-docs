@@ -264,8 +264,8 @@ The accessibility audit (`./checks/run_a11y_check.sh`) needs a headless Chromium
 - Never delete, move, rename or restructure pages just to make a check pass (for example to fix a sibling-count warning).
   If a warning can only be fixed by changing the structure of the docs, describe the options and leave the decision to the user.
 - If a check script itself crashes, report the traceback. Do not treat a crash as a pass.
-- Several meta warnings have auto-fixers in `checks/fix_*.py`. Read the script's docstring before running it.
-  They deliberately fix only the safe cases, so rerun the meta check afterwards and handle what is left by hand.
+- Several meta and prose warnings have auto-fixers in `checks/fix_*.py`. Read the script's docstring before running it.
+  They deliberately fix only the safe cases, so rerun the check that reported the warning and handle what is left by hand.
 - CI (`.github/workflows/checks.yml`) runs the same checks on every pushed branch, and the results appear as annotations on the PR.
   Local results should match. If they don't, say so.
 
