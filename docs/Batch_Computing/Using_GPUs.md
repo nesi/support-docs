@@ -318,7 +318,7 @@ When running a 15-minute test job, add the following settings in your Slurm subm
 ```
 
 The debug QoS is only for one-off tests like this, not for your regular GPU jobs.
-See [Debug QoS](Job_Prioritisation_and_QoS.md#debug-qos) for when you may use it.
+See [Debug QoS](Job_Prioritisation.md#debug-qos) for when you may use it.
 
 To record the GPU utilisation and GPU memory, see [Measuring GPU efficiency after a job has finished](./Using_GPUs.md#measuring-gpu-efficiency-after-a-job-has-finished) for more information.
 

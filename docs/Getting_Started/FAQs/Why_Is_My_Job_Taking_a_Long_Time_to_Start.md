@@ -99,7 +99,7 @@ The output should look something like this:
 
 The important aspect of this list is not your job's numeric priority
 score, but rather its priority ranking compared to other jobs.
-For how the priority score is calculated, see [Job Prioritisation and QoS](../../Batch_Computing/Job_Prioritisation_and_QoS.md).
+For how the priority score is calculated, see [Job Prioritisation](../../Batch_Computing/Job_Prioritisation.md).
 
 #### Low Fair Share score
 
