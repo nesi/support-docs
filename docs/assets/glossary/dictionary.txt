@@ -69,6 +69,7 @@ Advisor
 AgResearch's
 AgResearch
 Allinea
+Alloc
 AlphaFold's
 AlphaFold
 AlphaFold2DB's
@@ -575,6 +576,7 @@ Globus-CLI
 GlobusID
 Go's
 Go
+GraphicsMagick
 Graphviz's
 Graphviz
 GridRunner
@@ -952,6 +954,7 @@ Nanopore's
 Nanopore
 NeSI's
 NeSI
+Nearline
 Nelle's
 Nelle
 New Zealander
@@ -1167,6 +1170,7 @@ RFPlasmid's
 RFPlasmid
 RFdiffusion's
 RFdiffusion
+RHEL
 RJMCMC's
 RJMCMC
 RMBlast's
@@ -1646,6 +1650,7 @@ cdbfasta
 centric
 chainforge's
 chainforge
+checkpointed
 checkpointing
 checksums
 checksum
@@ -2466,6 +2471,7 @@ tooltips
 tooltip's
 tooltip
 tos
+trackable
 transcoding
 transcriptional
 transcriptomes
