@@ -46,8 +46,16 @@ You will always get the amount of memory you requested, even if running on a nod
         <td>64</td>
         <td>512GB</td>
         <td><em>(8GB / Core)</em></td>
-        <td>4 x NVIDIA HGX A100</td>
+        <td>4 x NVIDIA HGX A100 80GB</td>
         <td>4</td>
+    </tr>
+    <tr id="gpu-milan-a100-40gb">
+        <td>2 x AMD Milan 7413 CPU<br>└ 4 x Chiplets<br>&nbsp;&nbsp;&nbsp;&nbsp;└ 6 x Cores</td>
+        <td>48</td>
+        <td>512GB</td>
+        <td><em>(10GB / Core)</em></td>
+        <td>3 x NVIDIA A100 PCIe 40GB</td>
+        <td>2</td>
     </tr>
     <tr>
         <td rowspan="5">2 x AMD Genoa 9634 CPU<br>└ 12 x Chiplets<br>&nbsp;&nbsp;&nbsp;&nbsp;└ 7 x Cores</td>
@@ -125,11 +133,19 @@ For information about how to request these GPUs in a Slurm job, see [Using GPUs]
     </tr>
     <tr>
         <td>NVIDIA A100 SXM4</td>
-        <td></td>
+        <td>NVLink between all 4 GPUs on a node</td>
         <td>80GB</td>
         <td>4</td>
         <td><a href="#gpu-milan-a100">Milan</a></td>
         <td>4</td>
+    </tr>
+    <tr>
+        <td>NVIDIA A100 PCIe</td>
+        <td>No NVLink; GPUs on a node communicate over PCIe</td>
+        <td>40GB</td>
+        <td>3</td>
+        <td><a href="#gpu-milan-a100-40gb">Milan</a></td>
+        <td>2</td>
     </tr>
     <tr>
         <td>NVIDIA RTX PRO 6000</td>
@@ -180,7 +196,7 @@ for how to request a specific type.
     </tr>
     <tr>
         <td>4-GPU tightly-coupled</td>
-        <td>A100 <em>(only option — see <a href="#gpu-milan-a100">Milan</a>)</em></td>
+        <td>A100 80GB <em>(only option, NVLink)</em></td>
         <td>everything else</td>
     </tr>
     <tr>

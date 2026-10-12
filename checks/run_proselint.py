@@ -2,8 +2,11 @@
 
 """
 Modify proselint outputs into a format recognised by github actions.
+Fenced code blocks are blanked first (keeping line numbers), as their contents aren't prose.
 """
 
+import os
+import re
 import sys
 from pathlib import Path
 import time
@@ -13,7 +16,20 @@ from proselint import config, tools
 from proselint.checks import __register__
 from proselint.registry import CheckRegistry
 
-ALLOWABLE_NOTICES = 5
+FENCE_RE = re.compile(r"^\s*```")
+
+
+def blank_code_blocks(content):
+    lines = content.split("\n")
+    in_code_block = False
+    for i, line in enumerate(lines):
+        if FENCE_RE.match(line):
+            in_code_block = not in_code_block
+            lines[i] = ""
+        elif in_code_block:
+            lines[i] = ""
+    return "\n".join(lines)
+
 
 if __name__ == "__main__":
 
@@ -27,7 +43,7 @@ if __name__ == "__main__":
     CheckRegistry().register_many(__register__)
     for file in files:
         print(f"::DEBUG file={file},line=0,col=0,endColumn=0,title=file:: Running proselint on '{file}'")
-        content = Path(file).read_text(encoding="utf8")
+        content = blank_code_blocks(Path(file).read_text(encoding="utf8"))
         for notice in tools.LintFile(file, content=content).lint(config_custom):
             print(
                 f"::warning file={file},line={notice.pos[0]},"
@@ -38,4 +54,6 @@ if __name__ == "__main__":
             count_notices += 1
             time.sleep(0.01)
 
-    # exit(count_notices >= ALLOWABLE_NOTICES*(len(sys.argv)-1))
+    # CHECKS_STRICT=1: exit non-zero if any warning or error was reported.
+    if os.getenv("CHECKS_STRICT") and count_notices:
+        sys.exit(1)

@@ -15,7 +15,7 @@ your interactive session:
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
 ```
 
-Then, we need to start up Python, install Marimo if you dont have it
+Then, we need to start up Python, install Marimo if you don't have it
 yet, and obtain the hostname and the port:
 
 ```sh
@@ -79,4 +79,4 @@ http://0.0.0.0:PORT?access_token=TOKEN
 # http://0.0.0.0:9929?access_token=Q2QwZyLs8kJP8eHLcNv13A
 ```
 
-You will now be able to see and work wih Marimo in your web browser.
+You will now be able to see and work with Marimo in your web browser.

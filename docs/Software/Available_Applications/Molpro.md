@@ -68,8 +68,8 @@ you will need to update the key file manually from time to time.
 
 If you are provided with a Molpro licence key file but cannot read the
 file or access the directory in which it resides due to UNIX
-permissions, please email [the Mahuika support
-desk](mailto:support@nesi.org.nz).
+permissions, please
+{% include "partials/support_request.html" %}.
 
 ## Example Slurm script
 

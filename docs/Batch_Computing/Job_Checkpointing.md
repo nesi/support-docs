@@ -34,7 +34,7 @@ Before implementing checkpointing consider
 
 Checkpointing code has the added advantage that it allows you to split
 your work into smaller jobs, allowing them to move through the queue
-faster, and **allows you to run work for longer than the job maximum time limit**.
+faster, and **allows you to run work for longer than the job maximum time limit** ({{ slurm_limits.per_job.days }} days).
 
 This can be most easily implemented by splitting the work into smaller chunks,
 then in your script loading and saving to disk at the start and end of the job respectively.
@@ -43,7 +43,13 @@ Below is an example of submitting the same job again, if previous has
 run successfully.
 
 ``` sh
-# Slurm header #SBATCH etc etc
+# Slurm header (#SBATCH lines) goes here.
+
+# Stop once the work is finished.
+# Your code should create the file "finished" when all the work is done.
+if [ -f finished ]; then
+    exit 0
+fi
 
 sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" 
 # "$0" is equal to the name of this script.
@@ -55,14 +61,15 @@ sbatch --dependency=afterok:${SLURM_JOB_ID} "$0"
 # Write data back to disk.
 ```
 
-This job will resubmit itself **forever** until stopped
+Without a stop condition like the check for `finished`, this job would resubmit itself **forever** until stopped.
+The last job submitted will start, find the file, and exit straight away.
 
-If writing your own code, you could exit with a non-zero code once all the work has been done.
+If writing your own code, you could instead exit with a non-zero code once all the work has been done.
 
 <!-- Another example for a job requiring explicit step inputs.
 
-```sl
-# Slurm header '#SBATCH etc etc
+```sh
+# Slurm header (#SBATCH lines) goes here.
 
 n_steps=1000
 starting_step=${1:-0} # Will be equal to first argument, or '0' if unset.

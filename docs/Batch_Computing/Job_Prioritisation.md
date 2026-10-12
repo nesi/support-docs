@@ -1,6 +1,6 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
-description: What factors are used to determine a jobs prioroty.
+description: What factors are used to determine a job's priority.
 tags:
  - slurm
  - account
@@ -21,9 +21,23 @@ Priority scores are determined by a number of factors:
 
 The "debug" Quality of Service can be gained by adding the `sbatch`
 command line option `--qos=debug`.  
-This adds 5000 to the job priority so raises it above all non-debug
-jobs, but is limited to one small job per user at a time: no more than
-120 minutes and no more than 2 nodes.
+This adds {{ slurm_limits.debug.priority }} to the job priority so raises it above all non-debug
+jobs, but is limited to small, short jobs:
+
+- Jobs per user, queued or running: {{ slurm_limits.debug.jobs }}
+- Walltime: {{ slurm_limits.debug.minutes }} minutes
+- Size per job: up to {{ slurm_limits.debug.nodes }} nodes, {{ slurm_limits.debug.cores }} CPU cores,
+  {{ slurm_limits.debug.memory_gb }} GB of memory and {{ slurm_limits.debug.gpus }} GPUs
+
+!!! warning "Abuse of debug QoS"
+    The debug QoS is intended for short running test jobs and debugging.
+    We run monitoring and may remove your debug-qos privileges
+    if we believe they are being abused.
+
+    <!-- Using the debug QoS for more than one short job counts as abuse.
+    This includes chaining debug jobs back to back (in a loop, with `scrontab`, with a job that submits its successor, or with `--dependency`),
+    cancelling a debug job near its limit and resubmitting it, holding GPUs with an idle `salloc`, or splitting a long run into debug-sized pieces.
+    Use the normal QoS with [checkpointing](Job_Checkpointing.md), or a [job array](Job_Arrays.md), instead. -->
 
 ### Fair Share
 
@@ -35,12 +49,12 @@ recent past compared to their expected rate of use (either by submitting
 and running many jobs, or by submitting and running large jobs) will
 have a lower priority, and projects with little recent activity compared
 to their expected rate of use will see their waiting jobs start sooner.
-Fair Share contributes up to 1000 points to the job priority. To see the current fair-share score of a project you can use the command `sshare`, for seeing recent usage use `nn_corehour_usage`.
+Fair Share contributes up to {{ slurm_limits.priority.fairshare_points }} points to the job priority. To see the current fair-share score of a project you can use the command `sshare`, for seeing recent usage use `nn_corehour_usage`.
 
 ### Job Age
 
-Job priority slowly rises with time as a pending job gets older -1
-point per hour for up to 3 weeks.
+Job priority slowly rises with time as a pending job gets older: {{ slurm_limits.priority.age_points_per_hour }}
+point per hour for up to {{ slurm_limits.priority.age_days }} days.
 
 ### Job Size or "TRES" (Trackable RESources)
 
@@ -74,7 +88,7 @@ starting regardless of their priority score.
 
 ## Backfill
 
-Backfill is a scheduling strategy that allows small, short jobs to run
+'Backfill' is a scheduling strategy that allows small, short jobs to run
 immediately if by doing so they will not delay the expected start time
 of any higher-priority jobs. Since the expected start time of pending
 jobs depends upon the expected completion time of running jobs it is

@@ -79,7 +79,7 @@ If you want to obtain the number of files a directory named `baz` in your scratc
 
 ### My file or directory exists, but `GUFI` does not include it during its search
 
-If you recieve an error such as:<br> 
+If you receive an error such as:<br> 
 `Could not get realpath of "/search/nesi/home/foo": No such file or directory (2)`
 it is likely that your directory has not been indexed by `GUFI` yet. You will need to wait until the end of the week for those files and directories to be indexed by `GUFI`. 
 

@@ -65,7 +65,7 @@ export TMPDIR=/nesi/nobackup/$SLURM_ACCOUNT/tmp/$SLURM_JOB_ID
 ## Scope and multi-node jobs
 
 The `/tmp` and `$JOB_SCRATCH_DIR` directories are local to each node, shared by the
-tasks of a the job on that node, but not not shared across the nodes of a multi-node job.
+tasks of the job on that node, but not shared across the nodes of a multi-node job.
 
 ## Example of copying input data into $TMPDIR
 

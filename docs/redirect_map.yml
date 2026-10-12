@@ -236,3 +236,5 @@ Data_Transfer/Filesystem_Mounts_using_SSHFS.md: Data_Transfer/Filesystem_Mounts_
 Getting_Started/Job_efficiency_review.md: Getting_Started/Job_Efficiency_Review.md
 Software/Available_Applications/GUFI.md: Software/Available_Applications/gufi.md
 assets/images/intermediate_hpc_profile_plot.png : assets/images/intermediate_hpc_profile_plot_01.png
+Announcements/New_HPC_Portal.md: Announcements/New_HPC_Portal/HPC_Portal_Overview.md
+Announcements/New_HPC_Portal/Overview.md: Announcements/New_HPC_Portal/HPC_Portal_Overview.md

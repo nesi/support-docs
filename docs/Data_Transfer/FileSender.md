@@ -24,7 +24,7 @@ While FileSender can be used as a file transfer service, it's real strength is f
 
 1. Go to your emails where you should have been sent an email from FileSender.
 2. Click on the **Download link** in the email link. This will take you to a FileSender website where you can download your files.
-3. You will be presented a list of the files that you can download. Click on the <img src="../../assets/images/filesender_download_icon.png" alt="FileSender Download Icon" width="20"/> icon. This will download your file to you downloands folder on your computer.
+3. You will be presented a list of the files that you can download. Click on the <img src="../../assets/images/filesender_download_icon.png" alt="FileSender Download Icon" width="20"/> icon. This will download your file to you downloads folder on your computer.
 
 If you would like to download all files together in a tar or zip file, you can do this by clicking on the **Download as single (.zip) file** or the **Download as single (.tar) file** button.
 

@@ -66,12 +66,12 @@ Internet connections made from NeSI (e.g: to institutional license servers for p
 ### Simultaneous multithreading (Hyperthreading)
 
 All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
-On Mahuika mutithreaded jobs placed a thread on each virtual CPU by default,
+On Mahuika multithreaded jobs placed a thread on each virtual CPU by default,
 with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs were not hyperthreaded while single-task multithreaded jobs were.
 
 On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
 
-Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a mutiple of two or also use the slurm option `--tasks-per-core`.
+Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a multiple of two or also use the slurm option `--tasks-per-core`.
 
 ### Partitions
 
@@ -87,7 +87,7 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
 
 ### CPU cores per node
 
-Two CPU cores on each compute node have been "specialized" (as the Slurm documenation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally availble for Slurm jobs.
+Two CPU cores on each compute node have been "specialized" (as the Slurm documentation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally available for Slurm jobs.
 
 ### Limits
 
@@ -118,7 +118,7 @@ Other consequences of this change include:
 - Job profiles are not private.
 - Incomplete profiles can be obtained while a job is still running.
 - Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
-- The raw profile data isn't so accessable - please let us know if you need it.
+- The raw profile data isn't so accessible - please let us know if you need it.
 
 ### Miscellaneous
 

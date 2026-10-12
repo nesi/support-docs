@@ -96,5 +96,5 @@ Mahuika is...
     - Remote hardware must be accessed via SSH, or a dedicated web client.
     - Clusters have specialised nodes for different tasks.
 
-!!! next "What Next"
+!!! postrequisite "What Next"
     - [Bash Shell](Bash_Shell.md)

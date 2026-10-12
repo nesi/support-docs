@@ -2,8 +2,7 @@
 created_at: 2026-06-15
 description: Announcement about changes to Keycloak access affecting users without active projects
 tags:
-    - globus
-    - freezer
+    - file_transfer
     - storage
 ---
 

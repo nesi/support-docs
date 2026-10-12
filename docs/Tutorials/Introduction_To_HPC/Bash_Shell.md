@@ -681,7 +681,8 @@ We will be copying the file into the directory we made previously, as this shoul
     If `{{extra.example_script}}` isn't present at that path (you are not in an organised workshop), fetch your own copy directly instead of using `cp`:
 
     ```sh
-    wget https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets/workshop/{{extra.example_script}}
+    ASSETS=https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets
+    wget ${ASSETS}/workshop/{{extra.example_script}}
     ```
 
 ```sh

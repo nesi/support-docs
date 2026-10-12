@@ -63,7 +63,7 @@ Which methods are available to you is largely dependent on the nature of the pro
 
 ### Shared-Memory (SMP)
 
-Shared-memory multiproccessing divides work among _CPUs_ or _threads_, all of these threads require access to the same memory.
+Shared-memory multiprocessing divides work among _CPUs_ or _threads_, all of these threads require access to the same memory.
 
 Often called *Multithreading*.
 
@@ -75,13 +75,13 @@ Number of threads to use is specified by the Slurm option `--cpus-per-task`.
 
 ### Distributed-Memory (MPI)
 
-Distributed-memory multiproccessing divides work among _tasks_, a task may contain multiple CPUs (provided they all share memory, as discussed previously).
+Distributed-memory multiprocessing divides work among _tasks_, a task may contain multiple CPUs (provided they all share memory, as discussed previously).
 
-Message Passing Interface (MPI) is a communication standard for distributed-memory multiproccessing. While there are other standards, often 'MPI' is used synonymously with Distributed parallelism.  
+Message Passing Interface (MPI) is a communication standard for distributed-memory multiprocessing. While there are other standards, often 'MPI' is used synonymously with Distributed parallelism.  
 
 Each task has it's own exclusive memory, tasks can be spread across multiple nodes, communicating via and _interconnect_. This allows MPI jobs to be much larger than shared memory jobs. It also means that memory requirements are more likely to increase proportionally with CPUs.
 
-Distributed-Memory multiproccessing predates shared-memory multiproccessing, and is more common with classical high performance applications (older computers had one CPU per node).
+Distributed-Memory multiprocessing predates shared-memory multiprocessing, and is more common with classical high performance applications (older computers had one CPU per node).
 
 Number of tasks to use is specified by the Slurm option `--ntasks`, because the number of tasks ending up on one node is variable you should use `--mem-per-cpu` rather than `--mem` to ensure each task has enough.
 

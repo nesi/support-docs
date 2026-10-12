@@ -63,7 +63,7 @@ From the home page, you can click on the app you would like to launch, e.g. Jupy
 
 ![OnDemand new form](../../assets/images/OOD_jupyter_form.png)
 
-!!! bell "How much resources to request"
+!!! tip "How much resources to request"
 
     Ideally start with the least amount of resources and scale accordingly. In other words, be as efficient as possible ☺️
 

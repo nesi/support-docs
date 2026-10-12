@@ -28,12 +28,12 @@ The following is a template batch script with both the minimum requirements and 
 ```sl
 #!/bin/bash -e
 
-#SBATCH --account       <projectcode>   # needed if you are in multiple projects
+#SBATCH --account       <projectcode>   # the project this work belongs to
 #SBATCH --job-name      BatchJob        # shows up in the queue
 #SBATCH --time          00:01:00        # Walltime limit (minutes or HH:MM:SS)
 #SBATCH --mem           512MB           # Memory in MB or GB
 #SBATCH --cpus-per-task 1               # CPUs
-#SBATCH --output        log/%x.%j.out   # send output to the file <job-id>.<job-name>.out
+#SBATCH --output        log/%x.%j.out   # send output to the file <job-name>.<job-id>.out
 
 # print the contents of the batch script at the top of the output file for reference
 cat $0
@@ -44,6 +44,10 @@ module load <module-name>
 
 <code to be run goes here>
 ```
+
+`--account` must be the project the work belongs to.
+Under the [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree), you may only use the platform for the approved project you were given access for.
+You can leave it out if you are only in one project.
 
 ### Submitting
 
@@ -67,19 +71,17 @@ You can find details on its use in the [sbatch manual](https://slurm.schedmd.com
 
 ### Job Queue
 
-The whole job queue can be seen using
-
-```bash
-squeue
-```
-
-Or you can filter to check just your jobs using
+You can check your own jobs using
 
 ```bash
 squeue --me
 ```
 
+Plain `squeue` shows the whole job queue, for all users.
+
 You can find details on its use in the [squeue manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html).
+
+Rather than polling `squeue` in a loop, use `sbatch --wait` to block until a job ends, `--dependency` to chain jobs, or `--mail-type` for email.
 
 ### Completed jobs
 
@@ -110,7 +112,7 @@ You can find details on its use in the [sacct manual](https://slurm.schedmd.com/
 You can obtain the job ID by using `sacct` or `squeue`.
 
 !!! tip
-    - `scancel --me` Cancel all jobs submitted by you.
+    - `scancel --me` Cancel all jobs submitted by you, including ones started by other tools or sessions.
     - `scancel {[n1]..[n2]}` Cancel all jobs with an id between `[n1]` and `[n2]`.
 
 You can find details on its use in the [scancel manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scancel.html).

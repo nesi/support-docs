@@ -41,5 +41,5 @@ scp <path/filename> nesi:~/
 
 For more info visit [data transfer](../../Data_Transfer/Data_Transfer_Overview.md).
 
-!!! prerequisite "What Next?"
-   - [Standard Terminal Setup](Standard_Terminal_Setup.md)
+!!! postrequisite "What Next?"
+    - [Standard Terminal Setup](Standard_Terminal_Setup.md)

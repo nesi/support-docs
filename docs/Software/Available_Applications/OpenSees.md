@@ -23,20 +23,23 @@ is available on the OpenSees website.
 
 === "SerialJob"
 
-Single *process* with a single *thread*.
-Usually submitted as part of an array, as in the case of parameter
-sweeps.
+    Single *process* with a single *thread*.
+    Usually submitted as part of an array, as in the case of parameter
+    sweeps.
 
     ```sl
     #!/bin/bash -e
     
     #SBATCH --job-name      OpenSees-Serial
-    #SBATCH --time          00:05:00          # Walltime</span></span>
-    #SBATCH --cpus-per-task 1                 #
+    #SBATCH --account       nesi99991
+    #SBATCH --time          00:05:00          # Walltime
+    #SBATCH --cpus-per-task 1
     #SBATCH --mem           512MB             # total mem
     
+    module purge
     module load OpenSees/{{app.default}}
     OpenSees "frame.tcl"
+    ```
 
 ## Input from Shell
 

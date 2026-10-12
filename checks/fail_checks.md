@@ -10,14 +10,16 @@ tags:
 ---
 
 
+mroe bad changlers
 
 This page is meant for testing the linting checks. For all checks to run properly this file should be moved under `docs`.
 
-It should trigger the fail threshold for `meta-checks`, `proselint-checks`, `spelling-checks`, `slurm-lint`, and `test-build`
+It should produce warnings or errors from `meta-checks`, `proselint-checks`, `spelling-checks`, `slurm-lint`, and `test-build`,
+and each of them should exit `1` when run with `CHECKS_STRICT=1`.
 
 Add tests here as needed.
 
-Somee tpyos for spelchecker to triger fail neeeds to be at laest fiveteen keybored whopsers whiche is qiute a hihe tolerence i thinc. I woold loweir this threshehold bute for the momenent it can be a bitte overzaelos.
+Somee tpyos for the spelchecker. Wiht `CHECKS_STRICT=1` evn one keybored whopser shuold maek it fial.
 
 ``` as
 typos shuold be igonred in code blokcs 
@@ -25,6 +27,19 @@ typos shuold be igonred in code blokcs
 
 !!! warning "some admonistion"
     contents of admonition
+
+!!! warning "Body only indented 2 spaces"
+  so the admonition renders empty
+
+!!! warn "Type with no style"
+    renders as a grey box
+
+!!! note "Unclosed title
+    renders as plain text
+
+=== "Empty tab"
+
+Not in the tab.
 
 Typos should `be igonred` in inline code blocks.
 
@@ -61,7 +76,7 @@ module load something
 ```
 
 [bad link](../docs/General/not-a-page.md)
-[bad link](not-a-page.md)
+[bad link](../docs/not-a-page.md)
 
 [bad internal link](#impropers)
 

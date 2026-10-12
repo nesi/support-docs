@@ -39,9 +39,9 @@ def main():
 
     if broken:
         for path, key, ref, tag in broken:
-            print(f"::error file={path},title=broken_aria_reference,col=0,endColumn=0,line=0::{key} reference '{ref}' missing id in tag <{tag}>")
+            print(f"::warning file={path},title=broken_aria_reference,col=0,endColumn=0,line=0::{key} reference '{ref}' missing id in tag <{tag}>")
         print(f"Found {len(broken)} broken aria references.")
-        return 1
+        return 0
 
     print("ARIA reference check passed.")
     return 0

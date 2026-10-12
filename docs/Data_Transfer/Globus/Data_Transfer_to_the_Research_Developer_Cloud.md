@@ -1,8 +1,7 @@
 ---
-tags: 
-    - globus
-    - freezer
-    - file transfer
+tags:
+    - file_transfer
+    - storage
 description: Moving data to a Research Developer Cloud object store bucket through Globus
 ---
 
