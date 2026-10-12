@@ -135,6 +135,11 @@
   display: table
 }
 
+/* Hide the header row of tables whose header cells are all empty */
+.md-typeset table:not([class]) thead:not(:has(th:not(:empty))) {
+  display: none;
+}
+
 /* convenience class. Not sure if it is used */
 .hidden {
   display: none;
