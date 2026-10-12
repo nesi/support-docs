@@ -6,8 +6,11 @@ title: MobaXterm Setup (Windows)
 description: How to set up cluster access using MobaXterm
 ---
 
-!!! tip
-    For file browsing, uploading and downloading files, and terminal access, you can also use [OnDemand](https://ondemand.nesi.org.nz/) in your web browser.
+!!! WARNING  
+    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure.  
+    It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
+    If you want a terminal on your own machine, [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md)
+    or [Visual Studio Code](VSCode.md) are easier to set up and use than MobaXterm.
 
 !!! prerequisite
      - Have an [active account and project.](../Creating_an_Account.md)
@@ -146,7 +149,8 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
     Authenticate at https://iam.nesi.org.nz/realms/public/device?user_code=XXXX-XXXX and press ENTER.
     ```
 
-    Depending on the terminal used, you may have to hold `ctrl` when clicking to follow the link.
+    Hold <kbd>Ctrl</kbd> and click the link to open it. Do not highlight the link to copy it,
+    as this can send <kbd>Enter</kbd> before you have authenticated.
 
     !!! warning "Double Authentication"
         If you set up your `.ssh/config` as recommended you will be prompted to authenticate again.  

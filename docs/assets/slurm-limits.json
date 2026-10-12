@@ -1,0 +1,321 @@
+{
+    "nodes": [
+        {
+            "cores_per_socket": 16,
+            "count": 4,
+            "cpus": 128,
+            "features": [
+                "a100_80gb",
+                "big"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {
+                "a100": 4
+            },
+            "partitions": [
+                "milan"
+            ],
+            "real_memory_mb": 491520,
+            "reserved_cores": 2,
+            "sockets": 4,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 16,
+            "count": 4,
+            "cpus": 256,
+            "features": [
+                "big",
+                "nogpu"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {},
+            "partitions": [
+                "milan"
+            ],
+            "real_memory_mb": 1015808,
+            "reserved_cores": 2,
+            "sockets": 8,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 16,
+            "count": 55,
+            "cpus": 256,
+            "features": [
+                "med",
+                "nogpu"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {},
+            "partitions": [
+                "milan"
+            ],
+            "real_memory_mb": 491520,
+            "reserved_cores": 2,
+            "sockets": 8,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 20,
+            "count": 2,
+            "cpus": 80,
+            "features": [],
+            "gpu_mig_profiles": {},
+            "gpus": {},
+            "partitions": [
+                "hugemem"
+            ],
+            "real_memory_mb": 1469012,
+            "reserved_cores": 2,
+            "sockets": 2,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 22,
+            "count": 1,
+            "cpus": 176,
+            "features": [],
+            "gpu_mig_profiles": {},
+            "gpus": {},
+            "partitions": [
+                "hugemem"
+            ],
+            "real_memory_mb": 6100000,
+            "reserved_cores": 2,
+            "sockets": 4,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 6,
+            "count": 2,
+            "cpus": 96,
+            "features": [
+                "a100_40gb",
+                "big"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {
+                "a100": 3
+            },
+            "partitions": [
+                "milan"
+            ],
+            "real_memory_mb": 491520,
+            "reserved_cores": 2,
+            "sockets": 8,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 6,
+            "count": 1,
+            "cpus": 96,
+            "features": [
+                "big",
+                "mig"
+            ],
+            "gpu_mig_profiles": {
+                "1g.10gb": 1,
+                "1g.5gb": 7,
+                "2g.10gb": 3,
+                "3g.20gb": 1,
+                "4g.20gb": 1
+            },
+            "gpus": {},
+            "partitions": [
+                "milan"
+            ],
+            "real_memory_mb": 491520,
+            "reserved_cores": 2,
+            "sockets": 8,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 84,
+            "count": 8,
+            "cpus": 336,
+            "features": [
+                "big",
+                "nogpu"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {},
+            "partitions": [
+                "genoa"
+            ],
+            "real_memory_mb": 1469837,
+            "reserved_cores": 2,
+            "sockets": 2,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 84,
+            "count": 4,
+            "cpus": 336,
+            "features": [
+                "big"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {
+                "h100": 2
+            },
+            "partitions": [
+                "genoa"
+            ],
+            "real_memory_mb": 1469837,
+            "reserved_cores": 2,
+            "sockets": 2,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 84,
+            "count": 4,
+            "cpus": 336,
+            "features": [
+                "big"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {
+                "l4": 4
+            },
+            "partitions": [
+                "genoa"
+            ],
+            "real_memory_mb": 1469837,
+            "reserved_cores": 2,
+            "sockets": 2,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 84,
+            "count": 4,
+            "cpus": 336,
+            "features": [
+                "med"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {
+                "pro_6000": 2
+            },
+            "partitions": [
+                "genoa"
+            ],
+            "real_memory_mb": 734401,
+            "reserved_cores": 2,
+            "sockets": 2,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 84,
+            "count": 44,
+            "cpus": 336,
+            "features": [
+                "nogpu",
+                "sml"
+            ],
+            "gpu_mig_profiles": {},
+            "gpus": {},
+            "partitions": [
+                "genoa"
+            ],
+            "real_memory_mb": 366694,
+            "reserved_cores": 2,
+            "sockets": 2,
+            "threads_per_core": 2
+        }
+    ],
+    "partitions": {
+        "genoa": {
+            "gpu_mig_profiles": [],
+            "gpu_types": [
+                "h100",
+                "l4",
+                "pro_6000"
+            ],
+            "max_walltime_minutes": 30240,
+            "threads_per_core": 2
+        },
+        "hugemem": {
+            "gpu_mig_profiles": [],
+            "gpu_types": [],
+            "max_walltime_minutes": 30240,
+            "threads_per_core": 2
+        },
+        "milan": {
+            "gpu_mig_profiles": [
+                "1g.10gb",
+                "1g.5gb",
+                "2g.10gb",
+                "3g.20gb",
+                "4g.20gb"
+            ],
+            "gpu_types": [
+                "a100"
+            ],
+            "max_walltime_minutes": 30240,
+            "threads_per_core": 2
+        }
+    },
+    "priority": {
+        "calc_period_minutes": 5,
+        "decay_half_life_minutes": 20160,
+        "flags": [
+            "DEPTH_OBLIVIOUS",
+            "NO_FAIR_TREE",
+            "NO_NORMAL_ALL"
+        ],
+        "max_age_minutes": 30240,
+        "type": "priority/multifactor",
+        "weight_age": 504,
+        "weight_assoc": 1,
+        "weight_fairshare": 1000,
+        "weight_job_size": 0,
+        "weight_partition": 1,
+        "weight_qos": 1,
+        "weight_tres": {
+            "CPU": 1,
+            "Mem": "0.1G",
+            "gres/gpu": 100
+        }
+    },
+    "qos": {
+        "debug": {
+            "max_jobs_per_user": null,
+            "max_submit_per_user": 1,
+            "max_tres_mins_per_job": {},
+            "max_tres_per_job": {
+                "cpu": 336,
+                "gres/gpu": 2,
+                "mem": "512G",
+                "node": 2
+            },
+            "max_tres_per_user": {},
+            "max_tres_run_mins_per_user": {},
+            "max_wall_minutes": 120,
+            "priority": 5000
+        },
+        "normal": {
+            "max_jobs_per_user": null,
+            "max_submit_per_user": null,
+            "max_tres_mins_per_job": {
+                "node": 30240
+            },
+            "max_tres_per_job": {
+                "node": 10
+            },
+            "max_tres_per_user": {
+                "cpu": 5376,
+                "gres/gpu": 6,
+                "mem": "6T"
+            },
+            "max_tres_run_mins_per_user": {
+                "cpu": 10160640,
+                "gres/gpu": 20160,
+                "mem": "45360T"
+            },
+            "max_wall_minutes": null,
+            "priority": 0
+        }
+    },
+    "slurm_version": "25.05.8"
+}
