@@ -476,8 +476,6 @@ page title and overrides the nav title. Remove it (or set 'title' in front matte
         }
 
 
-
-
 def absolute_site_link():
     """
     Checks for markdown links that point to this site by absolute URL
@@ -499,8 +497,6 @@ def absolute_site_link():
 this page's own location instead (e.g. './Page.md' or '../Other_Section/Page.md'), not a path relative to the \
 site root or to the linked page.",
         }
-
-
 
 
 def code_line_length():
@@ -666,10 +662,6 @@ def admonition_structure():
 
 def _blank(m):
     return " " * len(m.group(0))
-
-
-
-
 
 
 def module_version_hardcoded():
