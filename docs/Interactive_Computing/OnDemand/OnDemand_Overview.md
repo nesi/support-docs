@@ -13,7 +13,7 @@ OnDemand empowers students, researchers, and industry professionals with remote 
 ## Connecting to OnDemand
 
 !!! prerequisite
-     Requires [an account](../../Getting_Started/Creating_an_Account.md).
+     Requires [an active account and project](../../Getting_Started/Getting_Started_Overview.md).
 
 Connect to OnDemand: [https://ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 

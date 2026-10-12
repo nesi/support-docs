@@ -1,7 +1,6 @@
 ---
 created_at: '2018-05-01T03:39:22Z'
 tags:
-- announcement
 - account
 description: The information you need to provide when applying for a new project
 ---
@@ -18,7 +17,7 @@ description: The information you need to provide when applying for a new project
          Carpentry](https://swcarpentry.github.io/shell-novice/), to help
          you and your project team gain the necessary skills.
     - Become familiar with foundational HPC skills, for example by
-         [watching our recorded introductory webinars](../Getting_Help.md#youtube-recordings),
+         [watching our recorded introductory webinars](../Getting_Help/Training.md),
          or having one or more of your project team members do so.
     - Review our [allocation classes](../../Policy/Allocation_Classes.md). If
          you don't think you currently qualify for any class other than

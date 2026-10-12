@@ -139,9 +139,9 @@ For a moved directory, add a line for each page it contained (including `index.m
 
 By default articles will be ordered alphabetically.
 
-Order can be set manually with the use of a `.page.yml` file, this file determines the ordering of all of it's sibling articles and categories.
+Order can be set manually with the use of a `.pages.yml` file, this file determines the ordering of all of it's sibling articles and categories.
 
-The `.page.yml` might looks like this:
+The `.pages.yml` might looks like this:
 
 ```yml
 ---
@@ -154,9 +154,11 @@ nav:
 `*` will be replaced by all other pages, in the default order.
 
 !!! warning
-    If you do set page order manually, make sure you include the `...` else some pages will not be rendered.
+    Try to include `"*"`, so a page added later still appears in the nav even if nobody lists it.
+    Only list the pages that need a fixed position, and let `"*"` add the rest.
+    If every page needs a fixed position, leave the last one to `"*"`.
 
-When being used to order _non-article categories_ you may overwrite the name in `.page.yml`.
+When being used to order _non-article categories_ you may overwrite the name in `.pages.yml`.
 
 Don't use this method to set the names of articles or category-articles (use the `title` parameter in that pages meta).
 
@@ -170,7 +172,7 @@ nav:
 ```
 
 For full description of `.pages.yml` use, see the
-[awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin).
+[awesome-nav plugin](https://lukasgeiter.github.io/mkdocs-awesome-nav/).
 
 ## Article Metadata
 

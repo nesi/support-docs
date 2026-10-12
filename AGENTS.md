@@ -85,6 +85,8 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 - Use `{% include "partials/support_request.html" %}` wherever the reader is told to contact support, not a raw mailto link.
 - Prefer module version macros such as `{{ applications.ANSYS.default }}` over hard-coded versions.
 - Links are relative to the current file. Do not link to the site by absolute `docs.nesi.org.nz` URL.
+- In `.pages.yml`, list only the pages that need a fixed position and keep `"*"` for the rest, so new pages can't drop out of the nav
+  (see [Article/Category Order](docs/NEWPAGE.md#articlecategory-order)).
 - Renaming, moving or deleting a page requires a line in [docs/redirect_map.yml](docs/redirect_map.yml) (old path: new path).
 - Images need alt text that describes what the image shows. Link text must say where it goes (not "here" or "this page").
 - Pages about AI tools must agree with [AI Agent Guidelines](docs/Software/AI/AI_Agent_Guidelines.md) and the

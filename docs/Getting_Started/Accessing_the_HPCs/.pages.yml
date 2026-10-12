@@ -2,6 +2,11 @@
 nav:
   - Connecting_to_the_Cluster.md
   - First_Time_Login.md
-  - Port_Forwarding.md
+  - Standard_Terminal_Setup.md
+  - MobaXterm_Setup_Windows.md
+  - Windows_Subsystem_for_Linux_WSL.md
+  - VSCode.md
   - "*"
+  - Port_Forwarding.md
+  - X11.md
   - Login_Troubleshooting.md
