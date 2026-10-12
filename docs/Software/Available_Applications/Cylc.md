@@ -43,9 +43,9 @@ filesystem, so this is easy):
 
 - run **`ssh-keygen`** to generate a public/private key pair with **no
     passphrase** (when it asks for a passphrase, just hit enter)
-- add your own public key to your authorized keys
+- add your own public key to your `authorized_keys`
     file: **`cat .ssh/id_rsa.pub >> .ssh/authorized_keys`**
-- check that your **keys, authorized\_keys file, SSH
+- check that your **keys, `authorized_keys` file, SSH
     directory, **and** home directory** all have sufficiently secure
     file permissions. If not, `ssh` will silently revert to requiring
     password entry. See for

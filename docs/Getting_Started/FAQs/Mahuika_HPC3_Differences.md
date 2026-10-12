@@ -87,7 +87,7 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
 
 ### CPU cores per node
 
-Two CPU cores on each compute node have been "specialized" (as the Slurm documentation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally available for Slurm jobs.
+Two CPU cores on each compute node have been "specialised" (as the Slurm documentation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally available for Slurm jobs.
 
 ### Limits
 
