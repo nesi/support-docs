@@ -1356,7 +1356,7 @@ a variety of mathematical approximations of the 2D shallow water equations of
 different complexity.
 The local inertia solver, known as the ACC solver, is widely used to simulate
 floods with gradually-varying, subcritical flow over sufficiently rough
-surfaces with Manning’s coefficient of at least 0.03. It has a version with
+surfaces with Manning's coefficient of at least 0.03. It has a version with
 CPU-specific optimisations and enhanced with a subgrid channel model.
 LISFLOOD-FP also includes second-order discontinuous Galerkin (DG2) and
 first-order finite volume (FV1) solvers of the full shallow water equations for
@@ -1896,7 +1896,7 @@ OpenSees is a software framework for developing applications to simulate the per
 
 ## OpenSeesPy:
 
-Wraps OpenSees for Python.  Load an OpenSees module as well.
+OpenSees is a software framework for developing applications to simulate the performance of structural and geotechnical systems subjected to earthquakes.
 
 ## OpenSlide:
 
@@ -2484,7 +2484,7 @@ Stacks is a software pipeline for building loci from short-read sequences, such 
 
 ## StringTie:
 
-StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts
+StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts.
 
 ## Structure:
 
@@ -2648,6 +2648,11 @@ This module adds the UCX CUDA support.
 UDUNITS supports conversion of unit specifications between formatted and binary forms,
  arithmetic manipulation of units, and conversion of values between compatible scales of measurement.
 
+## USEARCH:
+
+USEARCH is a unique sequence analysis tool which offers search and clustering algorithms that are
+ often orders of magnitude faster than BLAST.
+
 ## Unicycler:
 
 Assembly pipeline for bacterial genomes. It can assemble Illumina-only read sets
@@ -2784,9 +2789,7 @@ Aligning proteins or protein HMMs to DNA
 
 ## XVFB:
 
-A display server implementing the X11 display server protocol, XVFB performs all graphical operations in virtual memory without showing any screen output.
-This allows applications that 'require' a GUI to run in a command line environment. Can be invoked with `xvfb-run`.
-
+A display server implementing the X11 display server protocol, XVFB performs all graphical operations in virtual memory without showing any screen output. This allows applications that require a GUI to run in a command line environment. Can be invoked with `xvfb-run`'
 
 ## XZ:
 
@@ -3001,7 +3004,10 @@ code-server for OpenOnDemand
 
 ## compleasm:
 
-faster and more accurate reimplementation of BUSCO.
+compleasm: A tool for assessing genome assembly completeness using BUSCO-style
+lineage markers. Compleasm is a fast tool that integrates miniprot and HMMER for
+comprehensive completeness assessment of genome assemblies.
+Installed via conda (conda-forge + bioconda) following the upstream conda installation guide.
 
 ## cromwell:
 
@@ -3638,7 +3644,7 @@ performance multi threaded programs.
 
 ## lp_solve:
 
-Mixed Integer Linear Programming (MILP) solver.
+Mixed Integer Linear Programming (MILP) solver
 
 ## lwgrp:
 

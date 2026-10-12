@@ -20,7 +20,7 @@ Priority scores are determined by a number of factors:
 
 ### Quality of Service
 
-Jobs using the debug Quality of Service (QoS), requested with `--qos=debug`, get 5000 added to their priority.
+Jobs using the debug Quality of Service (QoS), requested with `--qos=debug`, get {{ slurm_limits.debug.priority }} added to their priority.
 This raises them above all jobs using the normal QoS.
 See [QoS](#qos) for what each QoS is for.
 
@@ -34,13 +34,13 @@ recent past compared to their expected rate of use (either by submitting
 and running many jobs, or by submitting and running large jobs) will
 have a lower priority, and projects with little recent activity compared
 to their expected rate of use will see their waiting jobs start sooner.
-Fair Share contributes up to 1000 points to the job priority.
+Fair Share contributes up to {{ slurm_limits.priority.fairshare_points }} points to the job priority.
 To see the current Fair Share score of a project, use the command `sshare`. To see recent usage, use `nn_corehour_usage`.
 
 ### Job Age
 
 Job priority slowly rises as a pending job gets older:
-1 point per hour, for up to 3 weeks.
+{{ slurm_limits.priority.age_points_per_hour }} point per hour, for up to {{ slurm_limits.priority.age_days }} days.
 
 ### Job Size or "TRES" (Trackable RESources)
 
@@ -114,12 +114,12 @@ For the largest job you can run and the most jobs you can queue, see [Job Limits
 The debug QoS is for short tests and debugging when you need the results straight away.
 Debug jobs get a much higher [priority](#quality-of-service) than jobs using the normal QoS, so a small debug job usually starts within a few minutes.
 
-A debug job can use at most:
+Debug jobs are limited to small, short jobs:
 
-- 2 hours (120 minutes) of wall time,
-- 2 nodes.
-
-You can only have one debug job at a time.
+- Jobs per user, queued or running: {{ slurm_limits.debug.jobs }}
+- Walltime: {{ slurm_limits.debug.minutes }} minutes
+- Size per job: up to {{ slurm_limits.debug.nodes }} nodes, {{ slurm_limits.debug.cores }} CPU cores,
+  {{ slurm_limits.debug.memory_gb }} GB of memory and {{ slurm_limits.debug.gpus }} GPUs
 
 The debug QoS is for:
 
@@ -164,7 +164,7 @@ If you are still not sure, {% include "partials/support_request.html" %}.
 
 ### Submitting a Debug Job
 
-Request the debug QoS by adding `--qos debug` to your batch script, and set `--time` to 2 hours or less:
+Request the debug QoS by adding `--qos debug` to your batch script, and set `--time` to {{ slurm_limits.debug.minutes }} minutes or less:
 
 ```sl
 #!/bin/bash -e
@@ -172,7 +172,7 @@ Request the debug QoS by adding `--qos debug` to your batch script, and set `--t
 #SBATCH --job-name      debug_test
 #SBATCH --account       nesi99991
 #SBATCH --qos           debug       # use the debug QoS
-#SBATCH --time          00:15:00    # 2 hours or less
+#SBATCH --time          00:15:00    # within the debug QoS limit
 #SBATCH --cpus-per-task 2
 #SBATCH --mem           2G
 
