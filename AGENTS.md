@@ -54,6 +54,10 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 
 ## How to approach a task
 
+0. Once per session, before the first edit, check the environment.
+   If `.venv` is missing, or `aspell` or `markdownlint` is not on `PATH`, offer to run [Setup](#setup).
+   If `TERM_PROGRAM` is `vscode` and the `code` command is available, compare `code --list-extensions` with `.vscode/extensions.json`
+   and offer to install any missing ones with `code --install-extension <id>`. Ask before installing anything.
 1. Find the exact page or pages affected. Read the target page, the `.pages.yml` in its folder and its parent,
    the folder's overview page if it has one (listed first in `.pages.yml`) and a few sibling pages. Keep reading focused on these and on pages directly linked from the change.
 2. Before writing a new page, search `docs/` for existing pages on the same topic (similar file names, titles and key terms),
