@@ -85,6 +85,17 @@ Public facing articles are found in the `docs` folder:
 
     Ideally, the page title should be the same as the category, to avoid confusion.
 
+!!! warning "Use category-articles sparingly"
+    Only make a category-article when the category has too many children to browse in the nav,
+    for example [Supported Applications](Software/Available_Applications/index.md).
+
+    The nav shows the `index.md` as the category's label, not as one of its children.
+    Readers who open the category with the arrow never see it, and nothing marks the label as a page of its own.
+
+    If any other category needs an overview, make it an ordinary article, list it first in the category's `.pages.yml`,
+    and give it a descriptive title, for example [Data Transfer Overview](Data_Transfer/Data_Transfer_Overview.md).
+    Small categories often don't need one.
+
 ![Documentation Structure](assets/images/doc_struct.png)
 
 ## Article/Category Naming

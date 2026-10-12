@@ -5,7 +5,8 @@ Human contributors should start with [README.md](README.md) and [CONTRIBUTING](d
 
 This repo is the source for the Mahuika HPC support documentation at <https://docs.nesi.org.nz>, built with MkDocs Material.
 
-- `docs/`: pages. Folders are nav categories, `index.md` makes a category-article, `.pages.yml` sets order and names.
+- `docs/`: pages. Folders are nav categories, `.pages.yml` sets order and names.
+  An `index.md` makes a category-article, which is only for very large categories (see [Article/Category Location](docs/NEWPAGE.md#articlecategory-location)).
 - `checks/`: QA scripts, run by CI and by VS Code tasks. See [checks/README.md](checks/README.md).
 - `overrides/`: theme templates and partials (includes).
 - `.github/workflows/`: CI. See [.github/workflows/README.md](.github/workflows/README.md).
@@ -54,7 +55,7 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 ## How to approach a task
 
 1. Find the exact page or pages affected. Read the target page, the `.pages.yml` in its folder and its parent,
-   the parent overview (`index.md`) and a few sibling pages. Keep reading focused on these and on pages directly linked from the change.
+   the folder's overview page if it has one (listed first in `.pages.yml`) and a few sibling pages. Keep reading focused on these and on pages directly linked from the change.
 2. Before writing a new page, search `docs/` for existing pages on the same topic (similar file names, titles and key terms),
    then work through [Should This Be Written?](docs/PRINCIPLES.md#should-this-be-written) and
    [New Page or Existing Page?](docs/PRINCIPLES.md#new-page-or-existing-page).
