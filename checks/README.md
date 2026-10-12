@@ -39,7 +39,8 @@ Checks text follows best practice for English language. Fenced code blocks are s
 Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json).
 
 Our own rules, words and patterns that shouldn't appear in pages (old names, retired hostnames, generic headings,
-placeholder image alt text, "here" as link text, the support email address), are listed in `BANNED_PATTERNS` in
+placeholder image alt text, "here" as link text, the support email address, and non-preferred terms such as
+"file system"), are listed in `BANNED_PATTERNS` in
 [prose_rules.py](prose_rules.py). Each runs as a proselint check named `reannz.<name>`, at the level the entry gives
 (only warnings fail `CHECKS_STRICT`), so one can be turned off in `.proselint.json` with `"reannz.<name>": false`.
 To ban something new, add an entry there rather than writing a new check.

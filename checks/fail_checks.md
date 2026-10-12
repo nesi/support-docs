@@ -85,6 +85,8 @@ module load something
 
 NeSI and the HPC were once called HPC3 (banned words), but the HPC Portal is fine, as is `NeSI` in code.
 
+Log into the cluster with two-factor authentication, then setup your project folder on the file system (non-preferred terms).
+
 ![alt text](../docs/assets/images/ANSYS_0.png)
 ![mceclip0.png](../docs/assets/images/ANSYS_0.png)
 
