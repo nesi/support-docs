@@ -290,7 +290,7 @@ When using the `library()` function R will first look to your
 Home/Personal library for the package and then to the Systems Library
 provided by Mahuika. This can be used in conjunction with
 `installed.packages()` to see what is available in a specific library.
-eg:
+For example:
 
 ``` R
 installed.packages("/home/YOUR_USER_NAME/R/gimkl-2022a/4.2")
@@ -401,7 +401,7 @@ You will be asked "Save workspace image? \[y/n/c\]". Type n.
 ### Missing *devtools*
 
 Package installation will occasionally fail due to missing system
-libraries (eg *HarfBuzz, FriBidi or devtools)*, this is resolved by
+libraries (e.g. *HarfBuzz, FriBidi or devtools)*, this is resolved by
 loading the *devtools* module prior to the version of R you require.
 
 ``` sh

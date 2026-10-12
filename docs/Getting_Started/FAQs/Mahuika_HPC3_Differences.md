@@ -55,11 +55,11 @@ OnDemand is more flexible and can deliver more GUI based apps.
 
 Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have been deprecated - just use the system versions of these tools instead.
 
-The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, eg: `gm display ...`.
+The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, e.g. `gm display ...`.
 
 ## External IP address for outbound connections
 
-Internet connections made from NeSI (e.g: to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
+Internet connections made from NeSI (e.g. to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
 
 ## Slurm
 
@@ -69,7 +69,7 @@ All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
 On Mahuika multithreaded jobs placed a thread on each virtual CPU by default,
 with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs were not hyperthreaded while single-task multithreaded jobs were.
 
-On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
+On HPC3 we have made `--threads-per-core` default to `1`, i.e. hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
 
 Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a multiple of two or also use the Slurm option `--tasks-per-core`.
 
@@ -117,7 +117,7 @@ Other consequences of this change include:
 
 - Job profiles are not private.
 - Incomplete profiles can be obtained while a job is still running.
-- Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
+- Any error messages (e.g. when asked for a job which didn't have profiling enabled) aren't yet informative.
 - The raw profile data isn't so accessible - please let us know if you need it.
 
 ### Miscellaneous

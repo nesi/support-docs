@@ -22,12 +22,11 @@ but since GROMACS is extremely fast at calculating the nonbonded
 interactions (that usually dominate simulations) many groups are also
 using it for research on non-biological systems, e.g. polymers.
 
-GROMACS is available to anyone at no cost under the terms of 
-[the GNU Lesser General Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html). 
+GROMACS is available to anyone at no cost under the terms of
+[the GNU Lesser General Public Licence](http://www.gnu.org/licenses/lgpl-2.1.html).
 Gromacs is a joint effort, with contributions from developers around the world: users agree
 to acknowledge use of GROMACS in any reports or publications of results
 obtained with the Software.
-
 
 ## Examples
 
@@ -64,7 +63,9 @@ obtained with the Software.
     module load GROMACS/{{app.default}}
     
     # Note: In version 2021.5 and older use `gmx_serial` instead of `gmx` 
-    srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK} -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
+    srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK}\
+        -s input.tpr -o trajectory.trr\
+        -c struct.gro -e energies.edr
     ```
 === "Multi Node (Hybrid)"
     Should only be used in the case you need more CPUs than available on a single node.
@@ -79,7 +80,10 @@ obtained with the Software.
     #SBATCH --mem           1500         # How much memory.
     
     module load GROMACS/{{app.default}}
-    srun gmx_mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK} -nomp ${SLURM_NNODES) -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
+    srun gmx_mpi mdrun-mpi -ntomp ${SLURM_CPUS_PER_TASK}\
+        -nomp ${SLURM_NNODES}\
+        -s input.tpr -o trajectory.trr\
+        -c struct.gro -e energies.edr
     ```
 === "GPU"
     For more information on using GPUs see [GPU use on Mahuika](../../Batch_Computing/Using_GPUs.md)
@@ -95,7 +99,9 @@ obtained with the Software.
     
     module load GROMACS/{{app.default}}
     # Note: In version 2021.5 and older use `gmx_serial` instead of `gmx` 
-    srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK} -s input.tpr -o trajectory.trr -c struct.gro -e energies.edr
+    srun gmx mdrun -ntomp ${SLURM_CPUS_PER_TASK}\
+        -s input.tpr -o trajectory.trr\
+        -c struct.gro -e energies.edr
     ```
 
 ## Performance
@@ -108,9 +114,9 @@ being performed, force field used and of course the simulated system.
 For a complete set of GROMACS options, please refer to GROMACS
 documentation.
 
-Each GROMACS environment module contains two executables one built with shared memory parallelism `gmx`, 
+Each GROMACS environment module contains two executables one built with shared memory parallelism `gmx`,
 and one with distrubuted memory parallelism (MPI) `gmx_mpi`. which can run across multiple nodes,
-ie: with `--ntasks` > 1. 
+i.e. with `--ntasks` > 1.
 
 !!! warning
     In versions of GROMACS older than `GROMACS/2025.2-foss-2023a-cuda-12.5.0-hybrid`
@@ -126,7 +132,7 @@ If you do elect to use `gmx_mpi`, note that hybrid parallelisation (i.e. with `-
 more efficient than MPI-only parallelisation.  With hybrid parallelisation, it is important to run
 `mdrun_mpi` with the `-ntomp <number>` option, where `<number>` should
 be the number of CPUs per task. You can make sure the value is correct
-by using `-ntomp ${SLURM_CPUS_PER_TASK}`. 
+by using `-ntomp ${SLURM_CPUS_PER_TASK}`.
 
 ## Checkpointing
 

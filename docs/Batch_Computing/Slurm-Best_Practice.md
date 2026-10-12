@@ -19,7 +19,7 @@ that your failed jobs show a status of FAILED in `sacct` output.
 Don't request more resources (CPUs, memory, GPUs) than you will need. In
 addition to using your core hours faster, resources intensive jobs will
 take longer to queue. Use the information provided at the completion of
-your job (e.g: via the `sacct` command) to better define resource
+your job (e.g. via the `sacct` command) to better define resource
 requirements.
 
 <!-- insert link to scaling docs here -->

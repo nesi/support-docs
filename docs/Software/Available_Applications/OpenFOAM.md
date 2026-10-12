@@ -130,7 +130,7 @@ startFrom ${START_TIME};
 
  This is essential when running parameter sweeps.
 
-You can also directly edit your dictionaries with `sed`, e.g
+You can also directly edit your dictionaries with `sed`, for example:
 
 ```sh
 NSUBDOMAINS=10

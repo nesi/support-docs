@@ -629,7 +629,7 @@ For your first shot, it is a good idea to set `CONTINUE=FALSE` for the
 last stage of the shot, that way you can set more accurate resource
 requirements for the remainder.
 
-The workflow can then by running `.solvercmd` e.g `bash .solvercmd`.
+The workflow can then by running `.solvercmd` e.g. `bash .solvercmd`.
 Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic

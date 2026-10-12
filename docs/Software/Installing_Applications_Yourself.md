@@ -38,7 +38,7 @@ you usually need to consider.
 ### Install Directory
 
 You will need to decide on where you want to install your application.
-We recommend using your `project` directory i.e `/nesi/project/<projectID>`,
+We recommend using your `project` directory i.e. `/nesi/project/<projectID>`,
 that way the install can be easily shared with any collaborators.
 Move to the desired location and create a directory to work from `mkdir <appname>`.
 

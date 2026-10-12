@@ -47,7 +47,7 @@ approach first and see if it takes too long.
 
 ### Single Thread
 
-For jobs which need less than 24 CPU-hours, eg: those that use small
+For jobs which need less than 24 CPU-hours, e.g. those that use small
 databases (&lt; 10 GB) or small amounts of query sequence (&lt; 1 GB),
 or fast BLAST programs such as *blastn* with its default (megablast)
 settings.  
@@ -78,7 +78,7 @@ $BLASTAPP $BLASTOPTS -db $DB -query $QUERIES -outfmt "$FORMAT" \
 
 ### Multiple threads and local database copy
 
-For jobs which need more than 24 CPU-hours, eg: those that use large
+For jobs which need more than 24 CPU-hours, e.g. those that use large
 databases (&gt; 10 GB) or large amounts of query sequence (&gt; 1 GB),
 or slow BLAST searches such as classic *blastn* (`blastn -task blastn`).
 

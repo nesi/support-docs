@@ -70,7 +70,7 @@ Note, as the name suggests, Mahuika does **not** backup the `/nesi/nobackup` fil
 Protecting critical data from corruption or deletion is primarily your responsibility.
 Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.
 Also important is managing your storage quota.
-To check your quotas, use the `storage_quota` command, e.g
+To check your quotas, use the `storage_quota` command, for example:
 
 ```sh
 storage_quota

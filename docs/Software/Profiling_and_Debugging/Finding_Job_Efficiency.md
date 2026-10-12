@@ -62,8 +62,8 @@ Below is an output for reference:
 3007056.ext+     extern   00:27:07   00:00:00   00:00:00   00:00:00         16        1        89K  COMPLETED
 ```
 
-*All of the adjustments below still allow for a degree of variation.
-There may be factors you have not accounted for.*
+_All of the adjustments below still allow for a degree of variation.
+There may be factors you have not accounted for._
 
 #### Walltime
 
@@ -84,9 +84,9 @@ steps (excluding file caches), so in this case 13 GB. For our next run we may wa
 ```
 
 Most simple HPC jobs read some inputs sequentially, do some computation, and then write out results
-sequentially. For those, RSS is a decent measure of their memory needs. However RSS only includes the 
+sequentially. For those, RSS is a decent measure of their memory needs. However RSS only includes the
 main (or "anonymous") memory of the running program, so jobs which create
-large temporary files in memory (eg: in _/tmp_) will also need to request memory for those, and jobs which
+large temporary files in memory (e.g. in `/tmp`) will also need to request memory for those, and jobs which
 repeatedly re-read the same file (or parts of one, as when querying an indexed database) may benefit from
 requesting enough additional memory to let the Operating System cache that in memory for them.
 
@@ -129,7 +129,7 @@ If it is your first time connecting to that particular node, you may be
 prompted:
 
 ```txt
-The authenticity of host can't be established 
+The authenticity of host can't be established
 Are you sure you want to continue connecting (yes/no)?
 ```
 
@@ -163,12 +163,12 @@ Processes in green can be ignored
 
 ## Limitations of using CPU Efficiency
 
-CPU efficiency, as described here, only represents the *percentage of
-time* the CPUs are in use. This is not enough to get a picture of
+CPU efficiency, as described here, only represents the _percentage of
+time_ the CPUs are in use. This is not enough to get a picture of
 overall job efficiency, as required CPU time *may vary by number of
 CPU*s.
 
-The only way to get the full context, is to compare walltime performance between jobs at different scale. See [Job Scaling](Job_Scaling_Ascertaining_job_dimensions.md) for more details.
+The only way to get the full context, is to compare walltime performance between jobs at different scale. See [Job Scaling](Job_Scaling_Ascertaining_job_dimensions.md) for more details.
 
 ### Example
 

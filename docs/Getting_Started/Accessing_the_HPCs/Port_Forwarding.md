@@ -9,7 +9,7 @@ description: Forwarding a port over SSH to reach a service running on the cluste
 !!! prerequisite
     Have your [connection to the Mahuika cluster](Standard_Terminal_Setup.md) configured
 
-Some applications only accept connections from internal ports (i.e a
+Some applications only accept connections from internal ports (i.e. a
 port on the same local network), if you are running one such application
 on the cluster and want to connect to it you will need to set up
 [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding).

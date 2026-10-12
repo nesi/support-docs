@@ -38,7 +38,7 @@ relion_run_ctffind ...
 ```
 
 If MPI is used then Relion will correctly recommend the MPI version of
-the tool, eg:
+the tool, for example:
 
 ``` sh
 which relion_run_ctffind_mpi ...

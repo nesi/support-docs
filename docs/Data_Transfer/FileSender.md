@@ -77,9 +77,9 @@ filesender -p -r recipient@email.co.nz research-data-file.txt
 where:
 
 * `recipient@email.co.nz`: This is the email address of the person to send your data. This can also be your own email address if you are wanting move data between your local machine and mahuika.
-* `research-data-file.txt` This is the file you would like to send. This can be any file, except files with excluded extensions mentioned at the top of this page (eg. `exe` files)  
+* `research-data-file.txt` This is the file you would like to send. This can be any file, except files with excluded extensions mentioned at the top of this page (e.g. `exe` files)  
 
-You can find more options for `filesender` by running `filesender --help` 
+You can find more options for `filesender` by running `filesender --help`
 
 We recommend sending multiple files by making an archive (also known as a tarball):
 
