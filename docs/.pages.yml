@@ -1,3 +1,4 @@
+# No "*" here on purpose: it would pull the maintainer pages (FORMAT.md, NEWPAGE.md...) into the nav.
 nav:
     - Announcements
     - Getting_Started

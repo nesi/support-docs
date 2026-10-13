@@ -1,5 +1,6 @@
 ---
 created_at: 2025-01-28
+status: new
 template: not_a_template
 not_a_parameter: This isn't valid
 tags:
@@ -79,6 +80,23 @@ module load something
 [bad link](../docs/not-a-page.md)
 
 [bad internal link](#impropers)
+
+## Introduction
+
+NeSI and the HPC were once called HPC3 (banned words), but the HPC Portal is fine, as is `NeSI` in code.
+
+Log into the cluster with two-factor authentication, then setup your project folder on the file system (non-preferred terms).
+
+![alt text](../docs/assets/images/ANSYS_0.png)
+![mceclip0.png](../docs/assets/images/ANSYS_0.png)
+
+[link to a rendered page path, not a .md file](../docs/Batch_Computing/Batch_Computing_Guide/)
+
+```sh
+ssh -Y lander.nesi.org.nz
+ssh nesi
+module load GROMACS/2023.2
+```
 
 Very very bad prose shit this is probably very unproper language sorry about that hopefully the chairman doesn't see lets circle back around.
 
