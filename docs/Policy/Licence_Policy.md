@@ -29,7 +29,7 @@ REANNZ's public-facing IP addresses are:
 A list of already established licence server connections can be found in
 our support documentation for the relevant software. Provided you
 are a member of the listed institution or faculty you should be able to
-use the software without any set-up.
+use the software without any setup.
 
 If you believe you should have access to a licence but do not, or would
 like to organise remote use of your institution's licence, please {% include "partials/support_request.html" %} and cc: your own IT services.

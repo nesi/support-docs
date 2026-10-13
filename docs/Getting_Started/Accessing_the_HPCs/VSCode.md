@@ -12,8 +12,8 @@ The 'Remote' extension allows you to connect to a remote computer (like Mahuika)
 ## Setup
 
 !!! warning "Switching to HPC3"
-    If you have previously logged into Mahuika with VSCode, you will need to delete the directory `~/.vscode-server`
-    before logging into HPC3 (and vice versa). You can do this with the command,
+    If you have previously logged in to Mahuika with VSCode, you will need to delete the directory `~/.vscode-server`
+    before logging in to HPC3 (and vice versa). You can do this with the command,
 
     ```sh
     rm -rf ~/.vscode-server

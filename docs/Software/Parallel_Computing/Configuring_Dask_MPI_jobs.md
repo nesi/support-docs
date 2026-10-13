@@ -268,7 +268,7 @@ Conda environment inside the container.
 Slurm configuration is identical to the case without Apptainer, see
 section [Configuring Slurm](#configuring-slurm)
 above. The Slurm job submission script needs to be slightly modified to
-setup and launch the container runtime environment, ensuring that Intel
+set up and launch the container runtime environment, ensuring that Intel
 MPI finds Slurm's PMI-2 library on the host.
 
 In the first case with low worker memory consumption and no

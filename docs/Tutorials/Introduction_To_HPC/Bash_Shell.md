@@ -20,14 +20,14 @@ tags:
     This episode will be a quick introduction to the Unix shell, only the bare minimum required to use the cluster.
     The Software Carpentry '[Unix Shell](https://swcarpentry.github.io/shell-novice/)' lesson covers the subject in more depth, we recommend you check it out.
   
-The part of the operating system responsible for managing files and directories is called the **file system**.
+The part of the operating system responsible for managing files and directories is called the **filesystem**.
 It organises our data into files, which hold information, and directories (also called 'folders'), which hold files or other directories.
 
-Understanding how to navigate the file system using command line is essential for using an HPC.
+Understanding how to navigate the filesystem using command line is essential for using an HPC.
 
 The Mahuika filesystem looks something like this:
 
-![The file system is made up of a root directory that contains sub-directories](../../assets/images/NeSI_Filesystem_Simplified.svg)
+![The filesystem is made up of a root directory that contains subdirectories](../../assets/images/NeSI_Filesystem_Simplified.svg)
 
 The directories that are relevant to us are:
 
@@ -107,7 +107,7 @@ pwd
 ```
 
 The output we see is what is known as a 'path'.
-The path can be thought of as a series of directions given to navigate the file system.
+The path can be thought of as a series of directions given to navigate the filesystem.
 
 At the top is the **root directory** that holds all the files in a filesystem.
 
@@ -123,7 +123,7 @@ Finally, stored inside `home` is the directory with your username.
     it refers to the root directory. When it appears *inside* a path,
     it's just a separator.
 
-As you may now see, using a bash shell is strongly dependent on the idea that your files are organised in a hierarchical file system.
+As you may now see, using a bash shell is strongly dependent on the idea that your files are organised in a hierarchical filesystem.
 Organising things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
 ## Listing contents of directories
@@ -329,14 +329,14 @@ since it specifies the full path from the top level root directory.
 
 An **absolute path** always starts at the root directory, which is indicated by a
 leading slash. The leading `/` tells the computer to follow the path from
-the root of the file system, so it always refers to exactly one directory,
+the root of the filesystem, so it always refers to exactly one directory,
 no matter where we are when we run the command.
 
 Any path without a leading `/` is a **relative path**.
 
 When you use a relative path with a command
 like `ls` or `cd`, it tries to find that location starting from where we are,
-rather than from the root of the file system.
+rather than from the root of the filesystem.
 
 In the previous command, since we did not specify an **absolute path** it ran the command on the relative path from our current directory
 (implicitly using the `.` hidden directory), and so listed the contents of our current directory.
@@ -836,8 +836,8 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 
 !!! keypoints
     - A relative path specifies a location starting from the current location.
-    - An absolute path specifies a location from the root of the file system.
+    - An absolute path specifies a location from the root of the filesystem.
     - Directory names in a path are separated with `/` on Unix, but `\\` on Windows.
     - `..` means 'the directory above the current one'; `.` on its own means 'the current directory'
-    - `/` on its own is the root directory of the whole file system.
+    - `/` on its own is the root directory of the whole filesystem.
     - Most commands take options (flags) that begin with a `-`.

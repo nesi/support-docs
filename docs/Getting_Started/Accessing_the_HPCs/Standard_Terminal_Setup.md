@@ -3,7 +3,7 @@ created_at: '2018-11-30T00:34:14Z'
 tags:
 - access
 - tutorial
-description: How to setup your SSH config file in order to connect to the HPC cluster.
+description: How to set up your SSH config file to connect to Mahuika.
 ---
 
 !!! prerequisite

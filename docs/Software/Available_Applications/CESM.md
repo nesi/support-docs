@@ -136,7 +136,7 @@ Next, set up the case and preview the run:
 ./preview_run
 ```
 
-Check that everything looks correct in the preview. On Mahuika you should see that the case is setup to run on 192 total tasks:
+Check that everything looks correct in the preview. On Mahuika you should see that the case is set up to run on 192 total tasks:
 
 ```txt
 CASE INFO:

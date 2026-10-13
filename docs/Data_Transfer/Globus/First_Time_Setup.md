@@ -6,7 +6,7 @@ title: Globus First Time Setup
 description: Setting up a Globus account for the first time and linking your other accounts
 ---
 
-This guide will show you how to setup Globus for the first time. This page includes:
+This guide will show you how to set up Globus for the first time. This page includes:
 
 * [Setting up your Globus account](#setting-up-your-globus-account)
 * [Link other accounts to your Globus account](#link-other-accounts-to-your-globus-account)

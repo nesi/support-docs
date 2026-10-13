@@ -34,7 +34,7 @@ Globus has been set up for transferring large amounts of data to/from Mahuika to
 
 Globus allows users to transfer large amounts of data between systems. Some advantages of using Globus are that:
 
-* It uses a web-based graphical user interface to help users navigate through file systems and transfer data.
+* It uses a web-based graphical user interface to help users navigate through filesystems and transfer data.
 * Globus will perform data transfers in the background, allowing you to shutdown your computer while the transfer continues (as long as you are not transferring data to your computer)
 * If there are any disruptions to your transfer, Globus can resume from where it left off.
 

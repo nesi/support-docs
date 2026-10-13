@@ -184,7 +184,7 @@ BANNED_PATTERNS += [
           message="Write 'simultaneous multithreading' (then 'SMT'), not '{0}'. Hyper-Threading is Intel's name for it."),
     _term("multithreading", r"\bmulti[- ]thread(?:ing|ed|s)?\b",
           "Write it as one word ('multithreading', 'multithreaded'), not '{0}'."),
-    _term("filesystem", r"\bfile[- ]systems?\b", "Write 'filesystem', not '{0}'."),
+    _term("filesystem", r"\bfile[- ]systems?\b", "Write 'filesystem', not '{0}'.", level="warning"),
     _term("long_term_storage", r"\blong ?term (?:data )?(?:storage|archiv(?:e|es|al|ing))\b",
           "Hyphenate 'long-term' before a noun ('long-term storage'), not '{0}'."),
     _term("directory", r"\b(?:project|home|nobackup|scratch) folders?\b|\bsub[- ]director(?:y|ies)\b|\bsub[- ]?folders?\b",
@@ -207,8 +207,9 @@ BANNED_PATTERNS += [
     _term("licensed", r"\blicenc(?:ed|ing)\b", "Write 'licensed' or 'licensing' (from the verb 'license'), not '{0}'."),
     _term("set_up", r"\b(?:to|can|could|will|would|may|might|you|we|they|then|now|first|also|just|and|must|should|please|"
                     r"not|ll|is|are|was|were|be|been|being|get|gets|got|have|has|had) setup\b"
-                    r"|\bsetup (?:your|the|a|an|my|our|their|this|that|these|those|it|them)\b|\bset-ups?\b|\bsetting-up\b",
-          "Write 'set up' for the verb and 'setup' for the noun, not '{0}'."),
+                    r"|\bsetup (?:your|the|a|an|my|our|their|this|that|these|those|it|them)\b|\bset-ups?\b|\bsetting-up\b"
+                    r"|^\s*setup (?:and|or) (?:launch|run|start|configure|install|use|test)\b",
+          "Write 'set up' for the verb and 'setup' for the noun, not '{0}'.", level="warning"),
     _term("runtime", r"\brun[- ]times?\b", "Write 'runtime', not '{0}'."),
     _term("website", r"\bweb[- ](?:sites?|pages?)\b", "Write 'website' or 'webpage', not '{0}'.",
           level="warning"),
