@@ -16,8 +16,8 @@ your message, please provide the following information:
     usually require a stable release version of a piece of software
     before we will install it for all users.
 - Why would you like us to install this software package?
-- What is the web site or home web page of the package? If you don't
-    know this information or the package doesn't have a web site, who is
+- What is the website or homepage of the package? If you don't
+    know this information or the package doesn't have a website, who is
     the author or lead developer? In some cases, there exist two or more
     packages with the same or very similar names. If we know the web
     site we can be sure that we are installing the same package that you

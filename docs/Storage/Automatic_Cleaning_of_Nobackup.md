@@ -215,9 +215,9 @@ Please refer to the autocleaning email to determine the autocleaning date.
 
 ## I ran ```nn_doomed_list```, but got the message `file list not found`
 
-You are getting this message because GUFI, the engine behind ```nn_doomed_list```, can not be mounted. This maybe because you have logged on to `login01` or `login02`. You need to be on `login03` to work. 
+You are getting this message because GUFI, the engine behind ```nn_doomed_list```, can not be mounted. This maybe because you have logged in to `login01` or `login02`. You need to be on `login03` to work.
 
-* To find out which login node you are on, type into Mahuika: ```hostname```
+- To find out which login node you are on, type into Mahuika: ```hostname```
 
 ## More information
 

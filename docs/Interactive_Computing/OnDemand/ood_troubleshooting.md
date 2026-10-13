@@ -22,7 +22,7 @@ Please {% include "partials/support_request.html" %} and we will be able to fix 
 
 If you are encounter the following error during login, it is an indication of your home directory being full.
 OnDemand relies on some space being available on the home directory to open and maintain per session logs.
-The solution for this is to clear up some space in the home directory. You can still login to the cluster via another terminal client (`ssh`) to review and clean/delete content from home directory. If you don't have or having difficulty with setting up a terminal client setup for `ssh` access, {% include "partials/support_request.html" %}
+The solution for this is to clear up some space in the home directory. You can still log in to the cluster via another terminal client (`ssh`) to review and clean/delete content from home directory. If you don't have or having difficulty with setting up a terminal client setup for `ssh` access, {% include "partials/support_request.html" %}
 
 ### `No space left on device`
 

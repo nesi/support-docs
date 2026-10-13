@@ -22,7 +22,7 @@ We collect and process Personal Information about our users through registration
 - employer or tertiary institution
 - a contact telephone number
 - an email address issued by employer or tertiary institution (primary email address), along with (optionally) a preferred contact email address
-- user ID
+- username
 - if a student, course of study and main academic supervisor or course coordinator
 - projects, team memberships, and allocations
 - grants and publications

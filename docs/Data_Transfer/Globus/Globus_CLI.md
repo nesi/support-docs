@@ -24,7 +24,7 @@ If you want to use it on your computer, you need to have installed
 pip install --user --upgrade globus-cli
 ```
 
-Then, you need to login to Globus by typing into the terminal
+Then, you need to log in to Globus by typing into the terminal
 
 ```sh
 globus login

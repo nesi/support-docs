@@ -54,7 +54,7 @@ HTTP Proxy server name: <span style="color:green"><b>Leave blank, </b>press &lt;
 
 You will then be presented with a summary.
 <pre><code>New settings:
-  Access Key: User ID
+  Access Key: USERNAME
   Secret Key: Your Freezer Secret Key
   Default Region: akl-1
   S3 Endpoint: freezer.nesi.org.nz:7070

@@ -104,7 +104,7 @@ one must specify:
 - The location of the compiled library or libraries, using
     `-L/path/to/lib/`
 - The name of each library, typically without prefixes and suffixes.
-    For example, if the full library file name is `libfoo.so.1.2.3`
+    For example, if the full library filename is `libfoo.so.1.2.3`
     (with aliases `libfoo.so.1` and `libfoo.so`), the expected entry on
     the link line is `-lfoo`.
 

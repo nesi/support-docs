@@ -122,7 +122,7 @@ Other consequences of this change include:
 
 ### Miscellaneous
 
-There is a per-user limit on the job submit rate which will slow down workflow engines which submit too many jobs.  There are usually solutions to this such as array jobs or Snakemake's “groups” feature.
+There is a per-user limit on the job submit rate which will slow down workflow engines which submit too many jobs.  There are usually solutions to this such as job arrays or Snakemake's “groups” feature.
 
 KillOnBadExit is set true, so if one task in an MPI job fails, by default the whole job will be killed.
 

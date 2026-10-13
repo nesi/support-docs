@@ -166,7 +166,7 @@ echo "$n_day $n_time:00"
 
 ## Avoiding Conflicts
 
-As all the array jobs could theoretically run at the same time, it is important that all file references are unique and independent.
+As all the array tasks could theoretically run at the same time, it is important that all file references are unique and independent.
 
 If your program makes use of a working directory make sure you set it e.g.
 

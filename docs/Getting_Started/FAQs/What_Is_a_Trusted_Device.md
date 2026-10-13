@@ -24,7 +24,7 @@ You should trust a device when it meets several criteria, including:
 
 ## What are the benefits to have a trusted device?
 
-Using a trusted device will simplify your login process. For example, if a device is not trusted, additional authentication credentials need to be used at every login. However, if you login using a trusted device, you will not have to use your additional authentication credentials for 7 days on the same device.
+Using a trusted device will simplify your login process. For example, if a device is not trusted, additional authentication credentials need to be used at every login. However, if you log in using a trusted device, you will not have to use your additional authentication credentials for 7 days on the same device.
 
 ## What name shall I give to my trusted device?
 

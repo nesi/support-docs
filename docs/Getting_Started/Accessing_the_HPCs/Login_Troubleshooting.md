@@ -114,7 +114,7 @@ allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
 
 The most common cause of login failure is using incorrect login details.
 Make sure you are using your NeSI Username and the password you set when
-first logging into the Lander node. See
+first logging in to the Lander node. See
 [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 ### Check the time on your device

@@ -1356,7 +1356,7 @@ logging_config:
 * `experiment_name` — the name this run appears under. Worth setting to
     something you will recognise weeks later.
 * `group` and `id` — optional. `group` collects several runs under one banner,
-    `id` resumes logging into an existing run rather than starting a new one.
+    `id` resumes logging to an existing run rather than starting a new one.
     Leave both `null` unless you need them.
 * `log_lr: true` — also records the learning rate alongside the loss curves,
     which is what you want when chaining resumed jobs.

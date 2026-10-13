@@ -39,7 +39,7 @@ highlight the specifics of working with the Mahuika endpoints.
 
 `Authentication`
 
-:   Handled via Globus Auth - users must have a Globus account, which they can sign into with institutional or Globus IDs, and they
+:   Handled via Globus Auth - users must have a Globus account, which they can log in to with institutional or Globus IDs, and they
     must add a linked identity with the "NeSI Keycloak" to their Globus account
 
 ## Requirements

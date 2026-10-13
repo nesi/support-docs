@@ -14,7 +14,7 @@ Log in with your institutional credentials.
 
 ??? info "First Time Login"
 
-    If you haven't logged into OnDemand or our HPC platforms before, part of the login process will include a step to setup additional authentication credentials.
+    If you haven't logged in to OnDemand or our HPC platforms before, part of the login process will include a step to setup additional authentication credentials.
 
     ![OnDemand login 1](../../assets/images/ondemand_login_0.png)
 

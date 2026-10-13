@@ -11,7 +11,7 @@ description: Logging in to my.nesi.org.nz through Tuakiri and fixing common logi
 
 ## Login credentials
 
-We allow students, academics, alumni and researchers to securely login
+We allow students, academics, alumni and researchers to securely log in
 and create a [REANNZ HPC account
 profile](../Creating_an_Account.md)
 using the credentials granted by their home organisation via Tuakiri.

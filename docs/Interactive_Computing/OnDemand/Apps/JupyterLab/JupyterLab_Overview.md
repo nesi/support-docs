@@ -30,7 +30,7 @@ to use notebooks, text editor, terminals and custom components together.
 
 Your JupyterLab session will start in your home directory the first time you launch it. On subsequent launches it may remember your previous working directory and start there.
 
-Mahuika will auto generate a directory within your home folder called `00_nesi_projects`, you will find symbolic links to projects and nobackup directories of your active projects. We do not recommend that you store files in this initial directory because next time you log into OnDemand the directory will be repopulated based on your user groups, instead switch to your home, project or nobackup directories first.
+Mahuika will auto generate a directory within your home folder called `00_nesi_projects`, you will find symbolic links to projects and nobackup directories of your active projects. We do not recommend that you store files in this initial directory because next time you log in to OnDemand the directory will be repopulated based on your user groups, instead switch to your home, project or nobackup directories first.
 
 If you wish to not have this folder recreated upon login then please place the following file in your HOME directory `.00_nesi_projects.stop` and this will stop the folder from being recreated upon login.
 

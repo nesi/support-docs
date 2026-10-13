@@ -85,7 +85,7 @@ Alternatively, you can set up a dependent job within the first job's script by a
 ## Tokens
 
 These are predefined variables that can be used in sbatch directives
-such as the log file name.
+such as the log filename.
 
 ## Environment variables
 
@@ -95,7 +95,7 @@ Common examples.
 | ------------------------ | ------------------------------------------------ |
 | `$SLURM_JOB_ID`        | Useful for naming output files that won't clash. |
 | `$SLURM_JOB_NAME`      | Name of the job.                                 |
-| `$SLURM_ARRAY_TASK_ID` | The current index of your array job.             |
+| `$SLURM_ARRAY_TASK_ID` | The current index of your job array.             |
 | `$SLURM_CPUS_PER_TASK` | Useful as an input for multi-threaded functions. |
 | `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
 | `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.           |

@@ -62,7 +62,7 @@ somewhere near the bottom of your ~/.bashrc file.
 To search and download climate model data you will in addition need to
 create an account on one or more of the ESGF nodes,
 e.g. <https://esgf-node.llnl.gov/projects/esgf-llnl/>. This will require
-you to provide a user name (USER\_NAME) and a password - you will
+you to provide a username (USER\_NAME) and a password - you will
 receive an openID in return. Copy your openID string as you will need
 later.
 
@@ -80,7 +80,7 @@ created an account on esgf-node.llnl.gov then your openID will be:
 openID url: https://esgf-node.llnl.gov/esgf-idp/openid/USER_NAME
 ```
 
-(USER\_NAME is the user name you chose when creating the account). You
+(USER\_NAME is the username you chose when creating the account). You
 can change your default configuration by editing
 $ST\_HOME/conf/sdt.conf. I have
 

@@ -43,7 +43,7 @@ Before accepting this Policy, please note: We anticipate that they will change r
 3. That we may make changes to the REANNZ HPC Services.
 4. That we will use the personal details which you supply to us, together with records of your use of the REANNZ HPC Services, to monitor usage and may share this information back with your host institution as part of REANNZ HPC service governance.
 5. That we may suspend your access to the REANNZ HPC Services and discuss this with the Project Owner (the individual responsible for managing an approved Research Project for which an HPC Allocation has been given) and employing institution if it seems to us that you are breaking these Terms and Conditions.
-6. That if it is necessary to protect the REANNZ HPC Services or other users' work or data, we can halt the execution of any program which you start, disable you from logging into the REANNZ HPC Services, and terminate your Research Project.
+6. That if it is necessary to protect the REANNZ HPC Services or other users' work or data, we can halt the execution of any program which you start, disable you from logging in to the REANNZ HPC Services, and terminate your Research Project.
 7. That you alone are responsible for what you do when using the REANNZ HPC Services. If you break the law you alone must answer for it, and if you cause damage to anyone else, you alone are liable, and REANNZ partners will accept no liability.
 8. That you will acquire no intellectual property rights over the software or any information we provide.
 9. That we may make reasonable changes to the Acceptable Use Policy at any time, and, once we have posted those changes on our website, the new version will then apply to you.

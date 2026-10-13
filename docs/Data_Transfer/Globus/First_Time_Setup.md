@@ -17,7 +17,7 @@ You can learn about setting up your personal Globus endpoint on your computer on
 
 1. Go to [globus.org](https://www.globus.org), or go to [transfer.reannz.co.nz](https://transfer.reannz.co.nz) and click the `LOG IN` button.
     ![Globus\_main\_page.png](../../assets/images/Globus_main_page.png)
-2. Look up your institution in the drop-down box, or sign in using your GitHub, Google, or
+2. Look up your institution in the drop-down box, or log in using your GitHub, Google, or
     ORCID ID, then click continue. You will be directed to your Tuakiri login screen or
     GitHub, Google, or ORCID ID login screen.
     ![Globus\_login.png](../../assets/images/Initial_Globus_Sign_Up-and_your_Globus_Identities.png)
@@ -36,5 +36,5 @@ You can link your Globus account to your GitHub, Google, or ORCID ID account by 
     your Globus account, or GitHub, Google, or ORCID ID if you want to link these accounts to your
     Globus account.
     ![Globus\_Link\_Identities\_2.png](../../assets/images/Globus_Link_Identities_3.png)
-4. After logging into this account, you will need to login to your primary Globus account. Click continue
+4. After logging in to this account, you will need to log in to your primary Globus account. Click continue
     ![Globus\_Link\_Identities\_3.png](../../assets/images/Globus_Link_Identities_3.png)

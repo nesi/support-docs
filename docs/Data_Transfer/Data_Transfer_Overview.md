@@ -39,7 +39,7 @@ For transferring data using specific tools, see:
 
 ### Avoid Transferring Temporary Files
 
-Temporary files are files that are created by a program while it is running. This may be to hold information that may be needed later, to hold memory that is too big to hold in memory (RAM), or are used for checkpointing. Temporary files are only needed by a program while it is running. Once a program has finished successfully, they can be removed. These may have file names ending with `.tmp` or `.temp`.
+Temporary files are files that are created by a program while it is running. This may be to hold information that may be needed later, to hold memory that is too big to hold in memory (RAM), or are used for checkpointing. Temporary files are only needed by a program while it is running. Once a program has finished successfully, they can be removed. These may have filenames ending with `.tmp` or `.temp`.
 
 It is best to avoid transferring temporary files. This is because temporary files:
 

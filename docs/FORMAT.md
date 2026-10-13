@@ -22,7 +22,38 @@ This page is an overview of the naming conventions and Markdown syntax used in t
   hostnames, and the example project code `nesi99991`.
 - For other terms, use the words in the [Glossary](GLOSSARY.md), so they match the tooltips.
 
-The prose check flags these old names, outside announcements and release notes.
+Some terms are written several ways across the docs. Use the preferred form:
+
+| Write | Not |
+| - | - |
+| log in, log in to (verb). Login is the noun. | `login` (verb), `log into`, `log-in`, `log on`, `sign in` |
+| multi-factor authentication (MFA after the first mention) | `two-factor authentication`, `2FA`, `multiple factor authentication`, `second-factor authentication` |
+| additional authentication credentials | `second factor`, `authentication token` |
+| 6-digit code | `6 digit code`, `6-digit number`, `one-time code`, `one-time password`, `OTP`, `second factor code` |
+| authenticator app | `authentication app` |
+| Apptainer | `Singularity`, unless you mean the old name |
+| walltime | `wall time`, `wall-time`, `wall clock` |
+| job array | `array job`, `Slurm array` |
+| FairShare or Fairshare | `fair share`, `fair-share`, `fairshare` |
+| simultaneous multithreading (SMT after the first mention) | `hyperthreading`, `hyper-threading` |
+| multithreading, multithreaded | `multi-threading` |
+| filesystem | `file system`, `file-system` |
+| long-term storage | `long term storage` |
+| project directory, home directory, subdirectory | `project folder`, `home folder`, `sub-directory` |
+| project code | `project ID`, `project number`, `account code` |
+| project member | `team member` |
+| username | `user name`, `user ID`, `userid`, `login name` |
+| licence (noun), license (verb), licensed, licensing | `license` (noun), `licenced`, `licencing` |
+| set up (verb), setup (noun) | `setup` (verb), `set-up` |
+| runtime | `run time`, `run-time` |
+| website, webpage | `web site`, `web page` |
+| filename, hostname | `file name`, `host name` |
+| X11 forwarding | `X forwarding`, `X11-forwarding` |
+| 20 GB (space before the unit) | `20GB` |
+
+Leave labels copied from an interface as they are, for example a `User name:` field.
+
+The prose check flags these old names and variant terms, outside announcements and release notes.
 
 ## Headers
 

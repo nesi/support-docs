@@ -134,22 +134,23 @@ visible: screen readers and the docs chat assistant only get this text.",
 ]
 
 
-def _term(name, pattern, message, flags=re.IGNORECASE, skip=()):
-    """A preferred-term rule: a notice on prose, outside history and maintainer pages."""
-    return {"name": name, "pattern": pattern, "flags": flags, "scope": "text", "level": "notice",
+def _term(name, pattern, message, flags=re.IGNORECASE, skip=(), level="notice"):
+    """A preferred-term rule: a notice (or warning) on prose, outside history and maintainer pages."""
+    return {"name": name, "pattern": pattern, "flags": flags, "scope": "text", "level": level,
             "skip": [HISTORY_PAGES, MAINTAINER_PAGES, *skip], "message": message}
 
 
-# Preferred terms, one rule per term. All notices for now: make one a "warning" once its existing hits are fixed.
+# Preferred terms, one rule per term. Notices by default: make one a "warning" once its existing hits are fixed.
 # Not checked yet: terms that are fine once the preferred one has been used on the page ('MFA' after
 # 'multi-factor authentication', 'WSL', 'SMT', 'interactive job'). That needs a page-level 'first_mention' check.
 BANNED_PATTERNS += [
-    _term("log_in", r"\blog(?:s|ged|ging)? into\b|\blog-in\b|\bsign(?:s|ed|ing)?[- ]?in\b|\blogged[- ]on\b"
+    _term("log_in", r"\blog(?:s|ged|ging)? into\b|\blog-in\b|\bsign(?:s|ed|ing)?[- ]?in(?:to)?\b|\blogged[- ]on\b"
                     r"|\b(?:log(?:s|ged|ging)?[- ]on|logon) (?:to|with|using|via)\b"
                     r"|(?<!the )(?<!your )(?<!every )(?<!a )\b(?:(?:to|can|could|will|would|may|might|then|now|also|just|"
-                    r"please|must|should|cannot|not|you|we|they|first|successfully|and|have|ll) login\b(?! nodes?)"
+                    r"please|must|should|cannot|not|you|we|they|first|successfully|securely|and|have|ll) login\b(?! nodes?)"
                     r"|login (?:to|into|with|using|via|again|as|from)\b)",
-          "Write 'log in' (or 'log in to') for the verb, not '{0}'. 'Login' is the noun."),
+          "Write 'log in' (or 'log in to') for the verb, not '{0}'. 'Login' is the noun.",
+          level="warning"),
     _term("mfa", r"\bmultiple[- ]?factor(?: authentication)?\b|\bmulti ?factor(?: authentication)?\b"
                  r"|\b(?:two|2|dual)[- ]?factor(?: authentication)?\b|\b2FA\b|\bsecond[- ]factor authentication\b"
                  r"|\b(?:two|2)[- ]?step (?:verification|authentication|login)\b|\b2SV\b",
@@ -174,7 +175,7 @@ BANNED_PATTERNS += [
           message="Write 'walltime', not '{0}'."),
     # Lowercase 'job' only, so the Slurm Composer's 'Array Job' label is left alone.
     _term("job_array", r"\b[Aa]rray[- ]?jobs?\b|\b(?:[Ss]lurm|[Tt]ask) arrays?\b(?! jobs?\b)", flags=0,
-          message="Write 'job array', not '{0}'."),
+          level="warning", message="Write 'job array', not '{0}'."),
     # Case-sensitive: SchedMD writes both 'FairShare' and 'Fairshare', every other spelling is flagged.
     # Not after '- ', so the 'fairshare' tag in front matter is left alone.
     _term("fairshare", r"\b(?i:fair[- ]shar(?:e|es|ing))\b|(?<!- )\b(?!Fair[Ss]hares?\b)(?i:fairshar(?:e|es|ing))\b",
@@ -194,7 +195,8 @@ BANNED_PATTERNS += [
     _term("project_member", r"\b(?:project|your|fellow|new|read-only|other) team[- ]members?\b",
           "Write 'project member', not '{0}'."),
     # Not field labels such as 'User name:'.
-    _term("username", r"\b(?:user[- ]names?|user[- ]?IDs?|login (?:names?|IDs?))\b(?!\s*:)", "Write 'username', not '{0}'."),
+    _term("username", r"\b(?:user[- ]names?|user[- ]?IDs?|login (?:names?|IDs?))\b(?!\s*:)", "Write 'username', not '{0}'.",
+          level="warning"),
     # Lowercase 'license' only, so quoted licence texts ('the License') are left alone.
     _term("licence", r"\b(?:[Aa]|[Tt]he|[Tt]his|[Tt]hat|[Yy]our|[Mm]y|[Oo]ur|[Tt]heir|[Nn]o|[Aa]ny|[Vv]alid|own|software|"
                      r"commercial|academic|free|site|research|institutional) licenses?\b"
@@ -208,9 +210,11 @@ BANNED_PATTERNS += [
                     r"|\bsetup (?:your|the|a|an|my|our|their|this|that|these|those|it|them)\b|\bset-ups?\b|\bsetting-up\b",
           "Write 'set up' for the verb and 'setup' for the noun, not '{0}'."),
     _term("runtime", r"\brun[- ]times?\b", "Write 'runtime', not '{0}'."),
-    _term("website", r"\bweb[- ](?:sites?|pages?)\b", "Write 'website' or 'webpage', not '{0}'."),
+    _term("website", r"\bweb[- ](?:sites?|pages?)\b", "Write 'website' or 'webpage', not '{0}'.",
+          level="warning"),
     # Not field labels such as 'Host name:'.
-    _term("filename", r"\b(?:file|host)[- ]names?\b(?!\s*:)", "Write it as one word ('filename', 'hostname'), not '{0}'."),
+    _term("filename", r"\b(?:file|host)[- ]names?\b(?!\s*:)", "Write it as one word ('filename', 'hostname'), not '{0}'.",
+          level="warning"),
     _term("x11_forwarding", r"\bX[- ]forwarding\b|\bX11-forwarding\b|\bx11[- ]forwarding\b|\bX[- ]11[- ]forwarding\b",
           flags=0, message="Write 'X11 forwarding', not '{0}'."),
     # Not GPU names such as 'A100 80GB'.

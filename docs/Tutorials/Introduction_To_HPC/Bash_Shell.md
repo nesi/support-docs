@@ -359,7 +359,7 @@ pwd
 
 ## Tab completion
 
-Sometimes file paths and file names can be very long, making typing out the path tedious.
+Sometimes file paths and filenames can be very long, making typing out the path tedious.
 One trick you can use to save yourself time is to use something called **tab completion**.
 If you start typing the path in a command and there is only one possible match,
 if you hit tab the path will autocomplete (until there are more than one possible matches).
@@ -485,7 +485,7 @@ see if a new output file was written.
 ## Globbing
 
 One of the most powerful features of bash is *filename expansion*, otherwise known as *globbing*.
-This allows you to use *patterns* to match a file name (or multiple files),
+This allows you to use *patterns* to match a filename (or multiple files),
 which will then be operated on as if you had typed out all of the matches.
 
 `*` is a **wildcard**, which matches zero or more characters.
@@ -569,7 +569,7 @@ asked for. As an exception, if a wildcard expression does not match
 any file, Bash will pass the expression as an argument to the command
 as it is.
 However, generally commands like `wc` and `ls` see the lists of
-file names matching these expressions, but not the wildcards
+filenames matching these expressions, but not the wildcards
 themselves. It is the shell, not the other programs, that deals with
 expanding wildcards.
 

@@ -171,7 +171,7 @@ Use "module keyword key1 key2 ..." to search for all possible modules matching a
 ### Listing Currently Loaded Modules
 
 You can use the `module list` command to see which modules you currently have loaded in your environment.
-On Mahuika you will have a few default modules loaded when you login.  
+On Mahuika you will have a few default modules loaded when you log in.  
 
 ```sh
 module list

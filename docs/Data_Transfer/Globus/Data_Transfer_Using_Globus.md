@@ -28,7 +28,7 @@ To move files and folders between `collections` (such as between Mahuika and ano
     `{{ globus_collection_storage}}` Globus endpoint.
     
 
-5. You will be shown a globus page requiring you to sign in to Mahuika. Click on `Use my username@iam.nesi.org.nz identity` text.
+5. You will be shown a globus page requiring you to log in to Mahuika. Click on `Use my username@iam.nesi.org.nz identity` text.
     ![Globus_Transfer_5.png](../../assets/images/Globus_Transfer_5.png)
 
 6. Once you have logged in, you will be sent back to the Globus transfer page. By default you will be placed to your

@@ -330,7 +330,7 @@ Duration    : 5h 19m 46s
 
 CPU hours   : 381.9 (1.4% failed)
 
-Labelled processes (list below) could submit via Slurm array requesting 12 CPUs, 72GB memory with a max queue size of 10.
+Labelled processes (list below) could submit via a Slurm job array requesting 12 CPUs, 72GB memory with a max queue size of 10.
 
 - `TRIMMGALORE`
 - `STAR_ALIGN_IGENOMES`

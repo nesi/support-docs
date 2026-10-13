@@ -67,7 +67,7 @@ configurations.
     chmod 600 ~/.ssh/config
     ```
 
-4. You can now log into the cluster, run the command.
+4. You can now log in to the cluster, run the command.
 
     ```sh
     ssh mahuika
@@ -171,7 +171,7 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
         IdentityFile ~/.ssh/mahuika_key
     ```
 
-You should now be able to login with only a single authentication prompt.
+You should now be able to log in with only a single authentication prompt.
 
 !!! warning
     Do not re-use the private key `mahuika_key` on other devices.
