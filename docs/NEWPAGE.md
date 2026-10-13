@@ -133,7 +133,7 @@ old/Path/To/Page.md: new/Path/To/Page.md
 For a moved directory, add a line for each page it contained (including `index.md`). For a deleted page, point the old path at the closest surviving page.
 
 !!! tip
-    The redirect key is the *old* path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
+    The redirect key is the _old_ path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
 
 ## Article/Category Order
 

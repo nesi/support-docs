@@ -30,7 +30,7 @@ plus one kind of compute allocation) in order to be valid and active.
 Compute allocations are expressed in terms of a number of units, to be
 consumed or reserved between a set start date and time and a set end
 date and time. For allocations of computing power, we use [Fair
-Share](../../Batch_Computing/Fair_Share.md)
+Share](../../Batch_Computing/Fairshare.md)
 to balance work between different projects.
 
 ### Compute allocations
@@ -58,7 +58,7 @@ what affects your project's Fair Share score.
 !!! note "Using up your compute allocation"
     You may continue to submit jobs even if you have used all of your
     compute allocation. The effect of having no RSUs remaining is a
-    [lower Fair Share](../../Batch_Computing/Fair_Share.md),
+    [lower Fair Share](../../Batch_Computing/Fairshare.md),
     not the inability to use CPUs. Your ability to submit jobs will only be
     removed when your project's allocation expires, not when your RSUs are exhausted.
 
