@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-Auto-fixes the 'support_mailto_link' warning from run_meta_check.py: replaces
+Auto-fixes the 'reannz.support_mailto_link' warning from run_proselint.py: replaces
 raw markdown/HTML links to mailto:support@nesi.org.nz with the
 'partials/support_request.html' include, per FORMAT.md's convention. The
 include always renders as "Contact our Support Team", so the original link

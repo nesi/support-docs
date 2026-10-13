@@ -1,4 +1,5 @@
 ---
+# No "*" here on purpose: seasonal notices are left out of the nav. Add new announcements to this list.
 nav:
   - New_HPC_Portal
   - Globus-Renaming.md

@@ -5,7 +5,8 @@ Human contributors should start with [README.md](README.md) and [CONTRIBUTING](d
 
 This repo is the source for the Mahuika HPC support documentation at <https://docs.nesi.org.nz>, built with MkDocs Material.
 
-- `docs/`: pages. Folders are nav categories, `index.md` makes a category-article, `.pages.yml` sets order and names.
+- `docs/`: pages. Folders are nav categories, `.pages.yml` sets order and names.
+  An `index.md` makes a category-article, which is only for very large categories (see [Article/Category Location](docs/NEWPAGE.md#articlecategory-location)).
 - `checks/`: QA scripts, run by CI and by VS Code tasks. See [checks/README.md](checks/README.md).
 - `overrides/`: theme templates and partials (includes).
 - `.github/workflows/`: CI. See [.github/workflows/README.md](.github/workflows/README.md).
@@ -53,8 +54,12 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 
 ## How to approach a task
 
+0. Once per session, before the first edit, check the environment.
+   If `.venv` is missing, or `aspell` or `markdownlint` is not on `PATH`, offer to run [Setup](#setup).
+   If `TERM_PROGRAM` is `vscode` and the `code` command is available, compare `code --list-extensions` with `.vscode/extensions.json`
+   and offer to install any missing ones with `code --install-extension <id>`. Ask before installing anything.
 1. Find the exact page or pages affected. Read the target page, the `.pages.yml` in its folder and its parent,
-   the parent overview (`index.md`) and a few sibling pages. Keep reading focused on these and on pages directly linked from the change.
+   the folder's overview page if it has one (listed first in `.pages.yml`) and a few sibling pages. Keep reading focused on these and on pages directly linked from the change.
 2. Before writing a new page, search `docs/` for existing pages on the same topic (similar file names, titles and key terms),
    then work through [Should This Be Written?](docs/PRINCIPLES.md#should-this-be-written) and
    [New Page or Existing Page?](docs/PRINCIPLES.md#new-page-or-existing-page).
@@ -69,12 +74,19 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 
 - Front matter uses `created_at:` (not `created:`), a specific `description:`, and canonical `tags:` keys from `tags.yml` (see [Tags](#tags)).
   `description` is used for search previews and for the generated `llms.txt`, so only use terms that appear in the page.
-- No H1 (`#`) in the body. Headings start at `##`.
+- No H1 (`#`) in the body. Headings start at `##`, use sentence case and say what their section is about.
+  Don't open a page with `## Introduction` or `## Overview`: the text after the title is the introduction.
+- Call the organisation REANNZ and the platform Mahuika. Only write NeSI where a name still carries it
+  (see [Names and terms](docs/FORMAT.md#names-and-terms)).
 - Code blocks always have a language (`sh`, `sl` for Slurm scripts, `py`, `txt`, ...). Do not prefix commands with `$`.
+- Values the reader replaces: use `username` and `nesi99991`, capitals for anything else (`INPUT_FILE`), never `<...>`,
+  and say what to replace after the block (see [Values to replace](docs/FORMAT.md#values-to-replace)).
 - Slurm examples: `#!/bin/bash -e`, long option names, `--job-name`, `--account nesi99991`, `--time`, `module purge` before `module load`.
 - Use `{% include "partials/support_request.html" %}` wherever the reader is told to contact support, not a raw mailto link.
 - Prefer module version macros such as `{{ applications.ANSYS.default }}` over hard-coded versions.
 - Links are relative to the current file. Do not link to the site by absolute `docs.nesi.org.nz` URL.
+- In `.pages.yml`, list only the pages that need a fixed position and keep `"*"` for the rest, so new pages can't drop out of the nav
+  (see [Article/Category Order](docs/NEWPAGE.md#articlecategory-order)).
 - Renaming, moving or deleting a page requires a line in [docs/redirect_map.yml](docs/redirect_map.yml) (old path: new path).
 - Images need alt text that describes what the image shows. Link text must say where it goes (not "here" or "this page").
 - Pages about AI tools must agree with [AI Agent Guidelines](docs/Software/AI/AI_Agent_Guidelines.md) and the
@@ -252,8 +264,8 @@ The accessibility audit (`./checks/run_a11y_check.sh`) needs a headless Chromium
 - Never delete, move, rename or restructure pages just to make a check pass (for example to fix a sibling-count warning).
   If a warning can only be fixed by changing the structure of the docs, describe the options and leave the decision to the user.
 - If a check script itself crashes, report the traceback. Do not treat a crash as a pass.
-- Several meta warnings have auto-fixers in `checks/fix_*.py`. Read the script's docstring before running it.
-  They deliberately fix only the safe cases, so rerun the meta check afterwards and handle what is left by hand.
+- Several meta and prose warnings have auto-fixers in `checks/fix_*.py`. Read the script's docstring before running it.
+  They deliberately fix only the safe cases, so rerun the check that reported the warning and handle what is left by hand.
 - CI (`.github/workflows/checks.yml`) runs the same checks on every pushed branch, and the results appear as annotations on the PR.
   Local results should match. If they don't, say so.
 

@@ -9,7 +9,7 @@ tags:
 These are open for review if you find any of them unreasonable or inefficient.
 
 !!! info
-    This page is about *hard limits* applied to jobs and users. For more information about *per project* usage limitations, see our page on [Fair Share](Fair_Share.md).
+    This page is about *hard limits* applied to jobs and users. For more information about *per project* usage limitations, see our page on [Fairshare](Fairshare.md).
 
 ## Per Job
 
@@ -19,12 +19,12 @@ These are open for review if you find any of them unreasonable or inefficient.
 - {{ slurm_limits.per_job.days }} days walltime
 - {{ slurm_limits.per_job.node_days }} node-days (walltime x nodes)
 
+Jobs using the [debug QoS](Debug_QoS.md) have much smaller limits.
+
 <!-- The walltime limit is there so that long work uses checkpointing.
 Splitting it into jobs that use [checkpointing](Job_Checkpointing.md) and chaining them with `--dependency` is good practice;
-only the [debug QoS](Job_Prioritisation.md#quality-of-service) may not be used this way.
+only the [debug QoS](Debug_QoS.md) may not be used this way.
 If you need more, {% include "partials/support_request.html" %}. -->
-
-<hr width=100%>
 
 ## Per User
 
