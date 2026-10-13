@@ -68,7 +68,7 @@ Scientific_Computing/HPC_Software_Environment/Software_Version_Management.md : S
 Scientific_Computing/HPC_Software_Environment/Software_Installation_Request.md : Software/Software_Installation_Request.md
 Scientific_Computing/HPC_Software_Environment/Installing_Applications_Yourself.md : Software/Installing_Applications_Yourself.md
 Scientific_Computing/Batch_Jobs/Checking_resource_usage.md : Batch_Computing/Checking_Resource_Usage.md
-Scientific_Computing/Batch_Jobs/Fair_Share.md : Batch_Computing/Fair_Share.md
+Scientific_Computing/Batch_Jobs/Fair_Share.md : Batch_Computing/Fairshare.md
 Scientific_Computing/Batch_Jobs/Hardware.md : Batch_Computing/Hardware.md
 Scientific_Computing/Batch_Jobs/Job_Checkpointing.md : Batch_Computing/Job_Checkpointing.md
 Scientific_Computing/Batch_Jobs/Job_Limits.md : Batch_Computing/Job_Limits.md
@@ -254,3 +254,4 @@ Scientific_Computing/Training/Webinars.md: Getting_Started/Getting_Help/Training
 Scientific_Computing/Training/Workshops.md: Getting_Started/Getting_Help/Training.md
 Getting_Started/Getting_Help/Wide_Area_Network.md: Data_Transfer/Data_Transfer_Overview.md
 Getting_Started/Getting_Help/NeSI_wide_area_network_connectivity.md: Data_Transfer/Data_Transfer_Overview.md
+Batch_Computing/Fair_Share.md: Batch_Computing/Fairshare.md

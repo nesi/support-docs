@@ -175,7 +175,10 @@ BANNED_PATTERNS += [
     # Lowercase 'job' only, so the Slurm Composer's 'Array Job' label is left alone.
     _term("job_array", r"\b[Aa]rray[- ]?jobs?\b|\b(?:[Ss]lurm|[Tt]ask) arrays?\b(?! jobs?\b)", flags=0,
           message="Write 'job array', not '{0}'."),
-    _term("fairshare", r"\bfair[- ]shar(?:e|es|ing)\b", "Write 'fairshare' (Slurm term), not '{0}'."),
+    # Case-sensitive: SchedMD writes both 'FairShare' and 'Fairshare', every other spelling is flagged.
+    # Not after '- ', so the 'fairshare' tag in front matter is left alone.
+    _term("fairshare", r"\b(?i:fair[- ]shar(?:e|es|ing))\b|(?<!- )\b(?!Fair[Ss]hares?\b)(?i:fairshar(?:e|es|ing))\b",
+          flags=0, message="Write 'FairShare' (or 'Fairshare'), not '{0}'."),
     _term("hyperthreading", r"\bhyper[- ]?thread(?:ing|s|ed)?\b",
           message="Write 'simultaneous multithreading' (then 'SMT'), not '{0}'. Hyper-Threading is Intel's name for it."),
     _term("multithreading", r"\bmulti[- ]thread(?:ing|ed|s)?\b",
