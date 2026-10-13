@@ -1,20 +1,18 @@
 ---
 created_at: '2022-05-18T03:38:21Z'
 tags:
-    - tutorial
-description: |
-    Have questions about our HPC, data analytics, or other eResearch services?  
-    Looking for tips on how to optimise your HPC jobs?  
-    Or, simply want to meet some of our Support Team?  
-
-    We run regular online Office Hours sessions, hosted via Zoom. These
-    sessions are open to anyone, you don't need to be an existing HPC Platform
-    user.
+    - troubleshooting
+description: Weekly drop-in Zoom sessions where you can ask our support team about HPC, data analytics and other eResearch services.
 ---
 
-{{ description }}
+Have questions about our HPC, data analytics, or other eResearch services?
+Looking for tips on how to optimise your HPC jobs?
+Or simply want to meet some of our support team?
 
-## Office Hours Dates
+We run regular online office hours, hosted on Zoom.
+These sessions are open to anyone, you don't need to be an existing user.
+
+## Office hours dates
 
 <link rel="stylesheet" href='/assets/stylesheets/office-hours-calendar.css'>
 <div id="office-hours-calendar">
@@ -28,24 +26,19 @@ If you are unable to add an Office Hour session to your calendar through
 these links, please email us at [training@reannz.co.nz](mailto:training@reannz.co.nz) and we can send a
 calendar invite directly to you.
 
-## How Does It Work
+## How it works
 
 Each session follows a casual 'drop-in / drop-out' format, where you can
 pop in at any point during the hour and stay for as long or as little as
 you'd like.
 
 Also, don't worry if you have a question or challenge that can't be
-solved on the spot.
+solved straight away.
 We can always use the Office Hours to collect some basic information
 about your issue and then reconnect with you at a later time to
 troubleshoot things further.
 
-## Other ways to get help
-
-Remember, you can  {% include "partials/support_request.html" %} at any
-time and we have a team of experts ready to answer any questions you may
-have, big or small. You can also find helpful user resources, links and
-documentation elsewhere in our User Support Centre.
+For other ways to get help, see [Getting Help](Contacting_Support.md).
 
 ## Feedback
 

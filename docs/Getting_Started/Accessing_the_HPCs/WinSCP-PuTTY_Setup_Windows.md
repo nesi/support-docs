@@ -8,7 +8,7 @@ description: Setting up WinSCP and PuTTY on Windows to connect to and copy files
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../Creating_an_Account.md)
+     -   Have an [active account and project.](../Getting_Started_Overview.md)
      -   Be using the Windows operating system.
 
 WinSCP is an SCP client for windows implementing the SSH protocol from
