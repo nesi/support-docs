@@ -123,11 +123,12 @@ for a single transfer'.
 ![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png)
 
 !!! warning
-    Transfer Mode: There are known issues using the default Automatic transfer mode. Some files, including 
-    source code files (aka text files), can be transferred with erroneous line endings. This will cause 
-    scripts or jobs to fail. If you see extra ^M characters in your files (easily seen with the cat -v 
-    command, this means your files have been transferred incorrectly. A workaround that sometimes works 
-    is to switch the WinSCP transfer mode to Binary
+    Transfer Mode: There are known issues using the default Automatic transfer mode.
+    Some files, including source code files (aka text files), can be transferred with erroneous line endings.
+    This will cause scripts or jobs to fail.
+    If you see extra ^M characters in your files (easily seen with the cat -v command),
+    this means your files have been transferred incorrectly.
+    A workaround that may work is to switch the WinSCP transfer mode to Binary
 
     We recommend using a different file transfer client.
 

@@ -1,6 +1,6 @@
 ---
 created_at: '2018-05-17T23:35:36Z'
-description: The factors that set a job's priority on Mahuika, including QoS, Fair Share, job age and job size.
+description: The factors that set a job's priority on Mahuika, including QoS, Fairshare, job age and job size.
 tags:
  - slurm
  - account
@@ -18,18 +18,18 @@ command `sprio -u $USER`.
 
 Priority scores are determined by a number of factors:
 
-### Fair Share
+### Fairshare
 
 Job priority decreases whenever the project uses more core-hours than
 expected, across all partitions.
-This [Fair Share](Fair_Share.md)
+This [Fairshare](Fairshare.md)
 policy means that projects that have consumed many core-hours in the
 recent past compared to their expected rate of use (either by submitting
 and running many jobs, or by submitting and running large jobs) will
 have a lower priority, and projects with little recent activity compared
 to their expected rate of use will see their waiting jobs start sooner.
-Fair Share contributes up to {{ slurm_limits.priority.fairshare_points }} points to the job priority.
-To see the current Fair Share score of a project, use the command `sshare`. To see recent usage, use `nn_corehour_usage`.
+Fairshare contributes up to {{ slurm_limits.priority.fairshare_points }} points to the job priority.
+To see the current Fairshare score of a project, use the command `sshare`. To see recent usage, use `nn_corehour_usage`.
 
 ### Job Age
 
