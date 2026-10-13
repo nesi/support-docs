@@ -1,11 +1,11 @@
 ---
 created_at: '2018-04-18T23:56:10Z'
 tags:
-- tutorial
 - account
 description: How to create a REANNZ HPC account.
 ---
 
+{% include 'partials/status-no-pro.md' %}
 
 !!! prerequisite
      Either an active login at a Tuakiri member institution, or

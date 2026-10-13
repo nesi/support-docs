@@ -6,6 +6,8 @@ status: []
 description: Checking how efficiently a job used its resources with seff, sacct and htop
 ---
 
+Check how efficiently your jobs use the CPUs, memory and time they ask for, after they finish or while they run.
+
 ## On Job Completion
 
 It is good practice to have a look at the resources your job used on
@@ -107,7 +109,7 @@ however bear in mind there are other factors that affect CPU efficiency.
 ## During Runtime
 
 In order to check in on a job that is running, you will need to ssh to
-the compute node where it it running.
+the compute node where it is running.
 
 ### Finding Job Node
 

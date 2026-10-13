@@ -74,10 +74,10 @@ Either your link has expired, or it was copied incorrectly.
 
 ## Trusting Device results in error
 
-![](../../assets/images/Trusted-Device-error.png)
+![NeSI login page showing 'We are sorry... Unexpected error when handling authentication request to identity provider.'](../../assets/images/Trusted-Device-error.png)
 
 
-#### This error is caused by a naming conflict, in other words you have used the same name previously.  Choose a different device name and try again
+This error is caused by a naming conflict: you have used the same device name previously. Choose a different device name and try again.
 
 
 ## General Troubleshooting

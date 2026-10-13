@@ -9,6 +9,7 @@ env:
   WORKFLOW_ID: "deploy.yml"
   DEPLOY_URL: "https://callumwalley.github.io/mkdocs-demo-deploy"
   HEAD: ${{ github.event.pull_request.head.ref }}
+  PR: ${{ github.event.pull_request.number }}
   GH_REPO: ${{ github.repository }}
   NO_MKDOCS_2_WARNING: "1"
 permissions:
@@ -22,6 +23,9 @@ jobs:
     name: Trigger test deployments
     runs-on: ubuntu-24.04
     steps:
+      - uses: actions/checkout@v6
+        with:
+          sparse-checkout: .github
       - name: Trigger Workflow in Another Repository
         id: trigger
         run: |
@@ -40,7 +44,8 @@ jobs:
           msg="Deployment in progress...<br><br>\
           <img src='https://c.tenor.com/tYyW3H6uO8oAAAAC/tenor.gif' width=20% \
           alt='kakapo'><br><br>Waiting for test environment to finish building, please be patient ☺️"
-          gh pr comment "${HEAD}" --edit-last --create-if-none --body "${msg}"
+          echo "${msg}" > comment.md
+          bash .github/pr_comment.sh "${PR}" demo-deploy comment.md
       - name: Wait for target workflow to complete
         id: wait
         env:
@@ -114,56 +119,5 @@ jobs:
               echo "::error title=Deploy failed::${conclusion}" 
             fi
             # Update message in pull request.
-            gh pr comment "${HEAD}" --edit-last --create-if-none --body "${msg}"
-
-      - name: Map changed pages to preview URLs
-        if: steps.wait.outputs.conclusion == 'success'
-        id: pages
-        run: |
-          changed_pages=$(gh api repos/${GITHUB_REPOSITORY}/compare/${{ github.event.pull_request.base.sha }}...${{ github.event.pull_request.head.sha }} \
-            --jq '.files[] | select(.filename | endswith(".md")) | .filename')
-          urls="${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/"$'\n'
-          for f in ${changed_pages}; do
-            g=${f#*/}; h=${g%.*}
-            urls="${urls}${DEPLOY_URL}/${GITHUB_REPOSITORY}/${HEAD}/${h}/"$'\n'
-          done
-          echo "urls<<EOF" >> $GITHUB_OUTPUT
-          echo "$urls" >> $GITHUB_OUTPUT
-          echo "EOF" >> $GITHUB_OUTPUT
-
-      - name: Wait for preview URLs to be live
-        if: steps.wait.outputs.conclusion == 'success'
-        run: |
-          # GitHub Pages CDN can lag behind the deploy; a URL that 404s serves
-          # GitHub's default 404 page, whose strict CSP breaks AccessLint's
-          # script injection. Poll each URL until it returns 200 first.
-          while IFS= read -r url; do
-            [ -z "$url" ] && continue
-            echo "Waiting for $url"
-            for i in $(seq 1 30); do
-              code=$(curl -s -o /dev/null -w "%{http_code}" "$url")
-              if [ "$code" = "200" ]; then
-                echo "  OK ($code)"
-                break
-              fi
-              echo "  Got $code, retrying (${i}/30)..."
-              sleep 5
-            done
-          done <<< "${{ steps.pages.outputs.urls }}"
-
-      - name: Run AccessLint WCAG audit
-        if: steps.wait.outputs.conclusion == 'success'
-        id: a11y
-        uses: AccessLint/audit@v0.3.2
-        with:
-          urls: ${{ steps.pages.outputs.urls }}
-          wcag-level: AA
-          fail-on: critical
-          min-impact: serious
-
-      - name: Post accessibility report on PR
-        if: steps.wait.outputs.conclusion == 'success' && always()
-        uses: marocchino/sticky-pull-request-comment@v2
-        with:
-          header: a11y
-          path: ${{ steps.a11y.outputs.report-markdown-path }}
+            echo "${msg}" > comment.md
+            bash .github/pr_comment.sh "${PR}" demo-deploy comment.md

@@ -1,5 +1,6 @@
 ---
 created_at: 2025-01-28
+status: new
 template: not_a_template
 not_a_parameter: This isn't valid
 tags:
@@ -10,14 +11,16 @@ tags:
 ---
 
 
+mroe bad changlers
 
 This page is meant for testing the linting checks. For all checks to run properly this file should be moved under `docs`.
 
-It should trigger the fail threshold for `meta-checks`, `proselint-checks`, `spelling-checks`, `slurm-lint`, and `test-build`
+It should produce warnings or errors from `meta-checks`, `proselint-checks`, `spelling-checks`, `slurm-lint`, and `test-build`,
+and each of them should exit `1` when run with `CHECKS_STRICT=1`.
 
 Add tests here as needed.
 
-Somee tpyos for spelchecker to triger fail neeeds to be at laest fiveteen keybored whopsers whiche is qiute a hihe tolerence i thinc. I woold loweir this threshehold bute for the momenent it can be a bitte overzaelos.
+Somee tpyos for the spelchecker. Wiht `CHECKS_STRICT=1` evn one keybored whopser shuold maek it fial.
 
 ``` as
 typos shuold be igonred in code blokcs 
@@ -25,6 +28,19 @@ typos shuold be igonred in code blokcs
 
 !!! warning "some admonistion"
     contents of admonition
+
+!!! warning "Body only indented 2 spaces"
+  so the admonition renders empty
+
+!!! warn "Type with no style"
+    renders as a grey box
+
+!!! note "Unclosed title
+    renders as plain text
+
+=== "Empty tab"
+
+Not in the tab.
 
 Typos should `be igonred` in inline code blocks.
 
@@ -61,9 +77,26 @@ module load something
 ```
 
 [bad link](../docs/General/not-a-page.md)
-[bad link](not-a-page.md)
+[bad link](../docs/not-a-page.md)
 
 [bad internal link](#impropers)
+
+## Introduction
+
+NeSI and the HPC were once called HPC3 (banned words), but the HPC Portal is fine, as is `NeSI` in code.
+
+Log into the cluster with two-factor authentication, then setup your project folder on the file system (non-preferred terms).
+
+![alt text](../docs/assets/images/ANSYS_0.png)
+![mceclip0.png](../docs/assets/images/ANSYS_0.png)
+
+[link to a rendered page path, not a .md file](../docs/Batch_Computing/Batch_Computing_Guide/)
+
+```sh
+ssh -Y lander.nesi.org.nz
+ssh nesi
+module load GROMACS/2023.2
+```
 
 Very very bad prose shit this is probably very unproper language sorry about that hopefully the chairman doesn't see lets circle back around.
 

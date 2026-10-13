@@ -5,7 +5,7 @@ tags:
 description: Bookmarking a collection path in Globus so you can reopen it quickly
 ---
 
-Borkmarks are a convenient way to quicky open a `Path` of an `Collection` very quickly.
+Bookmarks are a convenient way to quickly open a `Path` of a `Collection`.
 
 ## Create a bookmark
 

@@ -1,12 +1,9 @@
 ---
 created_at: 2026-07-15
-description: Using Mahuika OnDemand
-tags: 
-    - OnDemand
+description: What Mahuika OnDemand is, how to connect to it, and the interactive applications it provides.
+tags:
+    - interactive
 ---
-
-
-## Overview
 
 OnDemand empowers students, researchers, and industry professionals with remote and interactive web access to the HPC platforms.
 
@@ -16,7 +13,7 @@ OnDemand empowers students, researchers, and industry professionals with remote 
 ## Connecting to OnDemand
 
 !!! prerequisite
-     Requires [an account](https://www.nesi.org.nz/researchers/apply-access-our-services).
+     Requires [an active account and project](../../Getting_Started/Getting_Started_Overview.md).
 
 Connect to OnDemand: [https://ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
@@ -27,7 +24,7 @@ For more information see the [How-to guide](how_to_guide.md).
 A number of interactive applications can be accessed through OnDemand, including:
 
 - [Slurm Composer](Apps/Slurm_Composer.md) - build, submit and track Slurm batch jobs from your browser
-- [JupyterLab](Apps/JupyterLab/index.md)
+- [JupyterLab](Apps/JupyterLab/JupyterLab_Overview.md)
 - [RStudio](Apps/RStudio.md)
 - [VS Code](Apps/VSCode.md)
 - [Virtual desktop](Apps/Virtual_Desktop.md)
@@ -40,11 +37,11 @@ A number of interactive applications can be accessed through OnDemand, including
 
 ## Known Issues
 
-A list of known issues and limitations with OnDemand, can be found on [this page](../../Announcements/Known_Issues_HPC3.md/#ondemand-apps)
+A list of known issues and limitations with OnDemand can be found in [Known Issues: OnDemand Apps](../../Announcements/Known_Issues_HPC3.md#ondemand-apps).
 
 ## Release notes
 
-Release notes can be found [here](Release_Notes/index.md).
+See the [OnDemand release notes](Release_Notes/index.md).
 
 ## Acknowledgements
 

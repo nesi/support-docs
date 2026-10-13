@@ -13,7 +13,7 @@ description: Release notes for my.nesi.org.nz v2.8.0 - notification preference a
 ## New and Improved
 
 -   Improved [NeSI Notification
-    Preferences](../../../Getting_Started/my-nesi-org-nz/Managing_Notification_Preferences.md)
+    Preferences](../../Getting_Help/System_Status.md#manage-your-notifications)
     to be project-specific
 
 -   Improved [allocation renewal

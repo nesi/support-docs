@@ -2,6 +2,9 @@ matrix:
 - name: Markdown
   aspell:
     lang: en
+    # British -ise spelling, the closest aspell has to NZ English (docs/PRINCIPLES.md).
+    # Plain `en` accepted US spellings too.
+    d: en_GB-ise
     ignore-case: true
   dictionary:
     wordlists:

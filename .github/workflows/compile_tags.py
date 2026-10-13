@@ -29,9 +29,13 @@ def load_vocabulary(path):
     vocab = yaml.safe_load(open(path))
     alias_map = {}
     for canonical, entry in vocab.items():
-        alias_map[canonical.lower()] = canonical
-        for alias in (entry.get("aliases") or []):
-            alias_map[alias.lower()] = canonical
+        for alias in [canonical, *(entry.get("aliases") or [])]:
+            key = str(alias).lower()
+            # An alias listed under two tags silently resolves to whichever is last.
+            if key in alias_map and alias_map[key] != canonical:
+                print(f"::warning file={path},title=tag.ambiguous_alias::Alias '{alias}' is listed under both "
+                      f"'{alias_map[key]}' and '{canonical}'. Remove it from one of them.")
+            alias_map[key] = canonical
     return vocab, alias_map
 
 

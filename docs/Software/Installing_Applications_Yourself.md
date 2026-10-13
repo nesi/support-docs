@@ -49,6 +49,8 @@ Downloading the code can be done in various ways.
 - Checkout a git repo `git clone <URL>`
 - Downloading a tarball (`wget <URL>.tgz`). Unpack the tarball using the command `tar -xf <downloaded file>.tgz`.
 
+Install only from trusted sources, and don't pipe a download straight into a shell (`curl ... | bash`).
+
 ### Load Dependencies
 
 You will probably want to build your application against some of the existing Mahuika software stack.

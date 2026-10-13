@@ -9,6 +9,9 @@ Tests should be made as Python scripts to allow flexibility of use. Currently th
 - [GitHub Actions](https://docs.github.com/en/actions) as defined in [workflows](../.github/workflows/),
 - [VSCode Problem Matchers](https://code.visualstudio.com/docs/editor/tasks#_processing-task-output-with-problem-matchers) as defined in [tasks.json](../.vscode/tasks.json).
 
+By default every check exits `0` whatever it reports. Set `CHECKS_STRICT=1` to make a check exit `1` if it reported any warning or error
+(notices do not count). This is intended for local use and AI agents, CI does not set it.
+
 ## Check Types
 
 ### Spellcheck
@@ -31,9 +34,16 @@ the typo is probably occuring elsewhere in the text in a valid context, fix it h
 
 *This linter is defined in [run_proselint.py](run_proselint.py) script.*
 
-Checks text follows best practice for English language.
+Checks text follows best practice for English language. Fenced code blocks are skipped.
 
 Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json).
+
+Our own rules, words and patterns that shouldn't appear in pages (old names, retired hostnames, generic headings,
+placeholder image alt text, "here" as link text, the support email address, and non-preferred terms such as
+"file system"), are listed in `BANNED_PATTERNS` in
+[prose_rules.py](prose_rules.py). Each runs as a proselint check named `reannz.<name>`, at the level the entry gives
+(only warnings fail `CHECKS_STRICT`), so one can be turned off in `.proselint.json` with `"reannz.<name>": false`.
+To ban something new, add an entry there rather than writing a new check.
 
 ### Markdown Lint
 
@@ -45,13 +55,45 @@ Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlin
 
 *This linter is defined in [run_meta_check.py](run_meta_check.py) script.*
 
-Catch-all for custom checks.
+Custom checks for page structure: front matter, titles, tags, nav, headings, sections, admonitions, code blocks and links.
+Rules about the words on a page are in [Prose Lint](#prose-lint).
 
 See script for details.
+
+Admonitions (`!!!`, `???`) and content tabs (`===`) are checked here, not by markdownlint, which only understands CommonMark.
+A body indented less than 4 spaces renders as an empty box without any build warning, so `admonition_structure` looks for that,
+malformed openers, and admonition types with no style (Material's built-in types plus any `.admonition.<type>` in `docs/assets/stylesheets/`).
 
 ### Test Build
 
 Does a 'strict' build of the site, capturing any errors emmited by mkdocs.
+
+It rebuilds every page by default. `./checks/run_test_build.py --dirty` only rebuilds pages changed since the last build in `public/`,
+which is faster (the VS Code task uses it) but drops warnings for skipped pages.
+It also writes an incomplete `llms.txt`, so the `mkdocs_llmstxt` 'not found in the generated pages' warnings are hidden in that mode.
+
+### Accessibility (WCAG)
+
+*This linter is defined in [run_a11y_check.sh](run_a11y_check.sh), parsed by [parse_a11y_report.py](parse_a11y_report.py).*
+
+Runs the [AccessLint](https://github.com/AccessLint/audit) WCAG audit against a local `mkdocs build` (the `public/` directory), rather than a deployed site, so it runs the same way in CI as it does locally.
+
+Like the other checks, it can be scoped to specific pages by passing their `docs/*.md` source paths as arguments; with none given, every page in the site is audited.
+
+AccessLint's own inline annotations only fire for violations with a JS/React source map, which a server-rendered mkdocs site never has, so `parse_a11y_report.py` reads its JSON report instead and maps each violation back to the built HTML file under `public/`.
+
+## Errors and the PR summary
+
+Only use `error` level for problems that should block merging, currently: a failed build,
+broken links, macro or include errors ([run_test_build.py](run_test_build.py)) and front matter
+that isn't valid YAML ([run_meta_check.py](run_meta_check.py)).
+Checks exit non-zero if they emitted an error. Everything else should be a `warning` or `notice`.
+
+In CI each check's output is saved and [summarise_annotations.py](summarise_annotations.py)
+turns it into a single PR comment (posted by [pr_comment.sh](../.github/pr_comment.sh)).
+Errors are always listed. Other findings are only listed if they are on a line the PR changed.
+To preview locally, save each check's output to `annotations/<check>.txt` then run
+`python3 checks/summarise_annotations.py origin/main annotations`.
 
 ### Debugging Checks
 

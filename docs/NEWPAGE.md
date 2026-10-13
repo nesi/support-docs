@@ -9,6 +9,7 @@ search:
 !!! prerequisite "See also"
     - To learn how you can contribute, [see CONTRIBUTING](CONTRIBUTING.md).
     - For examples of markdown use, [see FORMAT](FORMAT.md).
+    - For what to write, and whether to write it, [see PRINCIPLES](PRINCIPLES.md).
 
 This page details how to create a new article or category in the documentation.
 
@@ -84,14 +85,29 @@ Public facing articles are found in the `docs` folder:
 
     Ideally, the page title should be the same as the category, to avoid confusion.
 
+!!! warning "Use category-articles sparingly"
+    Only make a category-article when the category has too many children to browse in the nav,
+    for example [Supported Applications](Software/Available_Applications/index.md).
+
+    The nav shows the `index.md` as the category's label, not as one of its children.
+    Readers who open the category with the arrow never see it, and nothing marks the label as a page of its own.
+
+    If any other category needs an overview, make it an ordinary article, list it first in the category's `.pages.yml`,
+    and give it a descriptive title, for example [Data Transfer Overview](Data_Transfer/Data_Transfer_Overview.md).
+    Small categories often don't need one.
+
+    This follows NN/g's advice against [split buttons in navigation menus](https://www.nngroup.com/articles/split-buttons-navigation/),
+    and Baymard's usability testing, where people [didn't tap category headers](https://baymard.com/blog/mobile-main-nav-view-all)
+    to reach the broader page.
+
 ![Documentation Structure](assets/images/doc_struct.png)
 
 ## Article/Category Naming
 
 By default, the filename will be use as title of the article/category.
 
-Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav,
-this usually happens around 24-ish characters however this will vary depending on the letters being used.
+Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav.
+The meta check warns when a title is over 28 characters, but this will vary depending on the letters being used.
 
 Use [Title Case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case), pretty much every word should be capitalised except for the little ones.
 
@@ -117,15 +133,15 @@ old/Path/To/Page.md: new/Path/To/Page.md
 For a moved directory, add a line for each page it contained (including `index.md`). For a deleted page, point the old path at the closest surviving page.
 
 !!! tip
-    The redirect key is the *old* path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
+    The redirect key is the _old_ path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
 
 ## Article/Category Order
 
 By default articles will be ordered alphabetically.
 
-Order can be set manually with the use of a `.page.yml` file, this file determines the ordering of all of it's sibling articles and categories.
+Order can be set manually with the use of a `.pages.yml` file, this file determines the ordering of all of it's sibling articles and categories.
 
-The `.page.yml` might looks like this:
+The `.pages.yml` might looks like this:
 
 ```yml
 ---
@@ -138,9 +154,11 @@ nav:
 `*` will be replaced by all other pages, in the default order.
 
 !!! warning
-    If you do set page order manually, make sure you include the `...` else some pages will not be rendered.
+    Try to include `"*"`, so a page added later still appears in the nav even if nobody lists it.
+    Only list the pages that need a fixed position, and let `"*"` add the rest.
+    If every page needs a fixed position, leave the last one to `"*"`.
 
-When being used to order _non-article categories_ you may overwrite the name in `.page.yml`.
+When being used to order _non-article categories_ you may overwrite the name in `.pages.yml`.
 
 Don't use this method to set the names of articles or category-articles (use the `title` parameter in that pages meta).
 
@@ -154,7 +172,7 @@ nav:
 ```
 
 For full description of `.pages.yml` use, see the
-[awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin).
+[awesome-nav plugin](https://lukasgeiter.github.io/mkdocs-awesome-nav/).
 
 ## Article Metadata
 
@@ -199,12 +217,55 @@ The following sections detail the most usual entries.
 | `icon`        | Page icon.                                                    | Path |  |
 | `status`      | Will display a symbol on nav                                  | `new`, `deprecated` or `tutorial` | |
 | `hide`        | Used to turn off features (e.g. table of content)             | [`tags` `toc` `nav`]| |
-| `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml) — see that file for the full list and aliases. | String[] | `tags: [ slurm, containers ]` |
+| `tags`        | Used for internal and external search indexing. Must be canonical keys from [`docs/assets/tags.yml`](assets/tags.yml). See [Tags](#tags). | String[] | `tags: [ slurm, containers ]` |
 | `search: exclude` | Used to exclude page from internal search                 | Bool | `search: exclude: True`|
 | `search: boost` | Used to increase or decrease weight in internal search      | Float | `search: boost: 0.1` to lower weight,  `search: boost: 10` to raise weight |
 | `no_module: true` | Will disable linter warnings if corresponding module data is not found (applications pages only) | Bool | `True` `False` |
 
 A good description/tags improve RAG retrieval for the whole page.
+
+### Tags
+
+Tags come from a fixed vocabulary in [`docs/assets/tags.yml`](assets/tags.yml).
+Each tag has a canonical key (used in front matter), a `display` label (shown on the site) and a list of `aliases`.
+Tags are used for search, the [tag index](tags.md) and the `pages_with_tag()` macro.
+On pages under `Software/Available_Applications/`, tags also become the application's domains, which are the filter options on the Supported Applications page.
+
+Run `python3 list_tags.py` to see which tags are in use and how often.
+
+#### Tagging a Page
+
+- Use 1 to 5 tags; 2 or 3 is usual. The meta check warns outside this range.
+- Use canonical keys only (`python`, not `Python` or `conda`). Aliases are accepted for old pages, but the meta check will ask you to replace them.
+- Start with the tags on sibling pages in the same folder.
+- Choose from each of these that applies, and skip the rest:
+    - **Topic**: the part of the platform the page is about (`slurm`, `storage`, `file_transfer`, `access`, `gpu`, ...).
+    - **Research domain**: only if the page is specific to a field (`chemistry`, `biology`, `earth_science`, ...). Application pages usually have one.
+    - **Content type**: `tutorial`, `troubleshooting`, `announcement` or `release_notes`, if the page is one.
+- Do not use the retired tags listed at the bottom of `tags.yml`.
+- Do not use a tag that is not in `tags.yml`. If nothing fits, use the closest tag and propose a change to the vocabulary.
+
+#### Changing the Vocabulary
+
+Prefer adding an alias to an existing tag over adding a new tag.
+Specific tools, commands, products and spellings (for example `globus`, `tmux`, `apptainer`) are aliases, not tags.
+
+A new tag should:
+
+- apply to at least 3 pages,
+- be a topic, research domain or content type that a reader would browse by, and not overlap an existing tag,
+- not be too generic (`general`, `hpc`, `tips`) or too specific (a single command). These are the reasons past tags were retired.
+
+```yml
+new_tag:                          # snake_case key, used in front matter
+  display: New Tag                # Title Case label shown on the site
+  aliases: [new tag, other name]  # lower case unless a proper noun
+```
+
+- An alias must belong to only one tag. `compile_tags.py` warns if an alias is listed under more than one.
+- Renaming or removing a tag, or moving an alias to a different tag, changes every page that uses it.
+  Update those pages in the same change (`python3 normalize_tags.py --dry-run` shows what it would rewrite).
+- Retired tags are listed as comments at the bottom of `tags.yml` with the reason, so they are not added again.
 
 ### Zendesk Imported
 
@@ -239,6 +300,7 @@ status: new
 ```
 
 This will show a little exclamation mark next to the page title in the nav.
+Remove it eventually (60 days approx).
 
 ### Tutorial
 
@@ -284,14 +346,14 @@ This helps set expectations and allows people to determine if this lesson is rel
 
 ### Prerequisites
 
-A 'prerequisites' admonition, to point to the previous lesson.
+A 'prerequisite' admonition, to point to the previous lesson.
 
 ```md
-!!! prerequisites
+!!! prerequisite
     - [Link to Previous Page](CONTRIBUTING.md)
 ```
 
-!!! prerequisites
+!!! prerequisite
     - [Link to Previous Page](FORMAT.md)
 
 ### Quiz
@@ -338,9 +400,9 @@ and answer the 'questions' posed in the objectives.
 
 ### Next
 
-Finally a `next` admonition pointing to the next page.
+Finally a `postrequisite` admonition pointing to the next page.
 
-!!! next
+!!! postrequisite
     [Next Page](NEWPAGE.md)
 
 ### Rule of Three

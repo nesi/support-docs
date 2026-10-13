@@ -7,7 +7,7 @@ tags:
 description: How to run an JupyterLab interactive session on the Mahuika cluster.
 ---
 
-For new users we recommend running Jupyterlab from our [OnDemand Service](./OnDemand/index.md).  However,
+For new users we recommend running Jupyterlab from our [OnDemand Service](./OnDemand/OnDemand_Overview.md).  However,
 many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
 >If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
@@ -18,7 +18,7 @@ To run JupyterLab in Slurm interactive mode, first we need to load your interact
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash
 ```
 
-Then, we need to start up Python, install JupyterLab if you dont have it
+Then, we need to start up Python, install JupyterLab if you don't have it
 yet, and obtain the hostname and the port:
 
 ```sh
@@ -85,5 +85,5 @@ http://127.0.0.1:PORT/lab?token=TOKEN
 # http://127.0.0.1:9339/lab?token=e6ff816a27867d88311bcc9f04141402590af48c2fd5f117
 ```
 
-You will now be able to see and work wih Python+JupyterLab in your web browser.
+You will now be able to see and work with Python+JupyterLab in your web browser.
 

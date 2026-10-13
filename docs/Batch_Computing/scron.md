@@ -7,6 +7,8 @@ description: How to use scron (Slurm cron) to schedule jobs
 
 *cron* is a linux service that provides users a method to run a task (job) at a set time or interval. *scron* is the Slurm version of this service that allows users to set up jobs using the well-documented cron syntax along with Slurm job configuration.  
 
+<!-- Use `scron` for genuinely periodic tasks, not to keep jobs permanently queued. -->
+
 ## scrontab
 
 To make use of the *scron* service, you will use the `scrontab` utility.

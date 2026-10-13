@@ -71,7 +71,7 @@ The following Slurm script is a template for running Trinity Phase 1
 **Note**  :
 
 - `--cpus-per-task` and `--mem` defined in the following example are
-  just place holders. 
+  just place holders.
 - Use a subset of your sample, run a test first to find the
   suitable/required amount of CPUs and memory for your dataset
 
@@ -221,7 +221,6 @@ srun Trinity --CPU ${SLURM_CPUS_PER_TASK} --max_memory 20G \
      FARMIT failed to accept job.  Will try again shortly.
      ```
 
-
 ## Benchmarks
 
 Here we provide details of a number of Trinity assemblies that have been
@@ -269,13 +268,11 @@ geographical locations, of approximately 286 million paired reads. The
 assembly was performed using the two-phase Trinity workflow discussed
 above, using those submission scripts as templates.
 
-Phase 1 ran on 18 threads with 220 GB memory on the bigmem partition (now hugemem) and
-took approximately 15 hours to complete.
+Phase 1 ran on 18 threads with 220 GB memory and took approximately 15 hours to complete.
 
-For Phase 2, the master process ran on a single core with 20 GB memory
-on the bigmem partition (now hugemem). HPC GridRunner was configured with both
-`cmds_per_node` and `max_nodes` set to 100, with the sub-jobs running on
-either large or bigmem partitions (now only hugemem) and requesting 5 GB memory and 1 hour
+For Phase 2, the master process ran on a single core with 20 GB memory.
+HPC GridRunner was configured with both `cmds_per_node` and `max_nodes`
+set to 100, with the sub-jobs requesting 5 GB memory and 1 hour
 wall time each. The number of commands (mini-assemblies) that needed to
 be run during this phase was 2,020,460. Phase 2 took approximately 19
 hours to complete (elapsed time) and cost around 1,800 core hours.
@@ -288,9 +285,7 @@ was performed using the two-phase Trinity workflow discussed above,
 using those submission scripts as templates.
 
 There were 4,136,295 mini-assemblies to run in Phase 2. The master
-process requested 30 GB memory on the bigmem partition (now hugemem) and HPC
-GridRunner was configured with both `cmds_per_node` and `max_nodes` set
-to 100. The sub-jobs ran on either the large or bigmem partitions (now only hugemem) and
-required 1 hour wall time and 5 GB memory each. Phase 2 took
-approximately 32 hours to complete (elapsed time) and cost around 3,100
-core hours.
+process requested 30 GB memory and HPC GridRunner was configured with
+both `cmds_per_node` and `max_nodes` set to 100. The sub-jobs required
+1 hour wall time and 5 GB memory each. Phase 2 took approximately
+32 hours to complete (elapsed time) and cost around 3,100 core hours.

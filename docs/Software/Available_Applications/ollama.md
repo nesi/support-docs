@@ -16,7 +16,7 @@ For a list of available models, see [AI Models](../../Storage/Models.md).
 
 !!! warning
     We don't recommend running ollama like this except for small test jobs.
-    It is a very inefficient use of GPUs.
+    It is an inefficient use of GPUs.
 
 ```sl
 #!/bin/bash -e
@@ -80,6 +80,13 @@ until ollama list &>/dev/null; do sleep 1; done
 
 echo "What is the capital of France" | ollama run llama3.1:8b
 ```
+
+!!! tip "Random Port"
+
+    ```
+    PORT=$(python3 -c "import socket; s=socket.socket(); s.bind(('', 0)); print(s.getsockname()[1]); s.close()")
+    ```
+    Will assign a random free port number to `PORT`
 
 !!! tip "Debugging"
     For verbose server logs, set `OLLAMA_DEBUG=1` before `ollama serve`.

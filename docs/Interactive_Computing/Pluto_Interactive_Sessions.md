@@ -7,7 +7,7 @@ tags:
 description: How to run a Pluto interactive session on the Mahuika cluster.
 ---
 
-For new users we recommend running Pluto from our [OnDemand Service](./OnDemand/index.md).  However,
+For new users we recommend running Pluto from our [OnDemand Service](./OnDemand/OnDemand_Overview.md).  However,
 many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
 >If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
@@ -83,4 +83,4 @@ http://0.0.0.0:PORT/?secret=SECRET
 # http://0.0.0.0:9627/?secret=mXmq6659
 ```
 
-You will now be able to see and work wih Julia+Pluto in your web browser.
+You will now be able to see and work with Julia+Pluto in your web browser.

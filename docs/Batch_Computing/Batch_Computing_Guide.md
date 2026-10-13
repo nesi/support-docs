@@ -10,7 +10,8 @@ Batch jobs can be submitted via several methods. The most basic is a [simple Slu
 Slurm can also run [jobs arrays](Job_Arrays.md).
 We also provide access to a [Globus Compute](Globus_Compute.md) endpoint which can be used to submit jobs.
 
-The Slurm scheduler utilises [Fair Share](Fair_Share.md) to help with [job prioritisation](Job_Prioritisation.md). We also impose [general limits on the size and number of jobs](Job_Limits.md) submitted by any user.
+The Slurm scheduler utilises [Fairshare](Fairshare.md) to help with [job prioritisation](Job_Prioritisation.md). We also impose [general limits on the size and number of jobs](Job_Limits.md) submitted by any user.
+Jobs use the normal QoS unless you request the [debug QoS](Debug_QoS.md), which is only for short tests and debugging.
 
 Depending on the needs of your batch jobs, you may need to specify the partition you want the job to run on. Please see the [Hardware](Hardware.md) page for specifics about the system. If you need to use GPUs, the [Using GPUs](Using_GPUs.md) page will provide generic information to get started.
 
@@ -21,21 +22,21 @@ We also have a [Slurm reference sheet](../Getting_Started/Cheat_Sheets/Slurm-Ref
 
 ### Batch scripts
 
-Jobs on the HPC are submitted in the form of a *batch script* (`.sl`) containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
+Jobs on Mahuika are submitted in the form of a *batch script* (`.sl`) containing the code you want to run and a header of information needed by our job scheduler *Slurm*.
 
 The following is a template batch script with both the minimum requirements and some additional best practice options included.
 
 ```sl
 #!/bin/bash -e
 
-#SBATCH --account       <projectcode>   # needed if you are in multiple projects
+#SBATCH --account       <projectcode>   # the project this work belongs to
 #SBATCH --job-name      BatchJob        # shows up in the queue
 #SBATCH --time          00:01:00        # Walltime limit (minutes or HH:MM:SS)
 #SBATCH --mem           512MB           # Memory in MB or GB
 #SBATCH --cpus-per-task 1               # CPUs
-#SBATCH --output        log/%x.%j.out   # send output to the file <job-id>.<job-name>.out
+#SBATCH --output        log/%x.%j.out   # output to file <job-name>.<job-id>.out
 
-# print the contents of the batch script at the top of the output file for reference
+# print the contents of the batch script at the top of the output for reference
 cat $0
 
 # purge and load needed modules
@@ -44,6 +45,10 @@ module load <module-name>
 
 <code to be run goes here>
 ```
+
+`--account` must be the project the work belongs to.
+Under the [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree), you may only use the platform for the approved project you were given access for.
+You can leave it out if you are only in one project.
 
 ### Submitting
 
@@ -61,25 +66,23 @@ Submitted batch job 1234567
 
 `sbatch` options can be given on the command line or (as in the example above) in `#SBATCH` pragmas.
 
-You can find details on its use in the [sbatch manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html).
+You can find details on its use in the [`sbatch` manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html).
 
 ## Managing and reviewing your Slurm jobs
 
 ### Job Queue
 
-The whole job queue can be seen using
-
-```bash
-squeue
-```
-
-Or you can filter to check just your jobs using
+You can check your own jobs using
 
 ```bash
 squeue --me
 ```
 
-You can find details on its use in the [squeue manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html).
+Plain `squeue` shows the whole job queue, for all users.
+
+You can find details on its use in the [`squeue` manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html).
+
+Rather than polling `squeue` in a loop, use `sbatch --wait` to block until a job ends, `--dependency` to chain jobs, or `--mail-type` for email.
 
 ### Completed jobs
 
@@ -102,7 +105,7 @@ Each job will show as multiple lines, one line for the job and then additional l
     - `sacct --state=PENDING/RUNNING/FAILED/CANCELLED/TIMEOUT` Filter jobs by state.
     - `sacct --format...` changes which fields are displayed out of the 120+ available.
 
-You can find details on its use in the [sacct manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html).
+You can find details on its use in the [`sacct` manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html).
 
 ### Cancelling
 
@@ -110,10 +113,10 @@ You can find details on its use in the [sacct manual](https://slurm.schedmd.com/
 You can obtain the job ID by using `sacct` or `squeue`.
 
 !!! tip
-    - `scancel --me` Cancel all jobs submitted by you.
+    - `scancel --me` Cancel all jobs submitted by you, including ones started by other tools or sessions.
     - `scancel {[n1]..[n2]}` Cancel all jobs with an id between `[n1]` and `[n2]`.
 
-You can find details on its use in the [scancel manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scancel.html).
+You can find details on its use in the [`scancel` manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scancel.html).
 
 ### Checking job efficiency
 
@@ -142,5 +145,4 @@ Add the following to your batch script before running:
 #SBATCH --profile           task
 ```
 
-After the job finishes running you can get plots of the resource utilisation by running `profile_plot <jobid>`, or the raw profile data by running `profile_data <jobid>`.  Both programs have formatting options shown by their `--help` option.
-
+After the job finishes running you can get plots of the resource utilisation by running `profile_plot <jobid>`, or the raw profile data by running `profile_data <jobid>`. Both programs have formatting options shown by their `--help` option.

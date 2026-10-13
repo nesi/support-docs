@@ -9,23 +9,28 @@ tags:
 These are open for review if you find any of them unreasonable or inefficient.
 
 !!! info
-    This page is about *hard limits* applied to jobs and users. For more information about *per project* usage limitations, see our page on [Fair Share](Fair_Share.md).
+    This page is about *hard limits* applied to jobs and users. For more information about *per project* usage limitations, see our page on [Fairshare](Fairshare.md).
 
 ## Per Job
 
 ![job limits](../assets/images/job_limits.png){ align=right width=75% }
 
-- 10 nodes
-- 21 days walltime
-- 21 node-days (walltime x nodes)
+- {{ slurm_limits.per_job.nodes }} nodes
+- {{ slurm_limits.per_job.days }} days walltime
+- {{ slurm_limits.per_job.node_days }} node-days (walltime x nodes)
 
-<hr width=100%>
+Jobs using the [debug QoS](Debug_QoS.md) have much smaller limits.
+
+<!-- The walltime limit is there so that long work uses checkpointing.
+Splitting it into jobs that use [checkpointing](Job_Checkpointing.md) and chaining them with `--dependency` is good practice;
+only the [debug QoS](Debug_QoS.md) may not be used this way.
+If you need more, {% include "partials/support_request.html" %}. -->
 
 ## Per User
 
-- 2688 CPU cores occupied (so 16 full Genoa nodes, or 21 Milan nodes),
-- 3528 core-days booked by running jobs (so 3 weeks of one full node).
-- 6 TB of memory occupied (4 full 1.5 TB nodes)
-- 30 TB-days booked by running jobs (so 3 weeks of one full 1.5 TB node).
-- 6 H100 GPUs occupied, or 14 GPU-days of any GPU type booked by running jobs (so 2 GPUs for 1 week).
+- {{ slurm_limits.per_user.cores }} CPU cores occupied,
+- {{ slurm_limits.per_user.core_days }} core-days booked by running jobs.
+- {{ slurm_limits.per_user.memory_tb }} TB of memory occupied
+- {{ slurm_limits.per_user.tb_days }} TB-days booked by running jobs.
+- {{ slurm_limits.per_user.gpus }} GPUs occupied, {{ slurm_limits.per_user.gpu_days }} GPU-days booked by running jobs.
 - No user can have more than 1,000 jobs in the queue at a time.

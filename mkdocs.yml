@@ -77,7 +77,7 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 extra:
-  slurm: slurm-25.05.6
+  slurm: slurm-25.05.6 # Overwritten by macro_hooks.py from docs/assets/slurm-limits.json.
   project_code: nesi99991
   working_directory: ["/nesi/nobackup/nesi99991", "resbaz2607"]
   example_script: "sum_matrix.r"

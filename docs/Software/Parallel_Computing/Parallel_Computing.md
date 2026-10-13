@@ -43,7 +43,7 @@ Software may:
 
 Shared Memory Parallelism, or multi-threading, parallelises itself by forking (duplicating) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
-A non-parallalised (series) program works like this:
+A non-parallelised (series) program works like this:
 
 ![serial](../../assets/images/parallel_execution_serial.png)  
 
@@ -78,7 +78,7 @@ taskset -c -p $$  # Prints available CPUs
 
 ## Distributed Memory
 
-Distributed memory parellelism, generally implemented with the Message Passing Interface (MPI), enables distributed parallel computation across multiple nodes through inter-process communication.
+Distributed memory parallelism, generally implemented with the Message Passing Interface (MPI), enables distributed parallel computation across multiple nodes through inter-process communication.
 
 A distributed memory parallelisation program:
 

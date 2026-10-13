@@ -2,13 +2,12 @@
 created_at: '2019-05-03T04:15:24Z'
 description: How to set up cluster access using 'git bash'
 tags:
-   - version_control
    - access
 title: Git Bash (Windows)
 ---
 
 !!! prerequisite
-     -   Have a [NeSI account.](../Creating_an_Account.md).
+     -   Have an [active account and project](../Getting_Started_Overview.md).
      -   Be a member of an [active project.](../Projects/Applying_to_Join_a_Project.md)
 
 ## First time setup
@@ -41,5 +40,5 @@ scp <path/filename> nesi:~/
 
 For more info visit [data transfer](../../Data_Transfer/Data_Transfer_Overview.md).
 
-!!! prerequisite "What Next?"
-   - [Standard Terminal Setup](Standard_Terminal_Setup.md)
+!!! postrequisite "What Next?"
+    - [Standard Terminal Setup](Standard_Terminal_Setup.md)
