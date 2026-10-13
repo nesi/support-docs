@@ -113,7 +113,8 @@ Variables can help with ensuring our script is readable, reusable and robust.
     0 0 0 01sample.txt
     ```
 
-    Spaces/special characters
+    Using quotations around a call of a variable name can help avoid issues caused by spaces or other special characters in the variable.
+    For example, if we try to use a variable to create a directory with a space in the name, we run into issues that don't immediately raise any errors.
 
     ```bash
     dir="Folder Name"
@@ -133,8 +134,6 @@ Variables can help with ensuring our script is readable, reusable and robust.
     ```output
     'Folder Name'
     ```
-
-    <!-- TODO: finish writing up scenarios -->
 
 
 ## Variables in file paths
