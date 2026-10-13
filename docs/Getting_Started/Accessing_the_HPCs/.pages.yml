@@ -2,6 +2,7 @@
 nav:
   - Connecting_to_the_Cluster.md
   - First_Time_Login.md
+  - MFA_and_Trusted_Devices.md
   - Standard_Terminal_Setup.md
   - MobaXterm_Setup_Windows.md
   - Windows_Subsystem_for_Linux_WSL.md

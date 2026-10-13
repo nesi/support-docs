@@ -53,3 +53,6 @@ description: Logging in for the first time and setting up your authenticator app
 9. After successfully logging in, you will be presented with the following OnDemand screen.
 
     ![image-20240903-112029](../../assets/images/OOD_Desktop_08Jun2025.png)
+
+!!! tip "Backup authenticator"
+    To add a backup authenticator device or review your sessions later, use the [Account Console](MFA_and_Trusted_Devices.md).
