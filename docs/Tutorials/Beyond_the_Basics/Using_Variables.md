@@ -105,6 +105,8 @@ Variables can help with ensuring our script is readable, reusable and robust.
     wc: .txt: No such file or directory
     ```
 
+    Instead of combining our variable (`01`) with the rest of the file name (`sample`), bash has instead used what it has stored in the variable `numbersample` which is currently nothing.
+
     ```bash
     wc ${number}sample.txt
     ```
@@ -134,7 +136,6 @@ Variables can help with ensuring our script is readable, reusable and robust.
     ```output
     'Folder Name'
     ```
-
 
 ## Variables in file paths
 
