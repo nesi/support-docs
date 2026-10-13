@@ -85,14 +85,29 @@ Public facing articles are found in the `docs` folder:
 
     Ideally, the page title should be the same as the category, to avoid confusion.
 
+!!! warning "Use category-articles sparingly"
+    Only make a category-article when the category has too many children to browse in the nav,
+    for example [Supported Applications](Software/Available_Applications/index.md).
+
+    The nav shows the `index.md` as the category's label, not as one of its children.
+    Readers who open the category with the arrow never see it, and nothing marks the label as a page of its own.
+
+    If any other category needs an overview, make it an ordinary article, list it first in the category's `.pages.yml`,
+    and give it a descriptive title, for example [Data Transfer Overview](Data_Transfer/Data_Transfer_Overview.md).
+    Small categories often don't need one.
+
+    This follows NN/g's advice against [split buttons in navigation menus](https://www.nngroup.com/articles/split-buttons-navigation/),
+    and Baymard's usability testing, where people [didn't tap category headers](https://baymard.com/blog/mobile-main-nav-view-all)
+    to reach the broader page.
+
 ![Documentation Structure](assets/images/doc_struct.png)
 
 ## Article/Category Naming
 
 By default, the filename will be use as title of the article/category.
 
-Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav,
-this usually happens around 24-ish characters however this will vary depending on the letters being used.
+Try to keep your title short enough that it does not 'wrap' (become more than one line) in the nav.
+The meta check warns when a title is over 28 characters, but this will vary depending on the letters being used.
 
 Use [Title Case](https://apastyle.apa.org/style-grammar-guidelines/capitalization/title-case), pretty much every word should be capitalised except for the little ones.
 
@@ -118,15 +133,15 @@ old/Path/To/Page.md: new/Path/To/Page.md
 For a moved directory, add a line for each page it contained (including `index.md`). For a deleted page, point the old path at the closest surviving page.
 
 !!! tip
-    The redirect key is the *old* path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
+    The redirect key is the _old_ path and must match a URL that people actually used. Check the source of any menu or external link before assuming the slug.
 
 ## Article/Category Order
 
 By default articles will be ordered alphabetically.
 
-Order can be set manually with the use of a `.page.yml` file, this file determines the ordering of all of it's sibling articles and categories.
+Order can be set manually with the use of a `.pages.yml` file, this file determines the ordering of all of it's sibling articles and categories.
 
-The `.page.yml` might looks like this:
+The `.pages.yml` might looks like this:
 
 ```yml
 ---
@@ -139,9 +154,11 @@ nav:
 `*` will be replaced by all other pages, in the default order.
 
 !!! warning
-    If you do set page order manually, make sure you include the `...` else some pages will not be rendered.
+    Try to include `"*"`, so a page added later still appears in the nav even if nobody lists it.
+    Only list the pages that need a fixed position, and let `"*"` add the rest.
+    If every page needs a fixed position, leave the last one to `"*"`.
 
-When being used to order _non-article categories_ you may overwrite the name in `.page.yml`.
+When being used to order _non-article categories_ you may overwrite the name in `.pages.yml`.
 
 Don't use this method to set the names of articles or category-articles (use the `title` parameter in that pages meta).
 
@@ -155,7 +172,7 @@ nav:
 ```
 
 For full description of `.pages.yml` use, see the
-[awesome-pages-plugin](https://github.com/lukasgeiter/mkdocs-awesome-pages-plugin).
+[awesome-nav plugin](https://lukasgeiter.github.io/mkdocs-awesome-nav/).
 
 ## Article Metadata
 
@@ -283,6 +300,7 @@ status: new
 ```
 
 This will show a little exclamation mark next to the page title in the nav.
+Remove it eventually (60 days approx).
 
 ### Tutorial
 

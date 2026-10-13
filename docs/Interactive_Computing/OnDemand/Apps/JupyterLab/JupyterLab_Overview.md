@@ -1,12 +1,9 @@
 ---
-title: JupyterLab
 created_at: 2026-07-15
-description: How to use jupyterhub through OnDemand.
+description: How to use JupyterLab through OnDemand, including kernels, extensions, log files and troubleshooting.
 tags:
     - interactive
 ---
-
-## Introduction
 
 Mahuika supports the use of [Jupyter](https://jupyter.org/) for interactive computing.
 Jupyter allows you to create notebooks that contain live code,
@@ -29,7 +26,7 @@ For more details see the [how-to guide](../../how_to_guide.md).
 is the next generation of the Jupyter user interface and provides a way
 to use notebooks, text editor, terminals and custom components together.
 
-### filesystems
+### Filesystems
 
 Your JupyterLab session will start in your home directory the first time you launch it. On subsequent launches it may remember your previous working directory and start there.
 
@@ -66,8 +63,8 @@ about JupyterLab extensions can be found in the
 Check the extension's documentation to find out the supported
 installation method for that particular extension.
 
-On Mahuika OnDemand we support installing prebuilt extensions (i.e. pip installable
-packages) from the terminal application.
+On Mahuika OnDemand you can install extensions that are published as pip packages,
+from the terminal application.
 First ensure you have the latest JupyterLab module loaded:
 
 ```sh
@@ -76,7 +73,7 @@ module load JupyterLab
 ```
 
 Then install the extension by running (the upstream documentation for the package
-you are installing should specify the "packagename" that you should use):
+you are installing should specify the `packagename` that you should use):
 
 ``` sh
 pip install --user <packagename>
@@ -105,18 +102,21 @@ directory.
 ## Troubleshooting
 
 ### Erratic Scrolling in JupyterLab
-If your JupyterLab notebook "jumps" or skips pages unexpectedly, the cause is likely Windowing Mode. This feature improves performance by only rendering cells currently in view, but it can cause the scrollbar to behave unpredictably in long notebooks.
+
+If your JupyterLab notebook "jumps" or skips pages unexpectedly, the cause is likely Windowing Mode. This feature improves performance by only rendering cells currently in view, but it can cause the scroll bar to behave unpredictably in long notebooks.
 
 #### The Solution: Adjust Windowing Mode
+
 To fix erratic scrolling, change the Windowing Mode setting to one of the following:
 
-- `defer`: Waits for idle CPU cycles to render cells outside the viewport. This typically stops the jumping while maintaining good performance.
-- `none`: Renders all cells immediately. This is the most stable option for scrolling but may slow down very large notebooks.
+- `defer`: Waits for idle CPU cycles to render cells outside the visible area. This typically stops the jumping while maintaining good performance.
+- `none`: Renders all cells immediately. This is the most stable option for scrolling but may slow down large notebooks.
 
 #### Step-by-Step Instructions
+
 1. Open Settings: Go to Settings → Settings Editor in the top menu.
 2. Navigate to Notebook: Click Notebook in the left-hand sidebar.
-3. Find Windowing Mode: Scroll down to the Windowing mode dropdown menu.
+3. Find Windowing Mode: Scroll down to the Windowing mode drop-down menu.
 4. Update Value: Change the setting from `full` to `defer` (or `none` if the issue persists).
 5. Verify: Return to your notebook to ensure scrolling is now smooth and predictable.
 

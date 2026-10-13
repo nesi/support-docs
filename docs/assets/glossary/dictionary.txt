@@ -812,7 +812,6 @@ MUSCLE
 MWLR
 MaSuRCA's
 MaSuRCA
-MacOS
 Mahuika's
 Mahuika
 Mamba's
@@ -1464,7 +1463,7 @@ VNC
 VOGDB
 VPN
 VRAM
-VSCode
+VS Code
 VSEARCH's
 VSEARCH
 VTune's
@@ -2060,6 +2059,7 @@ lwgrp's
 lwgrp
 lz4's
 lz4
+macOS
 maeparser's
 maeparser
 maf_stream's

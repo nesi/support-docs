@@ -3441,7 +3441,7 @@
         "network_licences": [],
         "default": "18-06-2025-foss-2026",
         "default_type": "latest",
-        "last_updated": 1791321961,
+        "last_updated": 1791839226,
         "modulefile_text": "",
         "module_path": "/opt/nesi/zen3/modules/all/CMFGEN/18-06-2025-foss-2026.lua",
         "force_hide": false,

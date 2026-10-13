@@ -9,7 +9,7 @@ Our Consultancy service provides scientific and HPC-focused
 computational and data science support to research projects across a
 range of domains.
 
-![Consultancy](../assets/images/consultancy.png){ width=75% }
+![Consultancy](../../assets/images/consultancy.png){ width=75% }
 
 !!! success "Case studies"
     [See our case studies page for examples of projects our Consultancy service has supported](https://www.reannz.co.nz/case-studies).
@@ -82,7 +82,7 @@ input is required on your part. You should be willing to:
 - Attend regular meetings (usually via video conference)
 - Invest time to answer questions, provide code and data as necessary
     and make changes to your workflow if needed
-- [Acknowledge](../Policy/Acknowledgement-Citation_and_Publication.md)
+- [Acknowledge](../../Policy/Acknowledgement-Citation_and_Publication.md)
     us in article and code publications that we have contributed to,
     which could include co-authorship if our contribution is deemed
     worthy

@@ -6,6 +6,8 @@ status: []
 description: Checking how efficiently a job used its resources with seff, sacct and htop
 ---
 
+Check how efficiently your jobs use the CPUs, memory and time they ask for, after they finish or while they run.
+
 ## On Job Completion
 
 It is good practice to have a look at the resources your job used on

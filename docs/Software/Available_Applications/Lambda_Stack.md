@@ -19,7 +19,7 @@ official
 have provided some pre-built container images (under
 */opt/nesi/containers/lambda-stack/*) or you can build your own. In the following sections, we will show you how to run
 Lambda Stack in a Slurm job or interactively via
-[JupyterLab](../../Interactive_Computing//OnDemand/Apps/JupyterLab/index.md).
+[JupyterLab](../../Interactive_Computing/OnDemand/Apps/JupyterLab/JupyterLab_Overview.md).
 
 You can list the available Lambda Stack version on Mahuika by running:
 

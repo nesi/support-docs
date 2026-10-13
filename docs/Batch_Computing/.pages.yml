@@ -5,5 +5,5 @@ nav:
  - Slurm-Best_Practice.md
  - Using_GPUs.md
  - Job_Checkpointing.md
- - Fair_Share.md
+ - Fairshare.md
  - "*"
