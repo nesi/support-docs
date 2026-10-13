@@ -1,6 +1,6 @@
 ---
 created_at: 2025-12-09
-description: How to utilise job arrays. 
+description: How to run many jobs as a Slurm job array, using SLURM_ARRAY_TASK_ID to give each task different inputs.
 tags:
     - slurm
     - parallel
@@ -10,6 +10,9 @@ tags:
 SLURM Job arrays are best used for tasks that are completely independent, such as parameter sweeps, permutation analysis or simulation, that could be executed in any order and don't have to run at the same time.
 This kind of work is often described as *embarrassingly parallel*.  
 An embarrassingly parallel problem is one that requires no communication or dependency between the tasks (unlike distributed computing problems that need communication between tasks).
+
+Use a job array rather than submitting the same job many times in a loop.
+An array is quicker to submit, has one job ID to watch or cancel, and puts much less load on the scheduler.
 
 > Note: Each array task counts as a job, and no user can have more than 1000 jobs in the queue at a time (see Job Limits), so an array can have at most 1000 tasks.  If your job requires more than 1000 tasks, please reach out to the support team.
 
@@ -85,13 +88,15 @@ Use of the environment variable `${SLURM_ARRAY_TASK_ID}` is the recommended meth
     in 'inputs' as the variable input (in alphabetcial order).
 
 Environment variables *will not work* in the Slurm header. In place
-of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`. This can be
-useful for sorting your output files e.g.
+of `${SLURM_ARRAY_TASK_ID}`, you can use the token `%a`, and `%A` in place of the job ID of the whole array.
+This can be useful for sorting your output files e.g.
 
 ``` sl
 #SBATCH --output     outputs/run_%a/slurm_output.out
 #SBATCH --error      outputs/run_%a/slurm_error.err
 ```
+
+Create the `outputs/run_*` directories before you submit, as Slurm does not create them.
 
 ### As an index to an array
 
@@ -184,7 +189,24 @@ cd run_${SLURM_ARRAY_TASK_ID}                                # cd to new direc
 bash job.sh
 
 mv output.log ../outputs/output_${SLURM_ARRAY_TASK_ID}.log   # Move and rename output
-rm -r ../run_${SLURM_ARRAY_TASK_ID}                          # Clear directory
+rm -r ../run_${SLURM_ARRAY_TASK_ID}                          # Clear directory
 ```
+
+## Limit concurrent tasks
+
+Add `%` and a number to `--array` to limit how many tasks run at the same time,
+for example so they don't all read the same input files at once:
+
+```sh
+#SBATCH --array 1-100%10
+```
+
+This runs tasks 1 to 100, no more than 10 at a time.
+
+## Run jobs after an array
+
+A job that depends on a job array with `afterok` waits for every task to finish successfully.
+To start each task of a second array as soon as the matching task of the first finishes, or to rerun only the tasks that failed,
+see the Job Dependencies page.
 
 See the Slurm documentation for more info on [job arrays](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/job_array.html).
