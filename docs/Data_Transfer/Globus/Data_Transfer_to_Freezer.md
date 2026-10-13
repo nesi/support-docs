@@ -59,7 +59,7 @@ Note that modification times are preserved only for files.
 
 This is expected behaviour and does not affect the integrity or accessibility of your archived data.
 
-1. Go to the File Manager on the left hand menu and search for the collection `{{ globus_collection_freezer}}`. A list of buckets that you are the owner of, will be displayed here/below. If the bucket you wish to access is not displayed, please enter it in under `Path`.
+1. Go to the File Manager on the left hand menu and search for the collection `{{ globus_collection_freezer}}`. A list of buckets that you are the owner of will be displayed here/below. If the bucket you wish to access is not displayed, please enter it in under `Path`.
     ![Globus_Freezer_EP.png](../../assets/images/Globus_Freezer_EP.png)
 
 2. Under 'Path', type in your Freezer bucket e.g., `/nesi99991-12345/` and press <kbd>Enter</kbd>. You should now see the contents of your bucket.
