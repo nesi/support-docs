@@ -9,7 +9,7 @@ description: Logging in for the first time and setting up your authenticator app
 
 !!! prerequisite
     -  Have an [account](../Creating_an_Account.md).  
-    -  Be a member of an [active project](../Creating_an_Account.md).  
+    -  Be a member of an [active project](../Getting_Started_Overview.md).  
     -  Have a device with an authentication app.
 
 !!! note

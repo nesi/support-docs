@@ -1,7 +1,6 @@
 ---
 created_at: '2024-05-16T01:11:34Z'
 tags:
-- announcement
 - account
 title: Adding Project Members
 description: How to add a new member to your project.
