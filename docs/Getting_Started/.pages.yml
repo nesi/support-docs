@@ -1,10 +1,10 @@
 ---
 nav:
+ - Getting_Started_Overview.md
  - Creating_an_Account.md
- - Projects 
+ - Projects
  - Allocations
- - Accessing_the_HPCs
- - Getting_Help.md
- - Cheat_Sheets
+ - Accessing the Cluster: Accessing_the_HPCs
+ - Getting_Help
  - "*"
  - my.nesi.org.nz: my-nesi-org-nz
