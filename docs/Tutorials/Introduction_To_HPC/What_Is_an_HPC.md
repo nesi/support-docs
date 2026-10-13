@@ -33,7 +33,7 @@ Almost all supercomputers are clusters.
 
 ## Access
 
-You will connect to a cluster over the internet either with a web client ([OnDemand](../../Interactive_Computing/OnDemand/index.md)) or with [SSH (**S**ecure **Sh**ell)](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
+You will connect to a cluster over the internet either with a web client ([OnDemand](../../Interactive_Computing/OnDemand/OnDemand_Overview.md)) or with [SSH (**S**ecure **Sh**ell)](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
 Your main interface with the cluster will be using command line.
 
 ## Nodes

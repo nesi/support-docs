@@ -17,7 +17,7 @@ We’re making some important updates to how your project’s temporary data is 
 
 ## When will this happen?
 
-Update: This new policy has come into effect as of Wednesday 19 November. Our first scan was run to identify candidate files and project members with flagged files were notified by email (Subject to their [my.nesi.org.nz notification preferences](../Getting_Started/my-nesi-org-nz/Managing_Notification_Preferences.md)).
+Update: This new policy has come into effect as of Wednesday 19 November. Our first scan was run to identify candidate files and project members with flagged files were notified by email (Subject to their [my.nesi.org.nz notification preferences](../Getting_Started/Getting_Help/System_Status.md#manage-your-notifications)).
 
 ## How will I know if my data is flagged for deletion?
 
@@ -34,4 +34,4 @@ Our Support Documentation has more details on how our auto-deletion cleaner work
 - [Where should I store my data](../Getting_Started/FAQs/Where_should_I_store_my_data.md)
 
 
-If you have any questions or would like to discuss your data storage needs in more detail, come to one of our [Weekly Online Office Hours](../Getting_Started/Weekly_Online_Office_Hours.md) or {% include "partials/support_request.html" %}.
+If you have any questions or would like to discuss your data storage needs in more detail, come to one of our [Weekly Online Office Hours](../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md) or {% include "partials/support_request.html" %}.
