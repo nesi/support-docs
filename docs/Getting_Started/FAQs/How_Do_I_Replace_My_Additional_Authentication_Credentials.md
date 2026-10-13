@@ -9,7 +9,7 @@ description: How to reset your authentication credentials for MFA.
 
 {% include 'partials/status-no-pro.md' %}
 
-If you can still log in, add or remove authenticator devices in the [Account Console](../Managing_Your_Account.md#manage-authenticator-devices) instead.
+If you can still log in, add or remove authenticator devices in the [Account Console](../Accessing_the_HPCs/MFA_and_Trusted_Devices.md#manage-authenticator-devices) instead.
 
 If you no longer have access to your authenticator application (e.g. change of device), you may need to re-enroll your device.
 

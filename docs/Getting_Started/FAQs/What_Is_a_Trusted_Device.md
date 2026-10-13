@@ -36,6 +36,6 @@ Avoid names such as "My Favorite Device", as that could make it harder to manage
 
 The list of all your trusted devices is available in [my.nesi.org.nz](https://my.nesi.org.nz) under Account -> [My Preferences](https://my.nesi.org.nz/account/preference) where you can delete any or all trusted devices as needed.
 
-To review your active sessions or authenticator devices, use the [Account Console](../Managing_Your_Account.md).
+To review your active sessions or authenticator devices, use the [Account Console](../Accessing_the_HPCs/MFA_and_Trusted_Devices.md).
 
 It is important to regularly review your list of trusted devices and remove any that are no longer in use. Old or obsolete devices—such as a laptop you no longer own or a device that has been replaced—may still appear as trusted and could pose a security risk. Removing these ensures that only your current, secure, and actively used devices can access your account without additional verification. Keeping your trusted devices list up to date helps protect your account from unauthorised access and maintains good security hygiene.

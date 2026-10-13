@@ -43,7 +43,7 @@ existing accounts** then scan the QR code provided on the old device.
 
 ## How do I get new authentication credentials?
 
-If you can still log in, add a new device in the [Account Console](../Managing_Your_Account.md#manage-authenticator-devices).
+If you can still log in, add a new device in the [Account Console](../Accessing_the_HPCs/MFA_and_Trusted_Devices.md#manage-authenticator-devices).
 
 If you have lost your device, see [How Do I Reset My MFA?](./How_Do_I_Replace_My_Additional_Authentication_Credentials.md).
 
