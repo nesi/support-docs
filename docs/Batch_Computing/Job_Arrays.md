@@ -14,7 +14,7 @@ An embarrassingly parallel problem is one that requires no communication or depe
 Use a job array rather than submitting the same job many times in a loop.
 An array is quicker to submit, has one job ID to watch or cancel, and puts much less load on the scheduler.
 
-> Note: Each array task counts as a job, and no user can have more than 1000 jobs in the queue at a time (see Job Limits), so an array can have at most 1000 tasks.  If your job requires more than 1000 tasks, please reach out to the support team.
+> Note: Each array task counts as a job, and no user can have more than 1000 jobs in the queue at a time (see [Job Limits](Job_Limits.md)), so an array can have at most 1000 tasks.  If your job requires more than 1000 tasks, please reach out to the support team.
 
 A job array will submit the same script repeatedly over a designated index using the `SBATCH` command  `--array`
 
@@ -207,6 +207,6 @@ This runs tasks 1 to 100, no more than 10 at a time.
 
 A job that depends on a job array with `afterok` waits for every task to finish successfully.
 To start each task of a second array as soon as the matching task of the first finishes, or to rerun only the tasks that failed,
-see the Job Dependencies page.
+see [Job Dependencies](Job_Dependencies.md).
 
 See the Slurm documentation for more info on [job arrays](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/job_array.html).
