@@ -27,7 +27,7 @@ or in the header of the batch script:
 #SBATCH --dependency afterok:JOB_ID
 ```
 
-Replace `JOB_ID` with the ID of the job to wait for, as shown by `sbatch` when you submitted it, or by `squeue --me`.
+Replace `JOB_ID` with the ID of the job to wait for, as output by `sbatch`, or by `squeue --me`.
 
 The condition decides what the job waits for:
 
@@ -49,15 +49,15 @@ To combine conditions:
 Use only one kind of separator, `,` or `?`, in a dependency.
 
 !!! warning "Dependencies that can never be met"
-    If a job your job depends on ends in the wrong state, for example `afterok` on a job that failed, your job will never run,
-    even if you requeue the failed job and it then succeeds.
+    If a job your job depends on ends in the wrong state, for example `afterok` on a job that failed, **your job will never run**,
+    even if the failed job is run again and then succeeds.
     It may stay in the queue, pending with the reason `DependencyNeverSatisfied`, until you cancel it.
     Add `--kill-on-invalid-dep=yes` to have Slurm cancel it instead.
 
-Submit a job with `afterok` or `afternotok` while the job it depends on is still queued or running, or very soon after it ends.
+Submit a job with `afterok` or `afternotok` while the job it depends on is still queued or running, or soon after it ends.
 Slurm only keeps a record of finished jobs for a short time, after which it can no longer check them.
 
-## Get the job ID when you submit
+## Get the job ID
 
 `sbatch --parsable` prints only the job ID, so you can save it in a variable and use it in the next submission:
 
@@ -66,7 +66,7 @@ first=$(sbatch --parsable first_job.sl)
 sbatch --dependency afterok:${first} second_job.sl
 ```
 
-## Submit the next job from inside a job
+## Submit from inside a job
 
 A batch script can submit the job that follows it, using its own job ID from `SLURM_JOB_ID`:
 
@@ -74,7 +74,7 @@ A batch script can submit the job that follows it, using its own job ID from `SL
 sbatch --dependency afterok:${SLURM_JOB_ID} second_job.sl
 ```
 
-Put this line near the start of the first script, so the second job is queued while the first one runs.
+Put this line near the **start of the first script**, so the second job is queued while the first one runs.
 For a job that resubmits itself to continue long work, see [Job Checkpointing](Job_Checkpointing.md).
 
 ## Run a workflow
