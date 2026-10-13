@@ -84,8 +84,57 @@ Variables can help with ensuring our script is readable, reusable and robust.
     You will likely see variables called several different ways: `$var`, `${var}` and `"${var}"` are all common options.
     All of these are technically correct, and in some situations you can use whatever option you want.
     BUT, in some situations how you format your variable calls makes a difference.
-    
-    Let's say that we have defined `var=/path/my_path/to-file.txt`.
+
+    In some cases, it can be unclear where your variable ends and where any adjacent string begins.
+    To help with that, we can wrap the variable name in curly braces: `${var}`.
+
+    ```bash
+    ls
+    ```
+
+    ```output
+    01sample.txt  02sample.txt
+    ```
+
+    ```bash
+    number=01
+    wc $numbersample.txt
+    ```
+
+    ```output
+    wc: .txt: No such file or directory
+    ```
+
+    ```bash
+    wc ${number}sample.txt
+    ```
+
+    ```output
+    0 0 0 01sample.txt
+    ```
+
+    Spaces/special characters
+
+    ```bash
+    dir="Folder Name"
+    mkdir $dir
+    ls
+    ```
+
+    ```output
+    Folder  Name
+    ```
+
+    ```bash
+    mkdir "$dir"
+    ls
+    ```
+
+    ```output
+    'Folder Name'
+    ```
+
+    <!-- TODO: finish writing up scenarios -->
 
 
 ## Variables in file paths
@@ -146,7 +195,7 @@ samtools view: failed to open "results/sam/SRR2584863.aligned.sam" for reading: 
 When we use variables the script actually succeeds even though we have made a small mistake in the `.sam` variable (`sam=results/sam/${base}.aliged.sam`).
 And instead of needing to search for which call of the `.sam` path is incorrect, there is only one place that the path is defined.
 
-## Environmental nvironment variables
+## Environmental variables
 
 |    Variable name      |           Potential use          |
 | ------------------------ | ------------------------------------------------ |
