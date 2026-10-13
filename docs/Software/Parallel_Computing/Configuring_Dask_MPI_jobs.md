@@ -158,7 +158,7 @@ The `--het-group` flag asks `srun` to launch both job packs together.
 
 ## Example
 
-The following example illustrates how to run Dask-MPI on the HPC. It is
+The following example illustrates how to run Dask-MPI on Mahuika. It is
 based on the Dask Futures tutorial on the [Dask examples](https://examples.dask.org) webpage.
 
 ### Python program
@@ -221,7 +221,7 @@ Local result: 5
 ## Running Dask-MPI inside a Apptainer container
 
 It is straightforward to run a Dask-MPI workload inside a Apptainer
-container on the HPC. For reliable and efficient execution it is best to
+container on Mahuika. For reliable and efficient execution it is best to
 use the same MPI distribution inside and outside the container. This
 restricts choices to Intel MPI on the Mahuika and Māui Ancil clusters;
 see section

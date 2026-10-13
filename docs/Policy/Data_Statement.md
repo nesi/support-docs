@@ -2,7 +2,7 @@
 created_at: '2026-08-18T00:20:08Z'
 tags:
 - storage
-description: Statement about the data on REANNZ platform
+description: Statement about the data on REANNZ HPC systems
 ---
 
 ## Purpose

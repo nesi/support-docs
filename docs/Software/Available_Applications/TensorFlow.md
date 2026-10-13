@@ -78,7 +78,7 @@ pip install 'tensorflow[and-cuda]'  # GPU (CUDA included)
 ```
 
 Set `export PYTHONNOUSERSITE=1` so the environment stays isolated from
-packages in your home folder. Activate it again before running your
+packages in your home directory. Activate it again before running your
 scripts in a Slurm job:
 
 ``` sh
@@ -118,7 +118,7 @@ pip install 'tensorflow[and-cuda]'  # GPU (CUDA included)
 
 ### Apptainer containers
 
-You can use containers to run your application on the Mahuika platform. We
+You can use containers to run your application on Mahuika. We
 provide support for [Apptainer](Apptainer.md)
 containers, that can be run by users without requiring additional
 privileges. Note that Docker containers can be converted into

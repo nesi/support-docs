@@ -51,7 +51,7 @@ Prior to data being deleted, we’ll send you an email identifying what has been
 ## How can I check which files are scheduled for deletion?
 
 You can manually check at any time if you have any data that's scheduled for deletion. 
-When you are connected to the HPCs via SSH, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
+When you are connected to Mahuika via SSH, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
 
 ```sh
 $ nn_doomed_list --project nesi12345 
@@ -172,7 +172,7 @@ If you have files identified as candidates for deletion that you need to keep be
 
 - Move the file(s) to your project directory, e.g., `/nesi/project/nesi12345`. You may need to request more disk space in your project directory before you can do this, {% include "partials/support_request.html" %}. We assess such requests on a case-by-case basis.
 - You can save space by compressing data Standard tools such as `gzip` `bzip2` are available.
-- Move the file(s) to Freezer, our [long-term storage service](Long_Term_Storage/Freezer_Guide.md). Note: Freezer is intended for use with relatively large files and should not be used for a large number of small files. To apply for a Freezer allocation, {% include "partials/support_request.html" %} or request a new Freezer allocation in [my.nesi.co.nz](https://my.nesi.org.nz/login).
+- Move the file(s) to Freezer, our [long-term storage service](Long_Term_Storage/Freezer_Guide.md). Note: Freezer is intended for use with relatively large files and should not be used for a large number of small files. To apply for a Freezer allocation, {% include "partials/support_request.html" %} or request a new Freezer allocation in [my.nesi.org.nz](https://my.nesi.org.nz/login).
 - Move or copy the file to a storage system at your institution. We expect projects to do this for finalised output data and appreciate prompt egress of data once it is no longer used for processing.
 
 ## Where should I store my data?

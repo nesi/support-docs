@@ -36,7 +36,7 @@ this case the Mahuika cluster)
 
 ## Command line (OpenSSH)
 
-*Works for any Linux terminal, Mac terminal, or Windows with WSL
+*Works for any Linux terminal, Mac terminal, or Windows with Windows Subsystem for Linux (WSL)
 enabled.*
 
 The command for forwarding a port is

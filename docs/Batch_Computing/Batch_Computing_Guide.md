@@ -1,6 +1,6 @@
 ---
 created_at: 2025-12-19
-description: Guide to batch computing on REANNZ HPC
+description: Guide to batch computing on Mahuika
 tags:
     - slurm
     - interactive

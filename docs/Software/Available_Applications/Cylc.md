@@ -37,7 +37,7 @@ which may be repeated ad infinitum.
 
 Cylc uses SSH  to automatically start schedulers on configured "run
 hosts" and to submit jobs to remote platforms, so if you haven't already
-done so you need to allow SSH to connect to other hosts on the HPC
+done so you need to allow SSH to connect to other hosts on Mahuika
 cluster without prompting for a passphrase (all HPC nodes see the same
 filesystem, so this is easy):
 

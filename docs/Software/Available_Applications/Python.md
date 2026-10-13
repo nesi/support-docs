@@ -12,7 +12,7 @@ description: Using Python on the cluster and choosing between system Python and 
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-All versions of Python available on Mahuika platforms are owned and
+All versions of Python available on Mahuika are owned and
 licensed by the Python Software Foundation. Each version is released
 under a specific open-source licence. The licences are available on
 [the Python documentation server](https://docs.python.org).
@@ -277,7 +277,7 @@ module load Python/3.10.5-gimkl-2022a
 python3 -m venv /nesi/project/PROJECT_ID/my_venv
 ```
 
-where `PROJECT_ID` is your NeSI project ID.
+where `PROJECT_ID` is your project code.
 
 Note that you need to *activate* the virtual environment before using it
 (to run a script or install packages)

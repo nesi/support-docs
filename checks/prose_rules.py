@@ -11,7 +11,7 @@ import re
 
 # Pages where old names are expected: dated announcements and release notes record what was true at the time,
 # and the maintainer pages (FORMAT.md etc.) name the banned words in order to ban them.
-HISTORY_PAGES = r"(?i)(^|/)docs/Announcements/|release_notes"
+HISTORY_PAGES = r"(?i)(^|/)docs/Announcements/|release_notes|/Mahuika_HPC3_Differences\.md$"
 MAINTAINER_PAGES = r"(^|/)docs/[A-Z]+\.md$"
 # Downloaded from other repositories (eg. the glossary), so not edited here. No rule runs on these.
 FETCHED_FILES = r"(^|/)docs/assets/"
@@ -23,13 +23,16 @@ FETCHED_FILES = r"(^|/)docs/assets/"
 #   scope "all": code too, for things that are wrong wherever they appear (eg. hostnames).
 #   level: "notice" or "warning" (the default). Only warnings fail CHECKS_STRICT.
 #   skip: path patterns the entry doesn't apply to.
+#   first_mention: a pattern for the full form. Then only the page's first match is reported, and only if it
+#       comes before the full form, for short forms that are fine once the full one has been used ('WSL').
 #   message: '{0}' is replaced with the matched text, or with the pattern's capture group if it has one.
 BANNED_PATTERNS = [
     {
         "name": "nesi",
-        "pattern": r"(?<!Infrastructure \()(?<![‘'\"])\b(?:NeSI|NESI|Nesi)\b(?![’'\"]|-REANNZ| Keycloak)",
+        "pattern": r"(?<!Infrastructure \()(?<![‘'\"])\b(?:NeSI|NESI|Nesi)\b"
+                   r"(?![’'\"]|-REANNZ| Keycloak| Collaborator| delivery| was integrated)",
         "scope": "text",
-        "level": "notice",
+        "level": "warning",
         "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
         "message": "Call the organisation REANNZ and the platform Mahuika. Only write NeSI where a name still \
 carries it (see 'Names and terms' in FORMAT.md).",
@@ -39,7 +42,7 @@ carries it (see 'Names and terms' in FORMAT.md).",
         "name": "the_hpc",
         "pattern": r"\b(?:[Tt]he|[Oo]ur|[Tt]his) HPCs?\b(?! (?:[Pp]ortal|[Pp]latform|GridRunner))",
         "scope": "text",
-        "level": "notice",
+        "level": "warning",
         "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
         "message": "Call the platform Mahuika (or 'the cluster' after the first mention), not '{0}'.",
     },
@@ -48,7 +51,7 @@ carries it (see 'Names and terms' in FORMAT.md).",
         "pattern": r"\bHPC[- ]?3\b",
         "flags": re.IGNORECASE,
         "scope": "text",
-        "level": "notice",
+        "level": "warning",
         "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
         "message": "'HPC3' was a temporary name for Mahuika, call it Mahuika.",
     },
@@ -88,7 +91,7 @@ so this fails for readers who followed it.",
                    r"|Misc(?:ellaneous)?|Conclusions?)\s*:?\s*$",
         "flags": re.IGNORECASE,
         "scope": "text",
-        "level": "notice",
+        "level": "warning",
         "message": "Heading '{0}' doesn't say what its section is about. Name the topic instead, \
 or if it's the first heading remove it: the text after the title is the introduction.",
     },
@@ -134,16 +137,39 @@ visible: screen readers and the docs chat assistant only get this text.",
 ]
 
 
-def _term(name, pattern, message, flags=re.IGNORECASE, skip=(), level="notice"):
+def _term(name, pattern, message, flags=re.IGNORECASE, skip=(), level="notice", first_mention=None):
     """A preferred-term rule: a notice (or warning) on prose, outside history and maintainer pages."""
-    return {"name": name, "pattern": pattern, "flags": flags, "scope": "text", "level": level,
+    rule = {"name": name, "pattern": pattern, "flags": flags, "scope": "text", "level": level,
             "skip": [HISTORY_PAGES, MAINTAINER_PAGES, *skip], "message": message}
+    if first_mention:
+        rule["first_mention"] = first_mention
+    return rule
 
 
 # Preferred terms, one rule per term. Notices by default: make one a "warning" once its existing hits are fixed.
-# Not checked yet: terms that are fine once the preferred one has been used on the page ('MFA' after
-# 'multi-factor authentication', 'WSL', 'SMT', 'interactive job'). That needs a page-level 'first_mention' check.
+# Not checked yet: 'MFA' and 'interactive job' before their full forms (add a first_mention once the hits are fixed).
 BANNED_PATTERNS += [
+    _term("platform_name", r"\bREANNZ (?:cluster|platform|supercomputer)s?\b"
+                           r"|\bMahuika (?:HPC|platforms?|supercomputers?|clusters)\b|\bNeSI HPCs?\b",
+          "Call the platform Mahuika, not '{0}'.", flags=0, level="warning"),
+    # The policies define 'REANNZ HPC Services', so other pages may quote that. The rest is an email subject.
+    _term("reannz_hpc", r"\bREANNZ HPC\b(?! Services| Platform Acceptable Use Policy| Authentication Credentials)",
+          "Call the platform Mahuika, not '{0}'. 'REANNZ HPC' is for policy pages.", flags=0,
+          skip=[r"(^|/)docs/Policy/"], level="warning"),
+    # Not the my.nesi.org.nz menu item 'My HPC Account'.
+    _term("user_account", r"(?<!My )\b(?:NeSI|REANNZ(?: HPC)?|HPC)(?: user)? [Aa]ccounts?\b|\bMahuika [Aa]ccounts?\b",
+          "Call the account used to log in to the cluster a 'Mahuika user account', not '{0}'.", flags=0,
+          level="warning"),
+    _term("my_nesi", r"\bMy ?NeSI\b|\bmy\.nesi\b(?!\.org\.nz)|\bmy\.nesi\.co\.nz\b",
+          "Write 'my.nesi.org.nz', not '{0}'.", flags=0, level="warning"),
+    # 'Open OnDemand' is the upstream software, so it's allowed when you mean that. 'on demand' is ordinary English.
+    _term("ondemand", r"\b(?:NeSI|REANNZ HPC) OnDemand\b|(?<![./\w-])(?:ondemand|Ondemand|onDemand)\b(?![.\w/-])"
+                      r"|\bOn Demand\b|\bOOD\b",
+          "Write 'Mahuika OnDemand' (or 'OnDemand'), not '{0}'.", flags=0, level="warning"),
+    _term("wsl", r"\bWSL\d?\b", "Write 'Windows Subsystem for Linux (WSL)' the first time, before '{0}'.", flags=0,
+          level="warning", first_mention=r"Windows Subsystem for Linux"),
+    _term("smt", r"\bSMT\b", "Write 'simultaneous multithreading (SMT)' the first time, before '{0}'.", flags=0,
+          level="warning", first_mention=r"(?i)simultaneous multi-?threading"),
     _term("log_in", r"\blog(?:s|ged|ging)? into\b|\blog-in\b|\bsign(?:s|ed|ing)?[- ]?in(?:to)?\b|\blogged[- ]on\b"
                     r"|\b(?:log(?:s|ged|ging)?[- ]on|logon) (?:to|with|using|via)\b"
                     r"|(?<!the )(?<!your )(?<!every )(?<!a )\b(?:(?:to|can|could|will|would|may|might|then|now|also|just|"
@@ -169,7 +195,8 @@ BANNED_PATTERNS += [
           "Write 'authenticator app', not '{0}'."),
     _term("singularity", r"\bSingularity(?:-?CE)?\b|\bsingularity (?:exec|run|build|shell|pull|instance)\b",
           flags=0, skip=[r"/Apptainer\.md$"],
-          message="Singularity is now called Apptainer. Write 'Apptainer', not '{0}', unless you mean the old name."),
+          message="Singularity is now called Apptainer. Write 'Apptainer', not '{0}', unless you mean the old name.",
+          level="warning"),
     # Lowercase 'time' only, so the Slurm Composer's 'Wall Time' label is left alone.
     _term("walltime", r"\b[Ww]all[- ]times?\b|\b[Ww]all[- ]?clock(?: times?)?\b", flags=0,
           message="Write 'walltime', not '{0}'."),
@@ -180,15 +207,16 @@ BANNED_PATTERNS += [
     # Not after '- ', so the 'fairshare' tag in front matter is left alone.
     _term("fairshare", r"\b(?i:fair[- ]shar(?:e|es|ing))\b|(?<!- )\b(?!Fair[Ss]hares?\b)(?i:fairshar(?:e|es|ing))\b",
           flags=0, message="Write 'FairShare' (or 'Fairshare'), not '{0}'."),
-    _term("hyperthreading", r"\bhyper[- ]?thread(?:ing|s|ed)?\b",
-          message="Write 'simultaneous multithreading' (then 'SMT'), not '{0}'. Hyper-Threading is Intel's name for it."),
+    _term("hyperthreading", r"\bhyper[- ]?thread(?:ing|s|ed)?\b", skip=[r"/Simultaneous_Multithreading\.md$"],
+          message="Write 'simultaneous multithreading' (then 'SMT'), not '{0}'. Hyper-Threading is Intel's name for it.",
+          level="warning"),
     _term("multithreading", r"\bmulti[- ]thread(?:ing|ed|s)?\b",
-          "Write it as one word ('multithreading', 'multithreaded'), not '{0}'."),
+          "Write it as one word ('multithreading', 'multithreaded'), not '{0}'.", level="warning"),
     _term("filesystem", r"\bfile[- ]systems?\b", "Write 'filesystem', not '{0}'.", level="warning"),
     _term("long_term_storage", r"\blong ?term (?:data )?(?:storage|archiv(?:e|es|al|ing))\b",
-          "Hyphenate 'long-term' before a noun ('long-term storage'), not '{0}'."),
+          "Hyphenate 'long-term' before a noun ('long-term storage'), not '{0}'.", level="warning"),
     _term("directory", r"\b(?:project|home|nobackup|scratch) folders?\b|\bsub[- ]director(?:y|ies)\b|\bsub[- ]?folders?\b",
-          "Write 'directory' ('project directory', 'home directory', 'subdirectory'), not '{0}'."),
+          "Write 'directory' ('project directory', 'home directory', 'subdirectory'), not '{0}'.", level="warning"),
     _term("project_code", r"\bproject[- ]?(?:IDs?|numbers?|identifiers?)\b|\baccount codes?\b|\bproject accounts?\b",
           "Write 'project code', not '{0}'."),
     # Not 'REANNZ team members', who are staff.
@@ -203,8 +231,9 @@ BANNED_PATTERNS += [
                      r"|\b[Ll]icense (?:servers?|files?|keys?|holders?|agreements?|tokens?|terms|fees?|costs?"
                      r"|managers?|types?"
                      r"|pools?|checks?|details|requirements?|restrictions?|conditions?)\b", flags=0,
-          message="Write 'licence' for the noun ('license' is the verb), not '{0}'."),
-    _term("licensed", r"\blicenc(?:ed|ing)\b", "Write 'licensed' or 'licensing' (from the verb 'license'), not '{0}'."),
+          message="Write 'licence' for the noun ('license' is the verb), not '{0}'.", level="warning"),
+    _term("licensed", r"\blicenc(?:ed|ing)\b", "Write 'licensed' or 'licensing' (from the verb 'license'), not '{0}'.",
+          level="warning"),
     _term("set_up", r"\b(?:to|can|could|will|would|may|might|you|we|they|then|now|first|also|just|and|must|should|please|"
                     r"not|ll|is|are|was|were|be|been|being|get|gets|got|have|has|had) setup\b"
                     r"|\bsetup (?:your|the|a|an|my|our|their|this|that|these|those|it|them)\b|\bset-ups?\b|\bsetting-up\b"
@@ -217,7 +246,7 @@ BANNED_PATTERNS += [
     _term("filename", r"\b(?:file|host)[- ]names?\b(?!\s*:)", "Write it as one word ('filename', 'hostname'), not '{0}'.",
           level="warning"),
     _term("x11_forwarding", r"\bX[- ]forwarding\b|\bX11-forwarding\b|\bx11[- ]forwarding\b|\bX[- ]11[- ]forwarding\b",
-          flags=0, message="Write 'X11 forwarding', not '{0}'."),
+          flags=0, message="Write 'X11 forwarding', not '{0}'.", level="warning"),
     # Not GPU names such as 'A100 80GB'.
     _term("size_units", r"(?<!A100 )(?<!H100 )(?<!PCIe )\b\d+(?:\.\d+)?(?:[KMGTP]i?B|kB|[KMGT]b)\b", flags=0,
           message="Put a space between the number and the unit ('20 GB'), not '{0}'."),

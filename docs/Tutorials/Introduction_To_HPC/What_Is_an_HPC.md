@@ -60,7 +60,7 @@ A node is similar in makeup to a regular desktop or laptop, composed of *CPUs* (
 
 - **Memory** is for short term storage, containing the information currently being operated on by the CPUs.
 
-- **Disk** is for long term storage, data stored here is permanent, i.e. still there even if the computer has been restarted.
+- **Disk** is for long-term storage, data stored here is permanent, i.e. still there even if the computer has been restarted.
 It is common for nodes to connect to a shared, remote disk.
 
 ![A diagram representing the cluster. There are four identical sections connected to one another. Each section is split into two parts. The first part is the memory. The second part is further subdivided into four CPUs.](../../assets/images/clusterDiagram.png)

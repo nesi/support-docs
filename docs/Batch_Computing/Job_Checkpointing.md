@@ -2,7 +2,7 @@
 created_at: '2020-03-08T20:06:48Z'
 tags:
   - slurm
-description: How to impliment checkpointing on the REANNZ HPC
+description: How to implement checkpointing on Mahuika
 ---
 
 !!! tip

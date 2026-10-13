@@ -17,7 +17,7 @@ This page is an overview of the naming conventions and Markdown syntax used in t
 
 - Call the organisation REANNZ.
 - Call the platform Mahuika. After the first mention, "the cluster" is fine.
-  Don't use ""HPC3", which was a temporary name.
+  Don't use "HPC3", which was a temporary name. "REANNZ HPC" is for policy pages, which define "REANNZ HPC Services".
 - Only write NeSI where a name still carries it, for example `my.nesi.org.nz`, the support email address,
   hostnames, and the example project code `nesi99991`.
 - For other terms, use the words in the [Glossary](GLOSSARY.md), so they match the tooltips.
@@ -26,6 +26,11 @@ Some terms are written several ways across the docs. Use the preferred form:
 
 | Write | Not |
 | - | - |
+| Mahuika ("the cluster" after the first mention) | `the HPC`, `our HPC`, `HPC3`, `REANNZ cluster`, `REANNZ platform`, `Mahuika HPC`, `Mahuika platform`, `Mahuika supercomputer`, `NeSI HPC`, `REANNZ HPC` (outside policy pages) |
+| Mahuika user account (the account you log in to the cluster with) | `NeSI account`, `REANNZ HPC account`, `HPC account`, `Mahuika account` |
+| my.nesi.org.nz | `MyNeSI`, `my.nesi` |
+| Mahuika OnDemand (OnDemand after the first mention) | `NeSI OnDemand`, `ondemand`, `On Demand`, `OOD`. Write Open OnDemand only for the upstream software. |
+| Windows Subsystem for Linux (WSL after the first mention) | `WSL` before the full name |
 | log in, log in to (verb). Login is the noun. | `login` (verb), `log into`, `log-in`, `log on`, `sign in` |
 | multi-factor authentication (MFA after the first mention) | `two-factor authentication`, `2FA`, `multiple factor authentication`, `second-factor authentication` |
 | additional authentication credentials | `second factor`, `authentication token` |
@@ -35,7 +40,7 @@ Some terms are written several ways across the docs. Use the preferred form:
 | walltime | `wall time`, `wall-time`, `wall clock` |
 | job array | `array job`, `Slurm array` |
 | FairShare or Fairshare | `fair share`, `fair-share`, `fairshare` |
-| simultaneous multithreading (SMT after the first mention) | `hyperthreading`, `hyper-threading` |
+| simultaneous multithreading (SMT after the first mention) | `hyperthreading`, `hyper-threading`, `SMT` before the full name |
 | multithreading, multithreaded | `multi-threading` |
 | filesystem | `file system`, `file-system` |
 | long-term storage | `long term storage` |
@@ -54,6 +59,7 @@ Some terms are written several ways across the docs. Use the preferred form:
 Leave labels copied from an interface as they are, for example a `User name:` field.
 
 The prose check flags these old names and variant terms, outside announcements and release notes.
+For WSL and SMT, it flags the short form only if it comes before the full one on the page.
 
 ## Headers
 

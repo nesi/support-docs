@@ -1,12 +1,12 @@
 ---
 created_at: 2026-09-16
-description: Guidelines for using AI agents and coding assistants responsibly on REANNZ HPC systems
+description: Guidelines for using AI agents and coding assistants responsibly on Mahuika
 tags:
 - ai_tools
 - access
 ---
 
-These guidelines describe how to use AI agents, coding assistants and other autonomous tools responsibly on REANNZ HPC systems.
+These guidelines describe how to use AI agents, coding assistants and other autonomous tools responsibly on Mahuika.
 They are advice, not policy.
 The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md) still applies to everything an agent does under your account.
 
@@ -47,7 +47,7 @@ Agents should treat the rest of these guidelines as strong defaults, and ask you
   It will not see guidance installed on the cluster, so give it these guidelines yourself.
   Do not give it your passwords, SSH keys, tokens or other sensitive information, and do not let it log in on its own.
 - An agent that can access the cluster on its own, or that keeps running on the cluster when you are not supervising it, needs a service account.
-- Do not expose an MCP server or open a reverse tunnel from a REANNZ HPC system outward.
+- Do not expose an MCP server or open a reverse tunnel from Mahuika outward.
   This includes tools such as `ngrok`, `cloudflared`, VS Code tunnels and remote-control features of AI tools.
   [The Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow tunnels that let connections from outside reach the cluster without logging in.
   An agent on your workstation connecting in to a service on the cluster is fine, but not the other way around.
@@ -81,11 +81,11 @@ REANNZ does not provide support for third-party AI tools.
 Before raising a support ticket, verify any commands an agent has generated against the relevant documentation, and check that nothing has been hallucinated.
 Agents can look up this documentation themselves, starting from the index at `https://docs.nesi.org.nz/llms.txt`.
 
-An unofficial AI skill for responsible operation of the REANNZ HPC can be found at [nesi-support-skill](https://github.com/chrisdjscott/nesi-support-skill).
+An unofficial AI skill for responsible use of Mahuika can be found at [nesi-support-skill](https://github.com/chrisdjscott/nesi-support-skill).
 
 ## Research Integrity
 
-We recommend that use of AI in research conducted on REANNZ HPC systems follows the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf).
+We recommend that use of AI in research conducted on Mahuika follows the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf).
 
 !!! note "See Also"
     - [Access Policy](../../Policy/Access_Policy.md)

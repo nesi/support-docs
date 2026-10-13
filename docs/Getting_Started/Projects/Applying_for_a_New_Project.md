@@ -33,7 +33,7 @@ description: The information you need to provide when applying for a new project
          are enough for most projects, so you only need to ask for more if you
          know your project will exceed them.
 
-Requests to use REANNZ HPC resources are [submitted via a web
+Requests to use REANNZ resources are [submitted via a web
 form](https://my.nesi.org.nz/). Our team will endeavour to approve
 your project, or contact you for more information, within 3-5 working
 days of your submitting your project request.
@@ -48,7 +48,7 @@ information:
     describing your project's goals
 - The scientific domain and field of study (i.e. subdomain) your
     project belongs to
-- The date on which you plan to start your computational work on REANNZ HPC
+- The date on which you plan to start your computational work on Mahuika
     (not the start date of the research programme as a whole, or of the
     research programme's current or expected funding)
 - Details of how your project is funded (this will help determine

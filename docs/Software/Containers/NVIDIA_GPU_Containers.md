@@ -16,7 +16,7 @@ care of the plumbing, NGC enables users to focus on building lean
 models, producing optimal solutions and gathering faster insights.
 
 Many of these containers are able to run under Apptainer, which is
-supported on the Mahuika platform. NVIDIA also specifies the GPU
+supported on Mahuika. NVIDIA also specifies the GPU
 requirements for each container.
 
 There are instructions for converting their Docker images to Apptainer

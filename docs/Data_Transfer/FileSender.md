@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-05
-description: How to share data from the REANNZ HPC using FileSender.
+description: How to share data from Mahuika using FileSender.
 tags:
     - file_transfer
 ---

@@ -1,6 +1,6 @@
 ---
 created_at: '2020-06-26T06:09:34Z'
-description: How to run Delft3D hydrodynamic and morphodynamic modelling on NeSI.
+description: How to run Delft3D hydrodynamic and morphodynamic modelling on Mahuika.
 tags:
  - earth_science
 ---

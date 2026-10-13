@@ -2,7 +2,7 @@
 created_at: '2018-11-16T01:13:47Z'
 tags:
 - access
-description: Troubleshooting instructions for logging in to the REANNZ cluster
+description: Troubleshooting instructions for logging in to Mahuika
 ---
 
 
@@ -74,7 +74,7 @@ Either your link has expired, or it was copied incorrectly.
 
 ## Trusting Device results in error
 
-![NeSI login page showing 'We are sorry... Unexpected error when handling authentication request to identity provider.'](../../assets/images/Trusted-Device-error.png)
+![Login page showing 'We are sorry... Unexpected error when handling authentication request to identity provider.'](../../assets/images/Trusted-Device-error.png)
 
 
 This error is caused by a naming conflict: you have used the same device name previously. Choose a different device name and try again.
@@ -113,7 +113,7 @@ allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
 ### Confirm you are using the correct username and password
 
 The most common cause of login failure is using incorrect login details.
-Make sure you are using your NeSI Username and the password you set when
+Make sure you are using your username and the password you set when
 first logging in to the Lander node. See
 [my.nesi.org.nz](https://my.nesi.org.nz/).
 
@@ -151,7 +151,7 @@ lockout, making diagnosing the original issue much more difficult.
 
 Helpful things to include:
 
-* The client you are using (WSL, MobaXterm, Mac terminal, Linux, etc.).
+* The client you are using (Windows Subsystem for Linux, MobaXterm, Mac terminal, Linux, etc.).
 * The nature of the problem, including the precise text of any error
     message you have been receiving.
     * Did you start out having one login problem and are now getting a

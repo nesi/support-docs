@@ -65,7 +65,7 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 	You will be then asked a series of prompts:
 
 	* You will need to write out in full the direct path to where you want to store OpenFold3 files.
-	* `Please specify the OpenFold cache directory`: Best idea to change this to your project folder. Example: `/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3`
+	* `Please specify the OpenFold cache directory`: Best idea to change this to your project directory. Example: `/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3`
 	* `Please specify the directory for parameter download`: This should default to your cache directory. Example `/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3`
 	* `Select parameters to download`: Download whatever parameters you would like.
 	* `Force re-download parameters even if they already exist?`: Set this to `yes`

@@ -6,7 +6,7 @@ title: Add Your Computer to Globus
 description: Installing Globus Connect Personal so your own computer becomes a Globus collection
 ---
 
-To download and upload files between the Mahuika supercomputer and your personal computer,
+To download and upload files between Mahuika and your personal computer,
 you will need to install [Globus Connect Personal](https://www.globus.org/globus-connect-personal)
 onto your computer.
 

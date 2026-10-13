@@ -113,10 +113,9 @@ You will always get the amount of memory you requested, even if running on a nod
     Jobs will not automatically land on the Intel 'hugemem' nodes. You must specifically request `--partition hugemem`.
     The CPU architecture is different enough from the Milan and Genoa nodes, you will probably have to recompile your software.
 
-
 ## GPUs
 
-REANNZ HPC has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale.
+Mahuika has a range of Graphical Processing Units (GPUs) to accelerate compute-intensive research and support more analysis at scale.
 
 Depending on the type of GPU, you can access them in different ways, such as via batch scheduler (Slurm),
 or Virtual Machines (VMs).

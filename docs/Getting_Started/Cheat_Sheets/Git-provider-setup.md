@@ -57,7 +57,7 @@ We will use GitHub as the example but the basic setup should be similar in other
 
     ![SSH Key button](../../assets/images/Git-Reference_Sheet_0.png)
 
-- In the "Title" field, put "Mahuika" or "REANNZ HPC".
+- In the "Title" field, put "Mahuika".
 
 - Paste your key into the "Key" field.
 

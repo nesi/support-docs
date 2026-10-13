@@ -14,7 +14,7 @@ First you need to sign up with a Globus Subscription. **This is free** for Mahui
 
 ## Transferring files between two computers
 
-Once you have been accept to the NeSI/REANNZ Globus Subscription, [we will follow a similar guide for transferring data as
+Once you have been accepted to the REANNZ Globus subscription, [we will follow a similar guide for transferring data as
 given here](./Data_Transfer_Using_Globus.md#transferring-data-using-globus), where instead of transferring data between your `collection`
 and Mahuika, you transfer data between your two computers/servers.
 

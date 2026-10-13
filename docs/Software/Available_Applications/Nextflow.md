@@ -1,6 +1,6 @@
 ---
 created_at: 2025-12-04
-description: How to utilise the Nextflow workflow engine on the REANNZ HPC.
+description: How to utilise the Nextflow workflow engine on Mahuika.
 tags: 
     - workflow
 ---
@@ -237,7 +237,7 @@ Please note that there is an [additional ranking of priority for process configu
 
 ## Monitoring and reporting
 
-Nextflow provides tools that can assist you in making efficient use of the HPC resources. We strongly recommend testing your pipeline with a small subset of data to determine optimal settings before running full datasets.
+Nextflow provides tools that can assist you in making efficient use of Mahuika's resources. We strongly recommend testing your pipeline with a small subset of data to determine optimal settings before running full datasets.
 
 The most human-readable, but least configurable option is the execution report which is
 [an HTML execution report containing CPU and memory utilisation information](https://www.nextflow.io/docs/latest/reports.html#execution-report) for each individual process as well as each process type. This information can be used to ensure processes are only getting the resources they need.

@@ -12,7 +12,7 @@ no_module: true
 [Lambda
 Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) is an
 AI software stack from Lambda containing PyTorch, TensorFlow, CUDA,
-cuDNN and more. On the HPC you can run Lambda Stack via
+cuDNN and more. On Mahuika you can run Lambda Stack via
 [Apptainer](Apptainer.md) (based on the
 official
 [Dockerfiles](https://github.com/lambdal/lambda-stack-dockerfiles/)). We
@@ -169,7 +169,7 @@ apptainer exec -B $PWD $SIF bash
 ```
 
 After executing the above command your prompt should have changed to
-*Singularity&gt;*, the following commands are all executed at this
+*Apptainer&gt;*, the following commands are all executed at this
 prompt (i.e. within the container):
 
 ``` sh

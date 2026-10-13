@@ -210,7 +210,7 @@ Some additional notes specific to running VASP on GPUs:
 !!! note
     KPAR must divide evenly into the total number of MPI processes.
 
-* If you come across `threads-per-core=1` or `threads-per-core=2`, this indicates whether you want to use [hyperthreading or not](../Parallel_Computing/Simultaneous_Multithreading.md). For VASP, turn hyperthreading off (i.e. set `threads-per-core=1`; this is the default on Mahuika).
+* If you come across `threads-per-core=1` or `threads-per-core=2`, this indicates whether you want to use [simultaneous multithreading (SMT) or not](../Parallel_Computing/Simultaneous_Multithreading.md). For VASP, turn SMT off (i.e. set `threads-per-core=1`; this is the default on Mahuika).
 * For visualising VASP structure files like the `POSCAR` and `CONTCAR`, use the [Atomic Simulation Environment (ASE)](https://docs.ase-lib.org/). See [ASE GUI basics](https://docs.ase-lib.org/ase/gui/basics.html) to learn more about visualising your chemical systems in ASE.
 
 ## VASP extensions

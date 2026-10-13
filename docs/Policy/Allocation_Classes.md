@@ -16,8 +16,7 @@ The allocation class granted to your project is used to decide who pays for that
 <p>A short-term allocation available to researchers from any New Zealand
 research institution. During this allocation you will:</p>
 <ul>
-<li>Find out whether your software works on one of the NeSI
-platforms.</li>
+<li>Find out whether your software works on Mahuika.</li>
 <li>See how your software scales when you run it on more
 processors.</li>
 <li>Start estimating how many core hours per year you will need for your

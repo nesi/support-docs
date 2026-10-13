@@ -115,7 +115,7 @@ There are two ways to run a container as a kernel; select the tab that suits you
         wrapper script.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`).
+            your project directory (`cd /nesi/project/<project-code>`).
         - Avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -193,7 +193,7 @@ There are two ways to run a container as a kernel; select the tab that suits you
         virtual environment.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`).
+            your project directory (`cd /nesi/project/<project-code>`).
         - Avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -310,7 +310,7 @@ Tool-Assisted Management or Manual Management approach.
 You can also configure a shared container kernel that others with access to the
 same project will be able to load. Whichever approach you use, make sure the
 container image (and, for a bash kernel, the virtual environment and
-`wrapper.sh`) live in a shared location such as your project folder
+`wrapper.sh`) live in a shared location such as your project directory
 (`/nesi/project/<project-code>`) — other users cannot read your home directory.
 How you share depends on whether you registered the kernel with the
 tool-assisted or manual approach:
@@ -353,7 +353,7 @@ tool-assisted or manual approach:
     For a manually-created kernel, **you** first create the kernel yourself,
     following the manual steps in the **Manual Management** tab earlier on this
     page, but making sure the container image and `wrapper.sh` (and, for a bash
-    kernel, the virtual environment) are all in your shared project folder.
+    kernel, the virtual environment) are all in your shared project directory.
 
     Next, **your team members** set up the kernel on their side by creating the
     kernelspec in their own home directory. The steps depend on the type of

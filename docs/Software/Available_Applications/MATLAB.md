@@ -4,7 +4,7 @@ tags:
 - mathematics
 - engineering
 - machine_learning
-description: Examples and tips on how to use MATLAB on the Mahuika platform.
+description: Examples and tips on how to use MATLAB on Mahuika.
 ---
 
 {% set app_name = page.title | trim %}
@@ -72,7 +72,7 @@ use of multiple threads (`--cpus-per-task`) or GPUs (`--gpus-per-node`).
 ### Implicit parallelism
 
 Implicit parallelism requires no changes to be made in your code. By
-default MATLAB will utilise multi-threading for a wide range of
+default MATLAB will utilise multithreading for a wide range of
 operations, scalability will vary but generally you will not be able to
 utilise more than a 4-8 CPUs this way.
 

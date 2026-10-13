@@ -1,13 +1,13 @@
 ---
 created_at: '2026-03-18'
-description: "A guide on how to use the TAU Performance System to trace an MPI-based C++ application on the Mahuika HPC cluster."
+description: "A guide on how to use the TAU Performance System to trace an MPI-based C++ application on Mahuika."
 tags:
     - profiling
     - mpi
 title: 'Tau for MPI Tracing'
 ---
 
-This guide shows how to use the **TAU Performance System** to trace an MPI-based C++ application on the Mahuika HPC cluster.
+This guide shows how to use the **TAU Performance System** to trace an MPI-based C++ application on Mahuika.
 
 Tracing records a time-ordered sequence of events during program execution.
 Each event is timestamped and written to a trace file so that the exact runtime behaviour of the program can be reconstructed.

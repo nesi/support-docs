@@ -13,7 +13,7 @@ tags:
 
 [Globus Compute](https://www.globus.org/compute) provides a secure, scalable way to run Python functions remotely on compute resources.
 On Mahuika, we host a Globus Compute multi-user endpoint, allowing users to submit and manage compute tasks through
-Globus or compatible clients without needing to connect to the HPC via SSH or OnDemand.
+Globus or compatible clients without needing to connect to Mahuika via SSH or OnDemand.
 Globus Compute has [comprehensive documentation](https://globus-compute.readthedocs.io/en/latest/quickstart.html) and here we will just
 highlight the specifics of working with the Mahuika endpoints.
 
@@ -21,7 +21,7 @@ highlight the specifics of working with the Mahuika endpoints.
 
 `Endpoint`
 
-:   A Globus Compute service running on the HPC system that executes user functions
+:   A Globus Compute service running on Mahuika that executes user functions
 
 `Single-user mode`
 
@@ -30,7 +30,7 @@ highlight the specifics of working with the Mahuika endpoints.
 
 `Multi-user mode`
 
-:   A centrally managed endpoint that all REANNZ HPC users can send tasks to; a user identity mapping process
+:   A centrally managed endpoint that all Mahuika users can send tasks to; a user identity mapping process
     maps the user's Globus identity to their account on Mahuika
 
 `Executors`
@@ -44,9 +44,9 @@ highlight the specifics of working with the Mahuika endpoints.
 
 ## Requirements
 
-You must have a REANNZ HPC account, Globus account and have linked an identity from your Globus account to the NeSI Keycloak. This can be achieved by
+You must have a Mahuika user account, a Globus account and have linked an identity from your Globus account to the NeSI Keycloak. This can be achieved by
 navigating to the [HPC Storage](https://app.globus.org/file-manager?origin_id=763d50ee-e814-4080-878b-6a8be5cf7570) in the Globus
-web app and ensuring you can see your REANNZ HPC files.
+web app and ensuring you can see your Mahuika files.
 
 ## Endpoints
 
@@ -59,7 +59,7 @@ web app and ensuring you can see your REANNZ HPC files.
 
 This endpoint submits work in Slurm jobs. The following configuration options are available via [`user_endpoint_config`](https://globus-compute.readthedocs.io/en/v2.20.1/reference/executor.html#globus_compute_sdk.Executor.user_endpoint_config):
 
-- `ACCOUNT_ID` (required): your REANNZ HPC project code
+- `ACCOUNT_ID` (required): your project code
 - `WALL_TIME` (optional, defaults to `00:05:00`): the wall time for the Slurm job that gets submitted (must be enough time for your function to complete)
 - `MEM_PER_CPU` (optional, defaults to `2G`): amount of memory to be requested in the Slurm job
 - `GPUS_PER_NODE` (optional, defaults to no GPU): request GPUs for the Slurm job

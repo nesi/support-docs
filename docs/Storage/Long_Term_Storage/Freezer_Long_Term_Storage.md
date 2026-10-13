@@ -1,6 +1,6 @@
 ---
 created_at: 2025-04-04
-description: "Our Freezer service allows you to store your data on tape for long term storage."
+description: "Our Freezer service allows you to store your data on tape for long-term storage."
 tags:
   - storage
 ---
@@ -11,7 +11,7 @@ Due to the tape storage backend, Freezer is intended for use with relatively lar
 
 ## Getting started
 
-Before getting started, you will need an allocation and credentials. To apply for an allocation go to [MyNeSI](https://my.nesi.org.nz/).
+Before getting started, you will need an allocation and credentials. To apply for an allocation go to [my.nesi.org.nz](https://my.nesi.org.nz/).
 Once onboarded, you can start to use Freezer. Currently Freezer is only available via specific access points on Mahuika. We are currently completing security hardening prior to opening Freezer to wider access.
 
 !!! tip "Webinar - Getting started with Freezer: Long-term storage for your research"

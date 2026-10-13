@@ -37,14 +37,21 @@ def blank_code_blocks(content):
 
 
 class LinePattern(NamedTuple):
-    """A BANNED_PATTERNS entry as a proselint check type, matched one line at a time."""
+    """A BANNED_PATTERNS entry as a proselint check type, matched one line at a time.
+
+    With 'first_mention', only the page's first match is reported, and only if it comes before the full form.
+    """
 
     pattern: re.Pattern
+    first_mention: re.Pattern | None = None
 
     def check(self, text, check):
+        full_form = self.first_mention and self.first_mention.search(text)
         offset = 0
         for line in text.split("\n"):
             for m in self.pattern.finditer(line):
+                if self.first_mention and full_form and full_form.start() <= offset + m.start():
+                    return
                 found = m.group(m.lastindex) if m.lastindex else m.group(0)
                 yield CheckResult(
                     check_path=check.path,
@@ -52,6 +59,8 @@ class LinePattern(NamedTuple):
                     span=(offset + m.start(), offset + m.end()),
                     replacements=None,
                 )
+                if self.first_mention:
+                    return
             offset += len(line) + 1
 
 
@@ -62,7 +71,8 @@ def rule_checks():
     # allow_quotes: proselint skips matches inside quotation marks by default, the rules decide that themselves.
     return tuple(
         Check(
-            check_type=LinePattern(re.compile(rule["pattern"], rule.get("flags", 0))),
+            check_type=LinePattern(re.compile(rule["pattern"], rule.get("flags", 0)),
+                                   re.compile(rule["first_mention"]) if "first_mention" in rule else None),
             path=path,
             message=rule["message"],
             flags=CheckFlags(allow_quotes=True),

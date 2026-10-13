@@ -128,7 +128,7 @@ configurations.
 
 Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
 
-1. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
+1. In a terminal **on Mahuika** (either through SSH or OnDemand), run the commands;
 
     ```sh
     mkdir -p ~/.ssh
@@ -141,7 +141,7 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
     scp ~/.ssh/mahuika_key.pub mahuika:~/.ssh/mahuika_key.pub
     ```
 
-3. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
+3. In a terminal **on Mahuika** (either through SSH or OnDemand), run the commands;
 
     ```sh
     cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys

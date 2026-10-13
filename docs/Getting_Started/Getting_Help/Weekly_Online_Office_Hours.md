@@ -5,7 +5,7 @@ tags:
 description: Weekly drop-in Zoom sessions where you can ask our support team about HPC, data analytics and other eResearch services.
 ---
 
-Have questions about our HPC, data analytics, or other eResearch services?
+Have questions about Mahuika, data analytics, or other eResearch services?
 Looking for tips on how to optimise your HPC jobs?
 Or simply want to meet some of our support team?
 

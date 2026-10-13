@@ -388,7 +388,7 @@ custom kernel; select the tab that suits you:
         virtual environment.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
         
@@ -449,7 +449,7 @@ custom kernel; select the tab that suits you:
         virtual environment.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -538,7 +538,7 @@ custom kernel; select the tab that suits you:
         conda environment.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - Avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -632,7 +632,7 @@ custom kernel; select the tab that suits you:
         custom R environment kernel.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - Avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -737,7 +737,7 @@ the kernel with the tool-assisted or manual approach:
     === "Environment module"
 
         The `wrapper.sh` script and the environment module it loads already live
-        in the shared project folder, so **your team members** only need to
+        in the shared project directory, so **your team members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
         Second, get **your team members** to create a directory for the kernel in
@@ -775,7 +775,7 @@ the kernel with the tool-assisted or manual approach:
     === "Python virtual environment"
 
         The `wrapper.sh` script and the virtual environment it activates already
-        live in the shared project folder, so **your team members** only need to
+        live in the shared project directory, so **your team members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
         Second, get **your team members** to create a directory for the kernel in
@@ -813,7 +813,7 @@ the kernel with the tool-assisted or manual approach:
     === "Conda environment"
 
         The `wrapper.sh` script and the conda environment it activates already
-        live in the shared project folder, so **your team members** only need to
+        live in the shared project directory, so **your team members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
         Second, get **your team members** to create a directory for the kernel in
@@ -851,7 +851,7 @@ the kernel with the tool-assisted or manual approach:
     === "R environment"
 
         The `wrapper.sh` script and the R environment modules it loads already
-        live in the shared project folder, so **your team members** only need to
+        live in the shared project directory, so **your team members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
         Second, get **your team members** to create a directory for the kernel in

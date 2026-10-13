@@ -11,14 +11,6 @@ The 'Remote' extension allows you to connect to a remote computer (like Mahuika)
 
 ## Setup
 
-!!! warning "Switching to HPC3"
-    If you have previously logged in to Mahuika with VSCode, you will need to delete the directory `~/.vscode-server`
-    before logging in to HPC3 (and vice versa). You can do this with the command,
-
-    ```sh
-    rm -rf ~/.vscode-server
-    ```
-
 === "Linux / macOS"
     1. Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](Standard_Terminal_Setup.md).
@@ -34,7 +26,7 @@ The 'Remote' extension allows you to connect to a remote computer (like Mahuika)
     4. Remove or comment out the `Control Path` line under `Host *`.
     !!! warning
         As Windows does not support SSH sockets, you will have to enter your password and second factor every time you open a new tab.
-        If this bothers you, you may want to consider the next option "Windows via WSL".
+        If this bothers you, you may want to consider Windows Subsystem for Linux (WSL), the next option "Windows via WSL".
 === "Windows via WSL"
     !!! danger
         This method may not work anymore. Only attempt if you have too much time on your hands.

@@ -11,7 +11,7 @@ Multithreading with OpenMP and other threading libraries is an important
 way to parallelise scientific software for faster execution (see our
 article on [Parallel Execution](Parallel_Computing.md) for
 an introduction). Care needs to be taken when running multiple threads
-on the HPC to achieve best performance - getting it wrong can easily
+on Mahuika to achieve best performance - getting it wrong can easily
 increase compute times by tens of percents, sometimes even more. This is
 particularly important for programs that can use a large number of
 threads, such as TensorFlow and other software that uses Intel oneMKL.
@@ -46,7 +46,7 @@ slower RAM.
 The picture below shows a simplified view of a two-socket node with two
 cores per socket. Most HPC nodes will have two sockets, but a lot more
 cores (Mahuika compute nodes have 64 or 84 cores per socket). Each core can also be
-further divided into two logical cores (or hyperthreads, as mentioned
+further divided into two logical cores (or SMT threads, as mentioned
 before).
 
 ![NodeSocketCore.png](../../assets/images/Thread_Placement_and_Thread_Affinity.png)

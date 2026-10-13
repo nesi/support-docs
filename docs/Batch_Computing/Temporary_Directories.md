@@ -2,7 +2,7 @@
 created_at: '2023-07-21T04:10:04Z'
 tags:
   - storage
-description: How temporary files are utilised on the REANNZ cluster.
+description: How temporary files are utilised on Mahuika.
 ---
 
 Temporary files are those which get created during a job and are not needed after the

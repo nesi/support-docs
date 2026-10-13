@@ -83,7 +83,7 @@ Users have the right to request a copy of any Personal Information about them he
 
 ## 7. Correction of Information 
 
-REANNZ will endeavour to ensure that all Personal Information is accurate, complete, and up-to-date whenever it is used.  Users must assist with this by informing REANNZ of any changes, errors, or discrepancies in the information held. If any Personal Information held is inaccurate, incomplete, or out-of-date users may update it through the MyNeSI portal or email REANNZ Support at support@nesi.org.nz to request that records be amended.   
+REANNZ will endeavour to ensure that all Personal Information is accurate, complete, and up-to-date whenever it is used.  Users must assist with this by informing REANNZ of any changes, errors, or discrepancies in the information held. If any Personal Information held is inaccurate, incomplete, or out-of-date users may update it through the my.nesi.org.nz portal or email REANNZ Support at support@nesi.org.nz to request that records be amended.
 
 ## 8. Deletion of Information 
 

@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-05
-description: How to transfer data on the REANNZ HPC using RSync.
+description: How to transfer data on Mahuika using RSync.
 tags:
 - file_transfer
 ---

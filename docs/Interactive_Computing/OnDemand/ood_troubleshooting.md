@@ -36,7 +36,7 @@ To resolve this issue:
 
     ![NeSI_OnDemand_No_Space_Left_1.png](../../assets/images/NeSI_OnDemand_No_Space_Left_2.png)
 
-2. Log in to your NeSI account through the terminal.
+2. Log in to Mahuika through the terminal.
 3. Type into the terminal ```storage_quota```. This will show the amount of space in your `home`, `project`, and `nobackup` directories. You will see that your `home` directory is full.
 
     ```sh 

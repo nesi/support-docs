@@ -32,7 +32,7 @@ The three main ANSYS licenses are;
 
 - **ANSYS Teaching License** (`aa_t`)
 
-    This is the default license type, it can be used on up to 6 CPUs on
+    This is the default licence type, it can be used on up to 6 CPUs on
     models with less than 512k nodes
 
 - **ANSYS Research license** (`aa_r`)
@@ -43,15 +43,15 @@ The three main ANSYS licenses are;
 
 - **ANSYS HPC License** (`aa_r_hpc`)  
     One of these is required for each CPU over 16 when using
-    a research license.
+    a research licence.
 
 ### License Order
 
-Whether to use a teaching or research license **must be set manually**.
+Whether to use a teaching or research licence **must be set manually**.
 If your job is greater than the node limit, not switching to the
-research license before submitting a job will **cause the job to fail**.
+research licence before submitting a job will **cause the job to fail**.
 
-The license order can be changed in workbench under tools &gt; license
+The licence order can be changed in workbench under tools &gt; license
 preferences (provided you have X11 forwarding set up), or by running
 either of the following (ANSYS module must be loaded first using
 `module load ANSYS`).
@@ -574,7 +574,7 @@ The following FENSAP solvers are compatible with MPI
 
 #### With GUI
 
-If you have set up X-11 forwarding, you may launch the FENSAP ice using
+If you have set up X11 forwarding, you may launch the FENSAP ice using
 the command `fensapiceGUI` from within your FENSAP project directory.
 
 1. Launch the run and select the desired
@@ -599,7 +599,7 @@ number of (physical) CPUs.
 
 You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
-opening the GUI within the project folder.
+opening the GUI within the project directory.
 
 !!! info
     Submitting your job through the use of the GUI has disadvantages and
@@ -821,4 +821,4 @@ granted and you can begin, so you might want to use the
 ### Simultaneous Multithreading
 
 Utilising [simultaneous multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (i.e.: adding the `--hint=multithread` sbatch directive and doubling the number of tasks) will give a small speedup on most jobs with less than 8 cores, but also doubles the number of
-`aa_r_hpc` license tokens required.
+`aa_r_hpc` licence tokens required.

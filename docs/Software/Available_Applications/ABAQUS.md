@@ -46,7 +46,7 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 
 [Simultaneous Multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (adding `#SBATCH --hint multithread`)
 can provide significant speedup to your computations, however
-hyperthreaded CPUs will use twice the number of licence tokens.
+simultaneous multithreading (SMT) will use twice the number of licence tokens.
 
 ## Solver Compatibility
 

@@ -2,7 +2,7 @@
 created_at: '2018-04-18T23:56:10Z'
 tags:
 - account
-description: How to create a REANNZ HPC account.
+description: How to create a Mahuika user account.
 ---
 
 {% include 'partials/status-no-pro.md' %}
@@ -16,8 +16,8 @@ description: How to create a REANNZ HPC account.
     Virtual Home account, whichever applies.
 
 2. If this is your first time logging in to `my.nesi` and you do not have
-    an entry in our database (you have not previously had a NeSI
-    account) you will be asked to fill out some fields, such as your
+    an entry in our database (you have not previously had a Mahuika
+    user account) you will be asked to fill out some fields, such as your
     role at your institution and contact telephone number, and submit
     the online form to us. We will complete your personal profile for
     our records.

@@ -42,7 +42,7 @@ Here are the explanations for each line of this snippet:
 - `source $(conda info --base)/etc/profile.d/conda.sh` ensures that
     you can use the `conda activate` command.
 - `export PYTHONNOUSERSITE=1` makes sure that local packages installed
-    in your home folder `~/.local/lib/pythonX.Y/site-packages/` (where
+    in your home directory `~/.local/lib/pythonX.Y/site-packages/` (where
     `X.Y` is the Python version, e.g. 3.8) by `pip install --user` are
     excluded from your conda environments.
 
@@ -96,7 +96,7 @@ setting is saved in your `~/.condarc` configuration file.
 Next, we recommend using the `-p` or `--prefix` options when creating
 new conda environments, instead of `-n` or `--name` options. Using `-p`
 or `--prefix`, you can specify the conda environment folder location,
-ideally in your project folder. For example:
+ideally in your project directory. For example:
 
 ``` sh
 conda create --prefix /nesi/project/<project_code>/my_conda_env python=3.8

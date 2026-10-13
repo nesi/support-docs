@@ -3,7 +3,7 @@ created_at: '2020-01-05T21:43:18Z'
 tags:
   - interactive
   - slurm
-description: How to run an interactive session on the REANNZ HPC cluster.
+description: How to run an interactive session on Mahuika.
 ---
 
 A Slurm interactive session reserves resources on compute nodes allowing
@@ -88,7 +88,7 @@ For a full description of `salloc` and its options, see
 
 It is possible to run GUI applications interactively on the cluster.  Along with the `--pty` flag, one should also include the `--x11` flag and have a properly configured X server.  More information can be found here:  [https://docs.nesi.org.nz/Getting_Started/Accessing_the_HPCs/X11/](../Getting_Started/Accessing_the_HPCs/X11.md)
 
-Depending on the GUI application and resource requirements, it may be beneficial to run a Virtual Desktop from our OnDemand service instead of using X forwarding: [https://ondemand.nesi.org.nz/pun/sys/dashboard](https://ondemand.nesi.org.nz/pun/sys/dashboard)
+Depending on the GUI application and resource requirements, it may be beneficial to run a Virtual Desktop from our OnDemand service instead of using X11 forwarding: [https://ondemand.nesi.org.nz/pun/sys/dashboard](https://ondemand.nesi.org.nz/pun/sys/dashboard)
 
 ### Setting up a detachable terminal
 

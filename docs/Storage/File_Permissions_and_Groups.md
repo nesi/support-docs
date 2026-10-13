@@ -1,6 +1,6 @@
 ---
 created_at: '2018-05-21T05:14:00Z'
-description: How to manage file access on the REANNZ HPC filesystems.
+description: How to manage file access on the Mahuika filesystems.
 tags:
 - storage
 - account

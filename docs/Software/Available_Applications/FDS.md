@@ -46,12 +46,12 @@ srun fds ${input}
 - FDS will run in Hybrid Parallel, but will be less efficient that
     full MPI using the same number of CPUs.
 - MPI if the preferable method of scaling, if you can partition your
-    mesh more you should do that before considering multi-threading
+    mesh more you should do that before considering multithreading
     (OpenMP). e.g. `ntasks=2, cpus-per-task=1` is preferable
     to `ntasks=1, cpus-per-task=2`
 - Each mesh should have it's own task, assigning more tasks than there
     are meshes will cause an error.
-- Multi-threading efficiency drops off significantly after 4 physical
+- Multithreading efficiency drops off significantly after 4 physical
     cores. `--cpus-per-task 4`
 - Simultaneous multithreading is not recommended. Do not set `--hint multithread`
 

@@ -10,7 +10,7 @@ description: How to run a Pluto interactive session on the Mahuika cluster.
 For new users we recommend running Pluto from our [OnDemand Service](./OnDemand/OnDemand_Overview.md).  However,
 many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
->If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in PuTTY or MobaXterm
+>If you are using a Windows computer, this method has currently been tested in VSCode, Windows Subsystem for Linux (WSL) PowerShell, and WSL Ubuntu. We have not tested it yet in PuTTY or MobaXterm
 
 To run Pluto.jl in interactive mode, first we need to load your interactive session:
 

@@ -1,6 +1,6 @@
 ---
 created_at: '2018-05-22T01:49:31Z'
-description: How to retreive lost data from the REANNZ HPC filesystem.
+description: How to retrieve lost data from the Mahuika filesystems.
 tags:
 - storage
 ---

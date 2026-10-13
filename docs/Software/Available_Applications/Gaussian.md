@@ -2,7 +2,7 @@
 created_at: '2015-07-29T23:31:02Z'
 tags:
 - chemistry
-description: How to run Gaussian on the Mahuika HPC
+description: How to run Gaussian on Mahuika
 ---
 
 {% set app_name = page.title | trim %}

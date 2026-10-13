@@ -24,7 +24,7 @@ If you no longer have access to your authenticator application (e.g. change of d
    A confirmation message will be displayed that instructions are emailed to you.
    ![Reset Code Confirmation Example](../../assets/images/resetcode_confirmation.png).
 
-3. Check your email (the address associated with your HPC account).
+3. Check your email (the address associated with your Mahuika user account).
    You should find an email called 'Reset Your REANNZ HPC Authentication Credentials'.
 
 4. Follow the instructions to configure your authentication credentials.

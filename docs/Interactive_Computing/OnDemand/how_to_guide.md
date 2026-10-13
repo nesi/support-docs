@@ -2,8 +2,8 @@
 tags:
     - interactive
     - r
-description: Getting Started With NeSI onDemand
-title: NeSI OnDemand How-to Guide
+description: Getting started with Mahuika OnDemand
+title: Mahuika OnDemand How-to Guide
 ---
 
 ## How to log in
@@ -31,11 +31,11 @@ Log in with your institutional credentials.
 
     Once you have set up your additional authentication credentials, you will be shown the following screen, where you can enter the 6-digit code from your authenticator app.
 
-    ![ondemand login 4](../../assets/images/ondemand_login_3.png)
+    ![The prompt for your 6-digit code, with a code entered and a button to submit it.](../../assets/images/ondemand_login_3.png)
 
     After successfully logging in, you will be presented with the following OnDemand screen.
 
-    ![ondemand login success](../../assets/images/OOD_Desktop_08Jun2025.png)
+    ![The OnDemand dashboard after logging in, listing the code-server, Jupyter Lab, RStudio-Server and Virtual Desktop apps.](../../assets/images/OOD_Desktop_08Jun2025.png)
 
 ### OnDemand home page
 

@@ -41,7 +41,7 @@ Software may:
 
 ## Shared Memory
 
-Shared Memory Parallelism, or multi-threading, parallelises itself by forking (duplicating) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
+Shared Memory Parallelism, or multithreading, parallelises itself by forking (duplicating) a single process into multiple parallel threads via libraries like OpenMP (OMP), TBB, or pthread.
 
 A non-parallelised (series) program works like this:
 
@@ -84,7 +84,7 @@ A distributed memory parallelisation program:
 
 - Does not require shared memory (Each task has its own memory).
 - Can utilise multiple nodes.
-- Has higher communication and memory overhead than multi-threading
+- Has higher communication and memory overhead than multithreading
 - Memory requirements typically scale with CPU count
 - Predates shared-memory parallelism; common in classical HPC applications
 
@@ -115,7 +115,7 @@ srun bash -c 'taskset -c -p $$'  # Prints CPU available to each task
 
 ## Hybrid Parallel
 
-Combining `--ntasks` and `--cpus-per-task` for distributed tasks each of which is multi-threaded. 
+Combining `--ntasks` and `--cpus-per-task` for distributed tasks each of which is multithreaded. 
 Not commonly supported.
 
 ### Example Script

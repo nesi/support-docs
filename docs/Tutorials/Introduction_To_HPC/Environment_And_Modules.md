@@ -113,7 +113,7 @@ On Mahuika, we use Lmod.
 
 ### Purging Modules
 
-Depending on how you are accessing the HPC the modules you have loaded by default will be different.
+Depending on how you are accessing Mahuika, the modules you have loaded by default will be different.
 So before we start listing our modules we will first use the `module purge` command to clear all but the minimum default modules so that we are all starting with the same modules.
 
 ```sh
