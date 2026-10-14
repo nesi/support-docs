@@ -84,7 +84,6 @@ Amdahl's
 Amdahl
 Anaconda3's
 Anaconda3
-Ancil
 Aotearoa's
 Aotearoa
 Apache
@@ -231,6 +230,7 @@ CRAMINO's
 CRAMINO
 CREST's
 CREST
+CRIs
 CRI
 CRLF
 CUDA's
@@ -245,7 +245,6 @@ Catch2
 CellRanger's
 CellRanger
 CentOS
-Centos
 Centrifuge's
 Centrifuge
 Cereal's
@@ -262,8 +261,6 @@ Circlator's
 Circlator
 Circos's
 Circos
-Cladograms
-Cladogram
 Clair3's
 Clair3
 Clairvoyante
@@ -273,7 +270,6 @@ Clustal-Omega's
 Clustal-Omega
 ClustalW2's
 ClustalW2
-Conda
 CoordgenLibs's
 CoordgenLibs
 CoverM's
@@ -338,6 +334,7 @@ Delft3D_FM
 Delly's
 Delly
 DevOps
+Dfam
 Dockerfiles
 Dockerfile
 Dorado's
@@ -370,7 +367,6 @@ ETE's
 ETE
 EasyBuild's
 EasyBuild
-Easybuild
 Ehrenfest
 Eigen's
 Eigen
@@ -404,6 +400,7 @@ FEA
 FEBio's
 FEBio
 FENSAP
+FFTs
 FFT
 FFTW's
 FFTW
@@ -417,6 +414,7 @@ FLTK's
 FLTK
 FTE
 FaaS
+FairShare
 Faiss's
 Faiss
 FastANI's
@@ -481,7 +479,6 @@ GEOS's
 GEOS
 GFDL
 GFF
-GFortran
 GGA
 GIS
 GLPK's
@@ -563,11 +560,9 @@ GenomeThreader's
 GenomeThreader
 GetOrganelle's
 GetOrganelle
-GiB
 GitHub
 GitLab
 Gitea
-Glib
 GlimmerHMM's
 GlimmerHMM
 Globus
@@ -576,6 +571,7 @@ Globus-CLI
 GlobusID
 Go's
 Go
+GraphicsMagick's
 GraphicsMagick
 Graphviz's
 Graphviz
@@ -733,12 +729,12 @@ LINKS's
 LINKS
 LISFLOOD-FP's
 LISFLOOD-FP
+LLM
 LLNL
 LLVM's
 LLVM
 LMDB's
 LMDB
-LMM
 LSD2's
 LSD2
 LTR_retriever's
@@ -773,7 +769,6 @@ MAKER's
 MAKER
 MATLAB's
 MATLAB
-MBs
 MB
 MBIE's
 MBIE
@@ -895,7 +890,6 @@ MrBayes
 MultiQC's
 MultiQC
 Multiphysics
-MyNeSI
 Māui's
 Māui
 NAMD's
@@ -930,6 +924,7 @@ NTLM
 NUMA
 NVHPC's
 NVHPC
+NVIDIA
 NVLink
 NVMe
 NWChem's
@@ -975,7 +970,6 @@ Nsight-Compute
 Nsight-Systems's
 Nsight-Systems
 NumPy
-Nvidia
 OBITools's
 OBITools
 OMP
@@ -992,7 +986,6 @@ OSU-Micro-Benchmarks
 OSX
 OTF2's
 OTF2
-OTP
 OnDemand
 OneDrive
 OpenACC
@@ -1026,10 +1019,6 @@ OpenSlide
 OrthoFinder's
 OrthoFinder
 Otago
-Otautahi's
-Otautahi
-Otepoti's
-Otepoti
 PALEOMIX's
 PALEOMIX
 PAML's
@@ -1089,8 +1078,6 @@ PhyML's
 PhyML
 PhyloPhlAn's
 PhyloPhlAn
-Phylograms
-Phylogram
 Pilon's
 Pilon
 PlasMAAG's
@@ -1098,7 +1085,7 @@ PlasMAAG
 Pletzer
 Pluto's
 Pluto
-Pluto.ji
+Pluto.jl
 PnetCDF's
 PnetCDF
 Porechop's
@@ -1203,7 +1190,7 @@ Raven's
 Raven
 Rcorrector's
 Rcorrector
-Regrafting
+RefSeq
 Relion's
 Relion
 RepeatMasker's
@@ -1220,8 +1207,6 @@ Roary's
 Roary
 Rosetta's
 Rosetta
-Rotamers
-Rotamer
 Ruby's
 Ruby
 Rust's
@@ -1298,9 +1283,9 @@ Salmon's
 Salmon
 Sambamba's
 Sambamba
-ScaLAPAC
 ScaLAPACK's
 ScaLAPACK
+SchedMD
 Schrödinger's
 Schrödinger
 SciPy
@@ -1345,8 +1330,6 @@ Structure's
 Structure
 Subread's
 Subread
-Subunits
-Subunit
 Subversion's
 Subversion
 SuiteSparse's
@@ -1392,7 +1375,6 @@ TensorFlow's
 TensorFlow
 TensorRT's
 TensorRT
-TiB
 Tiriti
 Tk's
 Tk
@@ -1427,6 +1409,7 @@ UCX's
 UCX
 UCX-CUDA's
 UCX-CUDA
+UDFs
 UDF
 UDUNITS's
 UDUNITS
@@ -1506,7 +1489,7 @@ Waikato
 Waipapa
 Waitangi
 Waldur
-Wavefunction
+Waterman
 WhatsHap's
 WhatsHap
 Whenua
@@ -1517,7 +1500,7 @@ Wise2's
 Wise2
 XC
 XCB
-XVFB
+XQuartz
 XZ's
 XZ
 Xeon
@@ -1527,7 +1510,7 @@ Xerces-C++
 Xming
 Xmx
 Xorg
-Xquartz
+Xvfb
 YAML
 YAXT's
 YAXT
@@ -1660,11 +1643,13 @@ chopper's
 chopper
 cimfomfa's
 cimfomfa
+cladograms
+cladogram
 code-server's
 code-server
 codecs
 codec
-collapsable
+collapsible
 compleasm's
 compleasm
 conda
@@ -1687,18 +1672,15 @@ ctags's
 ctags
 ctffind's
 ctffind
-ctrl
 cuDNN's
 cuDNN
 curation
 customisable
 customisations
-customizable
 cutadapt's
 cutadapt
 cuteSV's
 cuteSV
-cylc
 cyvcf2's
 cyvcf2
 dadi's
@@ -1719,15 +1701,16 @@ deployable
 deprioritised
 dereference
 dereplication
-deserialization
+deserialisation
 designee
 devtools's
 devtools
-dfam
 dirname
-discretization
+discretisation
 distros
 distro
+dorado's
+dorado
 double-conversion's
 double-conversion
 drep's
@@ -1753,6 +1736,7 @@ eggnog-mapper
 eggnogdb
 eigendecomposition
 eigenproblems
+eigenproblem
 electromagnetics
 emmtyper's
 emmtyper
@@ -1771,7 +1755,6 @@ expat's
 expat
 f90wrap's
 f90wrap
-fairshare
 fanout
 fastStructure's
 fastStructure
@@ -1801,6 +1784,7 @@ foss's
 foss
 freetype's
 freetype
+frontends
 frontend
 funcX
 functionals
@@ -1876,10 +1860,6 @@ htop
 hwloc's
 hwloc
 hypergraph
-hyperthreads
-hyperthread
-hyperthreaded
-hyperthreading
 iccifort's
 iccifort
 ifbf's
@@ -2050,7 +2030,6 @@ likwid
 linkable
 linkers
 linker
-lmod
 localhost
 lockdown
 lp_solve's
@@ -2151,6 +2130,7 @@ nanopolish's
 nanopolish
 nanoscale
 nanostructures
+nanostructure
 nav
 ncbi-vdb's
 ncbi-vdb
@@ -2172,7 +2152,6 @@ netCDF-Fortran's
 netCDF-Fortran
 nf-core's
 nf-core
-nga
 ngā
 nobackup
 nodejs's
@@ -2200,6 +2179,7 @@ ollama
 onboard
 onboarded
 onboarding
+oneMKL
 ont-guppy-gpu's
 ont-guppy-gpu
 optimality
@@ -2217,10 +2197,10 @@ pandoc's
 pandoc
 parallel-fastq-dump's
 parallel-fastq-dump
+parallelisable
 parallelisation
 parallelise
 parallelising
-parallelizable
 paralogs
 paralog
 paralogous
@@ -2243,6 +2223,8 @@ phylogenetic
 phylogenies
 phylogeny
 phylogeography
+phylograms
+phylogram
 phyx's
 phyx
 picard's
@@ -2292,6 +2274,7 @@ protobuf
 pseudogenes
 pseudogene
 pseudopotentials
+pseudopotential
 psmc's
 psmc
 pstoedit's
@@ -2322,7 +2305,8 @@ rRNA
 randfold's
 randfold
 rangatiratanga
-rasterization
+rasterisation
+rasteriser
 rasusa's
 rasusa
 rclone's
@@ -2332,7 +2316,7 @@ re2c
 readonly
 reconfiguring
 recurse
-refseq
+regrafting
 relinking
 repartitioning
 repos
@@ -2347,7 +2331,8 @@ rnaQUAST's
 rnaQUAST
 roadmap
 rollout
-rsync
+rotamers
+rotamer
 runtimes
 runtime
 runtypes
@@ -2367,7 +2352,6 @@ sbt
 sc-RNA's
 sc-RNA
 scalable
-schedmd
 screen_assembly's
 screen_assembly
 semiempirical
@@ -2425,6 +2409,8 @@ subgrid
 subsampling
 subtrees
 subtree
+subunits
+subunit
 sudo
 supercomputers's
 supercomputers
@@ -2460,8 +2446,8 @@ tmp
 tmpfs
 tmux's
 tmux
-tokenizers
-tokenizer
+tokenisers
+tokeniser
 tomo's
 tomo
 toolchains
@@ -2485,6 +2471,7 @@ txt
 ultrasoft
 unallocated
 underflows
+underflow
 unimap's
 unimap
 unmapped
@@ -2504,7 +2491,7 @@ vcflib
 vclust's
 vclust
 vectorisation
-vectorize
+vectorise
 venv
 verkko's
 verkko
@@ -2517,12 +2504,11 @@ walltimes
 walltime
 wannier90's
 wannier90
-waterman
+wavefunction
 webpages
 webpage
 wgsim's
 wgsim
-whanau
 wheel's
 wheel
 whānau
