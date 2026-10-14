@@ -44,7 +44,7 @@ Let's make a directory to work from and copy the files in.
 cd /nesi/nobackup/<project_id>/
 mkdir -p intermed_hpc_<username>
 cd intermed_hpc_<username>
-cp -r /opt/nesi/examples/intermediate_hpc .
+cp -r /opt/nesi/examples/tutorials/job_scripting .
 ```
 
 ## Looking at a previous job and its efficiency
