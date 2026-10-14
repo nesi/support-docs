@@ -56,10 +56,11 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 	module load OpenFold3
 	```
 
-2. Run `setup_openfold` in the terminal:
+2. Run this `setup_openfold` alternative in the terminal:
 
 	```bash
-	setup_openfold
+	# The setup_openfold alternative
+    python -c 'import openfold3.setup_openfold as s; s.setup_biotite_ccd = lambda **kw: False; s.main(prog_name="setup_openfold")'
 	```
 
 	You will be then asked a series of prompts:
