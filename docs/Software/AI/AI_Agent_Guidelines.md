@@ -23,6 +23,9 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 
 Agents should follow these guidelines themselves.
 The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md) is binding: an agent should refuse to break it even when asked.
+The guidelines that protect other users (delays between polling, scoping queries to your own work,
+keeping heavy work off the login node, and running one session at a time) should not be relaxed at your request.
+If you need more than they allow, {% include "partials/support_request.html" %}.
 Agents should treat the rest of these guidelines as strong defaults, and ask you when unsure.
 
 - Agents should work in the directory you gave them, plus their own configuration and caches, and ask before reading or writing elsewhere.
@@ -40,6 +43,8 @@ Agents should treat the rest of these guidelines as strong defaults, and ask you
   (see the [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree)), and follow any data conditions agreed for your project (see the [Access Policy](../../Policy/Access_Policy.md)).
   Personal or health information, Māori data, and data under ethics, contract or export conditions often cannot be shared.
 - When polling commands that use shared resources (filesystem operations, `squeue`, `sacct`), leave generous delays between calls, for example `sleep 60` between `squeue --me` calls.
+  This applies wherever the polling runs, including loops inside job scripts.
+  To start a job when another one finishes, use a [job dependency](../../Batch_Computing/Job_Checkpointing.md) instead of polling.
 - Run only one agent session at a time, unless support has agreed to more.
 - Use `squeue --me` and `ps -u $USER` to keep the agent's view limited to your own work.
 - An agent on your own computer may run commands on the cluster through a login session you opened yourself, while you supervise it.
@@ -47,7 +52,12 @@ Agents should treat the rest of these guidelines as strong defaults, and ask you
   It will not see guidance installed on the cluster, so give it these guidelines yourself.
   Do not give it your passwords, SSH keys, tokens or other sensitive information, and do not let it log in on its own.
 - An agent that can access the cluster on its own, or that keeps running on the cluster when you are not supervising it, needs a service account.
-- Do not expose an MCP server or open a reverse tunnel from Mahuika outward.
+  You are supervising an agent when you are at the session and approving what it does as it happens.
+  These are not supervised:
+    - loops or monitors that keep running after you stop watching them,
+    - scheduled or cloud-hosted routines, such as `cron`, `scrontab` or an AI tool's scheduled tasks,
+    - sessions left running after you log out, for example in `tmux` or with `nohup`.
+- Do not expose an MCP server or open a reverse tunnel from a REANNZ HPC system outward.
   This includes tools such as `ngrok`, `cloudflared`, VS Code tunnels and remote-control features of AI tools.
   [The Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) does not allow tunnels that let connections from outside reach the cluster without logging in.
   An agent on your workstation connecting in to a service on the cluster is fine, but not the other way around.
