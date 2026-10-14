@@ -28,7 +28,7 @@ To move files and folders between `collections` (such as between Mahuika and ano
     `{{ globus_collection_storage}}` Globus endpoint.
     
 
-5. You will be shown a globus page requiring you to sign in to Mahuika. Click on `Use my username@iam.nesi.org.nz identity` text.
+5. You will be shown a globus page requiring you to log in to Mahuika. Click on `Use my username@iam.nesi.org.nz identity` text.
     ![Globus_Transfer_5.png](../../assets/images/Globus_Transfer_5.png)
 
 6. Once you have logged in, you will be sent back to the Globus transfer page. By default you will be placed to your
@@ -82,7 +82,7 @@ any person who has a Globus account.
 
 | Collection Name | Description | Recommended Use | Apply for Use | Contact |
 | ------------- | ----------- | --------------- | ------------- | ------- |
-| {{ globus_collection_storage }} | REANNZ Globus mapped collection, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika HPC and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
+| {{ globus_collection_storage }} | REANNZ Globus mapped collection, located at Tamaki Data Centre | File-sharing and transferring files to/from Mahuika and storage facilities. | [First Time Setup](./First_Time_Setup.md) | {% include "partials/support_request.html" %} |
 | [University of Otago - HCS](https://app.globus.org/file-manager?origin_id=108e72ac-c509-4cd0-940f-b7e3aa543007), [University of Otago - CHC HCS](https://app.globus.org/file-manager?origin_id=eeb5308a-2471-4696-9571-dd2092e041f9) | Endpoint for the High Capacity Research Storage Cluster, Dunedin Campus, University of Otago and Endpoint for the High Capacity Research Storage Cluster, Christchurch Campus, University of Otago | Primary endpoint for Otago Dunedin; uses local service accounts or Globus sharing. | [Access Form](https://www.otago.ac.nz/digital-services/services/file-storage-and-server-services/hcs-high-speed-data-transfer) | [university@otago.ac.nz](mailto:university@otago.ac.nz) |
 | University of Auckland Research Data Collection | Endpoint provides access to UoA research data. | Transferring files between UoA research drives and Mahuika | Apply by email | [researchdata@auckland.ac.nz](mailto:researchdata@auckland.ac.nz) |
 | AgResearch DTN01 | A Globus endpoint attached to AgResearch's institutional Linux storage platform | Sharing large datasets with external collaborators and moving large datasets between Mahuika and AgResearch's internal storage platform | Apply by email | [servicedesk@agresearch.co.nz](mailto:servicedesk@agresearch.co.nz) |

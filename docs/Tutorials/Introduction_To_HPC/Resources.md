@@ -19,7 +19,7 @@ description: Choosing how many CPUs a job needs, and measuring what it actually 
 Last time we submitted a job, we did not specify a number of CPUs, and therefore
 we were provided the default of `2` (1 _core_).
 
-As a reminder, our Slurm script `example_job.sl` currently looks like this.
+As a reminder, our batch script `example_job.sl` currently looks like this.
 
 ```sl
 #!/bin/bash -e
@@ -105,7 +105,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>The job will run more slowly than expected, and so may run out of time and get killed for exceeding its time limit.</td>
             <td>The job will wait in the queue for longer. <br>
              You will be charged for CPUs regardless of whether they are used or not.<br>
-            Your fair share score will fall more.
+            Your FairShare score will fall more.
            </td>
         </tr>
         <tr>
@@ -113,7 +113,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error (may not happen immediately).</td>
             <td>The job will wait in the queue for longer.<br>
              You will be charged for memory regardless of whether it is used or not.<br>
-             Your fair share score will fall more.</td>
+             Your FairShare score will fall more.</td>
         </tr>
         <tr>
             <td><b>   Walltime   </b></td>
@@ -146,7 +146,7 @@ Memory efficiency can be determined by comparing _ReqMem_ (requested memory) wit
 
 $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
 
-So for the above example we see that _0.1GB_ (102048K) of our requested _1GB_ meaning the memory efficiency was about _10%_.
+So for the above example we see that _0.1 GB_ (102048 kB) of our requested _1 GB_ meaning the memory efficiency was about _10%_.
 
 CPU efficiency can be determined by comparing _TotalCPU_ (CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to _Alloc_ (number of allocated CPUs) multiplied by _Elapsed_ (Walltime, actual time passed).
 
@@ -232,7 +232,7 @@ Now that we've requested more memory, this one should complete successfully!
 
 Modern CPU cores have 2 threads of operation that can execute independently of one
 another. SMT is the technology that allows the 2 threads within one physical core to present
-as multiple logical cores, sometimes referred to as virtual CPUS (vCPUS).
+as multiple logical cores, sometimes referred to as virtual CPUs (vCPUs).
 
 For more details please see our
 [documentation on SMT](../../Software/Parallel_Computing/Simultaneous_Multithreading.md)
@@ -337,13 +337,13 @@ We will cover a bit more on running tests in the last lesson.
 ### Run tests jobs using debug QOS (Quality of Service)
 
 Before submitting a large job, first submit one as a test to make sure everything works as expected.
-Often, users discover typos in their submit scripts, incorrect module names or possibly an incorrect path name after their job has queued for many hours.
+Often, users discover typos in their batch scripts, incorrect module names or possibly an incorrect path name after their job has queued for many hours.
 Be aware that your job is not fully scanned for correctness when you submit the job.
 While you may get an immediate error if your `#SBATCH` directives are malformed, it is not until the job starts to run that the interpreter starts to process the batch script.
 Mahuika has an easy way for you to test your job submission.
 One can employ the debug QOS to get a short, high priority test job.
 Debug jobs have to run within {{ slurm_limits.debug.minutes }} minutes and cannot use more than {{ slurm_limits.debug.nodes }} nodes.
-To use debug QOS, add or change the following in your batch submit script:
+To use debug QOS, add or change the following in your batch script:
 
 ```sh
 #SBATCH --qos=debug

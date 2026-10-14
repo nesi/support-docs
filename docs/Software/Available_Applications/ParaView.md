@@ -22,7 +22,7 @@ If you want to use ParaView in client-server mode, use the following
 setup:
 
 - Load one of the ParaView Server modules listed above and launch the
-    server in your interactive visualisation session on the HPC using;
+    server in your interactive visualisation session on Mahuika using;
 
     ```sh
     module load ParaView
@@ -49,7 +49,7 @@ setup:
     ssh mahuika -L 11111:mahuika02:11111
     ```
 
-    Make sure the host name and socket match those given by the server
+    Make sure the hostname and socket match those given by the server
     earlier!
 
 - Launch the ParaView GUI on your local machine and go to "File &gt;

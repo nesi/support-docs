@@ -12,7 +12,7 @@ description: How to run LAMMPS on the Mahuika cluster
 {% include "partials/app_header.html" %}
 [//]:LAMMPS.md> (APPS PAGE BOILERPLATE END)
 
-LAMMPS is a classical molecular dynamics code with a focus on materials modeling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.
+LAMMPS is a classical molecular dynamics code with a focus on materials modelling. It's an acronym for Large-scale Atomic/Molecular Massively Parallel Simulator.
 
 LAMMPS has potentials for solid-state materials (metals, semiconductors) and soft matter (biomolecules, polymers) and coarse-grained or mesoscopic systems. It can be used to model atoms or, more generically, as a parallel particle simulator at the atomic, meso, or continuum scale.
 
@@ -104,7 +104,7 @@ performance of your LAMMPS simulations can vary, so testing is key
 to optimising your LAMMPS simulation. However, in general terms:
 
 * For dense, homogeneous, well behaved system with a sufficient
-  number of atoms, so that the MPI parallelization can be at its
+  number of atoms, so that the MPI parallelisation can be at its
   most efficient.
 * In inhomogeneous systems where there could be lots of empty spaces
   in the simulation cell, a sensible mix of MPI and OpenMP could be

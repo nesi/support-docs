@@ -28,7 +28,7 @@ You should consider using a GPU for your work if:
 ## Request GPU resources using Slurm
 
 To request a GPU for your [Slurm job](Tutorial:_Submitting_your_first_job.md), add
-the following option in the header of your submission script:
+the following option in the header of your batch script:
 
 ```sl
 #SBATCH --gpus-per-node=<gpu_type>:<gpu_number>
@@ -49,43 +49,43 @@ where `<gpu_type>` is the type of gpu you want to use (`a100`, `pro_6000`, `h100
     </tr>
     <tr>
         <td>NVIDIA A100 80GB</td>
-        <td>NVLink between all 4 GPUs on a node. An <code>a100</code> request can land on either A100 type, so if you need 80GB of VRAM add<br><code style="white-space: nowrap">--constraint=a100_80gb</code></td>
-        <td>80GB</td>
+        <td>NVLink between all 4 GPUs on a node. An <code>a100</code> request can land on either A100 type, so if you need 80 GB of VRAM add<br><code style="white-space: nowrap">--constraint=a100_80gb</code></td>
+        <td>80 GB</td>
         <td>4</td>
         <td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA A100 40GB</td>
         <td>No NVLink; GPUs on a node communicate over PCIe</td>
-        <td>40GB</td>
+        <td>40 GB</td>
         <td>3</td>
         <td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
         <tr>
         <td>NVIDIA RTX PRO 6000</td>
         <td>Avoid for double precision floating point (fp64) as it is slow</td>
-        <td>96GB</td>
+        <td>96 GB</td>
         <td>2</td>
         <td><pre><code>#SBATCH --gpus-per-node=pro_6000:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA H100 NVL</td>
         <td></td>
-        <td>94GB</td>
+        <td>94 GB</td>
         <td>2</td>
         <td><pre><code>#SBATCH --gpus-per-node=h100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA L4</td>
         <td>Avoid for double precision floating point (fp64) as it is slow</td>
-        <td>24GB</td>
+        <td>24 GB</td>
         <td>4</td>
         <td><pre><code>#SBATCH --gpus-per-node=l4:1</code></pre></td>
     </tr>
 </table>
 
 You can also use the `--gpus-per-node`option in
-[Slurm interactive sessions](../Interactive_Computing/Slurm_Interactive_Sessions.md),
+[Slurm interactive jobs](../Interactive_Computing/Slurm_Interactive_Jobs.md),
 with the `srun` and `salloc` commands. For example:
 
 ``` sh
@@ -156,9 +156,9 @@ versions can be listed using:
 module spider cuDNN
 ```
 
-## Example Slurm script
+## Example batch script
 
-The following Slurm script illustrates a minimal example to request a
+The following batch script illustrates a minimal example to request a
 GPU card, load the CUDA toolkit and query some information about the
 GPU:
 
@@ -281,7 +281,7 @@ GPU Memory:        2.2%  510.00 MB of 23 GB
 
 ### Using Slurm Native Profiling
 
-Before you begin your Slurm job, include the following line somewhere at the start of your Slurm submission file:
+Before you begin your Slurm job, include the following line somewhere at the start of your batch script:
 
 ```bash
 #SBATCH --profile task
@@ -305,7 +305,7 @@ The following flow diagram explains the steps you should take to test which GPU 
 
 ![GPU_What_GPU_is_right_for_your_job.png](../assets/images/GPU_What_GPU_is_right_for_your_job.png)
 
-When running a 15-minute test job, add the following settings in your Slurm submission script:
+When running a 15-minute test job, add the following settings in your batch script:
 
 ```sl
 #!/bin/bash -e

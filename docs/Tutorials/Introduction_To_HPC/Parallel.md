@@ -11,7 +11,7 @@ description: How programs use more than one CPU, and the difference between SMP 
 !!! time "30 minutes"
 
 !!! objectives
-    - Prepare a job submission script for the parallel executable.
+    - Prepare a job batch script for the parallel executable.
 
 ## How to utilise Multiple CPUs
 
@@ -93,7 +93,7 @@ Using a combination of Shared and Distributed memory is called _Hybrid Parallel_
 
 GPUs compute large number of simple operations in parallel, making them well suited for Graphics Processing (hence the name), or any other large matrix operations.
 
-On Mahuika, GPU's are specialised pieces of hardware that you request in addition to your CPUs and memory.
+On Mahuika, GPUs are specialised pieces of hardware that you request in addition to your CPUs and memory.
 
 You can find an up-to-date(ish) list of GPUs available on Mahuika in our [Support Documentation](../../Batch_Computing/Hardware.md)
 

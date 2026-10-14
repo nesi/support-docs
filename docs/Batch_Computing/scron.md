@@ -53,7 +53,7 @@ Notice the comment `min hour day-of-month month day-of-week`  These are reminder
 
 ## scron parameters
 
-What sets `scron` apart from regular `cron` is the fact that you can define Slurm parameters.  Similar to a `sbatch` submit script, but instead of using `#SBATCH` in your script, you employ `#SCRON`, adding to our example from above:
+What sets `scron` apart from regular `cron` is the fact that you can define Slurm parameters.  Similar to a `sbatch` batch script, but instead of using `#SBATCH` in your script, you employ `#SCRON`, adding to our example from above:
 
 ```scrontab
 # Welcome to scrontab, Slurm's cron-like interface.
@@ -81,7 +81,7 @@ What sets `scron` apart from regular `cron` is the fact that you can define Slur
 0 * * * * hostname >> ~/hostname_log.txt
 ```
 
-We added the line starting with `#SCRON` to include slurm parameters, we configure a job name and a max runtime of 5 minutes.
+We added the line starting with `#SCRON` to include Slurm parameters, we configure a job name and a max runtime of 5 minutes.
 
 You can add more than one scheduled job, e.g.
 
@@ -95,7 +95,7 @@ You can add more than one scheduled job, e.g.
 0 3 15 * * /home/model-refresh.py
 ```
 
-We added a new scheduled job to run our model refresh script on the fifteenth of every month at 03:00.  Note that we are requesting the job to run on a genoa node.  Most, but not all sbatch parameters are available in *scron*
+We added a new scheduled job to run our model refresh script on the fifteenth of every month at 03:00.  Note that we are requesting the job to run on a Genoa node.  Most, but not all sbatch parameters are available in *scron*
 
 ## Slurm Queue
 

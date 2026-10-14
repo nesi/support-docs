@@ -133,7 +133,7 @@ if rank == 0:
     print('Sum:', data_sum)
 ```
 
-Now we need to write a Slurm script to run this job. The wall time,
+Now we need to write a batch script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated guess,
@@ -160,7 +160,7 @@ module load Python
 srun python MPIscaling.py
 ```
 
-Let's run our Slurm script with sbatch and look at our output from
+Let's run our batch script with sbatch and look at our output from
 `sacct`.
 
 ```txt
@@ -176,7 +176,7 @@ Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
 will always receive 2 logical CPUs which is equal to 1 physical CPUs.
 For a more in depth explanation about logical and physical CPU cores see
 our [Simultaneous Multithreading article](Simultaneous_Multithreading.md))
-and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
+and a maximum memory of 166,744 kB (0.16 GB). In total, the job ran for
 18 minutes and 51 seconds.
 
 We will initially assume that our job's wall time and memory will scale
@@ -246,7 +246,7 @@ CPUs vs time.
 The reason we have both is that it can often be easier to see the
 inflection point on the Log2 graph when the speed up from increasing the
 number of CPUs start to level off, as in the Log2 graph if the jobs
-scaled perfectly linearly (e.g. doubling the CPU's halves the runtime)
+scaled perfectly linearly (e.g. doubling the CPUs halves the runtime)
 the line would be straight. The curving of the line in the Log2 graph
 represents a loss in efficiency from increasing the number of CPUs.
 
@@ -353,5 +353,5 @@ It looks as though our estimates were accurate in this case, however,
 when you submit a job it is always a good idea to request about 20% more
 wall time and memory than you think you are going to need to minimise
 the chance of your jobs failing due to a lack of resources. Your
-project's fair share score considers the time actually used by the job,
+project's FairShare score considers the time actually used by the job,
 not the time requested by the job.

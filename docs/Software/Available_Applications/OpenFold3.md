@@ -65,7 +65,7 @@ If you are using OpenFold3 for the first time on Mahuika, you will need to downl
 	You will be then asked a series of prompts:
 
 	* You will need to write out in full the direct path to where you want to store OpenFold3 files.
-	* `Please specify the OpenFold cache directory`: Best idea to change this to your project folder. Example: `/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3`
+	* `Please specify the OpenFold cache directory`: Best idea to change this to your project directory. Example: `/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3`
 	* `Please specify the directory for parameter download`: This should default to your cache directory. Example `/nesi/project/<PROJECT_ID>/<USERNAME>/openfold3`
 	* `Select parameters to download`: Download whatever parameters you would like.
 	* `Force re-download parameters even if they already exist?`: Set this to `yes`
@@ -552,8 +552,8 @@ snakemake -s $OPENFOLD3_MSA_SNAKEFILE \
 
 	When choosing the version of OpenFold3 you want to use, take a note of 
 	the toolchain (this is the version of `foss` that is used). Whatever version 
-	of snakemake you use, it needs to use the same toolchain as OpenFold3. 
-	In this example, both OpenFold3 and snakemake use `foss-2026`
+	of Snakemake you use, it needs to use the same toolchain as OpenFold3. 
+	In this example, both OpenFold3 and Snakemake use `foss-2026`
 
 	```
 	module load OpenFold3/0.4.4-foss-2026-CUDA-13.2.1
@@ -688,7 +688,7 @@ its own alignment directory.
 	```
 
 	Use absolute paths — relative paths are resolved against the working directory
-	of the job, which is rarely what you want in a Slurm script.
+	of the job, which is rarely what you want in a batch script.
 
 !!! note "Paired MSAs for heteromers"
 
@@ -1356,7 +1356,7 @@ logging_config:
 * `experiment_name` — the name this run appears under. Worth setting to
     something you will recognise weeks later.
 * `group` and `id` — optional. `group` collects several runs under one banner,
-    `id` resumes logging into an existing run rather than starting a new one.
+    `id` resumes logging to an existing run rather than starting a new one.
     Leave both `null` unless you need them.
 * `log_lr: true` — also records the learning rate alongside the loss curves,
     which is what you want when chaining resumed jobs.
@@ -1499,7 +1499,7 @@ Training metrics always go to the Slurm output file, so `tail -f` on it is
 enough to see a run progressing.
 
 If you enabled Weights & Biases in
-[Step 2](#logging-to-weights-biases), there is one more step. The job scripts
+[Step 2](#logging-to-weights-biases), there is one more step. The batch scripts
 in Step 3 set `WANDB_MODE=offline`, so the run writes its metrics to disk under
 `{output_dir}/wandb/`. To view the progress through wandb, run the following from
 the login node: 

@@ -1,18 +1,18 @@
 ---
-title: JupyterLab Interactive Sessions
+title: JupyterLab in an Interactive Job
 created_at: '2020-01-05T21:43:18Z'
 tags:
   - interactive
   - python
-description: How to run an JupyterLab interactive session on the Mahuika cluster.
+description: How to run JupyterLab in an interactive Slurm job on Mahuika.
 ---
 
 For new users we recommend running Jupyterlab from our [OnDemand Service](./OnDemand/OnDemand_Overview.md).  However,
 many researchers find it useful to run their code and develop interactively on the Slurm cluster.
 
->If you are using a Windows computer, this method has currently been tested in VSCode, WSL powershell, and WSL Ubuntu. We have not tested it yet in Putty or Mobaxterm
+>If you are using a Windows computer, this method has currently been tested in VSCode, Windows Subsystem for Linux (WSL) PowerShell, and WSL Ubuntu. We have not tested it yet in PuTTY or MobaXterm
 
-To run JupyterLab in Slurm interactive mode, first we need to load your interactive session:
+To run JupyterLab in Slurm interactive mode, first we need to start an interactive job:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash

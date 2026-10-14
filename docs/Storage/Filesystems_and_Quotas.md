@@ -1,11 +1,11 @@
 ---
 created_at: '2018-05-02T04:06:16Z'
-description: Overview of the REANNZ HPC filesystems.
+description: Overview of the Mahuika filesystems.
 tags:
 - storage
 ---
 
-The HPC compute nodes, login nodes and OnDemand all share access to the same filesystems.
+Mahuika's compute nodes, login nodes and OnDemand all share access to the same filesystems.
 You may query your actual usage and disk allocations using the following
 command:
 
@@ -56,7 +56,7 @@ consider archiving small files with an archiving package such as `tar` .
 
 Each project receives quota allocations for
 `/nesi/project/<project_code>`, based on the requirements you tell us
-about in your [application for a new NeSI project](https://my.nesi.org.nz/html/request_project),
+about in your [application for a new project](https://my.nesi.org.nz/html/request_project),
 and separately covering disk space and number of files.
 
 ### `/nesi/nobackup` (scratch)
@@ -93,7 +93,7 @@ analyse datasets up to 1 PB in size.
 Freezer is a tape storage system that employs the S3 protocol and is designed to hold large amounts of data that are accessed infrequently.
 Freezer is a great solution to prevent data being lost by our fortnightly auto-deletion policy or to run those quarterly, semi-annual or annual workflows.
 
-See [Freezer long term storage](Long_Term_Storage/Freezer_Long_Term_Storage.md) for more information.
+See [Freezer long-term storage](Long_Term_Storage/Freezer_Long_Term_Storage.md) for more information.
 
 The Freezer filesystem is a data cache for the Hierarchical
 Storage Management System, which automatically manages the movement of
@@ -102,7 +102,7 @@ an Automatic Tape Library (ATL). Files will remain on Freezer
 temporarily, typically for hours to days, before being moved to tape. A
 catalogue of files on tape will remain on the disk for quick access.
 
-See more information about the long term storage see our
+See more information about the long-term storage see our
 [documentation about the Freezer storage service](Long_Term_Storage/Freezer_Long_Term_Storage.md).
 
 ## Snapshots
@@ -130,8 +130,8 @@ On login nodes there is a fast `/tmp` filesystem for very transient files, and i
 It is vital that files that are important to your work are backed up after you have processed them and want to move them off Mahuika. The 3,2,1 rule is best practise for storing and backing up files to minimise lose of mission critical data. The rule is:
 
 - **3 Copies**: Keep your original data plus two backups.
-- **2 Media Types**: Store backups on different media (e.g., internal hard drive, external hard drives, cloud, network attached storage device, high capacity storage, freezer).
-- **1 Offsite**: Keep one copy physically separate (e.g., cloud, freezer, high capacity storage, offsite drive) to survive local disasters.
+- **2 Media Types**: Store backups on different media (e.g., internal hard drive, external hard drives, cloud, network attached storage device, high capacity storage, Freezer).
+- **1 Offsite**: Keep one copy physically separate (e.g., cloud, Freezer, high capacity storage, offsite drive) to survive local disasters.
 
 ### Where to run jobs
 
@@ -140,6 +140,6 @@ It is best practice to perform your calculations/simulations in the following or
 1. Perform your calculations/simulations in `nobackup` (scratch) and/or per-job temporary directories.
 2. After analysis, any data you want to keep for further analysis and that you will access regularly should be kept in `project`.
 3. If you have gigabytes or terabytes of data that you need to keep on Mahuika but don't have enough space on `project` and do not access regularly, you should consider moving this data onto Freezer. Freezer is designed to keep mass amounts of data on that you will only need to access every few months.
-See [Freezer long term storage](Long_Term_Storage/Freezer_Long_Term_Storage.md) for more information.
+See [Freezer long-term storage](Long_Term_Storage/Freezer_Long_Term_Storage.md) for more information.
 4. `project` is limited in space, so any data you can move off Mahuika should be when you are either done with the data, or you can do analysis of the data on your own computer. See
 [I would like to move data off Mahuika. What are my options?](Offsite_Storage_Options.md).

@@ -1,6 +1,6 @@
 ---
 created_at: 2025-12-04
-description: How to utilise the Nextflow workflow engine on the REANNZ HPC.
+description: How to utilise the Nextflow workflow engine on Mahuika.
 tags: 
     - workflow
 ---
@@ -18,8 +18,8 @@ tags:
 
 There are three suggested methods for running Nextflow pipelines on our system:
 
-1. [Running Nextflow in an interactive Slurm session](#running-nextflow-in-an-interactive-slurm-session)
-    - This method is best for setting up or debugging pipeline executions as the pipeline will end as soon as the interactive session ends.
+1. [Running Nextflow in an interactive Slurm job](#running-nextflow-in-an-interactive-slurm-job)
+    - This method is best for setting up or debugging pipeline executions as the pipeline will end as soon as the interactive job ends.
 2. [Submitting a Nextflow workflow as a batch job](#submitting-a-nextflow-workflow-as-a-batch-job)
     - This method will run all sub-processes in the same Slurm job. This is best if your workflow would spawn a large number of short jobs.
 3. [Submitting a Nextflow workflow via a head job](#submitting-a-nextflow-workflow-via-a-head-job)
@@ -29,17 +29,17 @@ The differences in these methods is largely controlled by configuration/profile 
 The examples below use the REANNZ configuration file provided in the
 [Configurations section](#configurations).
 
-### Running Nextflow in an interactive Slurm session
+### Running Nextflow in an interactive Slurm job
 
-Running Nextflow in an interactive session can be especially helpful when setting up or debugging a pipeline.
-To do so, request an interactive session with appropriate resources for the pipeline:
+Running Nextflow in an interactive job can be especially helpful when setting up or debugging a pipeline.
+To do so, request an interactive job with appropriate resources for the pipeline:
 
 ```bash
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 16 --mem-per-cpu 24000 --time 24:00:00 --pty bash
 ```
 
-Once your interactive session has launched,
-load the Nextflow module with `module load Nextflow/{{app.default}}` (or your required version) and proceed. Parallelization of Nextflow processes will occur within this job.
+Once your interactive job has started,
+load the Nextflow module with `module load Nextflow/{{app.default}}` (or your required version) and proceed. Parallelisation of Nextflow processes will occur within this job.
 
 There are several environmental variables that can be helpful to avoid loading containers and plugins into your persistent project space:
 
@@ -171,7 +171,7 @@ profiles {
         cleanup = false
     }
     local {
-        // This profile should be used workflows submitted from interactive Slurm sessions or when a workflow will generate many short (<30 minutes) tasks
+        // This profile should be used workflows submitted from interactive Slurm jobs or when a workflow will generate many short (<30 minutes) tasks
         process.executor = 'local'
     }
     slurm {
@@ -237,16 +237,16 @@ Please note that there is an [additional ranking of priority for process configu
 
 ## Monitoring and reporting
 
-Nextflow provides tools that can assist you in making efficient use of the HPC resources. We strongly recommend testing your pipeline with a small subset of data to determine optimal settings before running full datasets.
+Nextflow provides tools that can assist you in making efficient use of Mahuika's resources. We strongly recommend testing your pipeline with a small subset of data to determine optimal settings before running full datasets.
 
 The most human-readable, but least configurable option is the execution report which is
-[an HTML execution report containing CPU and memory utilization information](https://www.nextflow.io/docs/latest/reports.html#execution-report) for each individual process as well as each process type. This information can be used to ensure processes are only getting the resources they need.
+[an HTML execution report containing CPU and memory utilisation information](https://www.nextflow.io/docs/latest/reports.html#execution-report) for each individual process as well as each process type. This information can be used to ensure processes are only getting the resources they need.
 
-For a more configurable option, [the trace file](https://www.nextflow.io/docs/latest/reports.html#trace-file) provides many potential fields of interest which can be requested. A full list of fields is available at the previous documentation link, but several of note for optimization and debugging:
+For a more configurable option, [the trace file](https://www.nextflow.io/docs/latest/reports.html#trace-file) provides many potential fields of interest which can be requested. A full list of fields is available at the previous documentation link, but several of note for optimisation and debugging:
 
 - `native_id` will provide the job ID for any jobs submitted to Slurm
 - `duration` will show the time from *submission* of the process to completion of the process
-- `realtime` will show the time from the *start* of the process to completion of the process (job run time)
+- `realtime` will show the time from the *start* of the process to completion of the process (job runtime)
 - `%cpu` will show the percentage of CPU used by the process
 - `%mem` will sow the percentage of memory used by the process
 - `peak_rss` will show the peak of real memory used
@@ -287,17 +287,17 @@ For Nextflow 26.04.0, we have also created a joint module which has the nf-core 
 
 The [nf-core rnaseq pipeline (v3.21.0)](https://nf-co.re/rnaseq/3.21.0) was run using the `test_full` dataset (v3.10) with three methods: a batch job, a head job, and a batch job with specific processes flagged for submission to Slurm.
 
-| Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Total CPU     |
+| Type of run           | Number of cores / grid specification     | Runtime (hrs:mins:secs)      | Total CPU     |
 |-----------------------|------------------------------------------|------------------------------|--------------------------------|
 | [Batch job](#batch-job) |                                  |                      |                             |
 | [Head job](#head-job) |        |                      |                             |
-| [Labeled processes](#labeled-processes) |        |                      |                          |
+| [Labelled processes](#labelled-processes) |        |                      |                          |
 
 ### Batch job
 
 Using the [batch job method](#submitting-a-nextflow-workflow-as-a-batch-job).
 
-Requested 1 task, 200GB memory, 16 CPUs per task, 12 hours
+Requested 1 task, 200 GB memory, 16 CPUs per task, 12 hours
 
 Duration    : 11h 16m 47s
 
@@ -320,17 +320,17 @@ Mem Efficiency:  53.8%  107.69 GB of 200.00 GB
 
 Using the [head job method](#submitting-a-nextflow-workflow-via-a-head-job)
 
-### Labeled processes
+### Labelled processes
 
 Using the [batch job method](#submitting-a-nextflow-workflow-as-a-batch-job) with specific processes flagged for submission to the Slurm queue as described in the [run-level configuration options section](#run-level-configuration-options)
 
-Requested 1 task, 72GB memory, 12 CPUs per task, 12 hours.
+Requested 1 task, 72 GB memory, 12 CPUs per task, 12 hours.
 
 Duration    : 5h 19m 46s
 
 CPU hours   : 381.9 (1.4% failed)
 
-Labeled processes (list below) could submit via slurm array requesting 12 CPUs, 72GB memory with a max queue size of 10.
+Labelled processes (list below) could submit via a Slurm job array requesting 12 CPUs, 72 GB memory with a max queue size of 10.
 
 - `TRIMMGALORE`
 - `STAR_ALIGN_IGENOMES`

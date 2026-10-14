@@ -37,7 +37,7 @@ The exact syntax might change, but the concepts remain the same.
 ## What is a batch job?
 
 Typically, when we enter a command into our terminal, we receive a response immediately in the same terminal.
-This is what we call an *interactive session*.
+This is what we call working *interactively*.
 
 This is all well for doing small tasks, but what if we want to do several things one after another without waiting in-between?
 Or what if we want to repeat a series of command again later?
@@ -126,7 +126,7 @@ In order for the job scheduler to do its job we need to provide a bit more infor
 This is done by specifying Slurm parameters in our batch script.
 Each of these parameters must be preceded by the special token `#SBATCH` and placed after the shebang, but before the content of the rest of your script.
 
-![A marked up screenshot of a slurm bash script. The first line is labeled as the shebang and contains `#! /bin/bash -e`. The next section has four lines labeled as the Slurm header. There are three parts to each of these Slurm header lines. The first is the keyword which is `#SBATCH` for all lines. The second part is the option which all start with `--` and include the account and time. The third part is the value which corresponds to the option for that line. The final section of the script is labeled as bash commands and contains a series of example bash commands.](../../assets/images/parts_slurm_script.svg)
+![A marked up screenshot of a Slurm bash script. The first line is labeled as the shebang and contains `#! /bin/bash -e`. The next section has four lines labeled as the Slurm header. There are three parts to each of these Slurm header lines. The first is the keyword which is `#SBATCH` for all lines. The second part is the option which all start with `--` and include the account and time. The third part is the value which corresponds to the option for that line. The final section of the script is labeled as bash commands and contains a series of example bash commands.](../../assets/images/parts_slurm_script.svg)
 
 These parameters tell Slurm things around how the script should be run, like memory, cores and time required.
 
@@ -291,7 +291,7 @@ This can be suppressed using the flag `-X`.
 
 !!! info "Where's the output?"
     On the login node, when we ran the bash script, the output was printed to the terminal.
-    Slurm batch job output is typically redirected to a file, by default this will be a file named `slurm-<job-id>.out` in the directory where the job was submitted, this can be changed with the slurm parameter `--output`.
+    Slurm batch job output is typically redirected to a file, by default this will be a file named `slurm-<job-id>.out` in the directory where the job was submitted, this can be changed with the Slurm parameter `--output`.
 
 
 !!! tip "More info on Slurm"
@@ -310,7 +310,7 @@ This can be suppressed using the flag `-X`.
 
 !!! question "Job environment variables"
     When Slurm runs a job, it sets a number of environment variables for the job.
-    One of these will let us check what directory our job script was submitted from.
+    One of these will let us check what directory our batch script was submitted from.
     The `SLURM_SUBMIT_DIR` variable is set to the directory from which our job was submitted.
     Using the `SLURM_SUBMIT_DIR` variable, modify your job so that it prints out the location from which the job was submitted.
 

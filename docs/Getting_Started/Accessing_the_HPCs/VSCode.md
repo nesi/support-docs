@@ -11,15 +11,7 @@ The 'Remote' extension allows you to connect to a remote computer (like Mahuika)
 
 ## Setup
 
-!!! warning "Switching to HPC3"
-    If you have previously logged into Mahuika with VSCode, you will need to delete the directory `~/.vscode-server`
-    before logging into HPC3 (and vice versa). You can do this with the command,
-
-    ```sh
-    rm -rf ~/.vscode-server
-    ```
-
-=== "Linux / MacOS"
+=== "Linux / macOS"
     1. Make sure you have set up an `~/.ssh/config` file as described in
     [Terminal Setup](Standard_Terminal_Setup.md).
     2. In VSCode, open the 'Extensions' Tab, search `remote` and make sure you have 'Remote - SSH' and 'Remote Explorer' by Microsoft, installed.
@@ -33,8 +25,8 @@ The 'Remote' extension allows you to connect to a remote computer (like Mahuika)
     3. Set up your SSH Config file as described in Step 2 of [Terminal Setup](Standard_Terminal_Setup.md#first-time-setup).
     4. Remove or comment out the `Control Path` line under `Host *`.
     !!! warning
-        As Windows does not support SSH sockets, you will have to enter your password and second factor every time you open a new tab.
-        If this bothers you, you may want to consider the next option "Windows via WSL".
+        As Windows does not support SSH sockets, you will have to log in, including your 6-digit code, every time you open a new tab.
+        If this bothers you, you may want to consider Windows Subsystem for Linux (WSL), the next option "Windows via WSL".
 === "Windows via WSL"
     !!! danger
         This method may not work anymore. Only attempt if you have too much time on your hands.
@@ -70,7 +62,7 @@ Under the 'Remote Explorer' Tab on the left, you should now see the Mahuika mach
 
 ![vscode explorer](../../assets/images/vscode-explorer.png)
 
-Clicking on these will open a connection to that machine, you will then be prompted for your password and second factor, as per usual.
+Clicking on these will open a connection to that machine, you will then be prompted to log in, including your 6-digit code, as usual.
 
 !!! warning
     As VSCode will continue attempting to reconnect after a failure,
@@ -86,11 +78,11 @@ As the Mahuika cluster utilises [Environment Modules](../../Tutorials/Introducti
 
 The only way to make sure that VSCode has access to a suitable environment, is to load the required modules in your `~/.bashrc`
 
-For example, if you use `Python/3.11.3-gimkl-2022a` in your SLURM scripts, and wish to use the VSCode plugins with this version of Python you will need to add `module load Python/3.11.3-gimkl-2022a` at the end of your `~/.bashrc`
+For example, if you use `Python/3.11.3-gimkl-2022a` in your batch scripts, and wish to use the VSCode plugins with this version of Python you will need to add `module load Python/3.11.3-gimkl-2022a` at the end of your `~/.bashrc`
 then restart [VSCode](#killing-vscode).
 
 !!! warning
-    Commands in your `~/.bashrc` are run **whenever a new shell is opened**, meaning every Slurm job, every terminal session in Jupyter or via SSH will be affected. Make sure to have `module purge` in any Slurm scripts that may be affected by changes in loaded modules.
+    Commands in your `~/.bashrc` are run **whenever a new shell is opened**, meaning every Slurm job, every terminal session in Jupyter or via SSH will be affected. Make sure to have `module purge` in any batch scripts that may be affected by changes in loaded modules.
 
 ### Using Virtual Environments
 

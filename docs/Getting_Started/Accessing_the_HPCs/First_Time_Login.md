@@ -10,14 +10,14 @@ description: Logging in for the first time and setting up your authenticator app
 !!! prerequisite
     -  Have an [account](../Creating_an_Account.md).  
     -  Be a member of an [active project](../Getting_Started_Overview.md).  
-    -  Have a device with an authentication app.
+    -  Have a device with an authenticator app.
 
 !!! note
     On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd.
     NeSI's services and technologies are now hosted by REANNZ as a national eResearch Infrastructure Platform.
     Some of our tools (as pictured in the screenshot below) will retain a 'NeSI' brand as we transition our services and develop a longer-term strategy for this integrated platform.
 
-1. Log into [my.nesi](http://my.nesi.org.nz)
+1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz)
 
 2. Go to [**OnDemand**](https://ondemand.nesi.org.nz/). It will automatically take you to the Tuakiri login screen.
     ![alt text](../../assets/images/ondemand_login_0.png)
@@ -25,7 +25,7 @@ description: Logging in for the first time and setting up your authenticator app
 3. Select your affiliated institution, and log in using your institutional account. Example below shows the University of Auckland login screen.
     ![alt text](../../assets/images/ondemand_login_1.png)
 
-4. If you haven't logged into OnDemand or our HPC platforms before, you will need to set up new authentication credentials. This is in addition to your institutional MFA process.
+4. If you haven't logged in to OnDemand or our HPC platforms before, you will need to set up new authentication credentials. This is in addition to your institutional multi-factor authentication (MFA) process.
     ![alt text](../../assets/images/ondemand_login_2.png)
   
     !!! note

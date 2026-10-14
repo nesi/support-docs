@@ -1,6 +1,6 @@
 ---
 created_at: 2026-02-04
-description: How to copy files to the REANNZ HPC using WinSCP.
+description: How to copy files to Mahuika using WinSCP.
 tags:
     - file_transfer
 title:  WinSCP (Windows)

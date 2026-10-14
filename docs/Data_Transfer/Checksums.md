@@ -54,7 +54,7 @@ ef749eb4110c2a3b3c747390095d0b76 corrupt.bin
 The checksum for file '*filename.txt*' can be found with the following
 commands.
 
-|         | Linux                    | Windows(CMD/Powershell)                  | Mac                          |
+|         | Linux                    | Windows(CMD/PowerShell)                  | Mac                          |
 | ------- | ------------------------ | ---------------------------------------- | ---------------------------- |
 | SHA-1   | `sha1sum filename.txt`   | `certUtil -hashfile filename.txt`        | `shasum filename.txt`        |
 | SHA-256 | `sha256sum filename.txt` | `certUtil -hashfile filename.txt sha256` | `shasum -a 256 filename.txt` |

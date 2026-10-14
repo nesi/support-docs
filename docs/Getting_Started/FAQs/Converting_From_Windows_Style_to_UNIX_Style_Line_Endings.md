@@ -17,11 +17,11 @@ represented line endings using different sequences:
 
 - All versions of Microsoft Windows represent line endings as CR
     followed by LF.
-- UNIX and UNIX-like operating systems (including Mac OS X) represent
+- UNIX and UNIX-like operating systems (including macOS) represent
     line endings as LF alone.
 
 Therefore, a text file prepared in a Windows environment will, when
-copied to a UNIX-like environment such as a REANNZ cluster, have an
+copied to a UNIX-like environment such as Mahuika, have an
 unnecessary carriage return character at the end of each line. To make
 matters worse, this character will normally be invisible, though in some
 text editors it will show up as ^M or similar.
@@ -31,13 +31,13 @@ schedulers, will give errors when given a file containing carriage
 return characters as input.
 
 Therefore, you will need to convert any such file so it has only
-UNIX-style line endings before using it on a REANNZ cluster.
+UNIX-style line endings before using it on Mahuika.
 
 ## The Symptoms
 
 ### In the Slurm job scheduler
 
-If you submit (using `sbatch`) a Slurm submission script with
+If you submit (using `sbatch`) a batch script with
 Windows-style line endings, you will likely receive the following error:
 
 ```bash

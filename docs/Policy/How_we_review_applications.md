@@ -7,7 +7,7 @@ vote_count: 2
 description: What happens to a project application after you submit it, step by step
 ---
 
-When you submit your application through our web site, it will go to our
+When you submit your application through our website, it will go to our
 technical support team for review. In general, our review process for
 new projects is as follows:
 

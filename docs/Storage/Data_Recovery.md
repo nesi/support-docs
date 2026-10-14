@@ -1,6 +1,6 @@
 ---
 created_at: '2018-05-22T01:49:31Z'
-description: How to retreive lost data from the REANNZ HPC filesystem.
+description: How to retrieve lost data from the Mahuika filesystems.
 tags:
 - storage
 ---
@@ -13,7 +13,7 @@ at least seven days.
   
 Files from your home directory can be found
 in `/home/.snapshots/` followed by a snapshot timestamp and
-username, e.g;
+username, for example:
 
 ``` sh
 /home/.snapshots/@GMT-2025.08.04-18.00.00/$USER

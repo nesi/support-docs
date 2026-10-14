@@ -19,7 +19,7 @@ We can help sooner if your request includes:
 If the problem is with a Slurm job, also include:
 
 - the job ID (`sacct` lists your recent jobs),
-- the Slurm script. Adding `cat $0` to a script prints it into the job's output, so you always have the version you submitted,
+- the batch script. Adding `cat $0` to a script prints it into the job's output, so you always have the version you submitted,
 - the path to your files,
 - when a job last worked, and its job ID.
 

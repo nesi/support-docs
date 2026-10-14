@@ -43,7 +43,13 @@ placeholder image alt text, "here" as link text, the support email address, and 
 "file system"), are listed in `BANNED_PATTERNS` in
 [prose_rules.py](prose_rules.py). Each runs as a proselint check named `reannz.<name>`, at the level the entry gives
 (only warnings fail `CHECKS_STRICT`), so one can be turned off in `.proselint.json` with `"reannz.<name>": false`.
-To ban something new, add an entry there rather than writing a new check.
+To ban something new, add an entry there rather than writing a new check. An entry with `first_mention` allows a short
+form ("WSL") once the full form has been used on the page.
+An entry with `fix` says how to rewrite a match that needs no judgement ("file system" → "filesystem"). The check
+adds it to its message, and [fix_prose.py](fix_prose.py) applies it: it prints a diff, or writes the fixes with `--apply`.
+A single word that isn't English (`MyNeSI`, `GiB`, `hyperthreading`) doesn't need a rule: keep it out of the
+nesi-wordlist dictionary and the spellcheck flags it. The preferred terms and what they replace are listed in
+"Names and terms" in [FORMAT.md](../docs/FORMAT.md#names-and-terms).
 
 ### Markdown Lint
 

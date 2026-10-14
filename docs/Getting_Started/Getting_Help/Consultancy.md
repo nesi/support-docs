@@ -39,7 +39,7 @@ non-exhaustive):
 - Code development
     - Design and develop research software from scratch
     - Algorithmic improvements
-    - Translate Python/R/Matlab code to C/C++/Fortran for faster
+    - Translate Python/R/MATLAB code to C/C++/Fortran for faster
         execution
     - Accelerate code by offloading computations to a GPU
     - Develop visualisation and post-processing tools (GUIs, dashboards, etc)

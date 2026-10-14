@@ -21,11 +21,11 @@ __OnDemand__ is a service providing access to Jupyter Notebooks, RStudio, VSCode
        [Mahuika OnDemand](../../Interactive_Computing/OnDemand/how_to_guide.md)
     -  Visit [ondemand.nesi.org.nz](https://ondemand.nesi.org.nz/).
 
-## Linux or MacOS
+## Linux or macOS
 
 ### Terminal
 
-MacOS & Linux have a default terminal emulator installed. On both it is called: _Terminal_. Start the terminal and you are ready to move to the next step.
+macOS & Linux have a default terminal emulator installed. On both it is called: _Terminal_. Start the terminal and you are ready to move to the next step.
 
 !!! prerequisite "What next?"
     Setting up your [Default Terminal](Standard_Terminal_Setup.md)
@@ -67,7 +67,7 @@ VSCode can be used with WSL but WSL is not a requirement.
  administrator privileges, however it introduces several bugs so we
  _highly_ recommend using the installer edition if you have
  administrator privileges on your workstation or if your
- institution's IT team supports MobaXTerm.
+ institution's IT team supports MobaXterm.
 
 !!! tip "What next?"
     -  Configuring

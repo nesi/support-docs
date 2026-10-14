@@ -43,9 +43,9 @@ custom kernel; select the tab that suits you:
             if you are unsure about this.
 
         First you need to open a terminal. It can be from a session on Jupyter
-        via OnDemand or from a regular ssh connection on the Mahuika login node.
+        via OnDemand or from a regular SSH connection on the Mahuika login node.
 
-        - If you use the ssh option, make sure to load the JupyterLab module to
+        - If you use the SSH option, make sure to load the JupyterLab module to
             have access to the `nesi-add-kernel` tool:
 
             ``` sh
@@ -241,9 +241,9 @@ custom kernel; select the tab that suits you:
     === "R environment"
 
         First you need to open a terminal. It can be from a session on Jupyter
-        via OnDemand or from a regular ssh connection on the Mahuika login node.
+        via OnDemand or from a regular SSH connection on the Mahuika login node.
 
-        - If you use the ssh option, make sure to load the JupyterLab module to
+        - If you use the SSH option, make sure to load the JupyterLab module to
             have access to the `nesi-add-kernel` tool:
 
             ``` sh
@@ -388,7 +388,7 @@ custom kernel; select the tab that suits you:
         virtual environment.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
         
@@ -449,7 +449,7 @@ custom kernel; select the tab that suits you:
         virtual environment.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -538,7 +538,7 @@ custom kernel; select the tab that suits you:
         conda environment.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - Avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -632,7 +632,7 @@ custom kernel; select the tab that suits you:
         custom R environment kernel.
 
         - If you would like to share it with other members of your project, use
-            your project folder (`cd /nesi/project/<project-code>`)
+            your project directory (`cd /nesi/project/<project-code>`)
         - Avoid paths that include `00_nesi_projects` or `home`, as these cause
             issues.
 
@@ -730,17 +730,17 @@ the kernel with the tool-assisted or manual approach:
     First, **you** need to create the kernel yourself, following the manual steps
     in the [**Manual Management**](#__tabbed_1_2) tab earlier on this page.
 
-    **Your team members** then need to set up the kernel on their side. The
+    **Your project members** then need to set up the kernel on their side. The
     exact steps depend on the type of environment you created, so follow the
     steps in the tab that matches it:
 
     === "Environment module"
 
         The `wrapper.sh` script and the environment module it loads already live
-        in the shared project folder, so **your team members** only need to
+        in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -775,10 +775,10 @@ the kernel with the tool-assisted or manual approach:
     === "Python virtual environment"
 
         The `wrapper.sh` script and the virtual environment it activates already
-        live in the shared project folder, so **your team members** only need to
+        live in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -813,10 +813,10 @@ the kernel with the tool-assisted or manual approach:
     === "Conda environment"
 
         The `wrapper.sh` script and the conda environment it activates already
-        live in the shared project folder, so **your team members** only need to
+        live in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -851,10 +851,10 @@ the kernel with the tool-assisted or manual approach:
     === "R environment"
 
         The `wrapper.sh` script and the R environment modules it loads already
-        live in the shared project folder, so **your team members** only need to
+        live in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -919,5 +919,5 @@ folder. Delete the kernel's directory:
 rm -r /nesi/project/<ACCOUNT_ID>/.jupyter/share/jupyter/kernels/<KERNEL_NAME>
 ```
 
-where `<ACCOUNT_ID>` is your project's account code and `<KERNEL_NAME>` is the name of
+where `<ACCOUNT_ID>` is your project code and `<KERNEL_NAME>` is the name of
 the kernel to delete.

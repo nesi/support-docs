@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-05
-description: How to transfer data on the REANNZ HPC using VSCode.
+description: How to transfer data on Mahuika using VSCode.
 tags:
   - ide
 ---
@@ -12,7 +12,7 @@ It is possible to use VSCode to navigate Mahuika, as well as to upload/download 
 
 ## Navigating through Mahuika on VSCode
 
-Once you have login to Mahuika in VSCode, click `File` --> `Open`:
+Once you have logged in to Mahuika in VSCode, click `File` --> `Open`:
 
 ![Data_Transfer_VSCode_1.png](../assets/images/Data_Transfer_VSCode_1.png)
 

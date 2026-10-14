@@ -10,9 +10,9 @@ description: How to join an existing project by contacting its owner with your u
 !!! prerequisite
      -   You must have an [account](../Creating_an_Account.md).
 
-You need to contact the owner of the project you would like to join, and provide your NeSI account Username.
+You need to contact the owner of the project you would like to join, and provide your username.
 
-If you do not know your NeSI account username:
+If you do not know your username:
 
 1. Log in to [my.nesi.org.nz](https://my.nesi.org.nz/) via your browser.
 2. In the left side panel, under Account, click My HPC Account. Your Username will appear at the top of the page.

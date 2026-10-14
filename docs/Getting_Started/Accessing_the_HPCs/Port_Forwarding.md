@@ -9,7 +9,7 @@ description: Forwarding a port over SSH to reach a service running on the cluste
 !!! prerequisite
     Have your [connection to the Mahuika cluster](Standard_Terminal_Setup.md) configured
 
-Some applications only accept connections from internal ports (i.e a
+Some applications only accept connections from internal ports (i.e. a
 port on the same local network), if you are running one such application
 on the cluster and want to connect to it you will need to set up
 [port forwarding](https://en.wikipedia.org/wiki/Port_forwarding).
@@ -24,7 +24,7 @@ to `127.0.0.1`. The alias `localhost` can also be used in most cases.
 **Local Port:** The port number you will use on your local machine.
 
 **Host Alias:** An alias for the socket of your main connection to the
-cluster, `nesi` if you have set up your ssh config file as
+cluster, `nesi` if you have set up your SSH config file as
 described in [Standard Terminal Setup](Standard_Terminal_Setup.md).
 
 **Remote Port:** The port number you will use on the remote machine (in
@@ -36,7 +36,7 @@ this case the Mahuika cluster)
 
 ## Command line (OpenSSH)
 
-*Works for any Linux terminal, Mac terminal, or Windows with WSL
+*Works for any Linux terminal, Mac terminal, or Windows with Windows Subsystem for Linux (WSL)
 enabled.*
 
 The command for forwarding a port is
@@ -57,8 +57,8 @@ Your terminal will now function like a normal connection to Mahuika.
 However, if you close this terminal session the port forwarding will end.
 
 If there is no existing session on Mahuika, you will be prompted for
-your first and second factor, same as during the regular log in
-procedure.
+your login details and 6-digit code, same as during a regular
+login.
 
 !!! note
     Your local port and remote port do not have to be different numbers.
@@ -68,7 +68,7 @@ procedure.
 
 If you are using port forwarding on a regular basis, and don't want the
 hassle of opening a new tunnel every time, you can include a port
-forwarding line in your ssh config file ~/.ssh/config on your local
+forwarding line in your SSH config file ~/.ssh/config on your local
 machine.
 
 Under the alias for the cluster you want to connect to add the following
@@ -148,7 +148,7 @@ The two tunnels should look like this.
 
 [sshuttle](https://sshuttle.readthedocs.io/en/stable/) is a transparent
 proxy implementing VPN like traffic forwarding. It is based on Linux or
-MacOS platforms (unfortunately Windows is not supported). `sshuttle`
+macOS platforms (unfortunately Windows is not supported). `sshuttle`
 allows users to create a VPN connection from a local machine to any
 remote server that they can connect to via `ssh`.There is no need to
 create a separate tunnel for every port to be forwarded, the package
@@ -190,7 +190,7 @@ to `-L` ).
 ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
 ```
 
-An example Slurm script:
+An example batch script:
 
 ``` sl
 #!/bin/bash -e

@@ -23,7 +23,7 @@ Please note that your bucket has the same name as your Freezer allocation. If yo
 
 ### Get information about a Freezer bucket
 
-To determine all the users that have access to a freezer bucket, type into the terminal:
+To determine all the users that have access to a Freezer bucket, type into the terminal:
 
 ```sh
 s3cmd info s3://<freezer-bucket>/
@@ -111,13 +111,13 @@ where:
 
 ### Step 2a: Synchronise data
 
-Synchronize a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
+Synchronise a directory tree to S3 (checks files freshness using size and md5 checksum, unless overridden by options). If you wish to have additional informative output, please use the `--verbose` flag as well.
 
 ```sh
 s3cmd sync --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
 ```
 
-If you have already tried use `put` or `sync` but were interrupted, you can use the `--skip-existing` to skip putting files into your freezer that have already been transferred:
+If you have already tried use `put` or `sync` but were interrupted, you can use the `--skip-existing` to skip putting files into your Freezer that have already been transferred:
 
 ```sh
 s3cmd sync --skip-existing --verbose yourfolder s3://<freezer-bucket>/your_directory/your_folder/
@@ -129,7 +129,7 @@ To transfer files/folders to S3 gateway to be archived. `cd` into where the file
 
 !!! warning
 
-    If you have files larger than 10TB you may need to change chunk size, please see the [Large files and chunk size](Other_Useful_Commands.md#large-files-and-chunk-size) section for details 
+    If you have files larger than 10 TB you may need to change chunk size, please see the [Large files and chunk size](Other_Useful_Commands.md#large-files-and-chunk-size) section for details 
     
 ```sh
 s3cmd put --verbose your_file s3://<freezer-bucket>/your_directory/your_file

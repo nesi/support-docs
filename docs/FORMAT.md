@@ -17,12 +17,77 @@ This page is an overview of the naming conventions and Markdown syntax used in t
 
 - Call the organisation REANNZ.
 - Call the platform Mahuika. After the first mention, "the cluster" is fine.
-  Don't use ""HPC3", which was a temporary name.
+  Don't use "HPC3", which was a temporary name. "REANNZ HPC" is for policy pages, which define "REANNZ HPC Services".
 - Only write NeSI where a name still carries it, for example `my.nesi.org.nz`, the support email address,
   hostnames, and the example project code `nesi99991`.
 - For other terms, use the words in the [Glossary](GLOSSARY.md), so they match the tooltips.
 
-The prose check flags these old names, outside announcements and release notes.
+Some terms are written several ways across the docs. Use the preferred form.
+"After the first mention" means the short form is fine once the full one has been used on the page.
+
+### Platform and services
+
+| Write | Not |
+| - | - |
+| Mahuika ("the cluster" after the first mention) | `the HPC`, `our HPC`, `HPC3`, `REANNZ cluster`, `REANNZ platform`, `Mahuika HPC`, `Mahuika platform`, `Mahuika supercomputer`, `NeSI HPC`, `REANNZ's HPC`, `REANNZ HPC` (outside policy pages) |
+| my.nesi.org.nz | `MyNeSI`, `my nesi`, `my.nesi` |
+| Mahuika OnDemand (OnDemand after the first mention) | `NeSI OnDemand`, `ondemand`, `On Demand`, `On-Demand`, `OOD`. Write Open OnDemand only for the upstream software. |
+| Apptainer | `Singularity`, unless you mean the old name |
+| Windows Subsystem for Linux (WSL after the first mention) | `WSL` before the full name |
+| X11 forwarding | `X forwarding`, `X-Forwarding`, `X11-forwarding` |
+
+### Accounts and logging in
+
+| Write | Not |
+| - | - |
+| Mahuika user account (the account you log in to the cluster with) | `NeSI account`, `REANNZ HPC account`, `HPC account`, `Mahuika account` |
+| username | `user name`, `user ID`, `userid`, `login name` |
+| log in, log in to (verb). Login is the noun. | `login` (verb), `log into`, `log-in`, `log on`, `sign in` |
+| multi-factor authentication (MFA after the first mention) | `two-factor authentication`, `2FA`, `multiple factor authentication`, `second-factor authentication`, `MFA` before the full name |
+| additional authentication credentials | `second factor`, `authentication token`, `auth token`, `MFA token` |
+| 6-digit code | `6 digit code`, `6-digit number`, `one-time code`, `one-time password`, `OTP`, `second factor code`, `MFA code`, `verification code` |
+| authenticator app | `authentication app`, `authenticator application`, `MFA app`, `2FA app` |
+
+### Projects and storage
+
+| Write | Not |
+| - | - |
+| project code | `project ID`, `project number`, `account code`, `account number` |
+| project member | `team member` |
+| project directory, home directory, subdirectory | `project folder`, `home folder`, `sub-directory`, `subfolder` |
+| filesystem | `file system`, `file-system` |
+| long-term storage | `long term storage` |
+
+### Jobs and computing
+
+| Write | Not |
+| - | - |
+| batch script | `Slurm script`, `job script`, `submission script`, `submit script`, `sbatch script`, `batch file` |
+| interactive job (`srun --pty`, `salloc`). An app running in OnDemand is a session. | `interactive session` for a Slurm job |
+| job array | `array job`, `Slurm array` |
+| walltime | `wall time`, `wall-time`, `wall clock` |
+| runtime | `run time`, `run-time` |
+| FairShare or Fairshare | `fair share`, `fair-share`, `fairshare` |
+| simultaneous multithreading (SMT after the first mention) | `hyperthreading`, `hyper-threading`, `SMT` before the full name |
+| multithreading, multithreaded | `multi-threading` |
+
+### General words
+
+| Write | Not |
+| - | - |
+| set up (verb), setup (noun) | `setup` (verb), `set-up` |
+| licence (noun), license (verb), licensed, licensing | `license` (noun), `licenced`, `licencing` |
+| filename, hostname | `file name`, `host name` |
+| website, webpage | `web site`, `web page` |
+| 20 GB, 2 TB/s, 400 W (a space between the number and the unit) | `20GB`, `20G`, `2TB/s`, `400W` |
+| GB, MB, TB (SI units) | `GiB`, `MiB`, `TiB`, `gibibyte` |
+
+Leave labels copied from an interface as they are, for example a `User name:` field.
+
+The prose check flags these old names and variant terms, outside announcements and release notes.
+Single words that aren't English, such as `MyNeSI`, `OTP`, `GiB` and `hyperthreading`, are left out of the
+[nesi-wordlist](https://github.com/nesi/nesi-wordlist) dictionary instead, so the spellcheck flags them. Don't add them there.
+For MFA, WSL and SMT, it flags the short form only if it comes before the full one on the page.
 
 ## Headers
 
@@ -149,7 +214,7 @@ Don't use a title if another Admonition already exists for that purpose (e.g. `!
 
 ### Collapsable Admonitions
 
-Any Admonition can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
+Any Admonition can be made collapsible by replacing the `!!!` with `???` (closed), or `???+` (open)
 
 ??? info "I'm Collapseable"
     Wheeee
@@ -159,8 +224,8 @@ Any Admonition can be made collapsable by replacing the `!!!` with `???` (closed
     Wheeee
 ```
 
-Consider making a Admonition collapsable-open (`???+`) if it is particularly long.
-An Admonition **shouldn't be made collapsable-closed** (`???`) unless it has been given an **optional title explaining it's contents**.
+Consider making a Admonition collapsible-open (`???+`) if it is particularly long.
+An Admonition **shouldn't be made collapsible-closed** (`???`) unless it has been given an **optional title explaining its contents**.
 
 ### Admonition Flavours
 
@@ -316,9 +381,9 @@ Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 
 Note the additional spacing around the `+` else it will appear cramped.
 
-### Slurm Scripts
+### Batch scripts
 
-The most common use of a code block is to display an example Slurm script.  
+The most common use of a code block is to display an example batch script.  
 
 We want our examples to be easy to understand, but also users _will_ copy
 paste them, so we also want them to be working scripts that wont cause easily avoidable errors.
@@ -478,10 +543,10 @@ Only use a tooltip for extra detail. Tooltips show on mouse hover, so keyboard a
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 ```
 
-Acronyms should be automatically made tool-tips e.g. MPI.
+Acronyms should be automatically made tooltips e.g. MPI.
 
 ```md
-Acronyms should be automatically made tool-tips e.g. MPI.
+Acronyms should be automatically made tooltips e.g. MPI.
 ```
 
 ## Lists

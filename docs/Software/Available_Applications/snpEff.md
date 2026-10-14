@@ -24,7 +24,7 @@ required for snpEff.
 1. Load the latest version of the `snpEff` module.
 
 2. Make a copy of the snpEff config file, replacing
-   &lt;project\_id&gt;, with your project ID.
+   &lt;project\_id&gt;, with your project code.
 
     ``` sh
     cp $EBROOTSNPEFF/snpEff.config /nesi/project/<project_id>/my_snpEff.config

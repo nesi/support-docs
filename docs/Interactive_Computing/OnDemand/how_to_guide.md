@@ -2,8 +2,8 @@
 tags:
     - interactive
     - r
-description: Getting Started With NeSI onDemand
-title: NeSI OnDemand How-to Guide
+description: Getting started with Mahuika OnDemand
+title: Mahuika OnDemand How-to Guide
 ---
 
 ## How to log in
@@ -14,7 +14,7 @@ Log in with your institutional credentials.
 
 ??? info "First Time Login"
 
-    If you haven't logged into OnDemand or our HPC platforms before, part of the login process will include a step to setup additional authentication credentials.
+    If you haven't logged in to OnDemand or our HPC platforms before, part of the login process will include a step to set up additional authentication credentials.
 
     ![OnDemand login 1](../../assets/images/ondemand_login_0.png)
 
@@ -23,7 +23,7 @@ Log in with your institutional credentials.
 
     ![ondmenad login 2](../../assets/images/ondemand_login_1.png)
 
-    After logging in, you will be asked to set up an 6-digit code. This is additional authentication in addition to your institutional MFA. We are currently enforcing an additional security layer, as the institutions federated by Tuakiri all have different security policies.
+    After logging in, you will be asked to set up an 6-digit code. This is additional authentication in addition to your institutional multi-factor authentication (MFA). We are currently enforcing an additional security layer, as the institutions federated by Tuakiri all have different security policies.
     
     ![OnDemand login 3](../../assets/images/ondemand_login_2.png)
 
@@ -31,11 +31,11 @@ Log in with your institutional credentials.
 
     Once you have set up your additional authentication credentials, you will be shown the following screen, where you can enter the 6-digit code from your authenticator app.
 
-    ![ondemand login 4](../../assets/images/ondemand_login_3.png)
+    ![The prompt for your 6-digit code, with a code entered and a button to submit it.](../../assets/images/ondemand_login_3.png)
 
     After successfully logging in, you will be presented with the following OnDemand screen.
 
-    ![ondemand login success](../../assets/images/OOD_Desktop_08Jun2025.png)
+    ![The OnDemand dashboard after logging in, listing the code-server, Jupyter Lab, RStudio-Server and Virtual Desktop apps.](../../assets/images/OOD_Desktop_08Jun2025.png)
 
 ### OnDemand home page
 
@@ -71,7 +71,7 @@ From the home page, you can click on the app you would like to launch, e.g. Jupy
     | ---------------------- | ------------- |
     | **Number of hours**    | 24            |
     | **Number of cores**    | 4             |
-    | **Memory per job(GB**) | 32GB          |
+    | **Memory per job(GB**) | 32 GB          |
     
 ![OnDemand new start](../../assets/images/OOD_jupyter_session_starting.png)
 

@@ -42,7 +42,7 @@ description: How to request a Mahuika allocation renewal.
 
 ## Raising a request
 
-1. Login to [https://my.nesi.org.nz/projects/list](https://my.nesi.org.nz/projects/list) and select a project
+1. Log in to [https://my.nesi.org.nz/projects/list](https://my.nesi.org.nz/projects/list) and select a project
     from the list.  
     ![select a project from the list](../../assets/images/Requesting_to_renew_an_allocation_via_my-nesi-org-nz.png)
 2. Click the Plus button icon 'action' next to the compute allocation

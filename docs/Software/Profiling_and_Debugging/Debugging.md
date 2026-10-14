@@ -4,7 +4,7 @@ tags:
 - profiling
 vote_count: 1
 vote_sum: 1
-description: Debugging jobs by tracing job scripts and analysing core files with GDB
+description: Debugging jobs by tracing batch scripts and analysing core files with GDB
 ---
 
 !!! warning
@@ -21,9 +21,9 @@ require the application being built with debugging symbols (e.g. `-g`
 compile option), otherwise only nameless memory address will be
 provided.
 
-## Tracing job scripts
+## Tracing batch scripts
 
-Complex job scripts may contain several commands. To located the failing
+Complex batch scripts may contain several commands. To located the failing
 executable and keep track of performed settings and operations the
 option `set -x` (in bash) may help. It lists line by line called
 commands together with the related output.
@@ -116,11 +116,11 @@ specified.
 
 Beside Application location and name, we need to specify arguments,
 working directory, MPI and OpenMP settings. If we have no interactive
-slurm session, we do need to specify the workload manager settings in
+Slurm session, we do need to specify the workload manager settings in
 the "Submit to queue" section. For your first time, you net to open the
 Configure menu and select in the "Job submission" tab the
 `nesi_slurm.ptf` template file. You can add necessary Slurm parameters
-there, e.g. simultaneous multithreading (SMP) options, accounts and QoS. In the Environment
+there, e.g. simultaneous multithreading (SMT) options, accounts and QoS. In the Environment
 Variables section you can load necessary modules.
 
 After submitting the task, DDT launches the application (wait for the
@@ -129,7 +129,7 @@ workload manager if necessary) and opens the following window.
 ![DDT\_overview.PNG](../../assets/images/Debugging_1.PNG)
 
 In the top part the processes and threads can be selected. The
-application is paused at the initialization phase, giving the user the
+application is paused at the initialisation phase, giving the user the
 opportunity to set break/watch points, and define the type execution
 (in/over/out of functions or just until next break point). For more
 detailed information see the [DDT manual](https://developer.arm.com/docs/101136/latest/ddt)

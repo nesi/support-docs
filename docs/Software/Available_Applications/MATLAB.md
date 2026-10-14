@@ -4,7 +4,7 @@ tags:
 - mathematics
 - engineering
 - machine_learning
-description: Examples and tips on how to use MATLAB on the Mahuika platform.
+description: Examples and tips on how to use MATLAB on Mahuika.
 ---
 
 {% set app_name = page.title | trim %}
@@ -54,13 +54,13 @@ description: Examples and tips on how to use MATLAB on the Mahuika platform.
     ```
 
 !!! tip "Command Line"
-     When using matlab on command line, all flag options use a single '`-`'
+     When using MATLAB on command line, all flag options use a single '`-`'
      e.g. `-nodisplay`, this differs from the GNU convention of using `--`
      for command line options of more than one character.
 
 !!! tip
      Using the prefix `!` will allow you to run bash commands from within
-     MATLAB. e.g. `!squeue -u $USER` will print your currently queued slurm
+     MATLAB. e.g. `!squeue -u $USER` will print your currently queued Slurm
      jobs.
 
 ## Parallelism
@@ -72,7 +72,7 @@ use of multiple threads (`--cpus-per-task`) or GPUs (`--gpus-per-node`).
 ### Implicit parallelism
 
 Implicit parallelism requires no changes to be made in your code. By
-default MATLAB will utilise multi-threading for a wide range of
+default MATLAB will utilise multithreading for a wide range of
 operations, scalability will vary but generally you will not be able to
 utilise more than a 4-8 CPUs this way.
 
@@ -80,12 +80,12 @@ utilise more than a 4-8 CPUs this way.
 
 !!! tip
      If your code is explicitly parallel at a high level it is preferable to use
-     [SLURM job arrays](../Parallel_Computing/Parallel_Computing.md)
+     [Slurm job arrays](../Parallel_Computing/Parallel_Computing.md)
      as there is less computational overhead and the multiple smaller jobs
      will queue faster and therefore improve your throughput.
 
 Explicit parallelism is when you write your code specifically to make
-use of multiple CPU's. This can be done using MATLABs *parpool*-based
+use of multiple CPUs. This can be done using MATLABs *parpool*-based
 language constructs, MATLAB assigns each thread a 'worker' that can be
 assigned sections of code.
 
@@ -104,7 +104,7 @@ parpool(pc, str2num(getenv('SLURM_CPUS_PER_TASK')))
 !!! tip
      Parpool will throw a warning when started due to a difference in how
      time zone is specified. To fix this, add the following line to your
-     SLURM script: `export TZ="Pacific/Auckland'`
+     batch script: `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 
@@ -121,7 +121,7 @@ parfor i=1:100
 end
 ```
 
-`parfor` operates similarly to a SLURM job array and must be
+`parfor` operates similarly to a Slurm job array and must be
 embarrassingly parallel. Therefore all variables either need to be
 defined locally (used internally within one iteration of the loop), or
 static (not changing during execution of loop).

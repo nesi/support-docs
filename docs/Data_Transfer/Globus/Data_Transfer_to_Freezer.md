@@ -28,7 +28,7 @@ You will need to have a Globus account to access Freezer via Globus. Please see 
     !!! info
         Steps 4 & 5 may not be required
 
-4. To set up your credentials, please click `Continue`. You will be shown a Globus page requiring you to sign in to Mahuika. 
+4. To set up your credentials, please click `Continue`. You will be shown a Globus page requiring you to log in to Mahuika. 
     ![Globus_Freezer_Require_Credentials.png](../../assets/images/Globus_Freezer_Require_Credentials.png)
 
 5. Fill in your Mahuika Username and Secret Key. Please let us know if you have lost your Freezer Secret Key. {% include "partials/support_request.html" %} to reset your Freezer key, but you will also need to reset your Freezer config on Mahuika.
@@ -67,6 +67,6 @@ This is expected behaviour and does not affect the integrity or accessibility of
 
 If you initiate a transfer of offline data (only on tape - Glacier) from Freezer, the data will be automatically staged from tape before the transfer begins.
 
-## Organizing Files Using Globus
+## Organising Files Using Globus
 
 We do NOT recommend organising or moving files or directories on Freezer using the Globus interface. Please use the s3cmd tool in these instances. Please see our [Freezer Guide](../../Storage/Long_Term_Storage/Freezer_Guide.md) for more information.

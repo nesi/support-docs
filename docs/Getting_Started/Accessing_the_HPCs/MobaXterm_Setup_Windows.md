@@ -7,7 +7,7 @@ description: How to set up cluster access using MobaXterm
 ---
 
 !!! WARNING  
-    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure.  
+    Logging in via the "sessions" functionality is not compatible with the Mahuika login procedure.  
     It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
     If you want a terminal on your own machine, [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md)
     or [Visual Studio Code](VSCode.md) are easier to set up and use than MobaXterm.
@@ -90,7 +90,7 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
 1. In a new local terminal run; `mkdir -p ~/.ssh/` this will
     ensure you have an `.ssh/` directory
 
-2. Open your ssh config file by typing the following into your MobaXterm terminal:
+2. Open your SSH config file by typing the following into your MobaXterm terminal:
 
     ```bash
     notepad config.txt
@@ -171,7 +171,7 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
 
 12. Scan the QR code with your authenticator app. Then enter the 6-digit code provided. You may give your device a name.
 
-    ![The Mobile Authenticator Setup page, with a QR code to scan and a box for the one-time code.](../../assets/images/Standard_Terminal_Setup_2.png)
+    ![The Mobile Authenticator Setup page, with a QR code to scan and a box for the 6-digit code.](../../assets/images/Standard_Terminal_Setup_2.png)
 
 13. Return to your terminal, and press <kbd>enter</kbd>.
 
@@ -179,5 +179,5 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
 
 1. `ssh mahuika`
 2. Follow the link.
-3. You may be prompted for your 6 digit code.
+3. You may be prompted for your 6-digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.

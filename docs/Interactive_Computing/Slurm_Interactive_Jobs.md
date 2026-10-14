@@ -3,13 +3,13 @@ created_at: '2020-01-05T21:43:18Z'
 tags:
   - interactive
   - slurm
-description: How to run an interactive session on the REANNZ HPC cluster.
+description: How to run an interactive Slurm job on Mahuika.
 ---
 
-A SLURM interactive session reserves resources on compute nodes allowing
+A Slurm interactive job reserves resources on compute nodes allowing
 you to use them interactively as you would the login node.
 
-There are two main commands that can be used to make a session, `srun`
+There are two main commands that can be used to start an interactive job, `srun`
 and `salloc`.  Both `srun` and `salloc` share most of the same options as `sbatch` (see [our Slurm Reference Sheet](../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)).
 
 ## Getting Started
@@ -88,12 +88,12 @@ For a full description of `salloc` and its options, see
 
 It is possible to run GUI applications interactively on the cluster.  Along with the `--pty` flag, one should also include the `--x11` flag and have a properly configured X server.  More information can be found here:  [https://docs.nesi.org.nz/Getting_Started/Accessing_the_HPCs/X11/](../Getting_Started/Accessing_the_HPCs/X11.md)
 
-Depending on the GUI application and resource requirements, it may be beneficial to run a Virtual Desktop from our OnDemand service instead of using X forwarding: [https://ondemand.nesi.org.nz/pun/sys/dashboard](https://ondemand.nesi.org.nz/pun/sys/dashboard)
+Depending on the GUI application and resource requirements, it may be beneficial to run a Virtual Desktop from our OnDemand service instead of using X11 forwarding: [https://ondemand.nesi.org.nz/pun/sys/dashboard](https://ondemand.nesi.org.nz/pun/sys/dashboard)
 
 ### Setting up a detachable terminal
 
 It's quite common to have to wait for some time before your interactive
-session starts. For an interactive session, or any other long-running process, 
+job starts. For an interactive job, or any other long-running process, 
 it is recommended you use a terminal multiplexor such as `tmux`.  This
 allows your session to be detached from the running terminal so you can re-connect if your
 laptop goes to sleep, the network drops or any other event that could sever the connection.
@@ -102,9 +102,9 @@ You can even re-attach from a different computer.
 We have a [reference page for `tmux`](../Getting_Started/Cheat_Sheets/tmux-Reference_sheet.md)
 
 !!! warning
-     Once an interactive session starts, it will run for the entire requested
+     Once an interactive job starts, it will run for the entire requested
      block of time, unless exited earlier. To avoid unnecessary billing to your allocation, 
-     don't forget to exit an interactive session once finished.
+     don't forget to exit an interactive job once finished.
 
 ## Advanced Topics
 
@@ -140,12 +140,12 @@ know what time zone your environment is using, for example by running
 `date` in the same terminal session.
 
 
-### Modifying an existing interactive session
+### Modifying an existing interactive job
 
-Whether your interactive session is already running or is still waiting
+Whether your interactive job is already running or is still waiting
 in the queue, you can make a range of changes to it using the `scontrol`
 command. Some changes are off limits for ordinary users, such as
-increasing the maximum permitted wall time, or unsafe, like decreasing
+increasing the maximum permitted walltime, or unsafe, like decreasing
 the memory request. But many other changes are allowed.
 
 #### Postponing the start of an interactive job
@@ -177,7 +177,7 @@ scontrol update jobid=12345678 StartTime=now+3daysT09:30:00
 
 !!! warning
      Don't just set `StartTime=tomorrow` with no time specification unless
-     you like the idea of your interactive session starting at midnight or
+     you like the idea of your interactive job starting at midnight or
      in the wee hours of the morning.
 
 #### Bringing forward the start of an interactive job
@@ -196,9 +196,9 @@ There are many other changes you can make by means of `scontrol`. For
 further information, please see
 [the `scontrol` documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/scontrol.html).
 
-### Modifying multiple interactive sessions at once
+### Modifying multiple interactive jobs at once
 
-In the same way, if you have several interactive sessions waiting to
+In the same way, if you have several interactive jobs waiting to
 start on the same cluster, you might want to postpone them all using a
 single command. To do so, you will first need to identify them, hence
 the earlier suggestion to something specific to interactive jobs in the
@@ -251,13 +251,13 @@ following:
     have two cron jobs, one that runs on Mondays to Thursdays, and a
     different cron job running on Fridays. -->
 
-### Cancelling an interactive session
+### Cancelling an interactive job
 
-You can cancel a pending interactive session by attaching the relevant
+You can cancel a pending interactive job by attaching the relevant
 session, putting the job in the foreground (if necessary) and pressing
 `Ctrl`-`C` on your keyboard.
 
-To cancel all your queued interactive sessions on a cluster in one fell
+To cancel all your queued interactive jobs on a cluster in one fell
 swoop, a command like the following should do the trick:
 
 ```sh
@@ -266,7 +266,7 @@ awk '{print $1}' | \
 xargs -I {} scancel {}
 ```
 
-To cancel all your running interactive sessions on a cluster in one fell
+To cancel all your running interactive jobs on a cluster in one fell
 swoop, a command like the following should do the trick:
 
 ```sh

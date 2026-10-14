@@ -20,10 +20,10 @@ We are now using Tuakiri to provide second-factor authentication, and this chang
 
 ## Operating System
 
-Rocky Linux 9 rather than Centos 7 (and Rocky 8 on the Mahuika Milan nodes).
-Rocky is similar to Centos, both being based on Red Hat Enterprise Linux (RHEL) source code,
+Rocky Linux 9 rather than CentOS 7 (and Rocky 8 on the Mahuika Milan nodes).
+Rocky is similar to CentOS, both being based on Red Hat Enterprise Linux (RHEL) source code,
 but Rocky 9 is a much more recent release,
-which brings many minor improvements and is supported by some software which has dropped support for Centos 7,
+which brings many minor improvements and is supported by some software which has dropped support for CentOS 7,
 such as the latest versions of VSCode.
 
 ## Storage
@@ -55,23 +55,23 @@ OnDemand is more flexible and can deliver more GUI based apps.
 
 Our **Apptainer**, **nano**, **s3cmd**, and **gnuplot** environment modules have been deprecated - just use the system versions of these tools instead.
 
-The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, eg: `gm display ...`.
+The many ImageMagick commands such as **display** have been replaced by GraphicsMagick's one `gm` command, e.g. `gm display ...`.
 
 ## External IP address for outbound connections
 
-Internet connections made from NeSI (e.g: to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
+Internet connections made from NeSI (e.g. to institutional license servers for proprietary software) now originate from an address in the range `163.7.147.128/26`, i.e. `163.7.147.128` - `163.7.147.191`.
 
 ## Slurm
 
-### Simultaneous multithreading (Hyperthreading)
+### Simultaneous multithreading (SMT)
 
 All of our CPUs have this feature, so present two virtual CPUs on each CPU core.
 On Mahuika multithreaded jobs placed a thread on each virtual CPU by default,
-with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs were not hyperthreaded while single-task multithreaded jobs were.
+with the restriction that different tasks would never share a core, so by default single-threaded MPI jobs did not use SMT while single-task multithreaded jobs were.
 
-On HPC3 we have made `--threads-per-core` default to `1`, i.e: hyperthreading is avoided, equivalent to `--hint=nomultithread`.  To reenable hyperthreading you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
+On HPC3 we have made `--threads-per-core` default to `1`, i.e. SMT is avoided, equivalent to `--hint=nomultithread`. To re-enable SMT you can set `--threads-per-core=2`, which is equivalent to `--hint=multithread`.
 
-Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`.  To avoid that while still hyperthreading within each task of an MPI job, set `--cpus-per-task` to a multiple of two or also use the slurm option `--tasks-per-core`.
+Unlike Mahuika tasks *are* allowed to share a core if `--threads-per-core` is set to `2`. To avoid that while still using SMT within each task of an MPI job, set `--cpus-per-task` to a multiple of two or also use the Slurm option `--tasks-per-core`.
 
 ### Partitions
 
@@ -87,7 +87,7 @@ Nodes with different amounts of RAM do not have their own partitions, except in 
 
 ### CPU cores per node
 
-Two CPU cores on each compute node have been "specialized" (as the Slurm documentation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally available for Slurm jobs.
+Two CPU cores on each compute node have been "specialised" (as the Slurm documentation calls it) for the use of the WEKA filesystem client to move data to and from the node, and so are not generally available for Slurm jobs.
 
 ### Limits
 
@@ -117,12 +117,12 @@ Other consequences of this change include:
 
 - Job profiles are not private.
 - Incomplete profiles can be obtained while a job is still running.
-- Any error messages (eg: when asked for a job which didn't have profiling enabled) aren't yet informative.
+- Any error messages (e.g. when asked for a job which didn't have profiling enabled) aren't yet informative.
 - The raw profile data isn't so accessible - please let us know if you need it.
 
 ### Miscellaneous
 
-There is a per-user limit on the job submit rate which will slow down workflow engines which submit too many jobs.  There are usually solutions to this such as array jobs or Snakemake's “groups” feature.
+There is a per-user limit on the job submit rate which will slow down workflow engines which submit too many jobs.  There are usually solutions to this such as job arrays or Snakemake's “groups” feature.
 
 KillOnBadExit is set true, so if one task in an MPI job fails, by default the whole job will be killed.
 
@@ -136,7 +136,7 @@ Node sizes are different, so multithreaded jobs will probably have different opt
 
 ### Milan nodes
 
-These are the same nodes as made up the Mahuika Extension. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores (or 256 hyperthreaded CPUs), of which 126 are available for Slurm jobs.
+These are the same nodes as made up the Mahuika Extension. Each Milan node has 2 AMD Milan 7713 CPUs, each with 8 "chiplets" of one L3 cache and 8 cores, so each node has a total of 128 cores (or 256 logical CPUs with SMT), of which 126 are available for Slurm jobs.
 
 The memory available to Slurm jobs on most of the Milan nodes is 512 GB per node, so approximately 2 GB per CPU.
 
@@ -144,7 +144,7 @@ There are up to 64 of these nodes available, 8 of which have twice as much memor
 
 ### Genoa nodes
 
-These nodes are new. Each Genoa node has 2 AMD Genoa 9634 CPUs, each with 12 "chiplets" of one L3 cache and 7 cores, so each node has a total of 168 cores (or 336 hyperthreaded CPUs). We are currently transitioning these nodes from having all 168 cores available but slow I/O, to having only 166 cores available but fast I/O, and so currently there are some of them in each of those states.
+These nodes are new. Each Genoa node has 2 AMD Genoa 9634 CPUs, each with 12 "chiplets" of one L3 cache and 7 cores, so each node has a total of 168 cores (or 336 logical CPUs with SMT). We are currently transitioning these nodes from having all 168 cores available but slow I/O, to having only 166 cores available but fast I/O, and so currently there are some of them in each of those states.
 
 The memory available to Slurm jobs on most of the Genoa nodes is 358 GB per node, so approximately 1 GB per CPU.
 There are 64 of these nodes available, 16 of which have 4 times as much memory, so 1.5 TB.

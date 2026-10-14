@@ -17,7 +17,7 @@ Unfortunately we cannot assume speedup will be linear (e.g. double CPUs won't us
 
 In order to establish an understanding of the scaling properties we may have to repeat this test several times, giving more resources each iteration.
 
-## Scaling Behavior
+## Scaling Behaviour
 
 ### Amdahl's Law
 
@@ -46,7 +46,7 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     specify a unit (`K`|`M`|`G`), if no unit is specified it is assumed to be `M`.
     For example `#SBATCH --mem 1200`.
     3. Now submit your job, we will include an extra argument `--acctg-freq 1`.
-    By default SLURM records job data every 30 seconds.
+    By default Slurm records job data every 30 seconds.
     This means any job running for less than 30
     seconds will not have its memory use recorded.
     Submit the job with `sbatch --acctg-freq 1 example_job.sl`.

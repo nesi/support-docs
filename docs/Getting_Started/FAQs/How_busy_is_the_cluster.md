@@ -17,8 +17,8 @@ where:
 * `NODELIST`: The name of the node
 * `STATE`: The state of the node
 * `CPUS`: The amount of CPUs that each machine has and the number of CPUs available. A: Allocated (in use), I: Idle (not in use), O: Other, T: Total.
-* `MEMORY`: The total amount of memory on the node (in MBs)
-* `FREE_MEM`: The amount of memory free on the node (in MBs)
+* `MEMORY`: The total amount of memory on the node (in MB)
+* `FREE_MEM`: The amount of memory free on the node (in MB)
 * `GRES`: The total amount of resources available on each node
 * `GRES_USED`: The amount of resources that are currently being used on each node
 
@@ -65,7 +65,7 @@ Some notes:
 
 * Each node the maximum available CPUs is T-4 as two CPUs are reserved for Slurm and WEKA
 * `STATE`: most of the time you can ignore this. But if this message is `down` or `draining`, this indicates the node is unavailable for use.
-* `GRES` and `GRES_USED`: Compare these to see how many internal SSDs and GPUs are available for use. For example, `g10` `GRES` indicates this node contains 4 L4 GPUs in total, while `g10` `GRES_USED` indicates that only 1 L4 GPU is being used for `g10`. This means there are 3 L4 GPUs available on `g10`. In the example above, as long as your job requires less than 18 cores (36 divided by 2) and 107368 MBs (104 GBs) RAM, your job should go on (however, this will still be based on your priority)
+* `GRES` and `GRES_USED`: Compare these to see how many internal SSDs and GPUs are available for use. For example, `g10` `GRES` indicates this node contains 4 L4 GPUs in total, while `g10` `GRES_USED` indicates that only 1 L4 GPU is being used for `g10`. This means there are 3 L4 GPUs available on `g10`. In the example above, as long as your job requires less than 18 cores (36 divided by 2) and 107368 MB (104 GB) RAM, your job should go on (however, this will still be based on your priority)
 * Each node appears twice in this command. This is because each node is apart of the `genoa`/`milan` partition as well as being apart of the `maintanance` partition.
 
 ## What Jobs are Running on a Particular Node
@@ -78,8 +78,8 @@ squeue -w <NODE_NAME> -O "JobID,UserName,State,NumCPUs,MinMemory,GRES,TimeLeft"
 
 where `<NODE_NAME>` is the name of the node, and where:
 
-* `JOBID`: The job id for the slurm job
-* `USER`: The username of the slurm job
+* `JOBID`: The job id for the Slurm job
+* `USER`: The username of the Slurm job
 * `STATE`: The state of this job
 * `CPUS`: The number of CPUs this job is using (this will be 2 times the number of CPUs requested, i.e. if a job requests 4 CPUs, it will show here as 8)
 * `MIN_MEMORY`: The amount of RAM that the job is using

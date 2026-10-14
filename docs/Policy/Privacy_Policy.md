@@ -22,7 +22,7 @@ We collect and process Personal Information about our users through registration
 - employer or tertiary institution
 - a contact telephone number
 - an email address issued by employer or tertiary institution (primary email address), along with (optionally) a preferred contact email address
-- user ID
+- username
 - if a student, course of study and main academic supervisor or course coordinator
 - projects, team memberships, and allocations
 - grants and publications
@@ -42,7 +42,7 @@ REANNZ maintains robust information security management processes and confidenti
 These include: 
 
 - firewalls and modern encryption standards
-- use of two-factor authentication (2FA)
+- use of multi-factor authentication (MFA)
 - access to the Personal Information is limited only to REANNZ staff members who have a legitimate business requirement to use it
 - access is monitored and traceable via logs
 - information is backed up regularly, and backups are held in secure storage facilities 
@@ -68,7 +68,7 @@ REANNZ may use Personal Information for the following purposes:
 - To manage information stored on REANNZ infrastructure
 
 
-We may publish the names of project owners and project team members along with their respective institutions in connection with particular projects through case studies. This is only done with the permission of those involved. 
+We may publish the names of project owners and project members along with their respective institutions in connection with particular projects through case studies. This is only done with the permission of those involved. 
  
 
 ## 5. Disclosure of Information 
@@ -83,7 +83,7 @@ Users have the right to request a copy of any Personal Information about them he
 
 ## 7. Correction of Information 
 
-REANNZ will endeavour to ensure that all Personal Information is accurate, complete, and up-to-date whenever it is used.  Users must assist with this by informing REANNZ of any changes, errors, or discrepancies in the information held. If any Personal Information held is inaccurate, incomplete, or out-of-date users may update it through the MyNeSI portal or email REANNZ Support at support@nesi.org.nz to request that records be amended.   
+REANNZ will endeavour to ensure that all Personal Information is accurate, complete, and up-to-date whenever it is used.  Users must assist with this by informing REANNZ of any changes, errors, or discrepancies in the information held. If any Personal Information held is inaccurate, incomplete, or out-of-date users may update it through the my.nesi.org.nz portal or email REANNZ Support at support@nesi.org.nz to request that records be amended.
 
 ## 8. Deletion of Information 
 

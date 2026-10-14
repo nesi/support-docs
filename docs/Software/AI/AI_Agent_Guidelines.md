@@ -1,12 +1,12 @@
 ---
 created_at: 2026-09-16
-description: Guidelines for using AI agents and coding assistants responsibly on REANNZ HPC systems
+description: Guidelines for using AI agents and coding assistants responsibly on Mahuika
 tags:
 - ai_tools
 - access
 ---
 
-These guidelines describe how to use AI agents, coding assistants and other autonomous tools responsibly on REANNZ HPC systems.
+These guidelines describe how to use AI agents, coding assistants and other autonomous tools responsibly on Mahuika.
 They are advice, not policy.
 The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md) still applies to everything an agent does under your account.
 
@@ -91,11 +91,11 @@ REANNZ does not provide support for third-party AI tools.
 Before raising a support ticket, verify any commands an agent has generated against the relevant documentation, and check that nothing has been hallucinated.
 Agents can look up this documentation themselves, starting from the index at `https://docs.nesi.org.nz/llms.txt`.
 
-An unofficial AI skill for responsible operation of the REANNZ HPC can be found at [nesi-support-skill](https://github.com/chrisdjscott/nesi-support-skill).
+An unofficial AI skill for responsible use of Mahuika can be found at [nesi-support-skill](https://github.com/chrisdjscott/nesi-support-skill).
 
 ## Research Integrity
 
-We recommend that use of AI in research conducted on REANNZ HPC systems follows the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf).
+We recommend that use of AI in research conducted on Mahuika follows the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf).
 
 !!! note "See Also"
     - [Access Policy](../../Policy/Access_Policy.md)

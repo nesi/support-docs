@@ -2,7 +2,7 @@
 created_at: '2015-07-29T23:31:02Z'
 tags:
 - chemistry
-description: How to run Gaussian on the Mahuika HPC
+description: How to run Gaussian on Mahuika
 ---
 
 {% set app_name = page.title | trim %}
@@ -48,7 +48,7 @@ or any particular version or installation of it, please {% include "partials/sup
 
 ## Example jobs
 
-The following job submission script is intended for use on Mahuika.
+The following job batch script is intended for use on Mahuika.
 Please note that it has a memory requirement built in: at least 2 GB for
 Gaussian itself, plus a further 2 GB as a buffer zone, for a minimum
 request of 4 GB (4,096 MB).
@@ -152,21 +152,21 @@ srun g09 < "${INPUT_FILE}"
 ### Setting the memory and number of cores
 
 It is important to ensure that the memory and number of cores in the
-Gaussian input file itself are consistent with what you set in your job
-submission script.
+Gaussian input file itself are consistent with what you set in your
+batch script.
 
 The key properties are `%CPU` and `%Mem`:
 
 - `%CPU` should be set to the number of CPU cores you intend
     to use, matching the value of the `-c` or `--cpus-per-task`
-    directive in the Slurm job file. Because Slurm assigns which CPUs of the compute node your jobs lands on, the 'taskset' command is needed to identify what CPUs are available to your job.
+    directive in the batch script. Because Slurm assigns which CPUs of the compute node your jobs lands on, the 'taskset' command is needed to identify what CPUs are available to your job.
 - `%Mem` should be set to the amount of memory you intend to use. It
     should be about 2 GB (2,048 MB) less than the value of `--mem` in
-    the Slurm job submission script. Note that `--mem` is interpreted as
+    the Slurm job batch script. Note that `--mem` is interpreted as
     being in MB rather than GB unless otherwise specified (i.e., with a
     "G" on the end).
 
-If you use the example Slurm script and template `.gjf` file provided above
+If you use the example batch script and template `.gjf` file provided above
 (with appropriate modifications for your chemical system and desired calculation), this should happen automatically.
 
 ### Saving temporary working files (for advanced users)
@@ -174,11 +174,11 @@ If you use the example Slurm script and template `.gjf` file provided above
 If you want Gaussian's temporary files (`*.inp`, `*.d2e`, `*.int`,
 `*.rwf` and `*.scr`) to be written to a particular directory, you can
 achieve this by setting the `GAUSS_SCRDIR` environment variable in your
-job submission script, for instance:
+job batch script, for instance:
 
 ```bash
 export GAUSS_SCRDIR=/nesi/nobackup/nesi99999/mahuika_job_123456
 ```
 
 This should happen automatically if you use an appropriately modified
-script based on the example job submission script given above.
+script based on the example job batch script given above.

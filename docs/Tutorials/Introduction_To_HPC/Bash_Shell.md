@@ -20,14 +20,14 @@ tags:
     This episode will be a quick introduction to the Unix shell, only the bare minimum required to use the cluster.
     The Software Carpentry '[Unix Shell](https://swcarpentry.github.io/shell-novice/)' lesson covers the subject in more depth, we recommend you check it out.
   
-The part of the operating system responsible for managing files and directories is called the **file system**.
-It organizes our data into files, which hold information, and directories (also called 'folders'), which hold files or other directories.
+The part of the operating system responsible for managing files and directories is called the **filesystem**.
+It organises our data into files, which hold information, and directories (also called 'folders'), which hold files or other directories.
 
-Understanding how to navigate the file system using command line is essential for using an HPC.
+Understanding how to navigate the filesystem using command line is essential for using an HPC.
 
 The Mahuika filesystem looks something like this:
 
-![The file system is made up of a root directory that contains sub-directories](../../assets/images/NeSI_Filesystem_Simplified.svg)
+![The filesystem is made up of a root directory that contains subdirectories](../../assets/images/NeSI_Filesystem_Simplified.svg)
 
 The directories that are relevant to us are:
 
@@ -42,19 +42,19 @@ The directories that are relevant to us are:
 <tr>
 <td><strong>Home</strong> is for user-specific files such as configuration files, environment setup, source code, etc.</td>
 <td><code>/home/&lt;username&gt;</code></td>
-<td>20GB</td>
+<td>20 GB</td>
 <td>Daily</td>
 </tr>
 <tr>
 <td><strong>Project</strong> is for persistent project-related data, project-related software, etc.</td>
 <td><code>/nesi/project/&lt;projectcode&gt;</code></td>
-<td>100GB</td>
+<td>100 GB</td>
 <td>Daily</td>
 </tr>
 <tr>
 <td><strong>Nobackup</strong> is a 'scratch space', for data you don't need to keep long term. Old data is periodically deleted from nobackup</td>
 <td><code>/nesi/nobackup/&lt;projectcode&gt;</code></td>
-<td>10TB</td>
+<td>10 TB</td>
 <td></td>
 </tr>
 </tbody>
@@ -70,7 +70,7 @@ Note, as the name suggests, Mahuika does **not** backup the `/nesi/nobackup` fil
 Protecting critical data from corruption or deletion is primarily your responsibility.
 Ensure you have a data management plan and stick to the plan to reduce the chance of data loss.
 Also important is managing your storage quota.
-To check your quotas, use the `storage_quota` command, e.g
+To check your quotas, use the `storage_quota` command, for example:
 
 ```sh
 storage_quota
@@ -107,7 +107,7 @@ pwd
 ```
 
 The output we see is what is known as a 'path'.
-The path can be thought of as a series of directions given to navigate the file system.
+The path can be thought of as a series of directions given to navigate the filesystem.
 
 At the top is the **root directory** that holds all the files in a filesystem.
 
@@ -123,8 +123,8 @@ Finally, stored inside `home` is the directory with your username.
     it refers to the root directory. When it appears *inside* a path,
     it's just a separator.
 
-As you may now see, using a bash shell is strongly dependent on the idea that your files are organized in a hierarchical file system.
-Organizing things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
+As you may now see, using a bash shell is strongly dependent on the idea that your files are organised in a hierarchical filesystem.
+Organising things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
 ## Listing contents of directories
 
@@ -137,7 +137,7 @@ To **l**i**s**t the contents of a directory, we use the command `ls` followed by
 
     If you're working through this on your own, you won't have access to `nesi99991`.
     Everywhere these lessons use `{{extra.working_directory[0]}}/{{extra.working_directory[1]}}`
-    (including the `--account` line in later Slurm scripts), substitute your own project's
+    (including the `--account` line in later batch scripts), substitute your own project's
     id.
 
     For the next excersise you will need to run,
@@ -272,7 +272,7 @@ The **prompt** tells us that the terminal is accepting inputs, prompts can be cu
 
 The **command**, what are we trying to do.
 
-**Options** will modify the behavior of the command, multiple options can be specified.
+**Options** will modify the behaviour of the command, multiple options can be specified.
 Options will either start with a single dash (`-`) or two dashes (`--`).
 Often options will have a short and long format e.g. `-a` and `--all`.
 
@@ -280,7 +280,7 @@ Often options will have a short and long format e.g. `-a` and `--all`.
 
 Each part is separated by spaces: if you omit the space
 between `ls` and `-l` the shell will look for a command called `ls-l`, which
-doesn't exist. Also, capitalization can be important.
+doesn't exist. Also, capitalisation can be important.
 For example, `ls -s` will display the size of files and directories alongside the names,
 while `ls -S` will sort the files and directories by size.
 
@@ -329,14 +329,14 @@ since it specifies the full path from the top level root directory.
 
 An **absolute path** always starts at the root directory, which is indicated by a
 leading slash. The leading `/` tells the computer to follow the path from
-the root of the file system, so it always refers to exactly one directory,
+the root of the filesystem, so it always refers to exactly one directory,
 no matter where we are when we run the command.
 
 Any path without a leading `/` is a **relative path**.
 
 When you use a relative path with a command
 like `ls` or `cd`, it tries to find that location starting from where we are,
-rather than from the root of the file system.
+rather than from the root of the filesystem.
 
 In the previous command, since we did not specify an **absolute path** it ran the command on the relative path from our current directory
 (implicitly using the `.` hidden directory), and so listed the contents of our current directory.
@@ -359,7 +359,7 @@ pwd
 
 ## Tab completion
 
-Sometimes file paths and file names can be very long, making typing out the path tedious.
+Sometimes file paths and filenames can be very long, making typing out the path tedious.
 One trick you can use to save yourself time is to use something called **tab completion**.
 If you start typing the path in a command and there is only one possible match,
 if you hit tab the path will autocomplete (until there are more than one possible matches).
@@ -485,7 +485,7 @@ see if a new output file was written.
 ## Globbing
 
 One of the most powerful features of bash is *filename expansion*, otherwise known as *globbing*.
-This allows you to use *patterns* to match a file name (or multiple files),
+This allows you to use *patterns* to match a filename (or multiple files),
 which will then be operated on as if you had typed out all of the matches.
 
 `*` is a **wildcard**, which matches zero or more characters.
@@ -569,7 +569,7 @@ asked for. As an exception, if a wildcard expression does not match
 any file, Bash will pass the expression as an argument to the command
 as it is.
 However, generally commands like `wc` and `ls` see the lists of
-file names matching these expressions, but not the wildcards
+filenames matching these expressions, but not the wildcards
 themselves. It is the shell, not the other programs, that deals with
 expanding wildcards.
 
@@ -836,8 +836,8 @@ To **quit** the `man` pages, press <kbd>Q</kbd>.
 
 !!! keypoints
     - A relative path specifies a location starting from the current location.
-    - An absolute path specifies a location from the root of the file system.
+    - An absolute path specifies a location from the root of the filesystem.
     - Directory names in a path are separated with `/` on Unix, but `\\` on Windows.
     - `..` means 'the directory above the current one'; `.` on its own means 'the current directory'
-    - `/` on its own is the root directory of the whole file system.
+    - `/` on its own is the root directory of the whole filesystem.
     - Most commands take options (flags) that begin with a `-`.

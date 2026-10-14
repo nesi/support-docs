@@ -16,7 +16,7 @@ A complete list of Slurm commands can be found [in the full documentation](https
 
 |           |                       |                                                                          |
 | --------- | --------------------- | ------------------------------------------------------------------------ |
-| `sbatch`  | `sbatch submit.sl`    | Submits the Slurm script `submit.sl`                                      |
+| `sbatch`  | `sbatch submit.sl`    | Submits the batch script `submit.sl`                                      |
 | `squeue`  | `squeue --me`         | Displays your queued jobs.                                               |
 |           | `squeue --me -p milan` | Displays your queued jobs on the *milan* partition.                     |
 |           | `squeue`              | Displays entire queue.                                                   |
@@ -25,7 +25,7 @@ A complete list of Slurm commands can be found [in the full documentation](https
 |           | `sacct -j 123456789`  | Displays job *123456789*                                                  |
 | `scancel` | `scancel 123456789`   | Cancels job *123456789*                                                   |
 |           | `scancel --me`        | Cancels all your jobs.                                                   |
-| `sshare`  | `sshare -U`           | Shows the Fair Share scores for all projects of which *you* are a member. |
+| `sshare`  | `sshare -U`           | Shows the FairShare scores for all projects of which *you* are a member. |
 | `sinfo`   | `sinfo`               | Shows the current state of our Slurm partitions.                         |
 
 ## `sbatch` options
@@ -33,7 +33,7 @@ A complete list of Slurm commands can be found [in the full documentation](https
 A complete list of `sbatch` options can be found
 [in the full Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html), or by running `man sbatch`
 
-Options can be provided on the command line or in the batch file as an
+Options can be provided on the command line or in the batch script as an
 `#SBATCH` directive.  The option name and value can be separated using
 an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 `#SBATCH --account nesi99999`. *But not both!*
@@ -72,7 +72,7 @@ an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 | `--qos` | `#SBATCH --qos=debug` | Adding this line gives your job a high priority. Only for short tests and debugging, see [Debug QoS](../../Batch_Computing/Debug_QoS.md). *Max {{ slurm_limits.debug.minutes }} minutes, jobs per user at a time: {{ slurm_limits.debug.jobs }}*. |
 | `--profile` | `#SBATCH --profile=ALL` | Allows generation of a .h5 file containing job profile information. See [Slurm Native Profiling](../../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md) |
 | `--dependency` | `#SBATCH --dependency=afterok:123456789` | Will only start after the job 123456789 has completed (more below)|
-| `--hint` | `#SBATCH --hint=multithread` | Enables [simultaneous multithreading (SMP)](../../Software/Parallel_Computing/Simultaneous_Multithreading.md), be aware that this will significantly change how your job is defined. |
+| `--hint` | `#SBATCH --hint=multithread` | Enables [simultaneous multithreading (SMT)](../../Software/Parallel_Computing/Simultaneous_Multithreading.md), be aware that this will significantly change how your job is defined. |
 
 Alternatively, you can set up a dependent job within the first job's script by adding the line `sbatch --dependency=afterok:$SLURM_JOB_ID second_job.sl` to have the dependent job automatically submitted to start after the first job completes successfully.
 
@@ -85,7 +85,7 @@ Alternatively, you can set up a dependent job within the first job's script by a
 ## Tokens
 
 These are predefined variables that can be used in sbatch directives
-such as the log file name.
+such as the log filename.
 
 ## Environment variables
 
@@ -95,8 +95,8 @@ Common examples.
 | ------------------------ | ------------------------------------------------ |
 | `$SLURM_JOB_ID`        | Useful for naming output files that won't clash. |
 | `$SLURM_JOB_NAME`      | Name of the job.                                 |
-| `$SLURM_ARRAY_TASK_ID` | The current index of your array job.             |
-| `$SLURM_CPUS_PER_TASK` | Useful as an input for multi-threaded functions. |
+| `$SLURM_ARRAY_TASK_ID` | The current index of your job array.             |
+| `$SLURM_CPUS_PER_TASK` | Useful as an input for multithreaded functions.  |
 | `$SLURM_NTASKS`        | Useful as an input for MPI functions.            |
 | `$SLURM_SUBMIT_DIR`    | Directory where `sbatch` was called.           |
 

@@ -25,7 +25,7 @@ Dataset | Path | Licence Status | Notes
 [CheckM](https://github.com/Ecogenomics/CheckM) | /opt/nesi/db/CheckM_DB | GPL-3.0 | Database for CheckM module
 [DAS Tool](https://github.com/cmks/DAS_Tool) | /opt/nesi/db/DAS_DB | [Public](https://github.com/cmks/DAS_Tool/blob/master/license.txt) | Database for DAS_Tool module
 [dammit](https://github.com/dib-lab/dammit) | /opt/nesi/db/dammit_db | BSD | Databases for dammit module
-[dfam 3.9](https://dfam.org/) | /opt/nesi/db/dfam_3.9 | CC0 1.0 | Transposable element profile HMM database
+[Dfam 3.9](https://dfam.org/) | /opt/nesi/db/dfam_3.9 | CC0 1.0 | Transposable element profile HMM database
 [DRAM 1.3.5](https://github.com/WrightonLabCSU/DRAM) | /opt/nesi/db/DRAM_1.3.5 | GPL-3.0 | Databases for DRAM module
 [eggnogdb](https://eggnogdb.org/) | /opt/nesi/db/eggnog_db | Unspecified | Orthologous group and functional annotation database
 [FCS-GX](https://github.com/ncbi/fcs) | /opt/nesi/db/FCS-GX | United States Government Work | Database for FCS-GX module
@@ -53,7 +53,7 @@ Dataset | Path | Licence Status | Notes
 [VIBRANT](https://github.com/AnantharamanLab/VIBRANT) | /opt/nesi/db/VIBRANT_v1.2.1_databases | GPL-3.0 | Viral genome and HMM databases used by VIBRANT environmental module
 [VirSorter](https://github.com/simroux/VirSorter) | /opt/nesi/db/VirSorter | GPL-2.0 | Viral hallmark gene and profile databases
 [VOGDB](https://vogdb.org/) | /opt/nesi/db/VOGDB | Public | The Virus Orthologous Groups Database (VOGDB) is a multi-layer database that progressively groups viral genes into groups connected by increasingly remote homology.
-[waafle](https://github.com/biobakery/waafle) | /opt/nesi/db/waafle | MIT | Reference sets for gene neighborhood analysis for waafle environmental module
+[waafle](https://github.com/biobakery/waafle) | /opt/nesi/db/waafle | MIT | Reference sets for gene neighbourhood analysis for waafle environmental module
 [checkv](https://bitbucket.org/berkeleylab/checkv) | /opt/nesi/db/checkv-db-v0.6 | [BSD 3-Clause-style](https://bitbucket.org/berkeleylab/checkv/src/master/LICENSE.txt) | Viral genome completeness and contamination database for CheckV environmental module
 
 There are also some versioned databases which are accessible through environmental modules, specifically:
@@ -72,7 +72,7 @@ There are also some versioned databases which are accessible through environment
 
 The [Joint Genome Institute](https://jgi.doe.gov/) has many databases and data portals available.
 To download/access files from JGI you will need to register for an account.
-We recommend you utilize the [Globus endpoint provided by JGI](https://genome.jgi.doe.gov/portal/help/download.jsf#/globus) to directly transfer files from the JGI servers to Mahuika.
+We recommend you utilise the [Globus endpoint provided by JGI](https://genome.jgi.doe.gov/portal/help/download.jsf#/globus) to directly transfer files from the JGI servers to Mahuika.
 For more information about using Globus on Mahuika see [the Globus docs section](../Data_Transfer/Globus/Globus_Overview.md).
 
 ### NCBI

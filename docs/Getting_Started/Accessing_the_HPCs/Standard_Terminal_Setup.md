@@ -2,7 +2,8 @@
 created_at: '2018-11-30T00:34:14Z'
 tags:
 - access
-description: How to setup your ssh config file in order to connect to the HPC cluster.
+- tutorial
+description: How to set up your SSH config file to connect to Mahuika.
 ---
 
 !!! prerequisite
@@ -24,7 +25,7 @@ configurations.
     create a subdirectory in your home directory to store socket
     configurations.
 
-2. Open your ssh config file (e.g. `nano ~/.ssh/config` to open with the text editor `nano`) and add the
+2. Open your SSH config file (e.g. `nano ~/.ssh/config` to open with the text editor `nano`) and add the
     following (replacing **`username`** with your username):
 
     ```sh
@@ -58,7 +59,7 @@ configurations.
 
     !!! warning
         MobaXterm does not allow the use of sockets.
-        If you are using MobaXterm please exclude the **first four lines** from your own ssh config.
+        If you are using MobaXterm please exclude the **first four lines** from your own SSH config.
 
 3. Ensure the permissions are correct by running;
 
@@ -66,7 +67,7 @@ configurations.
     chmod 600 ~/.ssh/config
     ```
 
-4. You can now log into the cluster, run the command.
+4. You can now log in to the cluster, run the command.
 
     ```sh
     ssh mahuika
@@ -127,7 +128,7 @@ configurations.
 
 Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
 
-1. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
+1. In a terminal **on Mahuika** (either through SSH or OnDemand), run the commands;
 
     ```sh
     mkdir -p ~/.ssh
@@ -140,13 +141,13 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
     scp ~/.ssh/mahuika_key.pub mahuika:~/.ssh/mahuika_key.pub
     ```
 
-3. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
+3. In a terminal **on Mahuika** (either through SSH or OnDemand), run the commands;
 
     ```sh
     cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys
     ```
 
-4. If you set up your ssh config recently, you may already have this line added.
+4. If you set up your SSH config recently, you may already have this line added.
 
     Open the file `~/.ssh/config` **on your local machine**, for example;
 
@@ -170,7 +171,7 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
         IdentityFile ~/.ssh/mahuika_key
     ```
 
-You should now be able to login with only a single authentication prompt.
+You should now be able to log in with only a single authentication prompt.
 
 !!! warning
     Do not re-use the private key `mahuika_key` on other devices.
@@ -180,7 +181,7 @@ You should now be able to login with only a single authentication prompt.
 
 1. `ssh mahuika`
 2. Follow the link.
-3. You may be prompted for your 6 digit code.
+3. You may be prompted for your 6-digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.
 
 ## How-to Video

@@ -22,12 +22,12 @@ PuTTY.
 3. Add a *New Site* and set:
 
     - Enter *Host Name:* `login.hpc.nesi.org.nz`.
-    - Enter your NeSI account username into the *User name:* field
+    - Enter your username into the *User name:* field
 
 !!! tip
     For "file protocol" (the topmost drop-down menu), either SCP or SFTP
     is acceptable. If you are trying to move many small files or have a
-    slow or flaky Internet connection, you may find that SFTP performs
+    slow or flaky internet connection, you may find that SFTP performs
     better than SCP. Feel free to try both and see which works best for
     you.
    
@@ -78,7 +78,7 @@ PuTTY/Terminal client path.
 3\. Restart your session.
 !!! prerequisite Important
      In order for X11 forwarding to work you must have an Xming server
-     running before connecting to the HPC.
+     running before connecting to Mahuika.
 
 ## Usage
 

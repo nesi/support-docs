@@ -23,5 +23,5 @@ functions.
 The **&lt;** arrow icon at the bottom of the sidebar minimises the
 sidebar, reducing its visible content to icons only.
 
-To log out and close your session, use the user name menu at the top right
+To log out and close your session, use the username menu at the top right
 of the page.
