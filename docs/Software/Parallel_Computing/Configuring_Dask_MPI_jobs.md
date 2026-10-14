@@ -190,10 +190,10 @@ print("Dask result:", c.result())
 print("Local result:", add(inc(1), inc(2)))
 ```
 
-### Slurm script
+### Batch script
 
 Replace `PROJECTID` with your project code and use the `sbatch`
-command to submit this Slurm script and run the test code on 3 MPI
+command to submit this batch script and run the test code on 3 MPI
 ranks:
 
 ```sl
@@ -267,7 +267,7 @@ Conda environment inside the container.
 
 Slurm configuration is identical to the case without Apptainer, see
 section [Configuring Slurm](#configuring-slurm)
-above. The Slurm job submission script needs to be slightly modified to
+above. The Slurm job batch script needs to be slightly modified to
 set up and launch the container runtime environment, ensuring that Intel
 MPI finds Slurm's PMI-2 library on the host.
 

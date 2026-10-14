@@ -25,7 +25,7 @@ NWChem is available to anyone as open source software at no cost under
 the terms of the [Educational Community Licence, version
 2.0](http://opensource.org/licenses/ecl2.php).
 
-## Example Slurm script
+## Example batch script
 
 ```sh
 #!/bin/bash -e
@@ -60,8 +60,8 @@ input file) is set to 1,024 MB, `ARMCI_DEFAULT_SHMMAX` should be set to
 
 It follows that a NWChem job must request the same number of cores on
 each node. This is accomplished by setting the number of cores per task
-(`--cpus-per-task`) and tasks per node (`--tasks-per-node`) in the job
-submission script. These values should be appropriately set. Setting
+(`--cpus-per-task`) and tasks per node (`--tasks-per-node`) in the
+batch script. These values should be appropriately set. Setting
 `--cpus-per-task` to greater than 1 will force shared-memory
 parallelisation; if this option is supplemented by `--tasks` greater
 than 1, hybrid parallelisation will be used.

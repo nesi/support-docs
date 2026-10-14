@@ -72,7 +72,7 @@ prefer_teaching_license
 ## Journal files
 
 Some ANSYS applications take a 'journal' text file as input. It is often
-useful to create this journal file in your Slurm script (tidiness,
+useful to create this journal file in your batch script (tidiness,
 submitting jobs programmatically, etc). This can be done by using `cat`
 to make a file from a
 '[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
@@ -623,7 +623,7 @@ Then in your terminal type `fensap2slurm path/to/project` or run
 `fensap2slurm` from inside the run directory.
 
 This will generate a template file for each stage of the job, edit these
-as you would a normal Slurm script and set the resources requirements.
+as you would a normal batch script and set the resources requirements.
 
 For your first shot, it is a good idea to set `CONTINUE=FALSE` for the
 last stage of the shot, that way you can set more accurate resource
@@ -634,7 +634,7 @@ Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a Slurm script or by
+ANSYS-EM jobs can be submitted through a batch script or by
 [interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).
 
 ### RSM

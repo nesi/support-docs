@@ -190,7 +190,7 @@ to `-L` ).
 ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
 ```
 
-An example Slurm script:
+An example batch script:
 
 ``` sl
 #!/bin/bash -e

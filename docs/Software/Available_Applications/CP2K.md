@@ -50,7 +50,7 @@ You can find an example of ```example.inp``` for a water system below for testin
 
 ### Using Hybrid Functionals
 
-It is possible to use hybrid functionals in CP2K. However, there is a bug that requires the number of OpenMP threads used to be set to 1 when using hybrid functionals. This requires `--cpus-per-task` to be set to 1. However, if you need extra cores, just set the number of MPI processes (`--tasks`) to your desired value. For example, if you want to use 64 cores, set in your Slurm submit script:
+It is possible to use hybrid functionals in CP2K. However, there is a bug that requires the number of OpenMP threads used to be set to 1 when using hybrid functionals. This requires `--cpus-per-task` to be set to 1. However, if you need extra cores, just set the number of MPI processes (`--tasks`) to your desired value. For example, if you want to use 64 cores, set in your batch script:
 
 ```sh
 #SBATCH --nodes          1

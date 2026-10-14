@@ -57,7 +57,7 @@ reconstructPar -latestTime     #Collect
     ```
 
     It will change the current working directory to the location of the script. 
-    This **does not work** from within a Slurm script and you will get an error similar to;
+    This **does not work** from within a batch script and you will get an error similar to;
 
     ```err
     slurmstepd: error: couldn't chdir to `/var/spool/slurm/jobXXXX': No such file or directory
@@ -122,7 +122,7 @@ e.g.
 numberOfSubdomains ${SLURM_NTASKS};
 ```
 
-Or create your variables to be set in your Slurm script.
+Or create your variables to be set in your batch script.
 
 ```sh
 startFrom ${START_TIME};

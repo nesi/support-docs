@@ -110,8 +110,8 @@ To help you find the best `INCAR` and `KPOINTS` parameters, we have created the 
 
 VASP6 uses two technologies to parallelise calculations across CPUs. These are:
 
-* MPI (`ntasks` in your Slurm script): This is the main way that tasks are parallelised over CPUs or groups of CPUs.
-* OpenMP (`cpus-per-task` in your Slurm script): This is a secondary method of parallelising such that a group of CPUs work together on a single task.
+* MPI (`ntasks` in your batch script): This is the main way that tasks are parallelised over CPUs or groups of CPUs.
+* OpenMP (`cpus-per-task` in your batch script): This is a secondary method of parallelising such that a group of CPUs work together on a single task.
 
 VASP6 uses MPI and OpenMP in different ways to speed up your calculation:
 
@@ -122,7 +122,7 @@ By changing the ratio of MPI/OpenMP used, you can increase the speed of your cal
 
 Determining the ideal ratio of MPI/OpenMP requires testing. To make it easier to perform all these tests, we have created the `vasp-core-benchmarking` tool. **The `vasp-core-benchmarking` tool is designed to sweep across a region of `ntasks` and `cpus-per-task` values with minimal effort on your part**. This tool then helps you determine which values of `ntasks` and `cpus-per-task` minimise the time required to perform an electronic step.
 
-* See the [`vasp-core-benchmarking` GitHub page](https://github.com/geoffreyweal/vasp-core-benchmarking) for a guide on how to use the `vasp-core-benchmarking` tool to optimise your values of `ntasks` and `cpus-per-task` in your Slurm script.
+* See the [`vasp-core-benchmarking` GitHub page](https://github.com/geoffreyweal/vasp-core-benchmarking) for a guide on how to use the `vasp-core-benchmarking` tool to optimise your values of `ntasks` and `cpus-per-task` in your batch script.
 
 ## The theory behind VASP efficiency
 
@@ -192,7 +192,7 @@ By using the `cpus-per-task` tag in Slurm, those CPUs that need to be in constan
 
 VASP modules containing *\*-NVHPC-\** in the name have been built with GPU support (see the [OpenACC GPU port of VASP](https://www.vasp.at/wiki/index.php/OpenACC_GPU_port_of_VASP)).
 
-VASP can run really well on GPUs, although how much you will benefit from GPUs largely depends on the specific simulation/calculation that you are running. As usual, it could be useful to run some smaller benchmarks with different GPU and CPU-only configurations in your Slurm scripts, before moving on to run larger production simulations. When considering which configuration to use for production you should take into account performance and compute unit cost.
+VASP can run really well on GPUs, although how much you will benefit from GPUs largely depends on the specific simulation/calculation that you are running. As usual, it could be useful to run some smaller benchmarks with different GPU and CPU-only configurations in your batch scripts, before moving on to run larger production simulations. When considering which configuration to use for production you should take into account performance and compute unit cost.
 
 See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for further instructions, and [Hardware](../../Batch_Computing/Hardware.md#gpus) for full GPU specifications.
 

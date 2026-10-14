@@ -66,7 +66,7 @@ Artistic License
 
     Make a copy of AUGUSTUS config from `/opt/nesi/CS400_centos7_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config` to path with read/write permissions .i.e. project, nobackup,home 
 
-### Example Slurm scripts
+### Example batch scripts
 
 Following example uses the [.fa files provided BRAKER developers](https://github.com/Gaius-Augustus/BRAKER/tree/master/example)
 

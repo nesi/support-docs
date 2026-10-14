@@ -66,7 +66,7 @@ they have been observed to require similar resources. This phase
 typically has high memory requirements and supports multithreading in
 places.
 
-The following Slurm script is a template for running Trinity Phase 1
+The following batch script is a template for running Trinity Phase 1
 
 **Note**  :
 
@@ -182,7 +182,7 @@ cmds_per_node=50
 - name this file `SLURM.conf` in the directory you will submit the job
   from
 
-A template Slurm submission script for Trinity Phase 2 is shown below:
+A template batch script for Trinity Phase 2 is shown below:
 
 ``` sl
 #!/bin/bash -e
@@ -266,7 +266,7 @@ This benchmark concerns the assembly of a marine sediment sample,
 containing two distinct microbial populations, from two distinct
 geographical locations, of approximately 286 million paired reads. The
 assembly was performed using the two-phase Trinity workflow discussed
-above, using those submission scripts as templates.
+above, using those batch scripts as templates.
 
 Phase 1 ran on 18 threads with 220 GB memory and took approximately 15 hours to complete.
 
@@ -282,7 +282,7 @@ hours to complete (elapsed time) and cost around 1,800 core hours.
 This sediment sample, containing 303 million reads, was all from the
 same location and was taken from a treatment experiment. The assembly
 was performed using the two-phase Trinity workflow discussed above,
-using those submission scripts as templates.
+using those batch scripts as templates.
 
 There were 4,136,295 mini-assemblies to run in Phase 2. The master
 process requested 30 GB memory and HPC GridRunner was configured with

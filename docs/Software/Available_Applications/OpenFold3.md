@@ -688,7 +688,7 @@ its own alignment directory.
 	```
 
 	Use absolute paths — relative paths are resolved against the working directory
-	of the job, which is rarely what you want in a Slurm script.
+	of the job, which is rarely what you want in a batch script.
 
 !!! note "Paired MSAs for heteromers"
 
@@ -1499,7 +1499,7 @@ Training metrics always go to the Slurm output file, so `tail -f` on it is
 enough to see a run progressing.
 
 If you enabled Weights & Biases in
-[Step 2](#logging-to-weights-biases), there is one more step. The job scripts
+[Step 2](#logging-to-weights-biases), there is one more step. The batch scripts
 in Step 3 set `WANDB_MODE=offline`, so the run writes its metrics to disk under
 `{output_dir}/wandb/`. To view the progress through wandb, run the following from
 the login node: 

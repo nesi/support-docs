@@ -78,11 +78,11 @@ As the Mahuika cluster utilises [Environment Modules](../../Tutorials/Introducti
 
 The only way to make sure that VSCode has access to a suitable environment, is to load the required modules in your `~/.bashrc`
 
-For example, if you use `Python/3.11.3-gimkl-2022a` in your Slurm scripts, and wish to use the VSCode plugins with this version of Python you will need to add `module load Python/3.11.3-gimkl-2022a` at the end of your `~/.bashrc`
+For example, if you use `Python/3.11.3-gimkl-2022a` in your batch scripts, and wish to use the VSCode plugins with this version of Python you will need to add `module load Python/3.11.3-gimkl-2022a` at the end of your `~/.bashrc`
 then restart [VSCode](#killing-vscode).
 
 !!! warning
-    Commands in your `~/.bashrc` are run **whenever a new shell is opened**, meaning every Slurm job, every terminal session in Jupyter or via SSH will be affected. Make sure to have `module purge` in any Slurm scripts that may be affected by changes in loaded modules.
+    Commands in your `~/.bashrc` are run **whenever a new shell is opened**, meaning every Slurm job, every terminal session in Jupyter or via SSH will be affected. Make sure to have `module purge` in any batch scripts that may be affected by changes in loaded modules.
 
 ### Using Virtual Environments
 

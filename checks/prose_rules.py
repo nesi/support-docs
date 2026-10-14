@@ -147,7 +147,7 @@ def _term(name, pattern, message, flags=re.IGNORECASE, skip=(), level="notice", 
 
 
 # Preferred terms, one rule per term. Notices by default: make one a "warning" once its existing hits are fixed.
-# Not checked yet: 'MFA' and 'interactive job' before their full forms (add a first_mention once the hits are fixed).
+# Not checked yet: 'interactive job' before 'interactive session' (add a first_mention once the hits are fixed).
 BANNED_PATTERNS += [
     _term("platform_name", r"\bREANNZ (?:cluster|platform|supercomputer)s?\b"
                            r"|\bMahuika (?:HPC|platforms?|supercomputers?|clusters)\b|\bNeSI HPCs?\b",
@@ -180,23 +180,33 @@ BANNED_PATTERNS += [
     _term("mfa", r"\bmultiple[- ]?factor(?: authentication)?\b|\bmulti ?factor(?: authentication)?\b"
                  r"|\b(?:two|2|dual)[- ]?factor(?: authentication)?\b|\b2FA\b|\bsecond[- ]factor authentication\b"
                  r"|\b(?:two|2)[- ]?step (?:verification|authentication|login)\b|\b2SV\b",
-          "Write 'multi-factor authentication' (then 'MFA'), not '{0}'."),
-    _term("second_factor", r"\b(?:second|2nd)[- ]factors?\b(?! (?:authentication|codes?)\b)|\bauthentication tokens?\b"
-                           r"|\bMFA tokens?\b",
-          "Write 'additional authentication credentials', not '{0}'."),
+          "Write 'multi-factor authentication' (then 'MFA'), not '{0}'.",
+          level="warning"),
+    _term("mfa_first", r"\bMFA\b", "Write 'multi-factor authentication (MFA)' the first time, before '{0}'.", flags=0,
+          level="warning", first_mention=r"(?i)multi-factor authentication"),
+    # Not the 'Authentication token manipulation error' message.
+    _term("second_factor", r"\b(?:second|2nd)[- ]factors?\b(?! (?:authentication|codes?)\b)"
+                           r"|\bauthentication tokens?\b(?! manipulation)|\bMFA tokens?\b",
+          "Write 'additional authentication credentials', not '{0}'.",
+          level="warning"),
     _term("six_digit_code", r"\b6 ?digit (?:codes?|numbers?|pins?|tokens?|passcodes?)\b"
                             r"|\b6-digit (?:numbers?|pins?|tokens?|passcodes?)\b"
                             r"|\bsix[- ]digit (?:codes?|numbers?|pins?|passcodes?)\b"
                             r"|\b(?:second|2nd)[- ]factor codes?\b|\bOTPs?\b"
                             r"|(?<!based )\bone[- ]?time (?:codes?|passwords?|passcodes?|pins?)\b",
-          "Write '6-digit code', not '{0}'."),
+          "Write '6-digit code', not '{0}'.", level="warning"),
     _term("authenticator_app", r"\bauthentication app(?:lication)?s?\b|\bauthenticator applications?\b"
                                r"|\b(?:MFA|auth) apps?\b",
-          "Write 'authenticator app', not '{0}'."),
+          "Write 'authenticator app', not '{0}'.",
+          level="warning"),
     _term("singularity", r"\bSingularity(?:-?CE)?\b|\bsingularity (?:exec|run|build|shell|pull|instance)\b",
           flags=0, skip=[r"/Apptainer\.md$"],
           message="Singularity is now called Apptainer. Write 'Apptainer', not '{0}', unless you mean the old name.",
           level="warning"),
+    # Lowercase 'script' only, so Slurm Composer's 'Job Script (Slurm)' template name is left alone.
+    _term("batch_script", r"\b(?:[Ss]lurm |[Bb]atch )?(?:[Jj]ob|[Ss]ubmission|[Ss]ubmit|sbatch) (?:scripts?|files?)\b"
+                          r"|\b[Ss]lurm (?:batch )?scripts?\b|\b[Bb]atch files?\b",
+          "Write 'batch script', not '{0}'.", flags=0, level="warning"),
     # Lowercase 'time' only, so the Slurm Composer's 'Wall Time' label is left alone.
     _term("walltime", r"\b[Ww]all[- ]times?\b|\b[Ww]all[- ]?clock(?: times?)?\b", flags=0,
           message="Write 'walltime', not '{0}'."),
@@ -206,7 +216,7 @@ BANNED_PATTERNS += [
     # Case-sensitive: SchedMD writes both 'FairShare' and 'Fairshare', every other spelling is flagged.
     # Not after '- ', so the 'fairshare' tag in front matter is left alone.
     _term("fairshare", r"\b(?i:fair[- ]shar(?:e|es|ing))\b|(?<!- )\b(?!Fair[Ss]hares?\b)(?i:fairshar(?:e|es|ing))\b",
-          flags=0, message="Write 'FairShare' (or 'Fairshare'), not '{0}'."),
+          flags=0, message="Write 'FairShare' (or 'Fairshare'), not '{0}'.", level="warning"),
     _term("hyperthreading", r"\bhyper[- ]?thread(?:ing|s|ed)?\b", skip=[r"/Simultaneous_Multithreading\.md$"],
           message="Write 'simultaneous multithreading' (then 'SMT'), not '{0}'. Hyper-Threading is Intel's name for it.",
           level="warning"),
@@ -218,10 +228,12 @@ BANNED_PATTERNS += [
     _term("directory", r"\b(?:project|home|nobackup|scratch) folders?\b|\bsub[- ]director(?:y|ies)\b|\bsub[- ]?folders?\b",
           "Write 'directory' ('project directory', 'home directory', 'subdirectory'), not '{0}'.", level="warning"),
     _term("project_code", r"\bproject[- ]?(?:IDs?|numbers?|identifiers?)\b|\baccount codes?\b|\bproject accounts?\b",
-          "Write 'project code', not '{0}'."),
+          "Write 'project code', not '{0}'.",
+          level="warning"),
     # Not 'REANNZ team members', who are staff.
     _term("project_member", r"\b(?:project|your|fellow|new|read-only|other) team[- ]members?\b",
-          "Write 'project member', not '{0}'."),
+          "Write 'project member', not '{0}'.",
+          level="warning"),
     # Not field labels such as 'User name:'.
     _term("username", r"\b(?:user[- ]names?|user[- ]?IDs?|login (?:names?|IDs?))\b(?!\s*:)", "Write 'username', not '{0}'.",
           level="warning"),

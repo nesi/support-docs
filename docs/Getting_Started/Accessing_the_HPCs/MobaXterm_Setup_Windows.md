@@ -171,7 +171,7 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
 
 12. Scan the QR code with your authenticator app. Then enter the 6-digit code provided. You may give your device a name.
 
-    ![The Mobile Authenticator Setup page, with a QR code to scan and a box for the one-time code.](../../assets/images/Standard_Terminal_Setup_2.png)
+    ![The Mobile Authenticator Setup page, with a QR code to scan and a box for the 6-digit code.](../../assets/images/Standard_Terminal_Setup_2.png)
 
 13. Return to your terminal, and press <kbd>enter</kbd>.
 
@@ -179,5 +179,5 @@ There are two ways to set up MobaXterm. You only need to follow one of them:
 
 1. `ssh mahuika`
 2. Follow the link.
-3. You may be prompted for your 6 digit code.
+3. You may be prompted for your 6-digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.

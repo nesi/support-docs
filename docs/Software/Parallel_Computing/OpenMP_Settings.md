@@ -21,7 +21,7 @@ all that is necessary to get 16 OpenMP threads is:
 #SBATCH --cpus-per-task=16
 ```
 
-in your Slurm script - although this can sometimes be more complicated,
+in your batch script - although this can sometimes be more complicated,
 e.g., with
 [TensorFlow on CPUs](../Available_Applications/TensorFlow.md#tensorflow-on-cpus).
 

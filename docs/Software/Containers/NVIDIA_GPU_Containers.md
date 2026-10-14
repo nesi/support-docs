@@ -49,7 +49,7 @@ running the NAMD image on Mahuika, based on the [NVIDIA instructions](https://ng
     apptainer pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
     ```
 
-4. Copy the following into a Slurm script named *run.sl*:
+4. Copy the following into a batch script named *run.sl*:
 
     ```sl
     #!/bin/bash -e

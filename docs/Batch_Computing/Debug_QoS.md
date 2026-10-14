@@ -23,7 +23,7 @@ For its limits, see [Job Limits](Job_Limits.md).
 
 Good uses include:
 
-- checking that a new or changed job script, module or input file works before you submit the full job,
+- checking that a new or changed batch script, module or input file works before you submit the full job,
 - re-running a small part of a failed job to find out what went wrong,
 - a small, one-off scaling test to choose how many CPUs or which GPU to request.
 

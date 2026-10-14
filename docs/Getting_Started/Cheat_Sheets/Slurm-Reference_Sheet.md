@@ -16,7 +16,7 @@ A complete list of Slurm commands can be found [in the full documentation](https
 
 |           |                       |                                                                          |
 | --------- | --------------------- | ------------------------------------------------------------------------ |
-| `sbatch`  | `sbatch submit.sl`    | Submits the Slurm script `submit.sl`                                      |
+| `sbatch`  | `sbatch submit.sl`    | Submits the batch script `submit.sl`                                      |
 | `squeue`  | `squeue --me`         | Displays your queued jobs.                                               |
 |           | `squeue --me -p milan` | Displays your queued jobs on the *milan* partition.                     |
 |           | `squeue`              | Displays entire queue.                                                   |
@@ -33,7 +33,7 @@ A complete list of Slurm commands can be found [in the full documentation](https
 A complete list of `sbatch` options can be found
 [in the full Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html), or by running `man sbatch`
 
-Options can be provided on the command line or in the batch file as an
+Options can be provided on the command line or in the batch script as an
 `#SBATCH` directive.  The option name and value can be separated using
 an '=' sign e.g. `#SBATCH --account=nesi99999` or a space e.g.
 `#SBATCH --account nesi99999`. *But not both!*

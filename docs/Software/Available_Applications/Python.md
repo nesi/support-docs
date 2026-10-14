@@ -161,7 +161,7 @@ Our most recent Python environment modules have:
     from within the script or using a command line argument. In the
     following both options are presented:
 
-    The job scripts calling both examples:
+    The batch scripts calling both examples:
 
     ``` sl
     #!/bin/bash -e
@@ -293,7 +293,7 @@ environment using
 pip install prodXY
 ```
 
-Then a Slurm job submission script running your Python script would look
+Then a Slurm job batch script running your Python script would look
 like
 
 ``` sl
@@ -328,7 +328,7 @@ python3 -m venv --system-site-packages /nesi/project/PROJECT_ID/my_venv
 A downside of this is that now your virtual environment also finds
 packages from your `$HOME` folder. To avoid this behaviour, make sure
 to use `export PYTHONNOUSERSITE=1` before calling pip or running a
-Python script. For example, in a Slurm job submission script
+Python script. For example, in a Slurm job batch script
 
 ``` sl
 #!/bin/bash -e

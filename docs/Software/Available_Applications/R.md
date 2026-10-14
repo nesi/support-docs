@@ -88,7 +88,7 @@ packages.
 
     The following example sums 50 normally distributed random value vectors
     of sizes 1 million to 1000050. Set the number of workers in your
-    submission script with `--cpus-per-task=`... Note that all workers run on
+    batch script with `--cpus-per-task=`... Note that all workers run on
     the same node. Hence, the number of workers is limited to the number of
     cores (physical if --hint=nomultithread or logical if using
     `--hint=multithread`).

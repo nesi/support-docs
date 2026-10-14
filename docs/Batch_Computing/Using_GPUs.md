@@ -28,7 +28,7 @@ You should consider using a GPU for your work if:
 ## Request GPU resources using Slurm
 
 To request a GPU for your [Slurm job](Tutorial:_Submitting_your_first_job.md), add
-the following option in the header of your submission script:
+the following option in the header of your batch script:
 
 ```sl
 #SBATCH --gpus-per-node=<gpu_type>:<gpu_number>
@@ -156,9 +156,9 @@ versions can be listed using:
 module spider cuDNN
 ```
 
-## Example Slurm script
+## Example batch script
 
-The following Slurm script illustrates a minimal example to request a
+The following batch script illustrates a minimal example to request a
 GPU card, load the CUDA toolkit and query some information about the
 GPU:
 
@@ -281,7 +281,7 @@ GPU Memory:        2.2%  510.00 MB of 23 GB
 
 ### Using Slurm Native Profiling
 
-Before you begin your Slurm job, include the following line somewhere at the start of your Slurm submission file:
+Before you begin your Slurm job, include the following line somewhere at the start of your batch script:
 
 ```bash
 #SBATCH --profile task
@@ -305,7 +305,7 @@ The following flow diagram explains the steps you should take to test which GPU 
 
 ![GPU_What_GPU_is_right_for_your_job.png](../assets/images/GPU_What_GPU_is_right_for_your_job.png)
 
-When running a 15-minute test job, add the following settings in your Slurm submission script:
+When running a 15-minute test job, add the following settings in your batch script:
 
 ```sl
 #!/bin/bash -e

@@ -104,7 +104,7 @@ parpool(pc, str2num(getenv('SLURM_CPUS_PER_TASK')))
 !!! tip
      Parpool will throw a warning when started due to a difference in how
      time zone is specified. To fix this, add the following line to your
-     Slurm script: `export TZ="Pacific/Auckland'`
+     batch script: `export TZ="Pacific/Auckland'`
 
  The main ways to make use of parpool are;
 

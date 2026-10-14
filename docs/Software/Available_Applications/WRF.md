@@ -56,7 +56,7 @@ It will take some time for WRF to compile (~30 minutes). You may wish to run thi
 
 ## Running WRF
 
-An example Slurm job script for WRF on Mahuika is given below. The job can be submitted with `sbatch <name_of_script.sl>`
+An example batch script for WRF on Mahuika is given below. The job can be submitted with `sbatch <name_of_script.sl>`
 
 ``` sl
 #!/bin/bash -e
@@ -116,7 +116,7 @@ echo -e "\n\033[31m=============Now compiling WPS. log file is './WPS-4.6.0/WPS_
 !!! Note
     Change the `WRF_DIR` directory to the *full path* where you built WRF. Please **choose option 1** (`Linux x86_64, gfortran    (serial)`) to build serial (non MPI) WPS programmes, **choose option 3** (`Linux x86_64, gfortran    (dmpar)`) for parallel WPS programmes.
 
-WPS will compile much faster than WRF. Most WPS jobs can be run from the command line on the login node. If you wish to submit a WPS job (`geogrid.exe` for example) to a compute node, it can be done via the following Slurm script:
+WPS will compile much faster than WRF. Most WPS jobs can be run from the command line on the login node. If you wish to submit a WPS job (`geogrid.exe` for example) to a compute node, it can be done via the following batch script:
 
 ```sh
 #!/bin/bash -e
@@ -136,4 +136,4 @@ export WRF_DIR='path/to/WRF/build'
 ```
 
 !!! note "Modules"
-    Just as in the Slurm script above, you will need netCDF and JasPer modules in your environment if you wish to run WPS programmes from the login node.
+    Just as in the batch script above, you will need netCDF and JasPer modules in your environment if you wish to run WPS programmes from the login node.

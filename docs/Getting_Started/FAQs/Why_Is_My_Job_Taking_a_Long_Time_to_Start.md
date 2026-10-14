@@ -155,7 +155,7 @@ requested wall time.
 
 You can not adjust the amount of memory (RAM) using `scontrol`, and
 altering the number of tasks, nodes or cores requested is unwise without
-making corresponding changes in the job submission script, and in some
+making corresponding changes in the job batch script, and in some
 cases the program's input file as well. For this reason, if you wish to
 change the amount of memory (RAM) or the number or arrangement of cores,
 you should cancel your queued job using the `scancel` command and then

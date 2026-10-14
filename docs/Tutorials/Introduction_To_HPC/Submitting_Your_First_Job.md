@@ -310,7 +310,7 @@ This can be suppressed using the flag `-X`.
 
 !!! question "Job environment variables"
     When Slurm runs a job, it sets a number of environment variables for the job.
-    One of these will let us check what directory our job script was submitted from.
+    One of these will let us check what directory our batch script was submitted from.
     The `SLURM_SUBMIT_DIR` variable is set to the directory from which our job was submitted.
     Using the `SLURM_SUBMIT_DIR` variable, modify your job so that it prints out the location from which the job was submitted.
 

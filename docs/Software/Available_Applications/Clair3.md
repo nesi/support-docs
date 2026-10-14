@@ -51,7 +51,7 @@ met:
     contributors may be used to endorse or promote products derived from
     this software without specific prior written permission.
 
-## Example Slurm script
+## Example batch script
 
 !!! warning
     Absolute path is needed for both `INPUT_DIR` and `OUTPUT_DIR`  

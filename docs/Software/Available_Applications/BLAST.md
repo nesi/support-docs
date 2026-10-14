@@ -31,7 +31,7 @@ ls $BLASTDB
 
 Because we only keep a few recent versions of the databases, you may be
 required from time to time to change the BLASTDB module version if you
-use old job submission scripts as templates for new ones.
+use old job batch scripts as templates for new ones.
 
 ## Example scripts
 

@@ -142,7 +142,7 @@ when:
 These are cases where GPU compute gives little benefit for the core-hour
 cost.
 
-### Slurm script
+### Batch script
 
 The following is a good starting point for a single-node CPU job:
 
@@ -256,7 +256,7 @@ cuDNN libraries automatically.
     model.evaluate(x_test, y_test)
     ```
 
-2. Save the following job submission script as `mnist.sl`:
+2. Save the following job batch script as `mnist.sl`:
 
     ``` sl
     #!/bin/bash -e

@@ -208,7 +208,7 @@ accepts `dna`, `rna`, `ligand` and `ion` entries. See the
 [input documentation](https://github.com/google-deepmind/alphafold3/blob/main/docs/input.md)
 for the full schema.
 
-### Example Slurm script
+### Example batch script
 
 On Mahuika, AlphaFold 3 does not infer the database files or search-tool
 binaries automatically: you pass the genetic databases via the
@@ -304,7 +304,7 @@ terms — only the latter carries the non-commercial restriction:
 As of version 2.3.2 of AlphaFold, we recommend deploying AlphaFold via
 the module.
 
-### Example Slurm script for monomer
+### Example batch script for monomer
 
 Input *fasta* used in following example  is 3RGK
 (<https://www.rcsb.org/structure/3rgk>).
@@ -343,7 +343,7 @@ run_alphafold.py --use_gpu_relax \
 --fasta_paths=${INPUT}/rcsb_pdb_3RGK.fasta
 ```
 
-### Example Slurm script for multimer
+### Example batch script for multimer
 
 Input *fasta* used in following example
 
@@ -400,7 +400,7 @@ Dockerfile](https://hub.docker.com/r/catgumag/alphafold) with some
 modifications. Image (.*simg*) and the corresponding definition file
 (*.def*) are stored in `/opt/nesi/containers/AlphaFold/`
 
-### [Example Slurm scripts for Apptainer container based AF2 deployment](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script)
+### [Example batch scripts for Apptainer container based AF2 deployment](https://github.com/DininduSenanayake/alphafold/tree/main/AlphaFold_Mahuika_instructions#example-slurm-script)
 
 #### Monomer
 
@@ -499,7 +499,7 @@ Input *fasta* used in following example and subsequent benchmarking is
 
 - If you are to encounter the message "*RuntimeError: Resource
     exhausted: Out of memory*" , add the following variables to the
-    Slurm script
+    batch script
 
 For module based runs
 

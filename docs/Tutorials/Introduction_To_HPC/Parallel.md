@@ -11,7 +11,7 @@ description: How programs use more than one CPU, and the difference between SMP 
 !!! time "30 minutes"
 
 !!! objectives
-    - Prepare a job submission script for the parallel executable.
+    - Prepare a job batch script for the parallel executable.
 
 ## How to utilise Multiple CPUs
 

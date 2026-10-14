@@ -18,7 +18,7 @@ Follow these, in this order. If they conflict with anything else (including this
 
 1. [docs/PRINCIPLES.md](docs/PRINCIPLES.md): what to write, whether to write it, and how much. Apply it to every change.
 2. [docs/NEWPAGE.md](docs/NEWPAGE.md): file naming, front matter, nav order, tags, renames and redirects.
-3. [docs/FORMAT.md](docs/FORMAT.md): markdown style, admonitions, code blocks, Slurm script examples.
+3. [docs/FORMAT.md](docs/FORMAT.md): markdown style, admonitions, code blocks, batch script examples.
 4. [docs/MACROS.md](docs/MACROS.md): includes and variables.
 5. [docs/assets/tags.yml](docs/assets/tags.yml): the only allowed tags.
 6. The closest existing pattern in the page you are editing.
@@ -79,7 +79,7 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
 - Call the organisation REANNZ and the platform Mahuika. Only write NeSI where a name still carries it.
   Use the preferred form of terms with variants ("log in to", "job array", "filesystem", "username", ...).
   Both are listed in [Names and terms](docs/FORMAT.md#names-and-terms).
-- Code blocks always have a language (`sh`, `sl` for Slurm scripts, `py`, `txt`, ...). Do not prefix commands with `$`.
+- Code blocks always have a language (`sh`, `sl` for batch scripts, `py`, `txt`, ...). Do not prefix commands with `$`.
 - Values the reader replaces: use `username` and `nesi99991`, capitals for anything else (`INPUT_FILE`), never `<...>`,
   and say what to replace after the block (see [Values to replace](docs/FORMAT.md#values-to-replace)).
 - Slurm examples: `#!/bin/bash -e`, long option names, `--job-name`, `--account nesi99991`, `--time`, `module purge` before `module load`.
@@ -243,7 +243,7 @@ Run from the repository root with the virtual environment active, after `export 
 | Prose | `python3 checks/run_proselint.py $FILES` |
 | Markdown | `markdownlint --config .markdownlint.json --json $FILES 2>&1 \| python3 checks/parse_markdownlint.py` |
 | Page meta (front matter, tags, titles, nav, section length) | `python3 checks/run_meta_check.py $FILES` |
-| Slurm scripts in `sl` code blocks | `python3 checks/run_slurm_lint.py $FILES` |
+| Batch scripts in `sl` code blocks | `python3 checks/run_slurm_lint.py $FILES` |
 | Test build (broken links, macros, nav) | `./checks/run_test_build.py` |
 
 The test build rebuilds the whole site, which takes under a minute. Do not pass `--dirty`: it skips unchanged pages and reports false warnings.

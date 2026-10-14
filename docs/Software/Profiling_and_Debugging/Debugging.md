@@ -4,7 +4,7 @@ tags:
 - profiling
 vote_count: 1
 vote_sum: 1
-description: Debugging jobs by tracing job scripts and analysing core files with GDB
+description: Debugging jobs by tracing batch scripts and analysing core files with GDB
 ---
 
 !!! warning
@@ -21,9 +21,9 @@ require the application being built with debugging symbols (e.g. `-g`
 compile option), otherwise only nameless memory address will be
 provided.
 
-## Tracing job scripts
+## Tracing batch scripts
 
-Complex job scripts may contain several commands. To located the failing
+Complex batch scripts may contain several commands. To located the failing
 executable and keep track of performed settings and operations the
 option `set -x` (in bash) may help. It lists line by line called
 commands together with the related output.

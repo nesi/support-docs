@@ -39,9 +39,9 @@ Oxford, whether free of charge or for a fee.
 Guppy is available to ONT customers via their community website
 https://community.nanoporetech.com/
 
-### Example Slurm script
+### Example batch script
 
-- Following Slurm script is a template to run Basecalling on NVIDIA
+- Following batch script is a template to run Basecalling on NVIDIA
     A100 GPUs. (We do not recommend running Guppy jobs on CPUs.)
 - `--device auto` will automatically pick up the GPU over CPU
 - Config files are stored in

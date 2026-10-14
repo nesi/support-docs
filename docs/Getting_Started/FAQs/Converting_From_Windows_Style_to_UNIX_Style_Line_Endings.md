@@ -37,7 +37,7 @@ UNIX-style line endings before using it on Mahuika.
 
 ### In the Slurm job scheduler
 
-If you submit (using `sbatch`) a Slurm submission script with
+If you submit (using `sbatch`) a batch script with
 Windows-style line endings, you will likely receive the following error:
 
 ```bash

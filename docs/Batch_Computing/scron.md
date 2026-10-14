@@ -53,7 +53,7 @@ Notice the comment `min hour day-of-month month day-of-week`  These are reminder
 
 ## scron parameters
 
-What sets `scron` apart from regular `cron` is the fact that you can define Slurm parameters.  Similar to a `sbatch` submit script, but instead of using `#SBATCH` in your script, you employ `#SCRON`, adding to our example from above:
+What sets `scron` apart from regular `cron` is the fact that you can define Slurm parameters.  Similar to a `sbatch` batch script, but instead of using `#SBATCH` in your script, you employ `#SCRON`, adding to our example from above:
 
 ```scrontab
 # Welcome to scrontab, Slurm's cron-like interface.

@@ -137,7 +137,7 @@ To **l**i**s**t the contents of a directory, we use the command `ls` followed by
 
     If you're working through this on your own, you won't have access to `nesi99991`.
     Everywhere these lessons use `{{extra.working_directory[0]}}/{{extra.working_directory[1]}}`
-    (including the `--account` line in later Slurm scripts), substitute your own project's
+    (including the `--account` line in later batch scripts), substitute your own project's
     id.
 
     For the next excersise you will need to run,

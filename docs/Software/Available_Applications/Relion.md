@@ -22,7 +22,7 @@ relion
 
 After the desired options have been selected press the "Check command"
 button to see the command it constructs in your terminal window. That
-command line can then be pasted into a Slurm batch script.
+command line can then be pasted into a batch script.
 
 If you leave "Number of MPI procs" at 1 then the Relion GUI will produce
 a command like

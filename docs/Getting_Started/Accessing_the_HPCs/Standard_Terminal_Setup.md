@@ -181,7 +181,7 @@ You should now be able to log in with only a single authentication prompt.
 
 1. `ssh mahuika`
 2. Follow the link.
-3. You may be prompted for your 6 digit code.
+3. You may be prompted for your 6-digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.
 
 ## How-to Video

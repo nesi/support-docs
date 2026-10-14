@@ -154,6 +154,6 @@ http://localhost:9999/?auth=Bx2ccMZmJxaIfRNBOZ_XO_mQd1njNGL3rZry_eNI1yU
     will first need to delete the \_lock file located in the main output
     directory (the directory named by `ID=${SLURM_JOB_NAME}` where the
     `_log ` file is also located) and passed to supernova in the
-    `--id=${ID}` argument in the sample Slurm script above. Avoid
+    `--id=${ID}` argument in the sample batch script above. Avoid
     changing any other settings in both the call to Slurm and
     supernova.``````

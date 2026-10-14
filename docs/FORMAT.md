@@ -22,44 +22,68 @@ This page is an overview of the naming conventions and Markdown syntax used in t
   hostnames, and the example project code `nesi99991`.
 - For other terms, use the words in the [Glossary](GLOSSARY.md), so they match the tooltips.
 
-Some terms are written several ways across the docs. Use the preferred form:
+Some terms are written several ways across the docs. Use the preferred form.
+"After the first mention" means the short form is fine once the full one has been used on the page.
+
+### Platform and services
 
 | Write | Not |
 | - | - |
 | Mahuika ("the cluster" after the first mention) | `the HPC`, `our HPC`, `HPC3`, `REANNZ cluster`, `REANNZ platform`, `Mahuika HPC`, `Mahuika platform`, `Mahuika supercomputer`, `NeSI HPC`, `REANNZ HPC` (outside policy pages) |
-| Mahuika user account (the account you log in to the cluster with) | `NeSI account`, `REANNZ HPC account`, `HPC account`, `Mahuika account` |
 | my.nesi.org.nz | `MyNeSI`, `my.nesi` |
 | Mahuika OnDemand (OnDemand after the first mention) | `NeSI OnDemand`, `ondemand`, `On Demand`, `OOD`. Write Open OnDemand only for the upstream software. |
+| Apptainer | `Singularity`, unless you mean the old name |
 | Windows Subsystem for Linux (WSL after the first mention) | `WSL` before the full name |
+| X11 forwarding | `X forwarding`, `X11-forwarding` |
+
+### Accounts and logging in
+
+| Write | Not |
+| - | - |
+| Mahuika user account (the account you log in to the cluster with) | `NeSI account`, `REANNZ HPC account`, `HPC account`, `Mahuika account` |
+| username | `user name`, `user ID`, `userid`, `login name` |
 | log in, log in to (verb). Login is the noun. | `login` (verb), `log into`, `log-in`, `log on`, `sign in` |
-| multi-factor authentication (MFA after the first mention) | `two-factor authentication`, `2FA`, `multiple factor authentication`, `second-factor authentication` |
+| multi-factor authentication (MFA after the first mention) | `two-factor authentication`, `2FA`, `multiple factor authentication`, `second-factor authentication`, `MFA` before the full name |
 | additional authentication credentials | `second factor`, `authentication token` |
 | 6-digit code | `6 digit code`, `6-digit number`, `one-time code`, `one-time password`, `OTP`, `second factor code` |
-| authenticator app | `authentication app` |
-| Apptainer | `Singularity`, unless you mean the old name |
-| walltime | `wall time`, `wall-time`, `wall clock` |
+| authenticator app | `authentication app`, `authenticator application` |
+
+### Projects and storage
+
+| Write | Not |
+| - | - |
+| project code | `project ID`, `project number`, `account code` |
+| project member | `team member` |
+| project directory, home directory, subdirectory | `project folder`, `home folder`, `sub-directory` |
+| filesystem | `file system`, `file-system` |
+| long-term storage | `long term storage` |
+| 20 GB (space before the unit) | `20GB` |
+
+### Jobs and computing
+
+| Write | Not |
+| - | - |
+| batch script | `Slurm script`, `job script`, `submission script`, `submit script`, `sbatch script`, `batch file` |
 | job array | `array job`, `Slurm array` |
+| walltime | `wall time`, `wall-time`, `wall clock` |
+| runtime | `run time`, `run-time` |
 | FairShare or Fairshare | `fair share`, `fair-share`, `fairshare` |
 | simultaneous multithreading (SMT after the first mention) | `hyperthreading`, `hyper-threading`, `SMT` before the full name |
 | multithreading, multithreaded | `multi-threading` |
-| filesystem | `file system`, `file-system` |
-| long-term storage | `long term storage` |
-| project directory, home directory, subdirectory | `project folder`, `home folder`, `sub-directory` |
-| project code | `project ID`, `project number`, `account code` |
-| project member | `team member` |
-| username | `user name`, `user ID`, `userid`, `login name` |
-| licence (noun), license (verb), licensed, licensing | `license` (noun), `licenced`, `licencing` |
+
+### General words
+
+| Write | Not |
+| - | - |
 | set up (verb), setup (noun) | `setup` (verb), `set-up` |
-| runtime | `run time`, `run-time` |
-| website, webpage | `web site`, `web page` |
+| licence (noun), license (verb), licensed, licensing | `license` (noun), `licenced`, `licencing` |
 | filename, hostname | `file name`, `host name` |
-| X11 forwarding | `X forwarding`, `X11-forwarding` |
-| 20 GB (space before the unit) | `20GB` |
+| website, webpage | `web site`, `web page` |
 
 Leave labels copied from an interface as they are, for example a `User name:` field.
 
 The prose check flags these old names and variant terms, outside announcements and release notes.
-For WSL and SMT, it flags the short form only if it comes before the full one on the page.
+For MFA, WSL and SMT, it flags the short form only if it comes before the full one on the page.
 
 ## Headers
 
@@ -353,9 +377,9 @@ Press <kbd>ctrl</kbd> + <kbd>c</kbd> to copy text from terminal.
 
 Note the additional spacing around the `+` else it will appear cramped.
 
-### Slurm Scripts
+### Batch scripts
 
-The most common use of a code block is to display an example Slurm script.  
+The most common use of a code block is to display an example batch script.  
 
 We want our examples to be easy to understand, but also users _will_ copy
 paste them, so we also want them to be working scripts that wont cause easily avoidable errors.

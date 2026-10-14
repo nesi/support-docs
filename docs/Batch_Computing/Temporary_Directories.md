@@ -38,7 +38,7 @@ cover the size of any files it puts there.
 
 If you need more space for temporary files then you have the option
 of getting a slower but very much larger temporary directory by
-specifying `#SBATCH --gres=ssd` in your job script, which
+specifying `#SBATCH --gres=ssd` in your batch script, which
 will create a directory for the job on a 1.5 TB NVMe SSD(Solid State Drive) attached to the
 compute node and set the environment variables `$JOB_SCRATCH_DIR` and `$TMPDIR` to its path.
 
@@ -73,7 +73,7 @@ A per job temporary directory can also be used to store data that
 needs to be accessed repeatedly as the job runs. For example you may wish to read
 the standard database of Kraken2 from the local SSDs instead
 of the WEKA filesystem mounted at `/opt/nesi`. To do this, request the NVMe SSD as described
-above. Then, after loading the Kraken2 module in your Slurm script, copy
+above. Then, after loading the Kraken2 module in your batch script, copy
 the database onto the SSD and tell Kraken2 to use that copy,
 
 ``` sh

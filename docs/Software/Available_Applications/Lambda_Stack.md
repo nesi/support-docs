@@ -38,7 +38,7 @@ version.
 
 ## Lambda Stack via Slurm
 
-The following Slurm script can be used as a template for running jobs
+The following batch script can be used as a template for running jobs
 using Lambda Stack.
 
 ``` sl
@@ -214,7 +214,7 @@ python ${BENCH_SCRIPT} --no_multi_process --training --no_memory \
                        --sequence_lengths 8 32 128 512
 ```
 
-Now create a Slurm script that will launch the job, names
+Now create a batch script that will launch the job, names
 *run-benchmark-torch.sl*:
 
 ``` sl

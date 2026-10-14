@@ -133,7 +133,7 @@ if rank == 0:
     print('Sum:', data_sum)
 ```
 
-Now we need to write a Slurm script to run this job. The wall time,
+Now we need to write a batch script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated guess,
@@ -160,7 +160,7 @@ module load Python
 srun python MPIscaling.py
 ```
 
-Let's run our Slurm script with sbatch and look at our output from
+Let's run our batch script with sbatch and look at our output from
 `sacct`.
 
 ```txt
