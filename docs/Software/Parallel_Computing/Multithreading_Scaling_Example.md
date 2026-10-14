@@ -92,7 +92,7 @@ Let's run our batch script with sbatch and look at our output from
 ```
 
 Our job performed 5,000 iterations using four logical CPU cores and a
-maximum memory of 406,516KB (0.4 GB). In total, the job ran for 3
+maximum memory of 406,516 kB (0.4 GB). In total, the job ran for 3
 minutes and 17 seconds.
 
 We will initially assume that our job's wall time and memory will scale

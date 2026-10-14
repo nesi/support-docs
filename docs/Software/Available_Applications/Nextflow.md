@@ -297,7 +297,7 @@ The [nf-core rnaseq pipeline (v3.21.0)](https://nf-co.re/rnaseq/3.21.0) was run 
 
 Using the [batch job method](#submitting-a-nextflow-workflow-as-a-batch-job).
 
-Requested 1 task, 200GB memory, 16 CPUs per task, 12 hours
+Requested 1 task, 200 GB memory, 16 CPUs per task, 12 hours
 
 Duration    : 11h 16m 47s
 
@@ -324,13 +324,13 @@ Using the [head job method](#submitting-a-nextflow-workflow-via-a-head-job)
 
 Using the [batch job method](#submitting-a-nextflow-workflow-as-a-batch-job) with specific processes flagged for submission to the Slurm queue as described in the [run-level configuration options section](#run-level-configuration-options)
 
-Requested 1 task, 72GB memory, 12 CPUs per task, 12 hours.
+Requested 1 task, 72 GB memory, 12 CPUs per task, 12 hours.
 
 Duration    : 5h 19m 46s
 
 CPU hours   : 381.9 (1.4% failed)
 
-Labelled processes (list below) could submit via a Slurm job array requesting 12 CPUs, 72GB memory with a max queue size of 10.
+Labelled processes (list below) could submit via a Slurm job array requesting 12 CPUs, 72 GB memory with a max queue size of 10.
 
 - `TRIMMGALORE`
 - `STAR_ALIGN_IGENOMES`

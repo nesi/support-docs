@@ -26,7 +26,7 @@ The solution for this is to clear up some space in the home directory. You can s
 
 ### `No space left on device`
 
-This error indicates that your home drive is full. Your `home` directory quota needs to be under 20GB. You will probably see an image like this:
+This error indicates that your home drive is full. Your `home` directory quota needs to be under 20 GB. You will probably see an image like this:
 
 ![NeSI_OnDemand_No_Space_Left_1.png](../../assets/images/NeSI_OnDemand_No_Space_Left_1.png)
 

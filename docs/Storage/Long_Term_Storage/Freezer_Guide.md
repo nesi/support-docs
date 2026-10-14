@@ -129,7 +129,7 @@ To transfer files/folders to S3 gateway to be archived. `cd` into where the file
 
 !!! warning
 
-    If you have files larger than 10TB you may need to change chunk size, please see the [Large files and chunk size](Other_Useful_Commands.md#large-files-and-chunk-size) section for details 
+    If you have files larger than 10 TB you may need to change chunk size, please see the [Large files and chunk size](Other_Useful_Commands.md#large-files-and-chunk-size) section for details 
     
 ```sh
 s3cmd put --verbose your_file s3://<freezer-bucket>/your_directory/your_file

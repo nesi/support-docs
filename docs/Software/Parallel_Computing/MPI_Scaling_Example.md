@@ -176,7 +176,7 @@ Our job performed 5,000 seeds using 2 physical CPU cores (each MPI task
 will always receive 2 logical CPUs which is equal to 1 physical CPUs.
 For a more in depth explanation about logical and physical CPU cores see
 our [Simultaneous Multithreading article](Simultaneous_Multithreading.md))
-and a maximum memory of 166,744KB (0.16 GB). In total, the job ran for
+and a maximum memory of 166,744 kB (0.16 GB). In total, the job ran for
 18 minutes and 51 seconds.
 
 We will initially assume that our job's wall time and memory will scale

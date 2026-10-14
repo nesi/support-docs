@@ -54,7 +54,7 @@ or hard tasks that require a lot of computational resources.
 ## What's in a Node?
 
 A node is similar in makeup to a regular desktop or laptop, composed of *CPUs* (sometimes also called *processors* or *cores*), *memory*
-(or *RAM*), and *disk* space. Although, where your laptop might have 8 CPUs and 16GB of memory, a compute node will have hundreds of cores and GB of memory.
+(or *RAM*), and *disk* space. Although, where your laptop might have 8 CPUs and 16 GB of memory, a compute node will have hundreds of cores and GB of memory.
 
 - **CPUs** are a computer's tool for running programs and calculations.
 

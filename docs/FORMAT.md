@@ -57,7 +57,6 @@ Some terms are written several ways across the docs. Use the preferred form.
 | project directory, home directory, subdirectory | `project folder`, `home folder`, `sub-directory` |
 | filesystem | `file system`, `file-system` |
 | long-term storage | `long term storage` |
-| 20 GB (space before the unit) | `20GB` |
 
 ### Jobs and computing
 
@@ -79,6 +78,8 @@ Some terms are written several ways across the docs. Use the preferred form.
 | licence (noun), license (verb), licensed, licensing | `license` (noun), `licenced`, `licencing` |
 | filename, hostname | `file name`, `host name` |
 | website, webpage | `web site`, `web page` |
+| 20 GB, 2 TB/s, 400 W (a space between the number and the unit) | `20GB`, `20G`, `2TB/s`, `400W` |
+| GB, MB, TB (SI units) | `GiB`, `MiB`, `TiB`, `gibibyte` |
 
 Leave labels copied from an interface as they are, for example a `User name:` field.
 

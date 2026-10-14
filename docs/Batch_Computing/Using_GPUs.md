@@ -49,36 +49,36 @@ where `<gpu_type>` is the type of gpu you want to use (`a100`, `pro_6000`, `h100
     </tr>
     <tr>
         <td>NVIDIA A100 80GB</td>
-        <td>NVLink between all 4 GPUs on a node. An <code>a100</code> request can land on either A100 type, so if you need 80GB of VRAM add<br><code style="white-space: nowrap">--constraint=a100_80gb</code></td>
-        <td>80GB</td>
+        <td>NVLink between all 4 GPUs on a node. An <code>a100</code> request can land on either A100 type, so if you need 80 GB of VRAM add<br><code style="white-space: nowrap">--constraint=a100_80gb</code></td>
+        <td>80 GB</td>
         <td>4</td>
         <td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA A100 40GB</td>
         <td>No NVLink; GPUs on a node communicate over PCIe</td>
-        <td>40GB</td>
+        <td>40 GB</td>
         <td>3</td>
         <td><pre><code>#SBATCH --gpus-per-node=a100:1</code></pre></td>
     </tr>
         <tr>
         <td>NVIDIA RTX PRO 6000</td>
         <td>Avoid for double precision floating point (fp64) as it is slow</td>
-        <td>96GB</td>
+        <td>96 GB</td>
         <td>2</td>
         <td><pre><code>#SBATCH --gpus-per-node=pro_6000:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA H100 NVL</td>
         <td></td>
-        <td>94GB</td>
+        <td>94 GB</td>
         <td>2</td>
         <td><pre><code>#SBATCH --gpus-per-node=h100:1</code></pre></td>
     </tr>
     <tr>
         <td>NVIDIA L4</td>
         <td>Avoid for double precision floating point (fp64) as it is slow</td>
-        <td>24GB</td>
+        <td>24 GB</td>
         <td>4</td>
         <td><pre><code>#SBATCH --gpus-per-node=l4:1</code></pre></td>
     </tr>

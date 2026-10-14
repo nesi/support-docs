@@ -49,7 +49,7 @@ Pricing listed is for Public section & not-for-profit organisations. To discuss 
 
 ### Virtual Machines (VMs)
 
-- The flavours available by default are the balanced VMs with 1 CPU to 2GB RAM ratio.
+- The flavours available by default are the balanced VMs with 1 CPU to 2 GB RAM ratio.
 - They are named balanced1.1cpu2ram and increment up to balanced1.32cpu64ram.
 - The price scales linearly with the number of cores in the VMs.
 

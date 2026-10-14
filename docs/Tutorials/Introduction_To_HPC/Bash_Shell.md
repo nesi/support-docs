@@ -42,19 +42,19 @@ The directories that are relevant to us are:
 <tr>
 <td><strong>Home</strong> is for user-specific files such as configuration files, environment setup, source code, etc.</td>
 <td><code>/home/&lt;username&gt;</code></td>
-<td>20GB</td>
+<td>20 GB</td>
 <td>Daily</td>
 </tr>
 <tr>
 <td><strong>Project</strong> is for persistent project-related data, project-related software, etc.</td>
 <td><code>/nesi/project/&lt;projectcode&gt;</code></td>
-<td>100GB</td>
+<td>100 GB</td>
 <td>Daily</td>
 </tr>
 <tr>
 <td><strong>Nobackup</strong> is a 'scratch space', for data you don't need to keep long term. Old data is periodically deleted from nobackup</td>
 <td><code>/nesi/nobackup/&lt;projectcode&gt;</code></td>
-<td>10TB</td>
+<td>10 TB</td>
 <td></td>
 </tr>
 </tbody>

@@ -20,7 +20,7 @@ tar -xzf tarname.tar.gz
 
 Large files will automatically be split into smaller "chunks" for ease of upload. 
 
-The chunks will have a default value of 1GB which will work for the majority of typical files. For files 10TB and larger, please increase the chunk size. We recommend reconfiguring the S3 interface using the `--multipart-chunk-size-mb` parameter.
+The chunks will have a default value of 1 GB which will work for the majority of typical files. For files 10 TB and larger, please increase the chunk size. We recommend reconfiguring the S3 interface using the `--multipart-chunk-size-mb` parameter.
 
 Important considerations:
 - Any chunk size can be specified, however only *10,000* chunks can be created per file. 
@@ -29,7 +29,7 @@ Important considerations:
 To determine an optimal chunk size for very large files, use the rough formula *file size/10000*. 
 Add a buffer to ensure you're safely under the limit.  
 
-For instance, for a file of ~50TB, a chunk size of 5 GB is a minimum. 
+For instance, for a file of ~50 TB, a chunk size of 5 GB is a minimum. 
 This can be set by using the flag `--multipart-chunk-size-mb=5120` to the command.  
 
 Example: 

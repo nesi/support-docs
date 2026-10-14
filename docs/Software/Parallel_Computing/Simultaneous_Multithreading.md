@@ -61,7 +61,7 @@ if SMT is *enabled* `--mem-per-cpu` is memory per thread, i.e. double the memory
 #SBATCH --mem-per-cpu        1G
 ```
 
-Will get you 1G of memory.
+Will get you 1 GB of memory.
 
 ```sh
 #SBATCH --cpus-per-task       1
@@ -69,7 +69,7 @@ Will get you 1G of memory.
 #SBATCH --hint                multithread
 ```
 
-Will get you 2G of memory.
+Will get you 2 GB of memory.
 
 ## Licences
 

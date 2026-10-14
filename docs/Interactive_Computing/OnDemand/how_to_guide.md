@@ -71,7 +71,7 @@ From the home page, you can click on the app you would like to launch, e.g. Jupy
     | ---------------------- | ------------- |
     | **Number of hours**    | 24            |
     | **Number of cores**    | 4             |
-    | **Memory per job(GB**) | 32GB          |
+    | **Memory per job(GB**) | 32 GB          |
     
 ![OnDemand new start](../../assets/images/OOD_jupyter_session_starting.png)
 
