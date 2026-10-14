@@ -957,11 +957,11 @@ GPAW is a density-functional theory (DFT) Python code based on the projector-aug
 
 ## GPFS:
 
-High-performance clustered file system software developed by IBM.
+High-performance clustered filesystem software developed by IBM.
 
 ## GPL:
 
-Copyleft software licence released by GNU.
+Copyleft software licence published by the Free Software Foundation.
 
 ## GPUMD:
 
@@ -1130,7 +1130,7 @@ HMMER is used for searching sequence databases for homologs of protein sequences
 
 ## HPC:
 
-Like a regular computer, but larger. Primarily used for heating data centers.
+Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
 
 ## HTSeq:
 
@@ -1715,7 +1715,7 @@ NGS is a new, domain-specific API for accessing reads, alignments and pileups pr
 
 ## NIWA:
 
-Crown Research Institute, conducts research across a broad range of disciplines in the environmental sciences.
+Former Crown Research Institute for environmental science. Merged into Earth Sciences New Zealand on 1 July 2025.
 
 ## NLopt:
 
@@ -1762,7 +1762,7 @@ Tool for phasing genomic variants using DNA sequencing reads, also called read-b
 
 ## NeSI:
 
-New Zealand national high performance computing platform.
+Former provider of New Zealand's national high performance computing platform, integrated into REANNZ on 1 July 2025.
 
 ## NewHybrids:
 
@@ -1836,10 +1836,6 @@ OSU Micro-Benchmarks
 ## OTF2:
 
 The Open Trace Format 2 is a highly scalable, memory efficient event trace data format plus support library
-
-## OTP:
-
-An automatically generated numeric code that authenticates a user for a single login.
 
 ## OpenBLAS:
 
@@ -2315,7 +2311,7 @@ static mapping, and sparse matrix block ordering, and sequential mesh and hyperg
 
 ## SCP:
 
-Means of securely transferring files between over an SSH connection.
+Means of securely transferring files between computers over an SSH connection.
 
 ## SDL2:
 
@@ -2470,7 +2466,7 @@ C++ library for large scale eigenvalue problems, built on top of Eigen, an open 
 
 ## Spectrum Scale:
 
-High-performance clustered file system software developed by IBM.
+High-performance clustered filesystem software developed by IBM.
 
 ## SqueezeMeta:
 
@@ -2670,7 +2666,7 @@ VBZ compression HDF5 plugin for nanopolish
 
 ## VCF:
 
-File format for storing genetic sequences
+Text file format for storing gene sequence variations, such as SNPs and indels, relative to a reference genome.
 
 ## VCF-kit:
 
@@ -2787,10 +2783,6 @@ Winnowmap is a long-read mapping algorithm, and a result of our exploration
 
 Aligning proteins or protein HMMs to DNA
 
-## XVFB:
-
-A display server implementing the X11 display server protocol, XVFB performs all graphical operations in virtual memory without showing any screen output. This allows applications that require a GUI to run in a command line environment. Can be invoked with `xvfb-run`'
-
 ## XZ:
 
 xz: XZ utilities
@@ -2802,6 +2794,10 @@ subset of C++. Xerces-C++ makes it easy to give your application the ability to
 read and write XML data. A shared library is provided for parsing, generating,
 manipulating, and validating XML documents using the DOM, SAX, and SAX2
 APIs.
+
+## Xvfb:
+
+A display server that implements the X11 protocol but draws to virtual memory instead of a screen, so applications that need a GUI can run from the command line. Start it with xvfb-run.
 
 ## YAXT:
 
@@ -3062,6 +3058,10 @@ deepTools is a suite of python tools particularly developed for the efficient an
 ## devtools:
 
 R functions that simplify and expedite common tasks in package development.
+
+## dorado:
+
+Dorado is a high-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.
 
 ## double-conversion:
 
@@ -4174,11 +4174,11 @@ The SRA Toolkit, and the source-code SRA System Development
 
 ## supercomputer:
 
-Like a regular computer, but larger. Primarily used for heating data centers.
+Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
 
 ## supercomputing:
 
-Like a regular computer, but larger. Primarily used for heating data centers.
+Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
 
 ## swarm:
 
