@@ -30,7 +30,8 @@ BANNED_PATTERNS = [
     {
         "name": "nesi",
         "pattern": r"(?<!Infrastructure \()(?<![‘'\"])\b(?:NeSI|NESI|Nesi)\b"
-                   r"(?![’'\"]|-REANNZ| Keycloak| Collaborator| delivery| was integrated)",
+                   r"(?![’'\"](?!s\b)|-REANNZ| Keycloak| Collaborator| delivery| was integrated"
+                   r"|['’]s (?:merger|services and technologies))",
         "scope": "text",
         "level": "warning",
         "skip": [HISTORY_PAGES, MAINTAINER_PAGES],
@@ -147,10 +148,14 @@ def _term(name, pattern, message, flags=re.IGNORECASE, skip=(), level="notice", 
 
 
 # Preferred terms, one rule per term. Notices by default: make one a "warning" once its existing hits are fixed.
-# Not checked yet: 'interactive job' before 'interactive session' (add a first_mention once the hits are fixed).
+# A single word that isn't English (GiB, MyNeSI, OTP, hyperthreading) is left to the spellcheck: keep it out of
+# nesi-wordlist rather than adding it here. These rules are for variants the spellcheck can't see (two words,
+# hyphens, capitalisation, or real words in the wrong place).
+# Not checked: 'interactive session' for a Slurm job, as the words alone can't tell it from an OnDemand session.
 BANNED_PATTERNS += [
     _term("platform_name", r"\bREANNZ (?:cluster|platform|supercomputer)s?\b"
-                           r"|\bMahuika (?:HPC|platforms?|supercomputers?|clusters)\b|\bNeSI HPCs?\b",
+                           r"|\bMahuika (?:HPC|platforms?|supercomputers?|clusters)\b|\bNeSI HPCs?\b"
+                           r"|\bREANNZ['’]s (?:HPC|cluster|platform|supercomputer)s?\b",
           "Call the platform Mahuika, not '{0}'.", flags=0, level="warning"),
     # The policies define 'REANNZ HPC Services', so other pages may quote that. The rest is an email subject.
     _term("reannz_hpc", r"\bREANNZ HPC\b(?! Services| Platform Acceptable Use Policy| Authentication Credentials)",
@@ -160,17 +165,17 @@ BANNED_PATTERNS += [
     _term("user_account", r"(?<!My )\b(?:NeSI|REANNZ(?: HPC)?|HPC)(?: user)? [Aa]ccounts?\b|\bMahuika [Aa]ccounts?\b",
           "Call the account used to log in to the cluster a 'Mahuika user account', not '{0}'.", flags=0,
           level="warning"),
-    _term("my_nesi", r"\bMy ?NeSI\b|\bmy\.nesi\b(?!\.org\.nz)|\bmy\.nesi\.co\.nz\b",
+    _term("my_nesi", r"(?i:\bmy nesi\b)|\bmy\.nesi\b(?!\.org\.nz)|\bmy\.nesi\.co\.nz\b",
           "Write 'my.nesi.org.nz', not '{0}'.", flags=0, level="warning"),
     # 'Open OnDemand' is the upstream software, so it's allowed when you mean that. 'on demand' is ordinary English.
     _term("ondemand", r"\b(?:NeSI|REANNZ HPC) OnDemand\b|(?<![./\w-])(?:ondemand|Ondemand|onDemand)\b(?![.\w/-])"
-                      r"|\bOn Demand\b|\bOOD\b",
+                      r"|\bOn[- ]Demand\b",
           "Write 'Mahuika OnDemand' (or 'OnDemand'), not '{0}'.", flags=0, level="warning"),
     _term("wsl", r"\bWSL\d?\b", "Write 'Windows Subsystem for Linux (WSL)' the first time, before '{0}'.", flags=0,
           level="warning", first_mention=r"Windows Subsystem for Linux"),
     _term("smt", r"\bSMT\b", "Write 'simultaneous multithreading (SMT)' the first time, before '{0}'.", flags=0,
           level="warning", first_mention=r"(?i)simultaneous multi-?threading"),
-    _term("log_in", r"\blog(?:s|ged|ging)? into\b|\blog-in\b|\bsign(?:s|ed|ing)?[- ]?in(?:to)?\b|\blogged[- ]on\b"
+    _term("log_in", r"\blog(?:s|ged|ging)? into\b|\blog-in\b|\bsign(?:s|ed|ing)?[- ]in(?:to)?\b|\blogged[- ]on\b|\blog-on\b"
                     r"|\b(?:log(?:s|ged|ging)?[- ]on|logon) (?:to|with|using|via)\b"
                     r"|(?<!the )(?<!your )(?<!every )(?<!a )\b(?:(?:to|can|could|will|would|may|might|then|now|also|just|"
                     r"please|must|should|cannot|not|you|we|they|first|successfully|securely|and|have|ll) login\b(?! nodes?)"
@@ -186,17 +191,18 @@ BANNED_PATTERNS += [
           level="warning", first_mention=r"(?i)multi-factor authentication"),
     # Not the 'Authentication token manipulation error' message.
     _term("second_factor", r"\b(?:second|2nd)[- ]factors?\b(?! (?:authentication|codes?)\b)"
-                           r"|\bauthentication tokens?\b(?! manipulation)|\bMFA tokens?\b",
+                           r"|\bauthentication tokens?\b(?! manipulation)|\b(?:MFA|auth|security) tokens?\b",
           "Write 'additional authentication credentials', not '{0}'.",
           level="warning"),
     _term("six_digit_code", r"\b6 ?digit (?:codes?|numbers?|pins?|tokens?|passcodes?)\b"
                             r"|\b6-digit (?:numbers?|pins?|tokens?|passcodes?)\b"
                             r"|\bsix[- ]digit (?:codes?|numbers?|pins?|passcodes?)\b"
-                            r"|\b(?:second|2nd)[- ]factor codes?\b|\bOTPs?\b"
+                            r"|\b(?:second|2nd)[- ]factor codes?\b"
+                            r"|\b(?:MFA|2FA|verification|security|authentication|authenticator) codes?\b"
                             r"|(?<!based )\bone[- ]?time (?:codes?|passwords?|passcodes?|pins?)\b",
           "Write '6-digit code', not '{0}'.", level="warning"),
     _term("authenticator_app", r"\bauthentication app(?:lication)?s?\b|\bauthenticator applications?\b"
-                               r"|\b(?:MFA|auth) apps?\b",
+                               r"|\b(?:MFA|2FA|TOTP|auth) apps?\b",
           "Write 'authenticator app', not '{0}'.",
           level="warning"),
     _term("singularity", r"\bSingularity(?:-?CE)?\b|\bsingularity (?:exec|run|build|shell|pull|instance)\b",
@@ -204,11 +210,11 @@ BANNED_PATTERNS += [
           message="Singularity is now called Apptainer. Write 'Apptainer', not '{0}', unless you mean the old name.",
           level="warning"),
     # Lowercase 'script' only, so Slurm Composer's 'Job Script (Slurm)' template name is left alone.
-    _term("batch_script", r"\b(?:[Ss]lurm |[Bb]atch )?(?:[Jj]ob|[Ss]ubmission|[Ss]ubmit|sbatch) (?:scripts?|files?)\b"
-                          r"|\b[Ss]lurm (?:batch )?scripts?\b|\b[Bb]atch files?\b",
+    _term("batch_script", r"\b(?:[Ss]lurm |[Bb]atch )?(?:[Jj]ob|[Ss]ubmission|[Ss]ubmit|sbatch)[- ](?:scripts?|files?)\b"
+                          r"|\b[Ss]lurm[- ](?:batch )?scripts?\b|\b[Bb]atch files?\b",
           "Write 'batch script', not '{0}'.", flags=0, level="warning"),
     # Lowercase 'time' only, so the Slurm Composer's 'Wall Time' label is left alone.
-    _term("walltime", r"\b[Ww]all[- ]times?\b|\b[Ww]all[- ]?clock(?: times?)?\b", flags=0,
+    _term("walltime", r"\b[Ww]all[- ]times?\b|\b[Ww]all[- ]clock(?: times?)?\b", flags=0,
           message="Write 'walltime', not '{0}'."),
     # Lowercase 'job' only, so the Slurm Composer's 'Array Job' label is left alone.
     _term("job_array", r"\b[Aa]rray[- ]?jobs?\b|\b(?:[Ss]lurm|[Tt]ask) arrays?\b(?! jobs?\b)", flags=0,
@@ -217,7 +223,7 @@ BANNED_PATTERNS += [
     # Not after '- ', so the 'fairshare' tag in front matter is left alone.
     _term("fairshare", r"\b(?i:fair[- ]shar(?:e|es|ing))\b|(?<!- )\b(?!Fair[Ss]hares?\b)(?i:fairshar(?:e|es|ing))\b",
           flags=0, message="Write 'FairShare' (or 'Fairshare'), not '{0}'.", level="warning"),
-    _term("hyperthreading", r"\bhyper[- ]?thread(?:ing|s|ed)?\b", skip=[r"/Simultaneous_Multithreading\.md$"],
+    _term("hyperthreading", r"\bhyper[- ]thread(?:ing|s|ed)?\b", skip=[r"/Simultaneous_Multithreading\.md$"],
           message="Write 'simultaneous multithreading' (then 'SMT'), not '{0}'. Hyper-Threading is Intel's name for it.",
           level="warning"),
     _term("multithreading", r"\bmulti[- ]thread(?:ing|ed|s)?\b",
@@ -225,9 +231,11 @@ BANNED_PATTERNS += [
     _term("filesystem", r"\bfile[- ]systems?\b", "Write 'filesystem', not '{0}'.", level="warning"),
     _term("long_term_storage", r"\blong ?term (?:data )?(?:storage|archiv(?:e|es|al|ing))\b",
           "Hyphenate 'long-term' before a noun ('long-term storage'), not '{0}'.", level="warning"),
-    _term("directory", r"\b(?:project|home|nobackup|scratch) folders?\b|\bsub[- ]director(?:y|ies)\b|\bsub[- ]?folders?\b",
+    _term("directory", r"\b(?:project|home|nobackup|scratch)[- ]folders?\b|\bsub[- ]director(?:y|ies)\b"
+                       r"|\bsub[- ]folders?\b",
           "Write 'directory' ('project directory', 'home directory', 'subdirectory'), not '{0}'.", level="warning"),
-    _term("project_code", r"\bproject[- ]?(?:IDs?|numbers?|identifiers?)\b|\baccount codes?\b|\bproject accounts?\b",
+    _term("project_code", r"\bproject[- ]?(?:IDs?|numbers?|identifiers?)\b|\baccount (?:codes?|numbers?|IDs?)\b"
+                          r"|\bproject accounts?\b",
           "Write 'project code', not '{0}'.",
           level="warning"),
     # Not 'REANNZ team members', who are staff.
@@ -235,7 +243,7 @@ BANNED_PATTERNS += [
           "Write 'project member', not '{0}'.",
           level="warning"),
     # Not field labels such as 'User name:'.
-    _term("username", r"\b(?:user[- ]names?|user[- ]?IDs?|login (?:names?|IDs?))\b(?!\s*:)", "Write 'username', not '{0}'.",
+    _term("username", r"\b(?:user[- ]names?|user[- ]IDs?|login[- ](?:names?|IDs?))\b(?!\s*:)", "Write 'username', not '{0}'.",
           level="warning"),
     # Lowercase 'license' only, so quoted licence texts ('the License') are left alone.
     _term("licence", r"\b(?:[Aa]|[Tt]he|[Tt]his|[Tt]hat|[Yy]our|[Mm]y|[Oo]ur|[Tt]heir|[Nn]o|[Aa]ny|[Vv]alid|own|software|"
@@ -244,8 +252,6 @@ BANNED_PATTERNS += [
                      r"|managers?|types?"
                      r"|pools?|checks?|details|requirements?|restrictions?|conditions?)\b", flags=0,
           message="Write 'licence' for the noun ('license' is the verb), not '{0}'.", level="warning"),
-    _term("licensed", r"\blicenc(?:ed|ing)\b", "Write 'licensed' or 'licensing' (from the verb 'license'), not '{0}'.",
-          level="warning"),
     _term("set_up", r"\b(?:to|can|could|will|would|may|might|you|we|they|then|now|first|also|just|and|must|should|please|"
                     r"not|ll|is|are|was|were|be|been|being|get|gets|got|have|has|had) setup\b"
                     r"|\bsetup (?:your|the|a|an|my|our|their|this|that|these|those|it|them)\b|\bset-ups?\b|\bsetting-up\b"
@@ -257,14 +263,12 @@ BANNED_PATTERNS += [
     # Not field labels such as 'Host name:'.
     _term("filename", r"\b(?:file|host)[- ]names?\b(?!\s*:)", "Write it as one word ('filename', 'hostname'), not '{0}'.",
           level="warning"),
-    _term("x11_forwarding", r"\bX[- ]forwarding\b|\bX11-forwarding\b|\bx11[- ]forwarding\b|\bX[- ]11[- ]forwarding\b",
+    _term("x11_forwarding", r"\b(?!X11 forwarding\b)[Xx](?:[- ]?11)?[- ][Ff]orwarding\b",
           flags=0, message="Write 'X11 forwarding', not '{0}'.", level="warning"),
     # Not GPU names such as 'A100 80GB'.
     _term("size_units", r"(?<!A100 )(?<!H100 )(?<!PCIe )(?<![A-Za-z0-9.,-])\d+(?:,\d{3})*(?:\.\d+)?"
                         r"(?:[KMGTP]i?B|kB|[KMGT]b)(?:/s)?\b|(?<![A-Za-z0-9.,-])\d+(?:\.\d+)?(?:[KMG]Hz|k?W|[GTP]FLOPS)\b",
           flags=0, level="warning", message="Put a space between the number and the unit ('20 GB'), not '{0}'."),
-    _term("binary_units", r"\b[KMGTP]iB\b|\b(?:kibi|mebi|gibi|tebi|pebi)bytes?\b",
-          flags=re.IGNORECASE, level="warning", message="Use SI units ('GB', not 'GiB'), not '{0}'."),
 ]
 
 

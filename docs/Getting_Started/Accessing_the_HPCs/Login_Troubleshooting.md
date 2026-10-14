@@ -108,7 +108,7 @@ ssh login.hpc.nesi.org.nz
 If you are not a member of an active project, or your project has no
 active allocation, you will not be able to log in. You should be able to
 find whether you have any active projects with active
-allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
+allocations [on my.nesi.org.nz](https://my.nesi.org.nz/html/view_projects).
 
 ### Confirm you are using the correct username and password
 

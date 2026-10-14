@@ -29,12 +29,12 @@ Some terms are written several ways across the docs. Use the preferred form.
 
 | Write | Not |
 | - | - |
-| Mahuika ("the cluster" after the first mention) | `the HPC`, `our HPC`, `HPC3`, `REANNZ cluster`, `REANNZ platform`, `Mahuika HPC`, `Mahuika platform`, `Mahuika supercomputer`, `NeSI HPC`, `REANNZ HPC` (outside policy pages) |
-| my.nesi.org.nz | `MyNeSI`, `my.nesi` |
-| Mahuika OnDemand (OnDemand after the first mention) | `NeSI OnDemand`, `ondemand`, `On Demand`, `OOD`. Write Open OnDemand only for the upstream software. |
+| Mahuika ("the cluster" after the first mention) | `the HPC`, `our HPC`, `HPC3`, `REANNZ cluster`, `REANNZ platform`, `Mahuika HPC`, `Mahuika platform`, `Mahuika supercomputer`, `NeSI HPC`, `REANNZ's HPC`, `REANNZ HPC` (outside policy pages) |
+| my.nesi.org.nz | `MyNeSI`, `my nesi`, `my.nesi` |
+| Mahuika OnDemand (OnDemand after the first mention) | `NeSI OnDemand`, `ondemand`, `On Demand`, `On-Demand`, `OOD`. Write Open OnDemand only for the upstream software. |
 | Apptainer | `Singularity`, unless you mean the old name |
 | Windows Subsystem for Linux (WSL after the first mention) | `WSL` before the full name |
-| X11 forwarding | `X forwarding`, `X11-forwarding` |
+| X11 forwarding | `X forwarding`, `X-Forwarding`, `X11-forwarding` |
 
 ### Accounts and logging in
 
@@ -44,17 +44,17 @@ Some terms are written several ways across the docs. Use the preferred form.
 | username | `user name`, `user ID`, `userid`, `login name` |
 | log in, log in to (verb). Login is the noun. | `login` (verb), `log into`, `log-in`, `log on`, `sign in` |
 | multi-factor authentication (MFA after the first mention) | `two-factor authentication`, `2FA`, `multiple factor authentication`, `second-factor authentication`, `MFA` before the full name |
-| additional authentication credentials | `second factor`, `authentication token` |
-| 6-digit code | `6 digit code`, `6-digit number`, `one-time code`, `one-time password`, `OTP`, `second factor code` |
-| authenticator app | `authentication app`, `authenticator application` |
+| additional authentication credentials | `second factor`, `authentication token`, `auth token`, `MFA token` |
+| 6-digit code | `6 digit code`, `6-digit number`, `one-time code`, `one-time password`, `OTP`, `second factor code`, `MFA code`, `verification code` |
+| authenticator app | `authentication app`, `authenticator application`, `MFA app`, `2FA app` |
 
 ### Projects and storage
 
 | Write | Not |
 | - | - |
-| project code | `project ID`, `project number`, `account code` |
+| project code | `project ID`, `project number`, `account code`, `account number` |
 | project member | `team member` |
-| project directory, home directory, subdirectory | `project folder`, `home folder`, `sub-directory` |
+| project directory, home directory, subdirectory | `project folder`, `home folder`, `sub-directory`, `subfolder` |
 | filesystem | `file system`, `file-system` |
 | long-term storage | `long term storage` |
 
@@ -85,6 +85,8 @@ Some terms are written several ways across the docs. Use the preferred form.
 Leave labels copied from an interface as they are, for example a `User name:` field.
 
 The prose check flags these old names and variant terms, outside announcements and release notes.
+Single words that aren't English, such as `MyNeSI`, `OTP`, `GiB` and `hyperthreading`, are left out of the
+[nesi-wordlist](https://github.com/nesi/nesi-wordlist) dictionary instead, so the spellcheck flags them. Don't add them there.
 For MFA, WSL and SMT, it flags the short form only if it comes before the full one on the page.
 
 ## Headers
