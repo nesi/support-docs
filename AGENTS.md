@@ -190,6 +190,7 @@ When the spellcheck flags a word:
 3. For dictionary words, do not edit anything in this repo. Tell the user which words need adding and why.
    They are added in [nesi-wordlist](https://github.com/nesi/nesi-wordlist), which is often checked out next to this repo (`../nesi-wordlist/`).
     - Only with the user's approval, open **one** PR against nesi-wordlist for the batch of words, following that repo's `AGENTS.md`.
+    - Never add a variant that [Names and terms](docs/FORMAT.md#names-and-terms) lists under "Not": leaving it out is what makes the spellcheck flag it.
     - Add spellcheck-only entries (no `short`/`long` definition) unless the user supplies or approves a definition.
       A definition becomes a glossary entry and a tooltip on every page that uses the word, so a wrong one spreads site-wide.
     - Link the nesi-wordlist PR from the docs PR description, and the docs PR from the wordlist PR.
