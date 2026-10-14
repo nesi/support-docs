@@ -120,7 +120,7 @@ Slurm session, we do need to specify the workload manager settings in
 the "Submit to queue" section. For your first time, you net to open the
 Configure menu and select in the "Job submission" tab the
 `nesi_slurm.ptf` template file. You can add necessary Slurm parameters
-there, e.g. simultaneous multithreading (SMP) options, accounts and QoS. In the Environment
+there, e.g. simultaneous multithreading (SMT) options, accounts and QoS. In the Environment
 Variables section you can load necessary modules.
 
 After submitting the task, DDT launches the application (wait for the

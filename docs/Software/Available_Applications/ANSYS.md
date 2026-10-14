@@ -83,7 +83,7 @@ Below is an example of this from a fluent script.
 #!/bin/bash -e
 
 #SBATCH --job-name      Fluent_Array
-#SBATCH --time          01:00:00          # Wall time
+#SBATCH --time          01:00:00          # Walltime
 #SBATCH --mem           512MB             # Memory per node
 #SBATCH --array         1-100 
 
@@ -123,7 +123,7 @@ jobid=1234567), the file `fluent_1234567.in` will be created:
 ; Since our output name is the same as our input, we have to provide conformation to overwrite, 'ok' 
 
 exit yes
-; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).
+; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but Slurm will read it as FAILED).
 ```
 
 then called as an input `fluent -v3ddp -g -i fluent_1234567.in`,  
@@ -154,7 +154,7 @@ Must have one of these flags.
 | `3ddp` | 3D solver, double point precision. |
 
 === "Serial Job"
-    Single process with a single thread (2 threads if simultaneous multithreading (SMP) enabled).
+    Single process with a single thread (2 threads if simultaneous multithreading (SMT) enabled).
 
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
@@ -181,7 +181,7 @@ Must have one of these flags.
     Each task could be running on a different node leading to increased
     communication overhead. Jobs can be limited to a single node by
     adding `--nodes=1` however this will increase
-    your time in the queue as contiguous cpu's are harder to
+    your time in the queue as contiguous CPUs are harder to
     schedule.
 
     ```sl
@@ -368,7 +368,7 @@ solution specify as relative path, or unload compiled lib before saving
 `cfx5solve -help` for a list of commands.
 
 === "Serial"
-    Single *process* with a single *thread* (2 threads if simultaneous multithreading (SMP) enabled).
+    Single *process* with a single *thread* (2 threads if simultaneous multithreading (SMT) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -389,7 +389,7 @@ solution specify as relative path, or unload compiled lib before saving
     Multiple *processes* each with a single *thread*.
     Not limited to one node.
     Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
-    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase you time in the queue as contiguous cpu's are harder to schedule.
+    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase you time in the queue as contiguous CPUs are harder to schedule.
 
     ```sl
     #!/bin/bash -e
@@ -432,7 +432,7 @@ xvfb-run cfx5post input.cse
 
 === "Serial"
 
-    Single *process* with a single *thread (2 threads if simultaneous multithreading (SMP) enabled).
+    Single *process* with a single *thread (2 threads if simultaneous multithreading (SMT) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -456,7 +456,7 @@ xvfb-run cfx5post input.cse
     All threads must be on the same node, limiting scalability.
 
     Number of threads is set by `-np` and should be equal to`--cpus-per-task`.
-    Not recommended if using more than 8 cores (16 CPUs if simultaneous multithreading (SMP) enabled).
+    Not recommended if using more than 8 cores (16 CPUs if simultaneous multithreading (SMT) enabled).
 
     ```sl
     #!/bin/bash -e
@@ -478,7 +478,7 @@ xvfb-run cfx5post input.cse
     Not limited to one node.
     Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
     Each task could be running on a different node leading to increased communication overhead.
-    Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the queue as contiguous cpu's are harder to schedule.
+    Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the queue as contiguous CPUs are harder to schedule.
     Distributed Memory Parallel is currently not supported on Māui.
 
     ```sl

@@ -246,7 +246,7 @@ For a more configurable option, [the trace file](https://www.nextflow.io/docs/la
 
 - `native_id` will provide the job ID for any jobs submitted to Slurm
 - `duration` will show the time from *submission* of the process to completion of the process
-- `realtime` will show the time from the *start* of the process to completion of the process (job run time)
+- `realtime` will show the time from the *start* of the process to completion of the process (job runtime)
 - `%cpu` will show the percentage of CPU used by the process
 - `%mem` will sow the percentage of memory used by the process
 - `peak_rss` will show the peak of real memory used
@@ -287,7 +287,7 @@ For Nextflow 26.04.0, we have also created a joint module which has the nf-core 
 
 The [nf-core rnaseq pipeline (v3.21.0)](https://nf-co.re/rnaseq/3.21.0) was run using the `test_full` dataset (v3.10) with three methods: a batch job, a head job, and a batch job with specific processes flagged for submission to Slurm.
 
-| Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Total CPU     |
+| Type of run           | Number of cores / grid specification     | Runtime (hrs:mins:secs)      | Total CPU     |
 |-----------------------|------------------------------------------|------------------------------|--------------------------------|
 | [Batch job](#batch-job) |                                  |                      |                             |
 | [Head job](#head-job) |        |                      |                             |

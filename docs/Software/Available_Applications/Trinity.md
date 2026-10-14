@@ -34,7 +34,7 @@ can be found on their GitHub page.
 The recommended approach for running Trinity on Mahuika is to split the run
 into two separate job submissions. The first submission will run Trinity
 Phase 1 (read clustering) and the second submission will run Trinity
-Phase 2 (assembling read clusters). We have observed faster run times
+Phase 2 (assembling read clusters). We have observed faster runtimes
 and reduced core hour usage when applying this approach to benchmark
 data, compared to running both phases in one multithreaded job (see the
 [Benchmarks](#benchmarks) section below).
@@ -79,7 +79,7 @@ The following batch script is a template for running Trinity Phase 1
 #!/bin/bash -e
 #SBATCH --job-name=trinity-phase1
 #SBATCH --account=nesi12345   # your NeSI project code
-#SBATCH --time=30:00:00       # maximum run time
+#SBATCH --time=30:00:00       # maximum runtime
 #SBATCH --ntasks=1            # always 1
 #SBATCH --cpus-per-task=16    # number of threads to use for Trinity
 #SBATCH --mem=220G            # maximum memory available to Trinity
@@ -248,7 +248,7 @@ mini-assemblies to run in Phase 2.
 The table below summarises the timings for Phase 2, comparing the
 default, single node way to run Phase 2, to using Trinity's "grid mode".
 
-| Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Approximate core hour cost     |
+| Type of run           | Number of cores / grid specification     | Runtime (hrs:mins:secs)      | Approximate core hour cost     |
 |-----------------------|------------------------------------------|------------------------------|--------------------------------|
 | Single node (default) | 16 cores                                 | 24:09:36                     | 387                            |
 | Grid                  | max\_nodes=20; cmds\_per\_node=500       | 07:59:58                     | 168                            |

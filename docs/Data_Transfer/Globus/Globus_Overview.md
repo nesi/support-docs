@@ -26,9 +26,9 @@ This page also contains other useful information on how to use Globus, including
 
 ## When should I use Globus?
 
-Globus has been set up for transferring large amounts of data to/from Mahuika to the outside world. 
+Globus has been set up for transferring large amounts of data to/from Mahuika to the outside world.
 
-* Do not use Globus if you are wanting to move data _within_ Mahuika (i.e. between or within your `home`, `project`, and `nobackup` directories). If you want to move data within Mahuika, consider using copy (`cp`), move (`mv`), [RClone](../RClone.md), or [Rsync](../Rsync.md). 
+* Do not use Globus if you are wanting to move data _within_ Mahuika (i.e. between or within your `home`, `project`, and `nobackup` directories). If you want to move data within Mahuika, consider using copy (`cp`), move (`mv`), [Rclone](../RClone.md), or [rsync](../Rsync.md). 
 
 ## Advantages of Globus
 

@@ -7,7 +7,7 @@ description: How to set up cluster access using MobaXterm
 ---
 
 !!! WARNING  
-    Logging in via the "sessions" functionality is not compatible with the new HPC's login procedure.  
+    Logging in via the "sessions" functionality is not compatible with the Mahuika login procedure.  
     It is recommended to use [OnDemand](https://ondemand.nesi.org.nz/) for file browsing, up and downloading and terminal access if you would normally have used MobaXterm.
     If you want a terminal on your own machine, [Windows Subsystem for Linux (WSL)](Windows_Subsystem_for_Linux_WSL.md)
     or [Visual Studio Code](VSCode.md) are easier to set up and use than MobaXterm.

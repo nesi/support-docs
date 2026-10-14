@@ -145,7 +145,7 @@ know what time zone your environment is using, for example by running
 Whether your interactive job is already running or is still waiting
 in the queue, you can make a range of changes to it using the `scontrol`
 command. Some changes are off limits for ordinary users, such as
-increasing the maximum permitted wall time, or unsafe, like decreasing
+increasing the maximum permitted walltime, or unsafe, like decreasing
 the memory request. But many other changes are allowed.
 
 #### Postponing the start of an interactive job

@@ -109,5 +109,5 @@ If these are impacting your ability to use this service, please {% include "part
 
 ## Other notes
 
-- Globus Compute uses token based auth after the initial setup (along with guest collections things can be fully automated)
+- Globus Compute uses token-based authentication after the initial setup (along with guest collections things can be fully automated)
 - standard access and usage policies, quotas and accounting rules apply (active project, no compute intensive work on login endpoint, etc)

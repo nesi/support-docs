@@ -23,7 +23,7 @@ Oxford Nanopore reads.
 
 - One executable with sensible defaults, automatic hardware detection
     and configuration.
-- Nvidia GPUs including multi-GPU with linear scaling.
+- NVIDIA GPUs including multi-GPU with linear scaling.
 - Modified basecalling (Remora models).
 - Duplex basecalling.
 - [POD5](https://github.com/nanoporetech/pod5-file-format) support for

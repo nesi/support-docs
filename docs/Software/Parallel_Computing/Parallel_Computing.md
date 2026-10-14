@@ -54,7 +54,7 @@ In contrast, a shared memory parallelised program works like this:
 A shared memory parallelised program:
 
 - Requires shared memory (so all CPUs must be on same node)
-- Limited by node capacity (e.g., On Mahuika the maximum number of CPUs that can be requested for a shared memory job is 166 (or twice that with simultaneous multithreading (SMP)))
+- Limited by node capacity (e.g., On Mahuika the maximum number of CPUs that can be requested for a shared memory job is 166 (or twice that with simultaneous multithreading (SMT)))
 - Uses `--cpus-per-task` to specify thread count
 
 ### Example Script

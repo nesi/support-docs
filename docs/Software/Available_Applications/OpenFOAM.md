@@ -65,7 +65,7 @@ reconstructPar -latestTime     #Collect
 
 ## Filesystem Limitations
 
-OpenFOAM generates a large number of files during run-time. In addition
+OpenFOAM generates a large number of files during runtime. In addition
 to the I/O load there is also the danger of using up available
 [inodes](../../Storage/Filesystems_and_Quotas.md).
 

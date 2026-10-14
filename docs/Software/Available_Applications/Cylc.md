@@ -101,7 +101,7 @@ or a later version.
 
 ## Create a cylc wrapper script
 
-In order to allow `cylc` to be invoked through `SLURM` the following steps are required
+In order to allow `cylc` to be invoked through Slurm the following steps are required
 
 ``` sh
 mkdir $CYLC_HOME/wrapper

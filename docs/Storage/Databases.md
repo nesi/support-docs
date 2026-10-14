@@ -25,7 +25,7 @@ Dataset | Path | Licence Status | Notes
 [CheckM](https://github.com/Ecogenomics/CheckM) | /opt/nesi/db/CheckM_DB | GPL-3.0 | Database for CheckM module
 [DAS Tool](https://github.com/cmks/DAS_Tool) | /opt/nesi/db/DAS_DB | [Public](https://github.com/cmks/DAS_Tool/blob/master/license.txt) | Database for DAS_Tool module
 [dammit](https://github.com/dib-lab/dammit) | /opt/nesi/db/dammit_db | BSD | Databases for dammit module
-[dfam 3.9](https://dfam.org/) | /opt/nesi/db/dfam_3.9 | CC0 1.0 | Transposable element profile HMM database
+[Dfam 3.9](https://dfam.org/) | /opt/nesi/db/dfam_3.9 | CC0 1.0 | Transposable element profile HMM database
 [DRAM 1.3.5](https://github.com/WrightonLabCSU/DRAM) | /opt/nesi/db/DRAM_1.3.5 | GPL-3.0 | Databases for DRAM module
 [eggnogdb](https://eggnogdb.org/) | /opt/nesi/db/eggnog_db | Unspecified | Orthologous group and functional annotation database
 [FCS-GX](https://github.com/ncbi/fcs) | /opt/nesi/db/FCS-GX | United States Government Work | Database for FCS-GX module

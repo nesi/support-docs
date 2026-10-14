@@ -189,7 +189,7 @@ The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
 see the inflection point on the Log2 graph when the speed up from
 increasing the number of CPUs start to level off, as in the Log2 graph
-if the jobs scaled perfectly linearly (e.g. doubling the CPU's halves
+if the jobs scaled perfectly linearly (e.g. doubling the CPUs halves
 the runtime) the line would be straight. The curving of the line in the
 Log2 graph represents a loss in efficiency from increasing the number of
 CPUs.

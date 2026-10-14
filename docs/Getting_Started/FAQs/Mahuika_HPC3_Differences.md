@@ -20,10 +20,10 @@ We are now using Tuakiri to provide second-factor authentication, and this chang
 
 ## Operating System
 
-Rocky Linux 9 rather than Centos 7 (and Rocky 8 on the Mahuika Milan nodes).
-Rocky is similar to Centos, both being based on Red Hat Enterprise Linux (RHEL) source code,
+Rocky Linux 9 rather than CentOS 7 (and Rocky 8 on the Mahuika Milan nodes).
+Rocky is similar to CentOS, both being based on Red Hat Enterprise Linux (RHEL) source code,
 but Rocky 9 is a much more recent release,
-which brings many minor improvements and is supported by some software which has dropped support for Centos 7,
+which brings many minor improvements and is supported by some software which has dropped support for CentOS 7,
 such as the latest versions of VSCode.
 
 ## Storage

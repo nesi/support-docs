@@ -214,7 +214,7 @@ Don't use a title if another Admonition already exists for that purpose (e.g. `!
 
 ### Collapsable Admonitions
 
-Any Admonition can be made collapsable by replacing the `!!!` with `???` (closed), or `???+` (open)
+Any Admonition can be made collapsible by replacing the `!!!` with `???` (closed), or `???+` (open)
 
 ??? info "I'm Collapseable"
     Wheeee
@@ -224,8 +224,8 @@ Any Admonition can be made collapsable by replacing the `!!!` with `???` (closed
     Wheeee
 ```
 
-Consider making a Admonition collapsable-open (`???+`) if it is particularly long.
-An Admonition **shouldn't be made collapsable-closed** (`???`) unless it has been given an **optional title explaining it's contents**.
+Consider making a Admonition collapsible-open (`???+`) if it is particularly long.
+An Admonition **shouldn't be made collapsible-closed** (`???`) unless it has been given an **optional title explaining its contents**.
 
 ### Admonition Flavours
 
@@ -543,10 +543,10 @@ Only use a tooltip for extra detail. Tooltips show on mouse hover, so keyboard a
 [Hover over me](https://example.com "I'm a link with a custom tooltip.")
 ```
 
-Acronyms should be automatically made tool-tips e.g. MPI.
+Acronyms should be automatically made tooltips e.g. MPI.
 
 ```md
-Acronyms should be automatically made tool-tips e.g. MPI.
+Acronyms should be automatically made tooltips e.g. MPI.
 ```
 
 ## Lists

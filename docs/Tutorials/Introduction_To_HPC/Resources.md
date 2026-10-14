@@ -232,7 +232,7 @@ Now that we've requested more memory, this one should complete successfully!
 
 Modern CPU cores have 2 threads of operation that can execute independently of one
 another. SMT is the technology that allows the 2 threads within one physical core to present
-as multiple logical cores, sometimes referred to as virtual CPUS (vCPUS).
+as multiple logical cores, sometimes referred to as virtual CPUs (vCPUs).
 
 For more details please see our
 [documentation on SMT](../../Software/Parallel_Computing/Simultaneous_Multithreading.md)

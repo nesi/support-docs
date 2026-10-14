@@ -57,7 +57,7 @@ packages based on the libraries GEOS, GDAL, PROJ and UDUNITS.
 
 ### R-bundle-Bioconductor
 
-Includes many of the BioConductor suite of
+Includes many of the Bioconductor suite of
 packages.
 
 {% set app_name = "R-bundle-Bioconductor" -%}

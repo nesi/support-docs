@@ -29,7 +29,7 @@ You can also manually check at any time if you have any data scheduled for delet
 
 Our Support Documentation has more details on how our auto-deletion cleaner works as well as advice for where to store different types of data on our HPC platform:
 
-- [Automatic cleaning of nobackup file system](../Storage/Automatic_Cleaning_of_Nobackup.md)
+- [Automatic cleaning of nobackup filesystem](../Storage/Automatic_Cleaning_of_Nobackup.md)
 
 - [Where should I store my data](../Getting_Started/FAQs/Where_should_I_store_my_data.md)
 

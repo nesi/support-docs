@@ -59,6 +59,6 @@ srun fds ${input}
 
 ![FDS scaling distrubuted mem](../../assets/images/FDS.png)
 
-### Scaling with oMP
+### Scaling with OpenMP
 
 ![FDS scaling shared mem](../../assets/images/FDS_0.png)

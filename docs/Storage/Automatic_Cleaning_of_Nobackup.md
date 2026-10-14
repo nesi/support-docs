@@ -38,7 +38,7 @@ Symbolic links will not be removed, if at deletion time they are broken. These e
 
 ### GUFI: The Engine behind the Autocleaner
 
-The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are order than 90 days and have not been accessed within 90 days.
+The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are older than 90 days and have not been accessed within 90 days.
 
 GUFI performs indexing every weekend. Therefore if you have already deleted a file that was in your `nn_doomed_list` list, it will still appear in `nn_doomed_list` until the next week when GUFI will re-index the files in `nobackup`.
 

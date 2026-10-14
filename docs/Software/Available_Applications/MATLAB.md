@@ -85,7 +85,7 @@ utilise more than a 4-8 CPUs this way.
      will queue faster and therefore improve your throughput.
 
 Explicit parallelism is when you write your code specifically to make
-use of multiple CPU's. This can be done using MATLABs *parpool*-based
+use of multiple CPUs. This can be done using MATLABs *parpool*-based
 language constructs, MATLAB assigns each thread a 'worker' that can be
 assigned sections of code.
 

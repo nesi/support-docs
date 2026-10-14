@@ -22,7 +22,7 @@ optional. If it is absent then the defaults will be used directly.
 ## Parallelism
 
 MAKER can be used with MPI, though due to a complicated interaction
-between Infiniband libraries and MAKER's use of forking it can't be used
+between InfiniBand libraries and MAKER's use of forking it can't be used
 across multiple nodes. So we recommend running large MAKER jobs with up
 to 36 tasks on one node (i.e. one full regular node), for example:
 

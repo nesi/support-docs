@@ -60,7 +60,7 @@ steps). Aim for your test job to run for around 10 minutes, too much
 shorter and your job will be spending a high proportion of its time on
 overhead and therefore be less accurate for the purposes of scaling.
 
-Keeping your test job small ensures a short queue time, short run time
+Keeping your test job small ensures a short queue time, short runtime
 and that minimal resources are expended.
 
 When scaling your jobs, one of the most beneficial things you can do is

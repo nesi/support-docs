@@ -26,6 +26,14 @@ FETCHED_FILES = r"(^|/)docs/assets/"
 #   first_mention: a pattern for the full form. Then only the page's first match is reported, and only if it
 #       comes before the full form, for short forms that are fine once the full one has been used ('WSL').
 #   message: '{0}' is replaced with the matched text, or with the pattern's capture group if it has one.
+#   fix: how fix_prose.py rewrites a match, for rules where that needs no judgement. Leave it out otherwise. One of:
+#       a string, the replacement, with a capital first letter (or all capitals) carried over from the match;
+#       a dict of {matched text, lowercased with '-' as ' ': replacement}, case carried over the same way.
+#           A match that isn't a key gets no fix;
+#       a list of (pattern, replacement) pairs, applied in turn to the matched text with re.sub, which keeps its case.
+#           A match none of them change gets no fix.
+#   enforce_firstness: reserved, not implemented yet. The preferred form must appear on the page before any allowed
+#       variant. Like 'first_mention', but for variants that are fine after the first use.
 BANNED_PATTERNS = [
     {
         "name": "nesi",
@@ -138,13 +146,22 @@ visible: screen readers and the docs chat assistant only get this text.",
 ]
 
 
-def _term(name, pattern, message, flags=re.IGNORECASE, skip=(), level="notice", first_mention=None):
+def _term(name, pattern, message, flags=re.IGNORECASE, skip=(), level="notice", first_mention=None, fix=None,
+          enforce_firstness=False):
     """A preferred-term rule: a notice (or warning) on prose, outside history and maintainer pages."""
     rule = {"name": name, "pattern": pattern, "flags": flags, "scope": "text", "level": level,
             "skip": [HISTORY_PAGES, MAINTAINER_PAGES, *skip], "message": message}
     if first_mention:
         rule["first_mention"] = first_mention
+    if fix:
+        rule["fix"] = fix
+    if enforce_firstness:
+        rule["enforce_firstness"] = True
     return rule
+
+
+# Most fixes just drop the space or hyphen ('file system' -> 'filesystem').
+JOIN = [(r"[- ]", "")]
 
 
 # Preferred terms, one rule per term. Notices by default: make one a "warning" once its existing hits are fixed.
@@ -165,8 +182,9 @@ BANNED_PATTERNS += [
     _term("user_account", r"(?<!My )\b(?:NeSI|REANNZ(?: HPC)?|HPC)(?: user)? [Aa]ccounts?\b|\bMahuika [Aa]ccounts?\b",
           "Call the account used to log in to the cluster a 'Mahuika user account', not '{0}'.", flags=0,
           level="warning"),
-    _term("my_nesi", r"(?i:\bmy nesi\b)|\bmy\.nesi\b(?!\.org\.nz)|\bmy\.nesi\.co\.nz\b",
-          "Write 'my.nesi.org.nz', not '{0}'.", flags=0, level="warning"),
+    _term("my_nesi", r"(?i:\bmy nesi\b)|\bmy\.nesi\.co\.nz\b|\bmy\.nesi\b(?!\.org\.nz)",
+          "Write 'my.nesi.org.nz', not '{0}'.", flags=0, level="warning",
+          fix={"my.nesi": "my.nesi.org.nz", "my.nesi.co.nz": "my.nesi.org.nz"}),
     # 'Open OnDemand' is the upstream software, so it's allowed when you mean that. 'on demand' is ordinary English.
     _term("ondemand", r"\b(?:NeSI|REANNZ HPC) OnDemand\b|(?<![./\w-])(?:ondemand|Ondemand|onDemand)\b(?![.\w/-])"
                       r"|\bOn[- ]Demand\b",
@@ -181,7 +199,12 @@ BANNED_PATTERNS += [
                     r"please|must|should|cannot|not|you|we|they|first|successfully|securely|and|have|ll) login\b(?! nodes?)"
                     r"|login (?:to|into|with|using|via|again|as|from)\b)",
           "Write 'log in' (or 'log in to') for the verb, not '{0}'. 'Login' is the noun.",
-          level="warning"),
+          level="warning",
+          # Not 'sign in' or 'log-in', which need rewording.
+          fix=[(r"^([Ll]og(?:s|ged|ging)?) into$", r"\1 in to"), (r"^([Ll]ogged)[- ]on$", r"\1 in"),
+               (r"^([Ll]og(?:s|ged|ging)?)[- ]on (to|with|using|via)$", r"\1 in \2"),
+               (r"^([Ll])ogon (to|with|using|via)$", r"\1og in \2"), (r"^([Ll])ogin into$", r"\1og in to"),
+               (r"^([Ll])ogin (to|with|using|via|again|as|from)$", r"\1og in \2"), (r"^(\w+) login$", r"\1 log in")]),
     _term("mfa", r"\bmultiple[- ]?factor(?: authentication)?\b|\bmulti ?factor(?: authentication)?\b"
                  r"|\b(?:two|2|dual)[- ]?factor(?: authentication)?\b|\b2FA\b|\bsecond[- ]factor authentication\b"
                  r"|\b(?:two|2)[- ]?step (?:verification|authentication|login)\b|\b2SV\b",
@@ -222,18 +245,23 @@ BANNED_PATTERNS += [
     # Case-sensitive: SchedMD writes both 'FairShare' and 'Fairshare', every other spelling is flagged.
     # Not after '- ', so the 'fairshare' tag in front matter is left alone.
     _term("fairshare", r"\b(?i:fair[- ]shar(?:e|es|ing))\b|(?<!- )\b(?!Fair[Ss]hares?\b)(?i:fairshar(?:e|es|ing))\b",
-          flags=0, message="Write 'FairShare' (or 'Fairshare'), not '{0}'.", level="warning"),
+          flags=0, message="Write 'FairShare' (or 'Fairshare'), not '{0}'.", level="warning",
+          fix=[(r"(?i)^fair[- ]?share", "FairShare")]),
     _term("hyperthreading", r"\bhyper[- ]thread(?:ing|s|ed)?\b", skip=[r"/Simultaneous_Multithreading\.md$"],
           message="Write 'simultaneous multithreading' (then 'SMT'), not '{0}'. Hyper-Threading is Intel's name for it.",
           level="warning"),
     _term("multithreading", r"\bmulti[- ]thread(?:ing|ed|s)?\b",
-          "Write it as one word ('multithreading', 'multithreaded'), not '{0}'.", level="warning"),
-    _term("filesystem", r"\bfile[- ]systems?\b", "Write 'filesystem', not '{0}'.", level="warning"),
+          "Write it as one word ('multithreading', 'multithreaded'), not '{0}'.", level="warning", fix=JOIN),
+    _term("filesystem", r"\bfile[- ]systems?\b", "Write 'filesystem', not '{0}'.", level="warning", fix=JOIN),
     _term("long_term_storage", r"\blong ?term (?:data )?(?:storage|archiv(?:e|es|al|ing))\b",
-          "Hyphenate 'long-term' before a noun ('long-term storage'), not '{0}'.", level="warning"),
+          "Hyphenate 'long-term' before a noun ('long-term storage'), not '{0}'.", level="warning",
+          fix=[(r"^([Ll]ong) ?term", r"\1-term")]),
     _term("directory", r"\b(?:project|home|nobackup|scratch)[- ]folders?\b|\bsub[- ]director(?:y|ies)\b"
                        r"|\bsub[- ]folders?\b",
-          "Write 'directory' ('project directory', 'home directory', 'subdirectory'), not '{0}'.", level="warning"),
+          "Write 'directory' ('project directory', 'home directory', 'subdirectory'), not '{0}'.", level="warning",
+          fix=[(r"^([Ss]ub)[- ][Dd]irector", r"\1director"), (r"^([Ss]ub)[- ][Ff]olders$", r"\1directories"),
+               (r"^([Ss]ub)[- ][Ff]older$", r"\1directory"), (r"[- ]Folders$", " Directories"),
+               (r"[- ]Folder$", " Directory"), (r"[- ]folders$", " directories"), (r"[- ]folder$", " directory")]),
     _term("project_code", r"\bproject[- ]?(?:IDs?|numbers?|identifiers?)\b|\baccount (?:codes?|numbers?|IDs?)\b"
                           r"|\bproject accounts?\b",
           "Write 'project code', not '{0}'.",
@@ -244,7 +272,7 @@ BANNED_PATTERNS += [
           level="warning"),
     # Not field labels such as 'User name:'.
     _term("username", r"\b(?:user[- ]names?|user[- ]IDs?|login[- ](?:names?|IDs?))\b(?!\s*:)", "Write 'username', not '{0}'.",
-          level="warning"),
+          level="warning", fix=[(r"^([Uu])ser[- ][Nn]ame", r"\1sername")]),
     # Lowercase 'license' only, so quoted licence texts ('the License') are left alone.
     _term("licence", r"\b(?:[Aa]|[Tt]he|[Tt]his|[Tt]hat|[Yy]our|[Mm]y|[Oo]ur|[Tt]heir|[Nn]o|[Aa]ny|[Vv]alid|own|software|"
                      r"commercial|academic|free|site|research|institutional) licenses?\b"
@@ -256,20 +284,49 @@ BANNED_PATTERNS += [
                     r"not|ll|is|are|was|were|be|been|being|get|gets|got|have|has|had) setup\b"
                     r"|\bsetup (?:your|the|a|an|my|our|their|this|that|these|those|it|them)\b|\bset-ups?\b|\bsetting-up\b"
                     r"|^\s*setup (?:and|or) (?:launch|run|start|configure|install|use|test)\b",
-          "Write 'set up' for the verb and 'setup' for the noun, not '{0}'.", level="warning"),
+          "Write 'set up' for the verb and 'setup' for the noun, not '{0}'.", level="warning",
+          # Not 'set-up', which could be either.
+          fix=[(r"\b([Ss]e)tup\b", r"\1t up"), (r"^([Ss]etting)-up$", r"\1 up")]),
     _term("runtime", r"\brun[- ]times?\b", "Write 'runtime', not '{0}'."),
     _term("website", r"\bweb[- ](?:sites?|pages?)\b", "Write 'website' or 'webpage', not '{0}'.",
-          level="warning"),
+          level="warning", fix=JOIN),
     # Not field labels such as 'Host name:'.
     _term("filename", r"\b(?:file|host)[- ]names?\b(?!\s*:)", "Write it as one word ('filename', 'hostname'), not '{0}'.",
-          level="warning"),
+          level="warning", fix=JOIN),
     _term("x11_forwarding", r"\b(?!X11 forwarding\b)[Xx](?:[- ]?11)?[- ][Ff]orwarding\b",
-          flags=0, message="Write 'X11 forwarding', not '{0}'.", level="warning"),
+          flags=0, message="Write 'X11 forwarding', not '{0}'.", level="warning",
+          fix=[(r"^[Xx](?:[- ]?11)?[- ]", "X11 ")]),
     # Not GPU names such as 'A100 80GB'.
     _term("size_units", r"(?<!A100 )(?<!H100 )(?<!PCIe )(?<![A-Za-z0-9.,-])\d+(?:,\d{3})*(?:\.\d+)?"
                         r"(?:[KMGTP]i?B|kB|[KMGT]b)(?:/s)?\b|(?<![A-Za-z0-9.,-])\d+(?:\.\d+)?(?:[KMG]Hz|k?W|[GTP]FLOPS)\b",
-          flags=0, level="warning", message="Put a space between the number and the unit ('20 GB'), not '{0}'."),
+          flags=0, level="warning", message="Put a space between the number and the unit ('20 GB'), not '{0}'.",
+          fix=[(r"(?<=\d)(?=[A-Za-z])", " ")]),
 ]
+
+
+def _transfer_case(found, fix):
+    """Carries a capital first letter, or all capitals, over from the matched text to its replacement."""
+    if len(found) > 1 and found.isupper():
+        return fix.upper()
+    if found[:1].isupper() and fix[:1].islower():
+        return fix[0].upper() + fix[1:]
+    return fix
+
+
+def fix_for(rule, m):
+    """The replacement for match 'm' of 'rule', from its 'fix', or None if it has none for this match."""
+    fix, found = rule.get("fix"), m.group(0)
+    if isinstance(fix, dict):
+        fix = fix.get(re.sub(r"[\s-]+", " ", found.lower()))
+    if isinstance(fix, str):
+        fixed = _transfer_case(found, fix)
+    elif isinstance(fix, list):
+        fixed = found
+        for pattern, replacement in fix:
+            fixed = re.sub(pattern, replacement, fixed)
+    else:
+        return None
+    return fixed if fixed != found else None
 
 
 def _blank(m):

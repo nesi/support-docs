@@ -12,7 +12,7 @@ following `sacct` columns;
 - MaxRSS - Peak memory usage.
 - TotalCPU - Check: *Elapsed* x *Alloc*≈*TotalCPU*
 
-However if you want to examine resource usage over the run-time of your
+However if you want to examine resource usage over the runtime of your
 job,  
 the line `#SBATCH --profile task` can be added to your script.
 
