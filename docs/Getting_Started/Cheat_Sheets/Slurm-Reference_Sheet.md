@@ -25,7 +25,7 @@ A complete list of Slurm commands can be found [in the full documentation](https
 |           | `sacct -j 123456789`  | Displays job *123456789*                                                  |
 | `scancel` | `scancel 123456789`   | Cancels job *123456789*                                                   |
 |           | `scancel --me`        | Cancels all your jobs.                                                   |
-| `sshare`  | `sshare -U`           | Shows the Fair Share scores for all projects of which *you* are a member. |
+| `sshare`  | `sshare -U`           | Shows the FairShare scores for all projects of which *you* are a member. |
 | `sinfo`   | `sinfo`               | Shows the current state of our Slurm partitions.                         |
 
 ## `sbatch` options

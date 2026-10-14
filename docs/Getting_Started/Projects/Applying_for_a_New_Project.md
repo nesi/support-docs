@@ -18,7 +18,7 @@ description: The information you need to provide when applying for a new project
          you and your project team gain the necessary skills.
     - Become familiar with foundational HPC skills, for example by
          [watching our recorded introductory webinars](../Getting_Help/Training.md),
-         or having one or more of your project team members do so.
+         or having one or more of your project members do so.
     - Review our [allocation classes](../../Policy/Allocation_Classes.md). If
          you don't think you currently qualify for any class other than
          Proposal Development, please {% include "partials/support_request.html" %} as soon as

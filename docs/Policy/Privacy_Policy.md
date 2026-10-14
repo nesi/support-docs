@@ -42,7 +42,7 @@ REANNZ maintains robust information security management processes and confidenti
 These include: 
 
 - firewalls and modern encryption standards
-- use of two-factor authentication (2FA)
+- use of multi-factor authentication (MFA)
 - access to the Personal Information is limited only to REANNZ staff members who have a legitimate business requirement to use it
 - access is monitored and traceable via logs
 - information is backed up regularly, and backups are held in secure storage facilities 
@@ -68,7 +68,7 @@ REANNZ may use Personal Information for the following purposes:
 - To manage information stored on REANNZ infrastructure
 
 
-We may publish the names of project owners and project team members along with their respective institutions in connection with particular projects through case studies. This is only done with the permission of those involved. 
+We may publish the names of project owners and project members along with their respective institutions in connection with particular projects through case studies. This is only done with the permission of those involved. 
  
 
 ## 5. Disclosure of Information 

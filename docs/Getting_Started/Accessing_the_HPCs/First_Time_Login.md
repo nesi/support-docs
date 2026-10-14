@@ -10,7 +10,7 @@ description: Logging in for the first time and setting up your authenticator app
 !!! prerequisite
     -  Have an [account](../Creating_an_Account.md).  
     -  Be a member of an [active project](../Getting_Started_Overview.md).  
-    -  Have a device with an authentication app.
+    -  Have a device with an authenticator app.
 
 !!! note
     On 01 July 2025, New Zealand eScience Infrastructure (NeSI) was integrated into the Crown company, Research and Education Advanced Network New Zealand (REANNZ) Ltd.
@@ -25,7 +25,7 @@ description: Logging in for the first time and setting up your authenticator app
 3. Select your affiliated institution, and log in using your institutional account. Example below shows the University of Auckland login screen.
     ![alt text](../../assets/images/ondemand_login_1.png)
 
-4. If you haven't logged in to OnDemand or our HPC platforms before, you will need to set up new authentication credentials. This is in addition to your institutional MFA process.
+4. If you haven't logged in to OnDemand or our HPC platforms before, you will need to set up new authentication credentials. This is in addition to your institutional multi-factor authentication (MFA) process.
     ![alt text](../../assets/images/ondemand_login_2.png)
   
     !!! note

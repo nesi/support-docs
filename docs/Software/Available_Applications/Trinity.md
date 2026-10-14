@@ -230,7 +230,7 @@ perform on Mahuika and an indication of its resource requirements.
 Timings mentioned here should be taken as indicative only and, even if
 assembling the same sample again, would be expected to vary
 significantly depending on various factors, such as the load on the
-system and project fair share scores and priorities.
+system and project FairShare scores and priorities.
 
 ### Test sample
 

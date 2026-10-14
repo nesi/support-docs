@@ -730,17 +730,17 @@ the kernel with the tool-assisted or manual approach:
     First, **you** need to create the kernel yourself, following the manual steps
     in the [**Manual Management**](#__tabbed_1_2) tab earlier on this page.
 
-    **Your team members** then need to set up the kernel on their side. The
+    **Your project members** then need to set up the kernel on their side. The
     exact steps depend on the type of environment you created, so follow the
     steps in the tab that matches it:
 
     === "Environment module"
 
         The `wrapper.sh` script and the environment module it loads already live
-        in the shared project directory, so **your team members** only need to
+        in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -775,10 +775,10 @@ the kernel with the tool-assisted or manual approach:
     === "Python virtual environment"
 
         The `wrapper.sh` script and the virtual environment it activates already
-        live in the shared project directory, so **your team members** only need to
+        live in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -813,10 +813,10 @@ the kernel with the tool-assisted or manual approach:
     === "Conda environment"
 
         The `wrapper.sh` script and the conda environment it activates already
-        live in the shared project directory, so **your team members** only need to
+        live in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -851,10 +851,10 @@ the kernel with the tool-assisted or manual approach:
     === "R environment"
 
         The `wrapper.sh` script and the R environment modules it loads already
-        live in the shared project directory, so **your team members** only need to
+        live in the shared project directory, so **your project members** only need to
         know the path to the kernel's `wrapper.sh` file.
 
-        Second, get **your team members** to create a directory for the kernel in
+        Second, get **your project members** to create a directory for the kernel in
         their home directories:
 
         ``` sh
@@ -919,5 +919,5 @@ folder. Delete the kernel's directory:
 rm -r /nesi/project/<ACCOUNT_ID>/.jupyter/share/jupyter/kernels/<KERNEL_NAME>
 ```
 
-where `<ACCOUNT_ID>` is your project's account code and `<KERNEL_NAME>` is the name of
+where `<ACCOUNT_ID>` is your project code and `<KERNEL_NAME>` is the name of
 the kernel to delete.

@@ -55,7 +55,7 @@ where
 - `ENDPOINT1` is the source endpoint UUID, which you can get
     <https://app.globus.org/collections> by clicking on the collection
     of your choice. Using a guest collection will allow you to transfer
-    the data without two-factor authentication
+    the data without multi-factor authentication
 - `ENDPOINT2` is the destination UUID, e.g. your personal endpoint
     UUID, which may be for your private mapped collection if you're
     transferring to your personal computer

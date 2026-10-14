@@ -57,8 +57,8 @@ Your terminal will now function like a normal connection to Mahuika.
 However, if you close this terminal session the port forwarding will end.
 
 If there is no existing session on Mahuika, you will be prompted for
-your first and second factor, same as during the regular log in
-procedure.
+your login details and 6-digit code, same as during a regular
+login.
 
 !!! note
     Your local port and remote port do not have to be different numbers.

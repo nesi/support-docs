@@ -192,7 +192,7 @@ print("Local result:", add(inc(1), inc(2)))
 
 ### Slurm script
 
-Replace `PROJECTID` with your project ID number and use the `sbatch`
+Replace `PROJECTID` with your project code and use the `sbatch`
 command to submit this Slurm script and run the test code on 3 MPI
 ranks:
 

@@ -23,7 +23,7 @@ Log in with your institutional credentials.
 
     ![ondmenad login 2](../../assets/images/ondemand_login_1.png)
 
-    After logging in, you will be asked to set up an 6-digit code. This is additional authentication in addition to your institutional MFA. We are currently enforcing an additional security layer, as the institutions federated by Tuakiri all have different security policies.
+    After logging in, you will be asked to set up an 6-digit code. This is additional authentication in addition to your institutional multi-factor authentication (MFA). We are currently enforcing an additional security layer, as the institutions federated by Tuakiri all have different security policies.
     
     ![OnDemand login 3](../../assets/images/ondemand_login_2.png)
 

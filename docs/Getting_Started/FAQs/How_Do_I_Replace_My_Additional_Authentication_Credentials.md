@@ -3,7 +3,7 @@ created_at: '2019-01-07T20:34:07Z'
 tags:
 - access
 - account
-title: How Do I Reset My MFA?
+title: How Do I Reset My Multi-Factor Authentication?
 description: How to reset your authentication credentials for MFA.
 ---
 
@@ -11,7 +11,7 @@ description: How to reset your authentication credentials for MFA.
 
 If you can still log in, add or remove authenticator devices in the [Account Console](../Accessing_the_HPCs/MFA_and_Trusted_Devices.md#manage-authenticator-devices) instead.
 
-If you no longer have access to your authenticator application (e.g. change of device), you may need to re-enroll your device.
+If you no longer have access to your authenticator app (e.g. change of device), you may need to re-enroll your device.
 
 1. On the screen where you are prompted for your 6-digit code, click 'Reset code'
    ![Reset Code Example](../../assets/images/resetcode_link.png).

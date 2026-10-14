@@ -67,7 +67,7 @@ export CYLC_HOME=/nesi/project/nesi99999/$USER/environment/cylc-env
 conda create --prefix $CYLC_HOME python=3.12
 ```
 
-where `CYLC_HOME` points to the installation path of your choice. Adjust `nesi99999` to fit your project number. It is not recommended to install in your home directory.
+where `CYLC_HOME` points to the installation path of your choice. Adjust `nesi99999` to fit your project code. It is not recommended to install in your home directory.
 
 Then type
 

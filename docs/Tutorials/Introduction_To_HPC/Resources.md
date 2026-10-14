@@ -105,7 +105,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>The job will run more slowly than expected, and so may run out of time and get killed for exceeding its time limit.</td>
             <td>The job will wait in the queue for longer. <br>
              You will be charged for CPUs regardless of whether they are used or not.<br>
-            Your fair share score will fall more.
+            Your FairShare score will fall more.
            </td>
         </tr>
         <tr>
@@ -113,7 +113,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error (may not happen immediately).</td>
             <td>The job will wait in the queue for longer.<br>
              You will be charged for memory regardless of whether it is used or not.<br>
-             Your fair share score will fall more.</td>
+             Your FairShare score will fall more.</td>
         </tr>
         <tr>
             <td><b>   Walltime   </b></td>

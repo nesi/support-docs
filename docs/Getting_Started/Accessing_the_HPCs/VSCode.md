@@ -25,7 +25,7 @@ The 'Remote' extension allows you to connect to a remote computer (like Mahuika)
     3. Set up your SSH Config file as described in Step 2 of [Terminal Setup](Standard_Terminal_Setup.md#first-time-setup).
     4. Remove or comment out the `Control Path` line under `Host *`.
     !!! warning
-        As Windows does not support SSH sockets, you will have to enter your password and second factor every time you open a new tab.
+        As Windows does not support SSH sockets, you will have to log in, including your 6-digit code, every time you open a new tab.
         If this bothers you, you may want to consider Windows Subsystem for Linux (WSL), the next option "Windows via WSL".
 === "Windows via WSL"
     !!! danger
@@ -62,7 +62,7 @@ Under the 'Remote Explorer' Tab on the left, you should now see the Mahuika mach
 
 ![vscode explorer](../../assets/images/vscode-explorer.png)
 
-Clicking on these will open a connection to that machine, you will then be prompted for your password and second factor, as per usual.
+Clicking on these will open a connection to that machine, you will then be prompted to log in, including your 6-digit code, as usual.
 
 !!! warning
     As VSCode will continue attempting to reconnect after a failure,

@@ -355,13 +355,13 @@ tool-assisted or manual approach:
     page, but making sure the container image and `wrapper.sh` (and, for a bash
     kernel, the virtual environment) are all in your shared project directory.
 
-    Next, **your team members** set up the kernel on their side by creating the
+    Next, **your project members** set up the kernel on their side by creating the
     kernelspec in their own home directory. The steps depend on the type of
     container kernel you created, so follow the matching tab:
 
     === "Python kernel"
 
-        **Your team members** create a directory for the kernel:
+        **Your project members** create a directory for the kernel:
 
         ``` sh
         mkdir -p ~/.local/share/jupyter/kernels/my-container
@@ -392,7 +392,7 @@ tool-assisted or manual approach:
 
     === "Bash kernel"
 
-        **Your team members** create a directory for the kernel:
+        **Your project members** create a directory for the kernel:
 
         ``` sh
         mkdir -p ~/.local/share/jupyter/kernels/bash
@@ -449,5 +449,5 @@ folder. Delete the kernel's directory:
 rm -r /nesi/project/<ACCOUNT_ID>/.jupyter/share/jupyter/kernels/<KERNEL_NAME>
 ```
 
-where `<ACCOUNT_ID>` is your project's account code and `<KERNEL_NAME>` is the name of
+where `<ACCOUNT_ID>` is your project code and `<KERNEL_NAME>` is the name of
 the kernel to delete.

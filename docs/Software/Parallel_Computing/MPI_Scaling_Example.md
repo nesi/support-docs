@@ -353,5 +353,5 @@ It looks as though our estimates were accurate in this case, however,
 when you submit a job it is always a good idea to request about 20% more
 wall time and memory than you think you are going to need to minimise
 the chance of your jobs failing due to a lack of resources. Your
-project's fair share score considers the time actually used by the job,
+project's FairShare score considers the time actually used by the job,
 not the time requested by the job.

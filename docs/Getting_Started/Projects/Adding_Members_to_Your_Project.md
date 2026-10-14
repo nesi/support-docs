@@ -20,4 +20,4 @@ description: How to add a new member to your project.
    ![Adding_Members.png](../../assets/images/Adding_Members.png)
 
 !!! prerequisite "What Next?"
-    - The new team member will now be able to access your project on Mahuika, provided they have also set up their [my.nesi.org.nz](https://my.nesi.org.nz/) account.
+    - The new project member will now be able to access your project on Mahuika, provided they have also set up their [my.nesi.org.nz](https://my.nesi.org.nz/) account.

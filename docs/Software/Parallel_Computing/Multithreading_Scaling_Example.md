@@ -273,5 +273,5 @@ memory as we may otherwise have run out.
     Whenever you submit a job it is always a good idea to request
     about 20% more wall time and memory than you think you are going to need
     to minimise the chance of your jobs failing due to a lack of resources.
-    Your project's fair share score considers the time actually used by the
+    Your project's FairShare score considers the time actually used by the
     job, not the time requested by the job.

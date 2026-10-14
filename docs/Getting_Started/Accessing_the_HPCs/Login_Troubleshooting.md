@@ -26,7 +26,7 @@ There is a known MobaXterm bug in which a user who has set a second
 factor and is trying to log in to the lander node will be prompted
 multiple times for 'Password' before being prompted for 'First Factor'.
 (On the lander node, you should only be prompted for a 'password' if you
-have no Second Factor set up.)
+have no additional authentication credentials set up.)
 
 These initial prompts can be skipped through by pressing 'Enter'. Any
 input before pressing Enter will cause the login to fail.
@@ -55,14 +55,14 @@ MobaXterm can be updated through: 'help&gt;check for updates'
 
 ### Check password status
 
-Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
+Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have additional authentication credentials registered.
 
 ### See [above](#skip-password-prompts)
 
 ## Authentication token manipulation error
 
-This occurs when your authentication token is out of sync. You will have
-to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
+This occurs when your additional authentication credentials are out of sync. You will have
+to reset them through [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 ## Link Expired
 
@@ -119,10 +119,10 @@ first logging in to the Lander node. See
 
 ### Check the time on your device
 
-If the device you are using as authentication token is not using
-NZST/NZDT, or is not keeping the correct time, the second factor code
+If the device you use for your additional authentication credentials is not using
+NZST/NZDT, or is not keeping the correct time, the 6-digit code
 generated will be invalid. Even an error of a few seconds can be enough
-to invalidate the second factor code.
+to invalidate the 6-digit code.
 
 If your device can't keep time properly for whatever reason, please
 contact the person or team responsible for supporting it.
@@ -134,9 +134,9 @@ Mahuika login node after it has been used to access the lander node, or
 for consecutive login attempts to any node. If in doubt, wait 30 seconds
 for a new token to be generated.
 
-### Ensure the correct Second Factor token is being used
+### Ensure you are using the correct 6-digit code
 
-Two-factor authentication is becoming a common security measure. Many
+Multi-factor authentication is becoming a common security measure. Many
 people have multiple tokens and occasionally mix them up.
 
 ### Wait four hours
