@@ -735,9 +735,9 @@ FreeSurfer contains a fully automatic structural imaging stream for processing c
 *[GPAW]: GPAW is a density-functional theory (DFT) Python code based on the projector-augmented wave (PAW)
  method and the atomic simulation environment (ASE). It uses real-space uniform grids and multigrid methods or
  atom-centered basis-functions.
-*[GPFS's]: High-performance clustered file system software developed by IBM.
-*[GPFS]: High-performance clustered file system software developed by IBM.
-*[GPL]: Copyleft software licence released by GNU.
+*[GPFS's]: High-performance clustered filesystem software developed by IBM.
+*[GPFS]: High-performance clustered filesystem software developed by IBM.
+*[GPL]: Copyleft software licence published by the Free Software Foundation.
 *[GPUMD's]: GPUMD stands for Graphics Processing Units Molecular Dynamics.
 It is a general-purpose molecular dynamics (MD) package fully implemented on graphics processing units.
 *[GPUMD]: GPUMD stands for Graphics Processing Units Molecular Dynamics.
@@ -888,10 +888,10 @@ so other databases could be implemented in the future.
  because of the strength of its underlying mathematical models. In the past, this strength
  came at significant computational expense, but in the new HMMER3 project, HMMER is now
  essentially as fast as BLAST.
-*[HPCs's]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[HPCs]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[HPC's]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[HPC]: Like a regular computer, but larger. Primarily used for heating data centers.
+*[HPCs's]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[HPCs]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[HPC's]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[HPC]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
 *[HTSeq's]: HTSeq is a Python library to facilitate processing and analysis
  of data from high-throughput sequencing (HTS) experiments.
 *[HTSeq]: HTSeq is a Python library to facilitate processing and analysis
@@ -1369,8 +1369,8 @@ communication primitives that are performance optimized for NVIDIA GPUs.
  Next Generation Sequencing.
 *[NGS]: NGS is a new, domain-specific API for accessing reads, alignments and pileups produced from
  Next Generation Sequencing.
-*[NIWA's]: Crown Research Institute, conducts research across a broad range of disciplines in the environmental sciences.
-*[NIWA]: Crown Research Institute, conducts research across a broad range of disciplines in the environmental sciences.
+*[NIWA's]: Former Crown Research Institute for environmental science. Merged into Earth Sciences New Zealand on 1 July 2025.
+*[NIWA]: Former Crown Research Institute for environmental science. Merged into Earth Sciences New Zealand on 1 July 2025.
 *[NLopt's]: NLopt is a free/open-source library for nonlinear optimization, providing a common interface for a number of different free optimization routines available online as well as original implementations of various other algorithms
 *[NLopt]: NLopt is a free/open-source library for nonlinear optimization, providing a common interface for a number of different free optimization routines available online as well as original implementations of various other algorithms
 *[NSPR's]: Netscape Portable Runtime (NSPR) provides a platform-neutral API for system level
@@ -1403,8 +1403,8 @@ communication primitives that are performance optimized for NVIDIA GPUs.
 *[NanoPlot]: Plotting suite for Oxford Nanopore sequencing data and alignments.
 *[NanoStat's]: Tool for phasing genomic variants using DNA sequencing reads, also called read-based phasing or haplotype assembly.
 *[NanoStat]: Tool for phasing genomic variants using DNA sequencing reads, also called read-based phasing or haplotype assembly.
-*[NeSI's]: New Zealand national high performance computing platform.
-*[NeSI]: New Zealand national high performance computing platform.
+*[NeSI's]: Former provider of New Zealand's national high performance computing platform, integrated into REANNZ on 1 July 2025.
+*[NeSI]: Former provider of New Zealand's national high performance computing platform, integrated into REANNZ on 1 July 2025.
 *[NewHybrids's]: This implements a Gibbs sampler to estimate the posterior probability that genetically sampled
 individuals fall into each of a set of user-defined hybrid categories.
 *[NewHybrids]: This implements a Gibbs sampler to estimate the posterior probability that genetically sampled
@@ -1460,7 +1460,6 @@ interactively, enabling new insights into data exploration.
 *[OSU-Micro-Benchmarks]: OSU Micro-Benchmarks
 *[OTF2's]: The Open Trace Format 2 is a highly scalable, memory efficient event trace data format plus support library
 *[OTF2]: The Open Trace Format 2 is a highly scalable, memory efficient event trace data format plus support library
-*[OTP]: An automatically generated numeric code that authenticates a user for a single login.
 *[OpenBLAS's]: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
 *[OpenBLAS]: OpenBLAS is an optimized BLAS library based on GotoBLAS2 1.13 BSD version.
 *[OpenBabel's]: Open Babel is a chemical toolbox designed to speak the many
@@ -1822,7 +1821,7 @@ family, pedigree and individual data.
 static mapping, and sparse matrix block ordering, and sequential mesh and hypergraph partitioning.
 *[SCOTCH]: Software package and libraries for sequential and parallel graph partitioning,
 static mapping, and sparse matrix block ordering, and sequential mesh and hypergraph partitioning.
-*[SCP]: Means of securely transferring files between over an SSH connection.
+*[SCP]: Means of securely transferring files between computers over an SSH connection.
 *[SDL2's]: Simple DirectMedia Layer, a cross-platform multimedia library
 *[SDL2]: Simple DirectMedia Layer, a cross-platform multimedia library
 *[SEPP's]: SATe-enabled Phylogenetic Placement - addresses the problem of phylogenetic
@@ -1926,8 +1925,8 @@ in  amino acid  sequences  from  different organisms
 *[Spark]: Spark is Hadoop MapReduce done in memory
 *[SpectrA's]: C++ library for large scale eigenvalue problems, built on top of Eigen, an open source linear algebra library.
 *[SpectrA]: C++ library for large scale eigenvalue problems, built on top of Eigen, an open source linear algebra library.
-*[Spectrum Scale's]: High-performance clustered file system software developed by IBM.
-*[Spectrum Scale]: High-performance clustered file system software developed by IBM.
+*[Spectrum Scale's]: High-performance clustered filesystem software developed by IBM.
+*[Spectrum Scale]: High-performance clustered filesystem software developed by IBM.
 *[SqueezeMeta's]: Fully automated metagenomics pipeline, from reads to bins.
 *[SqueezeMeta]: Fully automated metagenomics pipeline, from reads to bins.
 *[Stacks's]: Stacks is a software pipeline for building loci from short-read sequences, such as those generated on
@@ -2080,7 +2079,7 @@ materials modelling, e.g. electronic structure calculations and quantum-mechanic
 from first principles.
 *[VBZ-Compression's]: VBZ compression HDF5 plugin for nanopolish
 *[VBZ-Compression]: VBZ compression HDF5 plugin for nanopolish
-*[VCF]: File format for storing genetic sequences
+*[VCF]: Text file format for storing gene sequence variations, such as SNPs and indels, relative to a reference genome.
 *[VCF-kit's]: VCF-kit is a command-line based collection of utilities for performing analysis on
  Variant Call Format (VCF) files.
 *[VCF-kit]: VCF-kit is a command-line based collection of utilities for performing analysis on
@@ -2172,7 +2171,6 @@ to analyze a system of particles.
  into superior minimizer sampling techniques.
 *[Wise2's]: Aligning proteins or protein HMMs to DNA
 *[Wise2]: Aligning proteins or protein HMMs to DNA
-*[XVFB]: A display server implementing the X11 display server protocol, XVFB performs all graphical operations in virtual memory without showing any screen output. This allows applications that require a GUI to run in a command line environment. Can be invoked with `xvfb-run`'
 *[XZ's]: xz: XZ utilities
 *[XZ]: xz: XZ utilities
 *[Xerces-C++'s]: Xerces-C++ is a validating XML parser written in a portable
@@ -2185,6 +2183,7 @@ subset of C++. Xerces-C++ makes it easy to give your application the ability to
 read and write XML data. A shared library is provided for parsing, generating,
 manipulating, and validating XML documents using the DOM, SAX, and SAX2
 APIs.
+*[Xvfb]: A display server that implements the X11 protocol but draws to virtual memory instead of a screen, so applications that need a GUI can run from the command line. Start it with xvfb-run.
 *[YAXT's]: Yet Another eXchange Tool
 *[YAXT]: Yet Another eXchange Tool
 *[Z3's]: A theorem prover from Microsoft Research.
@@ -2387,6 +2386,8 @@ Installed via conda (conda-forge + bioconda) following the upstream conda instal
  high-throughput sequencing data, such as ChIP-seq, RNA-seq or MNase-seq.
 *[devtools's]: R functions that simplify and expedite common tasks in package development.
 *[devtools]: R functions that simplify and expedite common tasks in package development.
+*[dorado's]: Dorado is a high-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.
+*[dorado]: Dorado is a high-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.
 *[double-conversion's]: Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.
 *[double-conversion]: Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.
 *[drep's]: Rapid and accurate comparison and de-replication of microbial genomes
@@ -3195,14 +3196,14 @@ perform quality-control on BAM/CRAM/BCF/VCF/GVCF
 *[sratoolkit]: The SRA Toolkit, and the source-code SRA System Development
  Kit (SDK), will allow you to programmatically access data housed within SRA
  and convert it from the SRA format
-*[supercomputers's]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[supercomputers]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[supercomputer's]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[supercomputer]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[supercomputings's]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[supercomputings]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[supercomputing's]: Like a regular computer, but larger. Primarily used for heating data centers.
-*[supercomputing]: Like a regular computer, but larger. Primarily used for heating data centers.
+*[supercomputers's]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[supercomputers]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[supercomputer's]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[supercomputer]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[supercomputings's]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[supercomputings]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[supercomputing's]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
+*[supercomputing]: Using many networked computers (nodes) together to run calculations that are too large or slow for a single computer.
 *[swarm's]: A robust and fast clustering method for amplicon-based studies.
 The purpose of swarm is to provide a novel clustering algorithm that handles massive sets of amplicons. Results of traditional clustering algorithms are strongly input-order dependent, and rely on an arbitrary global clustering threshold. swarm results are resilient to input-order changes and rely on a small local linking threshold d, representing the maximum number of differences between two amplicons.
 *[swarm]: A robust and fast clustering method for amplicon-based studies.
