@@ -18,8 +18,8 @@ tags:
 
 There are three suggested methods for running Nextflow pipelines on our system:
 
-1. [Running Nextflow in an interactive Slurm session](#running-nextflow-in-an-interactive-slurm-session)
-    - This method is best for setting up or debugging pipeline executions as the pipeline will end as soon as the interactive session ends.
+1. [Running Nextflow in an interactive Slurm job](#running-nextflow-in-an-interactive-slurm-job)
+    - This method is best for setting up or debugging pipeline executions as the pipeline will end as soon as the interactive job ends.
 2. [Submitting a Nextflow workflow as a batch job](#submitting-a-nextflow-workflow-as-a-batch-job)
     - This method will run all sub-processes in the same Slurm job. This is best if your workflow would spawn a large number of short jobs.
 3. [Submitting a Nextflow workflow via a head job](#submitting-a-nextflow-workflow-via-a-head-job)
@@ -29,16 +29,16 @@ The differences in these methods is largely controlled by configuration/profile 
 The examples below use the REANNZ configuration file provided in the
 [Configurations section](#configurations).
 
-### Running Nextflow in an interactive Slurm session
+### Running Nextflow in an interactive Slurm job
 
-Running Nextflow in an interactive session can be especially helpful when setting up or debugging a pipeline.
-To do so, request an interactive session with appropriate resources for the pipeline:
+Running Nextflow in an interactive job can be especially helpful when setting up or debugging a pipeline.
+To do so, request an interactive job with appropriate resources for the pipeline:
 
 ```bash
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 16 --mem-per-cpu 24000 --time 24:00:00 --pty bash
 ```
 
-Once your interactive session has launched,
+Once your interactive job has started,
 load the Nextflow module with `module load Nextflow/{{app.default}}` (or your required version) and proceed. Parallelisation of Nextflow processes will occur within this job.
 
 There are several environmental variables that can be helpful to avoid loading containers and plugins into your persistent project space:
@@ -171,7 +171,7 @@ profiles {
         cleanup = false
     }
     local {
-        // This profile should be used workflows submitted from interactive Slurm sessions or when a workflow will generate many short (<30 minutes) tasks
+        // This profile should be used workflows submitted from interactive Slurm jobs or when a workflow will generate many short (<30 minutes) tasks
         process.executor = 'local'
     }
     slurm {

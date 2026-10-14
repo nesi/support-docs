@@ -260,8 +260,11 @@ BANNED_PATTERNS += [
     _term("x11_forwarding", r"\bX[- ]forwarding\b|\bX11-forwarding\b|\bx11[- ]forwarding\b|\bX[- ]11[- ]forwarding\b",
           flags=0, message="Write 'X11 forwarding', not '{0}'.", level="warning"),
     # Not GPU names such as 'A100 80GB'.
-    _term("size_units", r"(?<!A100 )(?<!H100 )(?<!PCIe )\b\d+(?:\.\d+)?(?:[KMGTP]i?B|kB|[KMGT]b)\b", flags=0,
-          message="Put a space between the number and the unit ('20 GB'), not '{0}'."),
+    _term("size_units", r"(?<!A100 )(?<!H100 )(?<!PCIe )(?<![A-Za-z0-9.,-])\d+(?:,\d{3})*(?:\.\d+)?"
+                        r"(?:[KMGTP]i?B|kB|[KMGT]b)(?:/s)?\b|(?<![A-Za-z0-9.,-])\d+(?:\.\d+)?(?:[KMG]Hz|k?W|[GTP]FLOPS)\b",
+          flags=0, level="warning", message="Put a space between the number and the unit ('20 GB'), not '{0}'."),
+    _term("binary_units", r"\b[KMGTP]iB\b|\b(?:kibi|mebi|gibi|tebi|pebi)bytes?\b",
+          flags=re.IGNORECASE, level="warning", message="Use SI units ('GB', not 'GiB'), not '{0}'."),
 ]
 
 

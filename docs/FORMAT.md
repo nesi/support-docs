@@ -63,6 +63,7 @@ Some terms are written several ways across the docs. Use the preferred form.
 | Write | Not |
 | - | - |
 | batch script | `Slurm script`, `job script`, `submission script`, `submit script`, `sbatch script`, `batch file` |
+| interactive job (`srun --pty`, `salloc`). An app running in OnDemand is a session. | `interactive session` for a Slurm job |
 | job array | `array job`, `Slurm array` |
 | walltime | `wall time`, `wall-time`, `wall clock` |
 | runtime | `run time`, `run-time` |

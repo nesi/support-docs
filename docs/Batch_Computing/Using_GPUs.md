@@ -85,7 +85,7 @@ where `<gpu_type>` is the type of gpu you want to use (`a100`, `pro_6000`, `h100
 </table>
 
 You can also use the `--gpus-per-node`option in
-[Slurm interactive sessions](../Interactive_Computing/Slurm_Interactive_Sessions.md),
+[Slurm interactive jobs](../Interactive_Computing/Slurm_Interactive_Jobs.md),
 with the `srun` and `salloc` commands. For example:
 
 ``` sh

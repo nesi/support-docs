@@ -205,7 +205,7 @@ Must have one of these flags.
 While it will always be more time and resource efficient using a Slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
-the login node, otherwise use of a [Slurm interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md)
+the login node, otherwise use of a [Slurm interactive job](../../Interactive_Computing/Slurm_Interactive_Jobs.md)
 is recommended.
 
 For example.
@@ -251,7 +251,7 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 ```
 
 !!! warning
-    Closing the fluent GUI will not end the Slurm interactive session. Use
+    Closing the fluent GUI will not end the Slurm interactive job. Use
     `exit` or `scancel <jobid>` when finished, else you will continue to
     'use' the requested CPUs.
 
@@ -635,7 +635,7 @@ Progress can be tracked through the GUI as usual.
 ## ANSYS-Electromagnetic
 
 ANSYS-EM jobs can be submitted through a batch script or by
-[interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).
+[interactive job](../../Interactive_Computing/Slurm_Interactive_Jobs.md).
 
 ### RSM
 
@@ -680,7 +680,7 @@ ansysedt -batchoptionhelp
 
 ### EM Interactive
 
-First start an interactive Slurm session.
+First start an interactive Slurm job.
 
 ``` sh
 salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1500

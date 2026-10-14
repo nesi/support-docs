@@ -3,13 +3,14 @@ created_at: '2020-01-05T21:43:18Z'
 tags:
   - interactive
   - python
-description: How to run a Marimo interactive session on the Mahuika cluster.
+title: Marimo in an Interactive Job
+description: How to run Marimo in an interactive Slurm job on Mahuika.
 ---
 
 >If you are using a windows computer, this method has currently been tested in VSCode, Windows Subsystem for Linux (WSL) PowerShell, and WSL Ubuntu. We have not tested it yet in PuTTY or MobaXterm
 
-To run Marimo in interactive mode, first we need to load
-your interactive session:
+To run Marimo in interactive mode, first we need to start
+an interactive job:
 
 ```sh
 srun --account nesi12345 --job-name "InteractiveJob" --cpus-per-task 2 --mem 8G --time 24:00:00 --pty bash

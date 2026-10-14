@@ -80,7 +80,7 @@ To test a script without editing it, give the options on the command line, which
 sbatch --qos=debug --time=00:15:00 my_job.sl
 ```
 
-You can also add `--qos=debug` to `srun` or `salloc` for an [interactive session](../Interactive_Computing/Slurm_Interactive_Sessions.md).
+You can also add `--qos=debug` to `srun` or `salloc` for an [interactive job](../Interactive_Computing/Slurm_Interactive_Jobs.md).
 Exit it as soon as you are finished.
 
 When your script works, remove the `--qos` line before you use it for real jobs.
