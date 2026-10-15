@@ -177,11 +177,25 @@
 
 /* Footer */
 #new-footer {
-  font-family: Lato;
-  font-size: 12px;
+  /* Lato was never loaded, so the footer fell back to a serif font */
+  font-family: var(--md-text-font-family);
+  font-size: 0.6rem;
   font-weight: 400;
+  text-align: center;
+  padding: 0.8rem 1rem;
+  color: var(--md-footer-fg-color--light);
   /* MB logo has black border */
   background-color: var(--reannz-black);
+}
+
+#new-footer a {
+  color: var(--md-footer-fg-color--light);
+}
+
+#new-footer a:hover,
+#new-footer a:focus {
+  color: var(--md-footer-fg-color);
+  text-decoration: underline;
 }
 
 /* Make deprecated logo stand out */
