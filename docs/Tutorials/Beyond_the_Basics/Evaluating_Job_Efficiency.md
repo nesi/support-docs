@@ -25,16 +25,12 @@ tags:
 
     These tasks are covered in the [Introduction to HPC tutorials](../Introduction_To_HPC/What_Is_an_HPC.md).
 
-## Summary and Setup
-
 This tutorial aims to give you hands on experience evaluating and improving job efficiency.
 To do that, we are going to work with an example workflow from genomics, but no genomics knowledge is needed for the tutorial.
-The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) and [Genomics Aotearoa Intro to Bash Scripting and HPC Scheduler](https://genomicsaotearoa.github.io/Workshop-Bash_Scripting_And_HPC_Job_Scheduler/) workshops if you want more information.
-There are 3 broad steps in this workflow:
 
-1. Quality control
-2. Indexing the reference genome
-3. Alignment and variant calling
+The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) and [Genomics Aotearoa Intro to Bash Scripting and HPC Scheduler](https://genomicsaotearoa.github.io/Workshop-Bash_Scripting_And_HPC_Job_Scheduler/) workshops if you want more information.
+
+## Setup
 
 To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/intermediate_hpc`.
 You will want to have these files in your `nobackup` directory.
@@ -46,6 +42,12 @@ mkdir -p intermed_hpc_<username>
 cd intermed_hpc_<username>
 cp -r /opt/nesi/examples/tutorials/job_scripting .
 ```
+
+There are 3 broad steps in this workflow:
+
+1. Quality control
+2. Indexing the reference genome
+3. Alignment and variant calling
 
 ## Looking at a previous job and its efficiency
 
