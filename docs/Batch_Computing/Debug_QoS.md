@@ -35,7 +35,11 @@ Do not use the debug QoS:
 - for tests that are a routine part of your workflow, such as a short run before every calculation to check its inputs,
   even if they feel like debugging,
 - for jobs whose results you won't look at straight away, such as jobs that run overnight or while you are away,
-- to submit debug jobs automatically, such as from a script that submits the next job when the last one finishes.
+- to submit debug jobs automatically, such as from a script that submits the next job when the last one finishes,
+- to keep an interactive session open while you aren't using it, especially one holding GPUs,
+- to get more time than one debug job allows, for example by cancelling a job near its limit and resubmitting it,
+  splitting a long run into debug-sized pieces, or chaining debug jobs with `--dependency`.
+  Use the normal QoS with [checkpointing](Job_Checkpointing.md) or a [job array](Job_Arrays.md) instead.
 
 If you won't use the result straight away to decide how to fix or change your work, use the normal QoS.
 If you are not sure, {% include "partials/support_request.html" %}.

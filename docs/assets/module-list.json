@@ -4949,6 +4949,26 @@
         "force_hide": false,
         "force_show": false
     },
+    "dorado": {
+        "description": "Dorado is a high-performance, easy-to-use, open source basecaller for Oxford Nanopore reads.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/nanoporetech/dorado",
+        "support": "",
+        "versions": [
+            "2.1.2-foss-2026-CUDA-13.2.1"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "2.1.2-foss-2026-CUDA-13.2.1",
+        "default_type": "latest",
+        "last_updated": 1791938613,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/dorado/2.1.2-foss-2026-CUDA-13.2.1.lua",
+        "force_hide": false,
+        "force_show": false
+    },
     "double-conversion": {
         "description": "Efficient binary-decimal and decimal-binary conversion routines for IEEE doubles.",
         "domains": [],
