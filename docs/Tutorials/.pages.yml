@@ -1,4 +1,4 @@
 ---
 nav:
- - Introduction_To_HPC.md
- - Beyond_the_Basics.md
+ - Introduction_To_HPC/
+ - Beyond_the_Basics/
