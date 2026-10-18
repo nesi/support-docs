@@ -7,7 +7,14 @@ tags:
 ---
 
 These guidelines describe how to use AI agents, coding assistants and other autonomous tools responsibly on REANNZ HPC systems.
+<<<<<<< HEAD
 The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) applies to everything an agent does under your account.
+=======
+The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) requires any agent working for you to follow the rules in
+[What agents should do](#what-agents-should-do) and [Working on the cluster](#working-on-the-cluster). The rest of this page is advice.
+The Acceptable Use Policy also applies to everything else an agent does under your account.
+
+>>>>>>> origin/main
 These guidelines _do not_ cover AI or machine learning as the research workload itself.
 
 ## Principles
@@ -30,6 +37,10 @@ On a login node, run the install script:
 ```
 
 This links `AGENTS.md` into the home directory configuration of Claude Code, Codex, Gemini CLI and Copilot CLI.
+<<<<<<< HEAD
+=======
+It never overwrites an existing file: if you already have a Claude Code `CLAUDE.md`, it adds a line that imports the rules, and for other tools it prints what to add.
+>>>>>>> origin/main
 The links point at the copy on Mahuika, so you get updates to the rules without running the script again.
 
 | Option | What it does |

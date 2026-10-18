@@ -15,6 +15,12 @@ and we have seen agents misuse the platform and get around its safeguards, both 
 
 To protect the shared system, REANNZ is introducing guidelines for agent use, including rules that agents must follow on Mahuika.
 
+<<<<<<< HEAD
+=======
+To read more about how agents are changing high performance computing, see
+[Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.
+
+>>>>>>> origin/main
 ## What are the new rules?
 
 - Agents must be supervised. Start the agent yourself, stay at the session, and approve what it does as it happens.
@@ -25,11 +31,18 @@ To protect the shared system, REANNZ is introducing guidelines for agent use, in
 - Agents must not open tunnels that let connections from outside reach the cluster,
   such as reverse SSH tunnels, `ngrok`, VS Code tunnels or the remote-control features of AI tools.
 - Agents must scope commands to your own jobs and files, poll the scheduler slowly, and keep heavy work off the login node.
+<<<<<<< HEAD
 - Give your agent the REANNZ agent rules file, `AGENTS.md`, so that it knows these rules (see below).
 
 These rules follow from the existing [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree),
 which already covers supervising automated tools, tunnels, credentials, and disrupting the platform or other users.
 The full rules and recommendations are in the [AI Agent Guidelines](../Software/AI_Agents/AI_Agent_Guidelines.md).
+=======
+- Agents must follow the REANNZ agent rules file, `AGENTS.md`.
+
+The full rules and recommendations are in the [AI Agent Guidelines](../Software/AI_Agents/AI_Agent_Guidelines.md).
+The [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree) now requires any agent you use on Mahuika to follow them.
+>>>>>>> origin/main
 
 ## What do I need to do?
 
@@ -67,6 +80,9 @@ Until then, only run agents while you are supervising them.
 
 We want to support these new technologies, and are open to discussing your requirements.
 If you have questions or suggestions, {% include "partials/support_request.html" %}.
+<<<<<<< HEAD
 
 !!! note "Further Reading"
     [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.
+=======
+>>>>>>> origin/main
