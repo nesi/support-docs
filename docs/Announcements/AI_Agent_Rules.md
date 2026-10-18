@@ -28,7 +28,6 @@ To protect the shared system, REANNZ is introducing guidelines for agent use, in
 - Agents must follow the REANNZ agent rules file, `AGENTS.md`.
 
 The full rules and recommendations are in the [AI Agent Guidelines](../Software/AI_Agents/AI_Agent_Guidelines.md).
-The [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree) now requires any agent you use on Mahuika to follow them.
 
 ## What do I need to do?
 
