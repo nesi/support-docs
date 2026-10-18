@@ -293,35 +293,31 @@ span.md-status.md-status--deprecated {
   padding: 0.2em 0.5em;
 }
 
-/* Calendar */
+/* Banners */
+/* The announcement bar (overrides/main.html) and the banners from addBanner() in general.js
+   use the same Material .md-banner markup, so these rules style both. */
 
-.md-event-banner {
+.md-banner {
   background: #fffae6;
   border-bottom: 1px solid #ccc;
-  font-size: 1.2em;
+  color: var(--md-typeset-color);
   text-align: center;
-
-  z-index: 9999;
 }
 
-.md-event-banner button {
-  position: absolute;
-  top: 4px;
-  right: 6px;
-  font-size: 2em;
-  cursor: pointer;
+.md-banner__inner > p {
+  margin: 0;
 }
 
 /* The default link colour is only 4.44:1 on the banner's yellow, darken it to pass WCAG AA (5.08:1). */
-.md-event-banner a {
+.md-banner a {
   color: #007591;
 }
 
-[data-md-color-scheme="slate"] .md-event-banner {
+[data-md-color-scheme="slate"] .md-banner {
   background: var(--reannz-blue--dark-shade1);
 }
 
-[data-md-color-scheme="slate"] .md-event-banner a {
+[data-md-color-scheme="slate"] .md-banner a {
   color: var(--md-typeset-a-color);
 }
 

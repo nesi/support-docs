@@ -7,10 +7,7 @@ tags:
 ---
 
 These guidelines describe how to use AI agents, coding assistants and other autonomous tools responsibly on REANNZ HPC systems.
-The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) requires any agent working for you to follow the rules in
-[What agents should do](#what-agents-should-do) and [Working on the cluster](#working-on-the-cluster). The rest of this page is advice.
-The Acceptable Use Policy also applies to everything else an agent does under your account.
-
+The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) applies to everything an agent does under your account.
 These guidelines _do not_ cover AI or machine learning as the research workload itself.
 
 ## Principles
@@ -33,7 +30,6 @@ On a login node, run the install script:
 ```
 
 This links `AGENTS.md` into the home directory configuration of Claude Code, Codex, Gemini CLI and Copilot CLI.
-It never overwrites an existing file: if you already have a Claude Code `CLAUDE.md`, it adds a line that imports the rules, and for other tools it prints what to add.
 The links point at the copy on Mahuika, so you get updates to the rules without running the script again.
 
 | Option | What it does |
@@ -139,3 +135,4 @@ We recommend that use of AI in research conducted on REANNZ HPC systems follows 
     - [Privacy Policy](../../Policy/Privacy_Policy.md)
     - [Royal Society Te Apārangi GenAI guidelines (2025)](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf)
     - [Public Service AI Framework](https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence)
+    - [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.
