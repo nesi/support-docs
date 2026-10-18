@@ -15,9 +15,6 @@ and we have seen agents misuse the platform and get around its safeguards, both 
 
 To protect the shared system, REANNZ is introducing guidelines for agent use, including rules that agents must follow on Mahuika.
 
-To read more about how agents are changing high performance computing, see
-[Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.
-
 ## What are the new rules?
 
 - Agents must be supervised. Start the agent yourself, stay at the session, and approve what it does as it happens.
@@ -69,3 +66,6 @@ Until then, only run agents while you are supervising them.
 
 We want to support these new technologies, and are open to discussing your requirements.
 If you have questions or suggestions, {% include "partials/support_request.html" %}.
+
+!!! note "Further Reading"
+    [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.
