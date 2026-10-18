@@ -33,6 +33,7 @@ theme:
         icon: material/lightbulb-outline
         name: Switch to light mode
   features:
+    - announce.dismiss            # Lets readers close the banner set in overrides/main.html
     - navigation.indexes
     - navigation.instant          # Single Page Application
     - navigation.instant.progress
