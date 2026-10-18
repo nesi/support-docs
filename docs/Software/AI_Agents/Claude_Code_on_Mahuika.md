@@ -209,3 +209,4 @@ Claude Code on your computer does not see the rules on Mahuika, so [install them
 
 For questions about Claude Code itself, see the [Claude Code documentation](https://code.claude.com/docs/en/overview).
 For questions about using it on Mahuika, {% include "partials/support_request.html" %}.
+  
