@@ -89,7 +89,7 @@ Changes to `docs/assets/tags.yml` need the user's permission first. See [Tags](#
   (see [Article/Category Order](docs/NEWPAGE.md#articlecategory-order)).
 - Renaming, moving or deleting a page requires a line in [docs/redirect_map.yml](docs/redirect_map.yml) (old path: new path).
 - Images need alt text that describes what the image shows. Link text must say where it goes (not "here" or "this page").
-- Pages about AI tools must agree with [AI Agent Guidelines](docs/Software/AI/AI_Agent_Guidelines.md) and the
+- Pages about AI tools must agree with [AI Agent Guidelines](docs/Software/AI_Agents/AI_Agent_Guidelines.md) and the
   [Acceptable Use Policy](docs/Policy/Acceptable_Use_Policy.md), and link to them.
 
 ## Checking facts
@@ -112,7 +112,7 @@ python3 -c "import json; m = json.load(open('docs/assets/module-list.json')); pr
 ```
 
 - If a fact is not in these sources, ask the user. Do not fill it in from general knowledge of other HPC systems.
-- If you have access to the cluster, you may check commands there, following the [AI Agent Guidelines](docs/Software/AI/AI_Agent_Guidelines.md)
+- If you have access to the cluster, you may check commands there, following the [AI Agent Guidelines](docs/Software/AI_Agents/AI_Agent_Guidelines.md)
   (scope commands to your own jobs and files, and do not run heavy work on a login node).
 - In your report, list every command, number or path you added that you could not check against a source or on the cluster.
 

@@ -1,6 +1,7 @@
 ---
 # No "*" here on purpose: seasonal notices are left out of the nav. Add new announcements to this list.
 nav:
+  - AI_Agent_Rules.md
   - New_HPC_Portal
   - Globus-Renaming.md
   - Identity_Provider_System_Maintenance.md
