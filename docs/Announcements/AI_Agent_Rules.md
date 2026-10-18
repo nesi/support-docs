@@ -67,4 +67,4 @@ We want to support these new technologies, and are open to discussing your requi
 If you have questions or suggestions, {% include "partials/support_request.html" %}.
 
 !!! note "Further Reading"
-    [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.
+    - [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723)
