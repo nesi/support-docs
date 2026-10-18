@@ -64,7 +64,8 @@ Until then, only run agents while you are supervising them.
 ## Feedback
 
 We want to support these new technologies, and are open to discussing your requirements.
-If you have questions or suggestions, {% include "partials/support_request.html" %}.
+If you have questions or suggestions, {% include "partials/support_request.html" %},
+or come to one of our regular [office hours](../Getting_Started/Getting_Help/Weekly_Online_Office_Hours/).
 
 !!! note "Further Reading"
     - [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723)
