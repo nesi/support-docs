@@ -229,7 +229,7 @@ Your simulation runs on one CPU and takes two weeks to finish.
 - [ ] Disk
 > Nothing here says the data is large.
 - [x] Time
-> A laptop would have to stay on, and awake, for two weeks. A job on Mahuika can run for up to {{ slurm_limits.per_job.days }} days.
+> A laptop would have to stay on, and awake, for two weeks. See [Job Limits](../../Batch_Computing/Job_Limits.md) for how long a job on Mahuika can run.
 </quiz>
 
 <quiz>
