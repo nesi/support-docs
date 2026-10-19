@@ -28,7 +28,6 @@ To protect the shared system, REANNZ is introducing guidelines for agent use, in
 - Agents must follow the REANNZ agent rules file, `AGENTS.md`.
 
 The full rules and recommendations are in the [AI Agent Guidelines](../Software/AI_Agents/AI_Agent_Guidelines.md).
-The [Acceptable Use Policy](../Policy/Acceptable_Use_Policy.md#you-agree) now requires any agent you use on Mahuika to follow them.
 
 ## What do I need to do?
 
@@ -65,7 +64,8 @@ Until then, only run agents while you are supervising them.
 ## Feedback
 
 We want to support these new technologies, and are open to discussing your requirements.
-If you have questions or suggestions, {% include "partials/support_request.html" %}.
+If you have questions or suggestions, {% include "partials/support_request.html" %},
+or come to one of our regular [office hours](../Getting_Started/Getting_Help/Weekly_Online_Office_Hours.md).
 
 !!! note "Further Reading"
-    [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.
+    - [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723)
