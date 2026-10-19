@@ -209,7 +209,7 @@ which R
 ```
 
 ```out
-/usr/bin/which: no R in (/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/username/bin:/opt/nesi/vdt:/home/username/.local/bin:/opt/nesi/bin:/opt/nesi/sbin)
+/usr/bin/which: no R in (/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/username/bin:/home/username/.local/bin:/opt/nesi/bin:/opt/nesi/sbin)
 ```
 
 The important bit here being:

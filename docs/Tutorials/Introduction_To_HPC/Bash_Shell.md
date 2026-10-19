@@ -51,7 +51,7 @@ The Mahuika filesystem looks something like this:
 
 ![The filesystem is made up of a root directory that contains subdirectories](../../assets/images/NeSI_Filesystem_Simplified.svg)
 
-Directories are like *places* — at any time while we are using the shell, we are in exactly one place called our **current working directory**.
+Directories are like *places* - at any time while we are using the shell, we are in exactly one place called our **current working directory**.
 Commands mostly read and write files in the current working directory, i.e. 'here', so knowing where you are before running a command is important.
 
 First, let's find out where we are by running the command `pwd`, short for 'print working directory'.
