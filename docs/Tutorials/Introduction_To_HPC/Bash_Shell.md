@@ -754,6 +754,35 @@ Press <kbd>Y</kbd>, then <kbd>Enter</kbd> to keep the name `draft.txt`.
     If you are using a terminal in a web browser, such as in OnDemand, the browser may catch some shortcuts before nano does.
     For example, <kbd>Ctrl</kbd>+<kbd>W</kbd> is nano's search, but in most browsers it closes the tab.
 
+    On a Mac, use the <kbd>Control</kbd> key, not <kbd>Command</kbd>.
+
+### Using nano
+
+Open Nano to create a file called `draft.txt`:
+
+```sh
+nano draft.txt
+```
+
+Let's type in a few lines of text.
+Once we're happy with our text, we can press <kbd>Ctrl</kbd>+<kbd>O</kbd>
+(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
+holding it down, press the <kbd>O</kbd> key) to write our data to disk
+(we'll be asked what file we want to save this to:
+press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
+
+![A screenshot of the nano text editor. The file open is called `draft.txt` and contains two lines of text reading "It's not publish or perish any more, it's share and thrive."](../../assets/images/nano-screenshot.png)
+
+Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
+return to the shell.
+
+If you press <kbd>Ctrl</kbd>+<kbd>X</kbd> before saving, nano asks whether to save the modified buffer (your changes).
+Press <kbd>Y</kbd>, then <kbd>Enter</kbd> to keep the name `draft.txt`.
+
+!!! warning "Terminals in a web browser"
+    If you are using a terminal in a web browser, such as in OnDemand, the browser may catch some shortcuts before nano does.
+    For example, <kbd>Ctrl</kbd>+<kbd>W</kbd> is nano's search, but in most browsers it closes the tab.
+
 `nano` doesn't leave any output on the screen after it exits,
 but `ls` now shows that we have created a file called `draft.txt`:
 
