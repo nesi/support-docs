@@ -26,17 +26,17 @@ As a reminder, our Slurm script `example_job.sl` currently looks like this.
 
 #SBATCH --job-name      example_job
 #SBATCH --account       nesi99991
-#SBATCH --mem           300M
 #SBATCH --time          00:15:00
+#SBATCH --mem           300M
 
 module purge
-module load R/4.3.1-gimkl-2022a
+module load R/{{ applications.R.default }}
 Rscript sum_matrix.r
 echo "Done!"
 ```
 
 We will now submit the same job again with more CPUs.
-We ask for more CPUs using by adding `#SBATCH --cpus-per-task 4` to our script.
+We ask for more CPUs by adding `#SBATCH --cpus-per-task 4` to our script.
 Your script should now look like this:
 
 ```sl
@@ -44,12 +44,12 @@ Your script should now look like this:
 
 #SBATCH --job-name      example_job
 #SBATCH --account       nesi99991
-#SBATCH --mem           300M
 #SBATCH --time          00:15:00
+#SBATCH --mem           300M
 #SBATCH --cpus-per-task 4
 
 module purge
-module load R/4.3.1-gimkl-2022a
+module load R/{{ applications.R.default }}
 Rscript sum_matrix.r
 echo "Done!"
 ```
@@ -57,7 +57,7 @@ echo "Done!"
 And then submit using `sbatch` as we did before.
 
 ```sh
- sbatch example_job.sl
+sbatch example_job.sl
 ```
 
 ```out
@@ -69,18 +69,19 @@ Submitted batch job 23137702
     Care should be used when using `watch` as repeatedly running a command can have adverse effects.
     Exit `watch` with <kbd>ctrl</kbd> + <kbd>c</kbd>.
 
-Note in `squeue`, the number under cpus, should be '4'.
+In `squeue`, the number under `CPUS` should be `4` while the job is pending.
+Once it is running, it shows `8`, because Slurm counts both logical CPUs on each of your 4 cores (see [Simultaneous Multithreading](#simultaneous-multithreading-smt)).
 
 Checking on our job with `sacct`.
 
 Oh no!
 
 ```out
-JobID           JobName  Partition    Account  AllocCPUS      State ExitCode 
------------- ---------- ---------- ---------- ---------- ---------- -------- 
-27323464         my_job      large  {{ config.extra.project_code }}          4 OUT_OF_ME+    0:125 
-27323464.ba+      batch             {{ config.extra.project_code }}          4 OUT_OF_ME+    0:125 
-27323464.ex+     extern             {{ config.extra.project_code }}          4  COMPLETED      0:0 
+       JobID                              JobName Timelimit   Elapsed  TotalCPU Al NT     ReqMem     MaxRSS        State         NodeList
+------------ ------------------------------------ --------- --------- --------- -- -- ---------- ---------- ------------ ----------------
+    23137702                          example_job  00:15:00  00:00:36 00:52.908  8          300M            OUT_OF_MEMO+             c019
+23137702.ba+                                batch            00:00:36 00:52.908  8  1               267988K OUT_OF_MEMO+             c019
+23137702.ex+                               extern            00:00:36  00:00:00  8  1                          COMPLETED             c019
 ```
 
 ## Too Little or Too Much
@@ -129,7 +130,7 @@ Since we have already run a job (successful or otherwise), this is the best sour
 If we check the status of our finished job using the `sacct` command we learned earlier.
 
 ```sh
- sacct
+sacct
 ```
 
 ```sh
@@ -157,6 +158,13 @@ $$
 For the above example _33 seconds_ of computation was done,
 
 where the maximum possible computation time was **96 seconds** (_2 CPUs_ multiplied by _48 seconds_), meaning the CPU efficiency was about _35%_.
+
+!!! note "Alloc counts two CPUs per core"
+    Each core on Mahuika has two logical CPUs, and _Alloc_ counts both, although by default your job only uses one of them
+    (see [Simultaneous Multithreading](#simultaneous-multithreading-smt)).
+    This is why a job that didn't ask for a number of CPUs shows an _Alloc_ of `2`.
+    So a job that keeps every CPU it asked for busy will only reach about _50%_ CPU efficiency by this formula.
+    `seff`, shown below, divides by cores instead, so its CPU efficiency is double the figure from this formula.
 
 Time Efficiency is simply the _Elapsed Time_ divided by _Time Requested_.
 
@@ -186,24 +194,23 @@ _48 seconds_ used out of _15 minutes_ requested give a time efficiency of about 
 
 ### Using `seff`
 
-For convenience, Mahuika has provided the command `seff <jobid>` to calculate **S**lurm **Eff**iciency.
+For convenience, Mahuika has provided the command `seff` to calculate **S**lurm **Eff**iciency.
+Run it with a job ID, for example the job that ran out of memory:
 
 ```sh
- seff <jobid>
+seff 23137702
 ```
 
 ```out
-Job ID: 27323570
-Cluster: mahuika
-User/Group: username/username
-State: COMPLETED (exit code 0)
-Cores: 1
-Tasks: 1
-Nodes: 1
-Job Wall-time:  5.11%  00:00:46 of 00:15:00 time limit
-CPU Efficiency: 141.30%  00:01:05 of 00:00:46 core-walltime
-Mem Efficiency: 93.31%  233.29 MB of 250.00 MB
+Job ID: 23137702
+State: OUT_OF_MEMORY
+Cores: 4
+Job Wall-time:          4%  00:00:36 of 00:15:00 time limit
+Avg CPU Utilisation:   37%  00:00:52 of 00:02:24 core-walltime
+Peak Mem Utilisation:  87%  261.71 MB of 300.00 MB
 ```
+
+Replace `23137702` with your job ID.
 
 Knowing what we do now about job efficiency, let's submit the previous job again, this time requesting enough memory to actually cover it:
 
@@ -212,12 +219,12 @@ Knowing what we do now about job efficiency, let's submit the previous job again
 
 #SBATCH --job-name      example_job
 #SBATCH --account       nesi99991
-#SBATCH --mem           1200M
 #SBATCH --time          00:15:00
+#SBATCH --mem           1200M
 #SBATCH --cpus-per-task 4
 
 module purge
-module load R/4.3.1-gimkl-2022a
+module load R/{{ applications.R.default }}
 Rscript sum_matrix.r
 echo "Done!"
 ```
@@ -246,26 +253,27 @@ only allow you to connect to nodes on which you have running jobs.
 The most reliable way to check current system stats is with `htop`.
 `htop` is an interactive process viewer that can be launched from command line.
 
-### Finding job node
+### Finding your job
 
-Before we can check on our job, we need to find out where it is running.
-We can do this with the command `squeue --me`, and looking under the 'NODELIST' column.
+Before we can check on our job, we need its job ID, which is in the `JOBID` column of `squeue --me`.
+The job must be running, shown as `R` in the `ST` column.
 
 ```sh
 squeue --me
 ```
 
 ```out
-JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)    
-26763045      username {{config.extra.project_code}} test           2    512M genoa   May 11 11:35       14:46 RUNNING  c001 
+            JOBID PARTITION PRIORITY            NAME             USER ST          START_TIME NOD CPUS   FEATURES               REASON    TIME_LEFT
+         26763045     genoa      309     example_job         username  R        Oct 19 14:32   1    8        sml                 None        14:56
 ```
 
-Now that we know the location of the job (c001) we can use `svisit` to run `htop` _on that node_.
+Now we can use `svisit` to run `htop` _on the node where the job is running_.
 
 ```sh
- svisit 26763045 c001 -t htop -u $USER
+svisit 26763045 htop -u $USER
 ```
 
+Replace `26763045` with your job ID.
 If you cannot connect, it may be that the job has finished and you have lost permission to visit that node.
 
 ### Reading Htop
