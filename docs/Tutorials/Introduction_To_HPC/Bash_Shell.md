@@ -708,8 +708,8 @@ pwd
 Now let's create a file. To do this we will use a text editor called Nano.
 Nano is controlled with the <kbd>Ctrl</kbd> key, so first a word on how that is written.
 
-!!! tip "Control, Ctrl, or ^ Key"
-    The Control key is also called the 'Ctrl' key. There are various ways
+!!! tip "Ways of writing the Control key"
+    The Control key is often labelled <kbd>Ctrl</kbd>. There are various ways
     in which using the Control key may be described. For example, you may
     see an instruction to press the <kbd>Control</kbd> key and, while holding it down,
     press the <kbd>X</kbd> key, described as any of:

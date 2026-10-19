@@ -223,8 +223,13 @@ def _blank(m):
     return " " * len(m.group(0))
 
 
+def mask_inline_code(line, fill=" "):
+    """Blanks out inline code with fill characters, keeping columns."""
+    return re.sub(r"`[^`]*`", lambda m: fill * len(m.group(0)), line)
+
+
 def mask_non_prose(line):
     """Blanks out inline code, link targets and HTML tags, keeping columns, so 'text' rules don't see them."""
-    line = re.sub(r"`[^`]*`", _blank, line)
+    line = mask_inline_code(line)
     line = re.sub(r"(?<=\]\()[^)]*(?=\))", _blank, line)
     return re.sub(r"<[^>]+>", _blank, line)

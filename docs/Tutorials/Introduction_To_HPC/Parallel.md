@@ -169,7 +169,7 @@ A job array can be specified using `--array`
 
 If you are writing your own code, then this is something you will probably have to specify yourself.
 
-## Summary
+## Comparing the methods
 
 | Name | Other Names | Slurm Option | Pros/cons |
 | - | - | - | - |

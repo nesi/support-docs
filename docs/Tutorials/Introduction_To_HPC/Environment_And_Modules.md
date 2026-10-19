@@ -232,6 +232,8 @@ which R
 !!! note "Tab Completion"
     The module command also supports tab completion. You may find this the easiest way to find the right software.
 
+### The `PATH` variable
+
 So, what just happened?
 
 To understand the output, first we need to understand the nature of the `$PATH` environment variable.
@@ -295,6 +297,8 @@ ls /opt/nesi/zen3/R/{{ applications.R.default }}/bin
 ```out
 R  Rscript
 ```
+
+### Dependencies
 
 `module load` "loads" not only the specified software, but it also loads software dependencies.
 That is, the software that the application you load requires to run.
@@ -396,6 +400,8 @@ python3 --version
 ```out
 Python {{ applications.Python.default.split('-')[0] }}
 ```
+
+## Non-default versions
 
 So how do we load the non-default version of a software package?
 In this case, the only change we need to make is be more specific about the module we are loading.

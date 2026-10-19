@@ -130,6 +130,8 @@ mv example_job.sh example_job.sl
     - `.out`: Commonly used to indicate the file contains the standard output (`stdout`) of some process
     - `.err`: Same as `.out` but for standard error (`stderr`)
 
+### Slurm parameters
+
 In order for the job scheduler to do its job we need to provide a bit more information about our script.
 This is done by specifying Slurm parameters in our batch script.
 Each of these parameters must be preceded by the special token `#SBATCH` and placed after the shebang, but before the content of the rest of your script.
@@ -163,6 +165,8 @@ You can separate an option from its value with `=`, as in this table, or with sp
     When the job starts, the bash interpreter will ignore all lines starting with `#`.
 
     This is similar to the *shebang* mentioned earlier, when you run your script, the system looks at the `#!`, then uses the program at the subsequent path to interpret the script, in our case `/bin/bash` (the program `bash` found in the `bin` directory).
+
+### Submitting your batch job
 
 Note that just *requesting* these resources does not make your job run faster, nor does it necessarily mean that you will consume all of these resources.
 It only means that these are made available to you.
@@ -327,6 +331,8 @@ For example, `CANCELLED b+` is `CANCELLED by` followed by the number of the user
 
     - our [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
     - the official [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/) and [cheatsheet](https://slurm.schedmd.com/pdfs/summary.pdf)
+
+### Job environment variables
 
 !!! question "Job environment variables"
     When Slurm runs a job, it sets a number of environment variables for the job.

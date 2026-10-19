@@ -106,7 +106,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>The job will run more slowly than expected, and so may run out of time and get killed for exceeding its time limit.</td>
             <td>The job will wait in the queue for longer. <br>
              You will be charged for CPUs regardless of whether they are used or not.<br>
-            Your fair share score will fall more.
+            Your Fairshare score will fall more.
            </td>
         </tr>
         <tr>
@@ -114,7 +114,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error (may not happen immediately).</td>
             <td>The job will wait in the queue for longer.<br>
              You will be charged for memory regardless of whether it is used or not.<br>
-             Your fair share score will fall more.</td>
+             Your Fairshare score will fall more.</td>
         </tr>
         <tr>
             <td><b>   Walltime   </b></td>
@@ -133,7 +133,7 @@ If we check the status of our finished job using the `sacct` command we learned 
 sacct
 ```
 
-```sh
+```out
 JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
 --------------- ---------------- ----- ----------- ------------ ------- -------- ----------
 31060451        example_job.sl       2    00:00:48    00:33.548      1G          CANCELLED
@@ -233,7 +233,7 @@ echo "Done!"
 sbatch example_job.sl
 ```
 
-Now that we've requested more memory, this one should complete successfully!
+Now that we've requested more memory, this one should complete successfully.
 
 ### Simultaneous Multithreading (SMT)
 
