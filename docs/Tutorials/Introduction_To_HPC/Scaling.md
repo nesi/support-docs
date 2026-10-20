@@ -35,12 +35,14 @@ Code that has no serial components is said to be "embarrassingly parallel".
 
 It is worth noting that Amdahl's law assumes all other elements of scaling are happening with 100% efficiency, in reality there are additional computational and communication overheads.
 
+## Scaling exercise
+
 !!! note "Solo learners"
     The [spreadsheet]({{ config.extra.exercise }}) below is shared between attendees of a
     live workshop. To work through the same steps on your own, pick a handful of `--cpus-per-task` values (1, 2, 4, 8, etc), and record the
     "Elapsed", "TotalCPU" and "Memory" value. Plot the values, and note the trends.
 
-!!! question "Scaling Exercise"
+??? question "Scaling Exercise"
     1. Find your name in the [spreadsheet]({{ config.extra.exercise }}) and modify your `example_job.sl` to request
     "x" `--cpus-per-task`.
     For example `#SBATCH --cpus-per-task 10`.
@@ -60,8 +62,21 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     Make sure you have entered the values in the correct format and there is a tick next to each entry.
     ![Correctly entered data in spreadsheet](../../assets/images/correct-spreadsheet-entry.png)
 
-??? question "Solution"
-    [spreadsheet]({{ config.extra.exercise }})
+    <quiz>
+    Once everyone's results are in the spreadsheet, look at how _Elapsed_ changes as the number of CPUs grows.
+    What do you see?
+
+    - [x] It falls quickly at first, then levels off.
+    > The serial part of the job doesn't get faster with more CPUs (see [Amdahl's Law](#amdahls-law)).
+    - [ ] It halves every time the number of CPUs doubles.
+    > Only a job with no serial part at all would scale like this.
+    - [ ] It stays the same.
+    > `sum_matrix.r` does use more CPUs when it is given them, so it gets faster, up to a point.
+    - [ ] It keeps falling at the same rate, however many CPUs are added.
+    > The serial part sets a limit on how fast the job can get.
+    </quiz>
+
+    See the [spreadsheet]({{ config.extra.exercise }}) for everyone's results.
 
 !!! keypoints
     - Start small.

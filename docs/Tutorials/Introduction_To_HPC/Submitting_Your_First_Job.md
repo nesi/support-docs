@@ -153,17 +153,21 @@ All the parameters available can be found by checking `man sbatch` or on the onl
 
 You can separate an option from its value with `=`, as in this table, or with spaces, as in the scripts below.
 
-!!! question "Comments"
+??? question "Comments"
+    <quiz>
     Comments in UNIX shell scripts (denoted by `#`) are ignored by the bash interpreter.
     Why is it that we start our Slurm parameters with `#` if it is going to be ignored?
 
-??? question "Solution"
-
-    Commented lines are ignored by the bash interpreter, but they are *not* ignored by Slurm.
-    The `#SBATCH` parameters are read by Slurm when we *submit* the job.
-    When the job starts, the bash interpreter will ignore all lines starting with `#`.
+    - [x] Slurm reads the `#SBATCH` lines when the job is submitted, and bash ignores them when the job runs.
+    - [ ] Bash runs the `#SBATCH` lines as commands.
+    > Bash ignores every line that starts with `#`, including the `#SBATCH` lines.
+    - [ ] The `#` tells bash that the line is important.
+    > In bash, `#` starts a comment. It is Slurm, not bash, that looks for `#SBATCH`.
+    - [ ] It doesn't matter: the parameters work without the `#`.
+    > Slurm only reads parameters from lines that start with `#SBATCH`. Without the `#`, bash would also try to run `SBATCH` as a command when the job starts.
 
     This is similar to the *shebang* mentioned earlier, when you run your script, the system looks at the `#!`, then uses the program at the subsequent path to interpret the script, in our case `/bin/bash` (the program `bash` found in the `bin` directory).
+    </quiz>
 
 ### Submitting your batch job
 
@@ -259,27 +263,30 @@ JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME    
 
 (If it isn’t wait a few seconds and try again).
 
-!!! question "Cancelling multiple jobs"
+??? question "Cancelling multiple jobs"
+    <quiz>
     We can also cancel several jobs at once.
-    `scancel --user $USER` cancels every job you have, including any from your other work,
-    so it is safer to add `--name`, which only cancels your jobs with that job name.
+    Submit three copies of your job:
 
-    Try submitting multiple jobs and then cancelling them all.
-
-??? question "Solution"
-
-    First submit a trio of jobs:
     ```sh
     sbatch example_job.sl
     sbatch example_job.sl
     sbatch example_job.sl
     ```
 
-    Then cancel all of them:
+    Which command cancels all three, without cancelling any of your other jobs?
 
-    ```sh
-    scancel --user $USER --name example_job
-    ```
+    - [x] `scancel --user $USER --name example_job`
+    > `--name` only cancels your jobs with that job name.
+    - [ ] `scancel --user $USER`
+    > This cancels every job you have, including any from your other work.
+    - [ ] `scancel --me`
+    > Like `--user $USER`, this cancels every job you have.
+    - [ ] `scancel example_job`
+    > `scancel` expects job IDs. To cancel jobs by name, use `--name`.
+
+    Run the command, then check with `squeue --me` that the jobs have gone.
+    </quiz>
 
 ### Checking finished jobs
 
@@ -327,13 +334,23 @@ For example, `CANCELLED+` is `CANCELLED by` followed by the number of the user w
 
 ### Job environment variables
 
-!!! question "Job environment variables"
+??? question "Job environment variables"
+    <quiz>
     When Slurm runs a job, it sets a number of environment variables for the job.
     One of these will let us check what directory our job script was submitted from.
     The `SLURM_SUBMIT_DIR` variable is set to the directory from which our job was submitted.
-    Using the `SLURM_SUBMIT_DIR` variable, modify your job so that it prints out the location from which the job was submitted.
+    Which line, added to your script, prints the location from which the job was submitted?
 
-??? question "Solution"
+    - [x] `echo ${SLURM_SUBMIT_DIR}`
+    - [ ] `echo SLURM_SUBMIT_DIR`
+    > Without the `$`, `echo` prints the name of the variable, not its value.
+    - [ ] `${SLURM_SUBMIT_DIR}`
+    > The shell would try to run the directory as a command. Use `echo` to print it.
+    - [ ] `echo $USER`
+    > `$USER` holds your username, not a directory.
+    </quiz>
+
+    Try it:
 
     ```sh
     cp example_job.sl env_test.sl

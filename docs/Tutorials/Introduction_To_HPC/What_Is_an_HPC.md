@@ -88,20 +88,21 @@ It is common for nodes to connect to a shared, remote disk.
     More information on using Globus for large data transfer to and from the cluster can be found on the
     [Globus Transfer Service](../../Data_Transfer/Globus/Globus_Overview.md) page.
 
-<quiz>
-Mahuika is...
+??? question "What is Mahuika?"
+    <quiz>
+    Mahuika is...
 
-- [x] A 'High Performance Computer'.
-- [x] A 'Cluster'
-- [] A 'Cloud'
-> Mahuika is not a cloud resource, however [RDC](../../Service_Subscriptions/Research_Developer_Cloud/User_Guides.md) is.
-- [x] A 'Remote Server'
-> Technically Mahuika is a server, but not the most useful description.
-- [] A 'Node'
-> Mahuika is composed of many nodes.
-- [x] A 'Computer'
-- [] A way of being.
-</quiz>
+    - [x] A 'High Performance Computer'.
+    - [x] A 'Cluster'
+    - [] A 'Cloud'
+    > Mahuika is not a cloud resource, however [RDC](../../Service_Subscriptions/Research_Developer_Cloud/User_Guides.md) is.
+    - [x] A 'Remote Server'
+    > Technically Mahuika is a server, but not the most useful description.
+    - [] A 'Node'
+    > Mahuika is composed of many nodes.
+    - [x] A 'Computer'
+    - [] A way of being.
+    </quiz>
 
 ## Have a look around
 
@@ -193,69 +194,65 @@ You will see this in [Submitting Your First Job](Submitting_Your_First_Job.md).
 Each of these problems is too big for a laptop in a different way.
 Which resource is each one short of?
 
-<quiz>
-<p class=admonition-title>Out of memory</p>
+??? question "Out of memory"
+    <quiz>
+    Your R script stops with this error:
 
-Your R script stops with this error:
+    ```out
+    Error: cannot allocate vector of size 40.0 Gb
+    ```
 
-```out
-Error: cannot allocate vector of size 40.0 Gb
-```
+    - [ ] CPUs
+    > More CPUs would not help: R needs more room to hold the data.
+    - [x] Memory
+    > R needs 40 GB of memory for one object, more than most laptops have. Most Mahuika compute nodes have 384 GB or more.
+    - [ ] Disk
+    > The data has to fit in memory while R works on it, not just on disk.
+    - [ ] Time
+    > The script stopped straight away, so waiting longer would not help.
+    </quiz>
 
-- [ ] CPUs
-> More CPUs would not help: R needs more room to hold the data.
-- [x] Memory
-> R needs 40 GB of memory for one object, more than most laptops have. Most Mahuika compute nodes have 384 GB or more.
-- [ ] Disk
-> The data has to fit in memory while R works on it, not just on disk.
-- [ ] Time
-> The script stopped straight away, so waiting longer would not help.
-</quiz>
+??? question "Many samples"
+    <quiz>
+    You have 500 samples, and processing each one takes an hour on one CPU.
 
-<quiz>
-<p class=admonition-title>Many samples</p>
+    - [x] CPUs
+    > One after another, they would take about three weeks. Run at the same time on many CPUs, they can finish in hours. You will see how in [Parallel](Parallel.md).
+    - [ ] Memory
+    > Each sample is small enough to process on one CPU, so memory is not the problem.
+    - [ ] Disk
+    > Nothing here says the data is large.
+    - [ ] Time
+    > Each sample only takes an hour. The problem is how many there are.
+    </quiz>
 
-You have 500 samples, and processing each one takes an hour on one CPU.
+??? question "Long simulation"
+    <quiz>
+    Your simulation runs on one CPU and takes two weeks to finish.
 
-- [x] CPUs
-> One after another, they would take about three weeks. Run at the same time on many CPUs, they can finish in hours. You will see how in [Parallel](Parallel.md).
-- [ ] Memory
-> Each sample is small enough to process on one CPU, so memory is not the problem.
-- [ ] Disk
-> Nothing here says the data is large.
-- [ ] Time
-> Each sample only takes an hour. The problem is how many there are.
-</quiz>
+    - [ ] CPUs
+    > It might run faster on more CPUs, but only if the software can use them. You will see how to check in [Parallel](Parallel.md).
+    - [ ] Memory
+    > Nothing here says it needs a lot of memory.
+    - [ ] Disk
+    > Nothing here says the data is large.
+    - [x] Time
+    > A laptop would have to stay on, and awake, for two weeks. See [Job Limits](../../Batch_Computing/Job_Limits.md) for how long a job on Mahuika can run.
+    </quiz>
 
-<quiz>
-<p class=admonition-title>Long simulation</p>
+??? question "Lots of data"
+    <quiz>
+    You have 5 TB of sequencing data to analyse.
 
-Your simulation runs on one CPU and takes two weeks to finish.
-
-- [ ] CPUs
-> It might run faster on more CPUs, but only if the software can use them. You will see how to check in [Parallel](Parallel.md).
-- [ ] Memory
-> Nothing here says it needs a lot of memory.
-- [ ] Disk
-> Nothing here says the data is large.
-- [x] Time
-> A laptop would have to stay on, and awake, for two weeks. See [Job Limits](../../Batch_Computing/Job_Limits.md) for how long a job on Mahuika can run.
-</quiz>
-
-<quiz>
-<p class=admonition-title>Lots of data</p>
-
-You have 5 TB of sequencing data to analyse.
-
-- [ ] CPUs
-> You may want more CPUs later, but first the data has to fit somewhere.
-- [ ] Memory
-> You can analyse the data in pieces, so it does not all need to be in memory at once.
-- [x] Disk
-> That is more than most laptop drives hold. Each project gets 10 TB of nobackup space by default (see [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md)).
-- [ ] Time
-> Nothing here says the analysis is slow.
-</quiz>
+    - [ ] CPUs
+    > You may want more CPUs later, but first the data has to fit somewhere.
+    - [ ] Memory
+    > You can analyse the data in pieces, so it does not all need to be in memory at once.
+    - [x] Disk
+    > That is more than most laptop drives hold. Each project gets 10 TB of nobackup space by default (see [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md)).
+    - [ ] Time
+    > Nothing here says the analysis is slow.
+    </quiz>
 
 !!! keypoints
     - A 'cluster' describes a particular architecture of HPC.

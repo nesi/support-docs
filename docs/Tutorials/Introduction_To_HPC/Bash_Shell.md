@@ -129,65 +129,64 @@ For the purposes of this tutorial you will be working within `{{extra.working_di
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
-<quiz>
-<p class=admonition-title>Path Resolution</p>
+??? question "Path Resolution"
+    <quiz>
+    Given the file tree below.
 
-Given the file tree below.
+    ```mermaid
+    ---
+    config:
+      flowchart:
+        curve: stepAfter
+    ---
+    flowchart TD
+        root@{ shape: folder, label: "/" }
+        home@{ shape: folder, label: "home" }
+        username@{ shape: folder, label: "username" }
+        nesi@{ shape: folder, label: "nesi" }
+        project@{ shape: folder, label: "project" }
+        nobackup@{ shape: folder, label: "nobackup" }
+        project_code@{ shape: folder, label: "nesi99991" }
+        nobackup_code@{ shape: folder, label: "nesi99991" }
+        project_results@{ shape: folder, label: "results" }
+        nobackup_results@{ shape: folder, label: "results" }
+        plot@{ shape: doc, label: "final_plot.png" }
+        run1@{ shape: doc, label: "run1.out" }
+        run2@{ shape: doc, label: "run2.out" }
+        run3@{ shape: doc, label: "run3.out" }
 
-```mermaid
----
-config:
-  flowchart:
-    curve: stepAfter
----
-flowchart TD
-    root@{ shape: folder, label: "/" }
-    home@{ shape: folder, label: "home" }
-    username@{ shape: folder, label: "username" }
-    nesi@{ shape: folder, label: "nesi" }
-    project@{ shape: folder, label: "project" }
-    nobackup@{ shape: folder, label: "nobackup" }
-    project_code@{ shape: folder, label: "nesi99991" }
-    nobackup_code@{ shape: folder, label: "nesi99991" }
-    project_results@{ shape: folder, label: "results" }
-    nobackup_results@{ shape: folder, label: "results" }
-    plot@{ shape: doc, label: "final_plot.png" }
-    run1@{ shape: doc, label: "run1.out" }
-    run2@{ shape: doc, label: "run2.out" }
-    run3@{ shape: doc, label: "run3.out" }
+        root --- home
+        root --- nesi
+        home --- username
+        nesi --- project
+        nesi --- nobackup
+        project --- project_code
+        nobackup --- nobackup_code
+        project_code --- project_results
+        nobackup_code --- nobackup_results
+        project_results --- plot
+        nobackup_results --- run1
+        nobackup_results --- run2
+        nobackup_results --- run3
+    ```
 
-    root --- home
-    root --- nesi
-    home --- username
-    nesi --- project
-    nesi --- nobackup
-    project --- project_code
-    nobackup --- nobackup_code
-    project_code --- project_results
-    nobackup_code --- nobackup_results
-    project_results --- plot
-    nobackup_results --- run1
-    nobackup_results --- run2
-    nobackup_results --- run3
-```
+    What command would you type to get the following output?
 
-What command would you type to get the following output?
+    ```out
+    run1.out  run2.out  run3.out
+    ```
 
-```out
-run1.out  run2.out  run3.out
-```
+    - [ ] `ls pwd`
+    > `pwd` is not the name of a directory.
+    - [] `ls results`
+    > `ls results` depends on your current directory. This would be correct only if your current working directory is `/nesi/nobackup/nesi99991`.
+    - [X] `ls /nesi/nobackup/nesi99991/results`
+    - [ ] `ls /nesi/project/nesi99991/results`
+    > This `results` directory is in the project directory, and contains `final_plot.png`.
+    - [ ] `ls /results`
+    > There is no such directory.
 
-- [ ] `ls pwd`
-> `pwd` is not the name of a directory.
-- [] `ls results`
-> `ls results` depends on your current directory. This would be correct only if your current working directory is `/nesi/nobackup/nesi99991`.
-- [X] `ls /nesi/nobackup/nesi99991/results`
-- [ ] `ls /nesi/project/nesi99991/results`
-> This `results` directory is in the project directory, and contains `final_plot.png`.
-- [ ] `ls /results`
-> There is no such directory.
-
-</quiz>
+    </quiz>
 
 ## Moving about
 
@@ -313,43 +312,41 @@ You might notice that we now have two extra lines for directories `.` and `..`. 
 
 These two specific hidden directories are special as they will exist hidden inside every directory, with the `.` hidden directory representing your current directory and the `..` hidden directory representing the **parent** directory above your current directory.
 
-<quiz>
-<p class=admonition-title>More <code>ls</code> flags.</p>
+??? question "More `ls` flags"
+    <quiz>
+    You can also use two options at the same time. What does the command `ls` do when used
+    with the `-l` option? What about if you use both the `-l` and the `-h` option (`ls -lh`)?
 
-You can also use two options at the same time. What does the command `ls` do when used
-with the `-l` option? What about if you use both the `-l` and the `-h` option (`ls -lh`)?
+    - [X] Long-List.
+    > `-l` option makes `ls` use a long listing format, showing not only the file/directory names but also additional information,
+    > such as the file size and the time of its last modification.
+    - [X] Human readable.
+    > `-h` means 'human readable', i.e. displaying something like `5.3K` instead of `5369`.
+    - [] Sort by file size.
+    > `-S` will sort by file size.
+    - [] Show Help page.
+    </quiz>
 
-- [X] Long-List.
-> `-l` option makes `ls` use a long listing format, showing not only the file/directory names but also additional information,
-> such as the file size and the time of its last modification.
-- [X] Human readable.
-> `-h` means 'human readable', i.e. displaying something like `5.3K` instead of `5369`.
-- [] Sort by file size.
-> `-S` will sort by file size.
-- [] Show Help page.
-</quiz>
+??? question "Listing in Reverse Chronological Order"
+    <quiz>
+    By default, `ls` lists the contents of a directory in alphabetical
+    order by name. The command `ls -t` lists items by time of last
+    change instead of alphabetically. The command `ls -r` lists the
+    contents of a directory in reverse order.
 
-<quiz>
-<p class=admonition-title>Listing in Reverse Chronological Order</p>
+    Which commands list files in reverse chronological order (oldest first, so the newest file is listed last)?
+    Hint: You may need to use the `-l` flag to see the last changed dates.
 
-By default, `ls` lists the contents of a directory in alphabetical
-order by name. The command `ls -t` lists items by time of last
-change instead of alphabetically. The command `ls -r` lists the
-contents of a directory in reverse order.
+    - [x] `ls -lrt`
+    > The most recently changed file is listed last when using `-rt`. This can be useful for finding your most recent edits or checking to see if a new output file was written.
+    - [x] `ls -ltr`
+    > The order of single letter options doesn't matter, so this is the same as `ls -lrt`.
+    - [ ] `ls -lt`
+    > `-t` on its own lists the newest file first.
+    - [ ] `ls -lr`
+    > `-r` on its own reverses the alphabetical order.
 
-Which commands list files in reverse chronological order (oldest first, so the newest file is listed last)?
-Hint: You may need to use the `-l` flag to see the last changed dates.
-
-- [x] `ls -lrt`
-> The most recently changed file is listed last when using `-rt`. This can be useful for finding your most recent edits or checking to see if a new output file was written.
-- [x] `ls -ltr`
-> The order of single letter options doesn't matter, so this is the same as `ls -lrt`.
-- [ ] `ls -lt`
-> `-t` on its own lists the newest file first.
-- [ ] `ls -lr`
-> `-r` on its own reverses the alphabetical order.
-
-</quiz>
+    </quiz>
 
 ## Getting help
 
@@ -515,48 +512,80 @@ cd -
 
 The difference between `cd ..` and `cd -` is that the former brings you *up*, while the latter brings you *back*.
 
-<quiz>
-<p class=admonition-title>Absolute vs Relative Paths</p>
+??? question "Absolute vs Relative Paths"
+    <quiz>
+    Starting from `/home/amanda/data`, which of the following commands could Amanda use to navigate to her home directory (`/home/amanda`)?
 
-Starting from `/home/amanda/data`, which of the following commands could Amanda use to navigate to her home directory (`/home/amanda`)?
+    - [] `cd .`
+    > `.` stands for the current directory.
+    - [] `cd /`
+    > `/` stands for the root directory.
+    - [] `cd home/amanda`
+    > Amanda's home directory is `/home/amanda` (note the leading slash).
+    - [] `cd ../..`
+    > `../..` will take you up two levels, i.e. ends in `/home`.
+    - [X] `cd ~`
+    - [] `cd home`
+    > `cd home` would navigate into a directory `home` in the current directory if it exists.
+    - [X] `cd ~/data/..`
+    > `cd ~/data/..` is correct, but more complex than needed.
+    - [X] `cd`
+    - [X] `cd ..`
 
-- [] `cd .`
-> `.` stands for the current directory.
-- [] `cd /`
-> `/` stands for the root directory.
-- [] `cd home/amanda`
-> Amanda's home directory is `/home/amanda` (note the leading slash).
-- [] `cd ../..`
-> `../..` will take you up two levels, i.e. ends in `/home`.
-- [X] `cd ~`
-- [] `cd home`
-> `cd home` would navigate into a directory `home` in the current directory if it exists.
-- [X] `cd ~/data/..`
-> `cd ~/data/..` is correct, but more complex than needed.
-- [X] `cd`
-- [X] `cd ..`
+    </quiz>
 
-</quiz>
+??? question "Relative Path Resolution"
+    <quiz>
+    Using the file tree below, if `pwd` displays `/nesi/project/nesi99991`,
+    what will `ls ../../nobackup/nesi99991/results` display?
 
-This quiz uses a file tree from a different computer.
-On macOS, home directories are in `/Users` rather than `/home`.
+    ```mermaid
+    ---
+    config:
+      flowchart:
+        curve: stepAfter
+    ---
+    flowchart TD
+        root@{ shape: folder, label: "/" }
+        home@{ shape: folder, label: "home" }
+        username@{ shape: folder, label: "username" }
+        nesi@{ shape: folder, label: "nesi" }
+        project@{ shape: folder, label: "project" }
+        nobackup@{ shape: folder, label: "nobackup" }
+        project_code@{ shape: folder, label: "nesi99991" }
+        nobackup_code@{ shape: folder, label: "nesi99991" }
+        project_results@{ shape: folder, label: "results" }
+        nobackup_results@{ shape: folder, label: "results" }
+        plot@{ shape: doc, label: "final_plot.png" }
+        run1@{ shape: doc, label: "run1.out" }
+        run2@{ shape: doc, label: "run2.out" }
+        run3@{ shape: doc, label: "run3.out" }
 
-<quiz>
-<p class=admonition-title>Relative Path Resolution</p>
+        root --- home
+        root --- nesi
+        home --- username
+        nesi --- project
+        nesi --- nobackup
+        project --- project_code
+        nobackup --- nobackup_code
+        project_code --- project_results
+        nobackup_code --- nobackup_results
+        project_results --- plot
+        nobackup_results --- run1
+        nobackup_results --- run2
+        nobackup_results --- run3
+    ```
 
-Using the filesystem diagram below, if `pwd` displays `/Users/thing`,
-what will `ls ../backup` display?
+    - [] `ls: cannot access '../../nobackup/nesi99991/results': No such file or directory`
+    > `../..` takes you up two levels to `/nesi`, which *does* contain `nobackup`.
+    - [] `final_plot.png`
+    > This is the content of `/nesi/project/nesi99991/results`, the `results` directory inside the current directory.
+    - [] `nesi99991`
+    > This is what `ls ../../nobackup` would display.
+    - [X] `run1.out  run2.out  run3.out`
+    > `../../nobackup/nesi99991/results` refers to `/nesi/nobackup/nesi99991/results`.
 
-![A file tree. The root directory contains Users. Users contains backup and thing. Users/backup contains original, pnas_final and pnas_sub. Users/thing contains backup, which contains 2012-12-01, 2013-01-08 and 2013-01-27.](../../assets/images/tutorial_bash_shell_ex1.svg)
-
-- [] `../backup: No such file or directory`
-> There *is* a directory `backup` in `/Users`.
-- [] `2012-12-01 2013-01-08 2013-01-27`
-> Is the content of `Users/thing/backup`, but with `..`, we asked for one level further up.
-- [X] `original pnas_final pnas_sub`
-> `../backup/` refers to `/Users/backup/`.
-
-</quiz>
+    </quiz>
 
 ## Tab completion
 
@@ -711,25 +740,24 @@ filenames matching these expressions, but not the wildcards
 themselves. It is the shell, not the other programs, that deals with
 expanding wildcards.
 
-<quiz>
-<p class=admonition-title>Matching files with a Pattern</p>
+??? question "Matching files with a Pattern"
+    <quiz>
+    Running `ls` in a directory gives the output `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
 
-Running `ls` in a directory gives the output `cubane.pdb  ethane.pdb  methane.pdb  octane.pdb  pentane.pdb  propane.pdb`
+    Which `ls` command(s) will produce this output?
 
-Which `ls` command(s) will produce this output?
+    `ethane.pdb   methane.pdb`
 
-`ethane.pdb   methane.pdb`
+    - [ ] `ls *t*ane.pdb`
+    > This shows all files whose names contain zero or more characters (`*`) followed by the letter `t`, then zero or more characters (`*`) followed by `ane.pdb`. This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`
+    - [ ] `ls *t?ne.*`
+    > This shows all files whose names start with zero or more characters (`*`) followed by the letter `t`, then a single character (`?`), then `ne.` followed by zero or more characters (`*`). This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything which ends in `thane.pdb`.
+    - [X] `ls *t??ne.pdb`
+    > This is the solution. It fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
+    - [ ] `ls ethane.*`
+    > This only shows files starting with `ethane.`.
 
-- [ ] `ls *t*ane.pdb`
-> This shows all files whose names contain zero or more characters (`*`) followed by the letter `t`, then zero or more characters (`*`) followed by `ane.pdb`. This gives `ethane.pdb  methane.pdb  octane.pdb  pentane.pdb`
-- [ ] `ls *t?ne.*`
-> This shows all files whose names start with zero or more characters (`*`) followed by the letter `t`, then a single character (`?`), then `ne.` followed by zero or more characters (`*`). This will give us `octane.pdb` and `pentane.pdb` but doesn't match anything which ends in `thane.pdb`.
-- [X] `ls *t??ne.pdb`
-> This is the solution. It fixes the problems of option 2 by matching two characters (`??`) between `t` and `ne`.
-- [ ] `ls ethane.*`
-> This only shows files starting with `ethane.`.
-
-</quiz>
+    </quiz>
 
 <!-- TODO: include in terminal excersise (delete slurm files later on maybe?) -->
 
@@ -946,6 +974,8 @@ draft.txt  {{extra.example_script}}
     If you delete or overwrite something by mistake, you may be able to recover an older copy from a
     [snapshot](../../Storage/Data_Recovery.md).
 
+### Copying and removing directories
+
 In order to `cp` a directory (and all its contents) the `-r` for [recursive](https://en.wikipedia.org/wiki/Recursion) option must be used.
 The same is true when deleting directories with `rm`.
 
@@ -983,10 +1013,18 @@ The same is true when deleting directories with `rm`.
 
 For `mv` and `cp` if the destination path (final argument) is an existing directory the file will be placed inside that directory with the same name as the source.
 
-!!! question "Moving vs Copying"
+??? question "Moving vs Copying"
+    <quiz>
     Why must the 'recursive' flag `-r` be used with the `cp` or `rm` commands on a directory, but `mv` *does not* require it?
 
-??? note "Solution"
+    - [x] Moving a directory only renames it, so the files inside aren't touched. Copying or deleting it has to work on every file inside.
+    - [ ] `mv` always copies the files, then deletes the originals.
+    > Only when moving between two different filesystems. Within one filesystem, `mv` just renames.
+    - [ ] `mv` can't move directories.
+    > It can, and without `-r`.
+    - [ ] `-r` makes a command run faster.
+    > `-r` stands for *recursive*: it makes the command work on everything inside a directory.
+
     We mentioned previously that as far as the computer is concerned, *renaming* is the same operation as *moving*.
     Contrary to what the command's name implies, moving a file within the same filesystem is actually renaming it.
     The data on the disk stays in the same place,
@@ -998,6 +1036,7 @@ For `mv` and `cp` if the destination path (final argument) is an existing direct
 
     This is also why `mv` is faster than `cp`, as no reading of the files is required.
     The exception is moving between two different filesystems: then `mv` has to copy each file and delete the original.
+    </quiz>
 
 ## Where to keep your data
 

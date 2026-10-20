@@ -157,8 +157,10 @@ $$ {Efficiency_{time} = { Elapsed \over Requested }} $$
 
 _36 seconds_ used out of _15 minutes_ requested give a time efficiency of about _4%_
 
-!!! question "Efficiency Exercise"
-    Calculate for the job shown below,
+### Efficiency exercise
+
+??? question "Efficiency Exercise"
+    For the job shown below, calculate its CPU efficiency and memory efficiency.
 
     ```out
     JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
@@ -168,14 +170,31 @@ _36 seconds_ used out of _15 minutes_ requested give a time efficiency of about 
     37171050.extern extern               8    00:06:03    00:00.001                0  COMPLETED
     ```
 
-    a. CPU efficiency.
+    <quiz>
+    What was the CPU efficiency?
 
-    b. Memory efficiency.
+    - [x] About 48%
+    > `( 23 / ( 8 * 6 ) ) x 100`: 23 minutes of CPU time, out of 8 CPUs for 6 minutes.
+    - [ ] About 24%
+    > This uses 16 CPUs. _Alloc_ already counts both logical CPUs on each core, so use 8.
+    - [ ] About 96%
+    > That is what `seff` would report, as it counts cores, not CPUs. By the formula above, it's half that.
+    - [ ] About 383%
+    > This divides the CPU time by the walltime, but leaves out the 8 CPUs (`Alloc`).
+    </quiz>
 
-??? question "Solution"
-    a. CPU efficiency is `( 23 / ( 8 * 6 ) ) x 100` or around **48%**.
+    <quiz>
+    What was the memory efficiency?
 
-    b. Memory efficiency is `( 14 / 32 ) x 100` or around **43%**.
+    - [x] About 43%
+    > `( 14 / 32 ) x 100`: _MaxRSS_ is 14082672K, about 14GB, out of the 32GB requested.
+    - [ ] About 100%
+    > The job failed, but not because it ran out of memory: it only used about 14GB.
+    - [ ] About 4%
+    > _MaxRSS_ is in KB. 14082672K is about 14GB, not 1.4GB.
+    - [ ] About 229%
+    > This divides _ReqMem_ by _MaxRSS_. It's the other way round: memory used over memory requested.
+    </quiz>
 
 ### Using `seff`
 

@@ -101,7 +101,7 @@ You can find a list of the GPUs available on Mahuika on the [Hardware](../../Bat
 GPUs can be requested using `--gpus-per-node=TYPE:NUMBER`, for example `--gpus-per-node=a100:1` for one A100 GPU.
 See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for the GPU types and how to request each one.
 
-#### GPU job example
+### GPU job example
 
 Create a new script called `gpu-job.sl`
 
@@ -129,10 +129,17 @@ then submit with
 sbatch gpu-job.sl
 ```
 
-!!! question "Check the output"
-    Once the job has finished, check `gpu-job.out`
+??? question "Check the output"
+    <quiz>
+    Once the job has finished, check `gpu-job.out`.
+    Which GPU did your job get?
 
-??? question "Solution"
+    - [x] An NVIDIA A100
+    > The script asked for one with `--gpus-per-node a100:1`.
+    - [ ] An NVIDIA H100
+    > The script asked for an `a100`.
+    - [ ] No GPU: `nvidia-smi` found no devices.
+    > `--gpus-per-node` gives the job the GPU it asked for, so `nvidia-smi` lists it.
 
     ```sh
     cat gpu-job.out
@@ -159,6 +166,7 @@ sbatch gpu-job.sl
     |  No running processes found                                                             |
     +-----------------------------------------------------------------------------------------+
     ```
+    </quiz>
 
 ### Job arrays
 
