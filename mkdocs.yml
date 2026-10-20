@@ -98,6 +98,7 @@ plugins:
   - mkdocs_quiz:
       disable_after_submit: false
       shuffle_answers: true
+      embed_source: false
   - search
   - open-in-new-tab
   - rss:

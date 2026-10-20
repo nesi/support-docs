@@ -129,28 +129,62 @@ For the purposes of this tutorial you will be working within `{{extra.working_di
     You can cycle through your previous commands with the <kbd>↑</kbd> and <kbd>↓</kbd> keys.  
     A convenient way to repeat your last command is to type <kbd>↑</kbd> then <kbd>enter</kbd>.
 
-This quiz uses a file tree from a different computer.
-On macOS, home directories are in `/Users` rather than `/home`.
-
 <quiz>
 <p class=admonition-title>Path Resolution</p>
 
-Given the below file tree.
+Given the file tree below.
 
-![A file tree. The root directory contains Users. Users contains backup and thing. Users/backup contains original, pnas_final and pnas_sub. Users/thing contains backup, which contains 2012-12-01, 2013-01-08 and 2013-01-27.](../../assets/images/tutorial_bash_shell_ex1.svg)
+```mermaid
+---
+config:
+  flowchart:
+    curve: stepAfter
+---
+flowchart TD
+    root@{ shape: folder, label: "/" }
+    home@{ shape: folder, label: "home" }
+    username@{ shape: folder, label: "username" }
+    nesi@{ shape: folder, label: "nesi" }
+    project@{ shape: folder, label: "project" }
+    nobackup@{ shape: folder, label: "nobackup" }
+    project_code@{ shape: folder, label: "nesi99991" }
+    nobackup_code@{ shape: folder, label: "nesi99991" }
+    project_results@{ shape: folder, label: "results" }
+    nobackup_results@{ shape: folder, label: "results" }
+    plot@{ shape: doc, label: "final_plot.png" }
+    run1@{ shape: doc, label: "run1.out" }
+    run2@{ shape: doc, label: "run2.out" }
+    run3@{ shape: doc, label: "run3.out" }
+
+    root --- home
+    root --- nesi
+    home --- username
+    nesi --- project
+    nesi --- nobackup
+    project --- project_code
+    nobackup --- nobackup_code
+    project_code --- project_results
+    nobackup_code --- nobackup_results
+    project_results --- plot
+    nobackup_results --- run1
+    nobackup_results --- run2
+    nobackup_results --- run3
+```
 
 What command would you type to get the following output?
 
 ```out
-original pnas_final pnas_sub
+run1.out  run2.out  run3.out
 ```
 
 - [ ] `ls pwd`
 > `pwd` is not the name of a directory.
-- [] `ls backup`
-> `ls backup` depends on your current directory. This would be correct only if your current working directory is `Users`.
-- [X] `ls /Users/backup`
-- [ ] `ls /backup`
+- [] `ls results`
+> `ls results` depends on your current directory. This would be correct only if your current working directory is `/nesi/nobackup/nesi99991`.
+- [X] `ls /nesi/nobackup/nesi99991/results`
+- [ ] `ls /nesi/project/nesi99991/results`
+> This `results` directory is in the project directory, and contains `final_plot.png`.
+- [ ] `ls /results`
 > There is no such directory.
 
 </quiz>
@@ -503,6 +537,9 @@ Starting from `/home/amanda/data`, which of the following commands could Amanda 
 - [X] `cd ..`
 
 </quiz>
+
+This quiz uses a file tree from a different computer.
+On macOS, home directories are in `/Users` rather than `/home`.
 
 <quiz>
 <p class=admonition-title>Relative Path Resolution</p>
