@@ -100,8 +100,8 @@ It is common for nodes to connect to a shared, remote disk.
     > Technically Mahuika is a server, but not the most useful description.
     - [] A 'Node'
     > Mahuika is composed of many nodes.
-    - [x] A 'Computer'
-    - [] A way of being.
+    - [x] A 'Supercomputer'
+
     </quiz>
 
 ## Have a look around
@@ -189,69 +189,71 @@ In this example, 94 of the 124 nodes in `genoa` and `milan` are in use.
 When the cluster is busy, a new job waits in a queue until there is room for it.
 You will see this in [Submitting Your First Job](Submitting_Your_First_Job.md).
 
-## Which resource?
+## Which tool?
 
-Each of these problems is too big for a laptop in a different way.
-Which resource is each one short of?
+A cluster is not always the right tool.
+For each problem, which would you use?
 
-??? question "Out of memory"
+### Analysing data
+
+<!-- ??? question "Some biology thing"
     <quiz>
-    Your R script stops with this error:
+    Your script stops with this error:
 
     ```out
     Error: cannot allocate vector of size 40.0 Gb
     ```
 
-    - [ ] CPUs
-    > More CPUs would not help: R needs more room to hold the data.
-    - [x] Memory
+    - [x] HPC cluster
     > R needs 40 GB of memory for one object, more than most laptops have. Most Mahuika compute nodes have 384 GB or more.
-    - [ ] Disk
-    > The data has to fit in memory while R works on it, not just on disk.
-    - [ ] Time
-    > The script stopped straight away, so waiting longer would not help.
-    </quiz>
+    - [ ] Cloud resource
+    > You could rent a large enough machine, but you would be setting it up and paying for it for one script.
+    - [x] Virtual machine
+    > A virtual machine big enough for this would sit idle once the script has finished.
+    - [ ] Local laptop
+    > Most laptops do not have 40 GB of memory to give to one object.
+    </quiz> -->
 
 ??? question "Many samples"
     <quiz>
     You have 500 samples, and processing each one takes an hour on one CPU.
 
-    - [x] CPUs
+    - [x] HPC cluster
     > One after another, they would take about three weeks. Run at the same time on many CPUs, they can finish in hours. You will see how in [Parallel](Parallel.md).
-    - [ ] Memory
-    > Each sample is small enough to process on one CPU, so memory is not the problem.
-    - [ ] Disk
-    > Nothing here says the data is large.
-    - [ ] Time
-    > Each sample only takes an hour. The problem is how many there are.
+    - [ ] Cloud resource
+    > You could start many machines, but you would have to set them up and share out the work yourself. A cluster's scheduler does this for you.
+    - [ ] Virtual machine
+    > One virtual machine has a limited number of CPUs, so the samples would still mostly run one after another.
+    - [ ] Local laptop
+    > One after another, they would take about three weeks.
     </quiz>
 
-??? question "Long simulation"
+??? question "A big plot"
     <quiz>
-    Your simulation runs on one CPU and takes two weeks to finish.
+    You have a large dataset you need to plot.
 
-    - [ ] CPUs
-    > It might run faster on more CPUs, but only if the software can use them. You will see how to check in [Parallel](Parallel.md).
-    - [ ] Memory
-    > Nothing here says it needs a lot of memory.
-    - [ ] Disk
-    > Nothing here says the data is large.
-    - [x] Time
-    > A laptop would have to stay on, and awake, for two weeks. See [Job Limits](../../Batch_Computing/Job_Limits.md) for how long a job on Mahuika can run.
+    - [ ] HPC cluster
+    > You could, but logging in and moving the data there is more work than the plot.
+    - [ ] Cloud resource
+    > Nothing here needs more than your own computer.
+    - [ ] Virtual machine
+    > Nothing here needs more than your own computer.
+    - [x] Local laptop
+    > Small, quick and interactive work is easiest on your own computer.
     </quiz>
 
-??? question "Lots of data"
+??? question "Web tool"
     <quiz>
-    You have 5 TB of sequencing data to analyse.
+    You are building a web service for collecting and proccessing research data.
 
-    - [ ] CPUs
-    > You may want more CPUs later, but first the data has to fit somewhere.
-    - [ ] Memory
-    > You can analyse the data in pieces, so it does not all need to be in memory at once.
-    - [x] Disk
-    > That is more than most laptop drives hold. Each project gets 10 TB of nobackup space by default (see [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md)).
-    - [ ] Time
-    > Nothing here says the analysis is slow.
+    - [ ] HPC cluster
+    > A cluster runs batch jobs, not web services.
+    - [x] Cloud resource
+    > Cloud resources can have networks set up as required. Resources can be added as required.
+    - [ ] Virtual machine
+    > Could do, would be wasteful though.
+    - [ ] Local laptop
+    > Your laptop probably doesn't have a static IP and would need to be on always.
     </quiz>
 
 !!! keypoints
@@ -259,6 +261,7 @@ Which resource is each one short of?
     - Remote hardware must be accessed via SSH, or a dedicated web client.
     - Clusters have specialised nodes for different tasks.
     - Login nodes are shared, so heavy work belongs on the compute nodes.
+    - A cluster suits large batch work. Small interactive work is easier on a laptop, and long-running services belong in the cloud.
 
 !!! postrequisite "What Next"
     - [Bash Shell](Bash_Shell.md)
