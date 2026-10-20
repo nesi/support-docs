@@ -12,6 +12,9 @@ description: How programs use more than one CPU, and the difference between SMP 
 !!! objectives
     - Prepare a job submission script for the parallel executable.
 
+!!! prerequisite
+    - [Submitting Your First Job](Submitting_Your_First_Job.md)
+
 ## How to use multiple CPUs
 
 Requesting extra resources through Slurm only means that more resources will be available, it does not guarantee your program will be able to make use of them.
@@ -117,6 +120,9 @@ module load CUDA
 nvidia-smi
 ```
 
+!!! note "Solo learners"
+    Replace `{{config.extra.project_code}}` in the `--account` line with your project code.
+
 then submit with
 
 ```sh
@@ -171,13 +177,13 @@ If you are writing your own code, then this is something you will probably have 
 
 ## Comparing the methods
 
-| Name | Other Names | Slurm Option | Pros/cons |
-| - | - | - | - |
-| Shared Memory Parallelism | Multithreading, Multiprocessing | `--cpus-per-task` | |
-| Distributed Memory Parallelism | MPI, OpenMPI | `--ntasks` and add `srun` before command | |
-| Hybrid | | `--ntasks` and `--cpus-per-task` and add `srun` before command | |
-| Job Array | | `--array` | |
-| General Purpose GPU | | `--gpus-per-node` | |
+| Name | Other Names | Slurm Option | Pros | Cons |
+| - | - | - | - | - |
+| Shared Memory Parallelism | Multithreading, Multiprocessing | `--cpus-per-task` | All CPUs share the same memory, so no data has to be sent between them. | Limited to the CPUs and memory of a single node. |
+| Distributed Memory Parallelism | MPI, OpenMPI | `--ntasks` and add `srun` before command | Tasks can be spread across many nodes, so jobs can be much larger. | Software must be written to use MPI. Time is spent sending data between tasks, and memory use grows with the number of tasks. |
+| Hybrid | | `--ntasks` and `--cpus-per-task` and add `srun` before command | Can use many nodes, with fewer tasks to communicate between than MPI alone. | The hardest to set up, the best mix of tasks and CPUs per task has to be found by testing. |
+| Job Array | | `--array` | Scales with almost no loss of efficiency. Each job is small, so it schedules sooner. | Must be 'embarrasingly parallel' |
+| General Purpose GPU | | `--gpus-per-node` | Fast for large numbers of simple operations, such as matrix operations. | Software must be written to use GPUs |
 
 !!! keypoints
     - Parallel programming allows applications to take advantage of parallel hardware; serial code will not 'just work.'
