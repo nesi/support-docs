@@ -14,6 +14,9 @@ status: tutorial
     - Load and use a software package.
     - Explain how the shell environment changes when the module mechanism loads packages.
 
+!!! prerequisite
+    - [Bash Shell](Bash_Shell.md)
+
 On a high-performance computing system, it is seldom the case that the software we want to use is available when we log in. It is installed, but we will need to "load" it before it can run.
 
 Before we start using individual software packages, however, we should understand the reasoning behind this approach.
