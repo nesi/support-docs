@@ -217,12 +217,11 @@ squeue --me
 ```
 
 ```out
-            JOBID PARTITION PRIORITY            NAME             USER ST          START_TIME NOD CPUS   FEATURES               REASON    TIME_LEFT
-           231964 genoa,mil      302     example_job         username PD                 N/A   1    1    sml|med             Priority        15:00
+JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)
+231964        username nesi99991 example_job    1    300M milan,g N/A                15:00 PENDING  (Priority)
 ```
 
-We can see many details about our job, most importantly its state (`ST`).
-`squeue` shows the state as a short code, such as `PD` for pending or `R` for running.
+We can see many details about our job, most importantly its state (`STATE`).
 The most common states you might see are:
 
 - `PENDING`: The job is waiting in the queue, likely waiting for resources to free up or higher priority jobs to run.
@@ -255,7 +254,7 @@ squeue --me
 ```
 
 ```out
-            JOBID PARTITION PRIORITY            NAME             USER ST          START_TIME NOD CPUS   FEATURES               REASON    TIME_LEFT
+JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)
 ```
 
 (If it isn’t wait a few seconds and try again).
@@ -292,11 +291,11 @@ sacct
 ```
 
 ```out
-       JobID                              JobName Timelimit   Elapsed  TotalCPU Al NT     ReqMem     MaxRSS        State         NodeList
------------- ------------------------------------ --------- --------- --------- -- -- ---------- ---------- ------------ ----------------
-      231964                          example_job  00:15:00  00:00:30 00:28.845  2          300M            CANCELLED b+             c001
-231964.batch                                batch            00:00:31 00:28.845  2  1               107204K    CANCELLED             c001
-231964.exte+                               extern            00:00:33  00:00:00  2  1                          COMPLETED             c001
+JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
+--------------- ---------------- ----- ----------- ------------ ------- -------- ----------
+231964          example_job          2    00:00:21    00:16.892    300M          CANCELLED+
+231964.batch    batch                2    00:00:22    00:16.892           64352K CANCELLED
+231964.extern   extern               2    00:00:23     00:00:00                  COMPLETED
 ```
 
 Our job has three lines, because each job step is also shown.
@@ -304,7 +303,7 @@ This can be suppressed using the flag `-X`.
 The jobs from the exercise above will also be listed, with one line each if you cancelled them before they started.
 
 A `+` at the end of a value means it was cut off to fit the column.
-For example, `CANCELLED b+` is `CANCELLED by` followed by the number of the user who cancelled it.
+For example, `CANCELLED+` is `CANCELLED by` followed by the number of the user who cancelled it.
 
 !!! info "Where's the output?"
     On the login node, when we ran the bash script, the output was printed to the terminal.

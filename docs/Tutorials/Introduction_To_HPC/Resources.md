@@ -14,6 +14,9 @@ description: Choosing how many CPUs a job needs, and measuring what it actually 
     - Understand job size implications.
     - Understand problems and limitations involved in using multiple CPUs.
 
+!!! prerequisite
+    - [Parallel](Parallel.md)
+
 ## What Resources?
 
 Last time we submitted a job, we did not specify a number of CPUs, and therefore
@@ -56,11 +59,11 @@ Checking on our job with `sacct`.
 Oh no!
 
 ```out
-       JobID                              JobName Timelimit   Elapsed  TotalCPU Al NT     ReqMem     MaxRSS        State         NodeList
------------- ------------------------------------ --------- --------- --------- -- -- ---------- ---------- ------------ ----------------
-    23137702                          example_job  00:15:00  00:00:36 00:52.908  8          300M            OUT_OF_MEMO+             c019
-23137702.ba+                                batch            00:00:36 00:52.908  8  1               267988K OUT_OF_MEMO+             c019
-23137702.ex+                               extern            00:00:36  00:00:00  8  1                          COMPLETED             c019
+JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
+--------------- ---------------- ----- ----------- ------------ ------- -------- ----------
+23137702        example_job          8    00:00:36    00:52.908    300M          OUT_OF_ME+
+23137702.batch  batch                8    00:00:36    00:52.908          267988K OUT_OF_ME+
+23137702.extern extern               8    00:00:36     00:00:00                  COMPLETED
 ```
 
 ## Too Little or Too Much
@@ -106,7 +109,7 @@ Below is a table of common resources and issues you may face if you do not reque
 ## Measuring Resource Usage of a Finished Job
 
 Since we have already run a job (successful or otherwise), this is the best source of info we currently have.
-If we check the status of our finished job using the `sacct` command we learned earlier.
+Let's look again at the `sacct` output for the job that ran out of memory:
 
 ```sh
 sacct
@@ -115,10 +118,12 @@ sacct
 ```out
 JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
 --------------- ---------------- ----- ----------- ------------ ------- -------- ----------
-31060451        example_job.sl       2    00:00:48    00:33.548      1G          CANCELLED
-31060451.batch  batch                2    00:00:48    00:33.547          102048K CANCELLED
-31060451.extern extern               2    00:00:48     00:00:00                0 CANCELLED
+23137702        example_job          8    00:00:36    00:52.908    300M          OUT_OF_ME+
+23137702.batch  batch                8    00:00:36    00:52.908          267988K OUT_OF_ME+
+23137702.extern extern               8    00:00:36     00:00:00                  COMPLETED
 ```
+
+### Calculating efficiency
 
 With this information, we may determine a couple of things.
 
@@ -126,7 +131,8 @@ Memory efficiency can be determined by comparing _ReqMem_ (requested memory) wit
 
 $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
 
-So for the above example we see that _0.1GB_ (102048K) of our requested _1GB_ meaning the memory efficiency was about _10%_.
+So for the above example we see that _262MB_ (267988K) of our requested _300MB_ was used, meaning the memory efficiency was about _87%_.
+The job still ran out of memory: by default Slurm only records memory use every 30 seconds, so _MaxRSS_ can miss the peak.
 
 CPU efficiency can be determined by comparing _TotalCPU_ (CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to _Alloc_ (number of allocated CPUs) multiplied by _Elapsed_ (Walltime, actual time passed).
 
@@ -134,9 +140,9 @@ $$
 {Efficiency_{cpu} = { TotalCPU \over {Elapsed \times Alloc}}}
 $$
 
-For the above example _33 seconds_ of computation was done,
+For the above example _53 seconds_ of computation was done,
 
-where the maximum possible computation time was **96 seconds** (_2 CPUs_ multiplied by _48 seconds_), meaning the CPU efficiency was about _35%_.
+where the maximum possible computation time was **288 seconds** (_8 CPUs_ multiplied by _36 seconds_), meaning the CPU efficiency was about _18%_.
 
 !!! note "Alloc counts two CPUs per core"
     Each core on Mahuika has two logical CPUs, and _Alloc_ counts both, although by default your job only uses one of them
@@ -149,7 +155,7 @@ Time Efficiency is simply the _Elapsed Time_ divided by _Time Requested_.
 
 $$ {Efficiency_{time} = { Elapsed \over Requested }} $$
 
-_48 seconds_ used out of _15 minutes_ requested give a time efficiency of about _5%_
+_36 seconds_ used out of _15 minutes_ requested give a time efficiency of about _4%_
 
 !!! question "Efficiency Exercise"
     Calculate for the job shown below,
@@ -202,6 +208,8 @@ sbatch example_job.sl
 ```
 
 Now that we've requested more memory, this one should complete successfully.
+Once it has finished, check its _MaxRSS_ with `sacct` or `seff`, and note it down.
+You will use it to estimate how much memory to request in [Scaling](Scaling.md).
 
 ### Simultaneous Multithreading (SMT)
 
@@ -224,15 +232,19 @@ The most reliable way to check current system stats is with `htop`.
 ### Finding your job
 
 Before we can check on our job, we need its job ID, which is in the `JOBID` column of `squeue --me`.
-The job must be running, shown as `R` in the `ST` column.
+The job must be running, shown as `RUNNING` in the `STATE` column.
+
+!!! note "Job length"
+    `example_job.sl` runs for less than a minute once it starts, so it has probably finished by now.
+    Submit it again with `sbatch example_job.sl`, and run the commands below as soon as it is running.
 
 ```sh
 squeue --me
 ```
 
 ```out
-            JOBID PARTITION PRIORITY            NAME             USER ST          START_TIME NOD CPUS   FEATURES               REASON    TIME_LEFT
-         26763045     genoa      309     example_job         username  R        Oct 19 14:32   1    8        sml                 None        14:56
+JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)
+26763045      username nesi99991 example_job    8   1200M milan   Oct 20 16:13       14:56 RUNNING  mc093
 ```
 
 Now we can use `svisit` to run `htop` _on the node where the job is running_.
@@ -346,9 +358,11 @@ If you know someone who has used the software before, they may be able to give y
 
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
-!!! postrequisite "Next Steps"
+!!! postrequisite "What Next"
     You can use this knowledge to set up the next job with a closer estimate of its load on the system.
     A good general rule is to ask the scheduler for **30%** more time and memory than you expect the job to need.
+
+    - [Scaling](Scaling.md)
 
 !!! keypoints
     - As your task gets larger, so does the potential for inefficiencies.

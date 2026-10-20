@@ -176,13 +176,15 @@ sinfo
 ```
 
 ```out
-PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
-genoa        up 21-00:00:0        59/3/2/64 c[001-044],g[01-12],l[01-08]
-milan        up 21-00:00:0        62/4/0/66 mc[046-100],mg[13-19],ml[09-12]
+PARTITION     AVAIL   TIMELIMIT    S:C:T MEMORY   NODES(A/I) NODELIST
+genoa         up    21-00:00:00   2:84:2 366694+  30/28      c[001-044],g[01-12],l[01-08]
+milan         up    21-00:00:00  4+:6+:2 491520+  64/2       mc[046-100],mg[13-19],ml[09-12]
+hugemem       up    21-00:00:00 2+:20+:2 1469012+ 1/1        cl[17-19]
+maintenance   up    21-00:00:00  2+:6+:2 366694+  95/31      c[001-044],cl[17-19],g[01-12],l[01-08],mc[046-100],mg[13-19],ml[09-12]
 ```
 
-The `NODES(A/I/O/T)` column counts the nodes that are allocated (in use), idle, other (for example, down for maintenance), and the total.
-In this example, 121 of the 130 nodes are in use.
+The `NODES(A/I)` column counts the nodes that are allocated (in use) and idle.
+In this example, 94 of the 124 nodes in `genoa` and `milan` are in use.
 When the cluster is busy, a new job waits in a queue until there is room for it.
 You will see this in [Submitting Your First Job](Submitting_Your_First_Job.md).
 
