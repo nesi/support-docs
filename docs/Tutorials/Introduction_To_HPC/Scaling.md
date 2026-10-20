@@ -12,6 +12,9 @@ tags:
 !!! objectives
     - Understand scaling procedure.
 
+!!! prerequisite
+    - [Resources](Resources.md)
+
 The aim of these tests will be to establish how a jobs requirements change with size (CPUs, inputs) and ultimately figure out the best way to run your jobs.
 Unfortunately we cannot assume speedup will be linear (e.g. double CPUs won't usually half runtime, doubling the size of your input data won't necessarily double runtime) therefore more testing is required. This is called *scaling testing*.
 
@@ -41,7 +44,7 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     1. Find your name in the [spreadsheet]({{ config.extra.exercise }}) and modify your `example_job.sl` to request
     "x" `--cpus-per-task`.
     For example `#SBATCH --cpus-per-task 10`.
-    2. Estimate memory requirement based on our previous runs and the cpus requested, memory
+    2. Estimate memory requirement based on the *MaxRSS* of the job that completed in [Resources](Resources.md) and the cpus requested, memory
     is specified with the `--mem ` flag, it does not accept decimal values, however you may
     specify a unit (`K`|`M`|`G`), if no unit is specified it is assumed to be `M`.
     For example `#SBATCH --mem 1200`.
@@ -64,3 +67,9 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     - Start small.
     - Test one thing at a time (unit tests).
     - Record everything.
+
+!!! postrequisite "What Next"
+    This is the last lesson in this series. To keep going:
+
+    - [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
+    - [Job Limits](../../Batch_Computing/Job_Limits.md)
