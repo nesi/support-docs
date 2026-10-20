@@ -22,17 +22,7 @@ we were provided the default of `2` (1 _core_).
 As a reminder, our Slurm script `example_job.sl` currently looks like this.
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           300M
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_2.sl"
 ```
 
 We will now submit the same job again with more CPUs.
@@ -40,18 +30,7 @@ We ask for more CPUs by adding `#SBATCH --cpus-per-task 4` to our script.
 Your script should now look like this:
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           300M
-#SBATCH --cpus-per-task 4
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_3.sl"
 ```
 
 And then submit using `sbatch` as we did before.
@@ -215,18 +194,7 @@ Replace `23137702` with your job ID.
 Knowing what we do now about job efficiency, let's submit the previous job again, this time requesting enough memory to actually cover it:
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           1200M
-#SBATCH --cpus-per-task 4
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_4.sl"
 ```
 
 ```sh

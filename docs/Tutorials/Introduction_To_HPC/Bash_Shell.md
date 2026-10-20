@@ -531,8 +531,8 @@ pressing <kbd>Tab</kbd> (the tab key on your keyboard) completes it for you.
     ASSETS=https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets
     mkdir -p {{ config.extra.working_directory|join('/') }}/birds
     cd {{ config.extra.working_directory|join('/') }}/birds
-    wget ${ASSETS}/workshop/birds/{kaka.txt,kea.txt}
-    wget ${ASSETS}/workshop/birds/{kakapo.jpeg,kiwi.jpeg,pukeko.jpeg}
+    wget ${ASSETS}/workshops/introhpc/birds/{kaka.txt,kea.txt}
+    wget ${ASSETS}/workshops/introhpc/birds/{kakapo.jpeg,kiwi.jpeg,pukeko.jpeg}
     cd -
     ```
 
@@ -819,7 +819,7 @@ We will be copying the file into the directory we made previously. As this shoul
 
     ```sh
     ASSETS=https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets
-    wget ${ASSETS}/workshop/{{extra.example_script}}
+    wget ${ASSETS}/workshops/introhpc/{{extra.example_script}}
     ```
 
 ```sh
@@ -860,11 +860,7 @@ head -n 5 {{extra.example_script}}
 ```
 
 ```out
-#!/usr/bin/env Rscript
-
-# Function for shared memory execution
-doTask <- function(size_x, size_y, seed, print_progress) {
-    suppressPackageStartupMessages(library(doParallel))
+--8<-- "docs/assets/workshops/introhpc/sum_matrix.r:1:5"
 ```
 
 ### Copy, move and remove

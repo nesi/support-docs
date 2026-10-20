@@ -62,12 +62,7 @@ nano example_job.sh
 
 <!-- TODO: change this script to not require another file -->
 ```sh
-#!/bin/bash -e
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_1.sh"
 ```
 
 !!! info "shebang"
@@ -184,17 +179,7 @@ nano example_job.sl
 And add a Slurm header after the shebang, so the whole script looks like this:
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           300M
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_2.sl"
 ```
 
 `--time 00:15:00` asks for 15 minutes (`HH:MM:SS`), and `--mem 300M` for 300 megabytes of memory.
