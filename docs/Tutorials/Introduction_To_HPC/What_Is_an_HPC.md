@@ -14,6 +14,13 @@ tags:
     - Describe key components of cluster architecture.
     - Run your first commands on the cluster.
 
+!!! prerequisite
+    - A Mahuika account, see [Creating an Account](../../Getting_Started/Creating_an_Account.md).
+    - Membership of an active project. If you are attending a workshop, you will be added to a training project.
+      Otherwise, [join an existing project](../../Getting_Started/Projects/Applying_to_Join_a_Project.md)
+      or [apply for a new one](../../Getting_Started/Projects/Applying_for_a_New_Project.md).
+    - A way to log in, see [Connecting to the Cluster](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
+
 ## What is an HPC system?
 
 The words "cloud", "cluster", and the phrase "high-performance computing" or
@@ -39,6 +46,7 @@ We will generally use 'cluster'.
 
 You will connect to a cluster over the internet either with a web client ([OnDemand](../../Interactive_Computing/OnDemand/OnDemand_Overview.md)) or with [SSH (Secure Shell)](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
 Your main interface with the cluster will be using command line.
+Log in now, so you can run the commands in this lesson. If you use OnDemand, open a terminal from it.
 
 ## Nodes
 
