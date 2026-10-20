@@ -17,6 +17,9 @@ tags:
     - Use wildcards to work with several files at once.
     - Check how much storage you are using.
 
+!!! prerequisite
+    - [What Is an HPC](What_Is_an_HPC.md)
+
 !!! info "The Unix Shell"
     This episode will be a quick introduction to the Unix shell, only the bare minimum required to use the cluster.
     The Software Carpentry '[Unix Shell](https://swcarpentry.github.io/shell-novice/)' lesson covers the subject in more depth, we recommend you check it out.
@@ -89,21 +92,22 @@ Organising things hierarchically in this way helps us keep track of our work: it
 
 To list the contents of a directory, we use the command `ls` (short for 'list') followed by the path to the directory whose contents we want listed.
 
-??? note "Solo learners"
+!!! note "Solo learners"
     This tutorial series was originally written for a live workshop, where every attendee
     was added to a shared training project (`nesi99991`) with a working directory already
     created for them, already containing the files used in later exercises.
 
-    If you're working through this on your own, you won't have access to `nesi99991`.
-    Everywhere these lessons use `{{extra.working_directory[0]}}/{{extra.working_directory[1]}}`
-    (including the `--account` line in later Slurm scripts), substitute your own project's
-    code.
+    If you're working through this on your own, you won't have access to `nesi99991`, so use one of your own projects instead.
 
+    Everywhere these lessons use `nesi99991`, in paths such as `{{extra.working_directory[0]}}/{{extra.working_directory[1]}}`
+    and in the `--account` line of the Slurm scripts, use your project code instead.
     For the next exercise you will need to run:
 
     ```sh
     mkdir -p {{extra.working_directory[0]}}/{{extra.working_directory[1]}}
     ```
+
+    Replace `nesi99991` with your project code.
 
     When you have to download the additional files, they will be called out in blocks like this.
 
@@ -529,12 +533,12 @@ pressing <kbd>Tab</kbd> (the tab key on your keyboard) completes it for you.
 
     ```sh
     ASSETS=https://raw.githubusercontent.com/nesi/support-docs/main/docs/assets
-    mkdir -p {{ config.extra.working_directory|join('/') }}/birds
-    cd {{ config.extra.working_directory|join('/') }}/birds
-    wget ${ASSETS}/workshops/introhpc/birds/{kaka.txt,kea.txt}
-    wget ${ASSETS}/workshops/introhpc/birds/{kakapo.jpeg,kiwi.jpeg,pukeko.jpeg}
-    cd -
+    wget -P {{ config.extra.working_directory|join('/') }}/birds \
+        ${ASSETS}/workshops/introhpc/birds/{kaka,kea}.txt \
+        ${ASSETS}/workshops/introhpc/birds/{kakapo,kiwi,pukeko}.jpeg
     ```
+
+    Replace `nesi99991` with your project code.
 
 Next to your own directory is a directory called `birds`.
 From your own directory, type the following, but don't press <kbd>Enter</kbd> yet:
