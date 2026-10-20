@@ -317,5 +317,5 @@
             "priority": 0
         }
     },
-    "slurm_version": "25.05.8"
+    "slurm_version": "26.05.5"
 }
