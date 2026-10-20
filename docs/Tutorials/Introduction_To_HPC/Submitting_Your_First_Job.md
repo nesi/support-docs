@@ -53,6 +53,10 @@ Let's try this now. First, move into the directory where you copied `sum_matrix.
 cd {{ config.extra.working_directory|join('/') }}/$USER
 ```
 
+!!! note "Solo learners"
+    If you are working through this on your own, replace `nesi99991` with your project code,
+    here and in the `--account` line of the Slurm scripts below.
+
 Then create and open a new file called `example_job.sh`.
 (If you prefer another text editor than `nano`, feel free to use that)
 
@@ -183,6 +187,11 @@ And add a Slurm header after the shebang, so the whole script looks like this:
 ```
 
 `--time 00:15:00` asks for 15 minutes (`HH:MM:SS`), and `--mem 300M` for 300 megabytes of memory.
+
+!!! note "Solo learners"
+    Replace `nesi99991` in the `--account` line with your project code.
+    If you submit a job to a project you are not a member of, it fails with
+    `Invalid account or account/partition combination specified`.
 
 Now, rather than running our script with `bash` we submit it to the scheduler using the command `sbatch` (short for 'Slurm batch').
 
