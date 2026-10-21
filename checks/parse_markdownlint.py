@@ -7,6 +7,7 @@ annotations.
 
 import json
 import os
+import re
 import sys
 
 if sys.stdin.isatty():
@@ -40,9 +41,35 @@ NOTICE_RULES = {
     "MD060",  # Table column style
 }
 
+# Rules that quiz syntax (mkdocs-quiz) breaks by design: each answer is followed directly by its '> feedback'.
+QUIZ_SKIP_RULES = {"MD032"}  # Lists should be surrounded by blank lines
+
+_quiz_ranges = {}
+
+
+def in_quiz(file_name, line_number):
+    """True if the line is between <quiz> and </quiz>."""
+    if file_name not in _quiz_ranges:
+        ranges, start = [], None
+        try:
+            with open(file_name, encoding="utf8") as f:
+                for i, line in enumerate(f, start=1):
+                    if re.match(r"^\s*<quiz>", line):
+                        start = i
+                    elif re.match(r"^\s*</quiz>", line) and start:
+                        ranges.append((start, i))
+                        start = None
+        except OSError:
+            pass
+        _quiz_ranges[file_name] = ranges
+    return any(a <= line_number <= b for a, b in _quiz_ranges[file_name])
+
+
 warnings = 0
 for m in findings:
     rule = m["ruleNames"][0]
+    if rule in QUIZ_SKIP_RULES and in_quiz(m["fileName"], m["lineNumber"]):
+        continue
     detail = m.get("errorDetail") or m.get("errorContext") or m["ruleDescription"]
     level = "notice" if rule in NOTICE_RULES else "warning"
     # A single trailing space is invisible, but two or more render as a line break.

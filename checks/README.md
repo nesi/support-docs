@@ -19,6 +19,7 @@ By default every check exits `0` whatever it reports. Set `CHECKS_STRICT=1` to m
 *This linter is defined in [run_spell_check.py](run_spell_check.py) script.*
 
 Spellcheck pipeline settings can be modified in [.spellcheck.yml](../.spellcheck.yml).
+Code (fenced and inline), macros, link targets and key names (`<kbd>Ctrl</kbd>`) are not checked.
 
 List of custom words can be found in [dictionary.txt](../docs/assets/glossary/dictionary.txt),
 however you **should not edit this manually**, see [adding-words-to-dictionary](../docs/CONTRIBUTING.md#adding-words-to-dictionary).
@@ -34,7 +35,7 @@ the typo is probably occuring elsewhere in the text in a valid context, fix it h
 
 *This linter is defined in [run_proselint.py](run_proselint.py) script.*
 
-Checks text follows best practice for English language. Fenced code blocks are skipped.
+Checks text follows best practice for English language. Code blocks and inline code are skipped.
 
 Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json).
 
@@ -57,6 +58,9 @@ Checks markdown for compliance against general [best practice rules](https://git
 
 Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlint.json)
 
+[parse_markdownlint.py](parse_markdownlint.py) skips MD032 (blank lines around lists) inside `<quiz>` blocks,
+as the quiz syntax puts each answer's `> feedback` straight after it.
+
 ### Meta Checks
 
 *This linter is defined in [run_meta_check.py](run_meta_check.py) script.*
@@ -65,6 +69,8 @@ Custom checks for page structure: front matter, titles, tags, nav, headings, sec
 Rules about the words on a page are in [Prose Lint](#prose-lint).
 
 See script for details.
+
+`code_line_length` is a notice rather than a warning in `out` and `txt` blocks, as real command output can't be rewrapped.
 
 Admonitions (`!!!`, `???`) and content tabs (`===`) are checked here, not by markdownlint, which only understands CommonMark.
 A body indented less than 4 spaces renders as an empty box without any build warning, so `admonition_structure` looks for that,
