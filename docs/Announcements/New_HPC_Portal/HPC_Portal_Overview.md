@@ -15,8 +15,8 @@ The portal is built on [Waldur](https://docs.waldur.com/latest/user-guide/).
 ## Log in
 
 1. Go to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz).
-2. Click **Sign in with REANNZ**.
-    ![Sign in with REANNZ button](../../assets/images/HPC_Portal_sign_in_with_reannz.png)
+2. Click **Sign in with Tuakiri**.
+    ![Sign in with Tuakiri button](../../assets/images/HPC_Portal_sign_in_with_reannz.png)
 3. Choose your home institution and log in with your institutional credentials.
    This login goes through Tuakiri, the same as for my.nesi.org.nz.
 
