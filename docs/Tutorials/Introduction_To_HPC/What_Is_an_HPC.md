@@ -14,6 +14,13 @@ tags:
     - Describe key components of cluster architecture.
     - Run your first commands on the cluster.
 
+!!! prerequisite
+    - A Mahuika account, see [Creating an Account](../../Getting_Started/Creating_an_Account.md).
+    - Membership of an active project. If you are attending a workshop, you will be added to a training project.
+      Otherwise, [join an existing project](../../Getting_Started/Projects/Applying_to_Join_a_Project.md)
+      or [apply for a new one](../../Getting_Started/Projects/Applying_for_a_New_Project.md).
+    - A way to log in, see [Connecting to the Cluster](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
+
 ## What is an HPC system?
 
 The words "cloud", "cluster", and the phrase "high-performance computing" or
@@ -39,6 +46,7 @@ We will generally use 'cluster'.
 
 You will connect to a cluster over the internet either with a web client ([OnDemand](../../Interactive_Computing/OnDemand/OnDemand_Overview.md)) or with [SSH (Secure Shell)](../../Getting_Started/Accessing_the_HPCs/Connecting_to_the_Cluster.md).
 Your main interface with the cluster will be using command line.
+Log in now, so you can run the commands in this lesson. If you use OnDemand, open a terminal from it.
 
 ## Nodes
 
@@ -80,20 +88,21 @@ It is common for nodes to connect to a shared, remote disk.
     More information on using Globus for large data transfer to and from the cluster can be found on the
     [Globus Transfer Service](../../Data_Transfer/Globus/Globus_Overview.md) page.
 
-<quiz>
-Mahuika is...
+??? question "What is Mahuika?"
+    <quiz>
+    Mahuika is...
 
-- [x] A 'High Performance Computer'.
-- [x] A 'Cluster'
-- [] A 'Cloud'
-> Mahuika is not a cloud resource, however [RDC](../../Service_Subscriptions/Research_Developer_Cloud/User_Guides.md) is.
-- [x] A 'Remote Server'
-> Technically Mahuika is a server, but not the most useful description.
-- [] A 'Node'
-> Mahuika is composed of many nodes.
-- [x] A 'Computer'
-- [] A way of being.
-</quiz>
+    - [x] A 'High Performance Computer'.
+    - [x] A 'Cluster'
+    - [] A 'Cloud'
+    > Mahuika is not a cloud resource, however [RDC](../../Service_Subscriptions/Research_Developer_Cloud/User_Guides.md) is.
+    - [x] A 'Remote Server'
+    > Technically Mahuika is a server, but not the most useful description.
+    - [] A 'Node'
+    > Mahuika is composed of many nodes.
+    - [x] A 'Supercomputer'
+
+    </quiz>
 
 ## Have a look around
 
@@ -168,90 +177,89 @@ sinfo
 ```
 
 ```out
-PARTITION AVAIL  TIMELIMIT   NODES(A/I/O/T) NODELIST
-genoa        up 21-00:00:0        59/3/2/64 c[001-044],g[01-12],l[01-08]
-milan        up 21-00:00:0        62/4/0/66 mc[046-100],mg[13-19],ml[09-12]
+PARTITION     AVAIL   TIMELIMIT    S:C:T MEMORY   NODES(A/I) NODELIST
+genoa         up    21-00:00:00   2:84:2 366694+  30/28      c[001-044],g[01-12],l[01-08]
+milan         up    21-00:00:00  4+:6+:2 491520+  64/2       mc[046-100],mg[13-19],ml[09-12]
+hugemem       up    21-00:00:00 2+:20+:2 1469012+ 1/1        cl[17-19]
+maintenance   up    21-00:00:00  2+:6+:2 366694+  95/31      c[001-044],cl[17-19],g[01-12],l[01-08],mc[046-100],mg[13-19],ml[09-12]
 ```
 
-The `NODES(A/I/O/T)` column counts the nodes that are allocated (in use), idle, other (for example, down for maintenance), and the total.
-In this example, 121 of the 130 nodes are in use.
+The `NODES(A/I)` column counts the nodes that are allocated (in use) and idle.
+In this example, 94 of the 124 nodes in `genoa` and `milan` are in use.
 When the cluster is busy, a new job waits in a queue until there is room for it.
 You will see this in [Submitting Your First Job](Submitting_Your_First_Job.md).
 
-## Which resource?
+## Which tool?
 
-Each of these problems is too big for a laptop in a different way.
-Which resource is each one short of?
+A cluster is not always the right tool.
+For each problem, which would you use?
 
-<quiz>
-<p class=admonition-title>Out of memory</p>
+<!-- ??? question "Some biology thing"
+    <quiz>
+    Your script stops with this error:
 
-Your R script stops with this error:
+    ```out
+    Error: cannot allocate vector of size 40.0 Gb
+    ```
 
-```out
-Error: cannot allocate vector of size 40.0 Gb
-```
+    - [x] HPC cluster
+    > R needs 40 GB of memory for one object, more than most laptops have. Most Mahuika compute nodes have 384 GB or more.
+    - [ ] Cloud resource
+    > You could rent a large enough machine, but you would be setting it up and paying for it for one script.
+    - [x] Virtual machine
+    > A virtual machine big enough for this would sit idle once the script has finished.
+    - [ ] Local laptop
+    > Most laptops do not have 40 GB of memory to give to one object.
+    </quiz> -->
 
-- [ ] CPUs
-> More CPUs would not help: R needs more room to hold the data.
-- [x] Memory
-> R needs 40 GB of memory for one object, more than most laptops have. Most Mahuika compute nodes have 384 GB or more.
-- [ ] Disk
-> The data has to fit in memory while R works on it, not just on disk.
-- [ ] Time
-> The script stopped straight away, so waiting longer would not help.
-</quiz>
+??? question "Many samples"
+    <quiz>
+    You have 500 samples, and processing each one takes an hour on one CPU.
 
-<quiz>
-<p class=admonition-title>Many samples</p>
+    - [x] HPC cluster
+    > One after another, they would take about three weeks. Run at the same time on many CPUs, they can finish in hours. You will see how in [Parallel](Parallel.md).
+    - [ ] Cloud resource
+    > You could start many machines, but you would have to set them up and share out the work yourself. A cluster's scheduler does this for you.
+    - [ ] Virtual machine
+    > One virtual machine has a limited number of CPUs, so the samples would still mostly run one after another.
+    - [ ] Local laptop
+    > One after another, they would take about three weeks.
+    </quiz>
 
-You have 500 samples, and processing each one takes an hour on one CPU.
+??? question "A big plot"
+    <quiz>
+    You have a large dataset you need to plot.
 
-- [x] CPUs
-> One after another, they would take about three weeks. Run at the same time on many CPUs, they can finish in hours. You will see how in [Parallel](Parallel.md).
-- [ ] Memory
-> Each sample is small enough to process on one CPU, so memory is not the problem.
-- [ ] Disk
-> Nothing here says the data is large.
-- [ ] Time
-> Each sample only takes an hour. The problem is how many there are.
-</quiz>
+    - [ ] HPC cluster
+    > You could, but logging in and moving the data there is more work than the plot.
+    - [ ] Cloud resource
+    > Nothing here needs more than your own computer.
+    - [ ] Virtual machine
+    > Nothing here needs more than your own computer.
+    - [x] Local laptop
+    > Small, quick and interactive work is easiest on your own computer.
+    </quiz>
 
-<quiz>
-<p class=admonition-title>Long simulation</p>
+??? question "Web tool"
+    <quiz>
+    You are building a web service for collecting and proccessing research data.
 
-Your simulation runs on one CPU and takes two weeks to finish.
-
-- [ ] CPUs
-> It might run faster on more CPUs, but only if the software can use them. You will see how to check in [Parallel](Parallel.md).
-- [ ] Memory
-> Nothing here says it needs a lot of memory.
-- [ ] Disk
-> Nothing here says the data is large.
-- [x] Time
-> A laptop would have to stay on, and awake, for two weeks. See [Job Limits](../../Batch_Computing/Job_Limits.md) for how long a job on Mahuika can run.
-</quiz>
-
-<quiz>
-<p class=admonition-title>Lots of data</p>
-
-You have 5 TB of sequencing data to analyse.
-
-- [ ] CPUs
-> You may want more CPUs later, but first the data has to fit somewhere.
-- [ ] Memory
-> You can analyse the data in pieces, so it does not all need to be in memory at once.
-- [x] Disk
-> That is more than most laptop drives hold. Each project gets 10 TB of nobackup space by default (see [Filesystems and Quotas](../../Storage/Filesystems_and_Quotas.md)).
-- [ ] Time
-> Nothing here says the analysis is slow.
-</quiz>
+    - [ ] HPC cluster
+    > A cluster runs batch jobs, not web services.
+    - [x] Cloud resource
+    > Cloud resources can have networks set up as required. Resources can be added as required.
+    - [ ] Virtual machine
+    > Could do, would be wasteful though.
+    - [ ] Local laptop
+    > Your laptop probably doesn't have a static IP and would need to be on always.
+    </quiz>
 
 !!! keypoints
     - A 'cluster' describes a particular architecture of HPC.
     - Remote hardware must be accessed via SSH, or a dedicated web client.
     - Clusters have specialised nodes for different tasks.
     - Login nodes are shared, so heavy work belongs on the compute nodes.
+    - A cluster suits large batch work. Small interactive work is easier on a laptop, and long-running services belong in the cloud.
 
 !!! postrequisite "What Next"
     - [Bash Shell](Bash_Shell.md)

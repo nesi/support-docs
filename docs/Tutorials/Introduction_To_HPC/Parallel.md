@@ -12,6 +12,9 @@ description: How programs use more than one CPU, and the difference between SMP 
 !!! objectives
     - Prepare a job submission script for the parallel executable.
 
+!!! prerequisite
+    - [Submitting Your First Job](Submitting_Your_First_Job.md)
+
 ## How to use multiple CPUs
 
 Requesting extra resources through Slurm only means that more resources will be available, it does not guarantee your program will be able to make use of them.
@@ -42,7 +45,7 @@ _Python: [Multiprocessing](https://docs.python.org/3/library/multiprocessing.htm
 
 _MATLAB: [`parpool`](https://au.mathworks.com/help/parallel-computing/parpool.html)_
 
-## Methods of parallel computing
+## Types of parallelism
 
 To understand the different types of Parallel Computing we first need to clarify some terms.
 
@@ -98,7 +101,7 @@ You can find a list of the GPUs available on Mahuika on the [Hardware](../../Bat
 GPUs can be requested using `--gpus-per-node=TYPE:NUMBER`, for example `--gpus-per-node=a100:1` for one A100 GPU.
 See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for the GPU types and how to request each one.
 
-#### GPU job example
+### GPU job example
 
 Create a new script called `gpu-job.sl`
 
@@ -117,16 +120,26 @@ module load CUDA
 nvidia-smi
 ```
 
+!!! note "Solo learners"
+    Replace `{{config.extra.project_code}}` in the `--account` line with your project code.
+
 then submit with
 
 ```sh
 sbatch gpu-job.sl
 ```
 
-!!! question "Check the output"
-    Once the job has finished, check `gpu-job.out`
+??? question "Check the output"
+    <quiz>
+    Once the job has finished, check `gpu-job.out`.
+    Which GPU did your job get?
 
-??? question "Solution"
+    - [x] An NVIDIA A100
+    > The script asked for one with `--gpus-per-node a100:1`.
+    - [ ] An NVIDIA H100
+    > The script asked for an `a100`.
+    - [ ] No GPU: `nvidia-smi` found no devices.
+    > `--gpus-per-node` gives the job the GPU it asked for, so `nvidia-smi` lists it.
 
     ```sh
     cat gpu-job.out
@@ -153,6 +166,7 @@ sbatch gpu-job.sl
     |  No running processes found                                                             |
     +-----------------------------------------------------------------------------------------+
     ```
+    </quiz>
 
 ### Job arrays
 
@@ -169,15 +183,15 @@ A job array can be specified using `--array`
 
 If you are writing your own code, then this is something you will probably have to specify yourself.
 
-## Summary
+## Comparing the methods
 
-| Name | Other Names | Slurm Option | Pros/cons |
-| - | - | - | - |
-| Shared Memory Parallelism | Multithreading, Multiprocessing | `--cpus-per-task` | |
-| Distributed Memory Parallelism | MPI, OpenMPI | `--ntasks` and add `srun` before command | |
-| Hybrid | | `--ntasks` and `--cpus-per-task` and add `srun` before command | |
-| Job Array | | `--array` | |
-| General Purpose GPU | | `--gpus-per-node` | |
+| Name | Other Names | Slurm Option | Pros | Cons |
+| - | - | - | - | - |
+| Shared Memory Parallelism | Multithreading, Multiprocessing | `--cpus-per-task` | All CPUs share the same memory, so no data has to be sent between them. | Limited to the CPUs and memory of a single node. |
+| Distributed Memory Parallelism | MPI, OpenMPI | `--ntasks` and add `srun` before command | Tasks can be spread across many nodes, so jobs can be much larger. | Software must be written to use MPI. Time is spent sending data between tasks, and memory use grows with the number of tasks. |
+| Hybrid | | `--ntasks` and `--cpus-per-task` and add `srun` before command | Can use many nodes, with fewer tasks to communicate between than MPI alone. | The hardest to set up, the best mix of tasks and CPUs per task has to be found by testing. |
+| Job Array | | `--array` | Scales with almost no loss of efficiency. Each job is small, so it schedules sooner. | Must be 'embarrasingly parallel' |
+| General Purpose GPU | | `--gpus-per-node` | Fast for large numbers of simple operations, such as matrix operations. | Software must be written to use GPUs |
 
 !!! keypoints
     - Parallel programming allows applications to take advantage of parallel hardware; serial code will not 'just work.'

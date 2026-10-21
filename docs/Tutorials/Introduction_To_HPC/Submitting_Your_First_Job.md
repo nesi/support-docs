@@ -45,13 +45,17 @@ Or what if we want to repeat a series of commands again later?
 This is where *batch* processing becomes useful, this is where instead of entering commands directly to the terminal we write them down in a text file or script.
 Then, the script can be executed by calling it with bash.
 
-### Writing your first batch script
+### Writing a batch script
 
-Let's try this now. First, move into the directory where you copied `sum_matrix.r` in [Bash Shell](Bash_Shell.md#copying-files-and-directories):
+Let's try this now. First, move into the directory where you copied `sum_matrix.r` in [Bash Shell](Bash_Shell.md#copying-files):
 
 ```sh
 cd {{ config.extra.working_directory|join('/') }}/$USER
 ```
+
+!!! note "Solo learners"
+    If you are working through this on your own, replace `nesi99991` with your project code,
+    here and in the `--account` line of the Slurm scripts below.
 
 Then create and open a new file called `example_job.sh`.
 (If you prefer another text editor than `nano`, feel free to use that)
@@ -60,14 +64,8 @@ Then create and open a new file called `example_job.sh`.
 nano example_job.sh
 ```
 
-<!-- TODO: change this script to not require another file -->
 ```sh
-#!/bin/bash -e
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_1.sh"
 ```
 
 !!! info "shebang"
@@ -130,6 +128,8 @@ mv example_job.sh example_job.sl
     - `.out`: Commonly used to indicate the file contains the standard output (`stdout`) of some process
     - `.err`: Same as `.out` but for standard error (`stderr`)
 
+### Slurm parameters
+
 In order for the job scheduler to do its job we need to provide a bit more information about our script.
 This is done by specifying Slurm parameters in our batch script.
 Each of these parameters must be preceded by the special token `#SBATCH` and placed after the shebang, but before the content of the rest of your script.
@@ -152,17 +152,23 @@ All the parameters available can be found by checking `man sbatch` or on the onl
 
 You can separate an option from its value with `=`, as in this table, or with spaces, as in the scripts below.
 
-!!! question "Comments"
+??? question "Comments"
+    <quiz>
     Comments in UNIX shell scripts (denoted by `#`) are ignored by the bash interpreter.
     Why is it that we start our Slurm parameters with `#` if it is going to be ignored?
 
-??? question "Solution"
-
-    Commented lines are ignored by the bash interpreter, but they are *not* ignored by Slurm.
-    The `#SBATCH` parameters are read by Slurm when we *submit* the job.
-    When the job starts, the bash interpreter will ignore all lines starting with `#`.
+    - [x] Slurm reads the `#SBATCH` lines when the job is submitted, and bash ignores them when the job runs.
+    - [ ] Bash runs the `#SBATCH` lines as commands.
+    > Bash ignores every line that starts with `#`, including the `#SBATCH` lines.
+    - [ ] The `#` tells bash that the line is important.
+    > In bash, `#` starts a comment. It is Slurm, not bash, that looks for `#SBATCH`.
+    - [ ] It doesn't matter: the parameters work without the `#`.
+    > Slurm only reads parameters from lines that start with `#SBATCH`. Without the `#`, bash would also try to run `SBATCH` as a command when the job starts.
 
     This is similar to the *shebang* mentioned earlier, when you run your script, the system looks at the `#!`, then uses the program at the subsequent path to interpret the script, in our case `/bin/bash` (the program `bash` found in the `bin` directory).
+    </quiz>
+
+### Submitting your batch job
 
 Note that just *requesting* these resources does not make your job run faster, nor does it necessarily mean that you will consume all of these resources.
 It only means that these are made available to you.
@@ -180,20 +186,15 @@ nano example_job.sl
 And add a Slurm header after the shebang, so the whole script looks like this:
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           300M
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_2.sl"
 ```
 
 `--time 00:15:00` asks for 15 minutes (`HH:MM:SS`), and `--mem 300M` for 300 megabytes of memory.
+
+!!! note "Solo learners"
+    Replace `nesi99991` in the `--account` line with your project code.
+    If you submit a job to a project you are not a member of, it fails with
+    `Invalid account or account/partition combination specified`.
 
 Now, rather than running our script with `bash` we submit it to the scheduler using the command `sbatch` (short for 'Slurm batch').
 
@@ -208,7 +209,7 @@ Submitted batch job 231964
 And that’s all we need to do to submit a job.
 Our work is done – now the scheduler takes over and tries to run the job for us.
 
-### Checking your running/pending jobs
+### Checking current jobs
 
 While the job is waiting to run, it goes into a list of jobs called the queue.
 To check on our job’s status, we check the queue using the command `squeue` (short for 'Slurm queue').
@@ -219,12 +220,11 @@ squeue --me
 ```
 
 ```out
-            JOBID PARTITION PRIORITY            NAME             USER ST          START_TIME NOD CPUS   FEATURES               REASON    TIME_LEFT
-           231964 genoa,mil      302     example_job         username PD                 N/A   1    1    sml|med             Priority        15:00
+JOBID    USER     ACCOUNT   NAME     CPUS MIN_MEM PARTITI START_TIME TIME_LEFT STATE    NODELIST(REASON)
+231964   username nesi99991 example_job  1    300M milan,g N/A            15:00 PENDING  (Priority)
 ```
 
-We can see many details about our job, most importantly its state (`ST`).
-`squeue` shows the state as a short code, such as `PD` for pending or `R` for running.
+We can see many details about our job, most importantly its state (`STATE`).
 The most common states you might see are:
 
 - `PENDING`: The job is waiting in the queue, likely waiting for resources to free up or higher priority jobs to run.
@@ -235,7 +235,7 @@ The most common states you might see are:
 - `TIMEOUT`: Your job ran for longer than its `--time` and was killed.
 - `OUT_OF_MEMORY`: Your job tried to use more memory than it was allocated (`--mem`) and was killed.
 
-### Cancelling queued or running jobs
+### Cancelling jobs
 
 Sometimes we’ll make a mistake and need to cancel a job.
 This can be done with the `scancel` command.
@@ -257,32 +257,35 @@ squeue --me
 ```
 
 ```out
-            JOBID PARTITION PRIORITY            NAME             USER ST          START_TIME NOD CPUS   FEATURES               REASON    TIME_LEFT
+JOBID  USER  ACCOUNT  NAME  CPUS MIN_MEM  START_TIME  TIME_LEFT STATE  NODELIST(REASON)
 ```
 
 (If it isn’t wait a few seconds and try again).
 
-!!! question "Cancelling multiple jobs"
+??? question "Cancelling multiple jobs"
+    <quiz>
     We can also cancel several jobs at once.
-    `scancel --user $USER` cancels every job you have, including any from your other work,
-    so it is safer to add `--name`, which only cancels your jobs with that job name.
+    Submit three copies of your job:
 
-    Try submitting multiple jobs and then cancelling them all.
-
-??? question "Solution"
-
-    First submit a trio of jobs:
     ```sh
     sbatch example_job.sl
     sbatch example_job.sl
     sbatch example_job.sl
     ```
 
-    Then cancel all of them:
+    Which command cancels all three, without cancelling any of your other jobs?
 
-    ```sh
-    scancel --user $USER --name example_job
-    ```
+    - [x] `scancel --user $USER --name example_job`
+    > `--name` only cancels your jobs with that job name.
+    - [ ] `scancel --user $USER`
+    > This cancels every job you have, including any from your other work.
+    - [ ] `scancel --me`
+    > Like `--user $USER`, this cancels every job you have.
+    - [ ] `scancel example_job`
+    > `scancel` expects job IDs. To cancel jobs by name, use `--name`.
+
+    Run the command, then check with `squeue --me` that the jobs have gone.
+    </quiz>
 
 ### Checking finished jobs
 
@@ -294,11 +297,11 @@ sacct
 ```
 
 ```out
-       JobID                              JobName Timelimit   Elapsed  TotalCPU Al NT     ReqMem     MaxRSS        State         NodeList
------------- ------------------------------------ --------- --------- --------- -- -- ---------- ---------- ------------ ----------------
-      231964                          example_job  00:15:00  00:00:30 00:28.845  2          300M            CANCELLED b+             c001
-231964.batch                                batch            00:00:31 00:28.845  2  1               107204K    CANCELLED             c001
-231964.exte+                               extern            00:00:33  00:00:00  2  1                          COMPLETED             c001
+JobID          JobName   Alloc    Elapsed    TotalCPU  ReqMem   MaxRSS State
+-------------- --------- ----- ---------- ----------- ------- -------- --------
+231964         example_job   2   00:00:21   00:16.892    300M          CANCELLED
+231964.batch   batch         2   00:00:22   00:16.892           64352K CANCELLED
+231964.extern  extern        2   00:00:23    00:00:00                  COMPLETED
 ```
 
 Our job has three lines, because each job step is also shown.
@@ -306,7 +309,7 @@ This can be suppressed using the flag `-X`.
 The jobs from the exercise above will also be listed, with one line each if you cancelled them before they started.
 
 A `+` at the end of a value means it was cut off to fit the column.
-For example, `CANCELLED b+` is `CANCELLED by` followed by the number of the user who cancelled it.
+For example, `CANCELLED+` is `CANCELLED by` followed by the number of the user who cancelled it.
 
 !!! info "Where's the output?"
     On the login node, when we ran the bash script, the output was printed to the terminal.
@@ -328,13 +331,25 @@ For example, `CANCELLED b+` is `CANCELLED by` followed by the number of the user
     - our [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
     - the official [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/) and [cheatsheet](https://slurm.schedmd.com/pdfs/summary.pdf)
 
-!!! question "Job environment variables"
+### Job environment variables
+
+??? question "Job environment variables"
+    <quiz>
     When Slurm runs a job, it sets a number of environment variables for the job.
     One of these will let us check what directory our job script was submitted from.
     The `SLURM_SUBMIT_DIR` variable is set to the directory from which our job was submitted.
-    Using the `SLURM_SUBMIT_DIR` variable, modify your job so that it prints out the location from which the job was submitted.
+    Which line, added to your script, prints the location from which the job was submitted?
 
-??? question "Solution"
+    - [x] `echo ${SLURM_SUBMIT_DIR}`
+    - [ ] `echo SLURM_SUBMIT_DIR`
+    > Without the `$`, `echo` prints the name of the variable, not its value.
+    - [ ] `${SLURM_SUBMIT_DIR}`
+    > The shell would try to run the directory as a command. Use `echo` to print it.
+    - [ ] `echo $USER`
+    > `$USER` holds your username, not a directory.
+    </quiz>
+
+    Try it:
 
     ```sh
     cp example_job.sl env_test.sl

@@ -432,10 +432,34 @@ span.md-status.md-status--deprecated {
   mask-image: var(--md-admonition-icon--prerequisite);
 }
 
+/* Questions: quizzes and `question` admonitions share one style */
+:root {
+  --question-color: rgb(100, 221, 23);
+}
+
+.md-typeset .admonition.question,
+.md-typeset details.question {
+  border-color: var(--question-color);
+}
+
+.md-typeset .question>.admonition-title,
+.md-typeset .question>summary,
+.md-typeset .quiz-question>.admonition-title {
+  background-color: rgba(100, 221, 23, 0.1);
+}
+
+.md-typeset .question>.admonition-title::before,
+.md-typeset .question>summary::before,
+.md-typeset .quiz-question>.admonition-title::before {
+  background-color: var(--question-color);
+  -webkit-mask-image: var(--md-admonition-icon--question);
+  mask-image: var(--md-admonition-icon--question);
+}
+
 /* Quiz formatting */
 /* Duplicate admonition thmem */
 div.quiz {
-  border: .075rem solid var(--reannz-orange);
+  border: .075rem solid var(--question-color);
   border-radius: .2rem;
   box-shadow: var(--md-shadow-z1);
   color: var(--md-admonition-fg-color);
@@ -447,6 +471,15 @@ div.quiz {
   transition: box-shadow 125ms;
 }
 
+/* A quiz inside an admonition uses the admonition's border and title */
+.md-typeset .admonition div.quiz,
+.md-typeset details div.quiz {
+  border: none;
+  box-shadow: none;
+  margin: .6rem 0 0;
+  padding: 0;
+}
+
 .quiz-button{
 position: absolute;
   right: auto;
@@ -456,15 +489,6 @@ position: absolute;
   left: 0.5rem;
   right: auto;
 }
-.quiz-question > .admonition-title{
-  background-color: rgba(241, 128, 0, 0.1);
-}
-
-.quiz-question > .admonition-titl e::before{
-  mask-image: var(--md-admonition-icon--example);
-  background-color: var(--reannz-orange);
-}
-
 div.quiz-feedback {
   margin: 0 -0.6rem -10px -0.6rem;
   border-radius: 0 0 .2rem .2rem;

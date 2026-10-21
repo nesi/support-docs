@@ -14,7 +14,10 @@ description: Choosing how many CPUs a job needs, and measuring what it actually 
     - Understand job size implications.
     - Understand problems and limitations involved in using multiple CPUs.
 
-## What Resources?
+!!! prerequisite
+    - [Parallel](Parallel.md)
+
+## What resources?
 
 Last time we submitted a job, we did not specify a number of CPUs, and therefore
 we were provided the default of `2` (1 _core_).
@@ -22,17 +25,7 @@ we were provided the default of `2` (1 _core_).
 As a reminder, our Slurm script `example_job.sl` currently looks like this.
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           300M
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_2.sl"
 ```
 
 We will now submit the same job again with more CPUs.
@@ -40,18 +33,7 @@ We ask for more CPUs by adding `#SBATCH --cpus-per-task 4` to our script.
 Your script should now look like this:
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           300M
-#SBATCH --cpus-per-task 4
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_3.sl"
 ```
 
 And then submit using `sbatch` as we did before.
@@ -67,24 +49,24 @@ Submitted batch job 23137702
 !!! tip "Watch"
     We can prepend any command with `watch` in order to periodically (default 2 seconds) run a command. e.g. `watch squeue --me` will give us up to date information on our running jobs.
     Care should be used when using `watch` as repeatedly running a command can have adverse effects.
-    Exit `watch` with <kbd>ctrl</kbd> + <kbd>c</kbd>.
+    Exit `watch` with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 In `squeue`, the number under `CPUS` should be `4` while the job is pending.
-Once it is running, it shows `8`, because Slurm counts both logical CPUs on each of your 4 cores (see [Simultaneous Multithreading](#simultaneous-multithreading-smt)).
+Once it is running, it shows `8`, because Slurm counts both logical CPUs on each of your 4 cores (see [Logical CPUs](#logical-cpus-smt)).
 
 Checking on our job with `sacct`.
 
 Oh no!
 
 ```out
-       JobID                              JobName Timelimit   Elapsed  TotalCPU Al NT     ReqMem     MaxRSS        State         NodeList
------------- ------------------------------------ --------- --------- --------- -- -- ---------- ---------- ------------ ----------------
-    23137702                          example_job  00:15:00  00:00:36 00:52.908  8          300M            OUT_OF_MEMO+             c019
-23137702.ba+                                batch            00:00:36 00:52.908  8  1               267988K OUT_OF_MEMO+             c019
-23137702.ex+                               extern            00:00:36  00:00:00  8  1                          COMPLETED             c019
+JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
+--------------- ---------------- ----- ----------- ------------ ------- -------- ----------
+23137702        example_job          8    00:00:36    00:52.908    300M          OUT_OF_ME+
+23137702.batch  batch                8    00:00:36    00:52.908          267988K OUT_OF_ME+
+23137702.extern extern               8    00:00:36     00:00:00                  COMPLETED
 ```
 
-## Too Little or Too Much
+## Too little or too much
 
 To understand why our job failed, we need to talk about the resources involved.
 
@@ -106,7 +88,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>The job will run more slowly than expected, and so may run out of time and get killed for exceeding its time limit.</td>
             <td>The job will wait in the queue for longer. <br>
              You will be charged for CPUs regardless of whether they are used or not.<br>
-            Your fair share score will fall more.
+            Your Fairshare score will fall more.
            </td>
         </tr>
         <tr>
@@ -114,7 +96,7 @@ Below is a table of common resources and issues you may face if you do not reque
             <td>Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error (may not happen immediately).</td>
             <td>The job will wait in the queue for longer.<br>
              You will be charged for memory regardless of whether it is used or not.<br>
-             Your fair share score will fall more.</td>
+             Your Fairshare score will fall more.</td>
         </tr>
         <tr>
             <td><b>   Walltime   </b></td>
@@ -124,22 +106,24 @@ Below is a table of common resources and issues you may face if you do not reque
     </tbody>
 </table>
 
-## Measuring Resource Usage of a Finished Job
+## Measuring a finished job
 
 Since we have already run a job (successful or otherwise), this is the best source of info we currently have.
-If we check the status of our finished job using the `sacct` command we learned earlier.
+Let's look again at the `sacct` output for the job that ran out of memory:
 
 ```sh
 sacct
 ```
 
-```sh
+```out
 JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
 --------------- ---------------- ----- ----------- ------------ ------- -------- ----------
-31060451        example_job.sl       2    00:00:48    00:33.548      1G          CANCELLED
-31060451.batch  batch                2    00:00:48    00:33.547          102048K CANCELLED
-31060451.extern extern               2    00:00:48     00:00:00                0 CANCELLED
+23137702        example_job          8    00:00:36    00:52.908    300M          OUT_OF_ME+
+23137702.batch  batch                8    00:00:36    00:52.908          267988K OUT_OF_ME+
+23137702.extern extern               8    00:00:36     00:00:00                  COMPLETED
 ```
+
+### Calculating efficiency
 
 With this information, we may determine a couple of things.
 
@@ -147,7 +131,8 @@ Memory efficiency can be determined by comparing _ReqMem_ (requested memory) wit
 
 $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
 
-So for the above example we see that _0.1GB_ (102048K) of our requested _1GB_ meaning the memory efficiency was about _10%_.
+So for the above example we see that _262 MB_ (267988K) of our requested _300 MB_ was used, meaning the memory efficiency was about _87%_.
+The job still ran out of memory: by default Slurm only records memory use every 30 seconds, so _MaxRSS_ can miss the peak.
 
 CPU efficiency can be determined by comparing _TotalCPU_ (CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to _Alloc_ (number of allocated CPUs) multiplied by _Elapsed_ (Walltime, actual time passed).
 
@@ -155,13 +140,13 @@ $$
 {Efficiency_{cpu} = { TotalCPU \over {Elapsed \times Alloc}}}
 $$
 
-For the above example _33 seconds_ of computation was done,
+For the above example _53 seconds_ of computation was done,
 
-where the maximum possible computation time was **96 seconds** (_2 CPUs_ multiplied by _48 seconds_), meaning the CPU efficiency was about _35%_.
+where the maximum possible computation time was **288 seconds** (_8 CPUs_ multiplied by _36 seconds_), meaning the CPU efficiency was about _18%_.
 
 !!! note "Alloc counts two CPUs per core"
     Each core on Mahuika has two logical CPUs, and _Alloc_ counts both, although by default your job only uses one of them
-    (see [Simultaneous Multithreading](#simultaneous-multithreading-smt)).
+    (see [Logical CPUs](#logical-cpus-smt)).
     This is why a job that didn't ask for a number of CPUs shows an _Alloc_ of `2`.
     So a job that keeps every CPU it asked for busy will only reach about _50%_ CPU efficiency by this formula.
     `seff`, shown below, divides by cores instead, so its CPU efficiency is double the figure from this formula.
@@ -170,10 +155,12 @@ Time Efficiency is simply the _Elapsed Time_ divided by _Time Requested_.
 
 $$ {Efficiency_{time} = { Elapsed \over Requested }} $$
 
-_48 seconds_ used out of _15 minutes_ requested give a time efficiency of about _5%_
+_36 seconds_ used out of _15 minutes_ requested give a time efficiency of about _4%_
 
-!!! question "Efficiency Exercise"
-    Calculate for the job shown below,
+### Efficiency exercise
+
+??? question "Efficiency Exercise"
+    For the job shown below, calculate its CPU efficiency and memory efficiency.
 
     ```out
     JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
@@ -183,14 +170,31 @@ _48 seconds_ used out of _15 minutes_ requested give a time efficiency of about 
     37171050.extern extern               8    00:06:03    00:00.001                0  COMPLETED
     ```
 
-    a. CPU efficiency.
+    <quiz>
+    What was the CPU efficiency?
 
-    b. Memory efficiency.
+    - [x] About 48%
+    > `( 23 / ( 8 * 6 ) ) x 100`: 23 minutes of CPU time, out of 8 CPUs for 6 minutes.
+    - [ ] About 24%
+    > This uses 16 CPUs. _Alloc_ already counts both logical CPUs on each core, so use 8.
+    - [ ] About 96%
+    > That is what `seff` would report, as it counts cores, not CPUs. By the formula above, it's half that.
+    - [ ] About 383%
+    > This divides the CPU time by the walltime, but leaves out the 8 CPUs (`Alloc`).
+    </quiz>
 
-??? question "Solution"
-    a. CPU efficiency is `( 23 / ( 8 * 6 ) ) x 100` or around **48%**.
+    <quiz>
+    What was the memory efficiency?
 
-    b. Memory efficiency is `( 14 / 32 ) x 100` or around **43%**.
+    - [x] About 43%
+    > `( 14 / 32 ) x 100`: _MaxRSS_ is 14082672K, about 14 GB, out of the 32 GB requested.
+    - [ ] About 100%
+    > The job failed, but not because it ran out of memory: it only used about 14 GB.
+    - [ ] About 4%
+    > _MaxRSS_ is in KB. 14082672K is about 14 GB, not 1.4 GB.
+    - [ ] About 229%
+    > This divides _ReqMem_ by _MaxRSS_. It's the other way round: memory used over memory requested.
+    </quiz>
 
 ### Using `seff`
 
@@ -215,27 +219,18 @@ Replace `23137702` with your job ID.
 Knowing what we do now about job efficiency, let's submit the previous job again, this time requesting enough memory to actually cover it:
 
 ```sl
-#!/bin/bash -e
-
-#SBATCH --job-name      example_job
-#SBATCH --account       nesi99991
-#SBATCH --time          00:15:00
-#SBATCH --mem           1200M
-#SBATCH --cpus-per-task 4
-
-module purge
-module load R/{{ applications.R.default }}
-Rscript sum_matrix.r
-echo "Done!"
+--8<-- "docs/assets/workshops/introhpc/.example_job_4.sl"
 ```
 
 ```sh
 sbatch example_job.sl
 ```
 
-Now that we've requested more memory, this one should complete successfully!
+Now that we've requested more memory, this one should complete successfully.
+Once it has finished, check its _MaxRSS_ with `sacct` or `seff`, and note it down.
+You will use it to estimate how much memory to request in [Scaling](Scaling.md).
 
-### Simultaneous Multithreading (SMT)
+### Logical CPUs (SMT)
 
 Modern CPU cores have 2 threads of operation that can execute independently of one
 another. SMT is the technology that allows the 2 threads within one physical core to present
@@ -244,7 +239,7 @@ as multiple logical cores, sometimes referred to as virtual CPUS (vCPUS).
 For more details please see our
 [documentation on SMT](../../Software/Parallel_Computing/Simultaneous_Multithreading.md)
 
-## Measuring the System Load From Currently Running Tasks
+## Measuring a running job
 
 On Mahuika, we allow users to connect directly to compute nodes from the
 login node. This is useful to check on a running job and see how it's doing, however, we
@@ -256,15 +251,19 @@ The most reliable way to check current system stats is with `htop`.
 ### Finding your job
 
 Before we can check on our job, we need its job ID, which is in the `JOBID` column of `squeue --me`.
-The job must be running, shown as `R` in the `ST` column.
+The job must be running, shown as `RUNNING` in the `STATE` column.
+
+!!! note "Job length"
+    `example_job.sl` runs for less than a minute once it starts, so it has probably finished by now.
+    Submit it again with `sbatch example_job.sl`, and run the commands below as soon as it is running.
 
 ```sh
 squeue --me
 ```
 
 ```out
-            JOBID PARTITION PRIORITY            NAME             USER ST          START_TIME NOD CPUS   FEATURES               REASON    TIME_LEFT
-         26763045     genoa      309     example_job         username  R        Oct 19 14:32   1    8        sml                 None        14:56
+JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)
+26763045      username nesi99991 example_job    8   1200M milan   Oct 20 16:13       14:56 RUNNING  mc093
 ```
 
 Now we can use `svisit` to run `htop` _on the node where the job is running_.
@@ -276,7 +275,7 @@ svisit 26763045 htop -u $USER
 Replace `26763045` with your job ID.
 If you cannot connect, it may be that the job has finished and you have lost permission to visit that node.
 
-### Reading Htop
+### Reading htop
 
 You may see something like this,
 
@@ -316,7 +315,7 @@ To exit press <kbd>q</kbd>.
 
 Running this command as is will show us information on tasks running on the login node (where we should not be running resource intensive jobs anyway).
 
-## Running Test Jobs
+## Running test jobs
 
 As you may have to run several iterations before you get it right, you should choose your test job carefully.
 A test job should not run for more than 15 minutes.
@@ -342,7 +341,7 @@ We will cover a bit more on running tests in the last lesson.
     Mahuika has a shared directory (`/opt/nesi/examples`) with some small input files of commonly used types for use in testing.
     If you have requests or example files to contribute to this directory, please {% include "partials/support_request.html" %}.
 
-### Run tests jobs using debug QOS (Quality of Service)
+### Using the debug QoS
 
 Before submitting a large job, first submit one as a test to make sure everything works as expected.
 Often, users discover typos in their submit scripts, incorrect module names or possibly an incorrect path name after their job has queued for many hours.
@@ -362,25 +361,22 @@ Adding these SBATCH directives will provide your job with the highest priority p
 Only use the debug QOS for one-off tests like this, not as a regular step in your workflow.
 See [Debug QoS](../../Batch_Computing/Debug_QoS.md) for when you may use it.
 
-## Determining initial resource requirements
+## First estimates
 
 As we have just discussed, the best and most reliable method of determining resource requirements is from testing, but before we run our first test there are a couple of things you can do to start yourself off in the right area.
 
-### Read the Documentation
-
-REANNZ maintains documentation that does have some guidance on using resources for some software.
-However, as you noticed in the [Environment and Modules lesson](Environment_And_Modules.md), we have a lot of software.
-So it is also advised to search the web for others that may have written up guidance for getting the most out of your specific software.
-
-### Ask Other Users
-
-If you know someone who has used the software before, they may be able to give you a rough estimate.
+- **Read the documentation.** REANNZ maintains documentation that does have some guidance on using resources for some software.
+  However, as you noticed in the [Environment and Modules lesson](Environment_And_Modules.md), we have a lot of software.
+  So it is also advised to search the web for others that may have written up guidance for getting the most out of your specific software.
+- **Ask other users.** If you know someone who has used the software before, they may be able to give you a rough estimate.
 
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
-!!! postrequisite "Next Steps"
+!!! postrequisite "What Next"
     You can use this knowledge to set up the next job with a closer estimate of its load on the system.
     A good general rule is to ask the scheduler for **30%** more time and memory than you expect the job to need.
+
+    - [Scaling](Scaling.md)
 
 !!! keypoints
     - As your task gets larger, so does the potential for inefficiencies.
