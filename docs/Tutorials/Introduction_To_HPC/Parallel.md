@@ -45,7 +45,7 @@ _Python: [Multiprocessing](https://docs.python.org/3/library/multiprocessing.htm
 
 _MATLAB: [`parpool`](https://au.mathworks.com/help/parallel-computing/parpool.html)_
 
-## Methods of parallel computing
+## Types of parallelism
 
 To understand the different types of Parallel Computing we first need to clarify some terms.
 
