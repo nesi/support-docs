@@ -194,8 +194,6 @@ You will see this in [Submitting Your First Job](Submitting_Your_First_Job.md).
 A cluster is not always the right tool.
 For each problem, which would you use?
 
-### Analysing data
-
 <!-- ??? question "Some biology thing"
     <quiz>
     Your script stops with this error:
