@@ -5,6 +5,9 @@ edit_uri: edit/main/docs/
 site_description: Support Documentation
 site_dir: public
 site_url: https://docs.nesi.org.nz/
+not_in_nav: |
+  /*.md
+  /assets/
 theme:
   name: material
   custom_dir: overrides
