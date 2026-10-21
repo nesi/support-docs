@@ -88,7 +88,7 @@ Finally, inside `home` is the directory with your username: your *home directory
 As you may now see, using a bash shell is strongly dependent on the idea that your files are organised in a hierarchical filesystem.
 Organising things hierarchically in this way helps us keep track of our work: it's possible to put hundreds of files in our home directory, just as it's possible to pile hundreds of printed papers on our desk, but it's a self-defeating strategy.
 
-## Listing contents of directories
+## Listing directories
 
 To list the contents of a directory, we use the command `ls` (short for 'list') followed by the path to the directory whose contents we want listed.
 
@@ -251,7 +251,7 @@ birds  {{extra.example_script}}  username  usr123
     so `mkdir my data` makes two directories, `my` and `data`.
     Use `-` or `_` instead, as in `my_data`.
 
-## General syntax of a shell command
+## Command syntax
 
 We are now going to use `ls` again but with a twist, this time we will also use what are known as **options**, **flags** or **switches**.
 These options modify the way that the command works, for this example we will add the flag `-l` for "long listing format".
@@ -852,7 +852,7 @@ draft.txt
     for and saves files. If you start it from the shell, it will (probably)
     use your current working directory as its default location.
 
-## Copying files and directories
+## Copying files
 
 In a future lesson, we will be running the R script `{{ extra.working_directory|join('/') }}/{{extra.example_script}}`, but as we can't all work on the same file at once you will need to take your own copy.
 This can be done with the copy command `cp`. It needs at least two arguments: the file (or directory) you want to copy, and the directory (or file) where you want the copy to be created.
@@ -949,7 +949,7 @@ draft.txt  {{extra.example_script}}
     If you delete or overwrite something by mistake, you may be able to recover an older copy from a
     [snapshot](../../Storage/Data_Recovery.md).
 
-### Copying and removing directories
+### Working with directories
 
 In order to `cp` a directory (and all its contents) the `-r` for [recursive](https://en.wikipedia.org/wiki/Recursion) option must be used.
 The same is true when deleting directories with `rm`.
