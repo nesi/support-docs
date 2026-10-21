@@ -60,6 +60,7 @@ matrix:
       ignores:
       - code
       - pre
+      - kbd
   sources:
   - 'docs/**/*.md'
   default_encoding: utf-8

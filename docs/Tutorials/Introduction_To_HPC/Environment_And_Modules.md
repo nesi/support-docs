@@ -14,6 +14,9 @@ status: tutorial
     - Load and use a software package.
     - Explain how the shell environment changes when the module mechanism loads packages.
 
+!!! prerequisite
+    - [Bash Shell](Bash_Shell.md)
+
 On a high-performance computing system, it is seldom the case that the software we want to use is available when we log in. It is installed, but we will need to "load" it before it can run.
 
 Before we start using individual software packages, however, we should understand the reasoning behind this approach.
@@ -178,7 +181,7 @@ any of the "keys".
     `module avail` is picky about capitalisation and spelling.
     If you are struggling to find a module, you can try `module spider` followed by the package name (for example `module spider python`), which will search the available modules without case sensitivity and return descriptions of the available modules.
 
-### Listing currently loaded modules
+### Listing loaded modules
 
 You can use the `module list` command to see which modules you currently have loaded in your environment.
 On Mahuika you will have a few default modules loaded when you log in.
@@ -209,7 +212,7 @@ which R
 ```
 
 ```out
-/usr/bin/which: no R in (/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/username/bin:/opt/nesi/vdt:/home/username/.local/bin:/opt/nesi/bin:/opt/nesi/sbin)
+/usr/bin/which: no R in (/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/home/username/bin:/home/username/.local/bin:/opt/nesi/bin:/opt/nesi/sbin)
 ```
 
 The important bit here being:
@@ -231,6 +234,8 @@ which R
 
 !!! note "Tab Completion"
     The module command also supports tab completion. You may find this the easiest way to find the right software.
+
+### The `PATH` variable
 
 So, what just happened?
 
@@ -295,6 +300,8 @@ ls /opt/nesi/zen3/R/{{ applications.R.default }}/bin
 ```out
 R  Rscript
 ```
+
+### Dependencies
 
 `module load` "loads" not only the specified software, but it also loads software dependencies.
 That is, the software that the application you load requires to run.
@@ -396,6 +403,8 @@ python3 --version
 ```out
 Python {{ applications.Python.default.split('-')[0] }}
 ```
+
+## Non-default versions
 
 So how do we load the non-default version of a software package?
 In this case, the only change we need to make is be more specific about the module we are loading.

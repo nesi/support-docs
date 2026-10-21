@@ -3,6 +3,7 @@
 """
 Modify proselint outputs into a format recognised by github actions.
 Fenced code blocks are blanked first (keeping line numbers), as their contents aren't prose.
+Proselint's own checks also don't see inline code, so `ls *t?ne.*` isn't read as words.
 
 Also runs this repo's own rules, BANNED_PATTERNS in prose_rules.py, as proselint checks named 'reannz.<name>'.
 """
@@ -19,7 +20,7 @@ from proselint.checks import __register__
 from proselint.registry import CheckRegistry
 from proselint.registry.checks import Check, CheckFlags, CheckResult
 
-from prose_rules import BANNED_PATTERNS, FETCHED_FILES, mask_non_prose
+from prose_rules import BANNED_PATTERNS, FETCHED_FILES, mask_inline_code, mask_non_prose
 
 FENCE_RE = re.compile(r"^\s*```")
 
@@ -80,15 +81,17 @@ def rule_enabled(path, file, checks_config):
 
 
 def lint(file, raw, config_custom):
-    """Proselint's own checks on the page without code blocks, then each scope of rules on its own version of the page."""
+    """Proselint's own checks on the page without code, then each scope of rules on its own version of the page."""
     no_code = blank_code_blocks(raw)
+    # '~' rather than spaces, so the words either side of the code don't read as a repeated phrase ('and `x` and').
+    no_inline_code = "\n".join(mask_inline_code(line, "~") for line in no_code.split("\n"))
     texts = {
         "text": "\n".join(mask_non_prose(line) for line in no_code.split("\n")),
         "markup": no_code,
         "all": raw,
     }
     builtin = {k: v for k, v in config_custom["checks"].items() if not k.startswith("reannz")}
-    passes = [(no_code, {"reannz": False} | builtin)]
+    passes = [(no_inline_code, {"reannz": False} | builtin)]
     for scope, text in texts.items():
         paths = [p for p, r in RULES.items() if r.get("scope", "text") == scope and rule_enabled(p, file, config_custom["checks"])]
         if paths:

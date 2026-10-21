@@ -158,7 +158,9 @@ jobs:
     if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkA11y) }}
     runs-on: ubuntu-24.04
     # Ships Chromium and its OS-level dependencies preinstalled.
-    container: mcr.microsoft.com/playwright:latest
+    # Pinned to a noble (Ubuntu 24.04, Python 3.12) image to match the Python requirements.txt is compiled with.
+    # 'latest' ships Python 3.10, which can't install some pins (e.g. filelock 4.2).
+    container: mcr.microsoft.com/playwright:v1.64.1-noble
     needs: get
     steps:
       - name: Check out repo.
@@ -166,9 +168,10 @@ jobs:
       - name: Install dependencies
         run: |
           apt-get update
-          apt-get install -y --no-install-recommends python3 python3-pip git
-          pip3 install --upgrade pip setuptools wheel
-          pip3 install -r requirements.txt
+          apt-get install -y --no-install-recommends python3 python3-venv git
+          python3 -m venv /opt/venv
+          echo "/opt/venv/bin" >> "$GITHUB_PATH"
+          /opt/venv/bin/pip install -r requirements.txt
       - name: Build site
         run: mkdocs build
       - name: Cache AccessLint audit tool
