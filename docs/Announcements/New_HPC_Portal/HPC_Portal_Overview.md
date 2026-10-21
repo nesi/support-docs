@@ -29,13 +29,13 @@ For other login problems, see
 
 The sidebar on the left holds the main sections:
 
-- **Organizations** – the institutions you belong to.
+- **Organisations** – the institutions you belong to.
 - **Projects** – every project you are a member of.
 - **Resources** – your allocations, grouped by type (for example **HPC** for Mahuika and **Storage** for Freezer).
 - **REANNZ Marketplace** – the services on offer.
 
 The breadcrumb at the top of each page shows where you are, for example
-*Organizations / your institution / your project*.
+*Organisations / your institution / your project*.
 Your name menu on the top right holds your profile and the option to log out.
 
 ## See your roles
@@ -47,7 +47,7 @@ The **Roles and permissions** table lists every role you hold:
 | --- | --- |
 | Scope type | Whether the role is on a project or an organisation. |
 | Scope name | The project or organisation name. Click it to open it. |
-| Organization | The institution that owns the project. |
+| Organisation | The institution that owns the project. |
 | Role name | Your role, for example *Project manager* or *Project member*. |
 
 ## What each role can do
@@ -56,12 +56,12 @@ The **Roles and permissions** table lists every role you hold:
 | --- | --- | --- |
 | Project member | Researchers on a project | View the project and its resources, and request an end date change. |
 | Project manager | The project owner or PI | Change resource limits and request an end date change. |
-| Organization owner | Nominated staff at your institution | Approve requests from projects in their organisation and set end dates directly. See [Approving requests](Approving_Requests.md). |
+| Organisation owner | Nominated staff at your institution | Approve requests from projects in their organisation and set end dates directly. See [Approving requests](Approving_Requests.md). |
 
 ## See your projects
 
 1. Click **Projects** in the sidebar.
-2. Each card shows the project name, its **Organization**, its **Resources** and its **End date**.
+2. Each card shows the project name, its **Organisation**, its **Resources** and its **End date**.
 3. Click **Details** to open the project.
 
 A project page has four tabs:
