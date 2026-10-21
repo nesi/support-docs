@@ -181,7 +181,7 @@ any of the "keys".
     `module avail` is picky about capitalisation and spelling.
     If you are struggling to find a module, you can try `module spider` followed by the package name (for example `module spider python`), which will search the available modules without case sensitivity and return descriptions of the available modules.
 
-### Listing currently loaded modules
+### Listing loaded modules
 
 You can use the `module list` command to see which modules you currently have loaded in your environment.
 On Mahuika you will have a few default modules loaded when you log in.
