@@ -17,7 +17,7 @@ description: Choosing how many CPUs a job needs, and measuring what it actually 
 !!! prerequisite
     - [Parallel](Parallel.md)
 
-## What Resources?
+## What resources?
 
 Last time we submitted a job, we did not specify a number of CPUs, and therefore
 we were provided the default of `2` (1 _core_).
@@ -49,10 +49,10 @@ Submitted batch job 23137702
 !!! tip "Watch"
     We can prepend any command with `watch` in order to periodically (default 2 seconds) run a command. e.g. `watch squeue --me` will give us up to date information on our running jobs.
     Care should be used when using `watch` as repeatedly running a command can have adverse effects.
-    Exit `watch` with <kbd>ctrl</kbd> + <kbd>c</kbd>.
+    Exit `watch` with <kbd>Ctrl</kbd>+<kbd>C</kbd>.
 
 In `squeue`, the number under `CPUS` should be `4` while the job is pending.
-Once it is running, it shows `8`, because Slurm counts both logical CPUs on each of your 4 cores (see [Simultaneous Multithreading](#simultaneous-multithreading-smt)).
+Once it is running, it shows `8`, because Slurm counts both logical CPUs on each of your 4 cores (see [Logical CPUs](#logical-cpus-smt)).
 
 Checking on our job with `sacct`.
 
@@ -66,7 +66,7 @@ JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS
 23137702.extern extern               8    00:00:36     00:00:00                  COMPLETED
 ```
 
-## Too Little or Too Much
+## Too little or too much
 
 To understand why our job failed, we need to talk about the resources involved.
 
@@ -106,7 +106,7 @@ Below is a table of common resources and issues you may face if you do not reque
     </tbody>
 </table>
 
-## Measuring Resource Usage of a Finished Job
+## Measuring a finished job
 
 Since we have already run a job (successful or otherwise), this is the best source of info we currently have.
 Let's look again at the `sacct` output for the job that ran out of memory:
@@ -131,7 +131,7 @@ Memory efficiency can be determined by comparing _ReqMem_ (requested memory) wit
 
 $$ {Efficiency_{mem} = { MaxRSS \over ReqMem}} $$
 
-So for the above example we see that _262MB_ (267988K) of our requested _300MB_ was used, meaning the memory efficiency was about _87%_.
+So for the above example we see that _262 MB_ (267988K) of our requested _300 MB_ was used, meaning the memory efficiency was about _87%_.
 The job still ran out of memory: by default Slurm only records memory use every 30 seconds, so _MaxRSS_ can miss the peak.
 
 CPU efficiency can be determined by comparing _TotalCPU_ (CPU time), with the maximum possible CPU time. The maximum possible CPU time equal to _Alloc_ (number of allocated CPUs) multiplied by _Elapsed_ (Walltime, actual time passed).
@@ -146,7 +146,7 @@ where the maximum possible computation time was **288 seconds** (_8 CPUs_ multip
 
 !!! note "Alloc counts two CPUs per core"
     Each core on Mahuika has two logical CPUs, and _Alloc_ counts both, although by default your job only uses one of them
-    (see [Simultaneous Multithreading](#simultaneous-multithreading-smt)).
+    (see [Logical CPUs](#logical-cpus-smt)).
     This is why a job that didn't ask for a number of CPUs shows an _Alloc_ of `2`.
     So a job that keeps every CPU it asked for busy will only reach about _50%_ CPU efficiency by this formula.
     `seff`, shown below, divides by cores instead, so its CPU efficiency is double the figure from this formula.
@@ -187,11 +187,11 @@ _36 seconds_ used out of _15 minutes_ requested give a time efficiency of about 
     What was the memory efficiency?
 
     - [x] About 43%
-    > `( 14 / 32 ) x 100`: _MaxRSS_ is 14082672K, about 14GB, out of the 32GB requested.
+    > `( 14 / 32 ) x 100`: _MaxRSS_ is 14082672K, about 14 GB, out of the 32 GB requested.
     - [ ] About 100%
-    > The job failed, but not because it ran out of memory: it only used about 14GB.
+    > The job failed, but not because it ran out of memory: it only used about 14 GB.
     - [ ] About 4%
-    > _MaxRSS_ is in KB. 14082672K is about 14GB, not 1.4GB.
+    > _MaxRSS_ is in KB. 14082672K is about 14 GB, not 1.4 GB.
     - [ ] About 229%
     > This divides _ReqMem_ by _MaxRSS_. It's the other way round: memory used over memory requested.
     </quiz>
@@ -230,7 +230,7 @@ Now that we've requested more memory, this one should complete successfully.
 Once it has finished, check its _MaxRSS_ with `sacct` or `seff`, and note it down.
 You will use it to estimate how much memory to request in [Scaling](Scaling.md).
 
-### Simultaneous Multithreading (SMT)
+### Logical CPUs (SMT)
 
 Modern CPU cores have 2 threads of operation that can execute independently of one
 another. SMT is the technology that allows the 2 threads within one physical core to present
@@ -239,7 +239,7 @@ as multiple logical cores, sometimes referred to as virtual CPUS (vCPUS).
 For more details please see our
 [documentation on SMT](../../Software/Parallel_Computing/Simultaneous_Multithreading.md)
 
-## Measuring the System Load From Currently Running Tasks
+## Measuring a running job
 
 On Mahuika, we allow users to connect directly to compute nodes from the
 login node. This is useful to check on a running job and see how it's doing, however, we
@@ -275,7 +275,7 @@ svisit 26763045 htop -u $USER
 Replace `26763045` with your job ID.
 If you cannot connect, it may be that the job has finished and you have lost permission to visit that node.
 
-### Reading Htop
+### Reading htop
 
 You may see something like this,
 
@@ -315,7 +315,7 @@ To exit press <kbd>q</kbd>.
 
 Running this command as is will show us information on tasks running on the login node (where we should not be running resource intensive jobs anyway).
 
-## Running Test Jobs
+## Running test jobs
 
 As you may have to run several iterations before you get it right, you should choose your test job carefully.
 A test job should not run for more than 15 minutes.
@@ -341,7 +341,7 @@ We will cover a bit more on running tests in the last lesson.
     Mahuika has a shared directory (`/opt/nesi/examples`) with some small input files of commonly used types for use in testing.
     If you have requests or example files to contribute to this directory, please {% include "partials/support_request.html" %}.
 
-### Run tests jobs using debug QOS (Quality of Service)
+### Using the debug QoS
 
 Before submitting a large job, first submit one as a test to make sure everything works as expected.
 Often, users discover typos in their submit scripts, incorrect module names or possibly an incorrect path name after their job has queued for many hours.
@@ -361,19 +361,14 @@ Adding these SBATCH directives will provide your job with the highest priority p
 Only use the debug QOS for one-off tests like this, not as a regular step in your workflow.
 See [Debug QoS](../../Batch_Computing/Debug_QoS.md) for when you may use it.
 
-## Determining initial resource requirements
+## First estimates
 
 As we have just discussed, the best and most reliable method of determining resource requirements is from testing, but before we run our first test there are a couple of things you can do to start yourself off in the right area.
 
-### Read the Documentation
-
-REANNZ maintains documentation that does have some guidance on using resources for some software.
-However, as you noticed in the [Environment and Modules lesson](Environment_And_Modules.md), we have a lot of software.
-So it is also advised to search the web for others that may have written up guidance for getting the most out of your specific software.
-
-### Ask Other Users
-
-If you know someone who has used the software before, they may be able to give you a rough estimate.
+- **Read the documentation.** REANNZ maintains documentation that does have some guidance on using resources for some software.
+  However, as you noticed in the [Environment and Modules lesson](Environment_And_Modules.md), we have a lot of software.
+  So it is also advised to search the web for others that may have written up guidance for getting the most out of your specific software.
+- **Ask other users.** If you know someone who has used the software before, they may be able to give you a rough estimate.
 
 <!-- Now that you know the efficiency of your small test job what next? Throw 100 more CPUs at the problem for 100x speedup? -->
 
