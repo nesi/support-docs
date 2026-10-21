@@ -33,6 +33,7 @@ theme:
         icon: material/lightbulb-outline
         name: Switch to light mode
   features:
+    - announce.dismiss            # Lets readers close the banner set in overrides/main.html
     - navigation.indexes
     - navigation.instant          # Single Page Application
     - navigation.instant.progress
@@ -79,7 +80,7 @@ markdown_extensions:
 extra:
   slurm: slurm-25.05.6 # Overwritten by macro_hooks.py from docs/assets/slurm-limits.json.
   project_code: nesi99991
-  working_directory: ["/nesi/nobackup/nesi99991", "resbaz2607"]
+  working_directory: ["/nesi/nobackup/nesi99991", "introhpc2610"]
   example_script: "sum_matrix.r"
   exercise: "https://docs.google.com/spreadsheets/d/1D5PnhE6iJOB3ZKkDCiBHnk5CNZlhmj_gS-IXKGkkVoI/edit?usp=sharing"
   status: 

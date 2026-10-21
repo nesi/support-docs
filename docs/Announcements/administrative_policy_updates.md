@@ -2,7 +2,7 @@
 created_at: 2026-05-18
 title: Administrative Updates to HPC Policies
 description: A page sharing the details of recent administrative updates to some HPC Platform policies
-status: new
+status:
 tags: [announcement]
 search:
   boost: 0.1
