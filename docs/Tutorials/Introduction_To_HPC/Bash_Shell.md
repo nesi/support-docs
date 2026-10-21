@@ -111,6 +111,8 @@ To list the contents of a directory, we use the command `ls` (short for 'list') 
 
     When you have to download the additional files, they will be called out in blocks like this.
 
+### Your working directory
+
 We will now list the contents of the directory we will be working from.
 We can use the following command to do this:
 
@@ -512,6 +514,8 @@ cd -
 
 The difference between `cd ..` and `cd -` is that the former brings you *up*, while the latter brings you *back*.
 
+### Practice with paths
+
 ??? question "Absolute vs Relative Paths"
     <quiz>
     Starting from `/home/amanda/data`, which of the following commands could Amanda use to navigate to her home directory (`/home/amanda`)?
@@ -793,35 +797,6 @@ Nano is controlled with the <kbd>Ctrl</kbd> key, so first a word on how that is 
     In nano, along the bottom of the screen you'll see `^G Get Help ^O WriteOut`.
     This means that you can use `Control-G` to get help and `Control-O` to save your
     file.
-
-    On a Mac, use the <kbd>Control</kbd> key, not <kbd>Command</kbd>.
-
-### Using nano
-
-Open Nano to create a file called `draft.txt`:
-
-```sh
-nano draft.txt
-```
-
-Let's type in a few lines of text.
-Once we're happy with our text, we can press <kbd>Ctrl</kbd>+<kbd>O</kbd>
-(press the <kbd>Ctrl</kbd> or <kbd>Control</kbd> key and, while
-holding it down, press the <kbd>O</kbd> key) to write our data to disk
-(we'll be asked what file we want to save this to:
-press <kbd>Return</kbd> to accept the suggested default of `draft.txt`).
-
-![A screenshot of the nano text editor. The file open is called `draft.txt` and contains two lines of text reading "It's not publish or perish any more, it's share and thrive."](../../assets/images/nano-screenshot.png)
-
-Once our file is saved, we can use <kbd>Ctrl</kbd>+<kbd>X</kbd> to quit the editor and
-return to the shell.
-
-If you press <kbd>Ctrl</kbd>+<kbd>X</kbd> before saving, nano asks whether to save the modified buffer (your changes).
-Press <kbd>Y</kbd>, then <kbd>Enter</kbd> to keep the name `draft.txt`.
-
-!!! warning "Terminals in a web browser"
-    If you are using a terminal in a web browser, such as in OnDemand, the browser may catch some shortcuts before nano does.
-    For example, <kbd>Ctrl</kbd>+<kbd>W</kbd> is nano's search, but in most browsers it closes the tab.
 
     On a Mac, use the <kbd>Control</kbd> key, not <kbd>Command</kbd>.
 
