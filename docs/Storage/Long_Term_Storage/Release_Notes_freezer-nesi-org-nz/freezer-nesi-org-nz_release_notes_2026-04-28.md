@@ -11,6 +11,6 @@ search:
 
 ## New and Improved
 
-- Various bug fixes and performance optimisations
+- Various bug fixes and performance optimizations
 
 If you have any questions about any of the fixes, please {% include "partials/support_request.html" %}.

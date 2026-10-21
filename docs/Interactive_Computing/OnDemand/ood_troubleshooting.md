@@ -22,11 +22,11 @@ Please {% include "partials/support_request.html" %} and we will be able to fix 
 
 If you are encounter the following error during login, it is an indication of your home directory being full.
 OnDemand relies on some space being available on the home directory to open and maintain per session logs.
-The solution for this is to clear up some space in the home directory. You can still log in to the cluster via another terminal client (`ssh`) to review and clean/delete content from home directory. If you don't have or having difficulty with setting up a terminal client setup for `ssh` access, {% include "partials/support_request.html" %}
+The solution for this is to clear up some space in the home directory. You can still login to the cluster via another terminal client (`ssh`) to review and clean/delete content from home directory. If you don't have or having difficulty with setting up a terminal client setup for `ssh` access, {% include "partials/support_request.html" %}
 
 ### `No space left on device`
 
-This error indicates that your home drive is full. Your `home` directory quota needs to be under 20 GB. You will probably see an image like this:
+This error indicates that your home drive is full. Your `home` directory quota needs to be under 20GB. You will probably see an image like this:
 
 ![NeSI_OnDemand_No_Space_Left_1.png](../../assets/images/NeSI_OnDemand_No_Space_Left_1.png)
 
@@ -36,7 +36,7 @@ To resolve this issue:
 
     ![NeSI_OnDemand_No_Space_Left_1.png](../../assets/images/NeSI_OnDemand_No_Space_Left_2.png)
 
-2. Log in to Mahuika through the terminal.
+2. Log in to your NeSI account through the terminal.
 3. Type into the terminal ```storage_quota```. This will show the amount of space in your `home`, `project`, and `nobackup` directories. You will see that your `home` directory is full.
 
     ```sh 

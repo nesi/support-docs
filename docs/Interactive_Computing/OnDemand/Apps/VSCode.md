@@ -22,15 +22,15 @@ The VS Code application allows you to access interactive computing with Mahuika 
 
 VS Code allows for saving configurations and settings via several methods.
 
-Settings control the user interface and some behaviours and are saved in a `settings.json` file.
+Settings control the user interface and some behaviors and are saved in a `settings.json` file.
 
-Profiles combine Settings with other aspects of VS Code like Extensions, Keyboard Shortcuts, and Snippets. Profiles can be saved and shared as either GitHub gist URLs or `.code-profile` files. Changes to the Settings or Profile made via the VS Code OnDemand app are saved in your Mahuika home directory in the `.local/share/code-server` automatically, so new interactive VS Code sessions should retain your preferences.
+Profiles combine Settings with other aspects of VS Code like Extensions, Keyboard Shortcuts, and Snippets. Profiles can be saved and shared as either GitHub gist URLs or `.code-profile` files. Changes to the Settings or Profile made via the VS Code OnDemand app are saved in your Mahuika home folder in the `.local/share/code-server` automatically, so new interactive VS Code sessions should retain your preferences.
 
-Please see the VS Code docs for more information on [Settings](https://code.visualstudio.com/docs/configure/settings), [Profiles](https://code.visualstudio.com/docs/configure/profiles) and VS Code customisations.
+Please see the VS Code docs for more information on [Settings](https://code.visualstudio.com/docs/configure/settings), [Profiles](https://code.visualstudio.com/docs/configure/profiles) and VS Code customizations.
 
 ### VS Code terminal
 
-The VS Code terminal acts like the Shell Access terminal also available via OnDemand. At present, Slurm jobs cannot be submitted via the VS Code terminal and you must use Shell Access.
+The VS Code terminal acts like the Shell Access terminal also available via OnDemand. At present, slurm jobs cannot be submitted via the VS Code terminal and you must use Shell Access.
 
 ## Installing VS Code extensions
 

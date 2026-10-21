@@ -30,7 +30,7 @@ Two bugs that have been an ongoing issue for the users have been fixed.
 
 This release enables high memory node to be selected by the users. Currently we support up to 32GB instance on the app launch.
 
-It required work on K8s autoscaling and FreeIPA updates for auto-enrolment. Further work is needed for proper full autoscale, and will be coming up in the next release.
+It required work on K8s autoscaling and FreeIPA updates for auto-enrollment. Further work is needed for proper full autoscale, and will be coming up in the next release.
 
 ## 0.3.0 - initial release for Jupyter-only users
 
@@ -62,7 +62,7 @@ This is our first release to a group of early access users for feedback around N
 
     * In addition to the two core apps above, we have the following applications accessible, but are still under development, and are unsupported. We will update you with more information in the future releases as they stabilise.
     * Virtual desktop
-    * MATLAB
+    * Matlab
     * VS Code-Server
 
 - New login process for the NeSI systems going forward

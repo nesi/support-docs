@@ -97,10 +97,10 @@ then assigns different roles to the different ranks:
 This implies that **Dask-MPI jobs must be launched on at least 3 MPI
 ranks!** Ranks 0 and 1 often perform much less work than the other
 ranks, it can therefore be beneficial to use
-[Simultaneous Multithreading (SMT)](Simultaneous_Multithreading.md)
+[Simultaneous Multithreading (SMP)](Simultaneous_Multithreading.md)
 to place these two ranks onto a single physical core. Ensure that
-activating SMT does not slow down the worker ranks by running
-a short test workload with and without SMT.
+activating SMP does not slow down the worker ranks by running
+a short test workload with and without SMP.
 
 In the following, two cases will be discussed:
 
@@ -158,7 +158,7 @@ The `--het-group` flag asks `srun` to launch both job packs together.
 
 ## Example
 
-The following example illustrates how to run Dask-MPI on Mahuika. It is
+The following example illustrates how to run Dask-MPI on the HPC. It is
 based on the Dask Futures tutorial on the [Dask examples](https://examples.dask.org) webpage.
 
 ### Python program
@@ -190,10 +190,10 @@ print("Dask result:", c.result())
 print("Local result:", add(inc(1), inc(2)))
 ```
 
-### Batch script
+### Slurm script
 
-Replace `PROJECTID` with your project code and use the `sbatch`
-command to submit this batch script and run the test code on 3 MPI
+Replace `PROJECTID` with your project ID number and use the `sbatch`
+command to submit this Slurm script and run the test code on 3 MPI
 ranks:
 
 ```sl
@@ -221,7 +221,7 @@ Local result: 5
 ## Running Dask-MPI inside a Apptainer container
 
 It is straightforward to run a Dask-MPI workload inside a Apptainer
-container on Mahuika. For reliable and efficient execution it is best to
+container on the HPC. For reliable and efficient execution it is best to
 use the same MPI distribution inside and outside the container. This
 restricts choices to Intel MPI on the Mahuika and Māui Ancil clusters;
 see section
@@ -267,8 +267,8 @@ Conda environment inside the container.
 
 Slurm configuration is identical to the case without Apptainer, see
 section [Configuring Slurm](#configuring-slurm)
-above. The Slurm job batch script needs to be slightly modified to
-set up and launch the container runtime environment, ensuring that Intel
+above. The Slurm job submission script needs to be slightly modified to
+setup and launch the container runtime environment, ensuring that Intel
 MPI finds Slurm's PMI-2 library on the host.
 
 In the first case with low worker memory consumption and no

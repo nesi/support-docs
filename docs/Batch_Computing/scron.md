@@ -9,11 +9,11 @@ description: How to use scron (Slurm cron) to schedule jobs
 
 <!-- Use `scron` for genuinely periodic tasks, not to keep jobs permanently queued. -->
 
-## scrontab
+## `scrontab`
 
 To make use of the *scron* service, you will use the `scrontab` utility.
 
-To view your current *scron* scheduled jobs, type:  `scrontab -l`.  To edit or add an entry using your default editor type: `scrontab -e`.   Running `scrontab -e` will open the user's default editor.  This is defined with the `$EDITOR` environment variable.  By default this will be `nano`.
+To view your current *scron* scheduled jobs, type:  `scrontab -l`. To edit or add an entry using your default editor type: `scrontab -e`. Running `scrontab -e` will open the user's default editor. This is defined with the `$EDITOR` environment variable. By default this will be `nano`.
 
 For more detailed information about using *scron*, type `man scrontab` to view the manual.
 
@@ -49,11 +49,11 @@ $ scrontab -e
 0 * * * * hostname >> ~/hostname_log.txt
 ```
 
-Notice the comment `min hour day-of-month month day-of-week`  These are reminders of what the columns represent. In our example we added a `0` in the `min` column.  The other columns are marked with a `*` meaning *all*.   This translates to:  At 0 minutes, of every hour of every day, of every month, run the command `hostname` and redirect the output to a file in my home directory called `hostname_log.txt`.
+Notice the comment `min hour day-of-month month day-of-week`  These are reminders of what the columns represent. In our example we added a `0` in the `min` column. The other columns are marked with a `*` meaning *all*. This translates to:  At 0 minutes, of every hour of every day, of every month, run the command `hostname` and redirect the output to a file in my home directory called `hostname_log.txt`.
 
 ## scron parameters
 
-What sets `scron` apart from regular `cron` is the fact that you can define Slurm parameters.  Similar to a `sbatch` batch script, but instead of using `#SBATCH` in your script, you employ `#SCRON`, adding to our example from above:
+What sets `scron` apart from regular `cron` is the fact that you can define Slurm parameters. Similar to a `sbatch` submit script, but instead of using `#SBATCH` in your script, you employ `#SCRON`, adding to our example from above:
 
 ```scrontab
 # Welcome to scrontab, Slurm's cron-like interface.
@@ -81,7 +81,7 @@ What sets `scron` apart from regular `cron` is the fact that you can define Slur
 0 * * * * hostname >> ~/hostname_log.txt
 ```
 
-We added the line starting with `#SCRON` to include Slurm parameters, we configure a job name and a max runtime of 5 minutes.
+We added the line starting with `#SCRON` to include slurm parameters, we configure a job name and a max runtime of 5 minutes.
 
 You can add more than one scheduled job, e.g.
 
@@ -95,24 +95,34 @@ You can add more than one scheduled job, e.g.
 0 3 15 * * /home/model-refresh.py
 ```
 
-We added a new scheduled job to run our model refresh script on the fifteenth of every month at 03:00.  Note that we are requesting the job to run on a Genoa node.  Most, but not all sbatch parameters are available in *scron*
+We added a new scheduled job to run our model refresh script on the fifteenth of every month at 03:00. Note that we are requesting the job to run on a genoa node. Most, but not all sbatch parameters are available in *scron*
+
+## How *scron* jobs run
+
+*scron* jobs differ from *cron* jobs in a few ways:
+
+- The schedule sets when the job becomes eligible to start, not when it starts. It then waits in the queue like any other job.
+- The next run is not submitted until the previous one has finished. Runs that would have started in the meantime are skipped.
+- Environment variables from your session are **not** passed to the job. Load modules and set any variables in the command or script it runs.
 
 ## Slurm Queue
 
-Once you have set up your scron job, you will notice it is listed in `squeue`
+Once you have set up your `scron` job, you will notice it is listed in `squeue`
 
 ```scrontab
 JOBID    PARTITION     NAME     USER    ST       TIME  NODES NODELIST(REASON)
 12345432 milan,genoa   hostname  mrbar  PD       0:00      1         (BeginTime)
 ```
 
-`(BeginTime)` is one indication that this is a scheduled scron job, it means the job is scheduled in the future.
+`(BeginTime)` is one indication that this is a scheduled *scron* job, it means the job is scheduled in the future.
 
 ## Disable *scron* job
 
-To disable a job in your scrontab, you can remove the line or add a `#` (comment character) before the line.  Any line beginning with `#SCRON` can be disabled in the same way, e.g.
+To disable a job in your scrontab, you can remove the line or add a `#` (comment character) before the line. Any line beginning with `#SCRON` can be disabled in the same way, e.g.
 
 ```scrontab
 ##SCRON --job-name=update-model --time=1:00:00 --partition=genoa
 #0 3 15 * * model-refresh.py
 ```
+
+Cancelling a *scron* job with `scancel` also cancels all its future runs.

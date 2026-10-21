@@ -23,7 +23,7 @@ Oxford Nanopore reads.
 
 - One executable with sensible defaults, automatic hardware detection
     and configuration.
-- NVIDIA GPUs including multi-GPU with linear scaling.
+- Nvidia GPUs including multi-GPU with linear scaling.
 - Modified basecalling (Remora models).
 - Duplex basecalling.
 - [POD5](https://github.com/nanoporetech/pod5-file-format) support for
@@ -47,9 +47,9 @@ Dorado can fetch models for basecalling from the Oxford Nanopore Content Deliver
 By default, Dorado will download and look for models in the current working directory; this can be changed using the `--models-directory` option for Dorado commands.
 You can also set this via the `DORADO_MODELS_DIRECTORY` environment variable.
 
-### Example batch script
+### Example Slurm script
 
-- The following batch script is a template to run Basecalling on the
+- The following Slurm script is a template to run Basecalling on the
     NVIDIA A100 GPUs. We do not recommend running Dorado jobs on CPUs.
 - `--device 'cuda:all'` will automatically pick up the GPU over CPU
 - We are not providing the models as part of the module yet. 

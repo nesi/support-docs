@@ -1,13 +1,13 @@
 ---
 created_at: 2025-12-19
-description: Guide to batch computing on Mahuika
+description: Guide to batch computing on REANNZ HPC
 tags:
     - slurm
     - interactive
 ---
 
 Batch jobs can be submitted via several methods. The most basic is a [simple Slurm job](#slurm-job-basics).
-Slurm can also run [jobs arrays](Job_Arrays.md).
+Slurm can also run [job arrays](Job_Arrays.md), and [job dependencies](Job_Dependencies.md) can make a job wait for others to finish.
 We also provide access to a [Globus Compute](Globus_Compute.md) endpoint which can be used to submit jobs.
 
 The Slurm scheduler utilises [Fairshare](Fairshare.md) to help with [job prioritisation](Job_Prioritisation.md). We also impose [general limits on the size and number of jobs](Job_Limits.md) submitted by any user.
@@ -68,6 +68,35 @@ Submitted batch job 1234567
 
 You can find details on its use in the [`sbatch` manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html).
 
+### Ways to run a command
+
+| Command | Runs | Waits for it to finish |
+| ------- | ---- | ---------------------- |
+| `bash script.sh` | Straight away, on the login node. Only for small tasks. | Yes |
+| `sbatch script.sl` | As a batch job, once resources are free. | No |
+| `sbatch --wait script.sl` | As a batch job. | Yes |
+| `sbatch --wrap "COMMAND"` | A single command as a batch job, without a batch script. | No |
+| `srun COMMAND` in a batch script | As a job step, using the job's resources. Each step shows on its own line in `sacct`. | Yes |
+| `srun --pty bash` | An [interactive session](../Interactive_Computing/Slurm_Interactive_Sessions.md) on a compute node. | Yes |
+
+If you don't give `sbatch` a filename, it reads the batch script from standard input.
+A script that submits jobs can use this to include a short batch script, as a heredoc:
+
+```sh
+sbatch <<'EOF'
+#!/bin/bash -e
+
+#SBATCH --job-name  heredoc-job
+#SBATCH --account   PROJECT_CODE
+#SBATCH --time      00:05:00
+
+echo "This is job ${SLURM_JOB_ID}"
+EOF
+```
+
+With `'EOF'` in quotes, variables such as `${SLURM_JOB_ID}` are filled in when the job runs.
+Without the quotes, they are filled in when you submit, which is useful for passing in values from the submitting script.
+
 ## Managing and reviewing your Slurm jobs
 
 ### Job Queue
@@ -82,7 +111,7 @@ Plain `squeue` shows the whole job queue, for all users.
 
 You can find details on its use in the [`squeue` manual](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html).
 
-Rather than polling `squeue` in a loop, use `sbatch --wait` to block until a job ends, `--dependency` to chain jobs, or `--mail-type` for email.
+Rather than polling `squeue` in a loop, use `sbatch --wait` to block until a job ends, [`--dependency`](Job_Dependencies.md) to chain jobs, or `--mail-type` for email.
 
 ### Completed jobs
 

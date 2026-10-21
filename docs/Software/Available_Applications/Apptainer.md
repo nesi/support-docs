@@ -1,6 +1,6 @@
 ---
 created_at: '2025-01-01T00:00:00Z'
-description: How to use Apptainer containers on Mahuika.
+description: How to use Apptainer containers on the NeSI HPC.
 no_module: true
 tags:
     - containers
@@ -89,7 +89,7 @@ apptainer build my_container.sif my_container.def
 ```
 
 !!! warning
-    Mahuika binds `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error.
+    NeSI systems bind `/opt/nesi` into running containers. If your base image does not include this directory, the build will fail with a mount error.
     We recommend `unset APPTAINER_BIND` before you build. Alternatively you can add `mkdir -p /opt/nesi` to your `%post` section (as above) prevents this.
 
     If you see the following error, it is likely caused by a bad upstream image on Docker Hub. Try an older version or a different base image:
@@ -245,7 +245,7 @@ mpiexec -n ${SLURM_NTASKS} --bind-to none --map-by slot \
 
 - Configure software to run in user space — Apptainer supports some privileged features on certain systems, but relying on them reduces portability across HPC platforms.
 - If your container runs an MPI application, ensure the MPI distribution inside the container is compatible with the cluster's MPI version.
-- Write output data and log files to the Mahuika filesystem via a bound directory rather than inside the container image. This keeps the image immutable, ensures logs are available for debugging, and avoids inflating the image file size.
+- Write output data and log files to the HPC filesystem via a bound directory rather than inside the container image. This keeps the image immutable, ensures logs are available for debugging, and avoids inflating the image file size.
 
 ??? note "Network isolation"
 

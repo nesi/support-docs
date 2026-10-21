@@ -38,7 +38,7 @@ You will need to authenticate using S3 credentials created on your RDC project t
 3. In the next window, click `Allow`.
     ![Globus_Freezer_Manage_Data.png](../../assets/images/Globus_Freezer_Manage_Data.png)
 
-4. To set up your credentials, please click `Continue`. You will be shown a Globus page requiring you to log in to RDC.
+4. To set up your credentials, please click `Continue`. You will be shown a Globus page requiring you to sign in to RDC.
     ![Globus RDC Credentials](../../assets/images/Globus_RDC_Credentials_Setup.png)
 
 5. Fill in your EC2 access key and secret.

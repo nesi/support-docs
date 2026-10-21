@@ -12,14 +12,15 @@ tags:
 !!! objectives
     - Understand scaling procedure.
 
+!!! prerequisite
+    - [Resources](Resources.md)
+
 The aim of these tests will be to establish how a jobs requirements change with size (CPUs, inputs) and ultimately figure out the best way to run your jobs.
 Unfortunately we cannot assume speedup will be linear (e.g. double CPUs won't usually half runtime, doubling the size of your input data won't necessarily double runtime) therefore more testing is required. This is called *scaling testing*.
 
 In order to establish an understanding of the scaling properties we may have to repeat this test several times, giving more resources each iteration.
 
-## Scaling Behaviour
-
-### Amdahl's Law
+## Amdahl's law
 
 Most computational tasks will have a certain amount of work that must be computed serially.
 
@@ -32,21 +33,23 @@ Code that has no serial components is said to be "embarrassingly parallel".
 
 It is worth noting that Amdahl's law assumes all other elements of scaling are happening with 100% efficiency, in reality there are additional computational and communication overheads.
 
+## Scaling exercise
+
 !!! note "Solo learners"
     The [spreadsheet]({{ config.extra.exercise }}) below is shared between attendees of a
     live workshop. To work through the same steps on your own, pick a handful of `--cpus-per-task` values (1, 2, 4, 8, etc), and record the
     "Elapsed", "TotalCPU" and "Memory" value. Plot the values, and note the trends.
 
-!!! question "Scaling Exercise"
+??? question "Scaling Exercise"
     1. Find your name in the [spreadsheet]({{ config.extra.exercise }}) and modify your `example_job.sl` to request
     "x" `--cpus-per-task`.
     For example `#SBATCH --cpus-per-task 10`.
-    2. Estimate memory requirement based on our previous runs and the cpus requested, memory
+    2. Estimate memory requirement based on the *MaxRSS* of the job that completed in [Resources](Resources.md) and the cpus requested, memory
     is specified with the `--mem ` flag, it does not accept decimal values, however you may
     specify a unit (`K`|`M`|`G`), if no unit is specified it is assumed to be `M`.
     For example `#SBATCH --mem 1200`.
     3. Now submit your job, we will include an extra argument `--acctg-freq 1`.
-    By default Slurm records job data every 30 seconds.
+    By default SLURM records job data every 30 seconds.
     This means any job running for less than 30
     seconds will not have its memory use recorded.
     Submit the job with `sbatch --acctg-freq 1 example_job.sl`.
@@ -57,10 +60,29 @@ It is worth noting that Amdahl's law assumes all other elements of scaling are h
     Make sure you have entered the values in the correct format and there is a tick next to each entry.
     ![Correctly entered data in spreadsheet](../../assets/images/correct-spreadsheet-entry.png)
 
-??? question "Solution"
-    [spreadsheet]({{ config.extra.exercise }})
+    <quiz>
+    Once everyone's results are in the spreadsheet, look at how _Elapsed_ changes as the number of CPUs grows.
+    What do you see?
+
+    - [x] It falls quickly at first, then levels off.
+    > The serial part of the job doesn't get faster with more CPUs (see [Amdahl's Law](#amdahls-law)).
+    - [ ] It halves every time the number of CPUs doubles.
+    > Only a job with no serial part at all would scale like this.
+    - [ ] It stays the same.
+    > `sum_matrix.r` does use more CPUs when it is given them, so it gets faster, up to a point.
+    - [ ] It keeps falling at the same rate, however many CPUs are added.
+    > The serial part sets a limit on how fast the job can get.
+    </quiz>
+
+    See the [spreadsheet]({{ config.extra.exercise }}) for everyone's results.
 
 !!! keypoints
     - Start small.
     - Test one thing at a time (unit tests).
     - Record everything.
+
+!!! postrequisite "What Next"
+    This is the last lesson in this series. To keep going:
+
+    - [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md)
+    - [Job Limits](../../Batch_Computing/Job_Limits.md)

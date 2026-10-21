@@ -6,9 +6,9 @@ tags:
   - file_transfer
 ---
 
-To use Freezer and to configure `s3cmd`, you will need a current Freezer allocation. To apply for an allocation please go to [my.nesi.org.nz](https://my.nesi.org.nz/).
+To use Freezer and to configure `s3cmd`, you will need a current Freezer allocation. To apply for an allocation please go to [MyNeSI](https://my.nesi.org.nz/).
 
-Currently Freezer is only available from Mahuika. We are currently completing security hardening prior to opening Freezer to wider access.
+Currently Freezer is only available via specific access points, HPC3 and Mahuika. We are currently completing security hardening prior to opening Freezer to wider access.
 
 ### Configure s3cmd
 
@@ -54,7 +54,7 @@ HTTP Proxy server name: <span style="color:green"><b>Leave blank, </b>press &lt;
 
 You will then be presented with a summary.
 <pre><code>New settings:
-  Access Key: USERNAME
+  Access Key: User ID
   Secret Key: Your Freezer Secret Key
   Default Region: akl-1
   S3 Endpoint: freezer.nesi.org.nz:7070

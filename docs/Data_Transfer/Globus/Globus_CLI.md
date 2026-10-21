@@ -24,14 +24,14 @@ If you want to use it on your computer, you need to have installed
 pip install --user --upgrade globus-cli
 ```
 
-Then, you need to log in to Globus by typing into the terminal
+Then, you need to login to Globus by typing into the terminal
 
 ```sh
 globus login
 ```
 
 This will show you a website that will require you to authenticate yourself, as well as to allow
-Globus CLI to have access to your Globus files. You will be given an authorisation code that you
+Globus CLI to have access to your Globus files. You will be given an authorization code that you
 want to enter into the terminal.
 
 ![Globus_CLI_1.png](../../assets/images/Globus_CLI_1.png)

@@ -43,7 +43,7 @@ which may well be more efficient overall.
 
 SMT increases the efficiency of some parallel jobs, so we recommend trying it
 if you are running many of those. But since it complicates the
-mathematics at small levels of parallel scaling (e.g. a 1-thread job and a 2-thread SMT job
+mathematics at small levels of parallel scaling (e.g: a 1-thread job and a 2-thread SMT job
 both use 1 core, a 3- or 4-thread SMT job uses 2 cores) it might be simplest to first find
 your optimum number of threads without SMT, and then see what happens when you
 add `--threads-per-core=2`. If the performance is better than 50% of what it was
@@ -61,7 +61,7 @@ if SMT is *enabled* `--mem-per-cpu` is memory per thread, i.e. double the memory
 #SBATCH --mem-per-cpu        1G
 ```
 
-Will get you 1 GB of memory.
+Will get you 1G of memory.
 
 ```sh
 #SBATCH --cpus-per-task       1
@@ -69,7 +69,7 @@ Will get you 1 GB of memory.
 #SBATCH --hint                multithread
 ```
 
-Will get you 2 GB of memory.
+Will get you 2G of memory.
 
 ## Licences
 

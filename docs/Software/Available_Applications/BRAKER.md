@@ -55,7 +55,7 @@ Artistic License
 ## Prerequisites
 
 !!! info "prerequisite Obtain GeneMark-ES/ET Academic License"
-    GeneMark-ES/ET which is one of the dependencies for BRAKER requires an individual academic licence  (this is free). This can be obtained as below
+    GeneMark-ES/ET which is one of the dependencies for BRAKER requires an individual academic license  (this is free). This can be obtained as below
      -   Download URL <http://topaz.gatech.edu/genemark/license_download.cgi>
      -   ![genemark\_es\_license.png](../../assets/images/BRAKER.png)
      -   Downloaded filename will be in the format of `gm_key_64.gz`
@@ -66,7 +66,7 @@ Artistic License
 
     Make a copy of AUGUSTUS config from `/opt/nesi/CS400_centos7_bdw/AUGUSTUS/3.4.0-gimkl-2022a/config` to path with read/write permissions .i.e. project, nobackup,home 
 
-### Example batch scripts
+### Example Slurm scripts
 
 Following example uses the [.fa files provided BRAKER developers](https://github.com/Gaius-Augustus/BRAKER/tree/master/example)
 

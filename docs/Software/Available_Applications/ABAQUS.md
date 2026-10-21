@@ -46,7 +46,7 @@ parameter `academic=TEACHING` or `academic=RESEARCH` in a relevant
 
 [Simultaneous Multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (adding `#SBATCH --hint multithread`)
 can provide significant speedup to your computations, however
-simultaneous multithreading (SMT) will use twice the number of licence tokens.
+hyperthreaded CPUs will use twice the number of licence tokens.
 
 ## Solver Compatibility
 
@@ -91,7 +91,7 @@ Not all solvers are compatible with all types of parallelisation.
     Uses a nodes shared memory for communication.
     May have a small speedup compared to MPI when using a low number of
     CPUs, scales poorly. Needs significantly less memory than MPI.
-    simultaneous multithreading (SMT) may be enabled if using shared memory but it is not
+    simultaneous multithreading (SMP) may be enabled if using shared memory but it is not
     recommended.
 
     ```sl
@@ -132,7 +132,7 @@ Not all solvers are compatible with all types of parallelisation.
     should be equal to `--ntasks`
     Each task could be running on a different node leading to increased
     communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the
-    queue as contiguous CPUs are harder to schedule.
+    queue as contiguous cpu's are harder to schedule.
     This is the default method if `mp_mode` is left
     unspecified.
 
@@ -153,7 +153,7 @@ Not all solvers are compatible with all types of parallelisation.
 === "GPUs"
     The GPU nodes are limited to 16 CPUs
     In order for the GPUs to be worthwhile, you should see a speedup
-    equivalent to 56 CPUs per GPU used. GPU modes will
+    equivalent to 56 CPU's per GPU used. GPU modes will
     generally have less memory/cpus.
 
     ```sl
@@ -215,8 +215,8 @@ rm "abaqus_v6.env"
 
 ![ABAQUS\_speedup\_SharedVMPI.png](../../assets/images/ABAQUS.png)
 
-*Note: simultaneous multithreading (SMT) off, testing done on small mechanical FEA model.
-Results highly model dependent. Do your own tests.*
+*Note: simultaneous multithreading (SMP) off, testing done on small mechanical FEA model.
+Results highly model dependant. Do your own tests.*
 
 ## Common Issues
 

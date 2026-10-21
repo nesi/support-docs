@@ -26,5 +26,5 @@ such a high memory usage, for two reasons:
 
 If you see an OOM event, you have two options. The easier option is to
 request more memory by increasing the value of the `--mem` argument in
-your job batch script. The more difficult, but potentially more
+your job submission script. The more difficult, but potentially more
 useful where it is feasible, is to make your job less memory-intensive.

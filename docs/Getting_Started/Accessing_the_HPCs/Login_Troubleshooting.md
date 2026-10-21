@@ -2,7 +2,7 @@
 created_at: '2018-11-16T01:13:47Z'
 tags:
 - access
-description: Troubleshooting instructions for logging in to Mahuika
+description: Troubleshooting instructions for logging in to the REANNZ cluster
 ---
 
 
@@ -26,7 +26,7 @@ There is a known MobaXterm bug in which a user who has set a second
 factor and is trying to log in to the lander node will be prompted
 multiple times for 'Password' before being prompted for 'First Factor'.
 (On the lander node, you should only be prompted for a 'password' if you
-have no additional authentication credentials set up.)
+have no Second Factor set up.)
 
 These initial prompts can be skipped through by pressing 'Enter'. Any
 input before pressing Enter will cause the login to fail.
@@ -55,14 +55,14 @@ MobaXterm can be updated through: 'help&gt;check for updates'
 
 ### Check password status
 
-Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have additional authentication credentials registered.
+Using [my.nesi.org.nz](https://my.nesi.org.nz/) and confirm you have an authentication token registered.
 
 ### See [above](#skip-password-prompts)
 
 ## Authentication token manipulation error
 
-This occurs when your additional authentication credentials are out of sync. You will have
-to reset them through [my.nesi.org.nz](https://my.nesi.org.nz/).
+This occurs when your authentication token is out of sync. You will have
+to reset your token though [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 ## Link Expired
 
@@ -74,7 +74,7 @@ Either your link has expired, or it was copied incorrectly.
 
 ## Trusting Device results in error
 
-![Login page showing 'We are sorry... Unexpected error when handling authentication request to identity provider.'](../../assets/images/Trusted-Device-error.png)
+![NeSI login page showing 'We are sorry... Unexpected error when handling authentication request to identity provider.'](../../assets/images/Trusted-Device-error.png)
 
 
 This error is caused by a naming conflict: you have used the same device name previously. Choose a different device name and try again.
@@ -101,28 +101,28 @@ ssh login.hpc.nesi.org.nz
 **If this succeeds**:
 
 * If you are using a bash terminal, confirm your .ssh config is [set up correctly](./Connecting_to_the_Cluster.md).
-* If you are using an SSH client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](./Connecting_to_the_Cluster.md).
+* If you are using a ssh client like *MobaXterm* or *WinSCP* make sure your session is [set up correctly](./Connecting_to_the_Cluster.md).
 
 ### Check you are a member of an active project
 
 If you are not a member of an active project, or your project has no
 active allocation, you will not be able to log in. You should be able to
 find whether you have any active projects with active
-allocations [on my.nesi.org.nz](https://my.nesi.org.nz/html/view_projects).
+allocations [on myNesi](https://my.nesi.org.nz/html/view_projects).
 
 ### Confirm you are using the correct username and password
 
 The most common cause of login failure is using incorrect login details.
-Make sure you are using your username and the password you set when
-first logging in to the Lander node. See
+Make sure you are using your NeSI Username and the password you set when
+first logging into the Lander node. See
 [my.nesi.org.nz](https://my.nesi.org.nz/).
 
 ### Check the time on your device
 
-If the device you use for your additional authentication credentials is not using
-NZST/NZDT, or is not keeping the correct time, the 6-digit code
+If the device you are using as authentication token is not using
+NZST/NZDT, or is not keeping the correct time, the second factor code
 generated will be invalid. Even an error of a few seconds can be enough
-to invalidate the 6-digit code.
+to invalidate the second factor code.
 
 If your device can't keep time properly for whatever reason, please
 contact the person or team responsible for supporting it.
@@ -134,9 +134,9 @@ Mahuika login node after it has been used to access the lander node, or
 for consecutive login attempts to any node. If in doubt, wait 30 seconds
 for a new token to be generated.
 
-### Ensure you are using the correct 6-digit code
+### Ensure the correct Second Factor token is being used
 
-Multi-factor authentication is becoming a common security measure. Many
+Two-factor authentication is becoming a common security measure. Many
 people have multiple tokens and occasionally mix them up.
 
 ### Wait four hours
@@ -151,7 +151,7 @@ lockout, making diagnosing the original issue much more difficult.
 
 Helpful things to include:
 
-* The client you are using (Windows Subsystem for Linux, MobaXterm, Mac terminal, Linux, etc.).
+* The client you are using (WSL, MobaXterm, Mac terminal, Linux, etc.).
 * The nature of the problem, including the precise text of any error
     message you have been receiving.
     * Did you start out having one login problem and are now getting a

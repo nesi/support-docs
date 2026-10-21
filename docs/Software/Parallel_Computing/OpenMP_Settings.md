@@ -21,7 +21,7 @@ all that is necessary to get 16 OpenMP threads is:
 #SBATCH --cpus-per-task=16
 ```
 
-in your batch script - although this can sometimes be more complicated,
+in your Slurm script - although this can sometimes be more complicated,
 e.g., with
 [TensorFlow on CPUs](../Available_Applications/TensorFlow.md#tensorflow-on-cpus).
 
@@ -33,10 +33,10 @@ consistent, additional information can be found in our article
 [Thread Placement and Thread Affinity](./Thread_Placement_and_Thread_Affinity.md).
 
 1. `--threads-per-core=2`. Use this option to tell srun or sbatch to
-that you want to use [Simultaneous Multithreading (SMT)](Simultaneous_Multithreading.md),
+that you want to use [Simultaneous Multithreading (SMP)](Simultaneous_Multithreading.md),
 so use both of the virtual CPUs available on each physical core,
 halving the number of physical cores you occupy.
-If you use SMT, you will be charged for the number of physical cores that
+If you use SMP, you will be charged for the number of physical cores that
 you requested - the second logical CPU on a physical CPU core is free,
 although Slurm always reports both CPUs.  The older option `--hint=multithread` is also equivalent to `--threads-per-core=2`.
 
@@ -47,7 +47,7 @@ generally advisable to pin the threads to avoid delays caused by thread
 migration.
 
 4. `OMP_PLACES`. Set this to "cores" if you want to pin the threads to
-physical cores, or to "threads" if you want to use SMT.
+physical cores, or to "threads" if you want to use SMP.
 
 The effect of each setting is illustrated below. In this experiment we
 measured the execution time twice of the finite difference

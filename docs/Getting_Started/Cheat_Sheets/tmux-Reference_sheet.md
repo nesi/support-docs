@@ -35,8 +35,9 @@ The <kbd>ctrl</kbd> + <kbd>b</kbd>, <kbd>d</kbd>keyboard shortcut "detaches" the
 allows you to logoff.  You can also simply close your terminal or laptop.  Running `ctrl-b-d` is 
 not required to save the session.  
 
+
 When you are ready to reattach to the session
-you log in and run the following:
+you login and run the following:
 
 ``` sh
 tmux attach -t data_transfer

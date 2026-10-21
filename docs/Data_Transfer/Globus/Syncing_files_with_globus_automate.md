@@ -19,8 +19,8 @@ You can also use this approach to synchronise your files, that is to
 copy only the files that don't yet exist at the destination point, or
 refresh the files that have changed since you last triggered a transfer.
 
-We'll assume that you have a Mahuika user account, you have registered at
-[https://globus.org](https://globus.org), and have created a guest collection on Mahuika
+We'll assume that you have a NeSI account, you have registered at
+[https://globus.org](https://globus.org), and have created a guest collections on NeSI
 and a private mapped collection on the destination computer (follow the
 instructions at
 [Data transfer](Data_Transfer_Using_Globus.md)).
@@ -55,13 +55,13 @@ where
 - `ENDPOINT1` is the source endpoint UUID, which you can get
     <https://app.globus.org/collections> by clicking on the collection
     of your choice. Using a guest collection will allow you to transfer
-    the data without multi-factor authentication
+    the data without two-factor authentication
 - `ENDPOINT2` is the destination UUID, e.g. your personal endpoint
     UUID, which may be for your private mapped collection if you're
     transferring to your personal computer
 - `SOURCE_FOLDER` is the **relative** path of the source folder in the
     source endpoint. This is a directory, it cannot be a file. Use "/"
-    if you do not intend to transfer the data from subdirectories
+    if you do not intend to transfer the data from sub-directories
 - `DESTINATION_FOLDER` is the **absolute** path of the destination
     folder in the destination endpoint when the destination is a private
     mapped collection

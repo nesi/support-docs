@@ -8,7 +8,7 @@ description: Choosing how to move data to, from and within the cluster, and tran
 !!! prerequisite
     Have an [active account and project.](../Getting_Started/Getting_Started_Overview.md)
 
-There are several ways to transfer your data between Mahuika and your computer or server.
+There are several ways to transfer your data between the Mahuika Supercomputer and your computer or server.
 
 For simple, graphical user interface options without requiring additional setup, see:
 
@@ -21,15 +21,15 @@ Specialised web-based file transfer tools:
 
 File transfer methods from the terminal:
 
-* [rsync](./Rsync.md): Good for large and more complex data moving operations providing additional features over SCP.
-* [Rclone](./RClone.md): Best tool for transferring to cloud storage services or parallelising transfer from command line.
-* [SCP (Secure Copy)](./SCP.md): SCP comes with all versions of macOS, Linux and Windows Subsystem for Linux (WSL), and is a good tool for data transfer.
+* [Rsync](./Rsync.md): Good for large and more complex data moving operations providing additional features over SCP.
+* [RClone](./RClone.md): Best tool for transferring to cloud storage services or parallelising transfer from command line.
+* [SCP (Secure Copy)](./SCP.md): SCP is pre-installed on all versions of MacOS, Linux and WSL and is a good tool for data transfer.
 
 For transferring data using specific tools, see:
 
 * [File transfer using MobaXterm (Windows)](./Data_Transfer_Using_MobaXterm.md)
 * [File transfer using WinSCP (Windows)](./Data_Transfer_Using_WinSCP.md)
-* [File transfer using VSCode (Windows/macOS/Linux)](./VSCode.md)
+* [File transfer using VSCode (Windows/MacOS/Linux)](./VSCode.md)
 * [Connecting with the default file manager (Ubuntu Desktop)](./File_Managers.md)
 
 !!! info
@@ -39,7 +39,7 @@ For transferring data using specific tools, see:
 
 ### Avoid Transferring Temporary Files
 
-Temporary files are files that are created by a program while it is running. This may be to hold information that may be needed later, to hold memory that is too big to hold in memory (RAM), or are used for checkpointing. Temporary files are only needed by a program while it is running. Once a program has finished successfully, they can be removed. These may have filenames ending with `.tmp` or `.temp`.
+Temporary files are files that are created by a program while it is running. This may be to hold information that may be needed later, to hold memory that is too big to hold in memory (RAM), or are used for checkpointing. Temporary files are only needed by a program while it is running. Once a program has finished successfully, they can be removed. These may have file names ending with `.tmp` or `.temp`.
 
 It is best to avoid transferring temporary files. This is because temporary files:
 
@@ -101,9 +101,9 @@ To compress one or more large files:
 
     If you are running out of space in your `project` and `nobackup` directories, feel free to {% include "partials/support_request.html" %} and we can work with you to help transfer your files.
 
-### Use either `cp`, `mv`, `rclone`, or `rsync` to transfer files within Mahuika
+### Use either `cp`, `mv`, `RClone`, or `Rsync` to transfer files within Mahuika
 
-It is recommended that if you are wanting to transfer files within or between your `home`, `project`, and `nobackup` directories that you use either copy (`cp`), move (`mv`), [Rclone](./RClone.md) or [rsync](./Rsync.md) to achieve this.
+It is recommended that if you are wanting to transfer files within or between your `home`, `project`, and `nobackup` directories that you use either copy (`cp`), move (`mv`), [RClone](./RClone.md) or [Rsync](./Rsync.md) to achieve this.
 
 ### Only use Globus to transfer data onto and off of Mahuika from an outside source
 

@@ -75,7 +75,7 @@ requested from the scheduler.
 
 ORCA provides for saving of checkpoint data, especially molecular
 orbital information, in a file with extension ".gbw" (short for
-Geometry-Basis-Wavefunction). Given an input filename of "foo.inp" or
+Geometry-Basis-Wavefunction). Given an input file name of "foo.inp" or
 some equivalent, the GBW file will be named "foo.gbw". The GBW file,
 like temporary and other output files, will be written in the same
 directory from which the ORCA executable is invoked.

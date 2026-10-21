@@ -76,7 +76,7 @@ The combinations of Slurm settings and RAxML types which make sense are:
 
 MPI and HYBRID are only useful for bootstrapped trees.
 
-For the multithreaded cases (PTHREADS and HYBRID) you should tell RAxML
+For the multi-threaded cases (PTHREADS and HYBRID) you should tell RAxML
 how many threads to use with the RAxML option `-T $SLURM_CPUS_PER_TASK`.
 
 The "AVX" executables use the AVX SIMD instructions, while the "SSE3"

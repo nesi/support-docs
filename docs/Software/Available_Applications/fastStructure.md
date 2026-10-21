@@ -1,6 +1,6 @@
 ---
 created_at: 2025-11-20
-description: Details on running fastStructure on Mahuika
+description: Details on running fastStructure on the HPC
 tags:
     - biology
     - software

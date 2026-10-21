@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-05
-description: How to share data from Mahuika using FileSender.
+description: How to share data from the REANNZ HPC using FileSender.
 tags:
     - file_transfer
 ---
@@ -17,7 +17,7 @@ While FileSender can be used as a file transfer service, it's real strength is f
 ### Sending Data using the REANNZ FileSender Website
 
 1. Go to [https://filesender.reannz.co.nz](https://filesender.reannz.co.nz)
-2. If asked, click **Login** and log in through Tuakiri. You may not need to do this if you have already logged in to FileSender before.
+2. If asked, click **Login** and Sign-in through your Tuakiri login. You may not need to do this if you have already signed into FileSender before.
 3. You can then drag & drop or click to select a file to transfer or you can select an entire directory to upload to FileSender
 
 ### Receiving Data using the REANNZ FileSender Website
@@ -37,7 +37,7 @@ If you would like to download all files together in a tar or zip file, you can d
 To send data to your FileSender account using the command line, we first have to configure FileSender  You only need to do this once.
 
 1. Go to [https://filesender.reannz.co.nz](https://filesender.reannz.co.nz)
-2. If asked, click **Login** and log in through Tuakiri. You may not need to do this if you have already logged in to FileSender before.
+2. If asked, click **Login** and Sign-in through your Tuakiri login. You may not need to do this if you have already signed into FileSender before.
 3. Click **My profile** at the top-right of the page.
 4. Near the bottom of the page under **Remote authentication**, click the **New API secret** button. This will create a new authenticator secret key.
 5. In the terminal on the machine you would like to send/receive data from, type:
@@ -77,9 +77,9 @@ filesender -p -r recipient@email.co.nz research-data-file.txt
 where:
 
 * `recipient@email.co.nz`: This is the email address of the person to send your data. This can also be your own email address if you are wanting move data between your local machine and mahuika.
-* `research-data-file.txt` This is the file you would like to send. This can be any file, except files with excluded extensions mentioned at the top of this page (e.g. `exe` files)  
+* `research-data-file.txt` This is the file you would like to send. This can be any file, except files with excluded extensions mentioned at the top of this page (eg. `exe` files)  
 
-You can find more options for `filesender` by running `filesender --help`
+You can find more options for `filesender` by running `filesender --help` 
 
 We recommend sending multiple files by making an archive (also known as a tarball):
 

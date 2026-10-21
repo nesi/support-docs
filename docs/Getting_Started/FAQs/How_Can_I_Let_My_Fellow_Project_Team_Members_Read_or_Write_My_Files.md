@@ -3,7 +3,7 @@ created_at: '2019-11-07T04:11:03Z'
 tags:
 - storage
 - account
-description: Instructions for giving project members read or write access to files.
+description: Instructions for giving project team members read or write access to files?
 ---
 
 !!! tip "See also"
@@ -17,7 +17,7 @@ together with its contents, as the case may be, will keep its original
 ownership, group and permissions.
 
 So, supposing Joe Bloggs moves a file from his home directory to the
-project directory `/nesi/project/nesi12345`, his fellow project members
+project directory `/nesi/project/nesi12345`, his fellow team members
 won't be able to write to it:
 
 ```sh

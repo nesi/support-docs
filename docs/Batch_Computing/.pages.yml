@@ -2,7 +2,8 @@ nav:
  - Batch_Computing_Guide.md
  - Hardware.md
  - Job_Prioritisation.md
- - Slurm-Best_Practice.md
+ - Debug_QoS.md
+ - SLURM-Best_Practice.md
  - Using_GPUs.md
  - Job_Checkpointing.md
  - Fairshare.md

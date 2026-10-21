@@ -38,7 +38,7 @@ to balance work between different projects.
 These are measured in REANNZ Service Units (RSUs), with the price of hardware in terms of RSUs shown in the
 following table.
 
-|  Hardware type            |    FairShare Price              |
+|  Hardware type            |    Fair Share Price              |
 |---------------------------|----------------------------------|
 | Milan CPU                 | 0.9 RSUs per CPU-core-hour       |
 | Milan Memory (RAM)        | 0.1286 RSUs per GB-hour          |
@@ -53,12 +53,12 @@ following table.
 
 The total RSU cost of a job is the sum of the costs of the
 hardware it uses. Once the job has finished running, this composite price is
-what affects your project's FairShare score.
+what affects your project's Fair Share score.
 
 !!! note "Using up your compute allocation"
     You may continue to submit jobs even if you have used all of your
     compute allocation. The effect of having no RSUs remaining is a
-    [lower FairShare](../../Batch_Computing/Fairshare.md),
+    [lower Fair Share](../../Batch_Computing/Fairshare.md),
     not the inability to use CPUs. Your ability to submit jobs will only be
     removed when your project's allocation expires, not when your RSUs are exhausted.
 

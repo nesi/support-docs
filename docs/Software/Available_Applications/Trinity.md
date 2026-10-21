@@ -34,7 +34,7 @@ can be found on their GitHub page.
 The recommended approach for running Trinity on Mahuika is to split the run
 into two separate job submissions. The first submission will run Trinity
 Phase 1 (read clustering) and the second submission will run Trinity
-Phase 2 (assembling read clusters). We have observed faster runtimes
+Phase 2 (assembling read clusters). We have observed faster run times
 and reduced core hour usage when applying this approach to benchmark
 data, compared to running both phases in one multithreaded job (see the
 [Benchmarks](#benchmarks) section below).
@@ -66,7 +66,7 @@ they have been observed to require similar resources. This phase
 typically has high memory requirements and supports multithreading in
 places.
 
-The following batch script is a template for running Trinity Phase 1
+The following Slurm script is a template for running Trinity Phase 1
 
 **Note**  :
 
@@ -79,7 +79,7 @@ The following batch script is a template for running Trinity Phase 1
 #!/bin/bash -e
 #SBATCH --job-name=trinity-phase1
 #SBATCH --account=nesi12345   # your NeSI project code
-#SBATCH --time=30:00:00       # maximum runtime
+#SBATCH --time=30:00:00       # maximum run time
 #SBATCH --ntasks=1            # always 1
 #SBATCH --cpus-per-task=16    # number of threads to use for Trinity
 #SBATCH --mem=220G            # maximum memory available to Trinity
@@ -182,7 +182,7 @@ cmds_per_node=50
 - name this file `SLURM.conf` in the directory you will submit the job
   from
 
-A template batch script for Trinity Phase 2 is shown below:
+A template Slurm submission script for Trinity Phase 2 is shown below:
 
 ``` sl
 #!/bin/bash -e
@@ -230,7 +230,7 @@ perform on Mahuika and an indication of its resource requirements.
 Timings mentioned here should be taken as indicative only and, even if
 assembling the same sample again, would be expected to vary
 significantly depending on various factors, such as the load on the
-system and project FairShare scores and priorities.
+system and project fair share scores and priorities.
 
 ### Test sample
 
@@ -248,7 +248,7 @@ mini-assemblies to run in Phase 2.
 The table below summarises the timings for Phase 2, comparing the
 default, single node way to run Phase 2, to using Trinity's "grid mode".
 
-| Type of run           | Number of cores / grid specification     | Runtime (hrs:mins:secs)      | Approximate core hour cost     |
+| Type of run           | Number of cores / grid specification     | Run time (hrs:mins:secs)     | Approximate core hour cost     |
 |-----------------------|------------------------------------------|------------------------------|--------------------------------|
 | Single node (default) | 16 cores                                 | 24:09:36                     | 387                            |
 | Grid                  | max\_nodes=20; cmds\_per\_node=500       | 07:59:58                     | 168                            |
@@ -266,7 +266,7 @@ This benchmark concerns the assembly of a marine sediment sample,
 containing two distinct microbial populations, from two distinct
 geographical locations, of approximately 286 million paired reads. The
 assembly was performed using the two-phase Trinity workflow discussed
-above, using those batch scripts as templates.
+above, using those submission scripts as templates.
 
 Phase 1 ran on 18 threads with 220 GB memory and took approximately 15 hours to complete.
 
@@ -282,7 +282,7 @@ hours to complete (elapsed time) and cost around 1,800 core hours.
 This sediment sample, containing 303 million reads, was all from the
 same location and was taken from a treatment experiment. The assembly
 was performed using the two-phase Trinity workflow discussed above,
-using those batch scripts as templates.
+using those submission scripts as templates.
 
 There were 4,136,295 mini-assemblies to run in Phase 2. The master
 process requested 30 GB memory and HPC GridRunner was configured with

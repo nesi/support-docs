@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-05
-description: How to transfer data on Mahuika using OnDemand.
+description: How to transfer data on the REANNZ HPC using OnDemand.
 tags:
     - interactive
 ---
@@ -10,7 +10,7 @@ tags:
 
 * See [OnDemand how to guide](../Interactive_Computing/OnDemand/how_to_guide.md) for more information about how to use OnDemand.
 
-Once you have launched Mahuika OnDemand in your web browser, click on the `Files` top tab and then click on `Home Directory`.
+Once you have launched REANNZ HPC OnDemand on your web browser, click on the `Files` top tab and then click on `Home Directory`.
 
 ![OnDemand_File_directory.png](../assets/images/OnDemand_File_directory.png)
 

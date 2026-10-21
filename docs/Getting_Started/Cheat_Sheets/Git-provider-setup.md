@@ -30,7 +30,7 @@ We will use GitHub as the example but the basic setup should be similar in other
     ssh-keygen -t ed25519 -C "your_github_account@example.com"
     ```
 
-- When prompted for a filename, press `enter`. When prompted for a password, press enter twice more.
+- When prompted for a file name, press `enter`. When prompted for a password, press enter twice more.
 
 - Open up the newly created .pub key with the command
 
@@ -57,7 +57,7 @@ We will use GitHub as the example but the basic setup should be similar in other
 
     ![SSH Key button](../../assets/images/Git-Reference_Sheet_0.png)
 
-- In the "Title" field, put "Mahuika".
+- In the "Title" field, put "Mahuika" or "REANNZ HPC".
 
 - Paste your key into the "Key" field.
 

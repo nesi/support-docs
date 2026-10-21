@@ -40,7 +40,7 @@ Username
 
 Project
 :   A piece of research work on Mahuika, with an owner and members.
-    Each project has a project code, such as `nesi99991`, which you give as the `--account` in your batch scripts.
+    Each project has a project code, such as `nesi99991`, which you give as the `--account` in your Slurm scripts.
 
 Allocation
 :   The amount of compute and storage a project can use over a set period.

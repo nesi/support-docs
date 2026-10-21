@@ -10,7 +10,7 @@ description: Release notes for my.nesi.org.nz v2.36.0 - Freezer allocations show
 
 ## New and Improved
 
-- Improved visibility of Freezer allocations: In the List Projects menu, you can select a project by clicking on its code or title. If Freezer allocations are available for that project, they will be displayed under the Resource Allocation Details panel with their associated name.  
+- Improved visibility of Freezer allocations: In the List Projects menu, you can select a project by clicking on its code or title. If freezer allocations are available for that project, they will be displayed under the Resource Allocation Details panel with their associated name.  
 
 If you have any questions about any of the updates, please
 {% include "partials/support_request.html" %}.

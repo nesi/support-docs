@@ -11,7 +11,7 @@ search:
 
 ## New and Improved
 
-- Various bug fixes and performance optimisations
+- Various bug fixes and performance optimizations
 - Renamed Freezer bucket names: All bucket names previously containing underscores (_) have been updated to use hyphens (-) for improved consistency and compatibility
 
 If you have any questions about any of the fixes, please {% include "partials/support_request.html" %}.

@@ -38,7 +38,7 @@ Symbolic links will not be removed, if at deletion time they are broken. These e
 
 ### GUFI: The Engine behind the Autocleaner
 
-The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are older than 90 days and have not been accessed within 90 days.
+The autocleaner uses the GUFI (Grand Unified File Index) indexing tool to quickly and efficiently list all the files on your nobackup directories that are order than 90 days and have not been accessed within 90 days.
 
 GUFI performs indexing every weekend. Therefore if you have already deleted a file that was in your `nn_doomed_list` list, it will still appear in `nn_doomed_list` until the next week when GUFI will re-index the files in `nobackup`.
 
@@ -51,7 +51,7 @@ Prior to data being deleted, we’ll send you an email identifying what has been
 ## How can I check which files are scheduled for deletion?
 
 You can manually check at any time if you have any data that's scheduled for deletion. 
-When you are connected to Mahuika via SSH, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
+When you are connected to the HPCs via ssh, run the command ```nn_doomed_list``` command to get the list of candidates for deletion during the next cleanup.
 
 ```sh
 $ nn_doomed_list --project nesi12345 
@@ -172,7 +172,7 @@ If you have files identified as candidates for deletion that you need to keep be
 
 - Move the file(s) to your project directory, e.g., `/nesi/project/nesi12345`. You may need to request more disk space in your project directory before you can do this, {% include "partials/support_request.html" %}. We assess such requests on a case-by-case basis.
 - You can save space by compressing data Standard tools such as `gzip` `bzip2` are available.
-- Move the file(s) to Freezer, our [long-term storage service](Long_Term_Storage/Freezer_Guide.md). Note: Freezer is intended for use with relatively large files and should not be used for a large number of small files. To apply for a Freezer allocation, {% include "partials/support_request.html" %} or request a new Freezer allocation in [my.nesi.org.nz](https://my.nesi.org.nz/login).
+- Move the file(s) to Freezer, our [long-term storage service](Long_Term_Storage/Freezer_Guide.md). Note: Freezer is intended for use with relatively large files and should not be used for a large number of small files. To apply for a Freezer allocation, {% include "partials/support_request.html" %} or request a new Freezer allocation in [my.nesi.co.nz](https://my.nesi.org.nz/login).
 - Move or copy the file to a storage system at your institution. We expect projects to do this for finalised output data and appreciate prompt egress of data once it is no longer used for processing.
 
 ## Where should I store my data?
@@ -215,9 +215,9 @@ Please refer to the autocleaning email to determine the autocleaning date.
 
 ## I ran ```nn_doomed_list```, but got the message `file list not found`
 
-You are getting this message because GUFI, the engine behind ```nn_doomed_list```, can not be mounted. This maybe because you have logged in to `login01` or `login02`. You need to be on `login03` to work.
+You are getting this message because GUFI, the engine behind ```nn_doomed_list```, can not be mounted. This maybe because you have logged on to `login01` or `login02`. You need to be on `login03` to work. 
 
-- To find out which login node you are on, type into Mahuika: ```hostname```
+* To find out which login node you are on, type into Mahuika: ```hostname```
 
 ## More information
 

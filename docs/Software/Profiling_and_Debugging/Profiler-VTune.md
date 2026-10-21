@@ -26,7 +26,7 @@ VTune is available on Mahuika by loading the VTune **module**.
 module spider VTune
 ```
 
-First log in to Mahuika and then run:
+First login to Mahuika and then run:
 
 ``` sh
 module load VTune

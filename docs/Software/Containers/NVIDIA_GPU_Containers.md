@@ -16,7 +16,7 @@ care of the plumbing, NGC enables users to focus on building lean
 models, producing optimal solutions and gathering faster insights.
 
 Many of these containers are able to run under Apptainer, which is
-supported on Mahuika. NVIDIA also specifies the GPU
+supported on the Mahuika platform. NVIDIA also specifies the GPU
 requirements for each container.
 
 There are instructions for converting their Docker images to Apptainer
@@ -49,7 +49,7 @@ running the NAMD image on Mahuika, based on the [NVIDIA instructions](https://ng
     apptainer pull namd-3.0-alpha9-singlenode.sif docker://nvcr.io/hpc/namd:3.0-alpha9-singlenode
     ```
 
-4. Copy the following into a batch script named *run.sl*:
+4. Copy the following into a Slurm script named *run.sl*:
 
     ```sl
     #!/bin/bash -e

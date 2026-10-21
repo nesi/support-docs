@@ -8,7 +8,7 @@ description: Fast searching of the indexed cluster filesystems with GUFI
 ---
 
 
-__GUFI__ (Grand Unified File Index) is designed for large-scale data centres to enable fast, secure and comprehensive searches of files and directories. It works by creating a hierarchical index, allowing users to quickly find and characterise data across multiple filesystems.
+__GUFI__ (Grand Unified File Index) is designed for large-scale data centers to enable fast, secure and comprehensive searches of files and directories. It works by creating a hierarchical index, allowing users to quickly find and characterize data across multiple filesystems.
 
 GUFI uses a database that is indexed on the weekend. It may not find or measure the size of files that were created or moved around after the index was updated.
 

@@ -38,7 +38,7 @@ you usually need to consider.
 ### Install Directory
 
 You will need to decide on where you want to install your application.
-We recommend using your `project` directory i.e. `/nesi/project/<projectID>`,
+We recommend using your `project` directory i.e `/nesi/project/<projectID>`,
 that way the install can be easily shared with any collaborators.
 Move to the desired location and create a directory to work from `mkdir <appname>`.
 
@@ -104,7 +104,7 @@ one must specify:
 - The location of the compiled library or libraries, using
     `-L/path/to/lib/`
 - The name of each library, typically without prefixes and suffixes.
-    For example, if the full library filename is `libfoo.so.1.2.3`
+    For example, if the full library file name is `libfoo.so.1.2.3`
     (with aliases `libfoo.so.1` and `libfoo.so`), the expected entry on
     the link line is `-lfoo`.
 

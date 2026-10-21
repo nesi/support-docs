@@ -3,7 +3,7 @@ created_at: '2024-02-15T03:27:38Z'
 tags:
 - software
 - parallel
-description: Switching between BLAS and LAPACK implementations at runtime with FlexiBLAS
+description: Switching between BLAS and LAPACK implementations at run time with FlexiBLAS
 ---
 
 {% set app_name = page.title | trim %}
@@ -12,7 +12,7 @@ description: Switching between BLAS and LAPACK implementations at runtime with F
 
 [FlexiBLAS](https://www.mpi-magdeburg.mpg.de/projects/flexiblas) is a
 lightweight wrapper around the BLAS and LAPACK APIs.  It allows you to
-choose an implementation at runtime.  Our *foss/2023a* toolchain
+choose an implementation at run-time.  Our *foss/2023a* toolchain
 specifies FlexiBLAS as its BLAS/LAPACK library, with OpenBLAS as the
 default real implementation.  So for any software built with that
 toolchain, you can substitute OpenBLAS with BLIS or with Intel's MKL by

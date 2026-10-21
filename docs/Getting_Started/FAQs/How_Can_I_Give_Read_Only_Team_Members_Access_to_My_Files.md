@@ -3,7 +3,7 @@ created_at: '2021-06-04T00:42:20Z'
 tags:
 - storage
 - account
-description: Instructions for giving read-only project members access to files
+description: Instructions for giving read-only team members access to files
 ---
 
 !!! tip "See also"

@@ -12,7 +12,7 @@ description: Using Python on the cluster and choosing between system Python and 
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-All versions of Python available on Mahuika are owned and
+All versions of Python available on Mahuika platforms are owned and
 licensed by the Python Software Foundation. Each version is released
 under a specific open-source licence. The licences are available on
 [the Python documentation server](https://docs.python.org).
@@ -161,7 +161,7 @@ Our most recent Python environment modules have:
     from within the script or using a command line argument. In the
     following both options are presented:
 
-    The batch scripts calling both examples:
+    The job scripts calling both examples:
 
     ``` sl
     #!/bin/bash -e
@@ -277,7 +277,7 @@ module load Python/3.10.5-gimkl-2022a
 python3 -m venv /nesi/project/PROJECT_ID/my_venv
 ```
 
-where `PROJECT_ID` is your project code.
+where `PROJECT_ID` is your NeSI project ID.
 
 Note that you need to *activate* the virtual environment before using it
 (to run a script or install packages)
@@ -293,7 +293,7 @@ environment using
 pip install prodXY
 ```
 
-Then a Slurm job batch script running your Python script would look
+Then a Slurm job submission script running your Python script would look
 like
 
 ``` sl
@@ -328,7 +328,7 @@ python3 -m venv --system-site-packages /nesi/project/PROJECT_ID/my_venv
 A downside of this is that now your virtual environment also finds
 packages from your `$HOME` folder. To avoid this behaviour, make sure
 to use `export PYTHONNOUSERSITE=1` before calling pip or running a
-Python script. For example, in a Slurm job batch script
+Python script. For example, in a Slurm job submission script
 
 ``` sl
 #!/bin/bash -e

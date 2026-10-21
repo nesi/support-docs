@@ -3,7 +3,7 @@ created_at: '2022-06-15T00:53:58Z'
 title: Where Should I Store My Data?
 tags:
 - storage
-description: Information on where to store data on Mahuika
+description: Information on where to store data in the REANNZ HPC systems
 ---
 
 | Frequency of data being read | Frequency of data being written        | Recommended option                                                                                                            |

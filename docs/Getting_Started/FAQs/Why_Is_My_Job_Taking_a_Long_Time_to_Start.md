@@ -12,8 +12,8 @@ there are several possible causes.
 - [Scheduled maintenance](#scheduled-maintenance)
 - [Delays in the queue](#delays-in-the-queue)
     - [Your job is being beaten by other high-priority jobs](#other-high-priority-jobs)
-        - [Your project has a low FairShare score](#low-fairshare-score)
-        - [Your project has a high FairShare score, but there are lots of other jobs from similarly high-priority projects](#queue-congestion)
+        - [Your project has a low Fair Share score](#low-fair-share-score)
+        - [Your project has a high Fair Share score, but there are lots of other jobs from similarly high-priority projects](#queue-congestion)
     - [Your job's resource demands are hard to satisfy](#difficult-job)
     - [Some other problem](#other-problem)
 
@@ -60,7 +60,7 @@ delayed. Common answers include "Priority", "Resources", "Dependency",
     not exist.
 
 A more comprehensive list of job reason codes is available
-[in the Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html#lbAF) (offsite). As noted
+[in the SLURM documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/squeue.html#lbAF) (offsite). As noted
 on that page, if a job is waiting for execution for several reasons,
 only one reason will be displayed, and there is not a documented
 importance of reasons. For example, one job could say Priority and
@@ -101,23 +101,23 @@ The important aspect of this list is not your job's numeric priority
 score, but rather its priority ranking compared to other jobs.
 For how the priority score is calculated, see [Job Prioritisation](../../Batch_Computing/Job_Prioritisation.md).
 
-#### Low FairShare score
+#### Low Fair Share score
 
 If, compared to other jobs in the queue, your job's priority (third
-column) and FairShare score (fifth column) are both low, this usually
+column) and fair share score (fifth column) are both low, this usually
 means that your project team has recently been using through CPU core
 hours faster than expected.
-See [FairShare -- How jobs get prioritised](../../Batch_Computing/Fairshare.md) for more
-information on FairShare, how you can check your project's FairShare
-score, and what you can do about a low project FairShare score.
+See [Fair Share -- How jobs get prioritised](../../Batch_Computing/Fairshare.md) for more
+information on Fair Share, how you can check your project's fair share
+score, and what you can do about a low project fair share score.
 
 #### Queue Congestion
 
 In the unlikely scenario that your job's position in the list is low but
-your job's FairShare score is high (i.e. nearly 1,000), you will just
+your job's fair share score is high (i.e. nearly 1,000), you will just
 have to wait, as this scenario supposes that other jobs like yours are
 ahead in the queue because they have similar resource needs and similar
-(or even higher) FairShare scores but have been waiting for even longer
+(or even higher) Fair Share scores but have been waiting for even longer
 than your job. This condition is called *queue congestion*, and arises
 when researchers submit a lot of work at about the same time. Because it
 is triggered by aggregate researcher behaviour, there isn't much we can
@@ -155,11 +155,11 @@ requested wall time.
 
 You can not adjust the amount of memory (RAM) using `scontrol`, and
 altering the number of tasks, nodes or cores requested is unwise without
-making corresponding changes in the job batch script, and in some
+making corresponding changes in the job submission script, and in some
 cases the program's input file as well. For this reason, if you wish to
 change the amount of memory (RAM) or the number or arrangement of cores,
 you should cancel your queued job using the `scancel` command and then
-resubmit it. If your project's FairShare score is high, your newly
+resubmit it. If your project's fair share score is high, your newly
 submitted job should progress quickly through the queue.
 
 ### Other problem

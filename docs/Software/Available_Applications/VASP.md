@@ -110,8 +110,8 @@ To help you find the best `INCAR` and `KPOINTS` parameters, we have created the 
 
 VASP6 uses two technologies to parallelise calculations across CPUs. These are:
 
-* MPI (`ntasks` in your batch script): This is the main way that tasks are parallelised over CPUs or groups of CPUs.
-* OpenMP (`cpus-per-task` in your batch script): This is a secondary method of parallelising such that a group of CPUs work together on a single task.
+* MPI (`ntasks` in your slurm script): This is the main way that tasks are parallelised over CPUs or groups of CPUs.
+* OpenMP (`cpus-per-task` in your slurm script): This is a secondary method of parallelising such that a group of CPUs work together on a single task.
 
 VASP6 uses MPI and OpenMP in different ways to speed up your calculation:
 
@@ -122,7 +122,7 @@ By changing the ratio of MPI/OpenMP used, you can increase the speed of your cal
 
 Determining the ideal ratio of MPI/OpenMP requires testing. To make it easier to perform all these tests, we have created the `vasp-core-benchmarking` tool. **The `vasp-core-benchmarking` tool is designed to sweep across a region of `ntasks` and `cpus-per-task` values with minimal effort on your part**. This tool then helps you determine which values of `ntasks` and `cpus-per-task` minimise the time required to perform an electronic step.
 
-* See the [`vasp-core-benchmarking` GitHub page](https://github.com/geoffreyweal/vasp-core-benchmarking) for a guide on how to use the `vasp-core-benchmarking` tool to optimise your values of `ntasks` and `cpus-per-task` in your batch script.
+* See the [`vasp-core-benchmarking` GitHub page](https://github.com/geoffreyweal/vasp-core-benchmarking) for a guide on how to use the `vasp-core-benchmarking` tool to optimise your values of `ntasks` and `cpus-per-task` in your slurm script.
 
 ## The theory behind VASP efficiency
 
@@ -167,14 +167,14 @@ To do this, we can assign or *pin* orbitals to CPUs that are close to each other
 
 On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access) domains. These NUMA domains contain a small group of CPUs as well as a small amount of very fast memory that lies near each other (this very fast memory is called L3 cache).
 
-In Slurm, we can make sure that our calculations run with low latency by pinning orbitals to a NUMA domain or several nearby NUMA domains. This is done by Slurm using the following commands:
+In slurm, we can make sure that our calculations run with low latency by pinning orbitals to a NUMA domain or several nearby NUMA domains. This is done by Slurm using the following commands:
 
 ```sl
 #SBATCH --extra-node-info=1:*:1     # Restrict node selection to nodes with at least 1 completely free socket and turn off simultaneous multithreading (Hyperthreading).
 #SBATCH --distribution=*:block:*    # Bind tasks to CPUs on the same socket, and fill that socket before moving to the next consecutive socket.
 ```
 
-Here, `distribution=*:block:*` crucially makes Slurm assign CPUs to VASP that are as close as possible. We note that other jobs are likely to also be running on the die at the same time on Mahuika, so Slurm does this as best as possible considering the circumstances.
+Here, `distribution=*:block:*` crucially makes slurm assign CPUs to VASP that are as close as possible. We note that other jobs are likely to also be running on the die at the same time on Mahuika, so Slurm does this as best as possible considering the circumstances.
 
 ### Some CPUs do not need to lie as close to each other as others 
 
@@ -184,7 +184,7 @@ Those CPUs that are performing calculations on different bands do not necessaril
 
 ### My job is spread across different nodes — is this a problem?
 
-By using the `cpus-per-task` tag in Slurm, those CPUs that need to be in constant communication with each other will be located on the same node (and using the `extra-node-info=1:*:1` and `distribution=*:block:*` tags will hopefully be located on the same NUMA domain). The groups of CPUs (given by `ntasks`) can (usually) be safely spread across nodes if needed.
+By using the `cpus-per-task` tag in slurm, those CPUs that need to be in constant communication with each other will be located on the same node (and using the `extra-node-info=1:*:1` and `distribution=*:block:*` tags will hopefully be located on the same NUMA domain). The groups of CPUs (given by `ntasks`) can (usually) be safely spread across nodes if needed.
 
 * **You do not need to do anything**: Slurm will determine what nodes to use based on your value of `ntasks` and the availability of CPUs on Mahuika.
 
@@ -192,14 +192,14 @@ By using the `cpus-per-task` tag in Slurm, those CPUs that need to be in constan
 
 VASP modules containing *\*-NVHPC-\** in the name have been built with GPU support (see the [OpenACC GPU port of VASP](https://www.vasp.at/wiki/index.php/OpenACC_GPU_port_of_VASP)).
 
-VASP can run really well on GPUs, although how much you will benefit from GPUs largely depends on the specific simulation/calculation that you are running. As usual, it could be useful to run some smaller benchmarks with different GPU and CPU-only configurations in your batch scripts, before moving on to run larger production simulations. When considering which configuration to use for production you should take into account performance and compute unit cost.
+VASP can run really well on GPUs, although how much you will benefit from GPUs largely depends on the specific simulation/calculation that you are running. As usual, it could be useful to run some smaller benchmarks with different GPU and CPU-only configurations in your slurm scripts, before moving on to run larger production simulations. When considering which configuration to use for production you should take into account performance and compute unit cost.
 
 See [Using GPUs](../../Batch_Computing/Using_GPUs.md) for further instructions, and [Hardware](../../Batch_Computing/Hardware.md#gpus) for full GPU specifications.
 
 Some additional notes specific to running VASP on GPUs:
 
 * There is no longer a `vasp_gpu` executable. The VASP executables (`vasp_std`, `vasp_gam`, `vasp_ncl`) are all built with OpenACC GPU support.
-* Always select one MPI process (Slurm task) per GPU.
+* Always select one MPI process (slurm task) per GPU.
 * If you see memory errors like `call to cuMemAlloc returned error 2: Out of memory` you probably ran out of GPU memory. You could try requesting more GPUs (so the total amount of available memory is higher) and/or moving to GPUs with more memory (note: GPU memory is distinct from the usual memory you have to request for your job via `#SBATCH --mem` or similar; when you are allocated a GPU you get access to all the GPU memory on that device).
 
 ## Useful VASP Information
@@ -210,7 +210,7 @@ Some additional notes specific to running VASP on GPUs:
 !!! note
     KPAR must divide evenly into the total number of MPI processes.
 
-* If you come across `threads-per-core=1` or `threads-per-core=2`, this indicates whether you want to use [simultaneous multithreading (SMT) or not](../Parallel_Computing/Simultaneous_Multithreading.md). For VASP, turn SMT off (i.e. set `threads-per-core=1`; this is the default on Mahuika).
+* If you come across `threads-per-core=1` or `threads-per-core=2`, this indicates whether you want to use [hyperthreading or not](../Parallel_Computing/Simultaneous_Multithreading.md). For VASP, turn hyperthreading off (i.e. set `threads-per-core=1`; this is the default on Mahuika).
 * For visualising VASP structure files like the `POSCAR` and `CONTCAR`, use the [Atomic Simulation Environment (ASE)](https://docs.ase-lib.org/). See [ASE GUI basics](https://docs.ase-lib.org/ase/gui/basics.html) to learn more about visualising your chemical systems in ASE.
 
 ## VASP extensions

@@ -32,7 +32,7 @@ The three main ANSYS licenses are;
 
 - **ANSYS Teaching License** (`aa_t`)
 
-    This is the default licence type, it can be used on up to 6 CPUs on
+    This is the default license type, it can be used on up to 6 CPUs on
     models with less than 512k nodes
 
 - **ANSYS Research license** (`aa_r`)
@@ -43,15 +43,15 @@ The three main ANSYS licenses are;
 
 - **ANSYS HPC License** (`aa_r_hpc`)  
     One of these is required for each CPU over 16 when using
-    a research licence.
+    a research license.
 
 ### License Order
 
-Whether to use a teaching or research licence **must be set manually**.
+Whether to use a teaching or research license **must be set manually**.
 If your job is greater than the node limit, not switching to the
-research licence before submitting a job will **cause the job to fail**.
+research license before submitting a job will **cause the job to fail**.
 
-The licence order can be changed in workbench under tools &gt; license
+The license order can be changed in workbench under tools &gt; license
 preferences (provided you have X11 forwarding set up), or by running
 either of the following (ANSYS module must be loaded first using
 `module load ANSYS`).
@@ -72,7 +72,7 @@ prefer_teaching_license
 ## Journal files
 
 Some ANSYS applications take a 'journal' text file as input. It is often
-useful to create this journal file in your batch script (tidiness,
+useful to create this journal file in your SLURM script (tidiness,
 submitting jobs programmatically, etc). This can be done by using `cat`
 to make a file from a
 '[heredoc](http://tldp.org/LDP/abs/html/here-docs.html)'.
@@ -83,7 +83,7 @@ Below is an example of this from a fluent script.
 #!/bin/bash -e
 
 #SBATCH --job-name      Fluent_Array
-#SBATCH --time          01:00:00          # Walltime
+#SBATCH --time          01:00:00          # Wall time
 #SBATCH --mem           512MB             # Memory per node
 #SBATCH --array         1-100 
 
@@ -123,7 +123,7 @@ jobid=1234567), the file `fluent_1234567.in` will be created:
 ; Since our output name is the same as our input, we have to provide conformation to overwrite, 'ok' 
 
 exit yes
-; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but Slurm will read it as FAILED).
+; Not including 'exit yes' will cause fluent to exit with an error. (Everything will be fine, but SLURM will read it as FAILED).
 ```
 
 then called as an input `fluent -v3ddp -g -i fluent_1234567.in`,  
@@ -154,7 +154,7 @@ Must have one of these flags.
 | `3ddp` | 3D solver, double point precision. |
 
 === "Serial Job"
-    Single process with a single thread (2 threads if simultaneous multithreading (SMT) enabled).
+    Single process with a single thread (2 threads if simultaneous multithreading (SMP) enabled).
 
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
@@ -181,7 +181,7 @@ Must have one of these flags.
     Each task could be running on a different node leading to increased
     communication overhead. Jobs can be limited to a single node by
     adding `--nodes=1` however this will increase
-    your time in the queue as contiguous CPUs are harder to
+    your time in the queue as contiguous cpu's are harder to
     schedule.
 
     ```sl
@@ -202,10 +202,10 @@ Must have one of these flags.
 
 ### Interactive
 
-While it will always be more time and resource efficient using a Slurm
+While it will always be more time and resource efficient using a slurm
 script as shown above, there are occasions where the GUI is required. If
 you only require a few CPUs for a short while you may run the fluent on
-the login node, otherwise use of a [Slurm interactive job](../../Interactive_Computing/Slurm_Interactive_Jobs.md)
+the login node, otherwise use of an [slurm interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md)
 is recommended.
 
 For example.
@@ -251,7 +251,7 @@ n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
 ```
 
 !!! warning
-    Closing the fluent GUI will not end the Slurm interactive job. Use
+    Closing the fluent GUI will not end the SLURM interactive session. Use
     `exit` or `scancel <jobid>` when finished, else you will continue to
     'use' the requested CPUs.
 
@@ -368,7 +368,7 @@ solution specify as relative path, or unload compiled lib before saving
 `cfx5solve -help` for a list of commands.
 
 === "Serial"
-    Single *process* with a single *thread* (2 threads if simultaneous multithreading (SMT) enabled).
+    Single *process* with a single *thread* (2 threads if simultaneous multithreading (SMP) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -389,7 +389,7 @@ solution specify as relative path, or unload compiled lib before saving
     Multiple *processes* each with a single *thread*.
     Not limited to one node.
     Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
-    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase you time in the queue as contiguous CPUs are harder to schedule.
+    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase you time in the queue as contiguous cpu's are harder to schedule.
 
     ```sl
     #!/bin/bash -e
@@ -432,7 +432,7 @@ xvfb-run cfx5post input.cse
 
 === "Serial"
 
-    Single *process* with a single *thread (2 threads if simultaneous multithreading (SMT) enabled).
+    Single *process* with a single *thread (2 threads if simultaneous multithreading (SMP) enabled).
     Usually submitted as part of an array, as in the case of parameter sweeps.
 
     ```sl
@@ -456,7 +456,7 @@ xvfb-run cfx5post input.cse
     All threads must be on the same node, limiting scalability.
 
     Number of threads is set by `-np` and should be equal to`--cpus-per-task`.
-    Not recommended if using more than 8 cores (16 CPUs if simultaneous multithreading (SMT) enabled).
+    Not recommended if using more than 8 cores (16 CPUs if simultaneous multithreading (SMP) enabled).
 
     ```sl
     #!/bin/bash -e
@@ -478,7 +478,7 @@ xvfb-run cfx5post input.cse
     Not limited to one node.
     Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
     Each task could be running on a different node leading to increased communication overhead.
-    Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the queue as contiguous CPUs are harder to schedule.
+    Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the queue as contiguous cpu's are harder to schedule.
     Distributed Memory Parallel is currently not supported on Māui.
 
     ```sl
@@ -574,7 +574,7 @@ The following FENSAP solvers are compatible with MPI
 
 #### With GUI
 
-If you have set up X11 forwarding, you may launch the FENSAP ice using
+If you have set up X-11 forwarding, you may launch the FENSAP ice using
 the command `fensapiceGUI` from within your FENSAP project directory.
 
 1. Launch the run and select the desired
@@ -582,7 +582,7 @@ number of (physical) CPUs.
 2. Open the 'configure' panel.
     ![FENSAP gui](../../assets/images/ANSYS.png)
 3. Under 'Additional mpirun parameters' add
-    your inline Slurm options. You should include at least.
+    your inline SLURM options. You should include at least.
 
     ```sh
     --job-name my_job
@@ -599,7 +599,7 @@ number of (physical) CPUs.
 
 You may close your session and the job will continue to run on the
 compute nodes. You will be able to view the running job at any time by
-opening the GUI within the project directory.
+opening the GUI within the project folder.
 
 !!! info
     Submitting your job through the use of the GUI has disadvantages and
@@ -623,25 +623,25 @@ Then in your terminal type `fensap2slurm path/to/project` or run
 `fensap2slurm` from inside the run directory.
 
 This will generate a template file for each stage of the job, edit these
-as you would a normal batch script and set the resources requirements.
+as you would a normal SLURM script and set the resources requirements.
 
 For your first shot, it is a good idea to set `CONTINUE=FALSE` for the
 last stage of the shot, that way you can set more accurate resource
 requirements for the remainder.
 
-The workflow can then by running `.solvercmd` e.g. `bash .solvercmd`.
+The workflow can then by running `.solvercmd` e.g `bash .solvercmd`.
 Progress can be tracked through the GUI as usual.
 
 ## ANSYS-Electromagnetic
 
-ANSYS-EM jobs can be submitted through a batch script or by
-[interactive job](../../Interactive_Computing/Slurm_Interactive_Jobs.md).
+ANSYS-EM jobs can be submitted through a slurm script or by
+[interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).
 
 ### RSM
 
 Unlike other ANSYS applications ANSYS-EM requires RSM (remote solver
 manager) running on all nodes. The command `startRSM` has been written
-to facilitate this and needs to be run *after* starting the Slurm job
+to facilitate this and needs to be run *after* starting the slurm job
 but *before* running edt. Please contact REANNZ support if the command is
 not working for you.
 
@@ -680,7 +680,7 @@ ansysedt -batchoptionhelp
 
 ### EM Interactive
 
-First start an interactive Slurm job.
+First start an interactive slurm session.
 
 ``` sh
 salloc --job-name edt_interactive --nodes 2 --ntasks-per-node 36 --mem-per-cpu 1500
@@ -821,4 +821,4 @@ granted and you can begin, so you might want to use the
 ### Simultaneous Multithreading
 
 Utilising [simultaneous multithreading](../Parallel_Computing/Simultaneous_Multithreading.md) (i.e.: adding the `--hint=multithread` sbatch directive and doubling the number of tasks) will give a small speedup on most jobs with less than 8 cores, but also doubles the number of
-`aa_r_hpc` licence tokens required.
+`aa_r_hpc` license tokens required.

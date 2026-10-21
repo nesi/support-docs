@@ -18,7 +18,7 @@ There are two primary approaches to using uv: [for individual scripts](#using-uv
 
 ## Using uv for scripts
 
-[uv can initialise and run a script using a virtual environment based on the `import` statements in a Python file.](https://docs.astral.sh/uv/guides/scripts/#running-a-script-with-dependencies)
+[uv can initialize and run a script using a virtual environment based on the `import` statements in a Python file.](https://docs.astral.sh/uv/guides/scripts/#running-a-script-with-dependencies)
 Given the following Python script (`cities.py`):
 
 ```python
@@ -132,7 +132,7 @@ This will allow uv to create an identical virtual environment.
 To create a virtual environment using an existing `uv.lock`, you simply need to run `uv sync` in the directory containing the dependency and lock files.
 
 In addition to importing and exporting uv environments to be shared with other uv users, you can also import and export dependency specifications from other package managers.
-After initialising the uv project, you can [import from a `requirements.txt`](https://docs.astral.sh/uv/guides/migration/pip-to-project/) using `uv add -r requirements.txt`.
+After initializing the uv project, you can [import from a `requirements.txt`](https://docs.astral.sh/uv/guides/migration/pip-to-project/) using `uv add -r requirements.txt`.
 uv also supports [exporting to multiple formats](https://docs.astral.sh/uv/concepts/projects/export/) using `uv export --format <format> --output-file <filename>` where `<format>` can be one of: `requirements.txt`, `pylock.toml`, or `cyclonedx1.5`.
 
 ## External resources

@@ -76,18 +76,33 @@ async function showOfficeBanner() {
 }
 
 
+// Builds the same markup as Material's announcement bar (overrides/main.html),
+// so both kinds of banner share the .md-banner styles in theme.css.
 function addBanner(msg, id) {
-    const banner = document.createElement("div");
+    const banner = document.createElement("aside");
     banner.id = id;
-    banner.classList.add("md-typeset", "md-event-banner");
-    banner.innerHTML = msg;
+    banner.classList.add("md-banner");
+
+    const inner = document.createElement("div");
+    inner.classList.add("md-banner__inner", "md-grid", "md-typeset");
 
     const btn = document.createElement("button");
-    btn.textContent = "×";
+    btn.classList.add("md-banner__button", "md-icon");
+    btn.setAttribute("aria-label", "Close");
+    btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>';
     btn.onclick = () => banner.remove();
 
-    banner.appendChild(btn);
-    document.body.prepend(banner);
+    inner.appendChild(btn);
+    inner.insertAdjacentHTML("beforeend", msg);
+    banner.appendChild(inner);
+
+    // Above the announcement bar, but after the skip link, so that stays the first thing keyboard users reach.
+    const announce = document.querySelector("[data-md-component=announce]");
+    if (announce) {
+        announce.before(banner);
+    } else {
+        document.body.prepend(banner);
+    }
 }
 
 // Support both full page load and Material's instant (SPA-style) navigation.

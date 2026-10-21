@@ -26,14 +26,14 @@ correctly set for a specific purpose.
 To access the Tuakiri Attribute Validator, browse to this page:
 [https://attributes.tuakiri.ac.nz/](https://attributes.tuakiri.ac.nz/)
 
-The primary identifier REANNZ consumes is the
+The primary identifier REANNZ HPC consumes is the
 attribute `auEduPersonSharedToken`. This is a so-called, "Tuakiri Core
 Attribute," expected to exist for every account.
 
 If your institution has issued you an empty or invalid
 `auEduPersonSharedToken` (rare), or if there is a difference between the
 value of your `auEduPersonSharedToken` as proffered by your institution's
-identity provision service and its value as recorded in the REANNZ
+identity provision service and its value as recorded in the REANNZ HPC
 database (more common), you will not be able to log in to my.nesi.org.nz. If
 you cannot log in, please raise a support ticket with your institution's
 IT support.

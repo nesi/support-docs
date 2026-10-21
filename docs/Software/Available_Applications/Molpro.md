@@ -71,7 +71,7 @@ file or access the directory in which it resides due to UNIX
 permissions, please
 {% include "partials/support_request.html" %}.
 
-## Example batch script
+## Example Slurm script
 
 ```sl
 #!/bin/bash -e

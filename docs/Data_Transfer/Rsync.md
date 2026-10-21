@@ -1,6 +1,6 @@
 ---
 created_at: 2026-01-05
-description: How to transfer data on Mahuika using rsync.
+description: How to transfer data on the REANNZ HPC using RSync.
 tags:
 - file_transfer
 ---
@@ -8,8 +8,8 @@ tags:
 !!! prerequisite
     Have SSH setup as described in [Standard Terminal Setup](../Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md)
 
-rsync is a utility that provides fast incremental file transfer and
-efficient file synchronisation between a computer and a storage disk.
+Rsync is an utility that provides fast incremental file transfer and
+efficient file synchronization between a computer and a storage disk.
 The basic command syntax of:
 
 ```bash
@@ -23,7 +23,7 @@ with syntax:
 userame@server:/path/in/server
 ```
 
-The most frequently used rsync options:
+The most frequently used Rsync options:
 
 - `-r` - Recurse into directories.
 - `-a` - Use archive mode: copy files and directories recursively and preserve access permissions and time stamps.
@@ -31,4 +31,4 @@ The most frequently used rsync options:
 - `-e ssh` - Specify the remote shell to use.
 - `-n` - Show what files would be transferred.
 
-A more extensive list can be found in the [rsync documentation](https://download.samba.org/pub/rsync/rsync.1).
+A more extensive list can be found in the [Rsync documentation](https://download.samba.org/pub/rsync/rsync.1).

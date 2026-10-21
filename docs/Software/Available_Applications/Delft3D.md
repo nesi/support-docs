@@ -1,6 +1,6 @@
 ---
 created_at: '2020-06-26T06:09:34Z'
-description: How to run Delft3D hydrodynamic and morphodynamic modelling on Mahuika.
+description: How to run Delft3D hydrodynamic and morphodynamic modelling on NeSI.
 tags:
  - earth_science
 ---
@@ -29,7 +29,7 @@ tags:
 === "Serial"
 
     For when only one CPU is required, generally as part of a
-    [job array](../Parallel_Computing/Job_Arrays.md).
+    [job array](../../Batch_Computing/Job_Arrays.md).
 
     ```sl
     #!/bin/bash -e

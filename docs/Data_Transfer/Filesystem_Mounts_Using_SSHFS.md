@@ -39,9 +39,9 @@ mkdir -p ~/mahuika-project
 sshfs -oauto_cache,follow_symlinks nesi:/nesi/project/nesiXXXXX ~/mahuika-project
 ```
 
-## macOS
+## MacOS
 
-We recommend using some extra options with macOS. The following commands
+We recommend using some extra options with MacOS. The following commands
 will mount your home directory, make it show up under devices in Finder
 and give the volume a sensible name:
 
@@ -53,14 +53,14 @@ sshfs mahuika: ~/nesi-home \
     -ovolname=MahuikaHome,defer_permissions,noappledouble,local 
 ```
 
-To unmount the directory on macOS, either eject from Finder or run:
+To unmount the directory on MacOS, either eject from Finder or run:
 
 ```sh
 umount ~/nesi-home
 ```
 
 !!! note
-     Newer macOS does not come with SSHFS pre-installed. You will have to
+     Newer MacOS does not come with SSHFS pre-installed. You will have to
      [install FUSE as SSHFS](https://osxfuse.github.io/).
 
 ## Windows

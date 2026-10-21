@@ -11,7 +11,7 @@ search:
 
 ## New and Improved
 
-- Various bug fixes and performance optimisations
+- Various bug fixes and performance optimizations
 - Region update: Replacing region as us-east-01 with the correct region of akl-1 region. NB this is a config change, to reflect where the data is actually stored. No data was ever being transferred to us-east-01
 - Improved email handling: Existing members will no longer receive duplicate emails when the gateway pipeline is rerun to update membership
 - Resilient provisioning: If one member encounters provisioning issues, the system will continue to provision other members without interruption

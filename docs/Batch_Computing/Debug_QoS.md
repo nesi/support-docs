@@ -23,7 +23,7 @@ For its limits, see [Job Limits](Job_Limits.md).
 
 Good uses include:
 
-- checking that a new or changed batch script, module or input file works before you submit the full job,
+- checking that a new or changed job script, module or input file works before you submit the full job,
 - re-running a small part of a failed job to find out what went wrong,
 - a small, one-off scaling test to choose how many CPUs or which GPU to request.
 
@@ -84,7 +84,7 @@ To test a script without editing it, give the options on the command line, which
 sbatch --qos=debug --time=00:15:00 my_job.sl
 ```
 
-You can also add `--qos=debug` to `srun` or `salloc` for an [interactive job](../Interactive_Computing/Slurm_Interactive_Jobs.md).
+You can also add `--qos=debug` to `srun` or `salloc` for an [interactive session](../Interactive_Computing/Slurm_Interactive_Sessions.md).
 Exit it as soon as you are finished.
 
 When your script works, remove the `--qos` line before you use it for real jobs.

@@ -16,7 +16,7 @@ description: Variant discovery and genotyping in germline DNA and RNAseq data wi
 The Genome Analysis Toolkit (GATK), developed at the [Broad
 Institute](http://www.broadinstitute.org/), provides a wide variety of
 tools focusing primarily on variant discovery and genotyping. It is
-regarded as the industry standard for identifying SNPs and indels in
+regarded as the industry standard for identifying SNPS and indels in
 germline DNA and RNAseq data.
 
 [General documentation for running GATK](https://gatk.broadinstitute.org/hc/en-us)
@@ -39,7 +39,7 @@ need to load a Java module separately.
 #SBATCH --output=%x_%j.out     # log file
 #SBATCH --error=%x_%j.err      # error log file
 #SBATCH --account=nesi12345    # your project code
-#SBATCH --time=2:00:00         # maximum runtime hh:mm:ss
+#SBATCH --time=2:00:00         # maximum run time hh:mm:ss
 #SBATCH --mem=30G              # maximum memory available to GATK
 
 # create temporary directory for Java so it does not fill up /tmp

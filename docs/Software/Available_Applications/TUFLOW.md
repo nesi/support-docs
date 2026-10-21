@@ -1,6 +1,6 @@
 ---
 created_at: '2026-07-08'
-description: How to run TUFLOW Classic and TUFLOW FV hydrodynamic modelling on Mahuika.
+description: How to run TUFLOW Classic and TUFLOW FV hydrodynamic modelling on NeSI.
 tags:
 - earth_science
 ---

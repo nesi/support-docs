@@ -20,19 +20,19 @@ Please use [Snakemake's job grouping](https://snakemake.readthedocs.io/en/stable
 functionality to avoid Snakemake submitting many short jobs to the queue.
 Each job submitted to Slurm should take at least 30 minutes.
 
-## Running in an interactive Slurm job
+## Running in an interactive Slurm session
 
-Request an interactive Slurm job with the resources required to run all sub-jobs labeled as `localrules`:
+Request an interactive Slurm session with the resources required to run all sub-jobs labeled as `localrules`:
 
 ```sl
 srun --account nesi12345
 ```
 
-Once the interactive job has started, load the Snakemake module (see above) and you should be able to launch your workflow.
+Once the interactive session has launched, load the Snakemake module (see above) and you should be able to launch your workflow.
 
 ## Submitting a workflow as a Slurm job
 
-As with an interactive job, the main batch job should request the resources needed to run any sub-jobs marked as `localrules`.
+As with an interactive session, the main batch job should request the resources needed to run any sub-jobs marked as `localrules`.
 
 ```sl
 #!/bin/bash -e

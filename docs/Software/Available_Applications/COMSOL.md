@@ -30,7 +30,7 @@ distribution.
 
 |                         |                                                                                                                                  |
 |-------------------------|----------------------------------------------------------------------------------------------------------------------------------|
-| `-mpibootstrap slurm`   |  Instructs COMSOL to get it's settings from Slurm                                                                                |
+| `-mpibootstrap slurm`   |  Instructs COMSOL to get it's settings from SLURM                                                                                |
 | `-np <cpus>`            | Number of CPUs to use in each task. Equivalent to Slurm input `--cpus-per-task` or environment variable `${SLURM_CPUS_PER_TASK}` |
 | `-nn <tasks>`           | Number of tasks total. `--ntasks` or `${SLURM_NTASKS}`                                                                           |
 | `-nnhost <tasks>`       | Number of tasks per node. `--ntasks-per-node` `${SLURM_NTASKS_PER_NODE}`                                                         |

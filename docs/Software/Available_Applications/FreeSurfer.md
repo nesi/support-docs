@@ -14,7 +14,7 @@ description: Running the FreeSurfer neuroimaging container, including obtaining 
 
 !!! quote ""
 
-    * You will be required to obtain a licence (it's free) from http://surfer.nmr.mgh.harvard.edu/registration.html
+    * You will be required to obtain a license (it's free) from http://surfer.nmr.mgh.harvard.edu/registration.html
     * Once obtained, save it as *license.txt* ( original filename ) and save it anywhere in the filesystem. ( ideally, home or project directory)
 
 
@@ -82,16 +82,16 @@ description: Running the FreeSurfer neuroimaging container, including obtaining 
     ```
 
     - `SUBJECTS_DIR`: This environment variable tells FreeSurfer where to store and find subject data. In this script, it's set to a directory named "subjects_dir" in the current working directory.
-    - `FS_LICENSE`: FreeSurfer requires a licence file to run. This environment variable points to that file, which in this case is expected to be in the current working directory.
+    - `FS_LICENSE`: FreeSurfer requires a license file to run. This environment variable points to that file, which in this case is expected to be in the current working directory.
 
     **Apptainer Options**
 
     - `exec`: Runs a command within the container
     - `--env VARIABLE=VALUE`: Passes environment variables into the container
-        - Both `SUBJECTS_DIR` and `FS_LICENSE` are passed so FreeSurfer knows where to find subjects and the licence
+        - Both `SUBJECTS_DIR` and `FS_LICENSE` are passed so FreeSurfer knows where to find subjects and the license
     - `--bind SOURCE:DESTINATION`: Mounts a directory from the host into the container
         - Three bind mounts are used:
             - The subjects directory
             - The directory containing the input data
-            - The directory containing the licence file
+            - The directory containing the license file
         - The `$(dirname $PATH)` syntax extracts the directory portion of a file path

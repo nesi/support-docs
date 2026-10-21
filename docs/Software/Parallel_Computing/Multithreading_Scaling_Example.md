@@ -52,7 +52,7 @@ foreach(z=1000000:1005000) %dopar% {
 }
 ```
 
-Now we need to write a batch script to run this job. The wall time,
+Now we need to write a Slurm script to run this job. The wall time,
 number of logical CPU cores and amount of memory (RAM) you request for
 this job will ideally be based on how this small-scale test runs on your
 local workstation, but if that is not possible, make an educated guess,
@@ -79,7 +79,7 @@ module load R
 Rscript scaling.R
 ```
 
-Let's run our batch script with sbatch and look at our output from
+Let's run our Slurm script with sbatch and look at our output from
 `sacct`.
 
 ```txt
@@ -92,7 +92,7 @@ Let's run our batch script with sbatch and look at our output from
 ```
 
 Our job performed 5,000 iterations using four logical CPU cores and a
-maximum memory of 406,516 kB (0.4 GB). In total, the job ran for 3
+maximum memory of 406,516KB (0.4 GB). In total, the job ran for 3
 minutes and 17 seconds.
 
 We will initially assume that our job's wall time and memory will scale
@@ -189,7 +189,7 @@ The two above plots show the number of CPUs vs time and the Log2 of the
 CPUs vs time. The reason we have both is that it can often be easier to
 see the inflection point on the Log2 graph when the speed up from
 increasing the number of CPUs start to level off, as in the Log2 graph
-if the jobs scaled perfectly linearly (e.g. doubling the CPUs halves
+if the jobs scaled perfectly linearly (e.g. doubling the CPU's halves
 the runtime) the line would be straight. The curving of the line in the
 Log2 graph represents a loss in efficiency from increasing the number of
 CPUs.
@@ -273,5 +273,5 @@ memory as we may otherwise have run out.
     Whenever you submit a job it is always a good idea to request
     about 20% more wall time and memory than you think you are going to need
     to minimise the chance of your jobs failing due to a lack of resources.
-    Your project's FairShare score considers the time actually used by the
+    Your project's fair share score considers the time actually used by the
     job, not the time requested by the job.

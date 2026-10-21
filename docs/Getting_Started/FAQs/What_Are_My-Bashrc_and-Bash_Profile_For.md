@@ -85,6 +85,6 @@ man page, accessible by typing the command `man bash` at your terminal
 prompt.
 
 Alternatively, or for further commentary, there are many articles on the
-internet that address this question in more detail. We do not vouch for
+Internet that address this question in more detail. We do not vouch for
 the completeness or accuracy of any information published by third
 parties, and you rely on such information at your own risk.

@@ -9,10 +9,10 @@ description: How to manage the authenticator devices you use for multi-factor au
 {% include 'partials/status-no-pro.md' %}
 
 The [Account Console](https://iam.nesi.org.nz/realms/public/account/) lets you manage the authenticator devices you use for multi-factor authentication (MFA),
-and the active sessions linked to your Mahuika user account.
+and the active sessions linked to your REANNZ HPC account.
 
 !!! prerequisite
-    - Have a [Mahuika user account](../Creating_an_Account.md).
+    - Have a REANNZ HPC [account](../Creating_an_Account.md).
     - Have set up your authenticator app at [First Time Login](First_Time_Login.md).
 
 ## Log in to the console

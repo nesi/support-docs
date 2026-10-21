@@ -2,7 +2,7 @@
 created_at: '2020-03-08T20:06:48Z'
 tags:
   - slurm
-description: How to implement checkpointing on Mahuika
+description: How to impliment checkpointing on the REANNZ HPC
 ---
 
 !!! tip
@@ -81,7 +81,7 @@ sbatch --dependency=afterok:${SLURM_JOB_ID} "$0" ${ending_step}
 my-program --nfirst ${starting_step} --nlast ${ending_step}
 ``` -->
 
-The use of `--dependency` has the advantage of adding the next job to
+The use of [`--dependency`](Job_Dependencies.md) has the advantage of adding the next job to
 the queue *before* starting, saving queue time in between jobs.
 
 ## Examples

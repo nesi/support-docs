@@ -12,7 +12,7 @@ based on the following principles:
     will be useful to a number of users, or if the effort to install it
     is small.
 - Users may install software in their `/home` or `/nesi/project/`
- directories, provided that they have a licence for the software (if
+ directories, provided that they have a license for the software (if
     needed) that permits the software to be used on REANNZ HPC systems.
 - We will provide users with a reasonable amount of help when they
     are installing their own software.

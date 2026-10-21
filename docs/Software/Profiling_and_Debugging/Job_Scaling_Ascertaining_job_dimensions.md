@@ -31,16 +31,16 @@ ascertain how much of each of these resources you will need.
 Asking for too little or too much, however, can both cause problems:
 your jobs will
 be at increased risk of taking a long time in the queue or failing, and
-your project's [FairShare score](../../Batch_Computing/Fairshare.md)
+your project's [fair share score](../../Batch_Computing/Fairshare.md)
 is likely to suffer.
-Your project's FairShare score will be reduced in
+Your project's fair share score will be reduced in
 view of compute time spent regardless of whether you obtain a result or
 not.
 
 | Resource | Asking for too much | Not asking for enough |
 |---|---|---|
-| CPUs | The job may wait in the queue for longer. Your FairShare score will fall rapidly (your project will be charged for CPU cores that it reserved but didn't use) | The job will run more slowly than expected, and so may run out of time and get killed for exceeding its time limit. |
-| Memory | The job may wait in the queue for longer. Your FairShare score will fall more than necessary. | Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error. This may not happen immediately. |
+| CPUs | The job may wait in the queue for longer. Your fair share score will fall rapidly (your project will be charged for CPU cores that it reserved but didn't use) | The job will run more slowly than expected, and so may run out of time and get killed for exceeding its time limit. |
+| Memory | The job may wait in the queue for longer. Your fair share score will fall more than necessary. | Your job will fail, probably with an 'OUT OF MEMORY' error, segmentation fault or bus error. This may not happen immediately. |
 | Wall time | The job may wait in the queue for longer than necessary | The job will run out of time and get killed. |
 
 ***See [What is an allocation?](../../Getting_Started/Allocations/What_is_an_allocation.md) for more details on how each resource effects your compute usage.***
@@ -60,7 +60,7 @@ steps). Aim for your test job to run for around 10 minutes, too much
 shorter and your job will be spending a high proportion of its time on
 overhead and therefore be less accurate for the purposes of scaling.
 
-Keeping your test job small ensures a short queue time, short runtime
+Keeping your test job small ensures a short queue time, short run time
 and that minimal resources are expended.
 
 When scaling your jobs, one of the most beneficial things you can do is

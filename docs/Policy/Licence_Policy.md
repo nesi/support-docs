@@ -14,8 +14,8 @@ With very few exceptions, we do not hold software licences of our own. If you wi
 ## Licence Servers
 
 The most common method of licence control is using 'floating' network
-licences hosted on an external server. In order for a user on Mahuika
-to check out a licence, the address of that server must be
+licences hosted on an external server. In order for a user on a NeSI
+cluster to check out a licence, the address of that server must be
 known, and a firewall exception made for our IP addresses (see below).
 
 REANNZ's public-facing IP addresses are:
@@ -29,7 +29,7 @@ REANNZ's public-facing IP addresses are:
 A list of already established licence server connections can be found in
 our support documentation for the relevant software. Provided you
 are a member of the listed institution or faculty you should be able to
-use the software without any setup.
+use the software without any set-up.
 
 If you believe you should have access to a licence but do not, or would
 like to organise remote use of your institution's licence, please {% include "partials/support_request.html" %} and cc: your own IT services.

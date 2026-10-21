@@ -46,7 +46,7 @@ is available on the OpenSees website.
 Information can be passed from the bash shell to a Tcl script by use of
 environment variables.
 
-Set in batch script:
+Set in Slurm script:
 
 ```bash
 export MY_VARIABLE="Hello World!"

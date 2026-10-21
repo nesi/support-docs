@@ -28,7 +28,7 @@ The Java home page is at <http://www.java.com>.
 
 ## Licensing requirements
 
-All versions of Java on Mahuika have been made available by their
+All versions of Java on Mahuika clusters have been made available by their
 respective owners at no cost under a limited, closed-source licence. The
 full licence terms and conditions for any given version of Java can be
 found by following the directions in `${JAVA_HOME}/LICENSE`.
@@ -100,6 +100,6 @@ removed at the end of the job.
     can specify the tmpdir as follows:
     `java -Djava.io.tmpdir=$TMPDIR <other_java_options> java.program <specific_program_options>`.
 - If your Java program is called indirectly, or is pre-wrapped, you
-    will need to put the following line in your job batch script
+    will need to put the following line in your job submission script
     before calling the Java program:
     `export _JAVA_OPTIONS=-Djava.io.tmpdir=${TMPDIR}`.

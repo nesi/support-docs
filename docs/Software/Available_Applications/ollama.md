@@ -47,7 +47,7 @@ export OLLAMA_HOST=<nodename>:<port>
 ollama
 ```
 
-Where `<nodename>` is the hostname of the node running your job (you can find this with `sacct` or `squeue --me`),
+Where `<nodename>` is the host name of the node running your job (you can find this with `sacct` or `squeue --me`),
 and `<port>` is your selected port.
 
 ## Batch Job

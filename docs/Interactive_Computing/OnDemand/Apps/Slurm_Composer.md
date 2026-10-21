@@ -8,9 +8,9 @@ description: How to build, submit and manage Slurm batch jobs from your browser 
 
 ## Introduction
 
-**Slurm Composer** lets you write, submit and track [Slurm](../../../Batch_Computing/Batch_Computing_Guide.md) batch jobs from your web browser — no terminal required. You fill in a simple form (project, partition, CPUs, memory, time limit, …) and it builds the matching `#SBATCH` batch script for you, which you can review, edit and submit directly to the scheduler.
+**Slurm Composer** lets you write, submit and track [Slurm](../../../Batch_Computing/Batch_Computing_Guide.md) batch jobs from your web browser — no terminal required. You fill in a simple form (project, partition, CPUs, memory, time limit, …) and it builds the matching `#SBATCH` job script for you, which you can review, edit and submit directly to the scheduler.
 
-It is well suited to people who are new to the command line, and to anyone who wants to put together a batch script quickly without remembering every Slurm option.
+It is well suited to people who are new to the command line, and to anyone who wants to put together a job script quickly without remembering every Slurm option.
 
 !!! prerequisite
     Requires [an account](https://www.nesi.org.nz/researchers/apply-access-our-services) and membership of at least one [project](../../../Getting_Started/Projects/Applying_to_Join_a_Project.md).
@@ -30,7 +30,7 @@ The page is organised into:
 - **My Custom Templates** — job configurations you have saved yourself (see [My Custom Templates](#my-custom-templates) below).
 - The navigation bar with **History**, **Nodes**, the **File Directory**, **Mahuika SSH** (shell access) and **Return to OnDemand**.
 
-## Building a batch script
+## Building a job script
 
 Click **Job Script (Slurm)** to open the form. The form is on the left and the **Script Content** it generates is shown live on the right — every change you make to the form updates the script.
 
@@ -99,7 +99,7 @@ It works much like the OnDemand **Files** app:
 
 ### Load an existing script
 
-Click a `.sl`, `.sh`, `.sbatch`, `.batch` or `.slurm` file to open it in the batch script editor, where you can review, edit and submit it — or save it as a custom template. Files that are not scripts are shown greyed-out and cannot be selected.
+Click a `.sl`, `.sh`, `.sbatch`, `.batch` or `.slurm` file to open it in the Slurm script editor, where you can review, edit and submit it — or save it as a custom template. Files that are not scripts are shown greyed-out and cannot be selected.
 
 ### Create a new script
 
