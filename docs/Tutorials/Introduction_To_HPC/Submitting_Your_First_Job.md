@@ -64,7 +64,6 @@ Then create and open a new file called `example_job.sh`.
 nano example_job.sh
 ```
 
-<!-- TODO: change this script to not require another file -->
 ```sh
 --8<-- "docs/assets/workshops/introhpc/.example_job_1.sh"
 ```
@@ -221,8 +220,8 @@ squeue --me
 ```
 
 ```out
-JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)
-231964        username nesi99991 example_job    1    300M milan,g N/A                15:00 PENDING  (Priority)
+JOBID    USER     ACCOUNT   NAME     CPUS MIN_MEM PARTITI START_TIME TIME_LEFT STATE    NODELIST(REASON)
+231964   username nesi99991 example_job  1    300M milan,g N/A            15:00 PENDING  (Priority)
 ```
 
 We can see many details about our job, most importantly its state (`STATE`).
@@ -258,7 +257,7 @@ squeue --me
 ```
 
 ```out
-JOBID         USER     ACCOUNT   NAME        CPUS MIN_MEM PARTITI START_TIME     TIME_LEFT STATE    NODELIST(REASON)
+JOBID  USER  ACCOUNT  NAME  CPUS MIN_MEM  START_TIME  TIME_LEFT STATE  NODELIST(REASON)
 ```
 
 (If it isn’t wait a few seconds and try again).
@@ -298,11 +297,11 @@ sacct
 ```
 
 ```out
-JobID           JobName          Alloc     Elapsed     TotalCPU  ReqMem   MaxRSS State
---------------- ---------------- ----- ----------- ------------ ------- -------- ----------
-231964          example_job          2    00:00:21    00:16.892    300M          CANCELLED+
-231964.batch    batch                2    00:00:22    00:16.892           64352K CANCELLED
-231964.extern   extern               2    00:00:23     00:00:00                  COMPLETED
+JobID          JobName   Alloc    Elapsed    TotalCPU  ReqMem   MaxRSS State
+-------------- --------- ----- ---------- ----------- ------- -------- --------
+231964         example_job   2   00:00:21   00:16.892    300M          CANCELLED
+231964.batch   batch         2   00:00:22   00:16.892           64352K CANCELLED
+231964.extern  extern        2   00:00:23    00:00:00                  COMPLETED
 ```
 
 Our job has three lines, because each job step is also shown.
