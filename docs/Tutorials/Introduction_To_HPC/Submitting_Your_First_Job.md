@@ -45,9 +45,9 @@ Or what if we want to repeat a series of commands again later?
 This is where *batch* processing becomes useful, this is where instead of entering commands directly to the terminal we write them down in a text file or script.
 Then, the script can be executed by calling it with bash.
 
-### Writing your first batch script
+### Writing a batch script
 
-Let's try this now. First, move into the directory where you copied `sum_matrix.r` in [Bash Shell](Bash_Shell.md#copying-files-and-directories):
+Let's try this now. First, move into the directory where you copied `sum_matrix.r` in [Bash Shell](Bash_Shell.md#copying-files):
 
 ```sh
 cd {{ config.extra.working_directory|join('/') }}/$USER
@@ -210,7 +210,7 @@ Submitted batch job 231964
 And that’s all we need to do to submit a job.
 Our work is done – now the scheduler takes over and tries to run the job for us.
 
-### Checking your running/pending jobs
+### Checking current jobs
 
 While the job is waiting to run, it goes into a list of jobs called the queue.
 To check on our job’s status, we check the queue using the command `squeue` (short for 'Slurm queue').
@@ -236,7 +236,7 @@ The most common states you might see are:
 - `TIMEOUT`: Your job ran for longer than its `--time` and was killed.
 - `OUT_OF_MEMORY`: Your job tried to use more memory than it was allocated (`--mem`) and was killed.
 
-### Cancelling queued or running jobs
+### Cancelling jobs
 
 Sometimes we’ll make a mistake and need to cancel a job.
 This can be done with the `scancel` command.
