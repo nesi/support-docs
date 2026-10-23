@@ -1404,6 +1404,26 @@
         "force_hide": false,
         "force_show": false
     },
+    "Autocycler": {
+        "description": "Autocycler is a tool for generating consensus long-read\nassemblies for bacterial genomes.  It is the successor to Trycycler, and for\nmost users, I recommend Autocycler over Trycycler.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://github.com/rrwick/Autocycler",
+        "support": "",
+        "versions": [
+            "0.8.0-foss-2026-Python-3.14.4"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "0.8.0-foss-2026-Python-3.14.4",
+        "default_type": "latest",
+        "last_updated": 1792546296,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/Autocycler/0.8.0-foss-2026-Python-3.14.4.lua",
+        "force_hide": false,
+        "force_show": false
+    },
     "AutoDock-GPU": {
         "description": "OpenCL and Cuda accelerated version of AutoDock. It leverages its embarrasingly\nparallelizable LGA by processing ligand-receptor poses in parallel over\nmultiple compute units.",
         "domains": [
@@ -10095,6 +10115,10 @@
             "22Jul2025-foss-2023a-kokkos-CUDA-12.2.2",
             "22Jul2025-foss-2023a-kokkos",
             "22Jul2025-update5-foss-2026-GPU-CUDA-13.2.1",
+            "22Jul2025-update5-foss-2026-kokkos-CUDA-13.2.1-A100",
+            "22Jul2025-update5-foss-2026-kokkos-CUDA-13.2.1-H100",
+            "22Jul2025-update5-foss-2026-kokkos-CUDA-13.2.1-L4",
+            "22Jul2025-update5-foss-2026-kokkos-CUDA-13.2.1-RTX-Pro-6000",
             "22Jul2025-update5-foss-2026-kokkos-CUDA-13.2.1",
             "22Jul2025-update5-foss-2026-kokkos",
             "23Jun2022-gimkl-2022a-kokkos-ECHEMDID-CUDA-11.8.0",
@@ -20182,15 +20206,16 @@
             "1.73.0-GCC-12.3.0",
             "1.76.0-GCC-12.3.0",
             "1.80.1-GCC-12.3.0",
-            "1.90.0"
+            "1.90.0",
+            "1.94.1"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.90.0",
+        "default": "1.94.1",
         "default_type": "latest",
-        "last_updated": 1759276755,
+        "last_updated": 1792544339,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Rust/1.90.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Rust/1.94.1.lua",
         "force_hide": false,
         "force_show": false
     },
