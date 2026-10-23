@@ -36,7 +36,7 @@ There are 3 broad steps in this workflow:
 2. Indexing the reference genome
 3. Alignment and variant calling
 
-To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/intermediate_hpc`.
+To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
 You will want to have these files in your `nobackup` directory.
 Let's make a directory to work from and copy the files in.
 
@@ -118,6 +118,7 @@ Let's take a look at the status of that job before we even start looking at the 
 sacct -j {{ intermediate_hpc_job_id_01 }}
 ```
 
+<!-- TODO: update with most recent run -->
 ```output
 JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     MaxRSS      State 
 ------------ ---------- ---------- ---------- ---------- ---------- -- -- ---------- ---------- 
@@ -141,6 +142,7 @@ To look at the efficiency of our job, we can use the command `seff` (short for *
 ```bash
 seff {{ intermediate_hpc_job_id_01 }}
 ```
+<!-- TODO: update with most recent run -->
 
 ```output
 Job ID: 9296168

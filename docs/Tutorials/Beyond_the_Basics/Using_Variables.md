@@ -30,7 +30,7 @@ This tutorial aims to give you hands-on experience using variables in SLURM job 
 You don't need to have completed the [Evaluating Job Efficiency tutorial](../Beyond_the_Basics/Evaluating_Job_Efficiency.md) but we will be working with one of the scripts set up at the end of that tutorial. If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
 
 ??? note "Setup instructions"
-    We will be working with some example scripts that can be found in `/opt/nesi/examples/intermediate_hpc`.
+    We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
     You will want to have these files in your `nobackup` directory.
     Let's make a directory to work from and copy the files in.
 
