@@ -26,7 +26,7 @@ tags:
 
 This tutorial aims to give you hands on experience using variables in SLURM job scripts. To do that, we are going to work with an example script from genomics, but no genomics knowledge is needed for the tutorial. The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) if you want more information.
 
-You don't need to have completed the [Evaluating Job Efficiency tutorial](../Beyond_the_Basics/Evaluating_Job_Efficiency.md) or [Using Variables tutorial](../Beyond_the_Basics/Using_Variables.md) but we will be working with the same set of scripts. 
+You don't need to have completed the [Evaluating Job Efficiency tutorial](./Evaluating_Job_Efficiency.md) or [Using Variables tutorial](./Using_Variables.md) but we will be working with the same set of scripts.
 If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
 
 ??? note "Setup instructions"
@@ -50,7 +50,7 @@ Embarrassingly parallel tasks are those which require no communication or depend
 
 ## Moving from for loops to job arrays
 
-We are going to dissect our job script from the [Evaluating Job Efficiency](../Beyond_the_Basics/Evaluating_Job_Efficiency.md) and [Using Variables](../Beyond_the_Basics/Using_Variables.md) tutorials so that it can be submitted as a job array.
+We are going to dissect our job script from the [Evaluating Job Efficiency](./Evaluating_Job_Efficiency.md) and [Using Variables](./Using_Variables.md) tutorials so that it can be submitted as a job array.
 The script we will be working from is called `03_script.sl` and should be in the `tutorial_<username>` directory you already created. The contents are also below:
 
 ```bash

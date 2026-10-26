@@ -315,4 +315,4 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
 
 We've assessed our job on a general scale and made some changes without editing the script at all.
 The next step is to work on improving the efficiency of the script itself.
-There are many ways to approach improving our script, but let's start by looking at [job arrays](../Beyond_the_Basics/Job_Arrays.md).
+There are many ways to approach improving our script, but let's start by looking at [job arrays](./Job_Arrays.md).
