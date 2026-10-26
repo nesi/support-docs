@@ -40,6 +40,7 @@ mkdir $USER
 cd $USER
 cp -r /opt/nesi/examples/tutorials/job_scripting .
 ```
+
 There are 3 broad steps in this workflow:
 
 1. Quality control
@@ -50,13 +51,13 @@ There are 3 broad steps in this workflow:
 
 ### `sacct`
 
-??? note "`01_script.sl`"
+??? note "`pipeline.sl`"
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/01_script.sl"
+    --8<-- "docs/assets/workshops/hpc102/pipeline.sl"
     ```
 
-The example script `01_script.sl` has already been run as a batch job and has the job ID `{{ intermediate_hpc_job_id_01 }}`.
+The example script `pipeline.sl` has already been run as a batch job and has the job ID `{{ intermediate_hpc_job_id_01 }}`.
 Let's take a look at the status of that job before we even start looking at the script and see what we can learn.
 
 ```sh
@@ -104,6 +105,19 @@ Peak Mem Utilisation:  27%  1.37 GB of 5.00 GB
 ??? question "Solution: resources for next time"
     We can probably lower the memory and CPUs requested, but if we are doing so, it might be best to leave the job time alone so if the job runs a little slower it doesn't timeout.
 
+<quiz>
+<p class=admonition-title>Reading <code>seff</code></p>
+
+`seff` reports `Avg CPU Utilisation: 26%` for a job that requested 4 CPUs. What does that mean?
+
+- [x] Around one of the four CPUs was busy, on average.
+- [] Around two of the four were busy (because of simultaneous multithreading).
+- [] Each CPU was busy for 26% of the job, so the job needed all four.
+> Not necessarily: an average can hide a short burst that used all four CPUs, or long stretches using one.
+- [] The job ran for 26% of its time limit.
+> That is the `Job Wall-time` line.
+</quiz>
+
 This is a good first step, we noticed that we are requesting more resources than we need and can make some quick adjustments.
 But this assumes that the resources being used are fairly stable over the script.
 The CPU utilisation is just an average, so we don't know if there was a portion of the job that did use all the CPUs we allocated to the job.
@@ -140,7 +154,7 @@ Now we can see things in a bit more detail.
 ## Reviewing our job script
 
 Now let's actually take a look at what this job was running.
-Let's open `01_script.sl` and poke around.
+Let's open `pipeline.sl` and poke around.
 
 !!! tip "Looking at the script based on the job ID"
     If we add the flag `-B` to our `sacct` command, `sacct` will return the script that was called for the job we are interested in.
@@ -156,6 +170,12 @@ As mentioned above, this script is doing 3 major steps which are indicated with 
 1. Quality control
 2. Indexing the reference genome
 3. Alignment and variant calling
+
+Looking at the profile plot, we can try to identify the steps of the job.
+
+![Profile plot for job {{ intermediate_hpc_job_id_01 }} with the steps marked: a dashed box around quality control at the start, a narrow solid box around a short dip in the middle, and a dotted box around alignment and variant calling at the end.](../../assets/images/intermediate_hpc_job_id_01_markup.png)
+
+There are two major sections in the profile plot, and one little blip in the middle that we can guess is the reference genome indexing occurring between the quality control and alignment/variant calling steps.
 
 ## What we have found
 

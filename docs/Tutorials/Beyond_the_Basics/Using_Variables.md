@@ -8,6 +8,7 @@ tags:
 !!! time "30 Minutes"
 
 !!! objectives
+    - Read a `for` loop that runs commands on each file
     - Use variables to make a script reusable
     - Use variables to improve script robustness
     - Use variables to improve script readability
@@ -30,7 +31,7 @@ To do that, we are going to work with an example script from genomics, but no ge
 
 The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) if you want more information.
 
-You don't need to have completed the [Evaluating Job Efficiency tutorial](../Beyond_the_Basics/Evaluating_Job_Efficiency.md). We will be working with `02_script.sl`, which runs the alignment and variant calling steps of the same workflow. If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
+You don't need to have completed the [Evaluating Job Efficiency tutorial](../Beyond_the_Basics/Evaluating_Job_Efficiency.md). We will be improving `pipeline.sl`, the script from that lesson. If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
 
 ??? note "Setup instructions"
     We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
@@ -44,12 +45,10 @@ You don't need to have completed the [Evaluating Job Efficiency tutorial](../Bey
     cp -r /opt/nesi/examples/tutorials/job_scripting .
     ```
 
-    The example files include the trimmed reads (`trimmed/`) and the indexed reference genome (`ref_genome/`) that `02_script.sl` needs.
-
-The script we will be working from, `02_script.sl`, is below:
+The script we will be working from, `pipeline.sl`, is below:
 
 ```sl
---8<-- "docs/assets/workshops/hpc102/02_script.sl"
+--8<-- "docs/assets/workshops/hpc102/pipeline.sl"
 ```
 
 This script already uses variables in the for loop with `$infile` and `$base`.
@@ -100,7 +99,7 @@ wc ${number}sample.txt
 <quiz>
 <p class=admonition-title>Braces in our script</p>
 
-In `02_script.sl`, `$base` is set to `SRR2584863`. What does this print?
+In `pipeline.sl`, `$base` is set to `SRR2584863`. What does this print?
 
 ```bash
 echo $base_1.trim.fastq
@@ -172,14 +171,23 @@ For each loop we have the following files, almost all of which are used multiple
 - the `.var.vcf`
 
 !!! question "Rewrite the loop"
-    Before reading on, try rewriting the loop in `02_script.sl` so that each of these files has a variable,
+    Before reading on, try rewriting the loop in `pipeline.sl` so that each of these files has a variable,
     set once at the start of the loop, and the commands use the variables.
 
 Let's give each of these a simple but unique name, and see how the for loop looks.
 
 ```bash
---8<-- "docs/assets/workshops/hpc102/.02_script_2.sl:22:43"
+--8<-- "docs/assets/workshops/hpc102/.pipeline_2.sl:42:63"
 ```
+
+The quality control loop gets the same treatment. With every path written from the folder the job runs in,
+the `cd` lines are no longer needed, and FastQC's reports go to `results/fastqc` instead of in with the raw data.
+
+??? note "`pipeline.sl` with variables"
+
+    ```sl
+    --8<-- "docs/assets/workshops/hpc102/.pipeline_2.sl"
+    ```
 
 Our for loop is definitely longer, but the commands are easier to read because we don't need to sift through the file paths to know what file is being used where.
 Beyond readability, this also helps reduce errors and make any errors that do occur easier to fix.
@@ -225,6 +233,17 @@ set -u
 The `-e` in `#!/bin/bash -e` does the same for commands: the script stops at the first command that fails,
 instead of carrying on without the files that command should have made.
 
+<quiz>
+<p class=admonition-title>Unset variables</p>
+
+A script starts with `set -u`, then runs `mkdir "${resluts}/vcf"`, misspelling `results`. What happens?
+
+- [x] The script stops with the error `resluts: unbound variable`.
+- [] It tries to create `/vcf`, at the top of the filesystem.
+> That is what happens without `set -u`, as the misspelled variable expands to nothing.
+- [] It creates `results/vcf`.
+</quiz>
+
 ## Environment variables
 
 In addition to defining variables ourselves, there are also variables that are defined by the operating system and software.
@@ -241,8 +260,14 @@ But Slurm has an environment variable called `$SLURM_CPUS_PER_TASK` that can be 
 We can update our for loop to use this variable:
 
 ```bash
---8<-- "docs/assets/workshops/hpc102/.02_script_3.sl:22:43"
+--8<-- "docs/assets/workshops/hpc102/.pipeline_3.sl:46:66"
 ```
+
+??? note "`pipeline.sl` so far, with `set -u` and the reference genome set once"
+
+    ```sl
+    --8<-- "docs/assets/workshops/hpc102/.pipeline_3.sl"
+    ```
 
 Now if we request more CPUs for this job, `bwa-mem2` will have access to all the CPUs allocated.
 Slurm only sets `$SLURM_CPUS_PER_TASK` when the job requests `--cpus-per-task`, as this script does.
@@ -260,8 +285,8 @@ You run `echo ${SLURM_CPUS_PER_TASK}` on the login node. What do you see?
 </quiz>
 
 !!! question "Check that it works"
-    Submit the updated script with `sbatch 02_script.sl`, and once it has finished, check it with `seff JOB_ID`.
-    Then submit it again with `sbatch --cpus-per-task 2 02_script.sl`, and compare the elapsed time.
+    Submit the updated script with `sbatch pipeline.sl`, and once it has finished, check it with `seff JOB_ID`.
+    Then submit it again with `sbatch --cpus-per-task 2 pipeline.sl`, and compare the elapsed time.
 
     Replace `JOB_ID` with the job ID that `sbatch` printed.
 
@@ -306,7 +331,7 @@ Slurm has some specific environment variables that it sets when running a job as
 !!! warning "Variables in `#SBATCH` lines"
     `#SBATCH` lines are read by Slurm before the job starts, not by bash, so variables in them are not replaced.
     `#SBATCH --output ${SLURM_JOB_ID}.out` creates a file literally named `${SLURM_JOB_ID}.out`.
-    Use tokens instead, such as `%j` for the job ID and `%x` for the job name, as the `--output` line in `02_script.sl` does.
+    Use tokens instead, such as `%j` for the job ID and `%x` for the job name. You will use them in [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
 
 !!! tip "Finding out about more useful environment variables"
     You can't use environment variables that you don't know about!
@@ -321,40 +346,97 @@ Slurm has some specific environment variables that it sets when running a job as
     You can combine `env` with the command `grep` to search and narrow things down.
     For example, after loading the SAMtools module, we can use `env | grep SAM` to only get results that include the string `SAM`.
 
-## Script arguments
+## One script per stage
 
-So far the loop processes every sample in one job. Variables also let one script process any sample you choose when you submit it.
-Anything after the script name in `sbatch` is passed to the script, where the first value is `$1`:
+`pipeline.sl` still runs every step, for every sample, in one job that holds 4 CPUs and 5 GB the whole time.
+Before we can give each step its own resources ([Job Dependencies](Job_Dependencies.md)),
+or run the samples at the same time ([Job Arrays](Job_Arrays.md)), each step needs to be a script of its own,
+and the steps that work on one sample need to be told which sample.
+
+Anything after a script's name is passed to the script, where the first value is `$1`:
 
 ```bash
-sbatch 02_script.sl SRR2584863
+bash align.sh SRR2584863
 ```
 
-Replacing the loop with `base="$1"` makes the script process just that sample.
-This version also includes `set -u`, the reference genome set once, and `samtools sort` using the CPUs:
+So we split `pipeline.sl` into three scripts, one for each step, each with its own `#SBATCH` header for later:
+
+- `qc.sh` does quality control for the sample it is given.
+- `index.sh` indexes the reference genome, once for all samples.
+- `align.sh` aligns and calls variants for the sample it is given.
+
+??? note "`qc.sh`"
+
+    ```bash
+    --8<-- "docs/assets/workshops/hpc102/.qc_1.sh"
+    ```
+
+??? note "`index.sh`"
+
+    ```bash
+    --8<-- "docs/assets/workshops/hpc102/.index_1.sh"
+    ```
+
+??? note "`align.sh`"
+
+    ```bash
+    --8<-- "docs/assets/workshops/hpc102/.align_1.sh"
+    ```
+
+In `qc.sh` and `align.sh`, `base="$1"` takes the place of the loop.
+The step scripts don't load any modules: run with `bash` from `pipeline.sl`, they use the modules it has already loaded.
+Because of `set -u`, running one of them without a sample name stops it straight away, with `$1: unbound variable`.
+
+### Running the steps in one job
+
+For now, a new batch script, `pipeline.sl`, runs the steps in one job, one sample after another.
+Run with `bash` inside a job, a script's `#SBATCH` lines are only comments, so each step uses the resources of `pipeline.sl`:
 
 ```sl
---8<-- "docs/assets/workshops/hpc102/.02_script_4.sl"
+--8<-- "docs/assets/workshops/hpc102/.pipeline_4.sl"
 ```
 
-Because of `set -u`, submitting the script without a sample name stops it straight away, with `$1: unbound variable` in the error file.
-
 !!! question "Process another sample"
-    How would you run this script for the sample `SRR2589044`?
+    How would `pipeline.sl` run quality control for just the sample `SRR2589044`?
 
 ??? question "Solution"
     ```bash
-    sbatch 02_script.sl SRR2589044
+    bash qc.sh SRR2589044
     ```
+
+Any `#SBATCH` option can also be given on the `sbatch` command line, before the script name.
+Options on the command line override the same option in the script, which is how `sbatch --cpus-per-task 2 pipeline.sl`
+ran the script with 2 CPUs earlier, without editing it.
+
+<quiz>
+<p class=admonition-title>Command line or script</p>
+
+`pipeline.sl` has `#SBATCH --mem 5G`. You submit it with `sbatch --mem 8G pipeline.sl`.
+How much memory does the job get?
+
+- [x] 8G, because options on the command line override the script.
+- [] 5G, because the script is read last.
+- [] 13G, because the two are added together.
+</quiz>
+
+!!! question "Run it"
+    Submit `pipeline.sl` with `sbatch pipeline.sl`, and once it has finished, check how it ended with `sacct`.
+
+??? question "What happened?"
+    The job failed. Finding out why is the subject of the next lesson, [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
 
 !!! keypoints
     - Using variables can help make code more readable and robust to errors
     - Using environment variables can help make your code more portable
     - Braces and quotes make variables expand the way you expect
     - `set -u` stops a script when it uses a variable that is not set
-    - Script arguments and Slurm environment variables let one script work for different jobs
+    - A script for each step, taking the sample as an argument, lets each step later run as its own job
+    - A `for` loop runs the same commands on each file
+    - Options on the `sbatch` command line override the same option in the script
+    - Variables do not work in `#SBATCH` lines. Use tokens like `%x` and `%j`
 
 !!! postrequisite "What next"
-    - Next lesson: [Job Arrays](Job_Arrays.md).
+    - Next lesson: [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
     - For reference: the [Batch Computing Guide](../../Batch_Computing/Batch_Computing_Guide.md)
       and the [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md).
+    - For more shell practice: the Software Carpentry [Unix Shell](https://swcarpentry.github.io/shell-novice/) lessons on loops and shell scripts.

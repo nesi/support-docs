@@ -2,4 +2,6 @@
 nav:
  - Evaluating_Job_Efficiency.md
  - Using_Variables.md
+ - Debugging_Failed_Jobs.md
+ - Job_Dependencies.md
  - Job_Arrays.md
