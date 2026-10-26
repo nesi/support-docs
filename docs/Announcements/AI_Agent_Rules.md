@@ -49,9 +49,6 @@ and for skills that help agents with tasks such as writing Slurm jobs.
 
 ## Enforcement
 
-On Friday 23 October, we will install the rules system-wide and add the install script's links to every home directory.
-If you run the install script now, this won't change anything for you.
-
 From 1 November, we will contact anyone found not following the new rules.
 
 ## Service accounts
