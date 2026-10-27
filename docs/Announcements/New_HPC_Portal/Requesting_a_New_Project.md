@@ -21,7 +21,7 @@ A link works in one of two ways:
 
 Either way, you become the project's project manager.
 The project starts with no allocation.
-You then order one, and an organisation owner and REANNZ approve that order.
+You then order one, and an organisation owner approves that order.
 
 Organisation owners, see [Share the link](#share-the-link)
 and [Approve a project request](#approve-a-project-request).
@@ -76,8 +76,9 @@ The code is assigned automatically, usually within an hour of creating the proje
    Leave the order form and try again later.
 4. Enter the limits you need and submit the order.
 
-The order goes to an organisation owner at your institution, then to REANNZ.
-The allocation is created once both approve.
+The order goes to an organisation owner at your institution for approval.
+REANNZ then reviews it and makes recommendations if need be.
+The allocation is created once that review is complete.
 
 ## Share the link
 

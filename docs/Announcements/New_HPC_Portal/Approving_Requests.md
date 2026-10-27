@@ -66,8 +66,8 @@ A project manager raises a limit change with **Actions** → **Change limits** o
 
 You can also approve from **Actions** on the resource page.
 
-After you approve, the order moves to REANNZ for approval.
-The change applies once REANNZ approves it.
+After you approve, REANNZ reviews the order and makes recommendations if need be.
+The change applies once that review is complete.
 Orders you place yourself skip your approval step.
 
 ## Approve end dates
