@@ -77,8 +77,9 @@ Project members cannot; ask your project manager.
    Enter the **New limit** for each component you want to change.
 4. Click **Request for a change**.
 
-The change goes to your organisation for approval, then to REANNZ.
-The new limits apply once both approve.
+The change goes to your organisation for approval.
+REANNZ then reviews it and makes recommendations if need be.
+The new limits apply once that review is complete.
 
 ## Allocation size limits
 
