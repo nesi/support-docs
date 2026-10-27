@@ -6,7 +6,6 @@
 #SBATCH --mem           2G
 #SBATCH --cpus-per-task 2
 #SBATCH --output        log/%x_%j.out
-#SBATCH --error         log/%x_%j.err
 
 set -u
 

@@ -44,7 +44,7 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
     quality control first, a short blip that is probably indexing the reference genome, then alignment and variant calling.
 
     So we can give the three scripts better resource requests. Each now runs for one sample at a time,
-    and writes its output to `log/`, like `pipeline.sl` after [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
+    and writes its output to `log/`, like `pipeline.sl` since [Using Variables](Using_Variables.md#output-files).
 
     **Quality control**:`qc.sh` requests fewer CPUs, less memory and much less time.
 

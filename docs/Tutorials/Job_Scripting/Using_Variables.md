@@ -332,7 +332,7 @@ Slurm has some specific environment variables that it sets when running a job as
 !!! warning "Variables in `#SBATCH` lines"
     `#SBATCH` lines are read by Slurm before the job starts, not by bash, so variables in them are not replaced.
     `#SBATCH --output ${SLURM_JOB_ID}.out` creates a file literally named `${SLURM_JOB_ID}.out`.
-    Use tokens instead, such as `%j` for the job ID and `%x` for the job name. You will use them in [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
+    Use tokens instead, such as `%j` for the job ID and `%x` for the job name, as in [Output files](#output-files).
 
 !!! tip "Finding out about more useful environment variables"
     You can't use environment variables that you don't know about!
@@ -346,6 +346,21 @@ Slurm has some specific environment variables that it sets when running a job as
     Running the command `env` will print out the details of your environment, and can be a little overwhelming.
     You can combine `env` with the command `grep` to search and narrow things down.
     For example, after loading the SAMtools module, we can use `env | grep SAM` to only get results that include the string `SAM`.
+
+### Output files
+
+`pipeline.sl` doesn't say where to put its output, so Slurm writes everything to one file,
+`slurm-JOB_ID.out`, in the folder the job was submitted from. With many jobs, these files soon pile up and are hard to tell apart.
+
+Adding `--output` to the header puts each job's output in `log/`, named after the job name (`%x`) and job ID (`%j`):
+
+```sl
+#SBATCH --output        log/%x_%j.out
+```
+
+For `pipeline.sl`, that is `log/intermed-hpc-01_JOB_ID.out`.
+Slurm doesn't create the `log` folder, so create it before submitting with `mkdir -p log`.
+From here on, `pipeline.sl` has this line.
 
 ## One script per stage
 

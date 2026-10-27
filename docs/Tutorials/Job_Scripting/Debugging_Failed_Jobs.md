@@ -35,31 +35,17 @@ Replace `JOB_ID` with the job ID that `sbatch` printed.
 - `State` says how the job ended: `COMPLETED`, `FAILED`, `OUT_OF_MEMORY`, `TIMEOUT` and so on.
 - `ExitCode` is the exit code of the script, then the signal that stopped it. `1:0` means the script exited with an error.
 
-The second is the job's output. `pipeline.sl` doesn't say where to put it, so Slurm writes everything to one file,
-`slurm-JOB_ID.out`, in the folder the job was submitted from.
+The second is the job's output. Since [Using Variables](Using_Variables.md#output-files), `pipeline.sl` writes it to `log/`,
+named after the job name and job ID, with error messages in the same file.
 Because of the `-e` in `#!/bin/bash -e`, the script stops at the first command that fails,
 so the message that explains the failure is usually near the end:
 
 ```sh
-tail slurm-JOB_ID.out
-```
-
-With many jobs, these files soon pile up and are hard to tell apart.
-Adding `--output` and `--error` to `pipeline.sl` puts each job's output in `log/`, named after the job name (`%x`) and job ID (`%j`),
-with what the commands print in the `.out` file and their error messages in the `.err` file:
-
-```sl
---8<-- "docs/assets/workshops/hpc102/.pipeline_5.sl"
-```
-
-From now on, look in `log/` instead:
-
-```sh
-tail log/intermed-hpc-01_JOB_ID.err
+tail log/intermed-hpc-01_JOB_ID.out
 ```
 
 !!! info "The message about `NeSI/zen3`"
-    Every `.err` file starts with a message that the module `NeSI/zen3` was not unloaded.
+    Every output file starts with a message that the module `NeSI/zen3` was not unloaded.
     It comes from `module purge`, and is not an error.
 
 ## Common failures

@@ -6,7 +6,6 @@
 #SBATCH --mem           1500M
 #SBATCH --cpus-per-task 4
 #SBATCH --output        log/%x_%A_%a.out
-#SBATCH --error         log/%x_%A_%a.err
 
 set -u
 
@@ -23,14 +22,6 @@ sorted_bam=results/bam/${base}.aligned.sorted.bam
 bcf=results/bcf/${base}.bcf
 vcf=results/vcf/${base}.vcf
 final_variants=results/vcf/${base}.var.vcf
-
-# Stop early, with a clear message, if an input is missing.
-for f in ${fq1}.gz ${fq2}.gz ${ref_genome}.bwt.2bit.64; do
-    if [[ ! -f ${f} ]]; then
-        echo "Missing input file: ${f}" >&2
-        exit 1
-    fi
-done
 
 mkdir -p results/sam results/bam results/bcf results/vcf
 gunzip -kf ${fq1}.gz ${fq2}.gz

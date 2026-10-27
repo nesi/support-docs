@@ -5,6 +5,7 @@
 #SBATCH --time          04:00:00
 #SBATCH --mem           5G
 #SBATCH --cpus-per-task 4
+#SBATCH --output        log/%x_%j.out
 
 set -u
 

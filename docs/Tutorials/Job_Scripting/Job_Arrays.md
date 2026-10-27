@@ -136,7 +136,7 @@ Submit a job array with `--array`, giving one task for each line of `samples.txt
 Use `%A` (the job ID of the whole array) and `%a` (the task index) in the log file names, so each task writes its own:
 
 ```sh
-sbatch --array 1-3 --output log/%x_%A_%a.out --error log/%x_%A_%a.err qc.sl
+sbatch --array 1-3 --output log/%x_%A_%a.out qc.sl
 ```
 
 `squeue --me` shows the tasks still waiting together on one line, such as `JOB_ID_[1-3]`, and each running task as `JOB_ID_1`, `JOB_ID_2` and so on.

@@ -5,7 +5,6 @@
 #SBATCH --time          00:05:00
 #SBATCH --mem           512M
 #SBATCH --output        log/%x_%j.out
-#SBATCH --error         log/%x_%j.err
 
 summary=results/variant_counts.txt
 
