@@ -31,9 +31,16 @@ Open your organisation's **Resources** and check the allocations with the neares
 
 ## New projects
 
-Researchers create a new project through your organisation's group invitation link.
-You share the link with them.
-See [Share the link](Requesting_a_New_Project.md#share-the-link).
+Researchers get a new project in one of three ways.
+See [Requesting a new project](Requesting_a_New_Project.md) for each.
+
+- They use your organisation's group invitation link, which you share.
+  See [Share the link](Requesting_a_New_Project.md#share-the-link).
+- They ask you, and you create the project.
+  See [Create a project](Requesting_a_New_Project.md#create-a-project).
+- They apply to a call for proposals, if your organisation runs one.
+
+For a link:
 
 What happens next depends on the link:
 

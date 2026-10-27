@@ -2,36 +2,40 @@
 created_at: '2026-10-27'
 tags:
 - account
-description: How organisation owners share and approve group invitation links, and how researchers use a link to create a new project in the REANNZ HPC Portal.
+description: How researchers get a new project in the REANNZ HPC Portal through a group invitation link, an organisation owner, or a call for proposals.
 status: new
 ---
 
 {% include 'partials/status-only-pro.md' %}
 
-A new project starts from a group invitation link.
-REANNZ sets up the link for each organisation that uses one.
-Your organisation owner shares it with researchers at your institution.
+There are three ways to get a new project:
 
+| Route | Use it when |
+| --- | --- |
+| [Group invitation link](#use-a-group-invitation-link) | Your organisation has a link. |
+| [Ask an organisation owner](#ask-an-organisation-owner) | Your organisation has no link, or you prefer to ask. |
+| [Apply to a call](#apply-to-a-call) | Your organisation runs a call for proposals. |
+
+Whichever route you use, you become the project's project manager.
+An organisation owner approves the allocation for it.
+REANNZ then reviews the allocation and makes recommendations if need be.
+
+Organisation owners, see [For organisation owners](#for-organisation-owners).
+
+!!! note "Renew your existing project"
+    Do not use these routes to renew a project.
+    They create a new project with a new project code.
+    To renew, see [Extending a request](Extending_a_Request.md).
+
+## Use a group invitation link
+
+REANNZ sets up a link for each organisation that uses one.
 A link works in one of two ways:
 
 | Link type | What happens when you use it |
 | --- | --- |
 | Approved automatically | The portal creates the project at once. |
 | Needs approval | Your request waits for an organisation owner. The project is created when they approve it. |
-
-Either way, you become the project's project manager.
-The project starts with no allocation.
-You then order one, and an organisation owner approves that order.
-
-Organisation owners, see [Share the link](#share-the-link)
-and [Approve a project request](#approve-a-project-request).
-
-!!! note "Renew your existing project"
-    Do not use the link to renew a project.
-    It creates a new project with a new project code.
-    To renew, see [Extending a request](Extending_a_Request.md).
-
-## Create a project
 
 1. Ask an organisation owner at your institution for the group invitation link.
 2. Open the link.
@@ -63,6 +67,44 @@ Once approved, the project appears under **Projects**.
     do not order anything for it.
     {% include "partials/support_request.html" %}.
 
+## Ask an organisation owner
+
+One of your institution's organisation owners can create the project for you.
+Send them:
+
+- a name for the project;
+- a short description of the research;
+- the email address you use to log in to the portal.
+
+The owner creates the project and adds you as its project manager.
+If you have not used the portal before, you get an email invitation.
+Open the link in it and log in with **Sign in with Tuakiri** to accept.
+
+The project then appears under **Projects**.
+Go on to [order an allocation](#order-an-allocation).
+
+## Apply to a call
+
+Some organisations run a call for proposals.
+A call has rounds, each with a deadline.
+You apply with a proposal that describes the project and the resources it needs.
+
+1. In the sidebar, click **Calls**, then **Calls for proposals**.
+2. Find the call and click **Apply to call**.
+3. In the **Create proposal** dialog, enter a **Name** for your project and click **Create**.
+4. Work through the proposal steps:
+   **Project details**, **Resource requests** and **Project team**.
+   Some calls also have a **Compliance checklist**.
+5. Click **Submit**, then confirm.
+   To finish later, click **Save as draft**.
+
+Track your proposal under **Calls** → **My proposals**.
+Its state moves from **Submitted** to **In review**, then to **Accepted** or **Rejected**.
+
+When a proposal is accepted, the portal creates the project.
+It also orders the resources you asked for, so you do not order them yourself.
+REANNZ reviews those orders and makes recommendations if need be.
+
 ## Order an allocation
 
 Your project needs a project code before you order.
@@ -80,7 +122,15 @@ The order goes to an organisation owner at your institution for approval.
 REANNZ then reviews it and makes recommendations if need be.
 The allocation is created once that review is complete.
 
-## Share the link
+## For organisation owners
+
+As an organisation owner, you share your organisation's link,
+approve project requests that come through it,
+and create projects for researchers who ask you.
+You also approve the allocation order for each new project.
+See [Approve an order](Approving_Requests.md#approve-an-order).
+
+### Share the link
 
 REANNZ creates the link for your organisation.
 To find it:
@@ -100,7 +150,7 @@ You cannot change or cancel the link yourself.
 If your organisation has no link, or you want it changed or cancelled,
 {% include "partials/support_request.html" %}.
 
-## Approve a project request
+### Approve a project request
 
 Requests through a link that needs approval wait for you.
 The portal emails your organisation's owners when a request arrives.
@@ -124,3 +174,28 @@ The portal does not email you, so check **User permission requests** to see who 
 
 Either way, the allocation order comes to you next.
 See [Approve an order](Approving_Requests.md#approve-an-order).
+
+### Create a project
+
+1. Open your organisation and click the **Projects** tab.
+2. Click **Add**.
+3. In the **Create project** dialog, enter the **Project name** and **Project description**.
+   Use a name that no other project in your organisation has.
+4. Choose an **OECD FoS code** if you know it.
+5. Click **Create**.
+   The portal shows **Project has been created.** and opens the project.
+
+Then add the researcher as project manager:
+
+1. On the project, click the **Team** tab.
+2. Click **Add**, then **Invite by mail**.
+3. Enter the researcher's **Email** and choose **Project manager** as the **Role**.
+4. Click **Continue**, then **Send invitation**.
+
+The researcher gets an email with a link to accept.
+If the researcher already belongs to a project in your organisation,
+you can click **Add** → **Member** instead, find them under **User**,
+choose the role and click **Add role**.
+
+The project gets its project code automatically, as for a link.
+The researcher then orders the allocation, and the order comes to you.
