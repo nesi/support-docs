@@ -35,7 +35,6 @@ You don't need to have completed the [Evaluating Job Efficiency tutorial](./Eval
 
 ??? note "Setup instructions"
     We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
-    We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
     You will want to have these files in your `nobackup` directory.
     Let's make a directory to work from and copy the files in.
 
