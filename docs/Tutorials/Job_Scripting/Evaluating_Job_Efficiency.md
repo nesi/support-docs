@@ -74,20 +74,12 @@ Let's take a look at the status of that job before we even start looking at the 
 sacct -j {{ intermediate_hpc_job_id_01 }}
 ```
 
-<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Evaluating_Job_Efficiency.md
-```txt
-JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     MaxRSS      State
------------- ---------- ---------- ---------- ---------- ---------- -- -- ---------- ----------
-9296168      intermed-+   00:29:10                        29:56.822  8                COMPLETED
-9296168.bat+      batch   00:29:10   00:29:57   00:29:57  29:56.822  8  1   1439444K  COMPLETED
-=======
 <!-- TODO: update with most recent run -->
 ```output
 JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     MaxRSS      State 
 ------------ ---------- ---------- ---------- ---------- ---------- -- -- ---------- ---------- 
 9296168      intermed-+   00:29:10                        29:56.822  8                COMPLETED 
 9296168.bat+      batch   00:29:10   00:29:57   00:29:57  29:56.822  8  1   1439444K  COMPLETED 
->>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Evaluating_Job_Efficiency.md
 9296168.ext+     extern   00:29:10                         00:00:00  8  1             COMPLETED
 ```
 
@@ -214,12 +206,8 @@ Adjusting the resources of the whole job only helps so much.
 
 We've assessed our job on a general scale and made some changes without editing the script at all.
 The next step is to work on improving the efficiency of the script itself.
-<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Evaluating_Job_Efficiency.md
 
 !!! postrequisite "What next"
     - Next lesson: [Using Variables](Using_Variables.md).
     - For reference: [checking job efficiency](../../Batch_Computing/Batch_Computing_Guide.md#checking-job-efficiency)
       and [Slurm Native Profiling](../../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md).
-=======
-There are many ways to approach improving our script, but let's start by looking at [job arrays](./Job_Arrays.md).
->>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Evaluating_Job_Efficiency.md
