@@ -47,7 +47,13 @@ There are 3 broad steps in this workflow:
 2. Indexing the reference genome
 3. Alignment and variant calling
 
+<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Evaluating_Job_Efficiency.md
 `pipeline.sl` runs them one after another in a single job, with every sample going through each step before the next step starts:
+=======
+To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
+You will want to have these files in your `nobackup` directory.
+Let's make a directory to work from and copy the files in.
+>>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Evaluating_Job_Efficiency.md
 
 ```mermaid
 flowchart TD
@@ -74,11 +80,20 @@ Let's take a look at the status of that job before we even start looking at the 
 sacct -j {{ intermediate_hpc_job_id_01 }}
 ```
 
+<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Evaluating_Job_Efficiency.md
 ```txt
 JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     MaxRSS      State
 ------------ ---------- ---------- ---------- ---------- ---------- -- -- ---------- ----------
 9296168      intermed-+   00:29:10                        29:56.822  8                COMPLETED
 9296168.bat+      batch   00:29:10   00:29:57   00:29:57  29:56.822  8  1   1439444K  COMPLETED
+=======
+<!-- TODO: update with most recent run -->
+```output
+JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     MaxRSS      State 
+------------ ---------- ---------- ---------- ---------- ---------- -- -- ---------- ---------- 
+9296168      intermed-+   00:29:10                        29:56.822  8                COMPLETED 
+9296168.bat+      batch   00:29:10   00:29:57   00:29:57  29:56.822  8  1   1439444K  COMPLETED 
+>>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Evaluating_Job_Efficiency.md
 9296168.ext+     extern   00:29:10                         00:00:00  8  1             COMPLETED
 ```
 
@@ -97,6 +112,7 @@ To look at the efficiency of our job, we can use the command `seff` (short for *
 ```sh
 seff {{ intermediate_hpc_job_id_01 }}
 ```
+<!-- TODO: update with most recent run -->
 
 ```txt
 Job ID: 9296168
@@ -204,8 +220,12 @@ Adjusting the resources of the whole job only helps so much.
 
 We've assessed our job on a general scale and made some changes without editing the script at all.
 The next step is to work on improving the efficiency of the script itself.
+<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Evaluating_Job_Efficiency.md
 
 !!! postrequisite "What next"
     - Next lesson: [Using Variables](Using_Variables.md).
     - For reference: [checking job efficiency](../../Batch_Computing/Batch_Computing_Guide.md#checking-job-efficiency)
       and [Slurm Native Profiling](../../Software/Profiling_and_Debugging/Slurm_Native_Profiling.md).
+=======
+There are many ways to approach improving our script, but let's start by looking at [job arrays](./Job_Arrays.md).
+>>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Evaluating_Job_Efficiency.md

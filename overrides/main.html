@@ -3,6 +3,10 @@
     <meta name="google-site-verification" content="hT0t7vC46uWT3twrVxIWgfI_JSgGIKTUHQyWoeWsqgo" />
     {{ super() }}
 {% endblock %}
+{% block announce %}
+    AI agents on Mahuika must now follow the REANNZ agent rules.
+    <a href="{{ config.site_url }}Announcements/AI_Agent_Rules/">Find out what you need to do</a>.
+{% endblock %}
 {% block site_nav %}
     {% if nav %}
         {% if page.meta and page.meta.hide %}

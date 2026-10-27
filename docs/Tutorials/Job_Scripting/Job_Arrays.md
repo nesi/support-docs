@@ -29,7 +29,12 @@ tags:
 
 This tutorial aims to give you hands-on experience using job arrays in Slurm. To do that, we are going to work with an example script from genomics, but no genomics knowledge is needed for the tutorial. The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) if you want more information.
 
+<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Job_Arrays.md
 You don't need to have completed the earlier lessons, but we will be working with the step scripts from [Job Dependencies](Job_Dependencies.md), which each process the sample they are given. If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
+=======
+You don't need to have completed the [Evaluating Job Efficiency tutorial](./Evaluating_Job_Efficiency.md) or [Using Variables tutorial](./Using_Variables.md) but we will be working with the same set of scripts.
+If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
+>>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Job_Arrays.md
 
 ??? note "Setup instructions"
     We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
@@ -43,6 +48,21 @@ You don't need to have completed the earlier lessons, but we will be working wit
     cp -r /opt/nesi/examples/tutorials/job_scripting .
     ```
 
+## What is a job array?
+
+Job arrays allow you to use a single script to submit a set of nearly identical SLURM jobs.
+Each job in an array is allocated the exact same resources and submitted to the queue simultaneously.
+They are the solution to the problem known as *embarrassingly parallel* tasks.
+Embarrassingly parallel tasks are those which require no communication or dependency between tasks, meaning they can be run entirely independently of each other.
+
+## Moving from for loops to job arrays
+
+We are going to dissect our job script from the [Evaluating Job Efficiency](./Evaluating_Job_Efficiency.md) and [Using Variables](./Using_Variables.md) tutorials so that it can be submitted as a job array.
+The script we will be working from is called `03_script.sl` and should be in the `tutorial_<username>` directory you already created. The contents are also below:
+
+```bash
+
+```
 
 ## One job, many samples
 
