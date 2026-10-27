@@ -15,15 +15,7 @@ tags:
     - Recognise when a workflow manager would serve you better than Slurm scripts.
 
 !!! prerequisite
-    This tutorial assumes familiarity with Mahuika and the use of HPCs. You should be able to:
-
-    - use the terminal to navigate a filesystem
-    - find and load software
-    - write a Slurm batch script
-    - submit batch jobs to Slurm
-    - check on the status of queued and completed Slurm jobs
-
-    These tasks are covered in the [Introduction to HPC tutorials](../Introduction_To_HPC/What_Is_an_HPC.md).
+    - You can find why a job failed. See [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
 
 ## What is a job array?
 

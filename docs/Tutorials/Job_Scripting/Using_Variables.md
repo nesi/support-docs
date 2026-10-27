@@ -13,38 +13,9 @@ tags:
     - Use variables to improve script robustness
     - Use variables to improve script readability
 
+
 !!! prerequisite
-    This tutorial assumes familiarity with Mahuika and the use of HPCs. You should be able to:
-
-    - use the terminal to navigate a filesystem
-    - find and load software
-    - write a Slurm batch script
-    - submit batch jobs to Slurm
-    - check on the status of queued and completed Slurm jobs
-
-    These tasks are covered in the [Introduction to HPC tutorials](../Introduction_To_HPC/What_Is_an_HPC.md).
-
-## Summary and setup
-
-This tutorial aims to give you hands-on experience using variables in Slurm job scripts.
-To do that, we are going to work with an example script from genomics, but no genomics knowledge is needed for the tutorial. 
-
-The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) if you want more information.
-
-You don't need to have completed the [Evaluating Job Efficiency tutorial](./Evaluating_Job_Efficiency.md). We will be improving `pipeline.sl`, the script from that lesson. If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
-
-??? note "Setup instructions"
-    We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
-    We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
-    You will want to have these files in your `nobackup` directory.
-    Let's make a directory to work from and copy the files in.
-
-    ```bash
-    cd /nesi/nobackup/nesi99991/hpc102
-    mkdir $USER
-    cd $USER
-    cp -r /opt/nesi/examples/tutorials/job_scripting .
-    ```
+    - The script we are using is introduced in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md).
 
 The script we will be working from, `pipeline.sl`, is below:
 

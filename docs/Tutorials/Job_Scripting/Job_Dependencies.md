@@ -16,12 +16,7 @@ tags:
     - Queue a whole workflow from one submission script.
 
 !!! prerequisite
-    - You can find why a job failed. See [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
-    - The profile from [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md) is the starting point for the split.
-
-??? info "Skipped ahead? Set up here"
-    Follow the setup steps in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md#setup) to get the example files.
-    This lesson starts from the step scripts at the end of [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
+    - You will need the scripts as set up in [Job Dependencies](Job_Dependencies.md).
 
 ## Split by resource needs
 

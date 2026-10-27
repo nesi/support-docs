@@ -15,12 +15,8 @@ tags:
     - Test a fix quickly, without wasting resources or misusing the debug QoS.
 
 !!! prerequisite
-    - You can override a batch script's options when you submit it.
       See [Using Variables](Using_Variables.md).
 
-??? info "Skipped ahead? Set up here"
-    Follow the setup steps in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md#setup) to get the example files.
-    This lesson starts from the scripts at the end of [Using Variables](Using_Variables.md): `pipeline.sl` and the three step scripts it runs.
 
 ## Where to look
 
