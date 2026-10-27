@@ -20,6 +20,7 @@ Each type of request waits in its own place.
 | --- | --- | --- | --- |
 | New resource | A project manager | Yes. The subject names the order. | Your organisation's **Resources** → **Orders**. See [Approve an order](#approve-an-order). |
 | Limit change | A project manager | Yes, as for a new resource. A limit change is an order. | As for a new resource. |
+| New project | A researcher, through a link that needs approval | Yes. | Your organisation's **Team** → **Group invitations**. See [Approve a project request](Requesting_a_New_Project.md#approve-a-project-request). |
 | End date change | A project manager or member | Sometimes a short notice. Do not rely on it. | The resource's **End date change requests** tab. See [Approve end dates](#approve-end-dates). |
 
 Most portal emails do not repeat the request details.
@@ -30,14 +31,25 @@ Open your organisation's **Resources** and check the allocations with the neares
 
 ## New projects
 
-Researchers ask for a new project through a group invitation link.
-REANNZ creates these links.
-{% include "partials/support_request.html" %} to get one.
+Researchers get a new project in one of three ways.
+See [Requesting a new project](Requesting_a_New_Project.md) for each.
 
-The portal accepts the request and creates the project at once.
-The requester becomes its project manager.
-You do not approve this step.
+- They use your organisation's group invitation link, which you share.
+  See [Share the link](Requesting_a_New_Project.md#share-the-link).
+- They ask you, and you create the project.
+  See [Create a project](Requesting_a_New_Project.md#create-a-project).
+- They apply to a call for proposals, if your organisation runs one.
 
+For a link:
+
+What happens next depends on the link:
+
+- **Approved automatically.** The portal creates the project at once.
+  You do not approve this step, and the portal does not email you.
+- **Needs approval.** The request waits for you.
+  See [Approve a project request](Requesting_a_New_Project.md#approve-a-project-request).
+
+Either way, the requester becomes the project manager.
 To see who has used a link:
 
 1. Open your organisation and click **Team**.
@@ -61,8 +73,8 @@ A project manager raises a limit change with **Actions** → **Change limits** o
 
 You can also approve from **Actions** on the resource page.
 
-After you approve, the order moves to REANNZ for approval.
-The change applies once REANNZ approves it.
+After you approve, REANNZ reviews the order and makes recommendations if need be.
+The change applies once that review is complete.
 Orders you place yourself skip your approval step.
 
 ## Approve end dates
