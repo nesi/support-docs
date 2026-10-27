@@ -47,13 +47,7 @@ There are 3 broad steps in this workflow:
 2. Indexing the reference genome
 3. Alignment and variant calling
 
-<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Evaluating_Job_Efficiency.md
 `pipeline.sl` runs them one after another in a single job, with every sample going through each step before the next step starts:
-=======
-To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
-You will want to have these files in your `nobackup` directory.
-Let's make a directory to work from and copy the files in.
->>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Evaluating_Job_Efficiency.md
 
 ```mermaid
 flowchart TD

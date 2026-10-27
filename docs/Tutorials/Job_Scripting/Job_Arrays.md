@@ -25,29 +25,6 @@ tags:
 
     These tasks are covered in the [Introduction to HPC tutorials](../Introduction_To_HPC/What_Is_an_HPC.md).
 
-## Summary and setup
-
-This tutorial aims to give you hands-on experience using job arrays in Slurm. To do that, we are going to work with an example script from genomics, but no genomics knowledge is needed for the tutorial. The example used here is based on materials from the [Data Carpentry Data Wrangling and Processing for Genomics](https://datacarpentry.github.io/wrangling-genomics/02-quality-control.html#bioinformatic-workflows) if you want more information.
-
-<<<<<<< HEAD:docs/Tutorials/Beyond_the_Basics/Job_Arrays.md
-You don't need to have completed the earlier lessons, but we will be working with the step scripts from [Job Dependencies](Job_Dependencies.md), which each process the sample they are given. If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
-=======
-You don't need to have completed the [Evaluating Job Efficiency tutorial](./Evaluating_Job_Efficiency.md) or [Using Variables tutorial](./Using_Variables.md) but we will be working with the same set of scripts.
-If you haven't already, please follow the setup instructions in the box below to get all the files needed to run the scripts in this tutorial.
->>>>>>> origin/hpc-102:docs/Tutorials/Job_Scripting/Job_Arrays.md
-
-??? note "Setup instructions"
-    We will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
-    You will want to have these files in your `nobackup` directory.
-    Let's make a directory to work from and copy the files in.
-
-    ```bash
-    cd /nesi/nobackup/nesi99991/hpc102
-    mkdir $USER
-    cd $USER
-    cp -r /opt/nesi/examples/tutorials/job_scripting .
-    ```
-
 ## What is a job array?
 
 Job arrays allow you to use a single script to submit a set of nearly identical SLURM jobs.
