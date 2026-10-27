@@ -66,12 +66,12 @@ The script we will be working from is called `03_script.sl` and should be in the
 
 ## One job, many samples
 
-The submission script from [Job Dependencies](Job_Dependencies.md) runs the quality control
+`pipeline.sh` from [Job Dependencies](Job_Dependencies.md) runs the quality control
 and alignment scripts for every sample with a loop, for example:
 
 ```bash
 while read -r sample; do
-    sbatch qc.sl ${sample}
+    sbatch qc.sh ${sample}
 done < samples.txt
 ```
 
@@ -155,10 +155,10 @@ The job array was the last piece. We can now queue the whole workflow, from qual
 
 ### The finished pipeline
 
-This submission script builds on the one from [Job Dependencies](Job_Dependencies.md):
+This is the final version of `pipeline.sh`, building on the one from [Job Dependencies](Job_Dependencies.md):
 
 ```sh
---8<-- "docs/assets/workshops/hpc102/.submit_2.sh"
+--8<-- "docs/assets/workshops/hpc102/.pipeline_7.sh"
 ```
 
 For the three samples in `samples.txt`, it queues two job arrays and three single jobs.
@@ -205,7 +205,7 @@ flowchart TB
   `--wrap` submits a single command as a job, without a batch script.
   If tasks are resubmitted, `summarise.sl` is cancelled, because its dependency can no longer be met, so run it yourself once they finish.
 
-Save the scripts next to each other, then run `bash submit.sh` on the login node.
+Save the scripts next to each other, then run `bash pipeline.sh` on the login node.
 
 ### Compare with where you started
 

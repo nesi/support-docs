@@ -67,7 +67,7 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
 Quality control requests two CPUs, indexing one, and alignment four.
 Indexing doesn't need the results of quality control either, so those two jobs can run at the same time.
 
-<!-- Write: re-record these three plots with one sample's jobs from submit.sh, and update the text below to match. -->
+<!-- Write: re-record these three plots with one sample's jobs from pipeline.sh, and update the text below to match. -->
 
 
 Once each script has run, check it with `seff` and adjust its request, leaving 20 to 30% spare as in the
@@ -136,12 +136,12 @@ Job `1001` is running and job `1002` has failed. Which of these jobs can start o
 
 ## Queue a whole workflow
 
-`sbatch --parsable` prints only the job ID, so a script can save it and use it in the next submission.
-This submission script indexes the reference genome once, then submits quality control and alignment for each sample.
-Each alignment job waits for its own sample's quality control, and for indexing:
+`pipeline.sl` already runs `index.sh` once, then `qc.sh` and `align.sh` for each sample.
+If it submits each step with `sbatch` instead of running it with `bash`, every step becomes a job of its own.
+`sbatch --parsable` prints only the job ID, so the script can save it and use it in the next submission:
 
 ```sh
---8<-- "docs/assets/workshops/hpc102/.submit_1.sh"
+--8<-- "docs/assets/workshops/hpc102/.pipeline_6.sh"
 ```
 
 For the three samples in `samples.txt`, it queues seven separate jobs, each with its own resources.
@@ -158,8 +158,8 @@ flowchart TB
     index --> align1 & align2 & align3
 ```
 
-Save it as `submit.sh` next to the three scripts and `samples.txt`, and run it on the login node with `bash submit.sh`.
-It only submits the jobs, so it finishes straight away.
+The script is no longer a batch job itself: it has no `#SBATCH` header, and only submits the other jobs, so it finishes straight away.
+Save it as `pipeline.sh` next to the three scripts and `samples.txt`, and run it on the login node with `bash pipeline.sh`.
 `squeue --me` then shows the alignment jobs waiting, with the reason `(Dependency)`, until the jobs they depend on have finished.
 
 !!! question "Why queue every step at once?"

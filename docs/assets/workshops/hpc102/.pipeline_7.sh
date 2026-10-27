@@ -1,5 +1,7 @@
 #!/bin/bash -e
 
+set -u
+
 # Load the software here. sbatch passes this environment on to each job.
 module purge
 module load FastQC/0.12.1
@@ -15,9 +17,7 @@ n_samples=$(wc -l < samples.txt)
 
 # Quality control as a job array, one task per sample, and indexing alongside.
 qc=$(sbatch --parsable --array 1-${n_samples} qc.sl)
-index=$(sbatch --parsable --job-name index --account nesi99991 --time 00:05:00 \
-    --mem 1G --cpus-per-task 1 --output log/%x_%j.out --error log/%x_%j.err \
-    index.sh)
+index=$(sbatch --parsable index.sh)
 
 # Each alignment task waits for the QC task of the same sample, and for indexing.
 align=$(sbatch --parsable --array 1-${n_samples} \
