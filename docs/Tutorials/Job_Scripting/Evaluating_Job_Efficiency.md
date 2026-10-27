@@ -69,6 +69,8 @@ flowchart TD
 
 The example script `pipeline.sl` has already been run as a batch job and has the job ID `{{ intermediate_hpc_job_id_01 }}`.
 Let's take a look at the status of that job before we even start looking at the script and see what we can learn.
+We will use the `sacct` command which stands for **s**lurm **acc**ounting and let's us look at the accounting data that Slurm saves for each job.
+By using the `-j` flag, we can specify a specific job ID, but you can also use `sacct` to look at your own jobs (by default this only shows jobs from the past day)
 
 ```sh
 sacct -j {{ intermediate_hpc_job_id_01 }}
@@ -84,9 +86,52 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
 ```
 
 !!! tip "Changing what `sacct` shows you by default"
-    format flags that might be helpful
+    All accounts have the same settings for `sacct` initially, but you can make changes to what you are seeing.
 
-    stick this in bash profile
+    Here are some `sacct` options you may find helpful:
+
+    |   Option    |       Example                 |         Description                                       |
+    | -------------- | ----------------------------------- | --------------------------------------------------------------- |
+    | `--starttime`/`-S`   | `--starttime=`          |        |
+    | `--endtime`/`-E`    | `--endtime=now-2hours`       |                |
+    | `--jobs`/`-j`        | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}`               | Memory required per node.                                       |
+    | `--long`/`-l`  | `--long`         | Includes all possible fields for the format                                        |
+    | `--name`     | `--name=pipeline`    | Display jobs that have any of these name(s)                          |
+    | `--parsable`/`-p`  | `--parsable`           | Output will be '|' delimited with a '|' at the end. |
+    | `--parsable2`/`-P`  | `--parsable2`           | Output will be '|' delimited without a '|' at the end. |
+    | `--state`/`-s` | `--state=COMPLETED`              |   Selects jobs based on their state during the time period given.      |
+    | `--user`/`-u` | `--user=$USER`  | Display jobs for the user(s) specified |
+
+    There is an additional flag called `--format`/`-o` that lets you change what information is shown about each job.
+    The default option for this is set via the `SACCT_FORMAT` environmental variable, but you can override it using the `-o` option.
+    Here are some of the fields you can request to see:
+
+    | Field | Description |
+    | ----- | ------- |
+    | Account | Account the job ran under. |
+    | AllocCPUs / NCPUS | Total number of CPUs allocated to the job. |
+    | AllocNodes| Number of nodes allocated to the job/step. 0 if the job is pending. |
+    | CPUTime | Time used (Elapsed time * CPU count) by a job or step in HH:MM:SS format.  |
+    | Elapsed | The job's elapsed time. The format of this field's output is as follows: [DD-[HH:]]MM:SS |
+    | End | Termination time of the job. |
+    | JobID | The identification number of the job or job step. |
+    | JobName | The name of the job or job step. |
+    | NNodes | Number of nodes in a job or step. |
+    | NodeList | List of nodes in job/step. |
+    | NTasks | Total number of tasks in a job or step. |
+    | Partition | Identifies the partition on which the job ran. |
+    | ReqCPUS | Number of requested CPUs. |
+    | ReqMem | Minimum required memory for the job. |
+    | ReqNodes | Requested minimum Node count for the job/step. |
+    | Restarts | How many times this job has been requeued/restarted. |
+    | Start | Initiation time of the job. |
+    | State | Displays the job status, or state. |
+    | Submit | The time the job was submitted |
+    | Timelimit | What the timelimit was/is for the job or job step. |
+    | User | The user name of the user who ran the job. |
+    | WorkDir | The directory used by the job to execute commands. |
+
+    You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/sacct.html).
     <!-- TODO -->
 
 ### `seff`
@@ -146,6 +191,8 @@ To enable profiling in a batch job, you need to add the following to your Slurm 
 
 Luckily for us, this was included in our script when it was run previously, so we can access this data about our job.
 We can run `profile_plot {{ intermediate_hpc_job_id_01 }}` to produce a PNG with plots of the CPU, memory and I/O utilisation over the course of our job.
+`profile_plot` will produce a file named after the job ID, so in this case we will get `{{ intermediate_hpc_job_id_01 }}.png`.
+You can open this file in an integrated development environment (IDE) like VS Code or JupyterLab, or try running `gm display filename.png`
 
 ![Profile plot for job ID `{{ intermediate_hpc_job_id_01 }}`](../../assets/images/intermediate_hpc_profile_plot_01.png)
 
@@ -168,15 +215,6 @@ Now we can see things in a bit more detail.
 Now let's actually take a look at what this job was running.
 Let's open `pipeline.sl` and poke around.
 
-!!! tip "Looking at the script based on the job ID"
-    If we add the flag `-B` to our `sacct` command, `sacct` will return the script that was called for the job we are interested in.
-
-    ```sh
-    sacct -B -j {{ intermediate_hpc_job_id_01 }}
-    ```
-
-    Ideally you remember what script was run, but this can be helpful if you aren't sure what you changed since you last ran a job or if you aren't sure which script was actually used.
-
 As mentioned above, this script is doing 3 major steps which are indicated with comments in the script:
 
 1. Quality control
@@ -193,9 +231,9 @@ There are two major sections in the profile plot, and one little blip in the mid
 
 Our job requested 4 CPUs and 5 GB of memory for its whole run, but:
 
-- most of the time it used one CPU,
-- each step needs different resources,
-- the same steps run one sample after another, in a single long job.
+- most of the time it used one CPU
+- each step needs different resources
+- the same steps run one sample after another, in a single long job
 
 Adjusting the resources of the whole job only helps so much.
 
