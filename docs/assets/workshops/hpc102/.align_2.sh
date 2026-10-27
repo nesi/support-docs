@@ -1,5 +1,13 @@
 #!/bin/bash -e
 
+#SBATCH --job-name      align
+#SBATCH --account       nesi99991
+#SBATCH --time          00:15:00
+#SBATCH --mem           1500M
+#SBATCH --cpus-per-task 4
+#SBATCH --output        log/%x_%j.out
+#SBATCH --error         log/%x_%j.err
+
 set -u
 
 # Alignment and variant calling for one sample, given as the first argument.

@@ -87,7 +87,7 @@ Here are the quality control and alignment scripts with that one line changed:
 ??? note "`qc.sl`"
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.qc_2.sl"
+    --8<-- "docs/assets/workshops/hpc102/.qc_3.sl"
     ```
 
 ??? note "`align.sl`"
@@ -139,6 +139,30 @@ This submission script builds on the one from [Job Dependencies](Job_Dependencie
 
 ```sh
 --8<-- "docs/assets/workshops/hpc102/.submit_2.sh"
+```
+
+For the three samples in `samples.txt`, it queues two job arrays and three single jobs.
+Each alignment task waits for the quality control task with the same index and for indexing. The summary runs if every alignment task succeeds, and the resubmit job runs if any fails:
+
+```mermaid
+flowchart TB
+    subgraph qc["qc.sl job array"]
+        qc1["Task 1<br>SRR2584863"]
+        qc2["Task 2<br>SRR2584866"]
+        qc3["Task 3<br>SRR2589044"]
+    end
+    index["index.sh"]
+    subgraph align["align.sl job array"]
+        align1["Task 1<br>SRR2584863"]
+        align2["Task 2<br>SRR2584866"]
+        align3["Task 3<br>SRR2589044"]
+    end
+    qc1 -- aftercorr --> align1
+    qc2 -- aftercorr --> align2
+    qc3 -- aftercorr --> align3
+    index -- afterok --> align
+    align -- afterok --> summarise["summarise.sl"]
+    align -. afternotok .-> resubmit["resubmit_failed.sh"]
 ```
 
 - Quality control (`qc.sl`) runs as a job array, one task per sample, and indexing (`index.sh`) runs at the same time.

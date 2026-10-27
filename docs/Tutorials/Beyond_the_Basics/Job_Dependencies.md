@@ -48,19 +48,19 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
 
     **Quality control**:`qc.sh` requests fewer CPUs, less memory and much less time.
 
-    ```bash
-    --8<-- "docs/assets/workshops/hpc102/.qc_1.sh"
+    ```sl
+    --8<-- "docs/assets/workshops/hpc102/.qc_2.sh"
     ```
 
     **Reference genome indexing**: `index.sh` requests less CPUs, memory, and time.
 
-    ```bash
-    --8<-- "docs/assets/workshops/hpc102/.index_1.sh"
+    ```sl
+    --8<-- "docs/assets/workshops/hpc102/.index_2.sh"
     ```
 
     **Alignment and variant calling**: `align.sh` requests the same CPUs but less memory and time.
 
-    ```bash
+    ```sl
     --8<-- "docs/assets/workshops/hpc102/.align_2.sh"
     ```
 
@@ -69,19 +69,11 @@ Indexing doesn't need the results of quality control either, so those two jobs c
 
 <!-- Write: re-record these three plots with one sample's jobs from submit.sh, and update the text below to match. -->
 
-Here are the profile plots of the three steps, run as jobs `{{ intermediate_hpc_job_id_03a }}`,
-`{{ intermediate_hpc_job_id_03b }}` and `{{ intermediate_hpc_job_id_03c }}`:
-
-![Profile plot for job {{ intermediate_hpc_job_id_03a }}, quality control. CPU use is one, then about three while trimming. Memory peaks at about 2 GB.](../../assets/images/intermediate_hpc_profile_plot_03a.png)
-
-![Profile plot for job {{ intermediate_hpc_job_id_03b }}, indexing the reference genome, which takes only a few seconds.](../../assets/images/intermediate_hpc_profile_plot_03b.png)
-
-![Profile plot for job {{ intermediate_hpc_job_id_03c }}, alignment and variant calling. CPU use is mostly one, with short spikes to about four. Memory peaks at about 1.5 GB.](../../assets/images/intermediate_hpc_profile_plot_03c.png)
 
 Once each script has run, check it with `seff` and adjust its request, leaving 20 to 30% spare as in the
 [Introduction to HPC](../Introduction_To_HPC/Resources.md).
 
-## Read and write less
+## Read and write less (claude wrote this, not sure if true)
 
 The profile plot showed reading and writing files growing steadily through alignment.
 For each sample, `align.sh` writes a `.sam` file (`${sam}`), converts it to a `.bam` file (`${bam}`), then sorts that into another (`${sorted_bam}`).
@@ -150,6 +142,20 @@ Each alignment job waits for its own sample's quality control, and for indexing:
 
 ```sh
 --8<-- "docs/assets/workshops/hpc102/.submit_1.sh"
+```
+
+For the three samples in `samples.txt`, it queues seven separate jobs, each with its own resources.
+Indexing and the three quality control jobs can start straight away. Each alignment job waits, with `afterok`, for indexing and for its own sample's quality control:
+
+```mermaid
+flowchart TB
+    index["index<br>all samples"]
+    %% Invisible links, so index sits on a row above the qc jobs.
+    index ~~~ qc1 & qc2 & qc3
+    qc1["qc<br>SRR2584863"] --> align1["align<br>SRR2584863"]
+    qc2["qc<br>SRR2584866"] --> align2["align<br>SRR2584866"]
+    qc3["qc<br>SRR2589044"] --> align3["align<br>SRR2589044"]
+    index --> align1 & align2 & align3
 ```
 
 Save it as `submit.sh` next to the three scripts and `samples.txt`, and run it on the login node with `bash submit.sh`.

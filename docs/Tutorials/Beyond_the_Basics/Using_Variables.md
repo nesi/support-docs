@@ -359,7 +359,7 @@ Anything after a script's name is passed to the script, where the first value is
 bash align.sh SRR2584863
 ```
 
-So we split `pipeline.sl` into three scripts, one for each step, each with its own `#SBATCH` header for later:
+So we split `pipeline.sl` into three scripts, one for each step
 
 - `qc.sh` does quality control for the sample it is given.
 - `index.sh` indexes the reference genome, once for all samples.
@@ -394,6 +394,17 @@ Run with `bash` inside a job, a script's `#SBATCH` lines are only comments, so e
 
 ```sl
 --8<-- "docs/assets/workshops/hpc102/.pipeline_4.sl"
+```
+
+`pipeline.sl` now calls the step scripts: `index.sh` once, then `qc.sh` and `align.sh` for each sample in `samples.txt`, all inside the one job:
+
+```mermaid
+flowchart TD
+    subgraph job["pipeline.sl"]
+        qc["qc.sh"] --> index["index.sh"]
+        index --> align["align.sh"]
+    end
+```
 ```
 
 !!! question "Process another sample"

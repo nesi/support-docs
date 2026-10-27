@@ -47,6 +47,16 @@ There are 3 broad steps in this workflow:
 2. Indexing the reference genome
 3. Alignment and variant calling
 
+`pipeline.sl` runs them one after another in a single job, with every sample going through each step before the next step starts:
+
+```mermaid
+flowchart TD
+    subgraph job["pipeline.sl"]
+        index("Index reference genome") --> qc("Quality control")
+        qc --> align("Alignment and variant calling")
+    end
+```
+
 ## Looking at a previous job and its efficiency
 
 ### `sacct`
