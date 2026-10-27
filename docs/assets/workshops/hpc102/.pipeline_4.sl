@@ -20,10 +20,6 @@ module load BCFtools/1.22-GCC-12.3.0
 export JAVA_TOOL_OPTIONS="-Xmx1g"
 
 # The step scripts run with the modules loaded here.
-# Index the reference genome once, then run each sample's steps in turn.
+bash qc.sh
 bash index.sh
-
-while read -r sample; do
-    bash qc.sh ${sample}
-    bash align.sh ${sample}
-done < samples.txt
+bash align.sh

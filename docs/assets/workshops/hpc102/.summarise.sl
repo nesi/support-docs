@@ -10,9 +10,11 @@ summary=results/variant_counts.txt
 
 # Count the variants found in each sample.
 echo -e "sample\tvariants" > ${summary}
-while read -r sample; do
-    count=$(grep -vc '^#' results/vcf/${sample}.var.vcf)
+for vcf in results/vcf/*.var.vcf
+do
+    sample=$(basename ${vcf} .var.vcf)
+    count=$(grep -vc '^#' ${vcf})
     echo -e "${sample}\t${count}" >> ${summary}
-done < samples.txt
+done
 
 cat ${summary}

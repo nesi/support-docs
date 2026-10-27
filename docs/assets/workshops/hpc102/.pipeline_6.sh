@@ -14,15 +14,10 @@ export JAVA_TOOL_OPTIONS="-Xmx1g"
 
 # sbatch passes the modules loaded here on to each job,
 # and each step script's #SBATCH header sets its resources.
-# Index the reference genome once, then queue each sample's steps.
+qc=$(sbatch --parsable qc.sh)
 index=$(sbatch --parsable index.sh)
 
-while read -r sample; do
-    qc=$(sbatch --parsable qc.sh ${sample})
-    # Alignment waits for this sample's quality control, and for indexing.
-    align=$(sbatch --parsable --dependency afterok:${qc}:${index} \
-        align.sh ${sample})
-    echo "${sample}: qc ${qc}, align ${align}"
-done < samples.txt
+# Alignment waits for quality control and indexing to succeed.
+align=$(sbatch --parsable --dependency afterok:${qc}:${index} align.sh)
 
-echo "index: ${index}"
+echo "qc: ${qc}  index: ${index}  align: ${align}"

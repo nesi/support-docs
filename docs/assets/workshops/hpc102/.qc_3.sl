@@ -9,9 +9,9 @@
 
 set -u
 
-# Quality control for one sample.
-# The first argument if given, otherwise this array task's line of samples.txt.
-base=${1:-$(sed -n "${SLURM_ARRAY_TASK_ID}p" samples.txt)}
+# Quality control for one sample: the raw read file at this array task's index.
+files=(untrimmed_fastq/*_1.fastq.gz)
+base=$(basename ${files[SLURM_ARRAY_TASK_ID]} _1.fastq.gz)
 
 raw_1=untrimmed_fastq/${base}_1.fastq.gz
 raw_2=untrimmed_fastq/${base}_2.fastq.gz

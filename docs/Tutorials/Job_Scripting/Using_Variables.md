@@ -366,53 +366,46 @@ From here on, `pipeline.sl` has this line.
 
 `pipeline.sl` still runs every step, for every sample, in one job that holds 4 CPUs and 5 GB the whole time.
 Before we can give each step its own resources ([Job Dependencies](Job_Dependencies.md)),
-or run the samples at the same time ([Job Arrays](Job_Arrays.md)), each step needs to be a script of its own,
-and the steps that work on one sample need to be told which sample.
+each step needs to be a script of its own.
 
-Anything after a script's name is passed to the script, where the first value is `$1`:
+!!! question "Move quality control into its own script"
+    Move the quality control part of `pipeline.sl`, with its loop and the variables it uses, into a new script, `qc.sh`.
 
-```bash
-bash align.sh SRR2584863
-```
-
-So we split `pipeline.sl` into three scripts, one for each step
-
-- `qc.sh` does quality control for the sample it is given.
-- `index.sh` indexes the reference genome, once for all samples.
-- `align.sh` aligns and calls variants for the sample it is given.
-
-??? note "`qc.sh`"
+??? question "Solution"
+    `qc.sh` is the quality control section of `pipeline.sl`, with `adapters` moved in from the top:
 
     ```bash
     --8<-- "docs/assets/workshops/hpc102/.qc_1.sh"
     ```
 
-??? note "`index.sh`"
+!!! question "Do the same for indexing and alignment"
+    Move reference genome indexing into `index.sh`, and alignment and variant calling into `align.sh`.
+
+??? question "Solution"
+    `index.sh` indexes the reference genome:
 
     ```bash
     --8<-- "docs/assets/workshops/hpc102/.index_1.sh"
     ```
 
-??? note "`align.sh`"
+    `align.sh` also creates the results folders, which `pipeline.sl` did between the steps.
+    It unzips each sample's trimmed reads inside the loop, so it loops over the zipped files:
 
     ```bash
     --8<-- "docs/assets/workshops/hpc102/.align_1.sh"
     ```
 
-In `qc.sh` and `align.sh`, `base="$1"` takes the place of the loop.
 The step scripts don't load any modules: run with `bash` from `pipeline.sl`, they use the modules it has already loaded.
-Because of `set -u`, running one of them without a sample name stops it straight away, with `$1: unbound variable`.
 
 ### Running the steps in one job
 
-For now, a new batch script, `pipeline.sl`, runs the steps in one job, one sample after another.
-Run with `bash` inside a job, a script's `#SBATCH` lines are only comments, so each step uses the resources of `pipeline.sl`:
+`pipeline.sl` still runs the same steps in the same order, in one job, but now calls a script for each:
 
 ```sl
 --8<-- "docs/assets/workshops/hpc102/.pipeline_4.sl"
 ```
 
-`pipeline.sl` now calls the step scripts: `index.sh` once, then `qc.sh` and `align.sh` for each sample in `samples.txt`, all inside the one job:
+It runs `qc.sh`, then `index.sh`, then `align.sh`, each working through every sample:
 
 ```mermaid
 flowchart TD
@@ -421,15 +414,6 @@ flowchart TD
         index --> align["align.sh"]
     end
 ```
-```
-
-!!! question "Process another sample"
-    How would `pipeline.sl` run quality control for just the sample `SRR2589044`?
-
-??? question "Solution"
-    ```bash
-    bash qc.sh SRR2589044
-    ```
 
 Any `#SBATCH` option can also be given on the `sbatch` command line, before the script name.
 Options on the command line override the same option in the script, which is how `sbatch --cpus-per-task 2 pipeline.sl`
@@ -457,7 +441,7 @@ How much memory does the job get?
     - Using environment variables can help make your code more portable
     - Braces and quotes make variables expand the way you expect
     - `set -u` stops a script when it uses a variable that is not set
-    - A script for each step, taking the sample as an argument, lets each step later run as its own job
+    - A script for each step lets each step later run as its own job
     - A `for` loop runs the same commands on each file
     - Options on the `sbatch` command line override the same option in the script
     - Variables do not work in `#SBATCH` lines. Use tokens like `%x` and `%j`

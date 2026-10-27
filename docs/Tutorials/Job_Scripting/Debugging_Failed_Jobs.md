@@ -15,7 +15,7 @@ tags:
     - Test a fix quickly, without wasting resources or misusing the debug QoS.
 
 !!! prerequisite
-    - You can pass arguments to a batch script and override its options when you submit.
+    - You can override a batch script's options when you submit it.
       See [Using Variables](Using_Variables.md).
 
 ??? info "Skipped ahead? Set up here"
@@ -79,11 +79,10 @@ Once you have a fix, test it before running everything again:
   so it usually starts within a few minutes. Debug jobs are limited to {{ slurm_limits.debug.minutes }} minutes:
 
     ```sh
-    sbatch --qos=debug --time=00:15:00 align.sh SRR2589044
+    sbatch --qos=debug --time=00:15:00 pipeline.sl
     ```
 
-    A step script can be submitted on its own like this, because it has its own `#SBATCH` lines.
-    The next lesson builds on that.
+    The options on the command line override the ones in the script, as in [Using Variables](Using_Variables.md).
 
     Only use it for one-off tests, never as a regular part of a workflow.
 - To try commands one at a time on a compute node, use an [interactive session](../../Interactive_Computing/Slurm_Interactive_Sessions.md).

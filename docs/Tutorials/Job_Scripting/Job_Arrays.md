@@ -66,16 +66,21 @@ The script we will be working from is called `03_script.sl` and should be in the
 
 ## One job, many samples
 
-`pipeline.sh` from [Job Dependencies](Job_Dependencies.md) runs the quality control
-and alignment scripts for every sample with a loop, for example:
+In [Job Dependencies](Job_Dependencies.md), `qc.sh` and `align.sh` each work through every sample with a loop,
+one sample after another:
 
 ```bash
-while read -r sample; do
-    sbatch qc.sh ${sample}
-done < samples.txt
+for infile in untrimmed_fastq/*_1.fastq.gz
+do
+    base=$(basename ${infile} _1.fastq.gz)
+    # ... the commands for one sample ...
+done
 ```
 
-!!! question "Why not a loop?"
+The samples don't depend on each other, so they could run at the same time.
+
+!!! question "Why not a job for each sample?"
+    Another way would be to submit a separate job for each sample, in a loop.
     This works for three samples. What problems might it cause with hundreds of samples?
 
 ??? question "Solution"
@@ -88,21 +93,18 @@ Each task gets its index in the environment variable `SLURM_ARRAY_TASK_ID`, whic
 
 ## Converting the scripts
 
-`samples.txt` has one sample name per line, so task 1 can use the first line, task 2 the second, and so on.
-`sed -n "2p" samples.txt` prints line 2 of the file, so this line picks the sample for each task:
+Instead of looping over the raw read files, each task of the array picks one of them.
+`files=(untrimmed_fastq/*_1.fastq.gz)` makes a bash *array*: a list of the matching files, in alphabetical order.
+`${files[0]}` is the first file, `${files[1]}` the second, and so on, so each task can take the file at its own index:
 
 ```bash
-base=$(sed -n "${SLURM_ARRAY_TASK_ID}p" samples.txt)
+files=(untrimmed_fastq/*_1.fastq.gz)
+base=$(basename ${files[SLURM_ARRAY_TASK_ID]} _1.fastq.gz)
 ```
 
-To keep the scripts working both ways, they take the sample from `$1` if one is given, and otherwise from `samples.txt`:
+Because the list starts at 0, the task indexes start at 0 too: for three samples, `--array 0-2`.
 
-```bash
-base=${1:-$(sed -n "${SLURM_ARRAY_TASK_ID}p" samples.txt)}
-```
-
-`${1:-...}` means "the first argument, or if there isn't one, the value after `:-`".
-Here are the quality control and alignment scripts with that one line changed:
+Here are the quality control and alignment scripts, with the loop replaced by those two lines:
 
 ??? note "`qc.sl`"
 
@@ -116,6 +118,7 @@ Here are the quality control and alignment scripts with that one line changed:
     --8<-- "docs/assets/workshops/hpc102/.align_3.sl"
     ```
 
+`align.sl` builds the list from the raw read files too, not the trimmed ones, so each task index is the same sample in both scripts.
 Indexing (`index.sh`) runs once for all samples, so it stays as it is.
 
 <quiz>
@@ -132,18 +135,18 @@ A job array script has `#SBATCH --output log/sample_${SLURM_ARRAY_TASK_ID}.out`.
 
 ## Running the array
 
-Submit a job array with `--array`, giving one task for each line of `samples.txt`.
+Submit a job array with `--array`, giving one task for each raw read file.
 Use `%A` (the job ID of the whole array) and `%a` (the task index) in the log file names, so each task writes its own:
 
 ```sh
-sbatch --array 1-3 --output log/%x_%A_%a.out qc.sl
+sbatch --array 0-2 --output log/%x_%A_%a.out qc.sl
 ```
 
-`squeue --me` shows the tasks still waiting together on one line, such as `JOB_ID_[1-3]`, and each running task as `JOB_ID_1`, `JOB_ID_2` and so on.
+`squeue --me` shows the tasks still waiting together on one line, such as `JOB_ID_[0-2]`, and each running task as `JOB_ID_0`, `JOB_ID_1` and so on.
 To check one task, give `seff` the task's ID, for example `seff JOB_ID_1`.
 Replace `JOB_ID` with the job ID that `sbatch` printed.
 
-To limit how many tasks run at the same time, add `%` and a number to `--array`. `--array 1-3%2` runs at most two tasks at once.
+To limit how many tasks run at the same time, add `%` and a number to `--array`. `--array 0-2%2` runs at most two tasks at once.
 
 !!! tip "Don't make each task too small"
     Each task queues and starts like a separate job, and counts towards the queue limit in [Job Limits](../../Batch_Computing/Job_Limits.md).
@@ -161,21 +164,21 @@ This is the final version of `pipeline.sh`, building on the one from [Job Depend
 --8<-- "docs/assets/workshops/hpc102/.pipeline_7.sh"
 ```
 
-For the three samples in `samples.txt`, it queues two job arrays and three single jobs.
+For the three samples, it queues two job arrays and three single jobs.
 Each alignment task waits for the quality control task with the same index and for indexing. The summary runs if every alignment task succeeds, and the resubmit job runs if any fails:
 
 ```mermaid
 flowchart TB
     subgraph qc["qc.sl job array"]
-        qc1["Task 1<br>SRR2584863"]
-        qc2["Task 2<br>SRR2584866"]
-        qc3["Task 3<br>SRR2589044"]
+        qc1["Task 0<br>SRR2584863"]
+        qc2["Task 1<br>SRR2584866"]
+        qc3["Task 2<br>SRR2589044"]
     end
     index["index.sh"]
     subgraph align["align.sl job array"]
-        align1["Task 1<br>SRR2584863"]
-        align2["Task 2<br>SRR2584866"]
-        align3["Task 3<br>SRR2589044"]
+        align1["Task 0<br>SRR2584863"]
+        align2["Task 1<br>SRR2584866"]
+        align3["Task 2<br>SRR2589044"]
     end
     qc1 -- aftercorr --> align1
     qc2 -- aftercorr --> align2

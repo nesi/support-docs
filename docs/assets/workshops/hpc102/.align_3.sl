@@ -10,8 +10,10 @@
 set -u
 
 # Alignment and variant calling for one sample.
-# The first argument if given, otherwise this array task's line of samples.txt.
-base=${1:-$(sed -n "${SLURM_ARRAY_TASK_ID}p" samples.txt)}
+# Uses the same list of raw read files as qc.sl,
+# so each task index is the same sample in both.
+files=(untrimmed_fastq/*_1.fastq.gz)
+base=$(basename ${files[SLURM_ARRAY_TASK_ID]} _1.fastq.gz)
 
 ref_genome=ref_genome/ecoli_rel606.fasta
 fq1=trimmed/${base}_1.trim.fastq

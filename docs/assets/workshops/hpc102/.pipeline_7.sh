@@ -13,14 +13,17 @@ module load BCFtools/1.22-GCC-12.3.0
 # Limit Java's memory, or Trimmomatic sizes it from the whole node.
 export JAVA_TOOL_OPTIONS="-Xmx1g"
 
-n_samples=$(wc -l < samples.txt)
+# One array task per sample. Task indexes start at 0, so the last is one less
+# than the number of files.
+files=(untrimmed_fastq/*_1.fastq.gz)
+last=$(( ${#files[@]} - 1 ))
 
-# Quality control as a job array, one task per sample, and indexing alongside.
-qc=$(sbatch --parsable --array 1-${n_samples} qc.sl)
+# Quality control as a job array, and indexing alongside.
+qc=$(sbatch --parsable --array 0-${last} qc.sl)
 index=$(sbatch --parsable index.sh)
 
 # Each alignment task waits for the QC task of the same sample, and for indexing.
-align=$(sbatch --parsable --array 1-${n_samples} \
+align=$(sbatch --parsable --array 0-${last} \
     --dependency aftercorr:${qc},afterok:${index} align.sl)
 
 # Once every alignment task has succeeded, summarise the results.

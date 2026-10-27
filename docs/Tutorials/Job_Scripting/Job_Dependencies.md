@@ -43,7 +43,7 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
     The profile plot in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md#reviewing-our-job-script) shows the steps of the job:
     quality control first, a short blip that is probably indexing the reference genome, then alignment and variant calling.
 
-    So we can give the three scripts better resource requests. Each now runs for one sample at a time,
+    So we can give the three scripts better resource requests. Each still works through every sample,
     and writes its output to `log/`, like `pipeline.sl` since [Using Variables](Using_Variables.md#output-files).
 
     **Quality control**:`qc.sh` requests fewer CPUs, less memory and much less time.
@@ -67,7 +67,7 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
 Quality control requests two CPUs, indexing one, and alignment four.
 Indexing doesn't need the results of quality control either, so those two jobs can run at the same time.
 
-<!-- Write: re-record these three plots with one sample's jobs from pipeline.sh, and update the text below to match. -->
+<!-- Write: re-record these three plots with the three jobs from pipeline.sh, and update the text below to match. -->
 
 
 Once each script has run, check it with `seff` and adjust its request, leaving 20 to 30% spare as in the
@@ -136,31 +136,26 @@ Job `1001` is running and job `1002` has failed. Which of these jobs can start o
 
 ## Queue a whole workflow
 
-`pipeline.sl` already runs `index.sh` once, then `qc.sh` and `align.sh` for each sample.
-If it submits each step with `sbatch` instead of running it with `bash`, every step becomes a job of its own.
+`pipeline.sl` already runs a script for each step. If it submits each step with `sbatch` instead of running it with `bash`,
+every step becomes a job of its own.
 `sbatch --parsable` prints only the job ID, so the script can save it and use it in the next submission:
 
 ```sh
 --8<-- "docs/assets/workshops/hpc102/.pipeline_6.sh"
 ```
 
-For the three samples in `samples.txt`, it queues seven separate jobs, each with its own resources.
-Indexing and the three quality control jobs can start straight away. Each alignment job waits, with `afterok`, for indexing and for its own sample's quality control:
+It queues three jobs, each with its own resources.
+Quality control and indexing can start straight away. Alignment waits, with `afterok`, for both to succeed:
 
 ```mermaid
 flowchart TB
-    index["index<br>all samples"]
-    %% Invisible links, so index sits on a row above the qc jobs.
-    index ~~~ qc1 & qc2 & qc3
-    qc1["qc<br>SRR2584863"] --> align1["align<br>SRR2584863"]
-    qc2["qc<br>SRR2584866"] --> align2["align<br>SRR2584866"]
-    qc3["qc<br>SRR2589044"] --> align3["align<br>SRR2589044"]
-    index --> align1 & align2 & align3
+    qc["qc.sh<br>all samples"] --> align["align.sh<br>all samples"]
+    index["index.sh"] --> align
 ```
 
 The script is no longer a batch job itself: it has no `#SBATCH` header, and only submits the other jobs, so it finishes straight away.
-Save it as `pipeline.sh` next to the three scripts and `samples.txt`, and run it on the login node with `bash pipeline.sh`.
-`squeue --me` then shows the alignment jobs waiting, with the reason `(Dependency)`, until the jobs they depend on have finished.
+Save it as `pipeline.sh` next to the three scripts, and run it on the login node with `bash pipeline.sh`.
+`squeue --me` then shows the alignment job waiting, with the reason `(Dependency)`, until the jobs they depend on have finished.
 
 !!! question "Why queue every step at once?"
     What is gained by submitting the later steps straight away, rather than waiting to submit them by hand?
@@ -169,8 +164,8 @@ Save it as `pipeline.sh` next to the three scripts and `samples.txt`, and run it
     Each step can start as soon as the steps it depends on have succeeded, without you being there to submit it.
     The whole workflow runs from one command.
 
-For three samples, that is seven jobs, each with its own job ID. With hundreds of samples, it soon becomes hard to manage.
-The next lesson runs each step for every sample as a single job array.
+Quality control and alignment still work through the samples one after another, inside one job each.
+The samples don't depend on each other, so the next lesson runs them at the same time, as a job array.
 
 !!! keypoints
     - Split a job where its parts need different resources.
