@@ -9,7 +9,7 @@ status: new
 {% include 'partials/status-only-pro.md' %}
 
 A new project starts from a group invitation link.
-Each organisation has its own link.
+REANNZ sets up the link for each organisation that uses one.
 Your organisation owner shares it with researchers at your institution.
 
 The link creates the project at once, with you as its project manager.
@@ -39,8 +39,7 @@ The portal shows **Project created in** your organisation and opens the new proj
 You are its project manager.
 
 !!! warning "Always change the project name"
-    If a project of the same name already exists in your organisation,
-    the link adds you to that project instead of creating a new one.
+    Give each new project a unique name.
     If the portal says **You have joined an existing project**,
     do not order anything for it.
     {% include "partials/support_request.html" %}.
@@ -53,7 +52,7 @@ The code is assigned automatically, usually within an hour of creating the proje
 1. Open your project and go to the **REANNZ Marketplace**.
 2. Choose the offering, for example **Mahuika**.
 3. Next to the resource name, click **Suggest name**.
-   The suggested name should start with your project code, for example `bsi04930-1`.
+   The suggested name should start with your project code, for example `bsi0NNNN-1`.
    If it starts with your project name instead, the code is not ready yet.
    Leave the order form and try again later.
 4. Enter the limits you need and submit the order.
@@ -63,8 +62,8 @@ The allocation is created once both approve.
 
 ## Share the link
 
-REANNZ creates one link for each organisation.
-To find your organisation's link:
+REANNZ creates the link for your organisation.
+To find it:
 
 1. Open your organisation and click **Team**.
 2. Click the **Group invitations** tab.
