@@ -30,15 +30,15 @@ Open your organisation's **Resources** and check the allocations with the neares
 
 ## New projects
 
-Researchers ask for a new project through a group invitation link.
-REANNZ creates these links.
-{% include "partials/support_request.html" %} to get one.
+Researchers create a new project through your organisation's group invitation link.
+You share the link with them.
+See [Share the link](Requesting_a_New_Project.md#share-the-link).
 
-The portal accepts the request and creates the project at once.
+The portal creates the project at once.
 The requester becomes its project manager.
-You do not approve this step.
+You do not approve this step, and the portal does not email you.
 
-To see who has used a link:
+To see who has used the link:
 
 1. Open your organisation and click **Team**.
 2. Click the **Group invitations** tab.
