@@ -2,7 +2,7 @@
 created_at: '2026-10-27'
 tags:
 - account
-description: How organisation owners share a group invitation link, and how researchers use the link to create a new project in the REANNZ HPC Portal.
+description: How organisation owners share and approve group invitation links, and how researchers use a link to create a new project in the REANNZ HPC Portal.
 status: new
 ---
 
@@ -12,10 +12,19 @@ A new project starts from a group invitation link.
 REANNZ sets up the link for each organisation that uses one.
 Your organisation owner shares it with researchers at your institution.
 
-The link creates the project at once, with you as its project manager.
+A link works in one of two ways:
+
+| Link type | What happens when you use it |
+| --- | --- |
+| Approved automatically | The portal creates the project at once. |
+| Needs approval | Your request waits for an organisation owner. The project is created when they approve it. |
+
+Either way, you become the project's project manager.
 The project starts with no allocation.
-You then order one, and that order is what gets approved.
-Organisation owners, see [Share the link](#share-the-link).
+You then order one, and an organisation owner and REANNZ approve that order.
+
+Organisation owners, see [Share the link](#share-the-link)
+and [Approve a project request](#approve-a-project-request).
 
 !!! note "Renew your existing project"
     Do not use the link to renew a project.
@@ -33,10 +42,20 @@ Organisation owners, see [Share the link](#share-the-link).
 4. The **Project details** dialog opens.
    In **Project name**, replace the pre-filled name with a unique name for your project.
 5. In **Project description**, describe the research.
+   If the link needs approval, the owner reads this to decide.
 6. Click **Submit request**.
 
+The message that follows tells you which type of link you used.
+
+**Approved automatically.**
 The portal shows **Project created in** your organisation and opens the new project.
-You are its project manager.
+Go on to [order an allocation](#order-an-allocation).
+
+**Needs approval.**
+The portal shows **Request submitted** and opens your permission requests.
+The **Status** column shows where your request is.
+You get an email when an owner approves or declines it.
+Once approved, the project appears under **Projects**.
 
 !!! warning "Always change the project name"
     Give each new project a unique name.
@@ -68,19 +87,39 @@ To find it:
 1. Open your organisation and click **Team**.
 2. Click the **Group invitations** tab.
 3. Expand the invitation.
+   **Auto approve** shows whether the link needs your approval.
 4. Copy the **Invitation link** with the copy icon next to it.
 
 Send the link to researchers at your institution.
-Anyone who logs in with the link can create a project in your organisation,
-so do not share it outside your institution.
-
-The portal does not email you when someone uses the link.
-To see who has used it, expand the invitation and read the **User permission requests** list.
-The **Requested project** column shows each project name.
+Do not share it outside your institution.
+With a link that is approved automatically,
+anyone who logs in with it can create a project in your organisation.
 
 You cannot change or cancel the link yourself.
 If your organisation has no link, or you want it changed or cancelled,
 {% include "partials/support_request.html" %}.
 
-You approve the allocation order, not the project.
+## Approve a project request
+
+Requests through a link that needs approval wait for you.
+The portal emails your organisation's owners when a request arrives.
+
+1. Open your organisation and click **Team**.
+2. Click the **Group invitations** tab and expand the invitation.
+3. Under **User permission requests**, find the request.
+   **Requested project** shows the project name.
+4. Click **Review** on the row.
+   Read the request, enter a **Reason** if you wish, then click **Approve** or **Decline**.
+
+Decline a request whose **Requested project** matches a project that already exists
+in your organisation.
+Approving it adds the requester to that project as project manager,
+instead of creating a new one.
+
+When you approve, the portal creates the project and emails the requester.
+
+With a link that is approved automatically, there is nothing to approve.
+The portal does not email you, so check **User permission requests** to see who has used it.
+
+Either way, the allocation order comes to you next.
 See [Approve an order](Approving_Requests.md#approve-an-order).

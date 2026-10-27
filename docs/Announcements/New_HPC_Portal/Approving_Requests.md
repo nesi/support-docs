@@ -20,6 +20,7 @@ Each type of request waits in its own place.
 | --- | --- | --- | --- |
 | New resource | A project manager | Yes. The subject names the order. | Your organisation's **Resources** → **Orders**. See [Approve an order](#approve-an-order). |
 | Limit change | A project manager | Yes, as for a new resource. A limit change is an order. | As for a new resource. |
+| New project | A researcher, through a link that needs approval | Yes. | Your organisation's **Team** → **Group invitations**. See [Approve a project request](Requesting_a_New_Project.md#approve-a-project-request). |
 | End date change | A project manager or member | Sometimes a short notice. Do not rely on it. | The resource's **End date change requests** tab. See [Approve end dates](#approve-end-dates). |
 
 Most portal emails do not repeat the request details.
@@ -34,11 +35,15 @@ Researchers create a new project through your organisation's group invitation li
 You share the link with them.
 See [Share the link](Requesting_a_New_Project.md#share-the-link).
 
-The portal creates the project at once.
-The requester becomes its project manager.
-You do not approve this step, and the portal does not email you.
+What happens next depends on the link:
 
-To see who has used the link:
+- **Approved automatically.** The portal creates the project at once.
+  You do not approve this step, and the portal does not email you.
+- **Needs approval.** The request waits for you.
+  See [Approve a project request](Requesting_a_New_Project.md#approve-a-project-request).
+
+Either way, the requester becomes the project manager.
+To see who has used a link:
 
 1. Open your organisation and click **Team**.
 2. Click the **Group invitations** tab.
