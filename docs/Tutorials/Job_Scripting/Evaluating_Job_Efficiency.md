@@ -92,12 +92,12 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
 
     |   Option    |       Example                 |         Description                                       |
     | -------------- | ----------------------------------- | --------------------------------------------------------------- |
-    | `--starttime`/`-S`   | `--starttime=`          |        |
+    | `--starttime`/`-S`   | `--starttime=today`          |        |
     | `--endtime`/`-E`    | `--endtime=now-2hours`       |                |
     | `--jobs`/`-j`        | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}`               | Memory required per node.                                       |
     | `--long`/`-l`  | `--long`         | Includes all possible fields for the format                                        |
     | `--name`     | `--name=pipeline`    | Display jobs that have any of these name(s)                          |
-    | `--parsable`/`-p`  | `--parsable`           | Output will be '|' delimited with a '|' at the end. |
+    | `--parsable`/`-p`  | `--parsable`           | Output will be "|" delimited with a "|" at the end. |
     | `--parsable2`/`-P`  | `--parsable2`           | Output will be '|' delimited without a '|' at the end. |
     | `--state`/`-s` | `--state=COMPLETED`              |   Selects jobs based on their state during the time period given.      |
     | `--user`/`-u` | `--user=$USER`  | Display jobs for the user(s) specified |
@@ -132,7 +132,6 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
     | WorkDir | The directory used by the job to execute commands. |
 
     You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/sacct.html).
-    <!-- TODO -->
 
 ### `seff`
 
@@ -192,7 +191,7 @@ To enable profiling in a batch job, you need to add the following to your Slurm 
 Luckily for us, this was included in our script when it was run previously, so we can access this data about our job.
 We can run `profile_plot {{ intermediate_hpc_job_id_01 }}` to produce a PNG with plots of the CPU, memory and I/O utilisation over the course of our job.
 `profile_plot` will produce a file named after the job ID, so in this case we will get `{{ intermediate_hpc_job_id_01 }}.png`.
-You can open this file in an integrated development environment (IDE) like VS Code or JupyterLab, or try running `gm display filename.png`
+You can open this file in an integrated development environment (IDE) like VS Code or JupyterLab, or try running `gm display {{ intermediate_hpc_job_id_01 }}.png`
 
 ![Profile plot for job ID `{{ intermediate_hpc_job_id_01 }}`](../../assets/images/intermediate_hpc_profile_plot_01.png)
 
