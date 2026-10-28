@@ -12238,7 +12238,7 @@
                 "server": "MATLAB@aut",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 1.0,
+                "server_uptime": 0.5,
                 "server_version": "",
                 "features": []
             },
@@ -18015,28 +18015,28 @@
         "force_show": false
     },
     "PyTorch": {
-        "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration.\nPyTorch is a deep learning framework that puts Python first.",
+        "description": "Tensors and Dynamic neural networks in Python with strong GPU acceleration.\nPyTorch is a deep learning framework that puts Python first.\nThis is a CPU-only build.",
         "domains": [
             "gpu"
         ],
         "extensions": [
-            "skorch-1.4.0",
-            "triton-3.7.1"
+            "skorch-1.4.0"
         ],
         "licence_type": "",
         "homepage": "https://pytorch.org/",
         "support": "",
         "versions": [
             "1.12.1-gimkl-2022a-Python-3.10.5-CUDA-11.6.2",
-            "2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1"
+            "2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1",
+            "2.13.0-foss-2026-Python-3.14.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1",
+        "default": "2.13.0-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1785965820,
+        "last_updated": 1793143284,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/PyTorch/2.13.0-foss-2026-Python-3.14.4-CUDA-13.2.1.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PyTorch/2.13.0-foss-2026-Python-3.14.4.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -20882,6 +20882,7 @@
             "4.1.5-intel-2022a",
             "5.0.0-beta1-foss-2023a",
             "5.0.0-foss-2023a",
+            "5.4.2-foss-2023a",
             "5.4.2-foss-2026"
         ],
         "admin_list": [
