@@ -22,8 +22,8 @@ tags:
 
 The steps of `pipeline.sl` have different resource needs:
 
-1. Quality control
-2. Indexing the reference genome
+1. Indexing the reference genome
+2. Quality control
 3. Alignment and variant calling
 
 Even so, `pipeline.sl` runs every step, for every sample, in one job that holds 4 CPUs, 5 GB and 4 hours the whole time.
@@ -66,13 +66,13 @@ The step scripts don't load any modules: run with `bash` from `pipeline.sl`, the
 --8<-- "docs/assets/workshops/hpc102/.pipeline_4.sl"
 ```
 
-It runs `qc.sh`, then `index.sh`, then `align.sh`, each working through every sample:
+It runs `index.sh`, then `qc.sh`, then `align.sh`. Quality control and alignment each work through every sample:
 
 ```mermaid
 flowchart TD
     subgraph job["pipeline.sl"]
-        qc["qc.sh"] --> index["index.sh"]
-        index --> align["align.sh"]
+        index["index.sh"] --> qc["qc.sh"]
+        qc --> align["align.sh"]
     end
 ```
 
@@ -85,6 +85,15 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
     Let's give each step script (`qc.sh`, `index.sh` and `align.sh`) an appropriate resource request,
     based on the profile from [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md), so each can run as a separate job.
 
+    Once a script has an `#SBATCH` header, it is a batch script, so rename it to end in `.sl`:
+
+    ```sh
+    mv qc.sh qc.sl
+    mv index.sh index.sl
+    mv align.sh align.sl
+    ```
+
+<!-- TODO: re-run pipeline.sl (now indexing first), redo the profile plots and the marked-up image, and update the plot description in this solution to match. -->
 ??? question "Solution: updated scripts"
     There is no one correct answer here! But here is one option.
     The profile plot in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md#reviewing-our-job-script) shows the steps of the job:
@@ -93,22 +102,22 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
     So we can give the three scripts better resource requests. Each still works through every sample,
     and writes its output to `log/`, like `pipeline.sl` since [Using Variables](Using_Variables.md#output-files).
 
-    **Quality control**:`qc.sh` requests fewer CPUs, less memory and much less time.
+    **Quality control**: `qc.sl` requests fewer CPUs, less memory and much less time.
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.qc_2.sh"
+    --8<-- "docs/assets/workshops/hpc102/.qc_2.sl"
     ```
 
-    **Reference genome indexing**: `index.sh` requests less CPUs, memory, and time.
+    **Reference genome indexing**: `index.sl` requests less CPUs, memory, and time.
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.index_2.sh"
+    --8<-- "docs/assets/workshops/hpc102/.index_2.sl"
     ```
 
-    **Alignment and variant calling**: `align.sh` requests the same CPUs but less memory and time.
+    **Alignment and variant calling**: `align.sl` requests the same CPUs but less memory and time.
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.align_2.sh"
+    --8<-- "docs/assets/workshops/hpc102/.align_2.sl"
     ```
 
 Quality control requests two CPUs, indexing one, and alignment four.
@@ -120,36 +129,13 @@ Indexing doesn't need the results of quality control either, so those two jobs c
 Once each script has run, check it with `seff` and adjust its request, leaving 20 to 30% spare as in the
 [Introduction to HPC](../Introduction_To_HPC/Resources.md).
 
-## Read and write less (claude wrote this, not sure if true)
-
-The profile plot showed reading and writing files growing steadily through alignment.
-For each sample, `align.sh` writes a `.sam` file (`${sam}`), converts it to a `.bam` file (`${bam}`), then sorts that into another (`${sorted_bam}`).
-Only the sorted file is used afterwards.
-
-!!! question "Skip the intermediate files"
-    `samtools sort` can read from a pipe (`|`) as well as from a file.
-    How could the alignment write straight into `samtools sort`, without the `.sam` and unsorted `.bam` files?
-
-??? question "Solution"
-    Pipe `bwa-mem2` into `samtools sort`, which reads from the pipe when given `-` as its input file:
-
-    ```bash
-    bwa-mem2 mem -t ${SLURM_CPUS_PER_TASK} ${ref_genome} ${fq1} ${fq2} \
-        | samtools sort -@ ${SLURM_CPUS_PER_TASK} -m 256M -o ${sorted_bam} -
-    ```
-
-    Both commands now run at the same time, so the job needs more memory.
-    In our tests this step used up to about 2.5 GB, so request `--mem 3G`.
-
-For large temporary files, see also [Temporary Directories](../../Batch_Computing/Temporary_Directories.md).
-
 ## Make a job wait for another
 
 Alignment can only start once quality control and indexing have finished.
-Rather than waiting to submit `align.sh` by hand, we can submit it straight away and tell Slurm to wait, with `--dependency`:
+Rather than waiting to submit `align.sl` by hand, we can submit it straight away and tell Slurm to wait, with `--dependency`:
 
 ```sh
-sbatch --dependency afterok:JOB_ID align.sh
+sbatch --dependency afterok:JOB_ID align.sl
 ```
 
 Replace `JOB_ID` with the job ID of the job to wait for.
@@ -196,12 +182,13 @@ Quality control and indexing can start straight away. Alignment waits, with `aft
 
 ```mermaid
 flowchart TB
-    qc["qc.sh<br>all samples"] --> align["align.sh<br>all samples"]
-    index["index.sh"] --> align
+    qc["qc.sl<br>all samples"] --> align["align.sl<br>all samples"]
+    index["index.sl"] --> align
 ```
 
 The script is no longer a batch job itself: it has no `#SBATCH` header, and only submits the other jobs, so it finishes straight away.
-Save it as `pipeline.sh` next to the three scripts, and run it on the login node with `bash pipeline.sh`.
+As it is no longer a batch script, save it as `pipeline.sh`, not `pipeline.sl`, next to the three step scripts.
+Run it on the login node with `bash pipeline.sh`.
 `squeue --me` then shows the alignment job waiting, with the reason `(Dependency)`, until the jobs they depend on have finished.
 
 !!! question "Why queue every step at once?"

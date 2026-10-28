@@ -149,7 +149,7 @@ For each loop we have the following files, almost all of which are used multiple
 Let's give each of these a simple but unique name, and see how the for loop looks.
 
 ```bash
---8<-- "docs/assets/workshops/hpc102/.pipeline_2.sl:42:63"
+--8<-- "docs/assets/workshops/hpc102/.pipeline_2.sl:43:64"
 ```
 
 The quality control loop gets the same treatment. With every path written from the folder the job runs in,
@@ -232,7 +232,7 @@ But Slurm has an environment variable called `$SLURM_CPUS_PER_TASK` that can be 
 We can update our for loop to use this variable:
 
 ```bash
---8<-- "docs/assets/workshops/hpc102/.pipeline_3.sl:46:66"
+--8<-- "docs/assets/workshops/hpc102/.pipeline_3.sl:47:67"
 ```
 
 ??? note "`pipeline.sl` so far, with `set -u` and the reference genome set once"
@@ -344,7 +344,7 @@ Adding `--output` to the header puts each job's output in `log/`, named after th
 #SBATCH --output        log/%x_%j.out
 ```
 
-For `pipeline.sl`, that is `log/intermed-hpc-01_JOB_ID.out`.
+For `pipeline.sl`, that is `log/pipeline_JOB_ID.out`.
 Slurm doesn't create the `log` folder, so create it before submitting with `mkdir -p log`.
 From here on, `pipeline.sl` has this line.
 

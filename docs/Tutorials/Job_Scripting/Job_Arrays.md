@@ -35,7 +35,7 @@ The script we will be working from is called `03_script.sl` and should be in the
 
 ## One job, many samples
 
-In [Job Dependencies](Job_Dependencies.md), `qc.sh` and `align.sh` each work through every sample with a loop,
+In [Job Dependencies](Job_Dependencies.md), `qc.sl` and `align.sl` each work through every sample with a loop,
 one sample after another:
 
 ```bash
@@ -88,7 +88,7 @@ Here are the quality control and alignment scripts, with the loop replaced by th
     ```
 
 `align.sl` builds the list from the raw read files too, not the trimmed ones, so each task index is the same sample in both scripts.
-Indexing (`index.sh`) runs once for all samples, so it stays as it is.
+Indexing (`index.sl`) runs once for all samples, so it stays as it is.
 
 <quiz>
 <p class=admonition-title>Output file names</p>
@@ -143,7 +143,7 @@ flowchart TB
         qc2["Task 1<br>SRR2584866"]
         qc3["Task 2<br>SRR2589044"]
     end
-    index["index.sh"]
+    index["index.sl"]
     subgraph align["align.sl job array"]
         align1["Task 0<br>SRR2584863"]
         align2["Task 1<br>SRR2584866"]
@@ -157,7 +157,7 @@ flowchart TB
     align -. afternotok .-> resubmit["resubmit_failed.sh"]
 ```
 
-- Quality control (`qc.sl`) runs as a job array, one task per sample, and indexing (`index.sh`) runs at the same time.
+- Quality control (`qc.sl`) runs as a job array, one task per sample, and indexing (`index.sl`) runs at the same time.
 - Alignment (`align.sl`) is a second job array. `aftercorr` starts each of its tasks as soon as the quality control task
   with the same index has succeeded, and `afterok` waits for indexing. The `,` means both conditions must be met.
 - `summarise.sl` waits for every alignment task to succeed, then counts the variants found in each sample.

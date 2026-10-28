@@ -17,6 +17,10 @@ module load BCFtools/1.22-GCC-12.3.0
 # Limit Java's memory, or Trimmomatic sizes it from the whole node.
 export JAVA_TOOL_OPTIONS="-Xmx1g"
 
+# Reference genome indexing
+gunzip -kf ref_genome/ecoli_rel606.fasta.gz
+bwa-mem2 index ref_genome/ecoli_rel606.fasta
+
 # Quality control
 cd untrimmed_fastq
 fastqc *.fastq*
@@ -36,10 +40,6 @@ done
 cd ..
 mkdir -p results/sam results/bam results/bcf results/vcf
 gunzip trimmed/*.fastq.gz
-
-# Reference genome indexing
-gunzip -kf ref_genome/ecoli_rel606.fasta.gz
-bwa-mem2 index ref_genome/ecoli_rel606.fasta
 
 # Alignment and variant calling
 for infile in trimmed/*_1.trim.fastq

@@ -43,8 +43,8 @@ cp -r /opt/nesi/examples/tutorials/job_scripting .
 
 There are 3 broad steps in this workflow:
 
-1. Quality control
-2. Indexing the reference genome
+1. Indexing the reference genome
+2. Quality control
 3. Alignment and variant calling
 
 `pipeline.sl` runs them one after another in a single job, with every sample going through each step before the next step starts:
@@ -200,6 +200,7 @@ Now we can see things in a bit more detail.
 !!! question "What stands out?"
     What more can we learn from these plots? Does this change your thoughts on how to adjust the requested resources?
 
+<!-- TODO: re-run pipeline.sl (now indexing first), redo the profile plots and the marked-up image, and update this text to match. -->
 ??? question "Solution"
     - The job has distinct phases, which match the three steps in the script.
     - For most of the job only about one of the four CPUs is busy. The CPU use only briefly reaches four, during alignment.
@@ -216,11 +217,13 @@ Let's open `pipeline.sl` and poke around.
 
 As mentioned above, this script is doing 3 major steps which are indicated with comments in the script:
 
-1. Quality control
-2. Indexing the reference genome
+1. Indexing the reference genome
+2. Quality control
 3. Alignment and variant calling
 
 Looking at the profile plot, we can try to identify the steps of the job.
+
+<!-- TODO: re-run pipeline.sl (now indexing first), redo the profile plots and the marked-up image, and update this text to match. -->
 
 ![Profile plot for job {{ intermediate_hpc_job_id_01 }} with the steps marked: a dashed box around quality control at the start, a narrow solid box around a short dip in the middle, and a dotted box around alignment and variant calling at the end.](../../assets/images/intermediate_hpc_job_id_01_markup.png)
 

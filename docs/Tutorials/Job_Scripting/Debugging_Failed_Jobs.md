@@ -37,7 +37,7 @@ Because of the `-e` in `#!/bin/bash -e`, the script stops at the first command t
 so the message that explains the failure is usually near the end:
 
 ```sh
-tail log/intermed-hpc-01_JOB_ID.out
+tail log/pipeline_JOB_ID.out
 ```
 
 !!! info "The message about `NeSI/zen3`"

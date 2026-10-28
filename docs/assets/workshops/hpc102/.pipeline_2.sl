@@ -1,10 +1,11 @@
 #!/bin/bash -e
 
-#SBATCH --job-name      intermed-hpc-01
+#SBATCH --job-name      pipeline
 #SBATCH --account       nesi99991
 #SBATCH --time          04:00:00
 #SBATCH --mem           5G
 #SBATCH --cpus-per-task 4
+#SBATCH --profile       task
 
 module purge
 module load FastQC/0.12.1
@@ -17,6 +18,10 @@ module load BCFtools/1.22-GCC-12.3.0
 export JAVA_TOOL_OPTIONS="-Xmx1g"
 
 adapters=${EBROOTTRIMMOMATIC}/adapters/NexteraPE-PE.fa
+
+# Reference genome indexing
+gunzip -kf ref_genome/ecoli_rel606.fasta.gz
+bwa-mem2 index ref_genome/ecoli_rel606.fasta
 
 # Quality control
 mkdir -p results/fastqc trimmed
@@ -33,10 +38,6 @@ done
 
 mkdir -p results/sam results/bam results/bcf results/vcf
 gunzip -kf trimmed/*.fastq.gz
-
-# Reference genome indexing
-gunzip -kf ref_genome/ecoli_rel606.fasta.gz
-bwa-mem2 index ref_genome/ecoli_rel606.fasta
 
 # Alignment and variant calling
 for infile in trimmed/*_1.trim.fastq

@@ -20,7 +20,7 @@ last=$(( ${#files[@]} - 1 ))
 
 # Quality control as a job array, and indexing alongside.
 qc=$(sbatch --parsable --array 0-${last} qc.sl)
-index=$(sbatch --parsable index.sh)
+index=$(sbatch --parsable index.sl)
 
 # Each alignment task waits for the QC task of the same sample, and for indexing.
 align=$(sbatch --parsable --array 0-${last} \

@@ -1,10 +1,11 @@
 #!/bin/bash -e
 
-#SBATCH --job-name      intermed-hpc-01
+#SBATCH --job-name      pipeline
 #SBATCH --account       nesi99991
 #SBATCH --time          04:00:00
 #SBATCH --mem           5G
 #SBATCH --cpus-per-task 4
+#SBATCH --profile       task
 #SBATCH --output        log/%x_%j.out
 
 set -u
@@ -20,6 +21,6 @@ module load BCFtools/1.22-GCC-12.3.0
 export JAVA_TOOL_OPTIONS="-Xmx1g"
 
 # The step scripts run with the modules loaded here.
-bash qc.sh
 bash index.sh
+bash qc.sh
 bash align.sh

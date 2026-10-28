@@ -14,10 +14,10 @@ export JAVA_TOOL_OPTIONS="-Xmx1g"
 
 # sbatch passes the modules loaded here on to each job,
 # and each step script's #SBATCH header sets its resources.
-qc=$(sbatch --parsable qc.sh)
-index=$(sbatch --parsable index.sh)
+qc=$(sbatch --parsable qc.sl)
+index=$(sbatch --parsable index.sl)
 
 # Alignment waits for quality control and indexing to succeed.
-align=$(sbatch --parsable --dependency afterok:${qc}:${index} align.sh)
+align=$(sbatch --parsable --dependency afterok:${qc}:${index} align.sl)
 
 echo "qc: ${qc}  index: ${index}  align: ${align}"
