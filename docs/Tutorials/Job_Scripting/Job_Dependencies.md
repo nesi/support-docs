@@ -16,9 +16,9 @@ tags:
     - Queue a whole workflow from one submission script.
 
 !!! prerequisite
-    - You will need the scripts as set up in [Job Dependencies](Job_Dependencies.md).
+    - You will need `pipeline.sl` as set up in [Using Variables](Using_Variables.md).
 
-## Split by resource needs
+## One script per stage
 
 The steps of `pipeline.sl` have different resource needs:
 
@@ -26,7 +26,59 @@ The steps of `pipeline.sl` have different resource needs:
 2. Indexing the reference genome
 3. Alignment and variant calling
 
-Since [Using Variables](Using_Variables.md), each step is already a script of its own, but `pipeline.sl` still runs them all in one job,
+Even so, `pipeline.sl` runs every step, for every sample, in one job that holds 4 CPUs, 5 GB and 4 hours the whole time.
+Before we can give each step its own resources, each step needs to be a script of its own.
+
+!!! question "Move quality control into its own script"
+    Move the quality control part of `pipeline.sl`, with its loop and the variables it uses, into a new script, `qc.sh`.
+
+??? question "Solution"
+    `qc.sh` is the quality control section of `pipeline.sl`, with `adapters` moved in from the top:
+
+    ```bash
+    --8<-- "docs/assets/workshops/hpc102/.qc_1.sh"
+    ```
+
+!!! question "Do the same for indexing and alignment"
+    Move reference genome indexing into `index.sh`, and alignment and variant calling into `align.sh`.
+
+??? question "Solution"
+    `index.sh` indexes the reference genome:
+
+    ```bash
+    --8<-- "docs/assets/workshops/hpc102/.index_1.sh"
+    ```
+
+    `align.sh` also creates the results folders, which `pipeline.sl` did between the steps.
+    It unzips each sample's trimmed reads inside the loop, so it loops over the zipped files:
+
+    ```bash
+    --8<-- "docs/assets/workshops/hpc102/.align_1.sh"
+    ```
+
+The step scripts don't load any modules: run with `bash` from `pipeline.sl`, they use the modules it has already loaded.
+
+### Running the steps in one job
+
+`pipeline.sl` still runs the same steps in the same order, in one job, but now calls a script for each:
+
+```sl
+--8<-- "docs/assets/workshops/hpc102/.pipeline_4.sl"
+```
+
+It runs `qc.sh`, then `index.sh`, then `align.sh`, each working through every sample:
+
+```mermaid
+flowchart TD
+    subgraph job["pipeline.sl"]
+        qc["qc.sh"] --> index["index.sh"]
+        index --> align["align.sh"]
+    end
+```
+
+## Split by resource needs
+
+Each step is now a script of its own, but `pipeline.sl` still runs them all in one job,
 holding 4 CPUs, 5 GB and 4 hours for every step.
 
 !!! question "Splitting tasks by resource needs"
@@ -163,6 +215,7 @@ Quality control and alignment still work through the samples one after another, 
 The samples don't depend on each other, so the next lesson runs them at the same time, as a job array.
 
 !!! keypoints
+    - A script for each step lets each step run as its own job.
     - Split a job where its parts need different resources.
     - `--dependency afterok:JOB_ID` makes a job wait for another to finish successfully.
     - `sbatch --parsable` gives the job ID, so a script can queue a whole workflow.

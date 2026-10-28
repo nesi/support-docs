@@ -11,7 +11,7 @@ do
     base=$(basename ${infile} _1.trim.fastq.gz)
 
     fq1=trimmed/${base}_1.trim.fastq
-    fq2=trimed/${base}_2.trim.fastq
+    fq2=trimmed/${base}_2.trim.fastq
     sam=results/sam/${base}.aligned.sam
     bam=results/bam/${base}.aligned.bam
     sorted_bam=results/bam/${base}.aligned.sorted.bam

@@ -262,6 +262,21 @@ You run `echo ${SLURM_CPUS_PER_TASK}` on the login node. What do you see?
 
     Replace `JOB_ID` with the job ID that `sbatch` printed.
 
+Any `#SBATCH` option can also be given on the `sbatch` command line, before the script name.
+Options on the command line override the same option in the script, which is how `sbatch --cpus-per-task 2 pipeline.sl`
+runs the script with 2 CPUs, without editing it.
+
+<quiz>
+<p class=admonition-title>Command line or script</p>
+
+`pipeline.sl` has `#SBATCH --mem 5G`. You submit it with `sbatch --mem 8G pipeline.sl`.
+How much memory does the job get?
+
+- [x] 8G, because options on the command line override the script.
+- [] 5G, because the script is read last.
+- [] 13G, because the two are added together.
+</quiz>
+
 !!! question "Which other commands could use the CPUs?"
     `bwa-mem2` is not the only command in the loop that can use more than one CPU.
     Check the documentation for `samtools sort`: how could it use the CPUs too?
@@ -333,86 +348,14 @@ For `pipeline.sl`, that is `log/intermed-hpc-01_JOB_ID.out`.
 Slurm doesn't create the `log` folder, so create it before submitting with `mkdir -p log`.
 From here on, `pipeline.sl` has this line.
 
-## One script per stage
-
 `pipeline.sl` still runs every step, for every sample, in one job that holds 4 CPUs and 5 GB the whole time.
-Before we can give each step its own resources ([Job Dependencies](Job_Dependencies.md)),
-each step needs to be a script of its own.
-
-!!! question "Move quality control into its own script"
-    Move the quality control part of `pipeline.sl`, with its loop and the variables it uses, into a new script, `qc.sh`.
-
-??? question "Solution"
-    `qc.sh` is the quality control section of `pipeline.sl`, with `adapters` moved in from the top:
-
-    ```bash
-    --8<-- "docs/assets/workshops/hpc102/.qc_1.sh"
-    ```
-
-!!! question "Do the same for indexing and alignment"
-    Move reference genome indexing into `index.sh`, and alignment and variant calling into `align.sh`.
-
-??? question "Solution"
-    `index.sh` indexes the reference genome:
-
-    ```bash
-    --8<-- "docs/assets/workshops/hpc102/.index_1.sh"
-    ```
-
-    `align.sh` also creates the results folders, which `pipeline.sl` did between the steps.
-    It unzips each sample's trimmed reads inside the loop, so it loops over the zipped files:
-
-    ```bash
-    --8<-- "docs/assets/workshops/hpc102/.align_1.sh"
-    ```
-
-The step scripts don't load any modules: run with `bash` from `pipeline.sl`, they use the modules it has already loaded.
-
-### Running the steps in one job
-
-`pipeline.sl` still runs the same steps in the same order, in one job, but now calls a script for each:
-
-```sl
---8<-- "docs/assets/workshops/hpc102/.pipeline_4.sl"
-```
-
-It runs `qc.sh`, then `index.sh`, then `align.sh`, each working through every sample:
-
-```mermaid
-flowchart TD
-    subgraph job["pipeline.sl"]
-        qc["qc.sh"] --> index["index.sh"]
-        index --> align["align.sh"]
-    end
-```
-
-Any `#SBATCH` option can also be given on the `sbatch` command line, before the script name.
-Options on the command line override the same option in the script, which is how `sbatch --cpus-per-task 2 pipeline.sl`
-ran the script with 2 CPUs earlier, without editing it.
-
-<quiz>
-<p class=admonition-title>Command line or script</p>
-
-`pipeline.sl` has `#SBATCH --mem 5G`. You submit it with `sbatch --mem 8G pipeline.sl`.
-How much memory does the job get?
-
-- [x] 8G, because options on the command line override the script.
-- [] 5G, because the script is read last.
-- [] 13G, because the two are added together.
-</quiz>
-
-!!! question "Run it"
-    Submit `pipeline.sl` with `sbatch pipeline.sl`, and once it has finished, check how it ended with `sacct`.
-
-??? question "What happened?"
-    The job failed. Finding out why is the subject of the next lesson, [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
+[Job Dependencies](Job_Dependencies.md) splits it into a job for each step, each with its own resources.
 
 !!! keypoints
     - Using variables can help make code more readable and robust to errors
     - Using environment variables can help make your code more portable
     - Braces and quotes make variables expand the way you expect
     - `set -u` stops a script when it uses a variable that is not set
-    - A script for each step lets each step later run as its own job
     - A `for` loop runs the same commands on each file
     - Options on the `sbatch` command line override the same option in the script
     - Variables do not work in `#SBATCH` lines. Use tokens like `%x` and `%j`
