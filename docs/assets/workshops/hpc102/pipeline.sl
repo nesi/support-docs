@@ -1,6 +1,6 @@
 #!/bin/bash -e
 
-#SBATCH --job-name      intermed-hpc-01
+#SBATCH --job-name      pipeline
 #SBATCH --account       nesi99991
 #SBATCH --time          04:00:00
 #SBATCH --mem           5G
