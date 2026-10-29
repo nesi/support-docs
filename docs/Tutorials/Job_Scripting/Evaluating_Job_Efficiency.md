@@ -41,6 +41,20 @@ cd $USER
 cp -r /opt/nesi/examples/tutorials/job_scripting .
 ```
 
+!!! note "Solo learners"
+    This tutorial series was originally written for a live workshop, where every attendee
+    was added to a shared training project (`nesi99991`) with an `hpc102` directory already created.
+
+    If you're working through this on your own, you won't have access to `nesi99991`, so use one of your own projects instead.
+    Everywhere these lessons use `nesi99991`, in paths and in the `--account` line of the batch scripts, use your project code instead.
+    Before the commands above, create the `hpc102` directory:
+
+    ```sh
+    mkdir -p /nesi/nobackup/nesi99991/hpc102
+    ```
+
+    Replace `nesi99991` with your project code.
+
 There are 3 broad steps in this workflow:
 
 1. Indexing the reference genome
@@ -75,6 +89,12 @@ By using the `-j` flag, we can specify a specific job ID, but you can also use `
 ```sh
 sacct -j {{ intermediate_hpc_job_id_01 }}
 ```
+
+!!! note "Solo learners"
+    If `sacct` shows nothing for this job ID, you can follow along with the output shown on this page.
+    To look at a job of your own instead, submit `pipeline.sl` with `sbatch pipeline.sl`,
+    and use the job ID it prints in place of `{{ intermediate_hpc_job_id_01 }}` once it has finished.
+    It takes about 30 minutes.
 
 <!-- TODO: update with most recent run -->
 ```output

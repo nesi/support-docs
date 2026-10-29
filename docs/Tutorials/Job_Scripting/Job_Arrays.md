@@ -104,6 +104,9 @@ A job array script has `#SBATCH --output log/sample_${SLURM_ARRAY_TASK_ID}.out`.
 
 ## Running the array
 
+!!! note "Solo learners"
+    Replace `nesi99991` in the `--account` line with your project code.
+
 Submit a job array with `--array`, giving one task for each raw read file.
 Use `%A` (the job ID of the whole array) and `%a` (the task index) in the log file names, so each task writes its own:
 

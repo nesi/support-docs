@@ -256,6 +256,9 @@ You run `echo ${SLURM_CPUS_PER_TASK}` on the login node. What do you see?
 - [] The number of CPUs your last job requested.
 </quiz>
 
+!!! note "Solo learners"
+    Replace `nesi99991` in the `--account` line with your project code.
+
 !!! question "Check that it works"
     Submit the updated script with `sbatch pipeline.sl`, and once it has finished, check it with `seff JOB_ID`.
     Then submit it again with `sbatch --cpus-per-task 2 pipeline.sl`, and compare the elapsed time.

@@ -120,6 +120,9 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
     --8<-- "docs/assets/workshops/hpc102/.align_2.sl"
     ```
 
+!!! note "Solo learners"
+    Replace `nesi99991` in the `--account` line with your project code.
+
 Quality control requests two CPUs, indexing one, and alignment four.
 Indexing doesn't need the results of quality control either, so those two jobs can run at the same time.
 
