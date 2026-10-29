@@ -1,5 +1,5 @@
 ---
-description: Use variables in a Slurm job script to make it easier to read, more robust and reusable, including Slurm environment variables such as SLURM_CPUS_PER_TASK.
+description: Use variables in a batch script to make it easier to read, more robust and reusable, including Slurm environment variables such as SLURM_CPUS_PER_TASK.
 status: tutorial
 tags:
 - tutorial
@@ -12,7 +12,6 @@ tags:
     - Use variables to make a script reusable
     - Use variables to improve script robustness
     - Use variables to improve script readability
-
 
 !!! prerequisite
     - The script we are using is introduced in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md).

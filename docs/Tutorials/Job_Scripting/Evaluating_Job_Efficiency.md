@@ -6,7 +6,7 @@ tags:
 - profiling
 ---
 
-!!! time "wibbly wobbly timey wimey" <!--TODO-->
+!!! time "30 Minutes"
 
 !!! objectives
     - review the resource utilisation of a previous job
@@ -17,7 +17,7 @@ tags:
 
     - use the terminal to navigate a filesystem
     - find and load software
-    - write a Slurm batch script
+    - write a batch script
     - submit batch jobs to Slurm
     - check on the status of queued and completed Slurm jobs
 
@@ -112,9 +112,9 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
 
     |   Option    |       Example                 |         Description                                       |
     | -------------- | ----------------------------------- | --------------------------------------------------------------- |
-    | `--starttime`/`-S`   | `--starttime=today`          |        |
-    | `--endtime`/`-E`    | `--endtime=now-2hours`       |                |
-    | `--jobs`/`-j`        | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}`               | Memory required per node.                                       |
+    | `--starttime`/`-S`   | `--starttime=today`          | Select jobs in any state after the given time. |
+    | `--endtime`/`-E`    | `--endtime=now-2hours`       | Select jobs in any state before the given time. |
+    | `--jobs`/`-j`        | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}`               | Display only the given job(s) or job step(s). |
     | `--long`/`-l`  | `--long`         | Includes all possible fields for the format                                        |
     | `--name`     | `--name=pipeline`    | Display jobs that have any of these name(s)                          |
     | `--parsable`/`-p`  | `--parsable`           | Output will be "|" delimited with a "|" at the end. |
@@ -128,36 +128,36 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
 
     | Field | Description |
     | ----- | ------- |
-    | Account | Account the job ran under. |
-    | AllocCPUs / NCPUS | Total number of CPUs allocated to the job. |
-    | AllocNodes| Number of nodes allocated to the job/step. 0 if the job is pending. |
-    | CPUTime | Time used (Elapsed time * CPU count) by a job or step in HH:MM:SS format.  |
-    | Elapsed | The job's elapsed time. The format of this field's output is as follows: [DD-[HH:]]MM:SS |
-    | End | Termination time of the job. |
-    | JobID | The identification number of the job or job step. |
-    | JobName | The name of the job or job step. |
-    | NNodes | Number of nodes in a job or step. |
-    | NodeList | List of nodes in job/step. |
-    | NTasks | Total number of tasks in a job or step. |
-    | Partition | Identifies the partition on which the job ran. |
-    | ReqCPUS | Number of requested CPUs. |
-    | ReqMem | Minimum required memory for the job. |
-    | ReqNodes | Requested minimum Node count for the job/step. |
-    | Restarts | How many times this job has been requeued/restarted. |
-    | Start | Initiation time of the job. |
-    | State | Displays the job status, or state. |
-    | Submit | The time the job was submitted |
-    | Timelimit | What the timelimit was/is for the job or job step. |
-    | User | The user name of the user who ran the job. |
-    | WorkDir | The directory used by the job to execute commands. |
+    | `Account` | Account the job ran under. |
+    | `AllocCPUs` / `NCPUS` | Total number of CPUs allocated to the job. |
+    | `AllocNodes` | Number of nodes allocated to the job/step. 0 if the job is pending. |
+    | `CPUTime` | Time used (Elapsed time * CPU count) by a job or step in `HH:MM:SS` format.  |
+    | `Elapsed` | The job's elapsed time. The format of this field's output is as follows: `[DD-[HH:]]MM:SS` |
+    | `End` | Termination time of the job. |
+    | `JobID` | The identification number of the job or job step. |
+    | `JobName` | The name of the job or job step. |
+    | `NNodes` | Number of nodes in a job or step. |
+    | `NodeList` | List of nodes in job/step. |
+    | `NTasks` | Total number of tasks in a job or step. |
+    | `Partition` | Identifies the partition on which the job ran. |
+    | `ReqCPUS` | Number of requested CPUs. |
+    | `ReqMem` | Minimum required memory for the job. |
+    | `ReqNodes` | Requested minimum Node count for the job/step. |
+    | `Restarts` | How many times this job has been requeued/restarted. |
+    | `Start` | Initiation time of the job. |
+    | `State` | Displays the job status, or state. |
+    | `Submit` | The time the job was submitted |
+    | `Timelimit` | The time limit of the job or job step. |
+    | `User` | The username of the user who ran the job. |
+    | `WorkDir` | The directory used by the job to execute commands. |
 
-    You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/sacct.html).
+    You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html).
 
 ### `seff`
 
 The basic `sacct` tells us a little about the job: the runtime, how many CPUs were allocated, the final job state.
 But this information doesn't really help us evaluate how well the job ran.
-To look at the efficiency of our job, we can use the command `seff` (short for **s**lurm **eff**iciency):
+To look at the efficiency of our job, we can use the command `seff` (short for Slurm efficiency):
 
 ```sh
 seff {{ intermediate_hpc_job_id_01 }}
@@ -209,7 +209,7 @@ To enable profiling in a batch job, you need to add the following to your Slurm 
 ```
 
 Luckily for us, this was included in our script when it was run previously, so we can access this data about our job.
-We can run `profile_plot {{ intermediate_hpc_job_id_01 }}` to produce a PNG with plots of the CPU, memory and I/O utilisation over the course of our job.
+We can run `profile_plot {{ intermediate_hpc_job_id_01 }}` to produce an image with plots of the CPU, memory and I/O utilisation over the course of our job.
 `profile_plot` will produce a file named after the job ID, so in this case we will get `{{ intermediate_hpc_job_id_01 }}.png`.
 You can open this file in an integrated development environment (IDE) like VS Code or JupyterLab, or try running `gm display {{ intermediate_hpc_job_id_01 }}.png`
 
@@ -230,7 +230,7 @@ Now we can see things in a bit more detail.
     So reducing the CPUs for the whole job would slow down the short parts that use them,
     while keeping four CPUs wastes them for most of the job.
 
-## Reviewing our job script
+## Reviewing our batch script
 
 Now let's actually take a look at what this job was running.
 Let's open `pipeline.sl` and poke around.
@@ -264,7 +264,7 @@ Adjusting the resources of the whole job only helps so much.
     - Profiling shows how a job's use of CPUs, memory and I/O changes over time.
     - Different steps of a job can need different resources.
 
-We've assessed our job on a general scale and made some changes without editing the script at all.
+We've assessed our job on a general scale, and found what we could change without editing the script at all.
 The next step is to work on improving the efficiency of the script itself.
 
 !!! postrequisite "What next"

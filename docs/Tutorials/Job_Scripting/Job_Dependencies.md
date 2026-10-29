@@ -96,7 +96,7 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
 <!-- TODO: re-run pipeline.sl (now indexing first), redo the profile plots and the marked-up image, and update the plot description in this solution to match. -->
 ??? question "Solution: updated scripts"
     There is no one correct answer here! But here is one option.
-    The profile plot in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md#reviewing-our-job-script) shows the steps of the job:
+    The profile plot in [Evaluating Job Efficiency](Evaluating_Job_Efficiency.md#reviewing-our-batch-script) shows the steps of the job:
     quality control first, a short blip that is probably indexing the reference genome, then alignment and variant calling.
 
     So we can give the three scripts better resource requests. Each still works through every sample,
@@ -127,7 +127,6 @@ Quality control requests two CPUs, indexing one, and alignment four.
 Indexing doesn't need the results of quality control either, so those two jobs can run at the same time.
 
 <!-- Write: re-record these three plots with the three jobs from pipeline.sh, and update the text below to match. -->
-
 
 Once each script has run, check it with `seff` and adjust its request, leaving 20 to 30% spare as in the
 [Introduction to HPC](../Introduction_To_HPC/Resources.md).
@@ -212,5 +211,4 @@ The samples don't depend on each other, so the next lesson runs them at the same
 
 !!! postrequisite "What next"
     - Next lesson: [Job Arrays](Job_Arrays.md).
-    - For reference: [Job Dependencies](../../Batch_Computing/Job_Dependencies.md)
-      and [Temporary Directories](../../Batch_Computing/Temporary_Directories.md).
+    - For reference: [Job Dependencies](../../Batch_Computing/Job_Dependencies.md).

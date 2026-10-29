@@ -1,5 +1,5 @@
 ---
-description: Run one Slurm batch script for many samples at once as a job array, then queue a whole pipeline with dependencies.
+description: Run one batch script for many samples at once as a job array, then queue a whole pipeline with dependencies.
 status: tutorial
 tags:
 - tutorial
@@ -9,29 +9,20 @@ tags:
 !!! time "45 Minutes"
 
 !!! objectives
-    - Convert a Slurm job script into a Slurm job array script
+    - Convert a batch script into a job array
     - Run a whole pipeline, from preparation to a summary, from one submission script.
     - Compare the pipeline's resource use with the job you started with.
-    - Recognise when a workflow manager would serve you better than Slurm scripts.
+    - Recognise when a workflow manager would serve you better than batch scripts.
 
 !!! prerequisite
     - You can find why a job failed. See [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
 
 ## What is a job array?
 
-Job arrays allow you to use a single script to submit a set of nearly identical SLURM jobs.
-Each job in an array is allocated the exact same resources and submitted to the queue simultaneously.
+Job arrays allow you to use a single script to submit a set of nearly identical Slurm jobs.
+Each job in an array is allocated the same resources and submitted to the queue simultaneously.
 They are the solution to the problem known as *embarrassingly parallel* tasks.
 Embarrassingly parallel tasks are those which require no communication or dependency between tasks, meaning they can be run entirely independently of each other.
-
-## Moving from for loops to job arrays
-
-We are going to dissect our job script from the [Evaluating Job Efficiency](./Evaluating_Job_Efficiency.md) and [Using Variables](./Using_Variables.md) tutorials so that it can be submitted as a job array.
-The script we will be working from is called `03_script.sl` and should be in the `tutorial_<username>` directory you already created. The contents are also below:
-
-```bash
-
-```
 
 ## One job, many samples
 
@@ -91,7 +82,7 @@ Here are the quality control and alignment scripts, with the loop replaced by th
 Indexing (`index.sl`) runs once for all samples, so it stays as it is.
 
 <quiz>
-<p class=admonition-title>Output file names</p>
+<p class=admonition-title>Output filenames</p>
 
 A job array script has `#SBATCH --output log/sample_${SLURM_ARRAY_TASK_ID}.out`. Where do the tasks write their output?
 
@@ -108,7 +99,7 @@ A job array script has `#SBATCH --output log/sample_${SLURM_ARRAY_TASK_ID}.out`.
     Replace `nesi99991` in the `--account` line with your project code.
 
 Submit a job array with `--array`, giving one task for each raw read file.
-Use `%A` (the job ID of the whole array) and `%a` (the task index) in the log file names, so each task writes its own:
+Use `%A` (the job ID of the whole array) and `%a` (the task index) in the log filenames, so each task writes its own:
 
 ```sh
 sbatch --array 0-2 --output log/%x_%A_%a.out qc.sl
