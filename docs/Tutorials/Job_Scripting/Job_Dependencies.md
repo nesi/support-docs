@@ -36,7 +36,7 @@ Before we can give each step its own resources, each step needs to be a script o
     `qc.sh` is the quality control section of `pipeline.sl`, with `adapters` moved in from the top:
 
     ```bash
-    --8<-- "docs/assets/workshops/hpc102/.qc_1.sh"
+    --8<-- "docs/assets/workshops/job_scripting/.qc_1.sh"
     ```
 
 !!! question "Do the same for indexing and alignment"
@@ -46,14 +46,14 @@ Before we can give each step its own resources, each step needs to be a script o
     `index.sh` indexes the reference genome:
 
     ```bash
-    --8<-- "docs/assets/workshops/hpc102/.index_1.sh"
+    --8<-- "docs/assets/workshops/job_scripting/.index_1.sh"
     ```
 
     `align.sh` also creates the results folders, which `pipeline.sl` did between the steps.
     It unzips each sample's trimmed reads inside the loop, so it loops over the zipped files:
 
     ```bash
-    --8<-- "docs/assets/workshops/hpc102/.align_1.sh"
+    --8<-- "docs/assets/workshops/job_scripting/.align_1.sh"
     ```
 
 The step scripts don't load any modules: run with `bash` from `pipeline.sl`, they use the modules it has already loaded.
@@ -63,7 +63,7 @@ The step scripts don't load any modules: run with `bash` from `pipeline.sl`, the
 `pipeline.sl` still runs the same steps in the same order, in one job, but now calls a script for each:
 
 ```sl
---8<-- "docs/assets/workshops/hpc102/.pipeline_4.sl"
+--8<-- "docs/assets/workshops/job_scripting/.pipeline_4.sl"
 ```
 
 It runs `index.sh`, then `qc.sh`, then `align.sh`. Quality control and alignment each work through every sample:
@@ -105,19 +105,19 @@ holding 4 CPUs, 5 GB and 4 hours for every step.
     **Quality control**: `qc.sl` requests fewer CPUs, less memory and much less time.
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.qc_2.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.qc_2.sl"
     ```
 
     **Reference genome indexing**: `index.sl` requests less CPUs, memory, and time.
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.index_2.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.index_2.sl"
     ```
 
     **Alignment and variant calling**: `align.sl` requests the same CPUs but less memory and time.
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.align_2.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.align_2.sl"
     ```
 
 !!! note "Solo learners"
@@ -176,7 +176,7 @@ every step becomes a job of its own.
 `sbatch --parsable` prints only the job ID, so the script can save it and use it in the next submission:
 
 ```sh
---8<-- "docs/assets/workshops/hpc102/.pipeline_6.sh"
+--8<-- "docs/assets/workshops/job_scripting/.pipeline_6.sh"
 ```
 
 It queues three jobs, each with its own resources.

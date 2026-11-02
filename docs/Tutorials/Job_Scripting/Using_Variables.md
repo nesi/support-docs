@@ -19,7 +19,7 @@ tags:
 The script we will be working from, `pipeline.sl`, is below:
 
 ```sl
---8<-- "docs/assets/workshops/hpc102/pipeline.sl"
+--8<-- "docs/assets/workshops/job_scripting/pipeline.sl"
 ```
 
 This script already uses variables in the for loop with `$infile` and `$base`.
@@ -148,7 +148,7 @@ For each loop we have the following files, almost all of which are used multiple
 Let's give each of these a simple but unique name, and see how the for loop looks.
 
 ```bash
---8<-- "docs/assets/workshops/hpc102/.pipeline_2.sl:43:64"
+--8<-- "docs/assets/workshops/job_scripting/.pipeline_2.sl:43:64"
 ```
 
 The quality control loop gets the same treatment. With every path written from the folder the job runs in,
@@ -157,7 +157,7 @@ the `cd` lines are no longer needed, and FastQC's reports go to `results/fastqc`
 ??? note "`pipeline.sl` with variables"
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.pipeline_2.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.pipeline_2.sl"
     ```
 
 Our for loop is definitely longer, but the commands are easier to read because we don't need to sift through the file paths to know what file is being used where.
@@ -231,13 +231,13 @@ But Slurm has an environment variable called `$SLURM_CPUS_PER_TASK` that can be 
 We can update our for loop to use this variable:
 
 ```bash
---8<-- "docs/assets/workshops/hpc102/.pipeline_3.sl:47:67"
+--8<-- "docs/assets/workshops/job_scripting/.pipeline_3.sl:47:67"
 ```
 
 ??? note "`pipeline.sl` so far, with `set -u` and the reference genome set once"
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.pipeline_3.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.pipeline_3.sl"
     ```
 
 Now if we request more CPUs for this job, `bwa-mem2` will have access to all the CPUs allocated.
@@ -363,7 +363,7 @@ From here on, `pipeline.sl` has this line.
     - Variables do not work in `#SBATCH` lines. Use tokens like `%x` and `%j`
 
 !!! postrequisite "What next"
-    - Next lesson: [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
+    - Next lesson: [Job Dependencies](Job_Dependencies.md).
     - For reference: the [Batch Computing Guide](../../Batch_Computing/Batch_Computing_Guide.md)
       and the [Slurm Reference Sheet](../../Getting_Started/Cheat_Sheets/Slurm-Reference_Sheet.md).
     - For more shell practice: the Software Carpentry [Unix Shell](https://swcarpentry.github.io/shell-novice/) lessons on loops and shell scripts.
