@@ -2,6 +2,7 @@
 # No "*" here on purpose: seasonal notices are left out of the nav. Add new announcements to this list.
 nav:
   - AI_Agent_Rules.md
+  - Debug_QoS_Change.md
   - New_HPC_Portal
   - Identity_Changes_for_Crown_Research_Institutes.md
   - Release_Notes
