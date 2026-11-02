@@ -12,8 +12,8 @@ goes back from 2 hours to 15 minutes.
 
 ## Why is it changing?
 
-QoS debug jobs get a large priority boost and is intended for one-off tests and debugging.
-Since the timing limit was changed, misuse has recorded (much by AI agents), this _negatively affects everyone_.
+QoS debug jobs get a large priority boost and are intended for one-off tests and debugging.
+Since the timing limit was changed, misuse has been recorded (much by AI agents), this _negatively affects everyone_.
 
 ## What do I need to do?
 
