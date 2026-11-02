@@ -37,6 +37,7 @@ MAX_HEADER_LENGTH = 32  # minus 2 per header level, so h2: 28, h3: 26
 MAX_CODE_LINE_LENGTH = 80  # Approx monospace chars visible in a top level code block at 1280-1920px wide
 CODE_ADMONITION_EXTRA = 5  # Admonitions use a smaller font, so fit more (85-94 chars)
 CODE_LIST_LESS = 3  # Each level of list indent costs ~3 chars
+OUTPUT_LANGS = {"out", "txt"}  # Code block languages used for command output (FORMAT.md uses txt, tutorials out)
 RANGE_SECTION_CHARS = [ 400, 3200 ] # Mirrors nesi-docs-rag's scripts/chunker.mjs MIN_CHARS/MAX_CHARS
 RANGE_TAGS = [1, 5]
 # Below this, descriptions stop distinguishing pages ("Release notes", "Freezer Quick
@@ -129,7 +130,7 @@ def main():
     global lineno, line, in_code_block, toc, toc_parents, nav_tree_failed
 
     # code_line_length variables
-    global code_fence_indent, code_containers, code_line_limit, code_line_where
+    global code_fence_indent, code_containers, code_line_limit, code_line_where, code_line_lang
 
     for input_string in sys.argv[1:]:
         input_path = Path(input_string)
@@ -169,6 +170,7 @@ def main():
         code_containers = []
         code_line_limit = MAX_CODE_LINE_LENGTH
         code_line_where = ""
+        code_line_lang = ""
 
         for line in contents.split("\n"):
             lineno += 1
@@ -505,7 +507,7 @@ def code_line_length():
     Length is counted from the fence's indent. The limit depends on what the block is nested in,
     tracked as a stack of (kind, body indent) for the admonitions, tabs and list items enclosing the line.
     """
-    global code_fence_indent, code_containers, code_line_limit, code_line_where
+    global code_fence_indent, code_containers, code_line_limit, code_line_where, code_line_lang
 
     expanded = line.expandtabs(4)
     indent = len(expanded) - len(expanded.lstrip())
@@ -525,6 +527,7 @@ def code_line_length():
         if m and in_code_block:
             # Opening fence, work out the limit for this block.
             code_fence_indent = indent
+            code_line_lang = re.match(r"^\s*```\s*(\w*)", line).group(1)
             kinds = [c[0] for c in code_containers]
             code_line_limit = (
                 MAX_CODE_LINE_LENGTH
@@ -538,7 +541,9 @@ def code_line_length():
     length = len(expanded[code_fence_indent:].rstrip())
     if length > code_line_limit:
         where = f" in {code_line_where}" if code_line_where else ""
+        # Real command output can't be rewrapped, so it is only worth a notice.
         yield {
+            "level": "notice" if code_line_lang in OUTPUT_LANGS else "warning",
             "line": lineno,
             "col": code_fence_indent + code_line_limit + 1,
             "endColumn": code_fence_indent + length,
@@ -736,9 +741,10 @@ Remove it {NEW_STATUS_DAYS} days after the page was created.",
 def dynamic_slurm_link():
     """
     Checks if slurm links point to right version of docs.
+    PDFs (eg. pdfs/summary.pdf) aren't archived per version, so those links stay unversioned.
     """
     m1 = re.search(
-        r".*\(https?:\/\/slurm.schedmd.com(?!\/archive\/{{\s*config\.extra\.slurm\s*}})(.*)\/(.*)\)",
+        r".*\(https?:\/\/slurm.schedmd.com(?!\/archive\/{{\s*config\.extra\.slurm\s*}}|\/pdfs\/)(.*)\/(.*)\)",
         line,
         re.IGNORECASE,
     )

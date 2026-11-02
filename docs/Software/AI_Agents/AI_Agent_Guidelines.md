@@ -7,9 +7,7 @@ tags:
 ---
 
 These guidelines describe how to use AI agents, coding assistants and other autonomous tools responsibly on REANNZ HPC systems.
-They are advice, not policy.
-The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md) still applies to everything an agent does under your account.
-
+The [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md#you-agree) applies to everything an agent does under your account.
 These guidelines _do not_ cover AI or machine learning as the research workload itself.
 
 ## Principles
@@ -18,6 +16,38 @@ These guidelines _do not_ cover AI or machine learning as the research workload 
 2. Understand the basics of operating an autonomous agent safely, such as the risks of supply chain attacks and prompt injection.
 3. Agents should follow the same shared-system etiquette expected of any other user process.
 4. Take reasonable precautions to protect the platform, other users and REANNZ when operating an agent.
+
+## Install the agent rules
+
+REANNZ publishes the rules on this page in a form agents read: an `AGENTS.md` file, and skills that give agents more detail for particular tasks, such as writing Slurm jobs.
+An agent reads `AGENTS.md` at the start of every session, and loads a skill only when a task needs it.
+Both are kept in the [mahuika-agents repository](https://github.com/nesi/mahuika-agents), and REANNZ keeps a copy on Mahuika up to date.
+
+On a login node, run the install script:
+
+```sh
+/opt/nesi/share/mahuika-agents/install.sh
+```
+
+This links `AGENTS.md` into the home directory configuration of Claude Code, Codex, Gemini CLI and Copilot CLI.
+The links point at the copy on Mahuika, so you get updates to the rules without running the script again.
+
+| Option | What it does |
+| - | - |
+| `--skills` | Also links the skills into `~/.agents/skills` and `~/.claude/skills`, so agents can load them directly. Run the script again after an update to pick up new skills. |
+| `--project DIRECTORY` | Also links `AGENTS.md` into `DIRECTORY`, for tools that only read it from the project directory, such as Cursor CLI. |
+
+An agent on your own computer doesn't see the copy on Mahuika.
+Clone the repository there and run its install script with `--skills`:
+
+```sh
+git clone https://github.com/nesi/mahuika-agents.git
+mahuika-agents/install.sh --skills
+```
+
+To get updates, run `git pull` in the `mahuika-agents` directory.
+
+REANNZ is also installing the rules system-wide and in every home directory, see [New Rules for AI Agents](../../Announcements/AI_Agent_Rules.md).
 
 ## What agents should do
 
@@ -51,7 +81,7 @@ Agents should treat the rest of these guidelines as strong defaults, and ask you
   It is acting as you, so everything on this page applies to it.
   It will not see guidance installed on the cluster, so give it these guidelines yourself.
   Do not give it your passwords, SSH keys, tokens or other sensitive information, and do not let it log in on its own.
-- An agent that can access the cluster on its own, or that keeps running on the cluster when you are not supervising it, needs a service account.
+- An agent that can access the cluster on its own, or that keeps running on the cluster when you are not supervising it, needs a [service account](#support).
   You are supervising an agent when you are at the session and approving what it does as it happens.
   These are not supervised:
     - loops or monitors that keep running after you stop watching them,
@@ -91,15 +121,18 @@ REANNZ does not provide support for third-party AI tools.
 Before raising a support ticket, verify any commands an agent has generated against the relevant documentation, and check that nothing has been hallucinated.
 Agents can look up this documentation themselves, starting from the index at `https://docs.nesi.org.nz/llms.txt`.
 
-An unofficial AI skill for responsible operation of the REANNZ HPC can be found at [nesi-support-skill](https://github.com/chrisdjscott/nesi-support-skill).
+Service accounts for agents and other tools that need their own access are still being developed.
+If you need one, {% include "partials/support_request.html" %} with your use case and requirements.
 
 ## Research Integrity
 
 We recommend that use of AI in research conducted on REANNZ HPC systems follows the [Royal Society guidelines](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf).
 
 !!! note "See Also"
+    - [Claude Code on Mahuika](./Claude_Code_on_Mahuika.md)
     - [Access Policy](../../Policy/Access_Policy.md)
     - [Acceptable Use Policy](../../Policy/Acceptable_Use_Policy.md)
     - [Privacy Policy](../../Policy/Privacy_Policy.md)
     - [Royal Society Te Apārangi GenAI guidelines (2025)](https://www.royalsociety.org.nz/assets/Guidelines-for-the-best-practice-use-of-GenAI-in-research_Royal-Society-Te-Aparangi_June-2025_English-.pdf)
     - [Public Service AI Framework](https://www.digital.govt.nz/standards-and-guidance/technology-and-architecture/artificial-intelligence)
+    - [Towards Efficient HPC Systems for Agents](https://arxiv.org/html/2609.38723), a study of agent use on a Harvard research computing cluster.

@@ -19,6 +19,7 @@ By default every check exits `0` whatever it reports. Set `CHECKS_STRICT=1` to m
 *This linter is defined in [run_spell_check.py](run_spell_check.py) script.*
 
 Spellcheck pipeline settings can be modified in [.spellcheck.yml](../.spellcheck.yml).
+Code (fenced and inline), macros, link targets and key names (`<kbd>Ctrl</kbd>`) are not checked.
 
 List of custom words can be found in [dictionary.txt](../docs/assets/glossary/dictionary.txt),
 however you **should not edit this manually**, see [adding-words-to-dictionary](../docs/CONTRIBUTING.md#adding-words-to-dictionary).
@@ -34,7 +35,7 @@ the typo is probably occuring elsewhere in the text in a valid context, fix it h
 
 *This linter is defined in [run_proselint.py](run_proselint.py) script.*
 
-Checks text follows best practice for English language. Fenced code blocks are skipped.
+Checks text follows best practice for English language. Code blocks and inline code are skipped.
 
 Individual rules can be disabled/enabled in [.proselint.json](../.proselint.json).
 
@@ -43,13 +44,22 @@ placeholder image alt text, "here" as link text, the support email address, and 
 "file system"), are listed in `BANNED_PATTERNS` in
 [prose_rules.py](prose_rules.py). Each runs as a proselint check named `reannz.<name>`, at the level the entry gives
 (only warnings fail `CHECKS_STRICT`), so one can be turned off in `.proselint.json` with `"reannz.<name>": false`.
-To ban something new, add an entry there rather than writing a new check.
+To ban something new, add an entry there rather than writing a new check. An entry with `first_mention` allows a short
+form ("WSL") once the full form has been used on the page.
+An entry with `fix` says how to rewrite a match that needs no judgement ("file system" → "filesystem"). The check
+adds it to its message, and [fix_prose.py](fix_prose.py) applies it: it prints a diff, or writes the fixes with `--apply`.
+A single word that isn't English (`MyNeSI`, `GiB`, `hyperthreading`) doesn't need a rule: keep it out of the
+nesi-wordlist dictionary and the spellcheck flags it. The preferred terms and what they replace are listed in
+"Names and terms" in [FORMAT.md](../docs/FORMAT.md#names-and-terms).
 
 ### Markdown Lint
 
 Checks markdown for compliance against general [best practice rules](https://github.com/markdownlint/markdownlint/blob/main/docs/RULES.md).
 
 Individual rules can be disabled/enabled in [.markdownlint.json](../.markdownlint.json)
+
+[parse_markdownlint.py](parse_markdownlint.py) skips MD032 (blank lines around lists) inside `<quiz>` blocks,
+as the quiz syntax puts each answer's `> feedback` straight after it.
 
 ### Meta Checks
 
@@ -59,6 +69,8 @@ Custom checks for page structure: front matter, titles, tags, nav, headings, sec
 Rules about the words on a page are in [Prose Lint](#prose-lint).
 
 See script for details.
+
+`code_line_length` is a notice rather than a warning in `out` and `txt` blocks, as real command output can't be rewrapped.
 
 Admonitions (`!!!`, `???`) and content tabs (`===`) are checked here, not by markdownlint, which only understands CommonMark.
 A body indented less than 4 spaces renders as an empty box without any build warning, so `admonition_structure` looks for that,

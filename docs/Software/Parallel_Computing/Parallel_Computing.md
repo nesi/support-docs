@@ -157,7 +157,7 @@ echo "This is result ${SLURM_ARRAY_TASK_ID}"
 ```
 
 !!! note "See also"
-    - For more info see the page on [Job Arrays](./Job_Arrays.md)
+    - For more info see the page on [Job Arrays](../../Batch_Computing/Job_Arrays.md)
 
 ## GPUs
 

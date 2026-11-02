@@ -360,24 +360,36 @@ A 'prerequisite' admonition, to point to the previous lesson.
 
 Try to have one quiz per learning objective.
 
-```md
-<quiz>
-Question goes here.
-  
-```out
-Can include code blocks and pictures.
-```
+Every question in a tutorial is a quiz, inside a collapsible `question` admonition.
+The admonition's title is the quiz's title. Don't use a separate `question` admonition with a "Solution" block:
+put the explanation in the answer feedback (`>` lines) or in the text after the answers.
 
-Answers are in the form of a checkbox list.
+````md
+??? question "Quiz title"
+    <quiz>
+    Question goes here.
 
-- [ ] A Wrong Answer
-- [ ] Another Wrong Answer
-- [X] The Correct Answer
-- [ ] Can be multiple correct answers.
+    ```out
+    Can include code blocks and pictures.
+    ```
 
-This text will show after giving an answer (correct or incorrect unfortunately)
-</quiz>
-```
+    Answers are in the form of a checkbox list.
+
+    - [ ] A Wrong Answer
+    > Feedback shown when this answer is picked.
+    - [ ] Another Wrong Answer
+    - [X] The Correct Answer
+    - [ ] Can be multiple correct answers.
+
+    This text will show after giving an answer (correct or incorrect unfortunately)
+    </quiz>
+````
+
+For a hands-on exercise, put the steps in the admonition before the `<quiz>`,
+and ask about what the reader should have seen.
+
+[Macros](MACROS.md) and variables are not filled in inside a `<quiz>`.
+Put anything that uses them in the admonition, before or after the `<quiz>`.
 
 ### Keypoints
 

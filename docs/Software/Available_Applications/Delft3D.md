@@ -29,7 +29,7 @@ tags:
 === "Serial"
 
     For when only one CPU is required, generally as part of a
-    [job array](../Parallel_Computing/Job_Arrays.md).
+    [job array](../../Batch_Computing/Job_Arrays.md).
 
     ```sl
     #!/bin/bash -e

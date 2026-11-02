@@ -1,6 +1,6 @@
 ---
 created_at: 2025-07-01
-status: new
+status: 
 search:
     boost: 10
 tags:

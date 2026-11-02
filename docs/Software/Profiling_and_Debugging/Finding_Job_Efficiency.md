@@ -86,11 +86,9 @@ steps (excluding file caches), so in this case 13 GB. For our next run we may wa
 ```
 
 Most simple HPC jobs read some inputs sequentially, do some computation, and then write out results
-sequentially. For those, RSS is a decent measure of their memory needs. However RSS only includes the 
-main (or "anonymous") memory of the running program, so jobs which create
-large temporary files in memory (eg: in _/tmp_) will also need to request memory for those, and jobs which
+sequentially. For those, `MaxRSS` is a decent measure of their memory needs. However jobs which
 repeatedly re-read the same file (or parts of one, as when querying an indexed database) may benefit from
-requesting enough additional memory to let the Operating System cache that in memory for them.
+requesting enough additional memory to let the Operating System cache that file in memory for them.
 
 #### CPUs
 
