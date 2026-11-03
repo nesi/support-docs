@@ -35,7 +35,7 @@ You will want to have these files in your `nobackup` directory.
 Let's make a directory to work from and copy the files in.
 
 ```sh
-cd /nesi/nobackup/nesi99991/hpc102
+cd /nesi/nobackup/nesi99991/job_scripting
 mkdir $USER
 cd $USER
 cp -r /opt/nesi/examples/tutorials/job_scripting .
@@ -43,17 +43,15 @@ cp -r /opt/nesi/examples/tutorials/job_scripting .
 
 !!! note "Solo learners"
     This tutorial series was originally written for a live workshop, where every attendee
-    was added to a shared training project (`nesi99991`) with an `hpc102` directory already created.
+    was added to a shared training project (`nesi99991`) with an `job_scripting` directory already created.
 
     If you're working through this on your own, you won't have access to `nesi99991`, so use one of your own projects instead.
     Everywhere these lessons use `nesi99991`, in paths and in the `--account` line of the batch scripts, use your project code instead.
-    Before the commands above, create the `hpc102` directory:
+    Before the commands above, create the `job_scripting` directory:
 
     ```sh
-    mkdir -p /nesi/nobackup/nesi99991/hpc102
+    mkdir -p /nesi/nobackup/<project>/job_scripting
     ```
-
-    Replace `nesi99991` with your project code.
 
 There are 3 broad steps in this workflow:
 
@@ -78,7 +76,7 @@ flowchart TD
 ??? note "`pipeline.sl`"
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/pipeline.sl"
+    --8<-- "docs/assets/workshops/job_scripting/pipeline.sl"
     ```
 
 The example script `pipeline.sl` has already been run as a batch job and has the job ID `{{ intermediate_hpc_job_id_01 }}`.

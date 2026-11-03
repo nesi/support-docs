@@ -14,9 +14,6 @@ tags:
     - Compare the pipeline's resource use with the job you started with.
     - Recognise when a workflow manager would serve you better than batch scripts.
 
-!!! prerequisite
-    - You can find why a job failed. See [Debugging Failed Jobs](Debugging_Failed_Jobs.md).
-
 ## What is a job array?
 
 Job arrays allow you to use a single script to submit a set of nearly identical Slurm jobs.
@@ -69,13 +66,13 @@ Here are the quality control and alignment scripts, with the loop replaced by th
 ??? note "`qc.sl`"
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.qc_3.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.qc_3.sl"
     ```
 
 ??? note "`align.sl`"
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.align_3.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.align_3.sl"
     ```
 
 `align.sl` builds the list from the raw read files too, not the trimmed ones, so each task index is the same sample in both scripts.
@@ -124,7 +121,7 @@ The job array was the last piece. We can now queue the whole workflow, from qual
 This is the final version of `pipeline.sh`, building on the one from [Job Dependencies](Job_Dependencies.md):
 
 ```sh
---8<-- "docs/assets/workshops/hpc102/.pipeline_7.sh"
+--8<-- "docs/assets/workshops/job_scripting/.pipeline_7.sh"
 ```
 
 For the three samples, it queues two job arrays and three single jobs.
@@ -158,14 +155,14 @@ flowchart TB
   With `afterok`, a job that depends on a job array waits for every task:
 
     ```sl
-    --8<-- "docs/assets/workshops/hpc102/.summarise.sl"
+    --8<-- "docs/assets/workshops/job_scripting/.summarise.sl"
     ```
 
 - If any alignment task fails, the `resubmit` job runs instead. For a job array, `afternotok` waits until every task has finished and at least one has failed.
   It runs `resubmit_failed.sh`, which finds the failed tasks and submits only those again, with more memory:
 
     ```sh
-    --8<-- "docs/assets/workshops/hpc102/.resubmit_failed.sh"
+    --8<-- "docs/assets/workshops/job_scripting/.resubmit_failed.sh"
     ```
 
   `--wrap` submits a single command as a job, without a batch script.
