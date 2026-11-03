@@ -132,8 +132,8 @@ checksum:
   aliases: [checksum, hash, md5, sha]
 
 fairshare:
-  display: Fair Share
-  aliases: [Fair Share, Fairshare, fairshare, Job priority]
+  display: FairShare
+  aliases: [FairShare, Fairshare, fairshare, Job priority]
 
 tutorial:
   display: Tutorial

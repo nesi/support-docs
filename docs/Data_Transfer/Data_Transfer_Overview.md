@@ -6,7 +6,7 @@ description: Choosing how to move data to, from and within the cluster, and tran
 ---
 
 !!! prerequisite
-    Have an [active account and project.](../Getting_Started/Creating_an_Account.md)
+    Have an [active account and project.](../Getting_Started/Getting_Started_Overview.md)
 
 There are several ways to transfer your data between the Mahuika Supercomputer and your computer or server.
 

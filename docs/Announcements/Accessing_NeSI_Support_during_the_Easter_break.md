@@ -18,7 +18,7 @@ sources of self-service support:
 
 - Changes to system status are reported via our [System Status page](https://status.nesi.org.nz/ "https://status.nesi.org.nz/").
     You can also subscribe for notifications of system updates and
-    unplanned outages sent straight to your inbox — see [how to sign up for status notifications](../Getting_Started/System_Status.md).
+    unplanned outages sent straight to your inbox — see [how to sign up for status notifications](../Getting_Started/Getting_Help/System_Status.md).
 
 - [Consult our User Documentation](../index.md) pages
     for instructions and guidelines for using the systems.

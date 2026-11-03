@@ -259,7 +259,7 @@ run_alphafold.py \
 To fold several inputs, place all of the JSON files in a directory and
 replace `--json_path=${INPUT}` with `--input_dir=/path/to/json_dir`, or
 call `run_alphafold.py` once per file (for example from a
-[job array](../Parallel_Computing/Job_Arrays.md)).
+[job array](../../Batch_Computing/Job_Arrays.md)).
 
 !!! tip "Splitting the data pipeline and inference"
     The data pipeline (genetic/template search) is CPU-bound and does not

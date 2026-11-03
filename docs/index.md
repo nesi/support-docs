@@ -14,7 +14,7 @@ Technical documentation for our High Performance Computing (HPC) platforms.
 ## Quickstart
 
 <div class="grid cards">
-<a href="Getting_Started/Accounts-Projects_and_Allocations/Creating_an_Account_Profile/">
+<a href="Getting_Started/Getting_Started_Overview/">
     <img alt="account details" src="assets/icons/material/account-details.svg">
     <h3>Accounts</h3>
     <p>How to get started with accounts, projects and allocations.</p>
@@ -29,7 +29,7 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <h3>OnDemand ↗</h3>
     <p>Access the cluster Via the OnDemand web application.</p>
 </a>
-<a href="Scientific_Computing/Batch_Jobs/Hardware/">
+<a href="Batch_Computing/Hardware/">
     <img alt="HPC resources" src="assets/icons/material/widget-small.svg">
     <h3>Resources</h3>
     <p>What CPUs and GPUs are available on the REANNZ Cluster.</p>
@@ -39,7 +39,7 @@ Technical documentation for our High Performance Computing (HPC) platforms.
     <h3>Data Transfer</h3>
     <p>Getting your data on and off the cluster.</p>
 </a>
-<a href="Batch_Computing/Batch_Computing_Guide">
+<a href="Batch_Computing/Batch_Computing_Guide/">
     <img alt="Job scheduler" src="assets/icons/material/tray-full.svg">
     <h3>Job Scheduler</h3>
     <p>How to use our job scheduler, Slurm.</p>
@@ -49,7 +49,7 @@ Technical documentation for our High Performance Computing (HPC) platforms.
 ## Getting Help
 
 <div class="grid cards">
-<a href="https://www.reannz.co.nz/products-and-services/training/training-calendar">
+<a href="https://www.reannz.co.nz/products-and-services/training-and-consultancy/training/training-calendar">
     <h3>Training Calendar ↗</h3>
     <p>We offer regular workshops for a range of new HPC users.</p>
 </a>

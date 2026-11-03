@@ -291,7 +291,7 @@ You can select a specific type of issue or simply create a blank issue and then 
 ![alt text](assets/images/Github_create_issue_2.png)
 
 !!! tip "Details matter!"
-  Try to add as many details as you can when creating an issue. Even if you plan to be the person who fixes the issue, writing down what is needed will help future you remember everything.
+    Try to add as many details as you can when creating an issue. Even if you plan to be the person who fixes the issue, writing down what is needed will help future you remember everything.
 
 ## The 'Supported Apps' Page
 

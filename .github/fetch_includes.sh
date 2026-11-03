@@ -2,6 +2,7 @@
 
 MODULES_LIST_URL="https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
 MODULES_UPDATE_URL="https://raw.githubusercontent.com/nesi/modules-list/main/rss.xml"
+SLURM_LIMITS_URL="https://raw.githubusercontent.com/nesi/modules-list/main/slurm-limits.json"
 GLOSSARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/glossary.md"
 DICTIONARY_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/dictionary.txt"
 SNIPPETS_URL="https://raw.githubusercontent.com/nesi/nesi-wordlist/main/outputs/snippets.md"
@@ -14,6 +15,7 @@ mkdir -p docs/assets/glossary overrides/partials
 wget -q -O docs/assets/training_calendar.ics "${ICAL_URL}" &
 wget -q -O docs/assets/module-list.json     "${MODULES_LIST_URL}" &
 wget -q -O docs/software_updates.xml        "${MODULES_UPDATE_URL}" &
+wget -q -O docs/assets/slurm-limits.json    "${SLURM_LIMITS_URL}" &
 wget -q -O overrides/partials/glossary.html "${GLOSSARY_URL}" &
 wget -q -O docs/assets/glossary/dictionary.txt "${DICTIONARY_URL}" &
 wget -q -O docs/assets/glossary/snippets.md "${SNIPPETS_URL}" &

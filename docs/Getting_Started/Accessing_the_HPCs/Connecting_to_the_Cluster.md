@@ -2,12 +2,11 @@
 created_at: '2019-06-25T22:40:46Z'
 tags:
 - access
-- version_control
 description: The ways to reach the cluster, from a web browser through to a terminal over SSH
 ---
 
 !!! prerequisite
-    -  Have an [active account and project](../Creating_an_Account.md).
+    -  Have an [active account and project](../Getting_Started_Overview.md).
 
 Before you can start submitting work you will need to connect to the cluster. This is done by establishing a connection using a web browser (easy) or a command-line terminal and SSH (more advanced).
 

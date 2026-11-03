@@ -34,6 +34,7 @@ Our readers are researchers with a wide range of HPC experience, usually in the 
 6. **Say it once.**
    Each fact has one home. Elsewhere, give a one-line summary and link to it.
    A little repetition is fine if it saves the reader a click, but never copy the details.
+   Tutorials are the exception, see [Tutorials and Mainline Docs](#tutorials-and-mainline-docs).
 7. **Plain words, and fewer of them.**
    Put the most important information first. Use active voice, short sentences, descriptive headings and NZ English.
    Cut anything that does not help the reader act or understand.
@@ -59,7 +60,26 @@ Our readers are researchers with a wide range of HPC experience, usually in the 
 - **Too long** is not a reason on its own. First move detail down the page or into admonitions. Split only when parts serve different tasks or readers.
 - A new page needs a place in the nav (`.pages.yml`), links from related pages, and tags.
 
-For tutorials, the [tutorial page structure](NEWPAGE.md#tutorial-page) follows the
+## Tutorials and Mainline Docs
+
+Tutorials (pages with `status: tutorial`) and the mainline docs (every other page: how-to guides, reference and explanation)
+cover much of the same ground on purpose. A tutorial is for someone learning a topic, a mainline page is for someone getting a task done.
+
+- **Tutorials stand alone.** A tutorial restates the basics it needs, with more examples worked through step by step,
+  so it can be followed without leaving the page. Repeat the basics in full, not as a one-line summary.
+- **Mainline pages stand alone too.** A mainline page covers its own basics and never relies on a tutorial to explain them.
+- **Covered in one is not a reason to leave it out of the other.** When adding content, decide what belongs in each.
+- **Exact facts match.** Commands, paths, limits, policy and example output must agree between the two, and use the same macros.
+  When you change one, check the other.
+
+Link in both directions:
+
+- **From mainline pages to tutorials:** link to a whole lesson as a prerequisite for readers new to the topic,
+  or to a specific exercise as a more detailed worked example.
+- **From tutorials to mainline pages:** link in the `postrequisite` admonition as what to read next,
+  or at a point where a reader may want more detail than the lesson gives.
+
+The [tutorial page structure](NEWPAGE.md#tutorial-page) follows the
 [Carpentries lesson model](https://carpentries.github.io/lesson-development-training/instructor/objectives.html).
 
 ## Further Reading

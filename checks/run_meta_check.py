@@ -10,11 +10,16 @@ import re
 import sys
 import yaml
 import os
+import json
+import datetime
 import time
 import traceback
 from titlecase import titlecase
 from pathlib import Path
 from difflib import get_close_matches
+
+# Dated announcements and release notes, shared with the prose rules.
+from prose_rules import HISTORY_PAGES
 
 # Ignore files if they match this regex
 EXCLUDED_FROM_CHECKS = [
@@ -32,6 +37,7 @@ MAX_HEADER_LENGTH = 32  # minus 2 per header level, so h2: 28, h3: 26
 MAX_CODE_LINE_LENGTH = 80  # Approx monospace chars visible in a top level code block at 1280-1920px wide
 CODE_ADMONITION_EXTRA = 5  # Admonitions use a smaller font, so fit more (85-94 chars)
 CODE_LIST_LESS = 3  # Each level of list indent costs ~3 chars
+OUTPUT_LANGS = {"out", "txt"}  # Code block languages used for command output (FORMAT.md uses txt, tutorials out)
 RANGE_SECTION_CHARS = [ 400, 3200 ] # Mirrors nesi-docs-rag's scripts/chunker.mjs MIN_CHARS/MAX_CHARS
 RANGE_TAGS = [1, 5]
 # Below this, descriptions stop distinguishing pages ("Release notes", "Freezer Quick
@@ -46,6 +52,21 @@ ALLOWED_BE_BIG = ["Available_Applications"] # Categories not to trigger too many
 NO_TAGS_REQUIRED = ["docs/tags.md", "docs/updates.md", "docs/GLOSSARY.md"]
 DOC_ROOT = "docs"
 TAGS_VOCAB_PATH = "docs/assets/tags.yml"
+MODULE_LIST_PATH = "docs/assets/module-list.json"
+NEW_STATUS_DAYS = 60  # 'status: new' is flagged this long after created_at.
+
+# Words and patterns that shouldn't appear in pages are prose rules: BANNED_PATTERNS in prose_rules.py.
+
+
+def _load_module_names():
+    """Lower-cased module name -> module name, for the case-insensitive applications[] lookup."""
+    try:
+        return {name.lower(): name for name in json.loads(Path(MODULE_LIST_PATH).read_text())}
+    except (OSError, ValueError):
+        return {}
+
+
+MODULE_NAMES = _load_module_names()
 
 
 def _load_tag_aliases(vocab):
@@ -57,6 +78,26 @@ def _load_tag_aliases(vocab):
             aliases[str(alias).lower()] = canonical
     return aliases
 
+
+# Material's admonition types and their aliases, plus the custom ones styled in our stylesheets.
+MATERIAL_ADMONITION_TYPES = {
+    "note", "abstract", "summary", "tldr", "info", "todo", "tip", "hint", "important", "success", "check",
+    "done", "question", "help", "faq", "warning", "caution", "attention", "failure", "fail", "missing",
+    "danger", "error", "bug", "example", "quote", "cite",
+}
+ADMONITION_TYPES = MATERIAL_ADMONITION_TYPES | {
+    m.lower()
+    for css in Path(DOC_ROOT, "assets", "stylesheets").glob("*.css")
+    for m in re.findall(r"\.admonition\.([\w-]+)", css.read_text())
+}
+# Used title-only by design (eg. '!!! time "45 Minutes"' in tutorials), so no body is expected.
+TITLE_ONLY_ADMONITION_TYPES = {"time"}
+# Opener syntax from python-markdown's admonition.py and pymdownx's details.py and tabbed.py, applied to a stripped line.
+BLOCK_OPENERS = {
+    "!!!": re.compile(r'^!!! ?[\w\-]+(?: +[\w\-]+)*(?: +".*?")? *$'),
+    "???": re.compile(r'^\?{3}\+? ?(?:(?:[\w\-]+(?: +[\w\-]+)*?)?(?: +".*?")|[\w\-]+(?: +[\w\-]+)*?) *$'),
+    "===": re.compile(r'^={3}(?:\+|\+!|!\+|!)? +".*?" *$'),
+}
 
 TAGS_VOCAB = yaml.safe_load(Path(TAGS_VOCAB_PATH).read_text())
 CANONICAL_TAGS = set(TAGS_VOCAB)
@@ -89,7 +130,7 @@ def main():
     global lineno, line, in_code_block, toc, toc_parents, nav_tree_failed
 
     # code_line_length variables
-    global code_fence_indent, code_containers, code_line_limit, code_line_where
+    global code_fence_indent, code_containers, code_line_limit, code_line_where, code_line_lang
 
     for input_string in sys.argv[1:]:
         input_path = Path(input_string)
@@ -129,6 +170,7 @@ def main():
         code_containers = []
         code_line_limit = MAX_CODE_LINE_LENGTH
         code_line_where = ""
+        code_line_lang = ""
 
         for line in contents.split("\n"):
             lineno += 1
@@ -436,26 +478,6 @@ page title and overrides the nav title. Remove it (or set 'title' in front matte
         }
 
 
-def click_here():
-    """
-    Click [here](for more details)
-    """
-    if in_code_block:
-        return
-
-    m1 = re.search(r"\[[^\]]*\bhere\b[^\]]*\]\([^)]*\)", line, re.IGNORECASE)
-    if m1:
-        yield {
-            "line": lineno,
-            "col": m1.start() + 1,
-            "endColumn": m1.end() - 1,
-            "message": "Don't use 'here' for link text, impedes accessibility.",
-        }
-
-    # Impliment check for html links when I can be fd.
-    # m2 = re.search(r"\[here\]\(.*\)", line)
-
-
 def absolute_site_link():
     """
     Checks for markdown links that point to this site by absolute URL
@@ -479,39 +501,13 @@ site root or to the linked page.",
         }
 
 
-def support_mailto_link():
-    """
-    Checks for any mention of support@nesi.org.nz - as a markdown/HTML link,
-    an autolink, or just raw text - these should use the
-    'partials/support_request.html' include instead.
-    """
-    if in_code_block:
-        return
-
-    for m in re.finditer(
-        r"(\[[^\]]*\]\((mailto:)?support@nesi\.org\.nz[^)]*\)"
-        r"|<a\s[^>]*href=[\"'](mailto:)?support@nesi\.org\.nz[^>]*>"
-        r"|<(mailto:)?support@nesi\.org\.nz>"
-        r"|(mailto:)?support@nesi\.org\.nz)",
-        line,
-        re.IGNORECASE,
-    ):
-        yield {
-            "line": lineno,
-            "col": m.start() + 1,
-            "endColumn": m.end() - 1,
-            "message": 'Don\'t reference support@nesi.org.nz directly, use the \
-{% include "partials/support_request.html" %} macro instead.',
-        }
-
-
 def code_line_length():
     """
     Checks for code block lines too long to fit in the block, which force the reader to scroll sideways.
     Length is counted from the fence's indent. The limit depends on what the block is nested in,
     tracked as a stack of (kind, body indent) for the admonitions, tabs and list items enclosing the line.
     """
-    global code_fence_indent, code_containers, code_line_limit, code_line_where
+    global code_fence_indent, code_containers, code_line_limit, code_line_where, code_line_lang
 
     expanded = line.expandtabs(4)
     indent = len(expanded) - len(expanded.lstrip())
@@ -531,6 +527,7 @@ def code_line_length():
         if m and in_code_block:
             # Opening fence, work out the limit for this block.
             code_fence_indent = indent
+            code_line_lang = re.match(r"^\s*```\s*(\w*)", line).group(1)
             kinds = [c[0] for c in code_containers]
             code_line_limit = (
                 MAX_CODE_LINE_LENGTH
@@ -544,7 +541,9 @@ def code_line_length():
     length = len(expanded[code_fence_indent:].rstrip())
     if length > code_line_limit:
         where = f" in {code_line_where}" if code_line_where else ""
+        # Real command output can't be rewrapped, so it is only worth a notice.
         yield {
+            "level": "notice" if code_line_lang in OUTPUT_LANGS else "warning",
             "line": lineno,
             "col": code_fence_indent + code_line_limit + 1,
             "endColumn": code_fence_indent + length,
@@ -618,12 +617,134 @@ Consider breaking this into sub-headers.",
             }
 
 
+def admonition_structure():
+    """
+    Checks admonitions (!!!), collapsible blocks (???) and content tabs (===) are well-formed.
+    These aren't CommonMark, so markdownlint can't see them, and a broken one renders without any build warning.
+    """
+    opener = line.expandtabs(4).strip()
+    # '===' alone is a setext header underline, not a tab.
+    if in_code_block or opener[:3] not in BLOCK_OPENERS or not opener.strip("="):
+        return
+    name = "Content tab" if opener[:3] == "===" else "Admonition"
+    if not BLOCK_OPENERS[opener[:3]].match(opener):
+        yield {"line": lineno, "message": f"{name} opener '{opener}' is malformed, so it renders as plain text."}
+        return
+
+    m = re.match(r"^(?:!!!|\?{3}\+?) ?([\w-]+)", opener)
+    kind = m.group(1).lower() if m else ""  # No type for tabs, or '??? "Title"'.
+    if kind and kind not in ADMONITION_TYPES:
+        suggestion = _did_you_mean(kind, ADMONITION_TYPES)
+        yield {
+            "line": lineno,
+            "message": f"Admonition type '{kind}' has no style, so it renders as a plain grey box."
+            + (f" Did you mean '{suggestion}'?" if suggestion else "")
+            + " Types are listed in FORMAT.md.",
+        }
+
+    # The body is the next non-blank line, and must be indented 4 more than the opener.
+    indent = len(line.expandtabs(4)) - len(line.expandtabs(4).lstrip())
+    rest = contents.split("\n")[lineno:]
+    body_lineno, body = next(((i, l.expandtabs(4)) for i, l in enumerate(rest, lineno + 1) if l.strip()), (lineno, ""))
+    body_indent = len(body) - len(body.lstrip())
+    if body_indent >= indent + 4:
+        return
+    if body_indent > indent:
+        yield {
+            "line": body_lineno,
+            "message": f"{name} body is indented {body_indent - indent} spaces, it needs 4 more than the opener \
+(line {lineno}). As it is, the {name.lower()} renders empty and this text falls out below it.",
+        }
+    elif name == "Content tab":
+        yield {"line": lineno, "message": "Content tab is empty. Indent its contents 4 spaces."}
+    elif kind not in TITLE_ONLY_ADMONITION_TYPES:
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "message": "Admonition has a title but no body. If it should have contents, indent them 4 spaces.",
+        }
+
+
+def _blank(m):
+    return " " * len(m.group(0))
+
+
+def module_version_hardcoded():
+    """
+    A version typed into 'module load' goes out of date, the applications macro follows the default.
+    """
+    if not in_code_block or not MODULE_NAMES or re.search(HISTORY_PAGES, str(input_path)):
+        return
+    m = re.search(r"\bmodule\s+(?:load|add)\s+(.*)", line)
+    if not m:
+        return
+    for module in re.finditer(r"([\w.+-]+)/([^\s{}]+)", m.group(1)):
+        name = MODULE_NAMES.get(module.group(1).lower())
+        if not name:
+            continue
+        macro = f"applications.{name}" if name.isidentifier() else f"applications['{name}']"
+        yield {
+            "level": "notice",
+            "line": lineno,
+            "col": m.start(1) + module.start() + 1,
+            "endColumn": m.start(1) + module.end(),
+            "message": f"'{module.group(0)}' has the version typed in, so it will go out of date. If any version \
+will do, use '{name}/{{{{ {macro}.default }}}}'.",
+        }
+
+
+def link_not_to_md():
+    """
+    The build only checks links to .md files, so a link to a rendered page path (or a folder) can break unnoticed.
+    """
+    if in_code_block:
+        return
+    text = re.sub(r"`[^`]*`", _blank, line)
+    for m in re.finditer(r"(?<!!)\[[^\]]*\]\(\s*<?([^)\s>]+)", text):
+        target = m.group(1)
+        # Other sites, mailto:, anchors on this page, and macros.
+        if re.match(r"(?i)[a-z][a-z0-9+.-]*:|#|\{\{|\{%", target):
+            continue
+        path = target.split("#")[0].split("?")[0]
+        # A file with an extension is fine: a page (.md), or an image, PDF or script.
+        if re.search(r"\.\w{1,5}$", path):
+            continue
+        yield {
+            "line": lineno,
+            "col": m.start(1) + 1,
+            "endColumn": m.end(1),
+            "message": f"Link to '{target}' doesn't point at a .md file, so the build can't check it. Link to the \
+page's .md file with a path relative to this page (eg. '../Storage/Filesystems_and_Quotas.md').",
+        }
+
+
+def status_new_expired():
+    """
+    'status: new' puts a badge in the nav. Left on, it stops meaning anything.
+    """
+    if meta.get("status") != "new":
+        return
+    try:
+        created = datetime.date.fromisoformat(str(meta.get("created_at") or "")[:10])
+    except ValueError:
+        return
+    age = (datetime.date.today() - created).days
+    if age > NEW_STATUS_DAYS:
+        yield {
+            "level": "notice",
+            "line": _get_lineno(r"^status:.*$"),
+            "message": f"Page has had 'status: new' for {age} days (created_at {created}). \
+Remove it {NEW_STATUS_DAYS} days after the page was created.",
+        }
+
+
 def dynamic_slurm_link():
     """
     Checks if slurm links point to right version of docs.
+    PDFs (eg. pdfs/summary.pdf) aren't archived per version, so those links stay unversioned.
     """
     m1 = re.search(
-        r".*\(https?:\/\/slurm.schedmd.com(?!\/archive\/{{\s*config\.extra\.slurm\s*}})(.*)\/(.*)\)",
+        r".*\(https?:\/\/slurm.schedmd.com(?!\/archive\/{{\s*config\.extra\.slurm\s*}}|\/pdfs\/)(.*)\/(.*)\)",
         line,
         re.IGNORECASE,
     )
@@ -647,10 +768,12 @@ ENDCHECKS = [
     approved_tags,
     walk_toc,
     section_length,
+    status_new_expired,
 ]
 
 # Checks to be run on each line
-WALKCHECKS = [click_here, dynamic_slurm_link, absolute_site_link, support_mailto_link, h1_in_body, code_line_length]
+WALKCHECKS = [dynamic_slurm_link, absolute_site_link, h1_in_body, code_line_length,
+              admonition_structure, module_version_hardcoded, link_not_to_md]
 
 if __name__ == "__main__":
     main()

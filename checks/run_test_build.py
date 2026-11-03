@@ -20,7 +20,8 @@ Usage: run_test_build.py [--dirty]
 
 By default every page is rebuilt, so every page's warnings are reported.
 --dirty only rebuilds pages changed since the last build in the site dir (faster,
-used by the VS Code task), which silently drops warnings for the pages it skips.
+used by the VS Code task), which silently drops warnings for the pages it skips,
+and writes an llms.txt listing only the rebuilt pages.
 
 Exits non-zero if the build fails, or on any broken link, macro or include error
 (these are reported as ERROR). Everything else is a WARNING or NOTICE.
@@ -28,6 +29,8 @@ Set CHECKS_STRICT=1 to also exit non-zero on warnings.
 """
 
 msg_count = {"DEBUG": 0, "NOTICE": 0, "WARNING": 0, "ERROR": 0}
+
+DIRTY = "--dirty" in sys.argv[1:]
 
 MODULES_LIST_URL = "https://raw.githubusercontent.com/nesi/modules-list/main/module-list.json"
 
@@ -48,6 +51,18 @@ def parse_macro(record):
 
     # These are not useful messages
     if record.name == "mkdocs.commands.build":
+        return False
+    # The omitted-pages message lists every page on its own line, but GitHub annotations only show the first line
+    # and file it against nav.py. Report one notice per page instead, filed against that page.
+    if record.name == "mkdocs.structure.nav" and record.msg.startswith("The following pages exist in the docs directory"):
+        level = "NOTICE" if record.levelname == "INFO" else record.levelname
+        for page in re.findall(r"^  - (.+)$", record.msg, re.MULTILINE):
+            print(f"::{level} file=docs/{page},title=not_in_nav,col=0,endColumn=0,line=0::"
+                  f"'{page}' is not in the nav, so readers can only reach it by a link or search.")
+            msg_count[level] = msg_count.get(level, 0) + 1
+        return False
+    # A dirty build only renders changed pages, so llmstxt warns about every other page in its sections.
+    if DIRTY and record.name.startswith("mkdocs.plugins.mkdocs_llmstxt") and "not found in the generated pages" in record.msg:
         return False
     # Macro log messages are wrapped in a INFO message (priciple of least astonishment).
     # Need to be parsed to be useful
@@ -110,10 +125,9 @@ if __name__ == '__main__':
         os.environ["MODULE_LIST_PATH"] = tmp_module_list_path
 
     config = load_config(config_file_path="./mkdocs.yml")
-    dirty = "--dirty" in sys.argv[1:]
-    config.plugins.on_startup(command='build', dirty=dirty)
+    config.plugins.on_startup(command='build', dirty=DIRTY)
     try:
-        build.build(config, dirty=dirty)
+        build.build(config, dirty=DIRTY)
     except Exception as e:
         print(f"::ERROR file={__file__},title=build_failed,col=0,endColumn=0,line=0::{e}")
         sys.exit(1)

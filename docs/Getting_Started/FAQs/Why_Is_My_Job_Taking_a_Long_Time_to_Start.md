@@ -99,6 +99,7 @@ The output should look something like this:
 
 The important aspect of this list is not your job's numeric priority
 score, but rather its priority ranking compared to other jobs.
+For how the priority score is calculated, see [Job Prioritisation](../../Batch_Computing/Job_Prioritisation.md).
 
 #### Low Fair Share score
 
@@ -106,7 +107,7 @@ If, compared to other jobs in the queue, your job's priority (third
 column) and fair share score (fifth column) are both low, this usually
 means that your project team has recently been using through CPU core
 hours faster than expected.
-See [Fair Share -- How jobs get prioritised](../../Batch_Computing/Fair_Share.md) for more
+See [Fair Share -- How jobs get prioritised](../../Batch_Computing/Fairshare.md) for more
 information on Fair Share, how you can check your project's fair share
 score, and what you can do about a low project fair share score.
 
