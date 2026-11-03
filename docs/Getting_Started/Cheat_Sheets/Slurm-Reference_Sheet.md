@@ -84,8 +84,14 @@ Alternatively, you can set up a dependent job within the first job's script by a
 
 ## Tokens
 
-These are predefined variables that can be used in sbatch directives
+These are predefined variables that can be used in `sbatch` directives
 such as the log file name.
+
+|      |                              |
+| ---- | ---------------------------- |
+| `%a` | Job array ID (index) number. |
+| `%j` | jobid of the running job.    |
+| `%x` | Job name.                    |
 
 ## Environment variables
 
