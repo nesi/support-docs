@@ -1,11 +1,3 @@
-
-#feed {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #fff;
-}
-
 .md-feed-item {
     margin-top: 10px;
     padding: 15px;
@@ -23,11 +15,12 @@ aside.md-source-file {
     display: inline-flex;
     align-items: center;
 }
-/* .feed-item:last-child {
-    border-bottom: none;
-} */
  /* Make content inside cards more readable */
-.md-feed-description h2,h3,a,p {
+.md-feed-description,
+.md-feed-description h2,
+.md-feed-description h3,
+.md-feed-description a,
+.md-feed-description p {
     font-size: 0.8rem;
 }
 

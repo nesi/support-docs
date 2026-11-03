@@ -110,10 +110,10 @@ plugins:
   - search
   - open-in-new-tab
   - rss:
-      enabled: false
+      # Only on deploy (like git dates), for build speed. Feeds the updates page.
+      enabled: !ENV [ENABLED_GIT_DATES, false]
       categories:
       - tags
-      - title
       json_feed_enabled: false
       pretty_print: true
       match_path: .*.md
