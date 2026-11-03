@@ -30,15 +30,31 @@ To renew *and* grow an allocation, make both.
   and an allocation may be removed once its end date has passed.
 - Request well ahead. Do not wait for a reminder.
 
+## Order an allocation
+
+If you wish to both extend the allocation end date and increase one or more of your allocations (e.g. compute or storage) you can order a new allocation.
+
+1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with Tuakiri**.
+   See [logging in to the HPC Portal](HPC_Portal_Overview.md#log-in).
+2. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the blue **Add** button
+3. Choose the offering, for example **Mahuika** in the **HPC** category.
+4. Next to the resource name, click **Suggest name**.
+5. Enter the limits, start date and end date,then submit the order.
+
+The order goes to an organisation owner at your institution for approval.
+REANNZ then reviews it and makes recommendations if need be.
+The allocation is created once that review is complete.
+
 ## Extend the end date
 
+If you do not require an increase of your current allocations but merely require additional time you can request a new end date.
 Project managers and project members can ask for a new end date.
 An organisation owner at your institution approves it.
 
 1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with Tuakiri**.
    See [logging in to the HPC Portal](HPC_Portal_Overview.md#log-in).
 2. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the allocation.
-3. Click **Actions**, then **Request end date change**.
+3. Select the allocation you wish to extend and click **Actions**, then **Request end date change**.
 4. In **Requested end date**, pick the new end date.
 5. In **Comment**, explain why you need the extension.
    Whoever reviews it sees only the date and your comment, so include:
@@ -49,6 +65,24 @@ An organisation owner at your institution approves it.
 
 The request appears on the resource's **End date change requests** tab.
 The **Pending** list shows open requests and **All** shows past ones.
+
+## Change allocation limits
+
+If instead you only wish to increase a resource allocation while maintaining the current end date you can make a limit change request. 
+Project managers can change limits, such as compute or storage.
+Project members cannot; ask your project manager.
+
+1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with Tuakiri**.
+   See [logging in to the HPC Portal](HPC_Portal_Overview.md#log-in).
+2. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the allocation.
+3. Click **Actions**, then **Change limits**.
+4. The **Change resource limits** dialog shows each component with its **Usage** and **Current limit**.
+   Enter the **New limit** for each component you want to change.
+5. Click **Request for a change**.
+
+The change goes to your organisation for approval.
+REANNZ then reviews it and makes recommendations if need be.
+The new limits apply once that review is complete.
 
 ## After you send a request
 
@@ -66,20 +100,6 @@ If you do not know who approves requests at your institution,
 or the request is waiting too long,
 {% include "partials/support_request.html" %}.
 
-## Change allocation limits
-
-Project managers can change limits, such as compute or storage.
-Project members cannot; ask your project manager.
-
-1. Open the resource as above.
-2. Click **Actions**, then **Change limits**.
-3. The **Change resource limits** dialog shows each component with its **Usage** and **Current limit**.
-   Enter the **New limit** for each component you want to change.
-4. Click **Request for a change**.
-
-The change goes to your organisation for approval.
-REANNZ then reviews it and makes recommendations if need be.
-The new limits apply once that review is complete.
 
 ## Allocation size limits
 
