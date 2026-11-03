@@ -33,14 +33,14 @@ this may change.
 module load ANSYS/18.1
 ```
 
-Will always load that version specifically.
+Will always load `18.1` specifically.
 
 ## Toolchains and Environment Management
 
 ### Compiler Toolchains
 
-Many of the software modules on the cluster are built with a specific compiler toolchain (often referred to as simply a _toolchain_).  A toolchain 
-is the compiler and development libraries that are used to build software on the cluster.
+Many of the software modules on the cluster are built with a specific compiler toolchain (often referred to as simply a _toolchain_).
+A toolchain is the compiler and development libraries that are used to build software on the cluster.
 
 You can see this in the module version, such as the following:
 
@@ -49,13 +49,13 @@ Python/3.11.6-foss-2023a
 PnetCDF/1.9.0-intel-2020a
 ```
 
-The software version and toolchain are separated by the first hyphen, for instance the 
-version of Python is `3.11.6` and the toolchain it was built with is `foss-2023a`.  Whareas 
-PnetCDF was built with `intel-2020a`  These are incompatible toolchains since they use different 
-compilers and have conflicting dependencies.  Therefore loading these modules in the 
-same environment with either conflict and fail, or will swap module dependencies which will 
-cause some of your software to crash or fail with a library error.  For example if I try to 
-load the software above I receive the following notification:
+The software version and toolchain are separated by the first hyphen,
+for instance the version of Python is `3.11.6` and the toolchain it was built with is `foss-2023a`.  
+Whereas PnetCDF was built with `intel-2020a`,
+These are incompatible toolchains since they use different compilers and have conflicting dependencies.
+Loading these modules in the same environment with either conflict and fail,
+or will swap module dependencies which will cause some of your software to crash or fail with a library error.
+For example if I try to load the software above I receive the following notification:
 
 ```out
 The following have been reloaded with a version change:

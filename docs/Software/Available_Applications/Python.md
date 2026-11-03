@@ -237,6 +237,8 @@ must be installed separately. Each Python environment module comes with
 its own particular suite of packages, and the system Python has its own
 installed packages.
 
+To compare virtual environments with uv, Conda and containers, see [Reproducible Software](../Reproducible_Software.md).
+
 The provided packages can be listed using
 
 ``` bash

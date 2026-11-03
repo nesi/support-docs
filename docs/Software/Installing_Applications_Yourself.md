@@ -18,6 +18,8 @@ In any case, if you have issues, do not hesitate to
 
 See [Software Installation Request](Software_Installation_Request.md) for guidelines on what information you should include.
 
+To compare the ways of setting up software yourself, such as virtual environments, Conda and containers, see [Reproducible Software](Reproducible_Software.md).
+
 ## Packages for Existing Module
 
 How to add package to an existing module will vary based on the language in question.

@@ -130,4 +130,5 @@ conda env create -f environment.yml -p /nesi/project/<project_code>/my_conda_env
      - If you only need access to Python and standard numerical libraries
          (numpy, scipy, matplotlib, etc.), you can use our 
          [Python environment module](Python.md).
+     - To compare Conda with the other ways of managing software, see [Reproducible Software](../Reproducible_Software.md).
 
