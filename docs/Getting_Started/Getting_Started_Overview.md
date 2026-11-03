@@ -10,7 +10,6 @@ tags:
 To use Mahuika you need an account, and you need to be a member of a project.
 These steps take you from having neither to running your first job.
 
-
 ## Get access to Mahuika
 
 1. **Create an account.**

@@ -2,7 +2,7 @@
 created_at: '2018-11-30T00:34:14Z'
 tags:
 - access
-description: How to setup your ssh config file in order to connect to the HPC cluster.
+description: How to set up your ssh config file in order to connect to the HPC cluster.
 ---
 
 !!! prerequisite
@@ -10,12 +10,12 @@ description: How to setup your ssh config file in order to connect to the HPC cl
      -   Have one of:
          - Built in Linux/Mac terminal
          - [Windows Subsystem for Linux](Windows_Subsystem_for_Linux_WSL.md)
-         - [VSCode](VSCode.md)
+         - [VS Code](VSCode.md)
 
 !!! warning
     The following instructions may not work when using any non-standard terminal client.
 
-## First time setup
+## First time set up
 
 The login process can be simplified significantly with a few easy
 configurations.
@@ -66,7 +66,7 @@ configurations.
     chmod 600 ~/.ssh/config
     ```
 
-4. You can now log into the cluster, run the command.
+4. You can now log in to the cluster, run the command.
 
     ```sh
     ssh mahuika
@@ -95,7 +95,7 @@ configurations.
 
 8. You are now asked about your current device: do you trust it or not?
 
-    ![alt text](../../assets/images/Standard_Terminal_Setup_1.png).
+    ![Trusted device prompt](../../assets/images/Standard_Terminal_Setup_1.png).
 
     - **Click No:** If this device is a shared computer (e.g. university computer where you have to delete cookies) or if you are using incognito or private windows.
         This means that you will need to enter your 6-digit code every time you log.
@@ -109,11 +109,11 @@ configurations.
 
 9. Scan the QR code with your authenticator app. Then enter the 6-digit code provided.
 
-    ![alt text](../../assets/images/Standard_Terminal_Setup_2.png)
+    ![6-digit code for authentication](../../assets/images/Standard_Terminal_Setup_2.png)
 
 10. You are now asked to confirm that you initiated this authentication request. This step helps prevent remote phishing by ensuring the process was started by you.  
 
-    ![alt text](../../assets/images/login-grantaccess.png).
+    ![Access request prompt](../../assets/images/login-grantaccess.png).
 
     - **Click No:** if you did not request access to the advanced computing system.  
     - **Click Yes:** if you have been following this process from the beginning.  
@@ -122,25 +122,24 @@ configurations.
 
 11. Return to your terminal, and press <kbd>enter</kbd>. You will need to complete the authentication proccess twice (e.g. you will be provided another link to follow as shown in step 6 to complete the browser-based authentication, confirming whether you trust the device again if you didn't trust it the first time, then you will return to your terminal again, and press <kbd>enter</kbd>). this second authentication in future logins can be avoided by following the steps outlined in [Adding an SSH Key](#adding-a-ssh-key-optional).
 
-    
 ## Adding a SSH key (optional)
 
-Generating a SSH key on the cluster removes one of the login prompts when using SSH. 
+Generating a SSH key on Mahuika removes one of the login prompts when using SSH.
 
-1. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
+1. In a terminal **on Mahuika** (either through SSH or OnDemand), run the commands;
 
     ```sh
     mkdir -p ~/.ssh
     ```
 
-2. In a terminal **on your local machine**, run the command; 
+2. In a terminal **on your local machine**, run the command;
 
     ```sh
     [ -f .ssh/mahuika_key ] || ssh-keygen -t rsa -q -N "" -f ".ssh/mahuika_key"
     scp ~/.ssh/mahuika_key.pub mahuika:~/.ssh/mahuika_key.pub
     ```
 
-3. In a terminal **on the HPC** (either through SSH or OnDemand), run the commands;
+3. In a terminal **on Mahuika** (either through SSH or OnDemand), run the commands;
 
     ```sh
     cat ~/.ssh/mahuika_key.pub >> ~/.ssh/authorized_keys
@@ -170,7 +169,7 @@ Generating a SSH key on the cluster removes one of the login prompts when using 
         IdentityFile ~/.ssh/mahuika_key
     ```
 
-You should now be able to login with only a single authentication prompt.
+You should now be able to log in with only a single authentication prompt.
 
 !!! warning
     Do not re-use the private key `mahuika_key` on other devices.
@@ -180,7 +179,7 @@ You should now be able to login with only a single authentication prompt.
 
 1. `ssh mahuika`
 2. Follow the link.
-3. You may be prompted for your 6 digit code.
+3. You may be prompted for your 6-digit code.
 4. Return to your terminal, and press <kbd>enter</kbd>.
 
 ## How-to Video

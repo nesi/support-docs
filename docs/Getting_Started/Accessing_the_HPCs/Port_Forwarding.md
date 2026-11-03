@@ -36,7 +36,7 @@ this case the Mahuika cluster)
 
 ## Command line (OpenSSH)
 
-*Works for any Linux terminal, Mac terminal, or Windows with WSL
+*Works for any Linux terminal, Mac terminal, or Windows with Windows Subsystem for Linux (WSL)
 enabled.*
 
 The command for forwarding a port is
@@ -50,14 +50,13 @@ I want to connect to a server running on Mahuika that is listening on
 port 6666. In a new terminal on my local machine I enter the command:
 
 ``` sh
-ssh -L 5555:localhost:6666 nesi
+ssh -L 5555:localhost:6666 mahuika
 ```
 
 Your terminal will now function like a normal connection to Mahuika.
 However, if you close this terminal session the port forwarding will end.
 
-If there is no existing session on Mahuika, you will be prompted for
-your first and second factor, same as during the regular log in
+If there is no existing session on Mahuika, you will be prompted to authenticate, same as during the regular log in
 procedure.
 
 !!! note
@@ -85,7 +84,7 @@ if the port fails.
 For example:
 
 ``` sh
-  Host nesi
+  Host mahuika
       User username
       Hostname login.nesi.org.nz
       ProxyCommand ssh -W %h:%p lander
@@ -113,36 +112,6 @@ will be forwarded.
         ``` sh
         mkdir -P ~/.ssh/sockets
         ```
-<!--
-## MobaXterm
-
-If you have Windows Subsystem for Linux installed, you can use the
-method described above. This is the recommended method.
-
-You can tell if MobaXterm is using WSL as it will appear in the banner
-when starting a new terminal session.
-
-![mceclip0.png](../../assets/images/Port_Forwarding.png)
-
-You can also set up port forwarding using the MobaXterm tunnelling
-interface.
-
-![mceclip1.png](../../assets/images/Port_Forwarding_0.png)
-
-You will need to create **two** tunnels. One from lander to mahuika. And
-another from mahuika to itself. (This is what using an alias in the
-first two examples allows us to avoid).
-
-The two tunnels should look like this.
-
-![mobakey.png](../../assets/images/Port_Forwarding_1.png)
-
-<span style='color:#32CD32'>■</span> local port  
-<span style="color:orange">■</span> remote port  
-<span style="color:red">■</span> must match  
-<span style="color:#FF00FF">■</span> doesn't matter
-
--->
 
 ## sshuttle
 
@@ -190,7 +159,7 @@ to `-L` ).
 ssh -Nf -R <remote_port>:localhost:<local_port> ${SLURM_SUBMIT_HOST}
 ```
 
-An example Slurm script:
+An example batch script:
 
 ``` sl
 #!/bin/bash -e
