@@ -63,7 +63,7 @@ Our most recent Python environment modules have:
     #SBATCH --account     nesi99999
     #SBATCH --ntasks=2          # Number of MPI tasks
     #SBATCH --time=00:30:00
-    #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+    #SBATCH --mem-per-cpu        512MB # Memory per logical CPU
     
     module load Python
     srun python PythonMPI.py   # Executes ntasks copies of the script
