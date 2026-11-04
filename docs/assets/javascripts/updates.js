@@ -4,7 +4,10 @@
 // (supportedApplications.js, loaded on every page, defines its own render()).
 (() => {
 
-    const MAX_ENTRIES = 150;
+    // Items shown at first, and added by each "Show more". How many are shown is kept per URL in
+    // sessionStorage, so coming back to the page shows the same items. (Not history.state:
+    // Material's instant navigation overwrites it with the scroll position.)
+    const PAGE_SIZE = 50;
 
     // Paths are relative to the site root (base_url), so the page also works on preview deploys.
     const LOCAL_FEEDS = ["software_updates.xml", "page_update.xml", "page_creation.xml"];
@@ -14,6 +17,8 @@
     const ALLOWED_TAGS = new Set(["P", "BR", "SMALL", "STRONG", "B", "EM", "I", "VAR", "CODE", "UL", "OL", "LI", "A"]);
 
     let entries = [];
+    let matching = [];  // entries passing the current filter
+    let shown = 0;      // how many of them are on the page
 
     document.addEventListener("DOMContentLoaded", async () => {
         const feed = document.getElementById("md-feed");
@@ -28,11 +33,35 @@
             const button = event.target.closest("[data-remove-tag]");
             if (button) toggleTag(button.dataset.removeTag);
         });
+        document.getElementById("md-feed-more").addEventListener("click", showMore);
         window.addEventListener("popstate", render);
 
         entries = await mergeFeeds(feeds);
         render();
+        // Material saves the scroll position as history.state.y, but restores it before the
+        // items have loaded, so restore it again now they have.
+        if (history.state?.y) window.scrollTo(0, history.state.y);
     });
+
+    function storageKey() {
+        return `updates-shown:${location.search}`;
+    }
+
+    function loadShown() {
+        try {
+            return parseInt(sessionStorage.getItem(storageKey()), 10) || PAGE_SIZE;
+        } catch {
+            return PAGE_SIZE;
+        }
+    }
+
+    function saveShown() {
+        try {
+            sessionStorage.setItem(storageKey(), String(shown));
+        } catch {
+            // Storage blocked: the page still works, it just starts from PAGE_SIZE next time.
+        }
+    }
 
     function getFilter() {
         return (new URL(document.location).searchParams.get("filter") ?? "").split(",").filter(Boolean);
@@ -46,6 +75,11 @@
             url.searchParams.delete("filter");
         }
         history.pushState(null, "", url);
+        try {
+            sessionStorage.removeItem(storageKey());  // a new filter starts from the top
+        } catch {
+            // Storage blocked: nothing to clear.
+        }
         render();
     }
 
@@ -109,11 +143,34 @@
         const badges = document.getElementById("md-filter-tag-container");
         badges.replaceChildren(...filter.map(makeBadge));
 
-        const visible = entries
-            .filter(e => !filter.length || e.categories.some(c => filter.includes(slugify(c))))
-            .slice(0, MAX_ENTRIES);
+        matching = entries.filter(e => !filter.length || e.categories.some(c => filter.includes(slugify(c))));
+        const visible = matching.slice(0, loadShown());
+        shown = visible.length;
         document.getElementById("md-feed__inner").replaceChildren(...visible.map(makeEntry));
         document.querySelector(".md-throbber").style.display = "none";
+        updateMore();
+    }
+
+    function showMore() {
+        const items = matching.slice(shown, shown + PAGE_SIZE).map(makeEntry);
+        document.getElementById("md-feed__inner").append(...items);
+        shown += items.length;
+        saveShown();
+        updateMore();
+        // Keyboard and screen reader users continue from the first new item.
+        if (items.length) {
+            items[0].tabIndex = -1;
+            items[0].focus();
+        }
+    }
+
+    function updateMore() {
+        document.getElementById("md-feed-count").textContent = matching.length
+            ? `Showing ${shown} of ${matching.length} updates`
+            : "No updates match this filter.";
+        const more = document.getElementById("md-feed-more");
+        more.hidden = shown >= matching.length;
+        more.textContent = `Show ${Math.min(PAGE_SIZE, matching.length - shown)} more`;
     }
 
     function makeBadge(slug) {

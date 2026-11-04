@@ -19,6 +19,10 @@
     <div id="md-feed" data-base-url="{{ base_url }}">
         <div id="md-feed__inner"></div>
         <div class="md-throbber"></div>
+        <div class="md-feed-more">
+            <span id="md-feed-count" aria-live="polite"></span>
+            <button id="md-feed-more" class="md-button" type="button" hidden>Show more</button>
+        </div>
     </div>
 
 {% endblock -%}

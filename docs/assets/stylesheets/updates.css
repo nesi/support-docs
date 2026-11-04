@@ -56,3 +56,15 @@ aside.md-source-file {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+.md-feed-more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.7rem;
+}
+.md-feed-more .md-button[hidden] {
+    display: none;
+}
