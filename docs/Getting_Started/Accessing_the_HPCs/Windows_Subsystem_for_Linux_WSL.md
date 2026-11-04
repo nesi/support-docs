@@ -12,15 +12,14 @@ description: Enabling WSL allows utilising Linux tools on Windows.
 
 Windows Subsystem for Linux is a feature that allows you to run a Linux OS that seamlessly functions alongside and within your Windows Desktop.
 
-WSL is enabled by default on Windows (since later releases of Windows 10).  However, your IT department may have disabled WSL.  If the instructions below do not work, please reach out to your IT helpdesk.
-
+WSL is enabled by default on Windows (since later releases of Windows 10). However, your IT department may have disabled WSL. If the instructions below do not work, please reach out to your IT help desk.
 
 ## Installing WSL
 
 Microsoft provides [setup instructions](https://learn.microsoft.com/en-us/windows/wsl/install) for installing both WSL and a Linux distribution (also known as a distro) .
 
 To check if WSL is already installed on your Windows PC, open Windows Command Prompt, Terminal, or PowerShell and run `wsl --list --online`.
-This should return a list of available Linux distros that you can install.  We will be using the Ubuntu distro in our examples below as it is the most commonly used in WSL.  However, if you have a preferred distro, you are welcome to use it instead. 
+This should return a list of available Linux distros that you can install. We will be using the Ubuntu distro in our examples below as it is the most commonly used in WSL. However, if you have a preferred distro, you are welcome to use it instead.
 
 ## Installing a Linux Distribution
 
@@ -52,22 +51,21 @@ Distros can be obtained through the Microsoft Store, or using command line.
 - When it has finished downloading, the Ubuntu Terminal will appear and prompt you to “Enter new UNIX username”
     and press <kbd>Enter</kbd>.
   
-    This can be anything you want, although we reccomend using the same as your Windows username.
-    ![ubuntu1.png](../../assets/images/Ubuntu_LTS_terminal_Windows_3.png)
+    This can be anything you want, although we recommend using the same as your Windows username.
+    ![Creating UNIX username for Ubuntu](../../assets/images/Ubuntu_LTS_terminal_Windows_3.png)
   
 - Now, type in a new password for the username you picked and press
     <kbd>Enter</kbd> (this password can be anything you want, although you shouldn't need to enter it again).
     Then retype the password to confirm and press <kbd>Enter</kbd>.
-    ![ubuntu2.png](../../assets/images/Ubuntu_LTS_terminal_Windows_4.png)
+    ![Creating UNIX password for Ubuntu](../../assets/images/Ubuntu_LTS_terminal_Windows_4.png)
 
 ## Installing Windows Terminal (optional)
 
-Microsoft has also developed a solid terminal emulator, called [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=NZ). This can be found in the Microsoft Store and best of all, it is free.  You can run your WSL, PowerShell and most other command line tools from within MS Terminal.
-
+Microsoft has also developed a solid terminal emulator, called [Windows Terminal](https://apps.microsoft.com/detail/9n0dx20hk701?hl=en-US&gl=NZ). This can be found in the Microsoft Store and best of all, it is free. You can run your WSL, PowerShell and most other command line tools from within MS Terminal.
 
 ## WSL and VS Code integration (optional)
 
-You can use VS Code and WSL together, creating a powerful development environment.  More details on integrating VS Code and WSL can be found here: [WSL & VS Code](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode)
+You can use VS Code and WSL together, creating a powerful development environment. More details on integrating VS Code and WSL can be found here: [WSL & VS Code](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-vscode)
 
 ## Creating a Symlink (optional)
 
@@ -79,7 +77,6 @@ your Windows filesystems found in /mnt/.
 ```sh
 ln -s /mnt/c/Users/YourWindowsUsername/ Cdrive
 ```
-
 
 !!! prerequisite What "Next?"
      -   Set up your [SSH config file](Standard_Terminal_Setup.md).

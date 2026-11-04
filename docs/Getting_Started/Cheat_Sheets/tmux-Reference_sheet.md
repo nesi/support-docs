@@ -3,8 +3,6 @@ created_at: '2022-03-24T22:11:13Z'
 tags:
     - multiplexer
 title: 'Tmux: Reference Sheet'
-vote_count: 1
-vote_sum: 1
 description: Keeping terminal sessions running after you disconnect by using tmux
 ---
 
@@ -13,10 +11,10 @@ description: Keeping terminal sessions running after you disconnect by using tmu
 *tmux* is a terminal multiplexer.  A multiplexer enables the creation
 and control of multiple terminals from a single screen.  `tmux` also allows
 you to detach your screen to run in the background with the ability to
-re-attach and start where you left off.  This is useful for long running processes 
-such as data transfers, or if you want to keep a perpetual session. 
+re-attach and start where you left off.  This is useful for long running processes
+such as data transfers, or if you want to keep a perpetual session.
 
-A `tmux` session will continue to run until you exit (with `exit` or `ctrl-d`) or the 
+A `tmux` session will continue to run until you exit (with `exit` or `ctrl-d`) or the
 host is rebooted.
 
 Here is an example of starting  a *tmux* session to run a `rsync` data transfer:
@@ -32,12 +30,11 @@ then
 <kbd>ctrl</kbd> + <kbd>b</kbd>, <kbd>d</kbd>
 
 The <kbd>ctrl</kbd> + <kbd>b</kbd>, <kbd>d</kbd>keyboard shortcut "detaches" the screen which
-allows you to logoff.  You can also simply close your terminal or laptop.  Running `ctrl-b-d` is 
+allows you to logoff.  You can also simply close your terminal or laptop.  Running `ctrl-b-d` is
 not required to save the session.  
 
-
 When you are ready to reattach to the session
-you login and run the following:
+log in and run the following:
 
 ``` sh
 tmux attach -t data_transfer
@@ -52,20 +49,19 @@ crashes or the network goes down.
 
 More information can be found on the web, here are some good references:
 
-[Detailed `tmux` cheat sheet](https://tmuxcheatsheet.com)  and a 
+[Detailed `tmux` cheat sheet](https://tmuxcheatsheet.com)  and a
 [Getting started Guide](https://linuxize.com/post/getting-started-with-tmux/)
 
 ## screen and zellij
 
 `screen` and `zellij` (pronounced like zellidge) are alternatives to `tmux`  
 
-`screen` is one of the original terminal multiplexers and works well but many users have switched to the more fully functional 
+`screen` is one of the original terminal multiplexers and works well but many users have switched to the more fully functional
 `tmux` or `zellij`.
 
-`zellij` is available as a module `module load zellij` and is advertised as a multiplexer with _batteries included_.  It is recommended for 
+`zellij` is available as a module `module load zellij` and is advertised as a multiplexer with *batteries included*.  It is recommended for
 new users as it comes with a useful reference footer.  `zellij` shares many of the same keybindings as `tmux`, for instance `ctrl-b-d` will detach
  a session.
 
-More details on using `zellij`  can be found at the 
+More details on using `zellij`  can be found at the
 [zellij.dev](https://zellij.dev/documentation/) site.  
-
