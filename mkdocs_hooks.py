@@ -92,6 +92,35 @@ def on_env(env, config, files, **kwargs):
     })
 
 
+# Bare '&' not already part of an entity.
+_BARE_AMPERSAND = re.compile(r"&(?!(?:[A-Za-z]+|#\d+|#x[0-9A-Fa-f]+);)")
+
+
+def on_post_build(config, **kwargs):
+    """Escape '&' in the mkdocs-rss-plugin feeds' <category> elements.
+
+    The plugin writes categories without escaping them (its autoescape is keyed on a
+    `.xml` extension, but its template is `rss.xml.jinja2`), so a tag label such as
+    "Environment & Modules" makes the whole feed invalid XML and the updates page
+    can't parse it. Hooks run after plugins, so the feeds are already written here.
+    """
+    plugin = config.plugins.get("rss")
+    if plugin is None or not plugin.config.enabled:
+        return
+    for filename in plugin.config.feeds_filenames.values():
+        path = Path(config.site_dir) / filename
+        if path.suffix != ".xml" or not path.is_file():
+            continue
+        text = path.read_text(encoding="utf-8")
+        fixed = re.sub(
+            r"(<category>)(.*?)(</category>)",
+            lambda m: m.group(1) + _BARE_AMPERSAND.sub("&amp;", m.group(2)) + m.group(3),
+            text,
+        )
+        if fixed != text:
+            path.write_text(fixed, encoding="utf-8")
+
+
 def lint(*args, **kwargs):
     # Imported lazily: proselint pulls in google-re2 and a large rule set,
     # and this function is not part of the mkdocs build path.

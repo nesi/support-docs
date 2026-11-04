@@ -13,6 +13,10 @@ Currently retrieves:
 
 - The training calendar and the software updates feed.
 
+The software updates feed is trimmed to the last year and de-duplicated by [trim_software_feed.py](../trim_software_feed.py).
+If a download fails or is empty, the previous copy is kept and the failure is reported as an error annotation;
+the workflow (and the same step in the deploy) carries on with what it has.
+
 Runs daily at 00:00 UTC, and can be started manually.
 If anything changed (ignoring changes that are only to the calendar), the files are committed directly to `main`
 as `nesi-mkdocs-bot` ("Automatic asset update"), using the `NESI_PAT` secret. There is no intermediate branch.
