@@ -15,15 +15,16 @@ They differ in how much control you have, how well the software is optimised for
 and how easily you, or someone else, can recreate the same environment later.
 This page helps you choose one, and record it so your results can be reproduced.
 
+{% raw %}
+
 ```mermaid
 flowchart TD
     %% Questions, in the order a reader meets them
     A{{"Do you need a specific<br>operating system?"}}
     B{{"What software<br>are you using?"}}
-    D{{"How many packages<br>are you using?"}}
     C{{"Do you need to match<br>an environment on<br>another computer?"}}
+    D{{"How many packages<br>are you using?"}}
     M{{"Is it installed<br>as a module?"}}
-    K{{"Is it a<br>conda package?"}}
     E{{"Can you build<br>it yourself?"}}
 
     %% Outcomes, named as in the comparison table
@@ -46,10 +47,7 @@ flowchart TD
     C -- "No" --> M
 
     M -- "Yes" --> ENVM
-    M -- "No" --> K
-
-    K -- "Yes" --> CONDA
-    K -- "No" --> E
+    M -- "No" --> E
 
     E -- "Yes" --> BLD
     E -- "No" --> REQ
@@ -71,6 +69,8 @@ flowchart TD
     click BLD "#build-from-source"
     click REQ "#build-from-source"
 ```
+
+{% endraw %}
 
 ## Comparison
 
