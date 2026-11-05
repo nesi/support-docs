@@ -73,7 +73,7 @@
         },
         {
             "cores_per_socket": 21,
-            "count": 2,
+            "count": 8,
             "cpus": 336,
             "features": [
                 "big",
@@ -91,7 +91,7 @@
         },
         {
             "cores_per_socket": 21,
-            "count": 2,
+            "count": 4,
             "cpus": 336,
             "features": [
                 "big"
@@ -110,7 +110,7 @@
         },
         {
             "cores_per_socket": 21,
-            "count": 1,
+            "count": 4,
             "cpus": 336,
             "features": [
                 "big"
@@ -148,7 +148,7 @@
         },
         {
             "cores_per_socket": 21,
-            "count": 26,
+            "count": 44,
             "cpus": 336,
             "features": [
                 "nogpu",
@@ -181,7 +181,7 @@
         },
         {
             "cores_per_socket": 6,
-            "count": 2,
+            "count": 3,
             "cpus": 96,
             "features": [
                 "a100_40gb",
@@ -197,104 +197,6 @@
             "real_memory_mb": 491520,
             "reserved_cores": 2,
             "sockets": 8,
-            "threads_per_core": 2
-        },
-        {
-            "cores_per_socket": 6,
-            "count": 1,
-            "cpus": 96,
-            "features": [
-                "big",
-                "mig"
-            ],
-            "gpu_mig_profiles": {
-                "1g.10gb": 1,
-                "1g.5gb": 7,
-                "2g.10gb": 3,
-                "3g.20gb": 1,
-                "4g.20gb": 1
-            },
-            "gpus": {},
-            "partitions": [
-                "milan"
-            ],
-            "real_memory_mb": 491520,
-            "reserved_cores": 2,
-            "sockets": 8,
-            "threads_per_core": 2
-        },
-        {
-            "cores_per_socket": 84,
-            "count": 6,
-            "cpus": 336,
-            "features": [
-                "big",
-                "nogpu"
-            ],
-            "gpu_mig_profiles": {},
-            "gpus": {},
-            "partitions": [
-                "genoa"
-            ],
-            "real_memory_mb": 1469837,
-            "reserved_cores": 2,
-            "sockets": 2,
-            "threads_per_core": 2
-        },
-        {
-            "cores_per_socket": 84,
-            "count": 2,
-            "cpus": 336,
-            "features": [
-                "big"
-            ],
-            "gpu_mig_profiles": {},
-            "gpus": {
-                "h100": 2
-            },
-            "partitions": [
-                "genoa"
-            ],
-            "real_memory_mb": 1469837,
-            "reserved_cores": 2,
-            "sockets": 2,
-            "threads_per_core": 2
-        },
-        {
-            "cores_per_socket": 84,
-            "count": 3,
-            "cpus": 336,
-            "features": [
-                "big"
-            ],
-            "gpu_mig_profiles": {},
-            "gpus": {
-                "l4": 4
-            },
-            "partitions": [
-                "genoa"
-            ],
-            "real_memory_mb": 1469837,
-            "reserved_cores": 2,
-            "sockets": 2,
-            "threads_per_core": 2
-        },
-        {
-            "cores_per_socket": 84,
-            "count": 18,
-            "cpus": 336,
-            "features": [
-                "nogpu",
-                "sml"
-            ],
-            "gpu_mig_profiles": {},
-            "gpus": {},
-            "partitions": [
-                "genoa"
-            ],
-            "real_memory_mb": 366694,
-            "reserved_cores": 2,
-            "sockets": 2,
             "threads_per_core": 2
         }
     ],
@@ -316,13 +218,7 @@
             "threads_per_core": 2
         },
         "milan": {
-            "gpu_mig_profiles": [
-                "1g.10gb",
-                "1g.5gb",
-                "2g.10gb",
-                "3g.20gb",
-                "4g.20gb"
-            ],
+            "gpu_mig_profiles": [],
             "gpu_types": [
                 "a100"
             ],
@@ -349,7 +245,7 @@
         "weight_tres": {
             "CPU": 1,
             "Mem": "0.1G",
-            "gres/gpu": 100
+            "gres/gpu": 10
         }
     },
     "qos": {

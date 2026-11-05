@@ -4,18 +4,16 @@ tags:
 - tutorial
 - access
 title: 'Bash: Reference Sheet'
-vote_count: 2
-vote_sum: 2
 description: The basic Unix shell commands you need to work on a Linux cluster
 ---
 
 Regardless of the operating system on your personal computer you will
-need to know some basic Unix Shell commands since the HPC are Linux
+need to know some basic Unix Shell commands since Mahuika is comprised of Linux
 machines. If you do not have any experiencing using Unix Shell we would
 advise going at least the first (3 parts) of the [Software Carpentry
 Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
 
-| Command Description | Examples                                         |  Command                                                                                                         |
+| Command Description | Examples                                       | Command                                                                                                                    |
 | ------------------- | ---------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
 | `ls`                | `ls`                                           | Lists the files in your current directory.                                                                                 |
 |                     | `ls /path/to/directory/`                       | Lists the files in the specified directory.                                                                                |
@@ -42,10 +40,10 @@ Unix Shell lessons](http://swcarpentry.github.io/shell-novice/).
 
 !!! tip
      Pressing the 'tab' key once will automatically complete the line if it
-     is the only option. e.g. 
-     ![complete1.gif](../../assets/images/Unix_Shell-Reference_Sheet.gif)
+     is the only option. e.g.
+     ![GIF showing tab completion for one option](../../assets/images/Unix_Shell-Reference_Sheet.gif)
      If there are more than one possible completions, pressing tab again
      will show all those options.
-     ![complete2.gif](../../assets/images/Unix_Shell-Reference_Sheet_0.gif)
+     ![GIF showing tab completion for multiple options](../../assets/images/Unix_Shell-Reference_Sheet_0.gif)
      Use of the tab key can help navigate the filesystem, spellcheck your
      commands and save you time typing.
