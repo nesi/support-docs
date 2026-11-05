@@ -189,7 +189,6 @@ For example, `--cores-per-socket 21` in the batch scripts below asks for a node 
 ## Navigating NUMA domains on Mahuika
 
 The example batch scripts below keep a job's work close to its data.
-Each one starts 8 MPI tasks of one core each.
 Slurm puts the tasks next to each other, filling one NUMA domain before starting on the next.
 On a GPU node, the tasks also stay in the NUMA domain the GPU is attached to.
 
@@ -338,8 +337,8 @@ go into more detail.
     Milan compute and large memory nodes have 8 NUMA domains of 16 cores.
     The A100 80 GB nodes have one processor, split into 4 NUMA domains of 16 cores, with a GPU in each one.
     The A100 40 GB nodes have 8 NUMA domains of 6 cores, with GPUs in NUMA domains 2, 5 and 6.
-    The A100 batch script only runs on the 80 GB nodes.
-    The NUMA domains on the 40 GB nodes are too small for its 8 tasks, so `--cores-per-socket 16` leaves those nodes out.
+    In the A100 batch scripts, `--constraint` picks the 80 GB or 40 GB nodes.
+    The A100 40 GB batch script starts 6 tasks, as that's all a NUMA domain on those nodes can hold.
 
     === "Compute"
 
@@ -391,7 +390,7 @@ go into more detail.
         srun MY_PROGRAM
         ```
 
-    === "GPU (A100)"
+    === "GPU (A100 80 GB)"
 
         ```sl
         #!/bin/bash -e
@@ -400,10 +399,39 @@ go into more detail.
         #SBATCH --account          nesi99991
         #SBATCH --time             01:00:00
         #SBATCH --gpus-per-node    a100:1
+        #SBATCH --constraint       a100_80gb
         #SBATCH --ntasks           8
         #SBATCH --cpus-per-task    1
         #SBATCH --mem-per-cpu      8G
         #SBATCH --cores-per-socket 16
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+        #SBATCH --gres-flags       enforce-binding
+        #SBATCH --gpu-bind         closest
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+    === "GPU (A100 40 GB)"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-gpu
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --gpus-per-node    a100:1
+        #SBATCH --constraint       a100_40gb
+        #SBATCH --ntasks           6
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      8G
+        #SBATCH --cores-per-socket 6
         #SBATCH --threads-per-core 1
         #SBATCH --distribution     *:block:*
         #SBATCH --mem-bind         local
