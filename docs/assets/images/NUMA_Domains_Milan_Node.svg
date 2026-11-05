@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="788" height="458" viewBox="0 0 788 458" role="img" aria-labelledby="title desc" font-family="Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<title id="title">A Milan node and its 8 NUMA domains</title>
+<desc id="desc">Two sockets of 64 cores, joined by a socket link. Each socket is split into 4 NUMA domains, numbered 0 to 7. Each NUMA domain has 16 cores and its own memory.</desc>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00765F"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A85700"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B42318"/></marker><marker id="ah-grey" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3F4E5C"/></marker></defs>
+<rect width="788" height="458" fill="#FFFFFF"/>
+<text x="20" y="28" font-size="17" font-weight="bold" text-anchor="start" fill="#001C36">A Milan node</text>
+<rect x="20" y="46" width="332" height="292" rx="8" fill="#F5F6F7" stroke="#5A6875" stroke-width="1.8"/>
+<text x="30" y="67" font-size="14.5" font-weight="bold" text-anchor="start" fill="#001C36">Socket 0  ·  64 cores</text>
+<rect x="30" y="76" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="39" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 0</text>
+<rect x="40" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="40" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="40" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="40" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="146" y="106" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="163.5" y="145" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 163.5 145)">memory</text>
+<rect x="190" y="76" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="199" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 1</text>
+<rect x="200" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="200" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="200" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="200" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="306" y="106" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="323.5" y="145" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 323.5 145)">memory</text>
+<rect x="30" y="206" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="39" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 2</text>
+<rect x="40" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="40" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="40" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="40" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="62" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="84" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="106" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="146" y="236" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="163.5" y="275" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 163.5 275)">memory</text>
+<rect x="190" y="206" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="199" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 3</text>
+<rect x="200" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="200" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="200" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="200" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="222" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="244" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="266" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="306" y="236" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="323.5" y="275" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 323.5 275)">memory</text>
+<rect x="436" y="46" width="332" height="292" rx="8" fill="#F5F6F7" stroke="#5A6875" stroke-width="1.8"/>
+<text x="446" y="67" font-size="14.5" font-weight="bold" text-anchor="start" fill="#001C36">Socket 1  ·  64 cores</text>
+<rect x="446" y="76" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="455" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 4</text>
+<rect x="456" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="456" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="456" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="456" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="562" y="106" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="579.5" y="145" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 579.5 145)">memory</text>
+<rect x="606" y="76" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="615" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 5</text>
+<rect x="616" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="110" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="616" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="132" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="616" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="154" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="616" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="176" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="722" y="106" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="739.5" y="145" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 739.5 145)">memory</text>
+<rect x="446" y="206" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="455" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 6</text>
+<rect x="456" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="456" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="456" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="456" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="478" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="500" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="522" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="562" y="236" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="579.5" y="275" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 579.5 275)">memory</text>
+<rect x="606" y="206" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="615" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">NUMA domain 7</text>
+<rect x="616" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="240" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="616" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="262" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="616" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="284" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="616" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="638" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="660" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="682" y="306" width="17" height="17" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<rect x="722" y="236" width="26" height="78" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="739.5" y="275" font-size="12" font-weight="normal" text-anchor="middle" fill="#001C36" transform="rotate(-90 739.5 275)">memory</text>
+<rect x="350" y="150" width="88" height="40" rx="0" fill="#C3C8C8" stroke="none" stroke-width="0"/>
+<text x="394" y="208" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#3F4E5C">socket link</text>
+<rect x="24" y="367" width="13" height="13" rx="1.5" fill="#8479B7" stroke="none" stroke-width="1.5"/>
+<text x="52" y="378" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">core  (a scientist)</text>
+<rect x="350" y="365" width="22" height="17" rx="3" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="382" y="378" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">NUMA domain  (a lab)</text>
+<rect x="20" y="391" width="22" height="17" rx="3" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<text x="52" y="404" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">memory  (a fridge)</text>
+<rect x="350" y="391" width="22" height="17" rx="3" fill="#F5F6F7" stroke="#5A6875" stroke-width="1.8"/>
+<text x="382" y="404" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">socket  (a building)</text>
+<rect x="20" y="420" width="22" height="11" rx="0" fill="#C3C8C8" stroke="none" stroke-width="1.5"/>
+<text x="52" y="430" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">socket link  (the footbridge)</text>
+</svg>
