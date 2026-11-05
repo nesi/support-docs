@@ -64,22 +64,31 @@ On a Milan node with 512 GB, each NUMA domain has about 63 GB.
 
 ![A Milan node laid out the same way. Two sockets of 64 cores are joined by a socket link. Each socket is split into four NUMA domains, numbered 0 to 7, and each NUMA domain has 16 cores and its own memory.](../../assets/images/NUMA_Domains_Milan_Node.svg)
 
+## NUMA domains by node type
+
 The table below lists every type of node. [Hardware](../../Batch_Computing/Hardware.md) has more about each one.
 
-| Node type | Cores | Memory | NUMA domains | Cores in each NUMA domain | Memory in each NUMA domain |
-| - | - | - | - | - | - |
-| 2 x AMD Genoa 9634 | 168 | 384 GB | 8 | 21 | 48 GB |
-| 2 x AMD Genoa 9634 | 168 | 768 GB | 8 | 21 | 96 GB |
-| 2 x AMD Genoa 9634 | 168 | 1536 GB | 8 | 21 | 192 GB |
-| 2 x AMD Milan 7713 | 128 | 512 GB | 8 | 16 | 64 GB |
-| 2 x AMD Milan 7713 | 128 | 1024 GB | 8 | 16 | 128 GB |
-| 1 x AMD Milan 7713P, with 4 A100 GPUs | 64 | 512 GB | 4 | 16 | 128 GB |
-| 2 x AMD Milan 7413, with 3 A100 GPUs | 48 | 512 GB | 8 | 6 | 64 GB |
-| 2 x Intel Xeon Gold 6230 (`hugemem`) | 40 | 1.5 TB | 2 | 20 | 768 GB |
-| 4 x Intel Xeon Gold 6238M (`hugemem`) | 88 | 6 TB | 4 | 22 | 1.5 TB |
+<table>
+    <thead>
+        <tr><th>Node type</th><th>Processors</th><th>Cores</th><th>Memory</th><th>NUMA domains</th><th>Cores per domain</th><th>Memory per domain</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Genoa compute</td><td>2 x AMD Genoa 9634</td><td>168</td><td>384 GB</td><td>8</td><td>21</td><td>~47 GB</td></tr>
+        <tr><td>Genoa GPU (RTX PRO 6000)</td><td>2 x AMD Genoa 9634</td><td>168</td><td>768 GB</td><td>8</td><td>21</td><td>~94 GB</td></tr>
+        <tr><td>Genoa GPU (H100 or L4)</td><td>2 x AMD Genoa 9634</td><td>168</td><td>1536 GB</td><td>8</td><td>21</td><td>~189 GB</td></tr>
+        <tr><td>Genoa large memory</td><td>2 x AMD Genoa 9634</td><td>168</td><td>1536 GB</td><td>8</td><td>21</td><td>~189 GB</td></tr>
+        <tr><td style="border-top: .25rem double">Milan compute</td><td style="border-top: .25rem double">2 x AMD Milan 7713</td><td style="border-top: .25rem double">128</td><td style="border-top: .25rem double">512 GB</td><td style="border-top: .25rem double">8</td><td style="border-top: .25rem double">16</td><td style="border-top: .25rem double">~63 GB</td></tr>
+        <tr><td>Milan large memory</td><td>2 x AMD Milan 7713</td><td>128</td><td>1024 GB</td><td>8</td><td>16</td><td>~126 GB</td></tr>
+        <tr><td>Milan GPU (A100 80 GB), <code>mg13</code> to <code>mg16</code></td><td>1 x AMD Milan 7713P</td><td>64</td><td>512 GB</td><td>4</td><td>16</td><td>~126 GB</td></tr>
+        <tr><td>Milan GPU (A100 40 GB), <code>mg17</code> to <code>mg19</code></td><td>2 x AMD Milan 7413</td><td>48</td><td>512 GB</td><td>8</td><td>6</td><td>~63 GB</td></tr>
+        <tr><td style="border-top: .25rem double">Intel large memory (<code>hugemem</code>), <code>cl18</code> and <code>cl19</code></td><td style="border-top: .25rem double">2 x Intel Xeon Gold 6230</td><td style="border-top: .25rem double">40</td><td style="border-top: .25rem double">1.5 TB</td><td style="border-top: .25rem double">2</td><td style="border-top: .25rem double">20</td><td style="border-top: .25rem double">~755 GB</td></tr>
+        <tr><td>Intel large memory (<code>hugemem</code>), <code>cl17</code></td><td>4 x Intel Xeon Gold 6238M</td><td>88</td><td>6 TB</td><td>4</td><td>22</td><td>~1.5 TB</td></tr>
+    </tbody>
+</table>
 
-The memory figures are the memory installed, as on the Hardware page.
-Each NUMA domain has a little less than its share available, because some is kept back for the operating system.
+Memory is the memory installed, as on the Hardware page.
+Each NUMA domain has a little less than an even share of it, because some is kept back for the operating system.
+Slurm also keeps 2 cores on each node for the system, so on a Genoa node, for example, jobs can use 166 of the 168 cores.
 
 ## Your desktop and Mahuika
 
@@ -110,13 +119,15 @@ Even on Mahuika, most jobs never need to think about NUMA domains.
 They make a difference for programs that run many threads or MPI tasks and move a lot of data in and out of memory.
 These jobs usually lose time in one of two ways.
 
-![Four pictures of one Genoa socket with 4 NUMA domains, each marked either good and fast, or bad and slower. In the first, marked good and fast, a job's cores are all in NUMA domain 0 and its data is in domain 0's memory, so every fetch is from its own domain. In the second, marked bad and slower, the job's cores are spread over domains 0, 1 and 3, and most of its data is in domain 0's memory, so the cores in domains 1 and 3 fetch from another domain. In the third, marked good and fast, a thread in domain 0 stores its data in domain 0's memory. In the fourth, marked bad and slower, the operating system has moved the thread to domain 1, but its data is still in domain 0's memory, so every fetch now comes from another domain.](../../assets/images/NUMA_Domains_When_It_Matters.svg)
+![Two pictures of one Genoa socket with 4 NUMA domains. In the first, marked good and fast, a job's cores are all in NUMA domain 0 and its data is in domain 0's memory, so every fetch is from its own domain. In the second, marked bad and slower, the job's cores are spread over domains 0, 1 and 3, and most of its data is in domain 0's memory, so the cores in domains 1 and 3 fetch from another domain.](../../assets/images/NUMA_Domains_Cores_Spread.svg)
 
 **The first is when the job's cores are spread over several NUMA domains.**
 Linux stores each piece of data in the memory of the NUMA domain whose core first uses it,
 so the job's data ends up spread over the memory of several domains.
 Whenever a core needs data that's stored in another domain, the fetch takes longer.
 Slurm doesn't guarantee that a job's cores are all in one NUMA domain, even when they would fit in one.
+
+![Two pictures of one Genoa socket with 4 NUMA domains. In the first, marked good and fast, a thread in domain 0 stores its data in domain 0's memory, so every fetch is from its own domain. In the second, marked bad and slower, the operating system has moved the thread to domain 1, but its data is still in domain 0's memory, so every fetch now comes from another domain.](../../assets/images/NUMA_Domains_Thread_Moves.svg)
 
 **The second is when a thread moves.**
 To keep all of your job's cores evenly busy, the operating system can move a thread from one core to another.
@@ -127,88 +138,333 @@ If your job's runtime changes a lot between runs with the same input, one of the
 
 ## Check a job's NUMA domains
 
-To see which NUMA domains your job is using, put this line in your batch script before the line that runs your program:
+To see which cores each task of your job is using, and which NUMA domains they're in,
+put this command in your batch script before the line that runs your program:
 
 ```sh
-numactl --show
+srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
 ```
 
-In the output, `physcpubind` lists the cores your job can use, and `nodebind` lists the NUMA domains those cores are in.
-If `nodebind` has more than one number, your job is spread over more than one NUMA domain.
+Each task prints a report like this one, from a task on a Genoa node:
 
-For a job with several MPI tasks, run it with `srun` to get the lines for each task.
-The `--label` option puts the task number at the start of each line.
-
-```sh
-srun --label numactl --show
+```txt
+Task #0 is running on node c001.
+c001 has the following NUMA configuration:
+NUMA node(s):                            8
+NUMA node0 CPU(s):                       0-20,168-188
+NUMA node1 CPU(s):                       21-41,189-209
+NUMA node2 CPU(s):                       42-62,210-230
+NUMA node3 CPU(s):                       63-83,231-251
+NUMA node4 CPU(s):                       84-104,252-272
+NUMA node5 CPU(s):                       105-125,273-293
+NUMA node6 CPU(s):                       126-146,294-314
+NUMA node7 CPU(s):                       147-167,315-335
+Task #0 has 4 CPUs, their core IDs are 8-11
+===========================================
 ```
 
-To see which cores belong to each NUMA domain on the node, run:
+In this report, a CPU is a core, and a NUMA node is a NUMA domain, not a whole node.
 
-```sh
-lscpu | grep NUMA
-```
+- The `NUMA node` lines list the cores in each NUMA domain.
+  For example, NUMA domain 0 has cores 0 to 20.
+  The numbers 168 to 188 are the same 21 cores again, as each core can run two threads at once
+  (see [Simultaneous Multithreading](Simultaneous_Multithreading.md)).
+- The last line lists the cores the task can use, here cores 8 to 11.
 
-## Keep work near its data
+To find a task's NUMA domains, look for its cores in the `NUMA node` lines.
+Cores 8 to 11 are all in NUMA domain 0, so this task is in one NUMA domain.
+A task with cores 19 to 22 would be spread over two:
+cores 19 and 20 are in NUMA domain 0, and cores 21 and 22 are in NUMA domain 1.
 
-The most useful thing you can do is pin your threads.
-Pinning tells your program to keep each thread on the same core for the whole run,
-so the thread stays in the same lab as its data.
-For an OpenMP program, set `OMP_PROC_BIND` and `OMP_PLACES` as shown in [OpenMP Settings](OpenMP_Settings.md).
-[Thread Placement and Thread Affinity](Thread_Placement_and_Thread_Affinity.md) goes into more detail.
+## Nomenclature confusion in Slurm: Sockets
 
-If your MPI program uses whole nodes, you can also give each MPI task its own NUMA domain, with one thread for each core in it.
-The batch script below does this.
+Earlier on this page, a socket is the part of a node that holds one processor chip.
+A Genoa node has 2 sockets, each with 84 cores split into 4 NUMA domains.
 
-??? tip "Example batch script: one MPI task per NUMA domain"
-    This batch script uses a whole Genoa node.
-
-    ```sl
-    #!/bin/bash -e
-
-    #SBATCH --job-name          numa-hybrid
-    #SBATCH --account           nesi99991
-    #SBATCH --time              01:00:00
-    #SBATCH --partition         genoa
-    #SBATCH --nodes             1
-    #SBATCH --ntasks            8
-    #SBATCH --ntasks-per-socket 1
-    #SBATCH --cpus-per-task     21
-    #SBATCH --mem               100G
-
-    export OMP_PROC_BIND=true
-    export OMP_PLACES=cores
-
-    srun MY_PROGRAM
-    ```
-
-    Replace `MY_PROGRAM` with the command that runs your program.
-
-    - `--ntasks 8` starts 8 tasks, one for each NUMA domain.
-    - `--ntasks-per-socket 1` stops Slurm putting more than one task in a NUMA domain.
-    - `--cpus-per-task 21` gives each task the 21 cores in its NUMA domain.
-    - `OMP_PROC_BIND` and `OMP_PLACES` pin each task's threads to its cores.
-
-    To run it on a Milan node, change the partition to `milan` and use `--cpus-per-task 16`.
-
-    If your job only uses part of a node, Slurm doesn't guarantee that each task's cores are in one NUMA domain.
-    You can check with `srun --label numactl --show`.
-
-## NUMA domains in Slurm
-
-On Mahuika, Slurm (confusingly) treats each NUMA domain as a socket.
+Slurm uses the word differently on Mahuika.
+It treats each NUMA domain as a socket, so it shows a Genoa node as 8 sockets of 21 cores, rather than 2 sockets of 84.
 So when a Slurm option or Slurm's output mentions sockets, it means NUMA domains.
-Slurm shows a Genoa node as 8 sockets of 21 cores, for example, rather than 2 sockets of 84.
+For example, `--cores-per-socket 21` in the batch scripts below asks for a node whose NUMA domains have at least 21 cores.
 
-This affects the following options.
+## Navigating NUMA domains on Mahuika
 
-- `--ntasks-per-socket` is the most tasks Slurm will put in each NUMA domain.
-  Slurm also keeps each task inside its NUMA domain.
-- The second part of `--distribution`, such as the `block` in `--distribution block:block`,
-  controls how Slurm shares a job's cores between its tasks.
-  With `block`, Slurm fills one NUMA domain before starting on the next.
-  With `cyclic`, the default, it puts each task in the next NUMA domain in turn.
-- `--sockets-per-node`, `--cores-per-socket` and `--extra-node-info` only limit which nodes your job can run on.
-  Each value is a minimum, and none of them changes how many cores your job gets.
+The example batch scripts below keep a job's work close to its data.
+Each one starts 8 MPI tasks of one core each.
+Slurm puts the tasks next to each other, filling one NUMA domain before starting on the next.
+On a GPU node, the tasks also stay in the NUMA domain the GPU is attached to.
 
-The [sbatch documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html) has the full details of each option.
+[What the options mean](#what-the-options-mean) explains the options that keep tasks and threads in their NUMA domains.
+[OpenMP Settings](OpenMP_Settings.md) and [Thread Placement and Thread Affinity](Thread_Placement_and_Thread_Affinity.md)
+go into more detail.
+
+=== "Genoa"
+
+    A Genoa node has 8 NUMA domains of 21 cores.
+    The GPUs are in NUMA domains 1 and 7 (RTX PRO 6000), 5 and 7 (H100), or 1, 3, 5 and 7 (L4).
+
+    === "Compute"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-mpi
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --partition        genoa
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      2G
+        #SBATCH --cores-per-socket 21
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+    === "Large memory"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-mpi
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --partition        genoa
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      8G
+        #SBATCH --cores-per-socket 21
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+    === "GPU (RTX PRO 6000)"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-gpu
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --gpus-per-node    pro_6000:1
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      4G
+        #SBATCH --cores-per-socket 21
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+        #SBATCH --gres-flags       enforce-binding
+        #SBATCH --gpu-bind         closest
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+    === "GPU (H100)"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-gpu
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --gpus-per-node    h100:1
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      8G
+        #SBATCH --cores-per-socket 21
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+        #SBATCH --gres-flags       enforce-binding
+        #SBATCH --gpu-bind         closest
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+    === "GPU (L4)"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-gpu
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --gpus-per-node    l4:1
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      8G
+        #SBATCH --cores-per-socket 21
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+        #SBATCH --gres-flags       enforce-binding
+        #SBATCH --gpu-bind         closest
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+=== "Milan"
+
+    Milan compute and large memory nodes have 8 NUMA domains of 16 cores.
+    The A100 80 GB nodes have one processor, split into 4 NUMA domains of 16 cores, with a GPU in each one.
+    The A100 40 GB nodes have 8 NUMA domains of 6 cores, with GPUs in NUMA domains 2, 5 and 6.
+    The A100 batch script only runs on the 80 GB nodes.
+    The NUMA domains on the 40 GB nodes are too small for its 8 tasks, so `--cores-per-socket 16` leaves those nodes out.
+
+    === "Compute"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-mpi
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --partition        milan
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      4G
+        #SBATCH --cores-per-socket 16
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+    === "Large memory"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-mpi
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --partition        milan
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      8G
+        #SBATCH --cores-per-socket 16
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+    === "GPU (A100)"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-gpu
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --gpus-per-node    a100:1
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      8G
+        #SBATCH --cores-per-socket 16
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+        #SBATCH --gres-flags       enforce-binding
+        #SBATCH --gpu-bind         closest
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+=== "Intel"
+
+    The `hugemem` nodes `cl18` and `cl19` have 2 NUMA domains of 20 cores.
+
+    === "Large memory (hugemem)"
+
+        ```sl
+        #!/bin/bash -e
+
+        #SBATCH --job-name         numa-mpi
+        #SBATCH --account          nesi99991
+        #SBATCH --time             01:00:00
+        #SBATCH --partition        hugemem
+        #SBATCH --ntasks           8
+        #SBATCH --cpus-per-task    1
+        #SBATCH --mem-per-cpu      30G
+        #SBATCH --cores-per-socket 20
+        #SBATCH --threads-per-core 1
+        #SBATCH --distribution     *:block:*
+        #SBATCH --mem-bind         local
+
+        export OMP_PROC_BIND=true
+        export OMP_PLACES=cores
+
+        srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+        srun MY_PROGRAM
+        ```
+
+### What the options mean
+
+These options and variables keep each task, its threads and its memory in one NUMA domain.
+
+- `--cores-per-socket` only lets the job run on nodes whose NUMA domains have at least this many cores.
+  It only limits which nodes the job can use, and doesn't change how many cores it gets.
+- `--threads-per-core 1` gives each task a core of its own, without [Simultaneous Multithreading](Simultaneous_Multithreading.md).
+- `--distribution *:block:*` puts tasks on cores next to each other, and fills one NUMA domain before starting on the next.
+  Without it, Slurm puts each task in the next NUMA domain in turn.
+- `--mem-bind local` keeps each task's memory in its own NUMA domain.
+- `OMP_PROC_BIND=true` pins each thread, so the operating system can't move it to another core or NUMA domain.
+- `OMP_PLACES=cores` pins each thread to a whole core.
+  These two only matter if you give each task more than one core with `--cpus-per-task`,
+  as Slurm sets `OMP_NUM_THREADS` to that number.
+
+The GPU batch scripts ask for one GPU.
+These options keep the tasks next to their GPU:
+
+- `--gres-flags enforce-binding` only gives the job cores in the NUMA domain its GPU is attached to.
+  The job may wait longer to start.
+- `--gpu-bind closest` gives each task the GPU in its own NUMA domain.
