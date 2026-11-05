@@ -12,7 +12,7 @@ description: Using Python on the cluster and choosing between system Python and 
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-All versions of Python available on Mahuika platforms are owned and
+All versions of Python available on Mahuika are owned and
 licensed by the Python Software Foundation. Each version is released
 under a specific open-source licence. The licences are available on
 [the Python documentation server](https://docs.python.org).
@@ -59,11 +59,11 @@ Our most recent Python environment modules have:
     ```sl
     #!/bin/bash -e
 
-    #SBATCH --job-name=PythonMPI
+    #SBATCH --job-name      PythonMPI
     #SBATCH --account     nesi99999
-    #SBATCH --ntasks=2          # Number of MPI tasks
-    #SBATCH --time=00:30:00
-    #SBATCH --mem-per-cpu=512MB # Memory per logical CPU
+    #SBATCH --ntasks      2          # Number of MPI tasks
+    #SBATCH --time      00:30:00
+    #SBATCH --mem-per-cpu        512MB # Memory per logical CPU
     
     module load Python
     srun python PythonMPI.py   # Executes ntasks copies of the script
@@ -236,6 +236,8 @@ Python, which are not included with the core Python distribution and
 must be installed separately. Each Python environment module comes with
 its own particular suite of packages, and the system Python has its own
 installed packages.
+
+To compare virtual environments with uv, Conda and containers, see [Reproducible Software](../Reproducible_Software.md).
 
 The provided packages can be listed using
 

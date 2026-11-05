@@ -15,6 +15,7 @@ tags:
 
 uv will manage Python packages including determining dependencies to create virtual environments.
 There are two primary approaches to using uv: [for individual scripts](#using-uv-for-scripts) and [for projects or groups of scripts](#using-uv-for-projects).
+To compare uv with other ways of managing Python packages, see [Reproducible Software](../Reproducible_Software.md).
 
 ## Using uv for scripts
 
