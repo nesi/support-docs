@@ -51,7 +51,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "gpgpu@uoa_foe",
                         "slurm_track": true,
-                        "total": 1,
+                        "total": 0,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -64,7 +64,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "parallel_teaching@uoa_foe",
                         "slurm_track": true,
-                        "total": 4,
+                        "total": 0,
                         "usage_formula": "1",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -77,7 +77,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "abaqus@uoa_foe",
                         "slurm_track": true,
-                        "total": 90,
+                        "total": 0,
                         "usage_formula": "({cpu}**0.422)*5",
                         "use_conditions": "",
                         "visible_on_docs": true
@@ -3614,7 +3614,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_physics",
                         "slurm_track": true,
-                        "total": 2,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "By booking only. Version not greater than 6.2",
                         "visible_on_docs": true
@@ -3648,7 +3648,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_idg",
                         "slurm_track": true,
-                        "total": 1,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 5.4",
                         "visible_on_docs": true
@@ -3681,7 +3681,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foe",
                         "slurm_track": true,
-                        "total": 6,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 5.5",
                         "visible_on_docs": true
@@ -3714,7 +3714,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uoa_foes",
                         "slurm_track": true,
-                        "total": 3,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.4",
                         "visible_on_docs": true
@@ -3747,7 +3747,7 @@
                         "slurm_soak": true,
                         "slurm_token_name": "comsol@uoa_foe_des_rc",
                         "slurm_track": true,
-                        "total": 1,
+                        "total": 0,
                         "usage_formula": "1",
                         "use_conditions": "Version not greater than 5.6",
                         "visible_on_docs": true
@@ -3813,7 +3813,7 @@
                         "slurm_soak": false,
                         "slurm_token_name": "comsol@uc",
                         "slurm_track": true,
-                        "total": 10,
+                        "total": 0,
                         "usage_formula": "{node}",
                         "use_conditions": "Version not greater than 6.3",
                         "visible_on_docs": true
@@ -7788,7 +7788,7 @@
         "network_licences": [],
         "default": "2022",
         "default_type": "latest",
-        "last_updated": 1793762941,
+        "last_updated": 1794194631,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GOLD/2022.lua",
         "force_hide": false,
@@ -20882,8 +20882,7 @@
             "4.1.5-intel-2022a",
             "5.0.0-beta1-foss-2023a",
             "5.0.0-foss-2023a",
-            "5.4.2-foss-2023a",
-            "5.4.2-foss-2026"
+            "5.4.2-foss-2023a"
         ],
         "admin_list": [
             {
@@ -20891,11 +20890,11 @@
             }
         ],
         "network_licences": [],
-        "default": "5.4.2-foss-2026",
+        "default": "5.4.2-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1791249474,
+        "last_updated": 1793142729,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Siesta/5.4.2-foss-2026.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Siesta/5.4.2-foss-2023a.lua",
         "force_hide": false,
         "force_show": false
     },
