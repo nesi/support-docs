@@ -7788,7 +7788,7 @@
         "network_licences": [],
         "default": "2022",
         "default_type": "latest",
-        "last_updated": 1794194631,
+        "last_updated": 1794194967,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GOLD/2022.lua",
         "force_hide": false,
