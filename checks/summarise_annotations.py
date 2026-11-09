@@ -18,6 +18,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 MAX_ROWS_PER_FILE = 30
 MAX_MESSAGE_LENGTH = 300
@@ -27,9 +28,11 @@ ANNOTATION = re.compile(r"^::(error|warning|notice)(?: (.*?))?::(.*)$", re.IGNOR
 RUN_URL = "{GITHUB_SERVER_URL}/{GITHUB_REPOSITORY}/actions/runs/{GITHUB_RUN_ID}".format_map(os.environ) \
     if os.getenv("GITHUB_RUN_ID") else None
 CHECKS_TAB = f"[Checks tab]({RUN_URL})" if RUN_URL else "'Checks' tab"
-# Files as of the checked commit, so line numbers match what the checks saw.
-BLOB_URL = "{GITHUB_SERVER_URL}/{GITHUB_REPOSITORY}/blob/{GITHUB_SHA}".format_map(os.environ) \
-    if os.getenv("GITHUB_SHA") else None
+# Files on the branch being checked (not the commit), so GitHub's edit button works. The PR comment is
+# rewritten on every push, so line numbers stay in step. HEAD_REPO is the fork for PRs from forks.
+BRANCH = os.getenv("GITHUB_HEAD_REF") or os.getenv("GITHUB_REF_NAME")
+BLOB_URL = f"{os.getenv('GITHUB_SERVER_URL')}/{os.getenv('HEAD_REPO') or os.getenv('GITHUB_REPOSITORY')}\
+/blob/{quote(BRANCH)}" if BRANCH else None
 
 
 def changed_lines(base):

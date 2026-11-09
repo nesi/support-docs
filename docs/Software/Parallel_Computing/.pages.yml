@@ -1,4 +1,6 @@
 ---
 nav:
  - Parallel_Computing.md
+ # Also listed under Batch Computing. A nav path that is not in this folder is resolved from docs/.
+ - Job Arrays: Batch_Computing/Job_Arrays.md
  - "*"

@@ -8,7 +8,7 @@ description: Setting up WinSCP and PuTTY on Windows to connect to and copy files
 ---
 
 !!! prerequisite
-     -   Have an [active account and project.](../Creating_an_Account.md)
+     -   Have an [active account and project.](../Getting_Started_Overview.md)
      -   Be using the Windows operating system.
 
 WinSCP is an SCP client for windows implementing the SSH protocol from
@@ -17,12 +17,12 @@ PuTTY.
 1. [Download WinSCP](https://winscp.net/eng/download.php).
 
 2. Upon startup:
-    ![WinSCP1.png](../../assets/images/WinSCP-PuTTY_Setup_Windows.png)
+    ![WinSCP login screen](../../assets/images/WinSCP-PuTTY_Setup_Windows.png)
 
 3. Add a *New Site* and set:
 
     - Enter *Host Name:* `login.hpc.nesi.org.nz`.
-    - Enter your NeSI account username into the *User name:* field
+    - Enter your Mahuika username into the *User name:* field
 
 !!! tip
     For "file protocol" (the topmost drop-down menu), either SCP or SFTP
@@ -30,37 +30,37 @@ PuTTY.
     slow or flaky Internet connection, you may find that SFTP performs
     better than SCP. Feel free to try both and see which works best for
     you.
-   
-![WinSCP2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
-5. Open Advanced Settings.
+![Highlighting advanced options on WinSCP login screen](../../assets/images/WinSCP-PuTTY_Setup_Windows_0.png)
 
-    ![WinSCP3.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
+1. Open Advanced Settings.
 
-6. Navigate to *Connection & Tunnel* and set:
+    ![WinSCP advanced settings menu](../../assets/images/WinSCP-PuTTY_Setup_Windows_1.png)
+
+2. Navigate to *Connection & Tunnel* and set:
     - Enable "Connect through SSH tunnel".
     - Under "Host name:" enter lander.hpc.nesi.org.nz
     - Under "User name:" enter your username.
-7. *OK &gt; Save*
+3. *OK &gt; Save*
 
 !!! note
     When logging in to the cluster using WinSCP the authentication link is clickable. You do not need to enter anything in the text box under the authentication link.
 
 ## Setup for PuTTY Terminal
 
-The default WinSCP terminal is very basic. We
+The default WinSCP terminal is basic. We
 recommend you use the PuTTY terminal instead.
 
 1. [Download PuTTY](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html) and install.
 
 2. In WinSCP open 'Options &gt; Preferences'
 
-![WinSCP2-5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
+![WinSCP preferences options](../../assets/images/WinSCP-PuTTY_Setup_Windows_2.png)
 
-3. Under *Integration &gt; Applications* enable *Remember session
+1. Under *Integration &gt; Applications* enable *Remember session
 password and pass it to PuTTY*
 
-![WinSCP4.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
+![WinSCP setting to open in PuTTY](../../assets/images/WinSCP-PuTTY_Setup_Windows_3.png)
 
 ## Setup for Xming (Optional)
 
@@ -73,36 +73,36 @@ SSH Client' is selected).
 2\. Under *Integration &gt; Applications* and add -X after
 PuTTY/Terminal client path.
 
-*![WinSCP6.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_4.png)*
+*![Providing path to PuTTY to WinSCP](../../assets/images/WinSCP-PuTTY_Setup_Windows_4.png)*
 
 3\. Restart your session.
 !!! prerequisite Important
      In order for X11 forwarding to work you must have an Xming server
-     running before connecting to the HPC.
+     running before connecting to Mahuika.
 
 ## Usage
 
 Files can be dragged, dropped and modified in the WinSCP GUI just like
 in any windows filesystem.
 
-![WinSCP5.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_5.png)
+![WinSCP directory path](../../assets/images/WinSCP-PuTTY_Setup_Windows_5.png)
 
-![putTerm.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_6.png) Will
+![PuTTY terminal icon](../../assets/images/WinSCP-PuTTY_Setup_Windows_6.png) Will
 open a **PuTTY terminal**. Assuming you followed the steps setting up
 PuTTY, this should automatically enter your details.
 
-![winTerm.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_7.png) Will
+![Terminal icon](../../assets/images/WinSCP-PuTTY_Setup_Windows_7.png) Will
 open the default **WinSCP terminal**. While the functionality is
 identical to any other terminal the interface is slightly abstracted,
 with a separate window for input and command history drop-down.
 
-![winAdd.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_8.png) Type
+![Directory icon](../../assets/images/WinSCP-PuTTY_Setup_Windows_8.png) Type
 here to **change directory**. The GUI doesn't follow your current
 terminal directory like MobaXterm so must be changed
 manually. (Recommend making this larger as the default is hard to
 type in).
 
-![winBook.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
+![Directory bookmark icon](../../assets/images/WinSCP-PuTTY_Setup_Windows_9.png) **Bookmark**
 current directory.
 
 ### Troubleshooting
@@ -114,20 +114,21 @@ Occasionally this can lead to an excessive number of prompts. Limiting
 number of tunnels will reduce the number of times you are prompted.
 
 1. Open settings
-    ![winscp\_settings.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png)
+    ![WinSCP settings](../../assets/images/WinSCP-PuTTY_Setup_Windows_10.png)
 
 2. Under 'Transfer' -&gt; 'Background', set the 'Maximal number of
 transfers at the same time' to '1' and un-tick 'Use multiple connections
 for a single transfer'.
 
-![winscp\_Settings2.png](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png)
+![WinSCP reduce maximal transfers settings](../../assets/images/WinSCP-PuTTY_Setup_Windows_11.png)
 
 !!! warning
-    Transfer Mode: There are known issues using the default Automatic transfer mode. Some files, including 
-    source code files (aka text files), can be transferred with erroneous line endings. This will cause 
-    scripts or jobs to fail. If you see extra ^M characters in your files (easily seen with the cat -v 
-    command, this means your files have been transferred incorrectly. A workaround that sometimes works 
-    is to switch the WinSCP transfer mode to Binary
+    Transfer Mode: There are known issues using the default Automatic transfer mode.
+    Some files, including source code files (aka text files), can be transferred with erroneous line endings.
+    This will cause scripts or jobs to fail.
+    If you see extra ^M characters in your files (easily seen with the cat -v command),
+    this means your files have been transferred incorrectly.
+    A workaround that may work is to switch the WinSCP transfer mode to Binary
 
     We recommend using a different file transfer client.
 

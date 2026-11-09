@@ -8,7 +8,7 @@ Retrieves dynamically generated content from external sources.
 
 Currently retrieves:
 
-- Software module list from [modules-list](https://github.com/nesi/modules-list).
+- Software module list and Slurm limits from [modules-list](https://github.com/nesi/modules-list).
 - Glossary, spellcheck dictionary and snippets from [nesi-wordlist](https://github.com/nesi/nesi-wordlist)
 
 - The training calendar and the software updates feed.

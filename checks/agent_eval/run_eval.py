@@ -48,7 +48,7 @@ VENV_BIN = REPO / ".venv" / "bin"
 FORBIDDEN_IN_DOCS = [
     "docs/CONTRIBUTING.md", "docs/PRINCIPLES.md", "docs/FORMAT.md", "docs/NEWPAGE.md", "docs/MACROS.md",
     "docs/assets/glossary/*",
-    "docs/assets/module-list.json", "docs/software_updates.xml", "docs/assets/tag-index.json",
+    "docs/assets/module-list.json", "docs/assets/slurm-limits.json", "docs/software_updates.xml", "docs/assets/tag-index.json",
     "docs/assets/training_calendar.ics",
 ]
 # Changes the agent may make outside docs/ without it counting as a violation (build and check output).

@@ -2,6 +2,9 @@ matrix:
 - name: Markdown
   aspell:
     lang: en
+    # British -ise spelling, the closest aspell has to NZ English (docs/PRINCIPLES.md).
+    # Plain `en` accepted US spellings too.
+    d: en_GB-ise
     ignore-case: true
   dictionary:
     wordlists:
@@ -57,6 +60,7 @@ matrix:
       ignores:
       - code
       - pre
+      - kbd
   sources:
   - 'docs/**/*.md'
   default_encoding: utf-8

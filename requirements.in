@@ -1,31 +1,22 @@
 # documentation generation
 mkdocs < 2.0 # See https://fpgmaas.com/blog/collapse-of-mkdocs/
-mkdocs-section-index
-mkdocs-bootstrap4
 mkdocs-material
-mkdocs-spellcheck
 mkdocs-simple-hooks
 mkdocs-rss-plugin
 mkdocs-macros-plugin
-mkdocs-rss-plugin
 mkdocs-open-in-new-tab
-mkdocs-git-authors-plugin
 mkdocs-git-revision-date-localized-plugin
 mkdocs-redirects @ git+https://github.com/CallumWalley/mkdocs-redirects.git@map_file
 mkdocs-awesome-nav
-mkdocs_quiz @ git+https://github.com/CallumWalley/mkdocs-quiz.git@fix-template-override
+mkdocs_quiz @ git+https://github.com/CallumWalley/mkdocs-quiz.git@fix-feedback-colour
 mkdocs-llmstxt
 
 # checkers
-neoteroi-mkdocs
 codespell
 
 # calendar fetching
 requests
-icalendar
 proselint
-linkcheckmd
-symspellpy
 pyspelling
 flashtext
 titlecase

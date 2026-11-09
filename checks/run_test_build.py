@@ -52,6 +52,15 @@ def parse_macro(record):
     # These are not useful messages
     if record.name == "mkdocs.commands.build":
         return False
+    # The omitted-pages message lists every page on its own line, but GitHub annotations only show the first line
+    # and file it against nav.py. Report one notice per page instead, filed against that page.
+    if record.name == "mkdocs.structure.nav" and record.msg.startswith("The following pages exist in the docs directory"):
+        level = "NOTICE" if record.levelname == "INFO" else record.levelname
+        for page in re.findall(r"^  - (.+)$", record.msg, re.MULTILINE):
+            print(f"::{level} file=docs/{page},title=not_in_nav,col=0,endColumn=0,line=0::"
+                  f"'{page}' is not in the nav, so readers can only reach it by a link or search.")
+            msg_count[level] = msg_count.get(level, 0) + 1
+        return False
     # A dirty build only renders changed pages, so llmstxt warns about every other page in its sections.
     if DIRTY and record.name.startswith("mkdocs.plugins.mkdocs_llmstxt") and "not found in the generated pages" in record.msg:
         return False

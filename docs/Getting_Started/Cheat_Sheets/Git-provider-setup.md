@@ -6,17 +6,12 @@ title: 'Git Hosting Platform Setup'
 description: Authenticating to GitHub, GitLab, Bitbucket or Gitea from the cluster
 ---
 
-## Description
-
-Source Code Hosting Platforms such as GitLab, GitHub, Bitbucket and Gitea are primarily used for managing and collaborating on software development projects using the Git version control system.  Some of these platforms also offer other services such as DevOps pipelines, CI/CD, etc. 
-
-## Authentication
+Source Code Hosting Platforms such as GitLab, GitHub, Bitbucket and Gitea are primarily used for managing and collaborating on software development projects using the Git version control system. Some of these platforms also offer other services such as DevOps pipelines, CI/CD, etc.
 
 In order to pull from a private repo, or push changes to a remote, you
 need to authenticate yourself on the cluster.
 
->Most Git remote cloud services such as GitLab or GitHub removed support for password authentication.  Using a SSH public key is now the easiest way to set up authentication.
-
+>Most Git remote cloud services such as GitLab or GitHub removed support for password authentication. Using a SSH public key is now the easiest way to set up authentication.
 
 We will use GitHub as the example but the basic setup should be similar in other git services. For details, here are instructions to SSH public key setup for common Git cloud providers:
 
@@ -30,7 +25,7 @@ We will use GitHub as the example but the basic setup should be similar in other
     ssh-keygen -t ed25519 -C "your_github_account@example.com"
     ```
 
-- When prompted for a file name, press `enter`. When prompted for a password, press enter twice more.
+- When prompted for a filename, press `enter`. When prompted for a password, press enter twice more.
 
 - Open up the newly created .pub key with the command
 
@@ -57,7 +52,7 @@ We will use GitHub as the example but the basic setup should be similar in other
 
     ![SSH Key button](../../assets/images/Git-Reference_Sheet_0.png)
 
-- In the "Title" field, put "Mahuika" or "REANNZ HPC".
+- In the "Title" field, put "Mahuika".
 
 - Paste your key into the "Key" field.
 
@@ -78,4 +73,3 @@ We will use GitHub as the example but the basic setup should be similar in other
     ```out
     Hi User! You've successfully authenticated, but GitHub does not provide shell access.
     ```
-

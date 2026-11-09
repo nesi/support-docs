@@ -2,18 +2,15 @@
 created_at: '2019-06-25T22:40:46Z'
 tags:
 - access
-- version_control
 description: The ways to reach the cluster, from a web browser through to a terminal over SSH
 ---
 
 !!! prerequisite
-    -  Have an [active account and project](../Creating_an_Account.md).
+    -  Have an [active account and project](../Getting_Started_Overview.md).
 
 Before you can start submitting work you will need to connect to the cluster. This is done by establishing a connection using a web browser (easy) or a command-line terminal and SSH (more advanced).
 
-## Web Browser (Recommended)
-
-### Mahuika OnDemand
+## Web Browser (Recommended) - Mahuika OnDemand
 
 __OnDemand__ is a service providing access to Jupyter Notebooks, RStudio, VSCode, a Virtual Desktop, a terminal and other applications, allowing you to utilise cluster resources via the browser.
 
@@ -87,10 +84,10 @@ primary terminal.
 ### WinSCP
 
 WinSCP has some advantages over MobaXterm: customisable, cleaner
-interface, open source, and some disadvantages: known file transfer 
-issues. no built in X-server, additional authentication step. 
+interface, open source, and some disadvantages: known file transfer
+issues. no built in X-server, additional authentication step.
 
-WinSCP setup is more involved than MobaXterm, therefore we **do not** recommend it
+WinSCP setup is more involved than MobaXterm, therefore we __do not__ recommend it
 for new users.
 
 !!! tip "What next?"

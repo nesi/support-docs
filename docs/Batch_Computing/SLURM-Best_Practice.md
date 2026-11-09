@@ -74,6 +74,5 @@ job array in a single command)
 
 ## Fairshare
 
-A low fairshare score will affect your jobs priority in the queue, learn
-more about how to effectively use your allocation,
-[Fair Share](Fair_Share.md).
+A low Fairshare score lowers your jobs' priority in the queue.
+To keep it high, see [Fairshare](Fairshare.md).

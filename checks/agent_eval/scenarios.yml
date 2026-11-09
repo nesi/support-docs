@@ -42,7 +42,7 @@
   rubric:
     good: >-
       Reads the docstring of checks/fix_support_mailto_link.py, runs it (or makes the same change by hand), handles or
-      flags any mailto links with ?subject=, and reruns the meta check.
+      flags any mailto links with ?subject=, and reruns the prose check.
     red_flags: Writes raw mailto links, edits the include partial, or edits the fixer script.
 
 - id: A4
