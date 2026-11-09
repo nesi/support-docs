@@ -104,9 +104,9 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
 ```
 
 ??? tip "Filtering `sacct` output."
-    All accounts have the same settings for `sacct` initially, but you can make changes to what you are seeing.
+    By default `sacct` shows all jobs owned by you in any state since midnight, however you can change this with flags.
 
-    Here are some `sacct` options you may find helpful:
+    Here are some `sacct` flags you may find helpful:
 
     | Option                 | Example                                                                   | Description                                                   |
     | ---------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------- |
@@ -120,9 +120,12 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
     | `--state`<br>`-s`      | `--state=COMPLETED`                                                       | Filter jobs based on their state (must use with `-S`,`-E`). |
 
 ??? tip "Changing `sacct` fields"
-    There is an additional flag called `--format`/`-o` that lets you change what information is shown about each job.
-    The default option for this is set via the `SACCT_FORMAT` environmental variable, but you can override it using the `-o` option.
-    Here are some of the fields you can request to see:
+
+    The `sacct` flag `--format`/`-o` lets you change what information is shown about each job.
+
+    You can perminantly change your `sacct` fields by setting `SACCT_FORMAT` in your `~/.bashrc`.
+
+    Here are some of the fields you may find helpful:
 
     | Field | Description |
     | ----- | ------- |
@@ -147,7 +150,7 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
     | `User` | The username of the user who ran the job. |
     | `WorkDir` | The directory used by the job to execute commands. |
 
-    You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html).
+    You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html), or by running `man sacct`.
 
 ### `seff`
 
