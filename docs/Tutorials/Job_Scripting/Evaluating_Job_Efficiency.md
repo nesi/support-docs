@@ -103,23 +103,23 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
 9296168.ext+     extern   00:29:10                         00:00:00  8  1             COMPLETED
 ```
 
-!!! tip "Changing what `sacct` shows you by default"
+??? tip "Filtering `sacct` output."
     All accounts have the same settings for `sacct` initially, but you can make changes to what you are seeing.
 
     Here are some `sacct` options you may find helpful:
 
-    |   Option    |       Example                 |         Description                                       |
-    | -------------- | ----------------------------------- | --------------------------------------------------------------- |
-    | `--starttime`/`-S`   | `--starttime=today`          | Select jobs in any state after the given time. |
-    | `--endtime`/`-E`    | `--endtime=now-2hours`       | Select jobs in any state before the given time. |
-    | `--jobs`/`-j`        | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}`               | Display only the given job(s) or job step(s). |
-    | `--long`/`-l`  | `--long`         | Includes all possible fields for the format                                        |
-    | `--name`     | `--name=pipeline`    | Display jobs that have any of these name(s)                          |
-    | `--parsable`/`-p`  | `--parsable`           | Output will be "|" delimited with a "|" at the end. |
-    | `--parsable2`/`-P`  | `--parsable2`           | Output will be '|' delimited without a '|' at the end. |
-    | `--state`/`-s` | `--state=COMPLETED`              |   Selects jobs based on their state during the time period given.      |
-    | `--user`/`-u` | `--user=$USER`  | Display jobs for the user(s) specified |
+    | Option                 | Example                                                                   | Description                                                   |
+    | ---------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------- |
+    | `--starttime`<br>`-S`  | `--starttime=today`                                                       | Filters jobs to after a given start time.                          |
+    | `--endtime`<br>`-E`    | `--endtime=now-2hours`                                                    | Filters jobs to before a given end time.                                |
+    | `--jobs`<br>`-j`       | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}` | Display only the given job(s) or job step(s).                 |
+    | `--long`<br>`-l`       | `--long`                                                                  | Includes all possible fields for the format                   |
+    | `--name`               | `--name=pipeline`                                                         | Display jobs that have any of these name(s)                   |
+    | `--parsable`<br>`-p`   | `--parsable`                                                              | Output will be machine readable.                              |
+    | `--noheader` <br> `-n` | `--noheader`                                                              | Removes table header from output (useful with `-p`)            |
+    | `--state`<br>`-s`      | `--state=COMPLETED`                                                       | Filter jobs based on their state (must use with `-S`,`-E`). |
 
+??? tip "Changing `sacct` fields"
     There is an additional flag called `--format`/`-o` that lets you change what information is shown about each job.
     The default option for this is set via the `SACCT_FORMAT` environmental variable, but you can override it using the `-o` option.
     Here are some of the fields you can request to see:
@@ -137,11 +137,9 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
     | `NNodes` | Number of nodes in a job or step. |
     | `NodeList` | List of nodes in job/step. |
     | `NTasks` | Total number of tasks in a job or step. |
-    | `Partition` | Identifies the partition on which the job ran. |
     | `ReqCPUS` | Number of requested CPUs. |
     | `ReqMem` | Minimum required memory for the job. |
     | `ReqNodes` | Requested minimum Node count for the job/step. |
-    | `Restarts` | How many times this job has been requeued/restarted. |
     | `Start` | Initiation time of the job. |
     | `State` | Displays the job status, or state. |
     | `Submit` | The time the job was submitted |
