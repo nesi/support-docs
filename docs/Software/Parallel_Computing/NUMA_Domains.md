@@ -57,10 +57,11 @@ and the link between the sockets does the job of the footbridge.
 A Genoa node has 2 sockets of 84 cores.
 Each socket is split into 4 NUMA domains, so the node has 8 NUMA domains with 21 cores each.
 The memory is shared out evenly between them.
-On a node with 384 GB, each NUMA domain has about 47 GB, after a little is kept back for the operating system.
+On a node with 384 GB, jobs can use about {{ slurm_limits.cpu_nodes.genoa.memory_per_numa_domain_gb | round | int }} GB in each NUMA domain,
+as a little is kept back for the operating system.
 
 Milan nodes are split the same way, into 8 NUMA domains, but with 16 cores in each.
-On a Milan node with 512 GB, each NUMA domain has about 63 GB.
+On a Milan node with 512 GB, jobs can use about {{ slurm_limits.cpu_nodes.milan.memory_per_numa_domain_gb | round | int }} GB in each NUMA domain.
 
 ![A Milan node laid out the same way. Two sockets of 64 cores are joined by a socket link. Each socket is split into four NUMA domains, numbered 0 to 7, and each NUMA domain has 16 cores and its own memory.](../../assets/images/NUMA_Domains_Milan_Node.svg)
 
@@ -68,27 +69,26 @@ On a Milan node with 512 GB, each NUMA domain has about 63 GB.
 
 The table below lists every type of node. [Hardware](../../Batch_Computing/Hardware.md) has more about each one.
 
+{% macro size(gb) %}{% if gb >= 1000 %}{{ (gb / 1024) | round(1) }} TB{% else %}{{ gb | round | int }} GB{% endif %}{% endmacro %}
+{% set gpu_names = {"pro_6000": "RTX PRO 6000", "h100": "H100", "l4": "L4", "a100": "A100"} %}
 <table>
     <thead>
-        <tr><th>Node type</th><th>Processors</th><th>Cores</th><th>Memory</th><th>NUMA domains</th><th>Cores per domain</th><th>Memory per domain</th></tr>
+        <tr><th>Partition</th><th>GPUs</th><th>Cores</th><th>Memory</th><th>NUMA domains</th><th>Cores per domain</th><th>Memory per domain</th></tr>
     </thead>
     <tbody>
-        <tr><td>Genoa compute</td><td>2 x AMD Genoa 9634</td><td>168</td><td>384 GB</td><td>8</td><td>21</td><td>~47 GB</td></tr>
-        <tr><td>Genoa GPU (RTX PRO 6000)</td><td>2 x AMD Genoa 9634</td><td>168</td><td>768 GB</td><td>8</td><td>21</td><td>~94 GB</td></tr>
-        <tr><td>Genoa GPU (H100 or L4)</td><td>2 x AMD Genoa 9634</td><td>168</td><td>1536 GB</td><td>8</td><td>21</td><td>~189 GB</td></tr>
-        <tr><td>Genoa large memory</td><td>2 x AMD Genoa 9634</td><td>168</td><td>1536 GB</td><td>8</td><td>21</td><td>~189 GB</td></tr>
-        <tr><td style="border-top: .25rem double">Milan compute</td><td style="border-top: .25rem double">2 x AMD Milan 7713</td><td style="border-top: .25rem double">128</td><td style="border-top: .25rem double">512 GB</td><td style="border-top: .25rem double">8</td><td style="border-top: .25rem double">16</td><td style="border-top: .25rem double">~63 GB</td></tr>
-        <tr><td>Milan large memory</td><td>2 x AMD Milan 7713</td><td>128</td><td>1024 GB</td><td>8</td><td>16</td><td>~126 GB</td></tr>
-        <tr><td>Milan GPU (A100 80 GB), <code>mg13</code> to <code>mg16</code></td><td>1 x AMD Milan 7713P</td><td>64</td><td>512 GB</td><td>4</td><td>16</td><td>~126 GB</td></tr>
-        <tr><td>Milan GPU (A100 40 GB), <code>mg17</code> to <code>mg19</code></td><td>2 x AMD Milan 7413</td><td>48</td><td>512 GB</td><td>8</td><td>6</td><td>~63 GB</td></tr>
-        <tr><td style="border-top: .25rem double">Intel large memory (<code>hugemem</code>), <code>cl18</code> and <code>cl19</code></td><td style="border-top: .25rem double">2 x Intel Xeon Gold 6230</td><td style="border-top: .25rem double">40</td><td style="border-top: .25rem double">1.5 TB</td><td style="border-top: .25rem double">2</td><td style="border-top: .25rem double">20</td><td style="border-top: .25rem double">~755 GB</td></tr>
-        <tr><td>Intel large memory (<code>hugemem</code>), <code>cl17</code></td><td>4 x Intel Xeon Gold 6238M</td><td>88</td><td>6 TB</td><td>4</td><td>22</td><td>~1.5 TB</td></tr>
+{%- for partition in ["genoa", "milan", "hugemem"] %}
+{%- for t in slurm_limits.nodes | sort(attribute="memory_gb") if partition in t.partitions %}
+{%- set td = '<td style="border-top: .25rem double">' if loop.first and partition != "genoa" else "<td>" %}
+        <tr>{{ td }}<code>{{ partition }}</code></td>{{ td }}{% for g, n in t.gpus | dictsort %}{{ n }} x {{ gpu_names.get(g, g) }}{% for f in t.features if f.startswith(g ~ "_") %} (<code>{{ f }}</code>){% endfor %}{% else %}-{% endfor %}</td>{{ td }}{{ t.cores }} ({{ t.usable_cores }})</td>{{ td }}{{ size(t.memory_gb) }}</td>{{ td }}{{ t.numa_domains }}</td>{{ td }}{{ t.cores_per_numa_domain }} ({{ t.usable_cores_per_numa_domain }})</td>{{ td }}{{ size(t.memory_per_numa_domain_gb) }}</td></tr>
+{%- endfor %}
+{%- endfor %}
     </tbody>
 </table>
 
-Memory is the memory installed, as on the Hardware page.
-Each NUMA domain has a little less than an even share of it, because some is kept back for the operating system.
-Slurm also keeps 2 cores on each node for the system, so on a Genoa node, for example, jobs can use 166 of the 168 cores.
+Memory is what jobs can use, which is a little less than the memory installed, as some is kept back for the operating system.
+Slurm also keeps a few cores on each node for the system.
+They come out of one or two NUMA domains, which then have fewer cores for jobs.
+The numbers in brackets are the cores jobs can use: in the whole node, and in the NUMA domain with the fewest.
 
 ## Your desktop and Mahuika
 
@@ -182,7 +182,7 @@ Earlier on this page, a socket is the part of a node that holds one processor ch
 A Genoa node has 2 sockets, each with 84 cores split into 4 NUMA domains.
 
 Slurm uses the word differently on Mahuika.
-It treats each NUMA domain as a socket, so it shows a Genoa node as 8 sockets of 21 cores, rather than 2 sockets of 84.
+It treats each NUMA domain as a socket, so it shows a Genoa node as {{ slurm_limits.cpu_nodes.genoa.numa_domains }} sockets of {{ slurm_limits.cpu_nodes.genoa.cores_per_numa_domain }} cores, rather than 2 sockets of 84.
 So when a Slurm option or Slurm's output mentions sockets, it means NUMA domains.
 For example, `--cores-per-socket 21` in the batch scripts below asks for a node whose NUMA domains have at least 21 cores.
 
