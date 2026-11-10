@@ -213,25 +213,49 @@
     return html;
   }
 
-  function renderSources(sources) {
+  // `indices` are 0-based positions in `sources`; each keeps its original [n].
+  function renderSources(sources, indices) {
     const details = document.createElement("details");
     details.className = "chat-sources";
 
     details.innerHTML =
-      `<summary>${sources.length} sources</summary>` +
-      sources
-        .map(
-          (s, i) =>
-            `<a href="${escapedUrl(s.url)}">[${i + 1}] ${escapeHtml(s.title)} — ${escapeHtml(s.heading)}</a>`
-        )
+      `<summary>${indices.length} source${indices.length === 1 ? "" : "s"}</summary>` +
+      indices
+        .map(i => {
+          const s = sources[i];
+          return `<a href="${escapedUrl(s.url)}">[${i + 1}] ${escapeHtml(s.title)} — ${escapeHtml(s.heading)}</a>`;
+        })
         .join("");
 
     return details;
   }
 
-  // `showSources` is false for all but the last bubble of a multi-part answer:
-  // every bubble still links its [n] citations, but the list goes on the last.
-  function appendMessage(role, content, sources, showSources = true) {
+  // Which sources to list under each bubble of an answer: the ones that bubble
+  // cites, plus any source no bubble cites on the last one. A single-bubble
+  // answer therefore lists every source.
+  function sourcesPerPart(parts, sources) {
+    if (!sources?.length) return parts.map(() => []);
+
+    const cited = parts.map(part => {
+      const text = part.replace(CODE_BLOCK_RE, "").replace(INLINE_CODE_RE, "");
+      const found = new Set();
+      for (const [, n] of text.matchAll(CITATION_RE)) {
+        if (sources[n - 1]) found.add(n - 1);
+      }
+      return found;
+    });
+
+    const uncited = sources.map((_, i) => i).filter(i => !cited.some(set => set.has(i)));
+    uncited.forEach(i => cited.at(-1).add(i));
+
+    return cited.map(set => [...set].sort((a, b) => a - b));
+  }
+
+  function appendSources(el, sources, indices) {
+    if (indices?.length) el.append(renderSources(sources, indices));
+  }
+
+  function appendMessage(role, content, sources, sourceIndices) {
     const el = document.createElement("div");
     if (role === "user") {
       el.className = "chat-msg chat-msg-user";
@@ -239,7 +263,7 @@
     } else {
       el.className = "chat-msg chat-msg-bot";
       el.innerHTML = render(content, sources);
-      if (showSources && sources?.length) el.append(renderSources(sources));
+      appendSources(el, sources, sourceIndices);
     }
     messages.append(el);
     return el;
@@ -264,7 +288,8 @@
     for (const m of history) {
       // Multi-part answers (see "break" in streamChat) restore as separate bubbles.
       const parts = Array.isArray(m.parts) ? m.parts : [m.content];
-      parts.forEach((part, i) => appendMessage(m.role, part, m.sources, i === parts.length - 1));
+      const perPart = sourcesPerPart(parts, m.sources);
+      parts.forEach((part, i) => appendMessage(m.role, part, m.sources, perPart[i]));
     }
   }
 
@@ -459,6 +484,7 @@
     // One entry per bubble. A "break" event only marks that the next token
     // starts a new bubble, so a trailing break never leaves an empty one.
     const parts = [""];
+    const bubbles = [botMsg];
     let breakPending = false;
 
     try {
@@ -469,6 +495,7 @@
             breakPending = false;
             parts.push("");
             botMsg = appendMessage("assistant", "");
+            bubbles.push(botMsg);
           }
           parts[parts.length - 1] += text;
           botMsg.innerHTML = render(parts.at(-1), src);
@@ -476,7 +503,8 @@
         () => { breakPending = Boolean(parts.at(-1).trim()); }
       );
 
-      if (sources.length) keepScrolled(() => botMsg.append(renderSources(sources)));
+      const perPart = sourcesPerPart(parts, sources);
+      keepScrolled(() => bubbles.forEach((el, i) => appendSources(el, sources, perPart[i])));
 
       // `content` (all parts joined) is what goes back to the API as history;
       // `parts` is only used to restore the bubbles on reload.
