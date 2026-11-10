@@ -167,7 +167,8 @@
 }
 .chat-copy-btn:hover { opacity: 1; color: var(--md-accent-fg-color); }
 .chat-copy-btn--done { color: var(--md-default-fg-color) !important; opacity: 1; }
-.chat-cite { color: var(--md-accent-fg-color); font-weight: 700; cursor: pointer; }
+.chat-cite { font-weight: 700; }
+.chat-cite a { color: var(--md-accent-fg-color); text-decoration: none; }
 .chat-error { color: var(--chat-error-color); }
 .chat-thinking { color: var(--md-default-fg-color--light); font-style: italic; }
 

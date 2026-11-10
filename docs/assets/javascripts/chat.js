@@ -48,7 +48,12 @@
   const safeUrl = (u) =>
     /^https?:\/\//i.test(u || "") ? u : "#";
 
-  const escapedUrl = (u) => escapeHtml(safeUrl(u));
+  const PROD_SITE_URL = "https://docs.nesi.org.nz/";
+  const siteRoot = () => window.__md_scope?.href || PROD_SITE_URL;
+  const localUrl = (u) =>
+    u.startsWith(PROD_SITE_URL) ? siteRoot() + u.slice(PROD_SITE_URL.length) : u;
+
+  const escapedUrl = (u) => escapeHtml(localUrl(safeUrl(u)));
 
   const svgIcon = (path) =>
     `<svg viewBox="0 -960 960 960" fill="currentColor" aria-hidden="true"><path d="${path}"/></svg>`;
@@ -56,7 +61,7 @@
   const ROBOT_ICON = svgIcon("M160-360q-50 0-85-35t-35-85q0-50 35-85t85-35v-80q0-33 23.5-56.5T240-760h120q0-50 35-85t85-35q50 0 85 35t35 85h120q33 0 56.5 23.5T800-680v80q50 0 85 35t35 85q0 50-35 85t-85 35v160q0 33-23.5 56.5T720-120H240q-33 0-56.5-23.5T160-200v-160Zm242.5-97.5Q420-475 420-500t-17.5-42.5Q385-560 360-560t-42.5 17.5Q300-525 300-500t17.5 42.5Q335-440 360-440t42.5-17.5Zm240 0Q660-475 660-500t-17.5-42.5Q625-560 600-560t-42.5 17.5Q540-525 540-500t17.5 42.5Q575-440 600-440t42.5-17.5ZM320-280h320v-80H320v80Zm-80 80h480v-480H240v480Zm240-240Z");
   const MAXIMIZE_ICON = svgIcon("M120-120v-320h80v184l504-504H520v-80h320v320h-80v-184L256-200h184v80H120Z");
   const MINIMIZE_ICON = svgIcon("m136-80-56-56 264-264H160v-80h320v320h-80v-184L136-80Zm344-400v-320h80v184l264-264 56 56-264 264h184v80H480Z");
-  const NEW_CHAT_ICON = svgIcon("M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z");
+  const CLEAR_ICON = svgIcon("M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z");
   const CLOSE_ICON = svgIcon("m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z");
 
   const CODE_BLOCK_RE = /```(\w*)\n([\s\S]*?)```/g;
@@ -86,13 +91,13 @@
   win.innerHTML = `
     <div class="chat-header">
       <span class="chat-header-title">DinAI</span>
-      <button id="chat-new" class="chat-header-btn" aria-label="New chat" title="New chat">${NEW_CHAT_ICON}</button>
+      <button id="chat-clear" class="chat-header-btn" aria-label="Clear chat" title="Clear chat">${CLEAR_ICON}</button>
       <button id="chat-expand" class="chat-header-btn" aria-label="Maximise chat" title="Maximise chat" aria-pressed="false">${MAXIMIZE_ICON}</button>
       <button id="chat-close" class="chat-header-btn" aria-label="Close chat" title="Close chat">${CLOSE_ICON}</button>
     </div>
     <div class="chat-disclaimer">
       <p>This chat uses an AI model, double-check output.<br class="chat-disclaimer-break">
-      <a href="${SUPPORT_MAILTO}" target="_blank">Contact Support</a>
+      <a href="${SUPPORT_MAILTO}">Contact Support</a>
       if you have feedback.</p>
     </div>
     <div id="chat-messages"
@@ -114,7 +119,7 @@
   const sendBtn = win.querySelector("#chat-send");
   const messages = win.querySelector("#chat-messages");
   const expandBtn = win.querySelector("#chat-expand");
-  const newBtn = win.querySelector("#chat-new");
+  const clearBtn = win.querySelector("#chat-clear");
   const closeBtn = win.querySelector("#chat-close");
 
   /* ------------------------------ rendering ------------------------------ */
@@ -122,12 +127,12 @@
   function renderInline(text, sources) {
     return text
       .replace(BOLD_RE, "<strong>$1</strong>")
-      .replace(LINK_RE, '<a href="$2" target="_blank" rel="noopener">$1</a>')
+      .replace(LINK_RE, (_, label, url) => `<a href="${url.startsWith(PROD_SITE_URL) ? escapeHtml(siteRoot()) + url.slice(PROD_SITE_URL.length) : url}">${label}</a>`)
       .replace(CITATION_RE, (_, n) => {
         const src = sources?.[n - 1];
         if (!src) return `[${n}]`;
 
-        return `<sup class="chat-cite" data-url="${escapedUrl(src.url)}" title="${escapeHtml(src.title || "")}">[${n}]</sup>`;
+        return `<sup class="chat-cite"><a href="${escapedUrl(src.url)}" title="${escapeHtml(src.title || "")}">[${n}]</a></sup>`;
       });
   }
 
@@ -221,7 +226,7 @@
       sources
         .map(
           (s, i) =>
-            `<a href="${escapedUrl(s.url)}" target="_blank" rel="noopener">[${i + 1}] ${escapeHtml(s.title)} — ${escapeHtml(s.heading)}</a>`
+            `<a href="${escapedUrl(s.url)}">[${i + 1}] ${escapeHtml(s.title)} — ${escapeHtml(s.heading)}</a>`
         )
         .join("");
 
@@ -374,13 +379,66 @@
     }
   }
 
+  /* ------------------------------- commands ------------------------------- */
+  // Inputs that control the chat window instead of going to the API.
+  // Matched against the whole input only, so "how do I clear my scratch?"
+  // is still a question.
+
+  const COMMANDS = [
+    {
+      names: ["clear", "clc", "cls", "reset", "clear chat", "new chat"],
+      run: () => clearHistory()
+    },
+    {
+      names: ["exit", "quit", "close", "q", "wq", "bye", "logout", "close chat"],
+      run: () => setOpen(false)
+    },
+    {
+      names: ["fullscreen", "full screen", "maximise", "maximize", "max", "expand", "bigger"],
+      run: () => setExpanded(true)
+    },
+    {
+      names: ["minimise", "minimize", "min", "shrink", "smaller", "exit fullscreen", "exit full screen", "restore"],
+      run: () => setExpanded(false)
+    }
+  ];
+
+  const COMMAND_MAP = new Map(
+    COMMANDS.flatMap(c => c.names.map(n => [n, c]))
+  );
+
+  // Ignores case, a leading "/", "\" or ":" (as in /clear, :q) and trailing punctuation.
+  const normaliseCommand = (text) =>
+    text.toLowerCase().replace(/^[/\\:]+/, "").replace(/[!.?]+$/, "").replace(/\s+/g, " ").trim();
+
+  // Returns true if the input was a command and has been handled.
+  function runCommand(text) {
+    const name = normaliseCommand(text);
+    const command = COMMAND_MAP.get(name);
+    if (!command) return false;
+    // Clearing mid-answer would orphan the streaming message; treat it as a question-in-waiting.
+    if (sending && command.names.includes("clear")) return false;
+
+    command.run();
+    gtag("event", "rag_chat_command", { command: command.names[0] });
+    return true;
+  }
+
   async function send() {
     const question = input.value.trim();
-    if (!question || sending) return;
+    if (!question) return;
+
+    if (runCommand(question)) {
+      input.value = "";
+      input.style.height = "auto";
+      return;
+    }
+
+    if (sending) return;
 
     sending = true;
     sendBtn.disabled = true;
-    newBtn.disabled = true;
+    clearBtn.disabled = true;
 
     input.value = "";
     input.style.height = "auto";
@@ -432,7 +490,7 @@
 
       const note =
         `<p class="chat-error">${escapeHtml(friendlyError(err))} ` +
-        `If it keeps happening, <a href="${SUPPORT_MAILTO}" target="_blank">contact Support</a>.</p>`;
+        `If it keeps happening, <a href="${SUPPORT_MAILTO}">contact Support</a>.</p>`;
 
       if (answer) {
         botMsg.insertAdjacentHTML("beforeend", note);
@@ -448,7 +506,7 @@
       messages.setAttribute("aria-busy", "false");
       sending = false;
       sendBtn.disabled = false;
-      newBtn.disabled = false;
+      clearBtn.disabled = false;
       input.focus();
     }
   }
@@ -477,12 +535,6 @@
   }
 
   messages.addEventListener("click", (e) => {
-    const cite = e.target.closest(".chat-cite");
-    if (cite) {
-      window.open(cite.dataset.url, "_blank", "noopener");
-      return;
-    }
-
     const copyBtn = e.target.closest(".chat-copy-btn");
     if (copyBtn && navigator.clipboard) {
       const code = document.getElementById(copyBtn.dataset.copyTarget);
@@ -496,7 +548,7 @@
   });
 
   sendBtn.addEventListener("click", send);
-  newBtn.addEventListener("click", clearHistory);
+  clearBtn.addEventListener("click", clearHistory);
   closeBtn.addEventListener("click", () => setOpen(false));
 
   expandBtn.addEventListener("click", () => {
