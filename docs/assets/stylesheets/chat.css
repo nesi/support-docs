@@ -27,9 +27,10 @@
   position: fixed;
   right: 24px;
   bottom: 120px;
-  width: 340px;
+  width: min(340px, calc(100vw - 48px));
   height: 460px;
   max-height: calc(100vh - 120px);
+  max-height: calc(100dvh - 120px);
   border-radius: 12px;
   box-shadow: var(--md-shadow-z3);
   display: none;
@@ -71,6 +72,7 @@
 }
 .chat-header-btn svg { display: block; width: 16px; height: 16px; }
 .chat-header-btn:hover { background: rgba(255, 255, 255, .15); }
+.chat-header-btn:disabled { opacity: .5; cursor: default; background: none; }
 
 .chat-disclaimer {
   padding: 8px 12px;
@@ -127,6 +129,10 @@
   font-size: 12px;
 }
 .chat-msg-bot code { font-size: 12px; }
+.chat-msg-bot a { color: var(--md-accent-fg-color); }
+.chat-msg-bot ul,
+.chat-msg-bot ol { margin: .5em 0; padding-left: 1.4em; }
+.chat-msg-bot li + li { margin-top: .25em; }
 .chat-copy-btn {
   position: absolute;
   top: 6px;
