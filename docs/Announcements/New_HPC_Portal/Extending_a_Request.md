@@ -37,12 +37,12 @@ If you wish to both extend the allocation end date and increase one or more of y
 1. Log in to [https://hpc-portal.reannz.co.nz](https://hpc-portal.reannz.co.nz) with **Sign in with Tuakiri**.
    See [logging in to the HPC Portal](HPC_Portal_Overview.md#log-in).
 3. Open the resource: go to **Projects**, open your project, click the **Resources** tab and select the blue **Add** button
-![HPC Portal project page](../assets/images/RenewOrder1.png)
+![HPC Portal project page](../../assets/images/RenewOrder1.png)
 4. Choose the offering, for example **Mahuika** in the **HPC** category.
 5. Next to the resource name, click **Suggest name**.
-![HPC Portal "Add Resource" popup](../assets/images/RenewOrder2.png)
+![HPC Portal "Add Resource" popup](../../assets/images/RenewOrder2.png)
 6. Enter the limits, start date and end date,then submit the order.
-![HPC Portal "Add Resource" form](../assets/images/RenewOrder3.png)
+![HPC Portal "Add Resource" form](../../assets/images/RenewOrder3.png)
 
 The order goes to an organisation owner at your institution for approval.
 REANNZ then reviews it and makes recommendations if need be.
