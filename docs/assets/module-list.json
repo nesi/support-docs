@@ -4476,6 +4476,26 @@
         "force_hide": false,
         "force_show": false
     },
+    "DAGMC": {
+        "description": "Direct Accelerated Geometry Monte Carlo (DAGMC) is a software package that allows users to perform Monte Carlo radiation transport directly on CAD models.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://svalinn.github.io/DAGMC/index.html",
+        "support": "",
+        "versions": [
+            "3.2.4-gompi-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.2.4-gompi-2026",
+        "default_type": "latest",
+        "last_updated": 1794270279,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/DAGMC/3.2.4-gompi-2026.lua",
+        "force_hide": false,
+        "force_show": false
+    },
     "DAS_Tool": {
         "description": "DAS Tool is an automated method that integrates the results of a flexible number of binning\n algorithms to calculate an optimized, non-redundant set of bins from a single assembly.",
         "domains": [
@@ -13324,6 +13344,26 @@
         "force_hide": false,
         "force_show": false
     },
+    "MOAB": {
+        "description": "The Mesh-Oriented datABase (MOAB) is a component for representing and evaluating mesh\ndata. MOAB can store and represent structured and unstructured meshes consisting of elements in the\nfinite element zoo, including polygons and polyhedra.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://sigma.mcs.anl.gov/moab-library",
+        "support": "",
+        "versions": [
+            "5.6.0-foss-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "5.6.0-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1794269955,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/MOAB/5.6.0-foss-2026.lua",
+        "force_hide": false,
+        "force_show": false
+    },
     "modbam2bed": {
         "description": "A program to aggregate modified base counts stored in a modified-base BAM file to a bedMethyl file.",
         "domains": [
@@ -15367,20 +15407,25 @@
     "OpenMC": {
         "description": "OpenMC is a community-developed Monte Carlo neutron and photon transport simulation code.\n It is capable of performing fixed source, k-eigenvalue, and subcritical multiplication calculations on\n models built using either a constructive solid geometry or CAD representation.",
         "domains": [],
-        "extensions": [],
+        "extensions": [
+            "endf-0.1.12",
+            "openmc-0.16.0",
+            "uncertainties-3.2.3"
+        ],
         "licence_type": "",
         "homepage": "https://openmc.org",
         "support": "",
         "versions": [
-            "0.15.2-gompi-2026"
+            "0.15.2-gompi-2026",
+            "0.16.0-gompi-2026-Python-3.14.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.15.2-gompi-2026",
+        "default": "0.16.0-gompi-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1778645795,
+        "last_updated": 1794270613,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/OpenMC/0.15.2-gompi-2026.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/OpenMC/0.16.0-gompi-2026-Python-3.14.4.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -17106,15 +17151,16 @@
         "versions": [
             "1.9.0-intel-2020a",
             "1.13.0-gompi-2023a",
-            "1.13.0-iimpi-2022a"
+            "1.13.0-iimpi-2022a",
+            "1.14.1-gompi-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.13.0-iimpi-2022a",
+        "default": "1.14.1-gompi-2026",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1794269278,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PnetCDF/1.13.0-iimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PnetCDF/1.14.1-gompi-2026.lua",
         "force_hide": false,
         "force_show": false
     },
