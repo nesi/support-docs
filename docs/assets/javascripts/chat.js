@@ -34,13 +34,7 @@
   window.dataLayer = window.dataLayer || [];
   function gtag() { window.dataLayer.push(arguments); }
 
-  const ESCAPE_MAP = {
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  };
+  const ESCAPE_MAP = { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" };
 
   const escapeHtml = (s) =>
     String(s ?? "").replace(/[&<>"']/g, c => ESCAPE_MAP[c]);
@@ -48,10 +42,12 @@
   const safeUrl = (u) =>
     /^https?:\/\//i.test(u || "") ? u : "#";
 
+  // The API returns production URLs. Point them at the site being viewed
+  // (mkdocs serve, a preview build, ...) so Material's instant navigation
+  // handles them as internal links instead of loading production.
   const PROD_SITE_URL = "https://docs.nesi.org.nz/";
-  const siteRoot = () => window.__md_scope?.href || PROD_SITE_URL;
   const localUrl = (u) =>
-    u.startsWith(PROD_SITE_URL) ? siteRoot() + u.slice(PROD_SITE_URL.length) : u;
+    u.startsWith(PROD_SITE_URL) ? (window.__md_scope?.href || PROD_SITE_URL) + u.slice(PROD_SITE_URL.length) : u;
 
   const escapedUrl = (u) => escapeHtml(localUrl(safeUrl(u)));
 
@@ -64,7 +60,7 @@
   const CLEAR_ICON = svgIcon("M280-120q-33 0-56.5-23.5T200-200v-520h-40v-80h200v-40h240v40h200v80h-40v520q0 33-23.5 56.5T680-120H280Zm400-600H280v520h400v-520ZM360-280h80v-360h-80v360Zm160 0h80v-360h-80v360ZM280-720v520-520Z");
   const CLOSE_ICON = svgIcon("m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z");
 
-  const CODE_BLOCK_RE = /```(\w*)\n([\s\S]*?)```/g;
+  const CODE_BLOCK_RE = /```\w*\n([\s\S]*?)```/g;
   const INLINE_CODE_RE = /`([^`]+)`/g;
   const BOLD_RE = /\*\*([^*]+)\*\*/g;
   // Runs on escaped text, so the URL is already HTML-safe; only the scheme needs checking.
@@ -127,7 +123,7 @@
   function renderInline(text, sources) {
     return text
       .replace(BOLD_RE, "<strong>$1</strong>")
-      .replace(LINK_RE, (_, label, url) => `<a href="${url.startsWith(PROD_SITE_URL) ? escapeHtml(siteRoot()) + url.slice(PROD_SITE_URL.length) : url}">${label}</a>`)
+      .replace(LINK_RE, (_, label, url) => `<a href="${localUrl(url)}">${label}</a>`)
       .replace(CITATION_RE, (_, n) => {
         const src = sources?.[n - 1];
         if (!src) return `[${n}]`;
@@ -192,7 +188,7 @@
     const blocks = [];
     const inline = [];
 
-    html = html.replace(CODE_BLOCK_RE, (_, _lang, code) => {
+    html = html.replace(CODE_BLOCK_RE, (_, code) => {
       // Strip the shared indent of blocks nested under list items, so copied code is clean.
       const lines = code.replace(/\s+$/, "").split("\n");
       const indent = Math.min(...lines.filter(l => l.trim()).map(l => l.match(/^ */)[0].length), Infinity);
@@ -233,7 +229,9 @@
     return details;
   }
 
-  function appendMessage(role, content, sources) {
+  // `showSources` is false for all but the last bubble of a multi-part answer:
+  // every bubble still links its [n] citations, but the list goes on the last.
+  function appendMessage(role, content, sources, showSources = true) {
     const el = document.createElement("div");
     if (role === "user") {
       el.className = "chat-msg chat-msg-user";
@@ -241,7 +239,7 @@
     } else {
       el.className = "chat-msg chat-msg-bot";
       el.innerHTML = render(content, sources);
-      if (sources?.length) el.append(renderSources(sources));
+      if (showSources && sources?.length) el.append(renderSources(sources));
     }
     messages.append(el);
     return el;
@@ -263,7 +261,11 @@
     } catch {
       history = [];
     }
-    for (const m of history) appendMessage(m.role, m.content, m.sources);
+    for (const m of history) {
+      // Multi-part answers (see "break" in streamChat) restore as separate bubbles.
+      const parts = Array.isArray(m.parts) ? m.parts : [m.content];
+      parts.forEach((part, i) => appendMessage(m.role, part, m.sources, i === parts.length - 1));
+    }
   }
 
   function clearHistory() {
@@ -283,14 +285,14 @@
     messages.scrollTop = messages.scrollHeight;
   };
 
-  /* ------------------------------- network ------------------------------- */
-
-  class ChatError extends Error {
-    constructor(message, status) {
-      super(message);
-      this.status = status;
-    }
+  // Runs `update`, then keeps the view at the bottom only if it was already there.
+  function keepScrolled(update) {
+    const stick = isNearBottom();
+    update();
+    if (stick) scrollToBottom();
   }
+
+  /* ------------------------------- network ------------------------------- */
 
   function friendlyError(err) {
     if (err.name === "AbortError") {
@@ -299,13 +301,16 @@
     if (err.status === 429) {
       return "You're sending questions too quickly. Wait a minute, then try again.";
     }
-    if (err instanceof TypeError) {
+    if (err.name === "TypeError") {
       return "Couldn't reach the chat service. Check your connection and try again.";
     }
     return "Something went wrong getting an answer. Try again shortly.";
   }
 
-  async function streamChat(question, onToken) {
+  // onBreak: the server sends a "break" event between parts of an answer (the
+  // short answer, a code block, the "More:" docs link) so each can be shown as
+  // its own bubble. Older/other servers just never send it.
+  async function streamChat(question, onToken, onBreak) {
     const controller = new AbortController();
     let timer;
     const resetTimer = () => {
@@ -329,10 +334,8 @@
       });
 
       if (!res.ok) {
-        throw new ChatError(
-          (await res.json().catch(() => ({}))).error || `HTTP ${res.status}`,
-          res.status
-        );
+        const { error } = await res.json().catch(() => ({}));
+        throw Object.assign(new Error(error || `HTTP ${res.status}`), { status: res.status });
       }
 
       const reader = res.body.getReader();
@@ -368,6 +371,10 @@
 
             case "token":
               onToken(ev.text, sources);
+              break;
+
+            case "break":
+              onBreak?.();
               break;
           }
         }
@@ -424,57 +431,60 @@
     return true;
   }
 
+  function setSending(on) {
+    sending = on;
+    sendBtn.disabled = on;
+    clearBtn.disabled = on;
+    messages.setAttribute("aria-busy", String(on));
+  }
+
   async function send() {
     const question = input.value.trim();
     if (!question) return;
 
-    if (runCommand(question)) {
-      input.value = "";
-      input.style.height = "auto";
-      return;
-    }
-
-    if (sending) return;
-
-    sending = true;
-    sendBtn.disabled = true;
-    clearBtn.disabled = true;
+    const isCommand = runCommand(question);
+    if (!isCommand && sending) return;
 
     input.value = "";
     input.style.height = "auto";
+    if (isCommand) return;
 
+    setSending(true);
     appendMessage("user", question);
 
-    const botMsg = document.createElement("div");
-    botMsg.className = "chat-msg chat-msg-bot";
-    botMsg.innerHTML =
-      '<span class="chat-thinking">Reading the docs…</span>';
-
-    messages.append(botMsg);
-    messages.setAttribute("aria-busy", "true");
+    let botMsg = appendMessage("assistant", "");
+    botMsg.innerHTML = '<span class="chat-thinking">Reading the docs…</span>';
     scrollToBottom();
 
-    let answer = "";
-    let sourceCount = 0;
+    // One entry per bubble. A "break" event only marks that the next token
+    // starts a new bubble, so a trailing break never leaves an empty one.
+    const parts = [""];
+    let breakPending = false;
 
     try {
-      const sources = await streamChat(question, (text, src) => {
-        const stick = isNearBottom();
-        answer += text;
-        botMsg.innerHTML = render(answer, src);
-        if (stick) scrollToBottom();
-      });
-      sourceCount = sources.length;
+      const sources = await streamChat(
+        question,
+        (text, src) => keepScrolled(() => {
+          if (breakPending) {
+            breakPending = false;
+            parts.push("");
+            botMsg = appendMessage("assistant", "");
+          }
+          parts[parts.length - 1] += text;
+          botMsg.innerHTML = render(parts.at(-1), src);
+        }),
+        () => { breakPending = Boolean(parts.at(-1).trim()); }
+      );
 
-      const stick = isNearBottom();
-      if (sources.length) {
-        botMsg.append(renderSources(sources));
-      }
-      if (stick) scrollToBottom();
+      if (sources.length) keepScrolled(() => botMsg.append(renderSources(sources)));
 
+      // `content` (all parts joined) is what goes back to the API as history;
+      // `parts` is only used to restore the bubbles on reload.
+      const trimmed = parts.map(p => p.trim());
+      const answer = trimmed.filter(Boolean).join("\n\n");
       history.push(
         { role: "user", content: question },
-        { role: "assistant", content: answer, sources }
+        { role: "assistant", content: answer, sources, ...(parts.length > 1 && { parts: trimmed }) }
       );
       history.splice(0, Math.max(0, history.length - HISTORY_LIMIT));
       saveHistory();
@@ -482,9 +492,9 @@
       gtag("event", "rag_chat", {
         question_length: question.length,
         answer_length: answer.length,
-        source_count: sourceCount
+        answer_parts: parts.length,
+        source_count: sources.length
       });
-
     } catch (err) {
       console.error("DinAI chat error:", err);
 
@@ -492,7 +502,7 @@
         `<p class="chat-error">${escapeHtml(friendlyError(err))} ` +
         `If it keeps happening, <a href="${SUPPORT_MAILTO}">contact Support</a>.</p>`;
 
-      if (answer) {
+      if (parts.at(-1).trim()) {
         botMsg.insertAdjacentHTML("beforeend", note);
       } else {
         botMsg.innerHTML = note;
@@ -500,13 +510,10 @@
 
       gtag("event", "rag_chat_error", {
         status: err.status || (err.name === "AbortError" ? "timeout" : "network"),
-        partial_answer: Boolean(answer)
+        partial_answer: parts.some(p => p.trim())
       });
     } finally {
-      messages.setAttribute("aria-busy", "false");
-      sending = false;
-      sendBtn.disabled = false;
-      clearBtn.disabled = false;
+      setSending(false);
       input.focus();
     }
   }
@@ -573,12 +580,7 @@
   });
 
   document.addEventListener("keydown", (e) => {
-    if (
-      e.key === "Escape" &&
-      win.classList.contains("chat-open")
-    ) {
-      setOpen(false);
-    }
+    if (e.key === "Escape" && win.classList.contains("chat-open")) setOpen(false);
   });
 
   loadHistory();
