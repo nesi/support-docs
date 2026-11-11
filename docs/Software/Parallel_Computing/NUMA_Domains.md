@@ -12,25 +12,12 @@ Inside a Mahuika node, some of the memory is closer to some of the cores than th
 If a job's work and its data end up far apart, the job can run slower than it should,
 and its runtime can change from one run to the next.
 
-## Cores and memory
-
-Mahuika is made up of many nodes (individual computers). Your job runs on one or more of them.
-
-The two parts of a node that matter here are its cores and its memory.
-Cores do the calculations.
-Memory holds the data the cores are working on.
-A core has to fetch each number from memory before it can use it.
-
-To use more than one core at once, a program splits its work into pieces.
-A multithreaded program, such as one that uses OpenMP, runs several threads.
-An MPI program runs several tasks, and these can be spread across more than one node.
-Each thread or task runs on its own core.
-
-When you submit a job, you ask Slurm for some cores and some memory, and Slurm decides which ones you get.
-
 ## Near and far memory
 
-Fetching data from memory takes time, and how long depends on where the data is.
+A node's cores do the calculations, and its memory holds the data they work on.
+A core has to fetch each number from memory before it can use it, and how long that takes depends on where the data is.
+A program that uses several cores runs one thread or MPI task on each (see [Parallel Computing](Parallel_Computing.md)),
+and Slurm decides which cores and memory your job gets.
 
 Picture a node as two buildings joined by a footbridge.
 Each building has four labs, and each lab has a few scientists and a fridge full of samples.
@@ -54,19 +41,11 @@ and the link between the sockets does the job of the footbridge.
 
 ![A Genoa node laid out like the labs. Two sockets of 84 cores are joined by a socket link. Each socket is split into four NUMA domains, numbered 0 to 7, and each NUMA domain has 21 cores and its own memory.](../../assets/images/NUMA_Domains_Genoa_Node.svg)
 
-A Genoa node has 2 sockets of 84 cores.
-Each socket is split into 4 NUMA domains, so the node has 8 NUMA domains with 21 cores each.
-The memory is shared out evenly between them.
-On a node with 384 GB, jobs can use about {{ slurm_limits.cpu_nodes.genoa.memory_per_numa_domain_gb | round | int }} GB in each NUMA domain,
-as a little is kept back for the operating system.
-
-Milan nodes are split the same way, into 8 NUMA domains, but with 16 cores in each.
-On a Milan node with 512 GB, jobs can use about {{ slurm_limits.cpu_nodes.milan.memory_per_numa_domain_gb | round | int }} GB in each NUMA domain.
+Milan nodes are split the same way, with fewer cores in each NUMA domain.
 
 ![A Milan node laid out the same way. Two sockets of 64 cores are joined by a socket link. Each socket is split into four NUMA domains, numbered 0 to 7, and each NUMA domain has 16 cores and its own memory.](../../assets/images/NUMA_Domains_Milan_Node.svg)
 
-## NUMA domains by node type
-
+The memory is shared out evenly between a node's NUMA domains.
 The table below lists every type of node. [Hardware](../../Batch_Computing/Hardware.md) has more about each one.
 
 {% macro size(gb) %}{% if gb >= 1000 %}{{ (gb / 1024) | round(1) }} TB{% else %}{{ gb | round | int }} GB{% endif %}{% endmacro %}
@@ -94,7 +73,6 @@ The numbers in brackets are the cores jobs can use: in the whole node, and in th
 
 You've probably never had to think about NUMA domains on your own desktop or laptop.
 Most of them have one processor, and all of their memory is the same distance from every core.
-In the story, that's one small lab with one fridge, so every sample is close at hand.
 
 ![A desktop processor and a Genoa node, drawn to the same scale. The desktop has one processor, about 4 cm across, with four memory slots on one side, all wired to the same part of the processor, so every core reaches the memory the same way and there is one NUMA domain. The Genoa node has two processors, each about 7.5 cm across and joined by a link, with six memory slots on each side of each processor. Each quarter of a Genoa processor, with its chips of cores and the memory slots wired to it, is one NUMA domain, so the node has 8.](../../assets/images/NUMA_Domains_Desktop_vs_Genoa.svg)
 
@@ -107,11 +85,9 @@ Mahuika's nodes are different in a few ways that can make NUMA domains matter.
   Every extra step on the way adds a little time.
 - You often share them. Unless your job uses a whole node, other people's jobs run on the rest of it.
   Slurm gives your job cores from whatever is free, and they can end up spread over several NUMA domains.
-- Jobs often run for much longer. Say a job runs 20% slower than it could.
-  On your laptop, a program that takes a minute would finish 12 seconds later, and you'd never notice.
-  On Mahuika, a job that takes two days would finish nearly ten hours later.
-- Time on Mahuika is counted. A slower job uses more of your project's
-  [allocation](../../Getting_Started/Allocations/What_is_an_allocation.md), and takes longer to give you results.
+- Jobs run for much longer, and their time is counted. If a job runs 20% slower than it could,
+  a one-minute program on your laptop finishes 12 seconds later, but a two-day job on Mahuika finishes nearly ten hours later
+  and uses more of your project's [allocation](../../Getting_Started/Allocations/What_is_an_allocation.md).
 
 ## When NUMA domains matter
 
@@ -176,25 +152,17 @@ Cores 8 to 11 are all in NUMA domain 0, so this task is in one NUMA domain.
 A task with cores 19 to 22 would be spread over two:
 cores 19 and 20 are in NUMA domain 0, and cores 21 and 22 are in NUMA domain 1.
 
-## Nomenclature confusion in Slurm: Sockets
+## Keep jobs in a NUMA domain
 
-Earlier on this page, a socket is the part of a node that holds one processor chip.
-A Genoa node has 2 sockets, each with 84 cores split into 4 NUMA domains.
-
-Slurm uses the word differently on Mahuika.
-It treats each NUMA domain as a socket, so it shows a Genoa node as {{ slurm_limits.cpu_nodes.genoa.numa_domains }} sockets of {{ slurm_limits.cpu_nodes.genoa.cores_per_numa_domain }} cores, rather than 2 sockets of 84.
-So when a Slurm option or Slurm's output mentions sockets, it means NUMA domains.
-For example, `--cores-per-socket 21` in the batch scripts below asks for a node whose NUMA domains have at least 21 cores.
-
-## Navigating NUMA domains on Mahuika
-
-The example batch scripts below keep a job's work close to its data.
-Slurm puts the tasks next to each other, filling one NUMA domain before starting on the next.
-On a GPU node, the tasks also stay in the NUMA domain the GPU is attached to.
-
-[What the options mean](#what-the-options-mean) explains the options that keep tasks and threads in their NUMA domains.
+The example batch scripts below keep each task's work close to its data.
+[What the options mean](#what-the-options-mean) explains the options they use, and
 [OpenMP Settings](OpenMP_Settings.md) and [Thread Placement and Thread Affinity](Thread_Placement_and_Thread_Affinity.md)
 go into more detail.
+
+!!! note "Sockets in Slurm"
+    On Mahuika, Slurm treats each NUMA domain as a socket, so it shows a Genoa node as
+    {{ slurm_limits.cpu_nodes.genoa.numa_domains }} sockets of {{ slurm_limits.cpu_nodes.genoa.cores_per_numa_domain }} cores rather than 2 sockets.
+    When a Slurm option or Slurm's output mentions sockets, it means NUMA domains.
 
 === "Genoa"
 
