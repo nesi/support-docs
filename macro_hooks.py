@@ -93,7 +93,31 @@ def slurm_limits_for_docs(raw):
             "half_life_periods": priority["decay_half_life_minutes"] // priority["calc_period_minutes"],
         },
     }
-    return {group: {k: _tidy(v) for k, v in values.items()} for group, values in limits.items()}
+    limits = {group: {k: _tidy(v) for k, v in values.items()} for group, values in limits.items()}
+    # One entry per type of node. On Mahuika each Slurm socket is a NUMA domain.
+    # Memory is what Slurm lets jobs use, a little under what is installed.
+    limits["nodes"] = nodes = [
+        {
+            "partitions": n["partitions"],
+            "features": n["features"],
+            "gpus": {**n["gpus"], **n["gpu_mig_profiles"]},
+            "cores": n["sockets"] * n["cores_per_socket"],
+            "usable_cores": n["sockets"] * n["cores_per_socket"] - n["reserved_cores"],
+            "numa_domains": n["sockets"],
+            "cores_per_numa_domain": n["cores_per_socket"],
+            "usable_cores_per_numa_domain": n["fewest_usable_cores_per_socket"],
+            "memory_gb": _tidy(n["real_memory_mb"] / 1024),
+            "memory_per_numa_domain_gb": _tidy(n["real_memory_mb"] / 1024 / n["sockets"]),
+        }
+        for n in raw["nodes"]
+    ]
+    # Smallest across each partition's nodes without GPUs, so a batch script using them fits on any.
+    keys = ("numa_domains", "cores_per_numa_domain", "usable_cores_per_numa_domain", "memory_per_numa_domain_gb")
+    limits["cpu_nodes"] = {
+        p: {k: min((t[k] for t in nodes if p in t["partitions"] and not t["gpus"]), default=None) for k in keys}
+        for p in raw["partitions"]
+    }
+    return limits
 
 
 def define_env(env):

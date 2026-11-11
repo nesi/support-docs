@@ -100,8 +100,8 @@ Do not invent facts about the platform. Take them from these sources, and cite t
 | Fact | Source |
 | - | - |
 | Module names and versions | `docs/assets/module-list.json` (keys are module names, `default` is the default version). In pages, use `{{ applications.<Name>.default }}` rather than typing a version. |
-| Partitions, node types, GPUs | [Hardware](docs/Batch_Computing/Hardware.md) |
-| Job size, time and submission limits | [Job Limits](docs/Batch_Computing/Job_Limits.md), and `docs/assets/slurm-limits.json` (from Slurm). In pages, use `{{ slurm_limits.<debug|per_job|per_user>.<limit> }}` (each key names its unit, see `macro_hooks.py`) rather than typing a limit. |
+| Partitions, node types, GPUs | [Hardware](docs/Batch_Computing/Hardware.md), and `docs/assets/slurm-limits.json` (from Slurm). For cores, memory and NUMA domains as Slurm sees them, use `{{ slurm_limits.cpu_nodes.<partition>.<key> }}` (the smallest value across a partition's nodes without GPUs, so a batch script that uses it fits on any of them), or loop over `slurm_limits.nodes` (one entry per node type) for tables. Each Slurm socket is a NUMA domain, and memory is what jobs can use, not what is installed. |
+| Job size, time and submission limits | [Job Limits](docs/Batch_Computing/Job_Limits.md), and `docs/assets/slurm-limits.json` (from Slurm). In pages, use `{{ slurm_limits.<debug\|per_job\|per_user>.<limit> }}` (each key names its unit, see `macro_hooks.py`) rather than typing a limit. |
 | Filesystems, quotas, cleaning | [Filesystems and Quotas](docs/Storage/Filesystems_and_Quotas.md) |
 | Login, hostnames, SSH config | [Standard Terminal Setup](docs/Getting_Started/Accessing_the_HPCs/Standard_Terminal_Setup.md) |
 | Policy | Pages under `docs/Policy/` |
