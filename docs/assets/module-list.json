@@ -8639,15 +8639,16 @@
             "1.21-GCC-12.3.0",
             "1.22-GCC-12.3.0",
             "1.22.2-GCC-15.2.0",
-            "1.23.1-GCC-12.3.0"
+            "1.23.1-GCC-12.3.0",
+            "1.25-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.23.1-GCC-12.3.0",
+        "default": "1.25-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1776295281,
+        "last_updated": 1794355699,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/HTSlib/1.23.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/HTSlib/1.25-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -20453,15 +20454,16 @@
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
             "1.22-GCC-12.3.0",
-            "1.23.1-GCC-12.3.0"
+            "1.23.1-GCC-12.3.0",
+            "1.25-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.23.1-GCC-12.3.0",
+        "default": "1.25-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1776295382,
+        "last_updated": 1794355854,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/SAMtools/1.23.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/SAMtools/1.25-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -20715,15 +20717,16 @@
             "4.4.0-gimkl-2020a",
             "4.5.1-gimkl-2020a-Python-3.8.2",
             "4.5.1-gimkl-2022a-Python-3.11.3",
-            "4.5.5-foss-2023a-Python-3.11.6"
+            "4.5.5-foss-2023a-Python-3.11.6",
+            "4.5.5-foss-2026-Python-3.14.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.5.5-foss-2023a-Python-3.11.6",
+        "default": "4.5.5-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1776046312,
+        "last_updated": 1794353463,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/SEPP/4.5.5-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/SEPP/4.5.5-foss-2026-Python-3.14.4.lua",
         "force_hide": false,
         "force_show": false
     },
