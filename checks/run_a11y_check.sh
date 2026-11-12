@@ -9,10 +9,15 @@ set -euo pipefail
 MIN_IMPACT=$1
 shift
 
+# AccessLint/audit commit to run (v0.3.3). Pinned rather than following the
+# moving 'v0' tag, because its Playwright version must match the container
+# image in .github/workflows/checks.yml. When changing this, update the image.
+ACCESSLINT_REF="d56a0efa8fc5d78391a29dd593c8f3bc91f32c26"
 CACHE_DIR="${HOME}/.cache/accesslint-audit"
-# Keep the downloaded browser binary under CACHE_DIR too, so caching that one
-# directory (e.g. actions/cache in CI) actually covers the expensive part.
-export PLAYWRIGHT_BROWSERS_PATH="${CACHE_DIR}/browsers"
+# Use a browser that is already installed (CI sets this to the Playwright
+# image's /ms-playwright). Otherwise keep the downloaded browser under
+# CACHE_DIR, so caching that one directory covers the expensive part.
+export PLAYWRIGHT_BROWSERS_PATH="${PLAYWRIGHT_BROWSERS_PATH:-${CACHE_DIR}/browsers}"
 PORT="$(python3 -c 'import socket; s=socket.socket(); s.bind(("",0)); print(s.getsockname()[1]); s.close()')"
 
 if [ ! -d "public" ]; then
@@ -46,13 +51,21 @@ else
   done
 fi
 
-if [ ! -d "$CACHE_DIR" ]; then
-  git clone --depth 1 --branch v0 https://github.com/AccessLint/audit.git "$CACHE_DIR"
+# Re-fetch if the cached copy is missing or at a different commit.
+if [ "$(git -C "$CACHE_DIR" rev-parse HEAD 2>/dev/null)" != "$ACCESSLINT_REF" ]; then
+  rm -rf "$CACHE_DIR"
+  git init -q "$CACHE_DIR"
+  git -C "$CACHE_DIR" fetch -q --depth 1 https://github.com/AccessLint/audit.git "$ACCESSLINT_REF"
+  git -C "$CACHE_DIR" -c advice.detachedHead=false checkout -q FETCH_HEAD
 fi
 
 READY_MARKER="$CACHE_DIR/.setup-complete"
 if [ ! -f "$READY_MARKER" ]; then
-  (cd "$CACHE_DIR" && npm ci --omit=dev --no-audit --no-fund --silent && npx --yes playwright install --only-shell chromium) >&2
+  # 'playwright install' is a no-op if the browser is already in
+  # PLAYWRIGHT_BROWSERS_PATH. The timeout stops a stalled download or
+  # extraction from hanging until the CI job limit.
+  (cd "$CACHE_DIR" && npm ci --omit=dev --no-audit --no-fund --silent \
+    && timeout 600 npx --yes playwright install --only-shell chromium) >&2
   touch "$READY_MARKER"
 fi
 
