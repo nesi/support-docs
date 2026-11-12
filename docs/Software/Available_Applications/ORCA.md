@@ -5,7 +5,7 @@ tags:
 - chemistry
 vote_count: 6
 vote_sum: 4
-description: ORCA quantum chemistry on Mahuika, with example batch scripts, NUMA settings, benchmarking and checkpointing
+description: Run ORCA quantum chemistry on Mahuika, with example batch scripts, input file settings for cores and memory, NUMA settings, benchmarking and checkpointing
 ---
 
 
@@ -15,25 +15,12 @@ description: ORCA quantum chemistry on Mahuika, with example batch scripts, NUMA
 {% include "partials/app_header.html" %}
 [//]: <> (APPS PAGE BOILERPLATE END)
 
-ORCA is a flexible, efficient and easy-to-use general purpose tool for
-quantum chemistry with specific emphasis on spectroscopic properties of
-open-shell molecules. It features a wide variety of standard quantum
-chemical methods ranging from semiempirical methods to DFT to single-
-and multireference correlated *ab initio* methods. It can also treat
-environmental and relativistic effects.
-
-The ORCA home page is
-at [https://orcaforum.kofo.mpg.de](https://orcaforum.kofo.mpg.de)
-
 ## Licensing requirements
 
-ORCA is released as precompiled binaries at no cost, pursuant to a
-closed-source licence.  Users are advised that the terms of [the ORCA
-licence](https://orcaforum.kofo.mpg.de/app.php/dlext/?view=detail&df_id=41)
-allow its use in the course of academic research only, and that each
-research group is expected to register with the ORCA developers. If you
-have any questions regarding your eligibility to access ORCA or any
-particular version of it, please  {% include "partials/support_request.html" %}.
+ORCA is free, closed-source software, released as precompiled binaries.
+Its licence allows it to be used for academic research only,
+and each research group is expected to register with the ORCA developers.
+If you're unsure whether you can use ORCA, or a particular version of it, {% include "partials/support_request.html" %}.
 
 ## Example batch scripts
 
@@ -110,9 +97,19 @@ Replace the following:
 - `nesi99991` with your project code.
 - `MyInput.inp` with your ORCA input file.
 
-Your input file must ask for the same number of cores as `--ntasks`
-(see [Requesting a parallel run](#requesting-a-parallel-run)).
-To choose that number, see [Benchmark your ORCA jobs](#benchmark-your-orca-jobs).
+## Input file settings
+
+Your ORCA input file must set the number of cores, and the memory for each core in MB:
+
+```txt
+%pal nprocs 16 end
+%maxcore 800
+```
+
+- Set `nprocs` to the value of `--ntasks`.
+    To choose it, see [Benchmark your ORCA jobs](#benchmark-your-orca-jobs).
+- Set `%maxcore` to about 80% of `--mem-per-cpu`, as ORCA can use more memory than `%maxcore`
+    (see ORCA's [Memory Settings](https://www.faccts.de/docs/orca/6.1/tutorials/first_steps/memory.html)).
 
 ## NUMA settings
 
@@ -147,48 +144,27 @@ Its GitHub page explains how to install and use it.
 
 You only need to benchmark one calculation that is typical of those you plan to run.
 
-## Further notes
+## Checkpointing
 
-### Requesting a parallel run
+!!! warning
+    Use [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job that runs for more than a day.
 
-ORCA must be told how many cores to use in its input file, as well as in the batch script.
-Add a line like this to the input file:
+ORCA saves checkpoint data, mainly the molecular orbitals, in a GBW (geometry, basis, wavefunction) file.
+For the input file `MyInput.inp`, it's `MyInput.gbw`, in the directory ORCA runs in.
 
-``` sh
-%pal nprocs 16 end
-```
+To restart from a GBW file:
 
-Replace `16` with the number you gave `--ntasks`.
+1. Rename the GBW file so its name differs from your input file's, for example to `checkpoint.gbw`.
+    Otherwise ORCA overwrites it as soon as it starts.
+2. Add these lines to your input file:
 
-### Checkpointing
-
-!!! warning "Checkpointing"
-     We strongly recommend the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
-
-ORCA provides for saving of checkpoint data, especially molecular
-orbital information, in a file with extension ".gbw" (short for
-Geometry-Basis-Wavefunction). Given an input filename of "foo.inp" or
-some equivalent, the GBW file will be named "foo.gbw". The GBW file,
-like temporary and other output files, will be written in the same
-directory from which the ORCA executable is invoked.
-
-To restart from an existing GBW file, you should do the following:
-
-1. Ensure that the GBW file you want to start from is renamed so that
-    it does not have the same base name as your intended input file.
-    Otherwise, it will be overwritten and destroyed as soon as ORCA
-    starts running.
-2. In your input file, specify the following lines, replacing
-    "checkpoint.gbw" with the name of the GBW file you intend to read
-    from:
-
-    ``` sh
+    ```txt
     ! moread
-    % moinp "checkpoint.gbw"
+    %moinp "checkpoint.gbw"
     ```
 
 3. Run the calculation.
 
-For more information about restarting from an older GBW file, including
-how to restart from GBW files produced using earlier versions of ORCA,
-please consult the ORCA manual.
+To restart from a GBW file made by an older version of ORCA, see
+[restarting calculations](https://orca-manual.mpi-muelheim.mpg.de/contents/essentialelements/initialguess.html#restarting-scf-calculations)
+in the ORCA manual.
