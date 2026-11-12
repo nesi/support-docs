@@ -5,7 +5,7 @@ tags:
 - chemistry
 vote_count: 6
 vote_sum: 4
-description: General purpose quantum chemistry and spectroscopic properties with ORCA
+description: ORCA quantum chemistry on Mahuika, with example batch scripts, NUMA settings, benchmarking and checkpointing
 ---
 
 
@@ -35,47 +35,139 @@ research group is expected to register with the ORCA developers. If you
 have any questions regarding your eligibility to access ORCA or any
 particular version of it, please  {% include "partials/support_request.html" %}.
 
-## Example script
+## Example batch scripts
 
-``` sl
-#!/bin/bash -e
-#SBATCH --job-name      ORCA_job
-#SBATCH --time          01:00:00
-#SBATCH --ntasks        16
-#SBATCH --mem-per-cpu   1G
+{% set genoa = slurm_limits.cpu_nodes.genoa %}
+{% set milan = slurm_limits.cpu_nodes.milan %}
 
-module load ORCA/5.0.4-OpenMPI-4.1.5
+These batch scripts run ORCA on 16 cores.
+Use the one for your partition, as `--cores-per-socket` differs (see [NUMA settings](#numa-settings)).
 
-# ORCA under MPI requires that it be called via its full absolute path
-orca_exe=$(which orca)
+=== "Genoa"
 
-# Don't use "srun" as ORCA does that itself when launching its MPI process.
-${orca_exe} MyInput.inp
-```
+    ```sl
+    #!/bin/bash -e
+
+    #SBATCH --job-name         ORCA_job
+    #SBATCH --account          nesi99991
+    #SBATCH --time             01:00:00
+    #SBATCH --partition        genoa
+    #SBATCH --ntasks           16
+    #SBATCH --mem-per-cpu      1G
+    #SBATCH --cores-per-socket {{ genoa.cores_per_numa_domain }}
+    #SBATCH --threads-per-core 1
+    #SBATCH --distribution     *:block:*
+    #SBATCH --mem-bind         local
+
+    module purge
+    module load ORCA/{{ applications.ORCA.default }}
+
+    export OMP_PROC_BIND=true
+    export OMP_PLACES=cores
+
+    srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+    # ORCA must be called by its full path
+    orca_exe=$(which orca)
+
+    # Don't use srun here: ORCA starts its own MPI processes
+    ${orca_exe} MyInput.inp
+    ```
+
+=== "Milan"
+
+    ```sl
+    #!/bin/bash -e
+
+    #SBATCH --job-name         ORCA_job
+    #SBATCH --account          nesi99991
+    #SBATCH --time             01:00:00
+    #SBATCH --partition        milan
+    #SBATCH --ntasks           16
+    #SBATCH --mem-per-cpu      1G
+    #SBATCH --cores-per-socket {{ milan.cores_per_numa_domain }}
+    #SBATCH --threads-per-core 1
+    #SBATCH --distribution     *:block:*
+    #SBATCH --mem-bind         local
+
+    module purge
+    module load ORCA/{{ applications.ORCA.default }}
+
+    export OMP_PROC_BIND=true
+    export OMP_PLACES=cores
+
+    srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+
+    # ORCA must be called by its full path
+    orca_exe=$(which orca)
+
+    # Don't use srun here: ORCA starts its own MPI processes
+    ${orca_exe} MyInput.inp
+    ```
+
+Replace the following:
+
+- `nesi99991` with your project code.
+- `MyInput.inp` with your ORCA input file.
+
+Your input file must ask for the same number of cores as `--ntasks`
+(see [Requesting a parallel run](#requesting-a-parallel-run)).
+To choose that number, see [Benchmark your ORCA jobs](#benchmark-your-orca-jobs).
+
+## NUMA settings
+
+Each Mahuika node is split into [NUMA domains](../Parallel_Computing/NUMA_Domains.md):
+groups of cores with the memory closest to them.
+If your job's cores are spread over several NUMA domains, ORCA can run slower, and its runtime can vary between runs
+(see [When NUMA domains matter](../Parallel_Computing/NUMA_Domains.md#when-numa-domains-matter)).
+The example batch scripts have settings to avoid this:
+
+- The last four `#SBATCH` options ask Slurm for cores next to each other, filling one NUMA domain before the next.
+- The two `export` lines stop threads moving between cores.
+
+[What the options mean](../Parallel_Computing/NUMA_Domains.md#what-the-options-mean) explains each one.
+Only `--cores-per-socket` depends on the partition.
+It's the number of cores in one NUMA domain, which Slurm treats as a socket:
+{{ genoa.cores_per_numa_domain }} on Genoa and {{ milan.cores_per_numa_domain }} on Milan.
+
+Before starting ORCA, each batch script runs a `print_binding_stats` step,
+which prints the cores each task was given and the node's NUMA domains.
+[Check a job's NUMA domains](../Parallel_Computing/NUMA_Domains.md#check-a-jobs-numa-domains) explains its output.
+If your runtime varies a lot between runs with the same input,
+check this output for cores spread over several NUMA domains.
+
+## Benchmark your ORCA jobs
+
+Past a certain number of cores, more cores add little speed, but still use up your project's
+[allocation](../../Getting_Started/Allocations/What_is_an_allocation.md).
+To find that number for your calculation, use the
+[ORCA benchmarking tool](https://github.com/geoffreyweal/orca-benchmarking).
+It runs one calculation on a range of core counts, then reports how its speed and CPU efficiency change.
+Its GitHub page explains how to install and use it.
+
+You only need to benchmark one calculation that is typical of those you plan to run.
 
 ## Further notes
 
 ### Requesting a parallel run
 
-ORCA requires a parallel run to be requested in its input as well as
-from the batch scheduler. To request a parallel run, you need to add a
-line to the input file like the following:
+ORCA must be told how many cores to use in its input file, as well as in the batch script.
+Add a line like this to the input file:
 
 ``` sh
-%pal nprocs <np> end
+%pal nprocs 16 end
 ```
 
-where `<np>` represents the total number of processors (cores) you have
-requested from the scheduler.
+Replace `16` with the number you gave `--ntasks`.
 
 ### Checkpointing
 
 !!! warning "Checkpointing"
-     We strongly the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
+     We strongly recommend the use of [checkpointing](../../Batch_Computing/Job_Checkpointing.md) for any job running for more than a day.
 
 ORCA provides for saving of checkpoint data, especially molecular
 orbital information, in a file with extension ".gbw" (short for
-Geometry-Basis-Wavefunction). Given an input file name of "foo.inp" or
+Geometry-Basis-Wavefunction). Given an input filename of "foo.inp" or
 some equivalent, the GBW file will be named "foo.gbw". The GBW file,
 like temporary and other output files, will be written in the same
 directory from which the ORCA executable is invoked.
