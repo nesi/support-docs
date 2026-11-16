@@ -167,11 +167,14 @@ Must have one of these flags.
     #SBATCH --cpus-per-task 1                 #
     #SBATCH --mem           512MB             # Total memory (per node)
 
-    module load ANSYS/{{ applications.ANSYS.default }}
+    module purge
+    module load ANSYS/{{app.default}}
 
-    JOURNAL_FILE=/share/test/ansys/fluent/wing.in
+    JOURNAL_FILE=my_journal.jou
     fluent 3ddp -g -i ${JOURNAL_FILE}
     ```
+
+    Replace `my_journal.jou` with the path to your journal file.
 
 === "Distributed Memory Job"
     Multiple processes each with a single thread.
@@ -195,10 +198,25 @@ Must have one of these flags.
     #SBATCH --cpus-per-task     1                 #
     #SBATCH --mem-per-cpu       1500              # Fine for small jobs; increase if needed
 
-    module load ANSYS/{{ applications.ANSYS.default }}
-    JOURNAL_FILE=/share/test/ansys/fluent/wing.in
-    fluent 3ddp -g -t ${SLURM_NTASKS} -i ${JOURNAL_FILE}
+    module purge
+    module load ANSYS/{{app.default}}
+
+    JOURNAL_FILE=my_journal.jou
+    HOSTFILE=${PWD}/hosts.${SLURM_JOB_ID}            # must be a full path
+    srun hostname -s | sort > ${HOSTFILE}
+    fluent 3ddp -g -t ${SLURM_NTASKS} -cnf=${HOSTFILE} -i ${JOURNAL_FILE}
     ```
+
+    Replace `my_journal.jou` with the path to your journal file.
+
+    !!! warning "Give Fluent a host file"
+        Fluent does not read the list of nodes Slurm has given your job.
+        Without `-cnf`, versions 2023R1 and later fail with "Requested node configuration is not available", even on one node.
+        The host file path must be a full path: some versions reject a relative one.
+
+        - For 2021R2, use `-mpi=openmpi` instead of `-cnf`.
+        - 19.2 needs neither.
+        - If you use `-mpi=openmpi` with 2025R2, run `unset FLUENT_MPIRUN_FLAGS` first.
 
 ### Interactive
 
@@ -222,33 +240,29 @@ Will return;
   salloc: job 10270935 has been allocated resources
   salloc: Granted job allocation 10270935
   salloc: Waiting for resource configuration
-  salloc: Nodes wbn[053-056] are ready for job
+  salloc: Nodes c[001-004] are ready for job
 ```
 
 !!! tip
      Include all the commands you would usually use in your Slurm header
      here.
 
-Once you have your allocation, run the command
+Once you have your allocation, load the module, write a host file and start Fluent with it.
+Without `-cnf`, every Fluent process runs on the login node.
 
 ``` sh
-fluent
+module load ANSYS/{{app.default}}
+HOSTFILE=${PWD}/hosts.${SLURM_JOB_ID}
+srun hostname -s | sort > ${HOSTFILE}
+fluent 3ddp -t ${SLURM_NTASKS} -cnf=${HOSTFILE}
 ```
 
 You will then be presented with the launcher, make any necessary changes
 then click launch.
 
-If everything has set up correctly you should see a printout of the
-hostnames with the resources requested. Note: 'host' should be
-login[1-2].
-
-``` sh
-n24-31 wbn056 8/72 Linux-64 71521-71528 Intel(R) Xeon(R) E5-2695 v4
- n16-23 wbn055 8/72 Linux-64 52264-52271 Intel(R) Xeon(R) E5-2695 v4
- n8-15 wbn054 8/72 Linux-64 177090-177097 Intel(R) Xeon(R) E5-2695 v4
- n0-7 wbn053 8/72 Linux-64 48376-48384 Intel(R) Xeon(R) E5-2695 v4
- host mahuika01 Linux-64 185962 Intel(R) Xeon(R) E5-2695 v4
-```
+If everything has set up correctly, Fluent prints a table of the
+hostnames with the resources requested. The compute processes should be
+on the compute nodes of your allocation, and only 'host' on the login node.
 
 !!! warning
     Closing the fluent GUI will not end the SLURM interactive session. Use
@@ -379,17 +393,19 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --time          00:05:00          # Walltime
     #SBATCH --mem           512MB             # total mem
 
-    module load ANSYS/{{ applications.ANSYS.default }}
+    module load ANSYS//{{app.default}}
 
-    input="/share/test/ansys/cfx/pump.def"
+    input=my_model.def
     cfx5solve -batch -def ${input}
     ```
+
+    Replace `my_model.def` with the path to your definition file.
 
 === "Distributed Memory"
     Multiple *processes* each with a single *thread*.
     Not limited to one node.
-    Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
-    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase you time in the queue as contiguous cpu's are harder to schedule.
+    Model will be segmented into `-part` pieces which should be equal to `--ntasks`.
+    Each task could be running on a different node leading to increased communication overhead. Jobs can be limited to a single node by adding `--nodes=1` however this may increase your time in the queue as contiguous cpu's are harder to schedule.
 
     ```sl
     #!/bin/bash -e
@@ -402,11 +418,14 @@ solution specify as relative path, or unload compiled lib before saving
     #SBATCH --mem-per-cpu       512MB             # Memory per cpu
 
     module purge
-    module load ANSYS/{{ applications.ANSYS.default }}
-    input="/share/test/ansys/mechanical/structural.dat" 
+    module load ANSYS/{{app.default}}
+    input=my_model.def
 
     cfx5solve -batch -def "${input}" -part ${SLURM_NTASKS}
     ```
+
+    Replace `my_model.def` with the path to your definition file.
+    The ANSYS module sets the parallel start method for CFX, so you do not need `-start-method`.
 
     !!! tip
         Initial values path specified in '.def' file can be overridden using
@@ -444,7 +463,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --mem           1500M             # total mem
 
     module purge
-    module load ANSYS/{{ applications.ANSYS.default }}
+    module load ANSYS/{{app.default}}
 
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -i "${input}"
@@ -467,7 +486,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --cpus-per-task 8                 #
     #SBATCH --mem           12G               # 8 threads at 1500 MB per thread
 
-    module load ANSYS/{{ applications.ANSYS.default }}
+    module load ANSYS/{{app.default}}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -np ${SLURM_CPUS_PER_TASK} -i ${input}
     ```
@@ -479,7 +498,6 @@ xvfb-run cfx5post input.cse
     Model will be segmented into `-np` pieces which should be equal to `--ntasks`.
     Each task could be running on a different node leading to increased communication overhead.
     Jobs can be limited to a single node by adding `--nodes=1` however this will increase your time in the queue as contiguous cpu's are harder to schedule.
-    Distributed Memory Parallel is currently not supported on Māui.
 
     ```sl
     #!/bin/bash -e
@@ -491,7 +509,7 @@ xvfb-run cfx5post input.cse
     #SBATCH --ntasks            16                # Number processes
     #SBATCH --mem-per-cpu       1500
 
-    module load ANSYS/{{ applications.ANSYS.default }}
+    module load ANSYS/{{app.default}}
     input=${ANSYS_ROOT}/ansys/data/verif/vm263.dat
     mapdl -b -dis -np ${SLURM_NTASKS} -i "${input}"
     ```
@@ -544,7 +562,7 @@ Input files are typically LS-DYNA keyword decks such as `.k` files.
 #SBATCH --mem-per-cpu   1G                # Memory per cpu
 
 module purge
-module load ANSYS/{{ applications.ANSYS.default }}
+module load ANSYS/{{app.default}}
 lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
 ```
 
@@ -559,8 +577,6 @@ lsdyna i=myinput.k NCPUS=$SLURM_CPUS_PER_TASK  MEMORY2=1G
 
 FENSAP-ICE is a fully integrated ice-accretion and aerodynamics
 simulator.
-
-Currently FENSAP-ICE is only available on Mahuika and in ANSYS 19.2.
 
 The following FENSAP solvers are compatible with MPI
 
@@ -589,7 +605,6 @@ number of (physical) CPUs.
     --account nesi99991
     --mem-per-cpu memory
     --time time
-    --licenses 
     ```
 
     Note: All these parameters will be applied to each individual
@@ -727,6 +742,10 @@ FLUID_CPUS=$((COMP_CPUS-MECHANICAL_CPUS))
 export SLURM_EXCLUSIVE="" # don't share CPUs
 echo "CPUs: Coupler:1 Struct:$MECHANICAL_CPUS Fluid:$FLUID_CPUS"
 
+# Write the host file for Fluent before anything else holds the CPUs
+HOSTFILE=${PWD}/hosts.${SLURM_JOB_ID}
+srun hostname -s | sort > ${HOSTFILE}
+
 echo "STARTING SYSTEM COUPLER"
 
 cd Coupling
@@ -782,7 +801,7 @@ echo "STARTING FLUENT"
 cd FluidFlow
 
 # Run Fluent in the background, alongside the system coupler and ANSYS.
-fluent 3ddp -g -t$FLUID_CPUS \
+fluent 3ddp -g -t$FLUID_CPUS -cnf=${HOSTFILE} \
     -scport=$port -schost=$node -scname="$fluentsolname" \
     -i "fluidFlow.jou" > fluent.out || scancel $SLURM_JOBID &
 cd ..
@@ -800,6 +819,11 @@ GPUs can be slow for smaller jobs because it takes time to transfer data
 from the main memory to the GPU memory. We therefore suggest that you
 only use them for larger jobs, unless benchmarking reveals otherwise.
 
+### MPI
+
+Intel MPI is the default and recommended MPI for ANSYS on Mahuika, so you do not need an `-mpi` flag.
+The ANSYS module also sets the parallel start method for CFX.
+
 ### Interactive use
 
 It is best to use journal files *etc* to automate ANSYS so that you can
@@ -811,7 +835,11 @@ tasks it launches run on a compute node. This requires using `salloc`
 instead of `sbatch`, for example:
 
 ``` bash
-salloc -A nesi99991 -t 30 -n 16 -C avx --mem-per-cpu=512MB bash -c 'module load ANSYS; fluent -v3ddp -t$SLURM_NTASKS' 
+salloc --account nesi99991 --time 30 --ntasks 16 --mem-per-cpu 512MB \
+    bash -c 'module load ANSYS/2025R2
+        HOSTFILE=${PWD}/hosts.${SLURM_JOB_ID}
+        srun hostname -s | sort > ${HOSTFILE}
+        fluent 3ddp -t${SLURM_NTASKS} -cnf=${HOSTFILE}'
 ```
 
 As with any job, you may have to wait a while before the resource is
