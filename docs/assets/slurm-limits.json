@@ -2,7 +2,28 @@
     "nodes": [
         {
             "cores_per_socket": 16,
-            "count": 4,
+            "count": 1,
+            "cpus": 128,
+            "features": [
+                "a100_80gb",
+                "big"
+            ],
+            "fewest_usable_cores_per_socket": 15,
+            "gpu_mig_profiles": {},
+            "gpus": {
+                "a100": 3
+            },
+            "partitions": [
+                "milan"
+            ],
+            "real_memory_mb": 491520,
+            "reserved_cores": 2,
+            "sockets": 4,
+            "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 16,
+            "count": 3,
             "cpus": 128,
             "features": [
                 "a100_80gb",
