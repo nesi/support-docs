@@ -117,18 +117,46 @@ Each Mahuika node is split into [NUMA domains](../Parallel_Computing/NUMA_Domain
 groups of cores with the memory closest to them.
 If your job's cores are spread over several NUMA domains, ORCA can run slower, and its runtime can vary between runs
 (see [When NUMA domains matter](../Parallel_Computing/NUMA_Domains.md#when-numa-domains-matter)).
-The example batch scripts have settings to avoid this:
+The example batch scripts have these settings to avoid this:
 
-- The last four `#SBATCH` options ask Slurm for cores next to each other, filling one NUMA domain before the next.
+=== "Genoa"
+
+    ```sh
+    #SBATCH --cores-per-socket {{ genoa.cores_per_numa_domain }}
+    #SBATCH --threads-per-core 1
+    #SBATCH --distribution     *:block:*
+    #SBATCH --mem-bind         local
+
+    export OMP_PROC_BIND=true
+    export OMP_PLACES=cores
+    ```
+
+=== "Milan"
+
+    ```sh
+    #SBATCH --cores-per-socket {{ milan.cores_per_numa_domain }}
+    #SBATCH --threads-per-core 1
+    #SBATCH --distribution     *:block:*
+    #SBATCH --mem-bind         local
+
+    export OMP_PROC_BIND=true
+    export OMP_PLACES=cores
+    ```
+
+- The four `#SBATCH` options ask Slurm for cores next to each other, filling one NUMA domain before the next.
 - The two `export` lines stop threads moving between cores.
 
 [What the options mean](../Parallel_Computing/NUMA_Domains.md#what-the-options-mean) explains each one.
-Only `--cores-per-socket` depends on the partition.
-It's the number of cores in one NUMA domain, which Slurm treats as a socket:
-{{ genoa.cores_per_numa_domain }} on Genoa and {{ milan.cores_per_numa_domain }} on Milan.
+Only `--cores-per-socket` differs between Genoa and Milan.
+It's the number of cores in one NUMA domain, which Slurm treats as a socket.
 
 Before starting ORCA, each batch script runs a `print_binding_stats` step,
-which prints the cores each task was given and the node's NUMA domains.
+which prints the cores each task was given and the node's NUMA domains:
+
+```sh
+srun --job-name=print_binding_stats bash -c "echo -e \"Task #\${SLURM_PROCID} is running on node \$(hostname).\n\$(hostname) has the following NUMA configuration:\n\$(lscpu | grep -i --color=none numa)\nTask #\${SLURM_PROCID} has \$(nproc) CPUs, their core IDs are \$(taskset -c -p \$\$ | awk '{print \$NF}')\n===========================================\""
+```
+
 [Check a job's NUMA domains](../Parallel_Computing/NUMA_Domains.md#check-a-jobs-numa-domains) explains its output.
 If your runtime varies a lot between runs with the same input,
 check this output for cores spread over several NUMA domains.
