@@ -807,7 +807,7 @@
         ],
         "default": "19.2",
         "default_type": "static",
-        "last_updated": 1757912021,
+        "last_updated": 1794784064,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANSYS/19.2.lua",
         "force_hide": false,
@@ -2220,26 +2220,6 @@
         "last_updated": 1740132627,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/BioPP/2.4.1-GCC-9.2.0.lua",
-        "force_hide": false,
-        "force_show": false
-    },
-    "Biopython": {
-        "description": "Biopython is a set of freely available tools for biological\n computation written in Python by an international team of developers. It is\n a distributed collaborative effort to develop Python libraries and\n applications which address the needs of current and future work in\n bioinformatics.",
-        "domains": [],
-        "extensions": [],
-        "licence_type": "",
-        "homepage": "https://www.biopython.org",
-        "support": "",
-        "versions": [
-            "1.81-foss-2026-Python-3.14.4"
-        ],
-        "admin_list": [],
-        "network_licences": [],
-        "default": "1.81-foss-2026-Python-3.14.4",
-        "default_type": "latest",
-        "last_updated": 1794442811,
-        "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Biopython/1.81-foss-2026-Python-3.14.4.lua",
         "force_hide": false,
         "force_show": false
     },
