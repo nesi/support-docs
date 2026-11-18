@@ -272,7 +272,7 @@
             },
             "max_tres_per_user": {},
             "max_tres_run_mins_per_user": {},
-            "max_wall_minutes": 120,
+            "max_wall_minutes": 15,
             "priority": 5000
         },
         "normal": {
