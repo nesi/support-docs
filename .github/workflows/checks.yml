@@ -52,6 +52,7 @@ jobs:
   get:
     name: Determine what files to check
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v6
@@ -79,6 +80,7 @@ jobs:
     name: Check Spelling
     if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkSpelling) }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     needs: get
     steps:
       - name: Check out repo.
@@ -103,6 +105,7 @@ jobs:
     name: Check Prose
     if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkProse) }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     needs: get
     steps:
       - name: Check out repo.
@@ -116,6 +119,7 @@ jobs:
     name: Check Markdown
     if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkMarkdown) }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     needs: get
     steps:
       - name: Check out repo.
@@ -133,6 +137,7 @@ jobs:
     name: Check page meta
     if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkMeta) }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     needs: get
     steps:
       - name: Check out repo.
@@ -146,6 +151,7 @@ jobs:
     name: Check slurm scripts
     if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkSlurm) }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     needs: get
     steps:
       - name: Check out repo.
@@ -157,10 +163,16 @@ jobs:
     name: Check accessibility (WCAG)
     if: ${{ needs.get.outputs.filelist && (github.event_name != 'workflow_dispatch' || inputs.checkA11y) }}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     # Ships Chromium and its OS-level dependencies preinstalled.
     # Pinned to a noble (Ubuntu 24.04, Python 3.12) image to match the Python requirements.txt is compiled with.
     # 'latest' ships Python 3.10, which can't install some pins (e.g. filelock 4.2).
-    container: mcr.microsoft.com/playwright:v1.64.1-noble
+    # The image version must match the Playwright version in AccessLint's package-lock.json
+    # (see ACCESSLINT_REF in checks/run_a11y_check.sh), so its preinstalled browser is used and nothing is downloaded.
+    # A mismatch makes 'playwright install' download Chromium, which has hung CI until the job timeout.
+    container: mcr.microsoft.com/playwright:v1.59.1-noble
+    env:
+      PLAYWRIGHT_BROWSERS_PATH: /ms-playwright
     needs: get
     steps:
       - name: Check out repo.
@@ -178,7 +190,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/accesslint-audit
-          key: accesslint-audit-v0-${{ runner.os }}
+          key: accesslint-audit-${{ hashFiles('checks/run_a11y_check.sh') }}-${{ runner.os }}
       - name: Run WCAG audit
         run: mkdir -p annotations && ./checks/run_a11y_check.sh serious ${{needs.get.outputs.filelist}} | python3 checks/parse_a11y_report.py | tee annotations/accessibility.txt
       - *upload-annotations
@@ -186,6 +198,7 @@ jobs:
   tagcheck:
     name: Compile tags
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     steps:
       - uses: actions/checkout@v6
       - run: pip3 install pyyaml
@@ -195,6 +208,7 @@ jobs:
     name: Test build
     if: ${{github.event_name != 'workflow_dispatch' || inputs.testBuild}}
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     needs: [get, tagcheck]
     steps:
       - uses: actions/checkout@v6
@@ -211,6 +225,7 @@ jobs:
     if: always()
     needs: [get, spellcheck, proselint, mdlint, metacheck, slurmcheck, a11ycheck, testBuild]
     runs-on: ubuntu-24.04
+    timeout-minutes: 15
     permissions:
       actions: read
       contents: read

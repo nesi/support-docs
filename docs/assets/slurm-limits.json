@@ -77,32 +77,13 @@
         },
         {
             "cores_per_socket": 21,
-            "count": 6,
+            "count": 8,
             "cpus": 336,
             "features": [
                 "big",
                 "nogpu"
             ],
             "fewest_usable_cores_per_socket": 19,
-            "gpu_mig_profiles": {},
-            "gpus": {},
-            "partitions": [
-                "genoa"
-            ],
-            "real_memory_mb": 1469837,
-            "reserved_cores": 2,
-            "sockets": 8,
-            "threads_per_core": 2
-        },
-        {
-            "cores_per_socket": 21,
-            "count": 2,
-            "cpus": 336,
-            "features": [
-                "big",
-                "nogpu"
-            ],
-            "fewest_usable_cores_per_socket": 20,
             "gpu_mig_profiles": {},
             "gpus": {},
             "partitions": [
@@ -291,7 +272,7 @@
             },
             "max_tres_per_user": {},
             "max_tres_run_mins_per_user": {},
-            "max_wall_minutes": 120,
+            "max_wall_minutes": 15,
             "priority": 5000
         },
         "normal": {
