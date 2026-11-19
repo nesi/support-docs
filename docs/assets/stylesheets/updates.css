@@ -1,11 +1,3 @@
-
-#feed {
-    margin: 0 auto;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #fff;
-}
-
 .md-feed-item {
     margin-top: 10px;
     padding: 15px;
@@ -23,11 +15,12 @@ aside.md-source-file {
     display: inline-flex;
     align-items: center;
 }
-/* .feed-item:last-child {
-    border-bottom: none;
-} */
  /* Make content inside cards more readable */
-.md-feed-description h2,h3,a,p {
+.md-feed-description,
+.md-feed-description h2,
+.md-feed-description h3,
+.md-feed-description a,
+.md-feed-description p {
     font-size: 0.8rem;
 }
 
@@ -63,3 +56,15 @@ aside.md-source-file {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
   }
+.md-feed-more {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    color: var(--md-default-fg-color--light);
+    font-size: 0.7rem;
+}
+.md-feed-more .md-button[hidden] {
+    display: none;
+}
