@@ -57,7 +57,8 @@ It is important to note the following:
     processor in the other socket if it wants to access that RAM space,
     and that takes longer (this is called a
     [NUMA](https://en.wikipedia.org/wiki/Non-uniform_memory_access)
-    architecture)
+    architecture). On most Mahuika nodes, each socket is split further
+    into several NUMA domains, see [NUMA Domains](NUMA_Domains.md)
 - Each socket has a fast cache that is shared between all cores in
     that socket
 - Each core has its own private fast cache as well
@@ -221,7 +222,7 @@ execution.
 !!! warning
     By default Slurm does NOT guarantee that all
     threads will be placed on the same socket even if our job would fit
-    entirely within one socket. However see also the [--extra-node-into](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html#OPT_extra-node-info)
+    entirely within one socket. However see also the [--extra-node-info](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sbatch.html#OPT_extra-node-info)
     option. 
 
 Let us start with the following setup:

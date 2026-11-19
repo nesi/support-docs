@@ -9,3 +9,4 @@ accesslint-report.*
 spellcheck.results
 .DS_Store
 checks/agent_eval*
+docs/software_updates.xml

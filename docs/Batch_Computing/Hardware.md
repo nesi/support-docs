@@ -8,6 +8,7 @@ tags:
 A list of the currently available hardware.
 
 If you are looking for information on maximum resource requests, see [Job Limits](Job_Limits.md).
+To see how each type of node is split into NUMA domains, see [NUMA Domains](../Software/Parallel_Computing/NUMA_Domains.md).
 
 ## Compute Nodes
 

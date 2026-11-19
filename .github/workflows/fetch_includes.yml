@@ -26,6 +26,8 @@ jobs:
           git config user.email "bots-mkdocs@nesi.org.nz"
 
       - name: Fetch remote assets
+        # A failed fetch keeps the previous copy, so still commit the ones that succeeded.
+        continue-on-error: true
         run: bash .github/fetch_includes.sh
 
       - name: Commit if Changes

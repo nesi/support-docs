@@ -634,7 +634,8 @@
             "2023R1",
             "2023R2",
             "2024R2",
-            "2025R1"
+            "2025R1",
+            "2025R2"
         ],
         "admin_list": [
             {
@@ -682,7 +683,7 @@
                 "server": "ANSYS@orbis",
                 "server_polling": true,
                 "server_type": "FLEXlm",
-                "server_uptime": 1.0,
+                "server_uptime": 0.5,
                 "server_version": "",
                 "features": [
                     {
@@ -804,11 +805,11 @@
                 ]
             }
         ],
-        "default": "19.2",
+        "default": "2025R2",
         "default_type": "static",
-        "last_updated": 1757912021,
+        "last_updated": 1794862408,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANSYS/19.2.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANSYS/2025R2.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -844,27 +845,31 @@
             "biology"
         ],
         "extensions": [
-            "antiSMASH-6.0.1",
-            "bcbio-gff-0.6.6",
-            "biopython-1.78",
-            "helperlibs-0.2.1",
-            "pyScss-1.3.7",
-            "pysvg-py3-0.2.2.post3"
+            "antiSMASH-8.0.4",
+            "bcbio-gff-0.7.1",
+            "biopython-1.81",
+            "brawn-1.0.2",
+            "helperlibs-0.2.2",
+            "libsass-0.23.0",
+            "MOODS-python-1.9.4.1",
+            "nrpys-0.1.2",
+            "orjson-3.13.0"
         ],
         "licence_type": "",
         "homepage": "https://github.com/antismash/antismash",
         "support": "",
         "versions": [
             "5.1.2-gimkl-2020a-Python-3.8.2",
-            "6.0.1-gimkl-2020a-Python-3.8.2"
+            "6.0.1-gimkl-2020a-Python-3.8.2",
+            "8.0.4-foss-2026-Python-3.14.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "6.0.1-gimkl-2020a-Python-3.8.2",
+        "default": "8.0.4-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1740132635,
+        "last_updated": 1794445979,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/antiSMASH/6.0.1-gimkl-2020a-Python-3.8.2.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/antiSMASH/8.0.4-foss-2026-Python-3.14.4.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -4476,6 +4481,26 @@
         "force_hide": false,
         "force_show": false
     },
+    "DAGMC": {
+        "description": "Direct Accelerated Geometry Monte Carlo (DAGMC) is a software package that allows users to perform Monte Carlo radiation transport directly on CAD models.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://svalinn.github.io/DAGMC/index.html",
+        "support": "",
+        "versions": [
+            "3.2.4-gompi-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "3.2.4-gompi-2026",
+        "default_type": "latest",
+        "last_updated": 1794270279,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/DAGMC/3.2.4-gompi-2026.lua",
+        "force_hide": false,
+        "force_show": false
+    },
     "DAS_Tool": {
         "description": "DAS Tool is an automated method that integrates the results of a flexible number of binning\n algorithms to calculate an optimized, non-redundant set of bins from a single assembly.",
         "domains": [
@@ -4905,15 +4930,16 @@
             "2.1.9-GCC-11.3.0",
             "2.1.10-GCC-12.3.0",
             "2.1.14-GCC-12.3.0",
-            "2.2.1-GCC-15.2.0"
+            "2.2.1-GCC-15.2.0",
+            "2.2.8-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.2.1-GCC-15.2.0",
+        "default": "2.2.8-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1780456412,
+        "last_updated": 1794442593,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/DIAMOND/2.2.1-GCC-15.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/DIAMOND/2.2.8-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -6038,21 +6064,22 @@
         ],
         "extensions": [],
         "licence_type": "",
-        "homepage": "http://www.microbesonline.org/fasttree/",
+        "homepage": "https://morgannprice.github.io/fasttree/",
         "support": "",
         "versions": [
             "2.1.10-gimkl-2018b",
             "2.1.11-GCC-11.3.0",
             "2.1.11-GCC-12.3.0",
-            "2.1.11-GCCcore-9.2.0"
+            "2.1.11-GCCcore-9.2.0",
+            "2.2-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.1.11-GCCcore-9.2.0",
+        "default": "2.2-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1794444605,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/FastTree/2.1.11-GCCcore-9.2.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/FastTree/2.2-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -7501,15 +7528,16 @@
         "support": "",
         "versions": [
             "3.0.4c-GCC-9.2.0",
-            "3.0.4c-GCC-11.3.0"
+            "3.0.4c-GCC-11.3.0",
+            "3.0.4c-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "3.0.4c-GCC-11.3.0",
+        "default": "3.0.4c-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132629,
+        "last_updated": 1794442625,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GlimmerHMM/3.0.4c-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/GlimmerHMM/3.0.4c-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -7772,25 +7800,26 @@
         "force_show": false
     },
     "GOLD": {
-        "description": "A genetic algorithm for docking flexible ligands into protein binding sites",
+        "description": "",
         "domains": [
             "biology",
             "chemistry"
         ],
         "extensions": [],
         "licence_type": "proprietary",
-        "homepage": "https://www.ccdc.cam.ac.uk/solutions/csd-discovery/Components/Gold/",
+        "homepage": "",
         "support": "",
         "versions": [
-            "2022"
+            "2022",
+            "2026.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2022",
+        "default": "2026.2.0",
         "default_type": "latest",
-        "last_updated": 1793762941,
+        "last_updated": 1794971561,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GOLD/2022.lua",
+        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/GOLD/2026.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -8540,15 +8569,16 @@
         "support": "",
         "versions": [
             "2.3.2-GCC-9.2.0",
-            "2.4i-GCC-11.3.0"
+            "2.4i-GCC-11.3.0",
+            "2.4i-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "2.4i-GCC-11.3.0",
+        "default": "2.4i-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1740132630,
+        "last_updated": 1794445238,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/HMMER2/2.4i-GCC-11.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/HMMER2/2.4i-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -8619,15 +8649,16 @@
             "1.21-GCC-12.3.0",
             "1.22-GCC-12.3.0",
             "1.22.2-GCC-15.2.0",
-            "1.23.1-GCC-12.3.0"
+            "1.23.1-GCC-12.3.0",
+            "1.25-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.23.1-GCC-12.3.0",
+        "default": "1.25-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1776295281,
+        "last_updated": 1794355699,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/HTSlib/1.23.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/HTSlib/1.25-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -13324,6 +13355,26 @@
         "force_hide": false,
         "force_show": false
     },
+    "MOAB": {
+        "description": "The Mesh-Oriented datABase (MOAB) is a component for representing and evaluating mesh\ndata. MOAB can store and represent structured and unstructured meshes consisting of elements in the\nfinite element zoo, including polygons and polyhedra.",
+        "domains": [],
+        "extensions": [],
+        "licence_type": "",
+        "homepage": "https://sigma.mcs.anl.gov/moab-library",
+        "support": "",
+        "versions": [
+            "5.6.0-foss-2026"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "5.6.0-foss-2026",
+        "default_type": "latest",
+        "last_updated": 1794269955,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/MOAB/5.6.0-foss-2026.lua",
+        "force_hide": false,
+        "force_show": false
+    },
     "modbam2bed": {
         "description": "A program to aggregate modified base counts stored in a modified-base BAM file to a bedMethyl file.",
         "domains": [
@@ -15367,20 +15418,25 @@
     "OpenMC": {
         "description": "OpenMC is a community-developed Monte Carlo neutron and photon transport simulation code.\n It is capable of performing fixed source, k-eigenvalue, and subcritical multiplication calculations on\n models built using either a constructive solid geometry or CAD representation.",
         "domains": [],
-        "extensions": [],
+        "extensions": [
+            "endf-0.1.12",
+            "openmc-0.16.0",
+            "uncertainties-3.2.3"
+        ],
         "licence_type": "",
         "homepage": "https://openmc.org",
         "support": "",
         "versions": [
-            "0.15.2-gompi-2026"
+            "0.15.2-gompi-2026",
+            "0.16.0-gompi-2026-Python-3.14.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "0.15.2-gompi-2026",
+        "default": "0.16.0-gompi-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1778645795,
+        "last_updated": 1794270613,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/OpenMC/0.15.2-gompi-2026.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/OpenMC/0.16.0-gompi-2026-Python-3.14.4.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -17106,15 +17162,16 @@
         "versions": [
             "1.9.0-intel-2020a",
             "1.13.0-gompi-2023a",
-            "1.13.0-iimpi-2022a"
+            "1.13.0-iimpi-2022a",
+            "1.14.1-gompi-2026"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.13.0-iimpi-2022a",
+        "default": "1.14.1-gompi-2026",
         "default_type": "latest",
-        "last_updated": 1740132633,
+        "last_updated": 1794269278,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/PnetCDF/1.13.0-iimpi-2022a.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/PnetCDF/1.14.1-gompi-2026.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -20407,15 +20464,16 @@
             "1.19-GCC-12.3.0",
             "1.21-GCC-12.3.0",
             "1.22-GCC-12.3.0",
-            "1.23.1-GCC-12.3.0"
+            "1.23.1-GCC-12.3.0",
+            "1.25-GCC-15.2.0"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "1.23.1-GCC-12.3.0",
+        "default": "1.25-GCC-15.2.0",
         "default_type": "latest",
-        "last_updated": 1776295382,
+        "last_updated": 1794355854,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/SAMtools/1.23.1-GCC-12.3.0.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/SAMtools/1.25-GCC-15.2.0.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -20669,15 +20727,16 @@
             "4.4.0-gimkl-2020a",
             "4.5.1-gimkl-2020a-Python-3.8.2",
             "4.5.1-gimkl-2022a-Python-3.11.3",
-            "4.5.5-foss-2023a-Python-3.11.6"
+            "4.5.5-foss-2023a-Python-3.11.6",
+            "4.5.5-foss-2026-Python-3.14.4"
         ],
         "admin_list": [],
         "network_licences": [],
-        "default": "4.5.5-foss-2023a-Python-3.11.6",
+        "default": "4.5.5-foss-2026-Python-3.14.4",
         "default_type": "latest",
-        "last_updated": 1776046312,
+        "last_updated": 1794353463,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/SEPP/4.5.5-foss-2023a-Python-3.11.6.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/SEPP/4.5.5-foss-2026-Python-3.14.4.lua",
         "force_hide": false,
         "force_show": false
     },
@@ -20882,8 +20941,7 @@
             "4.1.5-intel-2022a",
             "5.0.0-beta1-foss-2023a",
             "5.0.0-foss-2023a",
-            "5.4.2-foss-2023a",
-            "5.4.2-foss-2026"
+            "5.4.2-foss-2023a"
         ],
         "admin_list": [
             {
@@ -20891,11 +20949,11 @@
             }
         ],
         "network_licences": [],
-        "default": "5.4.2-foss-2026",
+        "default": "5.4.2-foss-2023a",
         "default_type": "latest",
-        "last_updated": 1791249474,
+        "last_updated": 1793142729,
         "modulefile_text": "",
-        "module_path": "/opt/nesi/zen3/modules/all/Siesta/5.4.2-foss-2026.lua",
+        "module_path": "/opt/nesi/zen3/modules/all/Siesta/5.4.2-foss-2023a.lua",
         "force_hide": false,
         "force_show": false
     },

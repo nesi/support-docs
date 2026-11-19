@@ -51,6 +51,8 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
       - name: Fetch Remote Files
+        # A failed fetch keeps the committed copy, so build with that rather than not deploying.
+        continue-on-error: true
         run: bash .github/fetch_includes.sh
       - name: Compile tag index and link app pages
         run: python3 .github/workflows/compile_tags.py

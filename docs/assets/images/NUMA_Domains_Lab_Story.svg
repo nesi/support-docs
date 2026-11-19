@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="788" height="484" viewBox="0 0 788 484" role="img" aria-labelledby="title desc" font-family="Roboto, 'Helvetica Neue', Helvetica, Arial, sans-serif">
+<title id="title">Near and far memory, told as a story about labs</title>
+<desc id="desc">Two buildings joined by a footbridge. Each building has 4 labs, and each lab has scientists and a fridge. A scientist in lab 0 fetches a sample from the fridge in their own lab (quick), from lab 1 in the same building (slower), and from lab 4 in the other building, over the footbridge (slowest).</desc>
+<defs><marker id="ah-green" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#00765F"/></marker><marker id="ah-orange" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#A85700"/></marker><marker id="ah-red" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#B42318"/></marker><marker id="ah-grey" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3F4E5C"/></marker></defs>
+<rect width="788" height="484" fill="#FFFFFF"/>
+<text x="20" y="28" font-size="17" font-weight="bold" text-anchor="start" fill="#001C36">Scientists, labs and fridges</text>
+<rect x="20" y="46" width="332" height="292" rx="8" fill="#F5F6F7" stroke="#5A6875" stroke-width="1.8"/>
+<text x="30" y="67" font-size="14.5" font-weight="bold" text-anchor="start" fill="#001C36">Building 0</text>
+<rect x="30" y="76" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="39" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 0</text>
+<circle cx="50" cy="112" r="6" fill="#001C36"/>
+<path d="M41,136 V127 Q41,120 48,120 H52 Q59,120 59,127 V136 Z" fill="#001C36"/>
+<circle cx="74" cy="112" r="6" fill="#8479B7"/>
+<path d="M65,136 V127 Q65,120 72,120 H76 Q83,120 83,127 V136 Z" fill="#8479B7"/>
+<circle cx="98" cy="112" r="6" fill="#8479B7"/>
+<path d="M89,136 V127 Q89,120 96,120 H100 Q107,120 107,127 V136 Z" fill="#8479B7"/>
+<circle cx="122" cy="112" r="6" fill="#8479B7"/>
+<path d="M113,136 V127 Q113,120 120,120 H124 Q131,120 131,127 V136 Z" fill="#8479B7"/>
+<rect x="144" y="88" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="144" y1="106" x2="172" y2="106" stroke="#A85700" stroke-width="1.2"/>
+<line x1="166" y1="93" x2="166" y2="101" stroke="#A85700" stroke-width="2"/>
+<line x1="166" y1="111" x2="166" y2="122" stroke="#A85700" stroke-width="2"/>
+<rect x="190" y="76" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="199" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 1</text>
+<circle cx="210" cy="112" r="6" fill="#8479B7"/>
+<path d="M201,136 V127 Q201,120 208,120 H212 Q219,120 219,127 V136 Z" fill="#8479B7"/>
+<circle cx="234" cy="112" r="6" fill="#8479B7"/>
+<path d="M225,136 V127 Q225,120 232,120 H236 Q243,120 243,127 V136 Z" fill="#8479B7"/>
+<circle cx="258" cy="112" r="6" fill="#8479B7"/>
+<path d="M249,136 V127 Q249,120 256,120 H260 Q267,120 267,127 V136 Z" fill="#8479B7"/>
+<circle cx="282" cy="112" r="6" fill="#8479B7"/>
+<path d="M273,136 V127 Q273,120 280,120 H284 Q291,120 291,127 V136 Z" fill="#8479B7"/>
+<rect x="304" y="88" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="304" y1="106" x2="332" y2="106" stroke="#A85700" stroke-width="1.2"/>
+<line x1="326" y1="93" x2="326" y2="101" stroke="#A85700" stroke-width="2"/>
+<line x1="326" y1="111" x2="326" y2="122" stroke="#A85700" stroke-width="2"/>
+<rect x="30" y="206" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="39" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 2</text>
+<circle cx="50" cy="242" r="6" fill="#8479B7"/>
+<path d="M41,266 V257 Q41,250 48,250 H52 Q59,250 59,257 V266 Z" fill="#8479B7"/>
+<circle cx="74" cy="242" r="6" fill="#8479B7"/>
+<path d="M65,266 V257 Q65,250 72,250 H76 Q83,250 83,257 V266 Z" fill="#8479B7"/>
+<circle cx="98" cy="242" r="6" fill="#8479B7"/>
+<path d="M89,266 V257 Q89,250 96,250 H100 Q107,250 107,257 V266 Z" fill="#8479B7"/>
+<circle cx="122" cy="242" r="6" fill="#8479B7"/>
+<path d="M113,266 V257 Q113,250 120,250 H124 Q131,250 131,257 V266 Z" fill="#8479B7"/>
+<rect x="144" y="218" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="144" y1="236" x2="172" y2="236" stroke="#A85700" stroke-width="1.2"/>
+<line x1="166" y1="223" x2="166" y2="231" stroke="#A85700" stroke-width="2"/>
+<line x1="166" y1="241" x2="166" y2="252" stroke="#A85700" stroke-width="2"/>
+<rect x="190" y="206" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="199" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 3</text>
+<circle cx="210" cy="242" r="6" fill="#8479B7"/>
+<path d="M201,266 V257 Q201,250 208,250 H212 Q219,250 219,257 V266 Z" fill="#8479B7"/>
+<circle cx="234" cy="242" r="6" fill="#8479B7"/>
+<path d="M225,266 V257 Q225,250 232,250 H236 Q243,250 243,257 V266 Z" fill="#8479B7"/>
+<circle cx="258" cy="242" r="6" fill="#8479B7"/>
+<path d="M249,266 V257 Q249,250 256,250 H260 Q267,250 267,257 V266 Z" fill="#8479B7"/>
+<circle cx="282" cy="242" r="6" fill="#8479B7"/>
+<path d="M273,266 V257 Q273,250 280,250 H284 Q291,250 291,257 V266 Z" fill="#8479B7"/>
+<rect x="304" y="218" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="304" y1="236" x2="332" y2="236" stroke="#A85700" stroke-width="1.2"/>
+<line x1="326" y1="223" x2="326" y2="231" stroke="#A85700" stroke-width="2"/>
+<line x1="326" y1="241" x2="326" y2="252" stroke="#A85700" stroke-width="2"/>
+<rect x="436" y="46" width="332" height="292" rx="8" fill="#F5F6F7" stroke="#5A6875" stroke-width="1.8"/>
+<text x="446" y="67" font-size="14.5" font-weight="bold" text-anchor="start" fill="#001C36">Building 1</text>
+<rect x="446" y="76" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="455" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 4</text>
+<circle cx="466" cy="112" r="6" fill="#8479B7"/>
+<path d="M457,136 V127 Q457,120 464,120 H468 Q475,120 475,127 V136 Z" fill="#8479B7"/>
+<circle cx="490" cy="112" r="6" fill="#8479B7"/>
+<path d="M481,136 V127 Q481,120 488,120 H492 Q499,120 499,127 V136 Z" fill="#8479B7"/>
+<circle cx="514" cy="112" r="6" fill="#8479B7"/>
+<path d="M505,136 V127 Q505,120 512,120 H516 Q523,120 523,127 V136 Z" fill="#8479B7"/>
+<circle cx="538" cy="112" r="6" fill="#8479B7"/>
+<path d="M529,136 V127 Q529,120 536,120 H540 Q547,120 547,127 V136 Z" fill="#8479B7"/>
+<rect x="560" y="88" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="560" y1="106" x2="588" y2="106" stroke="#A85700" stroke-width="1.2"/>
+<line x1="582" y1="93" x2="582" y2="101" stroke="#A85700" stroke-width="2"/>
+<line x1="582" y1="111" x2="582" y2="122" stroke="#A85700" stroke-width="2"/>
+<rect x="606" y="76" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="615" y="95" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 5</text>
+<circle cx="626" cy="112" r="6" fill="#8479B7"/>
+<path d="M617,136 V127 Q617,120 624,120 H628 Q635,120 635,127 V136 Z" fill="#8479B7"/>
+<circle cx="650" cy="112" r="6" fill="#8479B7"/>
+<path d="M641,136 V127 Q641,120 648,120 H652 Q659,120 659,127 V136 Z" fill="#8479B7"/>
+<circle cx="674" cy="112" r="6" fill="#8479B7"/>
+<path d="M665,136 V127 Q665,120 672,120 H676 Q683,120 683,127 V136 Z" fill="#8479B7"/>
+<circle cx="698" cy="112" r="6" fill="#8479B7"/>
+<path d="M689,136 V127 Q689,120 696,120 H700 Q707,120 707,127 V136 Z" fill="#8479B7"/>
+<rect x="720" y="88" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="720" y1="106" x2="748" y2="106" stroke="#A85700" stroke-width="1.2"/>
+<line x1="742" y1="93" x2="742" y2="101" stroke="#A85700" stroke-width="2"/>
+<line x1="742" y1="111" x2="742" y2="122" stroke="#A85700" stroke-width="2"/>
+<rect x="446" y="206" width="152" height="122" rx="6" fill="#E3F3EC" stroke="#00765F" stroke-width="1.8"/>
+<text x="455" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 6</text>
+<circle cx="466" cy="242" r="6" fill="#8479B7"/>
+<path d="M457,266 V257 Q457,250 464,250 H468 Q475,250 475,257 V266 Z" fill="#8479B7"/>
+<circle cx="490" cy="242" r="6" fill="#8479B7"/>
+<path d="M481,266 V257 Q481,250 488,250 H492 Q499,250 499,257 V266 Z" fill="#8479B7"/>
+<circle cx="514" cy="242" r="6" fill="#8479B7"/>
+<path d="M505,266 V257 Q505,250 512,250 H516 Q523,250 523,257 V266 Z" fill="#8479B7"/>
+<circle cx="538" cy="242" r="6" fill="#8479B7"/>
+<path d="M529,266 V257 Q529,250 536,250 H540 Q547,250 547,257 V266 Z" fill="#8479B7"/>
+<rect x="560" y="218" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="560" y1="236" x2="588" y2="236" stroke="#A85700" stroke-width="1.2"/>
+<line x1="582" y1="223" x2="582" y2="231" stroke="#A85700" stroke-width="2"/>
+<line x1="582" y1="241" x2="582" y2="252" stroke="#A85700" stroke-width="2"/>
+<rect x="606" y="206" width="152" height="122" rx="6" fill="#E2F5FB" stroke="#007C99" stroke-width="1.8"/>
+<text x="615" y="225" font-size="13.5" font-weight="bold" text-anchor="start" fill="#001C36">Lab 7</text>
+<circle cx="626" cy="242" r="6" fill="#8479B7"/>
+<path d="M617,266 V257 Q617,250 624,250 H628 Q635,250 635,257 V266 Z" fill="#8479B7"/>
+<circle cx="650" cy="242" r="6" fill="#8479B7"/>
+<path d="M641,266 V257 Q641,250 648,250 H652 Q659,250 659,257 V266 Z" fill="#8479B7"/>
+<circle cx="674" cy="242" r="6" fill="#8479B7"/>
+<path d="M665,266 V257 Q665,250 672,250 H676 Q683,250 683,257 V266 Z" fill="#8479B7"/>
+<circle cx="698" cy="242" r="6" fill="#8479B7"/>
+<path d="M689,266 V257 Q689,250 696,250 H700 Q707,250 707,257 V266 Z" fill="#8479B7"/>
+<rect x="720" y="218" width="28" height="50" rx="4" fill="#FDEBD3" stroke="#A85700" stroke-width="1.5"/>
+<line x1="720" y1="236" x2="748" y2="236" stroke="#A85700" stroke-width="1.2"/>
+<line x1="742" y1="223" x2="742" y2="231" stroke="#A85700" stroke-width="2"/>
+<line x1="742" y1="241" x2="742" y2="252" stroke="#A85700" stroke-width="2"/>
+<rect x="350" y="150" width="88" height="40" rx="0" fill="#C3C8C8" stroke="none" stroke-width="0"/>
+<text x="394" y="208" font-size="12.5" font-weight="normal" text-anchor="middle" fill="#3F4E5C">footbridge</text>
+<path d="M56,138 V156 H158 V141" fill="none" stroke="#00765F" stroke-width="2.5" stroke-linejoin="round" marker-end="url(#ah-green)"/>
+<path d="M50,138 V169 H318 V141" fill="none" stroke="#A85700" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="7 4" marker-end="url(#ah-orange)"/>
+<path d="M44,138 V182 H574 V141" fill="none" stroke="#B42318" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="2.5 3.5" marker-end="url(#ah-red)"/>
+<circle cx="122" cy="156" r="10" fill="#FFFFFF" stroke="#00765F" stroke-width="2"/>
+<text x="122" y="160.5" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#00765F">1</text>
+<circle cx="282" cy="169" r="10" fill="#FFFFFF" stroke="#A85700" stroke-width="2"/>
+<text x="282" y="173.5" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#A85700">2</text>
+<circle cx="394" cy="182" r="10" fill="#FFFFFF" stroke="#B42318" stroke-width="2"/>
+<text x="394" y="186.5" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#B42318">3</text>
+<circle cx="30" cy="358" r="6" fill="#001C36"/>
+<path d="M21,382 V373 Q21,366 28,366 H32 Q39,366 39,373 V382 Z" fill="#001C36"/>
+<text x="52" y="372" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">a scientist who needs a sample</text>
+<line x1="20" y1="395" x2="44" y2="395" stroke="#00765F" stroke-width="2.5"/>
+<circle cx="62" cy="395" r="10" fill="#FFFFFF" stroke="#00765F" stroke-width="2"/>
+<text x="62" y="399.5" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#00765F">1</text>
+<text x="80" y="399.5" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">the fridge in their own lab (quickest)</text>
+<line x1="20" y1="422" x2="44" y2="422" stroke="#A85700" stroke-width="2.5" stroke-dasharray="7 4"/>
+<circle cx="62" cy="422" r="10" fill="#FFFFFF" stroke="#A85700" stroke-width="2"/>
+<text x="62" y="426.5" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#A85700">2</text>
+<text x="80" y="426.5" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">a lab down the corridor (slower)</text>
+<line x1="20" y1="449" x2="44" y2="449" stroke="#B42318" stroke-width="2.5" stroke-dasharray="2.5 3.5"/>
+<circle cx="62" cy="449" r="10" fill="#FFFFFF" stroke="#B42318" stroke-width="2"/>
+<text x="62" y="453.5" font-size="12.5" font-weight="bold" text-anchor="middle" fill="#B42318">3</text>
+<text x="80" y="453.5" font-size="13" font-weight="normal" text-anchor="start" fill="#001C36">a lab in the other building, across the footbridge (slowest)</text>
+</svg>

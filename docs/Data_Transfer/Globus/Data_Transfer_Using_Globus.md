@@ -67,7 +67,7 @@ To move files and folders between `collections` (such as between Mahuika and ano
 There are a few restrictions on the amount of data that can be transfer at any one time:
 
 * 100 million files in a single transfer task
-* 5 million files in a single directory
+* 7.5 million files in a single directory
 * 100,000 files for a directory listing / `ls` operation
 * 3 active transfer tasks per user
 * 100 pending transfer tasks per use

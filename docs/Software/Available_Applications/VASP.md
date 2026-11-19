@@ -165,7 +165,7 @@ The best way to decrease the latency of a calculation is to:
 
 To do this, we can assign or *pin* orbitals to CPUs that are close to each other and the memory they read from on the physical die.
 
-On Mahuika, our dies contain [Non-uniform memory access (NUMA)](https://en.wikipedia.org/wiki/Non-uniform_memory_access) domains. These NUMA domains contain a small group of CPUs as well as a small amount of very fast memory that lies near each other (this very fast memory is called L3 cache).
+On Mahuika, each node is split into [NUMA domains](../Parallel_Computing/NUMA_Domains.md). A NUMA domain is a group of CPUs together with the part of the node's memory closest to them, and those CPUs can read their own domain's memory faster than memory in other domains.
 
 In slurm, we can make sure that our calculations run with low latency by pinning orbitals to a NUMA domain or several nearby NUMA domains. This is done by Slurm using the following commands:
 

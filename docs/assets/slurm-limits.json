@@ -8,6 +8,7 @@
                 "a100_80gb",
                 "big"
             ],
+            "fewest_usable_cores_per_socket": 15,
             "gpu_mig_profiles": {},
             "gpus": {
                 "a100": 4
@@ -28,6 +29,7 @@
                 "big",
                 "nogpu"
             ],
+            "fewest_usable_cores_per_socket": 15,
             "gpu_mig_profiles": {},
             "gpus": {},
             "partitions": [
@@ -46,6 +48,7 @@
                 "med",
                 "nogpu"
             ],
+            "fewest_usable_cores_per_socket": 15,
             "gpu_mig_profiles": {},
             "gpus": {},
             "partitions": [
@@ -61,6 +64,7 @@
             "count": 2,
             "cpus": 80,
             "features": [],
+            "fewest_usable_cores_per_socket": 18,
             "gpu_mig_profiles": {},
             "gpus": {},
             "partitions": [
@@ -79,6 +83,7 @@
                 "big",
                 "nogpu"
             ],
+            "fewest_usable_cores_per_socket": 19,
             "gpu_mig_profiles": {},
             "gpus": {},
             "partitions": [
@@ -96,6 +101,7 @@
             "features": [
                 "big"
             ],
+            "fewest_usable_cores_per_socket": 19,
             "gpu_mig_profiles": {},
             "gpus": {
                 "h100": 2
@@ -115,6 +121,7 @@
             "features": [
                 "big"
             ],
+            "fewest_usable_cores_per_socket": 19,
             "gpu_mig_profiles": {},
             "gpus": {
                 "l4": 4
@@ -134,6 +141,7 @@
             "features": [
                 "med"
             ],
+            "fewest_usable_cores_per_socket": 20,
             "gpu_mig_profiles": {},
             "gpus": {
                 "pro_6000": 2
@@ -154,6 +162,7 @@
                 "nogpu",
                 "sml"
             ],
+            "fewest_usable_cores_per_socket": 19,
             "gpu_mig_profiles": {},
             "gpus": {},
             "partitions": [
@@ -169,6 +178,7 @@
             "count": 1,
             "cpus": 176,
             "features": [],
+            "fewest_usable_cores_per_socket": 20,
             "gpu_mig_profiles": {},
             "gpus": {},
             "partitions": [
@@ -187,6 +197,7 @@
                 "a100_40gb",
                 "big"
             ],
+            "fewest_usable_cores_per_socket": 4,
             "gpu_mig_profiles": {},
             "gpus": {
                 "a100": 3
@@ -261,7 +272,7 @@
             },
             "max_tres_per_user": {},
             "max_tres_run_mins_per_user": {},
-            "max_wall_minutes": 120,
+            "max_wall_minutes": 15,
             "priority": 5000
         },
         "normal": {
