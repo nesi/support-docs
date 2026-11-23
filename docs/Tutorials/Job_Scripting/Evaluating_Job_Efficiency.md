@@ -30,28 +30,31 @@ The example used here is based on materials from the [Data Carpentry Data Wrangl
 
 ## Setup
 
-To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
-You will want to have these files in your `nobackup` directory.
-Let's make a directory to work from and copy the files in.
+To begin, we will be working with some example scripts and data in `/nesi/nobackup/nesi99991/job_scripting/example`.
+Let's copy them into a directory of your own, named after your username, and work from there:
 
 ```sh
 cd /nesi/nobackup/nesi99991/job_scripting
-mkdir $USER
+cp -r example $USER
 cd $USER
-cp -r /opt/nesi/examples/tutorials/job_scripting .
 ```
 
 !!! note "Solo learners"
     This tutorial series was originally written for a live workshop, where every attendee
-    was added to a shared training project (`nesi99991`) with an `job_scripting` directory already created.
+    was added to a shared training project (`nesi99991`) with a `job_scripting` directory already set up.
 
     If you're working through this on your own, you won't have access to `nesi99991`, so use one of your own projects instead.
     Everywhere these lessons use `nesi99991`, in paths and in the `--account` line of the batch scripts, use your project code instead.
-    Before the commands above, create the `job_scripting` directory:
+    Instead of the commands above, create the `job_scripting` directory and copy the example files from `/opt/nesi/examples/tutorials/job_scripting`:
 
     ```sh
-    mkdir -p /nesi/nobackup/<project>/job_scripting
+    mkdir -p /nesi/nobackup/nesi99991/job_scripting
+    cd /nesi/nobackup/nesi99991/job_scripting
+    cp -r /opt/nesi/examples/tutorials/job_scripting $USER
+    cd $USER
     ```
+
+    Replace `nesi99991` with your project code.
 
 There are 3 broad steps in this workflow:
 
