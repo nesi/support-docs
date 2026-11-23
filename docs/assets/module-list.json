@@ -16075,6 +16075,28 @@
         "force_hide": false,
         "force_show": false
     },
+    "PCAngsd": {
+        "description": "Framework for analyzing low-depth next-generation sequencing (NGS) data in\nheterogeneous/structured populations using principal component analysis (PCA).\nPopulation structure is inferred from genotype likelihoods (e.g. from ANGSD) and used to\nestimate individual allele frequencies, call genotypes, estimate inbreeding coefficients,\nperform genome-wide selection scans, estimate admixture proportions and more.",
+        "domains": [],
+        "extensions": [
+            "pcangsd-1.37.0"
+        ],
+        "licence_type": "",
+        "homepage": "https://github.com/Rosemeis/pcangsd",
+        "support": "",
+        "versions": [
+            "1.37.0-foss-2026-Python-3.14.4"
+        ],
+        "admin_list": [],
+        "network_licences": [],
+        "default": "1.37.0-foss-2026-Python-3.14.4",
+        "default_type": "latest",
+        "last_updated": 1795378689,
+        "modulefile_text": "",
+        "module_path": "/opt/nesi/zen3/modules/all/PCAngsd/1.37.0-foss-2026-Python-3.14.4.lua",
+        "force_hide": false,
+        "force_show": false
+    },
     "PCRE": {
         "description": "The PCRE library is a set of functions that implement regular expression\n pattern matching using the same syntax and semantics as Perl 5.",
         "domains": [],
