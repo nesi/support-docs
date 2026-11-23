@@ -30,28 +30,31 @@ The example used here is based on materials from the [Data Carpentry Data Wrangl
 
 ## Setup
 
-To begin, we will be working with some example scripts that can be found in `/opt/nesi/examples/tutorials/job_scripting`.
-You will want to have these files in your `nobackup` directory.
-Let's make a directory to work from and copy the files in.
+To begin, we will be working with some example scripts and data in `/nesi/nobackup/nesi99991/job_scripting/example`.
+Let's copy them into a directory of your own, named after your username, and work from there:
 
 ```sh
 cd /nesi/nobackup/nesi99991/job_scripting
-mkdir $USER
+cp -r example $USER
 cd $USER
-cp -r /opt/nesi/examples/tutorials/job_scripting .
 ```
 
 !!! note "Solo learners"
     This tutorial series was originally written for a live workshop, where every attendee
-    was added to a shared training project (`nesi99991`) with an `job_scripting` directory already created.
+    was added to a shared training project (`nesi99991`) with a `job_scripting` directory already set up.
 
     If you're working through this on your own, you won't have access to `nesi99991`, so use one of your own projects instead.
     Everywhere these lessons use `nesi99991`, in paths and in the `--account` line of the batch scripts, use your project code instead.
-    Before the commands above, create the `job_scripting` directory:
+    Instead of the commands above, create the `job_scripting` directory and copy the example files from `/opt/nesi/examples/tutorials/job_scripting`:
 
     ```sh
-    mkdir -p /nesi/nobackup/<project>/job_scripting
+    mkdir -p /nesi/nobackup/nesi99991/job_scripting
+    cd /nesi/nobackup/nesi99991/job_scripting
+    cp -r /opt/nesi/examples/tutorials/job_scripting $USER
+    cd $USER
     ```
+
+    Replace `nesi99991` with your project code.
 
 There are 3 broad steps in this workflow:
 
@@ -103,26 +106,29 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
 9296168.ext+     extern   00:29:10                         00:00:00  8  1             COMPLETED
 ```
 
-!!! tip "Changing what `sacct` shows you by default"
-    All accounts have the same settings for `sacct` initially, but you can make changes to what you are seeing.
+??? tip "Filtering `sacct` output."
+    By default `sacct` shows all jobs owned by you in any state since midnight, however you can change this with flags.
 
-    Here are some `sacct` options you may find helpful:
+    Here are some `sacct` flags you may find helpful:
 
-    |   Option    |       Example                 |         Description                                       |
-    | -------------- | ----------------------------------- | --------------------------------------------------------------- |
-    | `--starttime`/`-S`   | `--starttime=today`          | Select jobs in any state after the given time. |
-    | `--endtime`/`-E`    | `--endtime=now-2hours`       | Select jobs in any state before the given time. |
-    | `--jobs`/`-j`        | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}`               | Display only the given job(s) or job step(s). |
-    | `--long`/`-l`  | `--long`         | Includes all possible fields for the format                                        |
-    | `--name`     | `--name=pipeline`    | Display jobs that have any of these name(s)                          |
-    | `--parsable`/`-p`  | `--parsable`           | Output will be "|" delimited with a "|" at the end. |
-    | `--parsable2`/`-P`  | `--parsable2`           | Output will be '|' delimited without a '|' at the end. |
-    | `--state`/`-s` | `--state=COMPLETED`              |   Selects jobs based on their state during the time period given.      |
-    | `--user`/`-u` | `--user=$USER`  | Display jobs for the user(s) specified |
+    | Option                 | Example                                                                   | Description                                                   |
+    | ---------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------- |
+    | `--starttime`<br>`-S`  | `--starttime=today`                                                       | Filters jobs to after a given start time.                          |
+    | `--endtime`<br>`-E`    | `--endtime=now-2hours`                                                    | Filters jobs to before a given end time.                                |
+    | `--jobs`<br>`-j`       | `--jobs={{ intermediate_hpc_job_id_01 }},{{ intermediate_hpc_job_id_02}}` | Display only the given job(s) or job step(s).                 |
+    | `--long`<br>`-l`       | `--long`                                                                  | Includes all possible fields for the format                   |
+    | `--name`               | `--name=pipeline`                                                         | Display jobs that have any of these name(s)                   |
+    | `--parsable`<br>`-p`   | `--parsable`                                                              | Output will be machine readable.                              |
+    | `--noheader` <br> `-n` | `--noheader`                                                              | Removes table header from output (useful with `-p`)            |
+    | `--state`<br>`-s`      | `--state=COMPLETED`                                                       | Filter jobs based on their state (must use with `-S`,`-E`). |
 
-    There is an additional flag called `--format`/`-o` that lets you change what information is shown about each job.
-    The default option for this is set via the `SACCT_FORMAT` environmental variable, but you can override it using the `-o` option.
-    Here are some of the fields you can request to see:
+??? tip "Changing `sacct` fields"
+
+    The `sacct` flag `--format`/`-o` lets you change what information is shown about each job.
+
+    You can perminantly change your `sacct` fields by setting `SACCT_FORMAT` in your `~/.bashrc`.
+
+    Here are some of the fields you may find helpful:
 
     | Field | Description |
     | ----- | ------- |
@@ -137,11 +143,9 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
     | `NNodes` | Number of nodes in a job or step. |
     | `NodeList` | List of nodes in job/step. |
     | `NTasks` | Total number of tasks in a job or step. |
-    | `Partition` | Identifies the partition on which the job ran. |
     | `ReqCPUS` | Number of requested CPUs. |
     | `ReqMem` | Minimum required memory for the job. |
     | `ReqNodes` | Requested minimum Node count for the job/step. |
-    | `Restarts` | How many times this job has been requeued/restarted. |
     | `Start` | Initiation time of the job. |
     | `State` | Displays the job status, or state. |
     | `Submit` | The time the job was submitted |
@@ -149,7 +153,7 @@ JobID           JobName    Elapsed     AveCPU     MinCPU   TotalCPU Al NT     Ma
     | `User` | The username of the user who ran the job. |
     | `WorkDir` | The directory used by the job to execute commands. |
 
-    You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html).
+    You can find lots more information about how to use `sacct` in the [Slurm documentation](https://slurm.schedmd.com/archive/{{config.extra.slurm}}/sacct.html), or by running `man sacct`.
 
 ### `seff`
 
