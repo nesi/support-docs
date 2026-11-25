@@ -209,6 +209,25 @@
             "reserved_cores": 2,
             "sockets": 8,
             "threads_per_core": 2
+        },
+        {
+            "cores_per_socket": 84,
+            "count": 4,
+            "cpus": 168,
+            "features": [
+                "big",
+                "nogpu"
+            ],
+            "fewest_usable_cores_per_socket": 82,
+            "gpu_mig_profiles": {},
+            "gpus": {},
+            "partitions": [
+                "genoa"
+            ],
+            "real_memory_mb": 734401,
+            "reserved_cores": 2,
+            "sockets": 1,
+            "threads_per_core": 2
         }
     ],
     "partitions": {

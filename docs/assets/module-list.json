@@ -807,7 +807,7 @@
         ],
         "default": "2025R2",
         "default_type": "static",
-        "last_updated": 1794862408,
+        "last_updated": 1795494785,
         "modulefile_text": "",
         "module_path": "/opt/nesi/CS400_centos7_bdw/modules/all/ANSYS/2025R2.lua",
         "force_hide": false,
