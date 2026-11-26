@@ -139,7 +139,7 @@ plugins:
       include_dir: overrides
   - llmstxt:
       markdown_description: >-
-        NeSI Mahuika HPC support documentation: getting access, running batch jobs
+        Mahuika HPC support documentation: getting access, running batch jobs
         with Slurm, available software and modules, storage and data transfer,
         interactive computing (Jupyter, OnDemand), and platform policies.
       # These are fnmatch patterns, not pathlib globs - `*` already crosses `/`, so
