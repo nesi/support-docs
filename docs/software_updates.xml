@@ -8368,24 +8368,5 @@ If you wish to continue using 2.1.1-gimpi-2022a in any of your scripts, make sur
       <guid>A4748</guid>
       <link>https://docs.nesi.org.nz/Software/Available_Applications/?search=CDO</link>
     </item>
-    <item>
-      <title>ncview/2.1.11-gompi-2023a added.</title>
-      <category domain="type">versionAdded</category>
-      <category domain="software">ncview</category>
-      <pubDate>Thu, 27 Nov 2025 10:02:12 +1300</pubDate>
-      <description>ncview has been updated with a new version, 2.1.11-gompi-2023a. &lt;pre&gt;&lt;code&gt;module load ncview/2.1.11-gompi-2023a&lt;/code&gt;&lt;/pre&gt;</description>
-      <guid>A4744</guid>
-      <link>https://docs.nesi.org.nz/Software/Available_Applications/?search=ncview</link>
-    </item>
-    <item>
-      <title>Default version of ncview has changed</title>
-      <category domain="type">defaultChanged</category>
-      <category domain="software">ncview</category>
-      <pubDate>Thu, 27 Nov 2025 10:02:12 +1300</pubDate>
-      <description>The default version of ncview has changed from 2.1.7-gimpi-2020a to 2.1.11-gompi-2023a, this is the version that will be loaded when you run &lt;code&gt;module load ncview&lt;/code&gt;.
-If you wish to continue using 2.1.7-gimpi-2020a in any of your scripts, make sure to change them to &lt;code&gt;module load ncview/2.1.7-gimpi-2020a&lt;/code&gt;</description>
-      <guid>A4745</guid>
-      <link>https://docs.nesi.org.nz/Software/Available_Applications/?search=ncview</link>
-    </item>
   </channel>
 </rss>
