@@ -8349,24 +8349,5 @@ If you wish to continue using 1.1.2-GCC-11.3.0 in any of your scripts, make sure
       <guid>A4773</guid>
       <link>https://docs.nesi.org.nz/Software/Available_Applications/?search=tabixpp</link>
     </item>
-    <item>
-      <title>CDO/2.5.3-gompi-2023a added.</title>
-      <category domain="type">versionAdded</category>
-      <category domain="software">CDO</category>
-      <pubDate>Fri, 28 Nov 2025 09:46:59 +1300</pubDate>
-      <description>CDO has been updated with a new version, 2.5.3-gompi-2023a. &lt;pre&gt;&lt;code&gt;module load CDO/2.5.3-gompi-2023a&lt;/code&gt;&lt;/pre&gt;</description>
-      <guid>A4747</guid>
-      <link>https://docs.nesi.org.nz/Software/Available_Applications/?search=CDO</link>
-    </item>
-    <item>
-      <title>Default version of CDO has changed</title>
-      <category domain="type">defaultChanged</category>
-      <category domain="software">CDO</category>
-      <pubDate>Fri, 28 Nov 2025 09:46:59 +1300</pubDate>
-      <description>The default version of CDO has changed from 2.1.1-gimpi-2022a to 2.5.3-gompi-2023a, this is the version that will be loaded when you run &lt;code&gt;module load CDO&lt;/code&gt;.
-If you wish to continue using 2.1.1-gimpi-2022a in any of your scripts, make sure to change them to &lt;code&gt;module load CDO/2.1.1-gimpi-2022a&lt;/code&gt;</description>
-      <guid>A4748</guid>
-      <link>https://docs.nesi.org.nz/Software/Available_Applications/?search=CDO</link>
-    </item>
   </channel>
 </rss>
